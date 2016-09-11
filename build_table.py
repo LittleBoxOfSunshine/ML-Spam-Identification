@@ -10,6 +10,25 @@ def cout(text):
     print('[{:%Y-%m-%d %H:%M:%S}] %s'.format(datetime.datetime.now()) % text)
 
 
+def post_filter_header_frequency_analysis(data, file_name, keys):
+    header_counts = {}
+    for h in keys:
+        header_counts[h] = {'Header': h, 'SPAM Count': 0, 'HAM Count': 0}
+
+    cout('Counting occurrences of header labels')
+
+    for row in data:
+        for h in row:
+            if h in keep_headers and row[h] is not None:
+                header_counts[h]['SPAM Count' if row['is_spam'] else 'HAM Count'] += 1
+
+    cout('Saving occurrence counts to disk')
+
+    with open('parsed data/%s.csv' % file_name, 'w') as output_file:
+        dict_writer = csv.DictWriter(output_file, ['Header', 'SPAM Count', 'HAM Count'])
+        dict_writer.writeheader()
+        dict_writer.writerows(header_counts.values())
+
 def header_frequency_analysis(data, file_name, keys):
     header_counts = {}
     for h in keys:
@@ -130,7 +149,7 @@ cout('Filtering & combining headers / importing SPAM into table')
 
 for email in emails['spam']:
     table[idx] = copy.deepcopy(row_template)
-    table[idx]['is_spam'] = False
+    table[idx]['is_spam'] = True
 
     # Find relevant headers
     for header in email:
@@ -146,7 +165,7 @@ for email in emails['spam']:
     table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
     table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload)
-    table[idx]['payload_raw'] = email.get_payload()
+    table[idx]['payload'] = email.get_payload()
 
     idx += 1
 
@@ -154,8 +173,7 @@ cout('Saving to disk')
 
 # Save to disk
 with open('parsed data/table.pkl', 'wb') as f:
-    pickle.dump(emails, f, pickle.HIGHEST_PROTOCOL)
+    pickle.dump(table, f, pickle.HIGHEST_PROTOCOL)
 
-# TODO: Implement this by iterating over table
-# cout('Starting post-filter header frequency analysis')
-# header_frequency_analysis(table, 'post_filter_headers', set(keep_headers.keys()))
+cout('Starting post-filter header frequency analysis')
+post_filter_header_frequency_analysis(table, 'post_filter_headers', keep_headers.keys())
