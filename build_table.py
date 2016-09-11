@@ -7,6 +7,31 @@ import csv
 def cout(text):
     print('[{:%Y-%m-%d %H:%M:%S}] %s'.format(datetime.datetime.now()) % text)
 
+
+def header_frequency_analysis(data, file_name):
+    header_counts = {}
+    for h in headers:
+        header_counts[h] = {'Header': h, 'SPAM Count': 0, 'HAM Count': 0}
+
+    cout('Counting occurrences of header labels from SPAM')
+
+    for datum in data['spam']:
+        for header in datum:
+            header_counts[header]['SPAM Count'] += 1
+
+    cout('Counting occurrences of header labels from HAM')
+
+    for datum in data['ham']:
+        for header in datum:
+            header_counts[header]['HAM Count'] += 1
+
+    cout('Saving occurrence counts to disk')
+
+    with open('parsed data/%s.csv' % file_name, 'w') as output_file:
+        dict_writer = csv.DictWriter(output_file, ['Header', 'SPAM Count', 'HAM Count'])
+        dict_writer.writeheader()
+        dict_writer.writerows(header_counts.values())
+
 cout('Loading pickle file')
 
 with open('parsed data/emails.pkl', 'rb') as f:
@@ -26,28 +51,14 @@ for email in emails['spam']:
     for key in email:
         headers.add(key)
 
-header_counts = {}
-for h in headers:
-    header_counts[h] = {'Header': h, 'SPAM Count': 0, 'HAM Count': 0}
+cout('Starting pre-filter header frequency analysis')
+header_frequency_analysis(emails, 'pre_filter_headers')
 
-cout('Counting occurrences of header labels from SPAM')
+cout('Filtering unneeded headers and combining equivalent headers')
+# TODO: Filter and combine headers here
 
-for email in emails['spam']:
-    for key in email:
-        header_counts[key]['SPAM Count'] += 1
-
-cout('Counting occurrences of header labels from HAM')
-
-for email in emails['ham']:
-    for key in email:
-        header_counts[key]['HAM Count'] += 1
-
-cout('Saving occurrence counts to disk')
-
-with open('parsed data/headers.csv', 'w') as output_file:
-    dict_writer = csv.DictWriter(output_file, ['Header', 'SPAM Count', 'HAM Count'])
-    dict_writer.writeheader()
-    dict_writer.writerows(header_counts.values())
+cout('Starting post-filter header frequency analysis')
+header_frequency_analysis(emails, 'post_filter_headers')
 
 cout('Building table template (layout)')
 
