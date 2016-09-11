@@ -1,0 +1,2948 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 18 May
+ 2016 16:00:08 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 18 May 2016
+ 16:00:05 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 922667408
+ for parrishd@dnc.org; Wed, 18 May 2016 15:00:14 -0500
+X-Note-AR-ScanTimeLocal: 5/18/2016 3:00:13 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.46 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-230/SG:5 5/18/2016 2:59:25 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.252 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/18/2016 3:00:07 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.46
+X-Note-Reverse-DNS: mail-oi0-f46.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-oi0-f46.google.com ([209.85.218.46] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 141367746
+ for parrishd@dnc.org; Wed, 18 May 2016 15:00:13 -0500
+Received: by mail-oi0-f46.google.com with SMTP id x19so94806212oix.2
+        for <parrishd@dnc.org>; Wed, 18 May 2016 13:00:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to:cc;
+        bh=MFApd4ZGpt/xNpsNejCfGC6Uct78rISdBexpwDNhF2c=;
+        b=dgF2WdcI3SYTRP9ydoTxP8avmNTS08EnM+EFzoKWKdfSItU4hbSe5j6wF0s+sCJ9By
+         NhLjroRaeT0h1/eLi/cPGOwwzseVKBjxd8lG5ot0t34kMct05jX3JLQC4RJhpj9tFJq7
+         A9DiSXqL9E6j5Hg90imkDyj6R+YAOaoQwRNT8Yr6khNNqM8dLBtvTHT9JNTAJ5Bp99Vp
+         DAlQ72pC987kLMgFB/CuQmn5tzgfoYTSc0H/Zj2lQUaCe6jCoO8oqrOm6G/G4ahdVite
+         dPYzPt2STgbDP3ao8YZR0lAt5ch9kvUvUYSVvJvNDw5eG2TG9SOyGWnk5KP0huD1e+rb
+         v/GQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+        bh=MFApd4ZGpt/xNpsNejCfGC6Uct78rISdBexpwDNhF2c=;
+        b=cHOUO6Vy/mGqX+D2agw+tJxV4LxVV9SOSFNhhX5XeUeoK9LSfdMfCNWrAiz3lnwkzP
+         2pGNzm4TPsFwEk8axgcYg1cim2WzhGtgPIztA3iOXgKtQiv84p5HV2ZEX95+/ozgzts0
+         WVymXA7f9VOKa2dY2UeZ1AnZkfQD4rqzGiWIW3K2vgQQLUkarl6qIyqiN4B8jmHd/mVS
+         D5YKyJpQ2WYiMoDcb/NjxEYxYmkUwJJLFRLXlBkqg0ICoHcAqwSMr1h8n5fwXzz2Y1vR
+         oyRBoFaq/3vmHabyFxfOsU+Pgj7v6li5Bik+bbB2vvkFO78cUl1v3htgojDJa4QKN0no
+         3g6w==
+X-Gm-Message-State: AOPr4FX0mJWOVrFUwOoh3mHq3BlWG16VtAN7ihAM1hDDHYgoQg8QYaRKJf4PKH+hUw5uOXICmSI1yNyb7P3X9vGq
+X-Received: by 10.157.8.137 with SMTP id 9mr5044105otf.109.1463601604739; Wed,
+ 18 May 2016 13:00:04 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Wed, 18 May 2016 12:59:25 -0700 (PDT)
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Wed, 18 May 2016 15:59:25 -0400
+Message-ID: <CACG1p4rksLThogb3ikbH+7t90_2EqNsuM18NPGW53BE9BxC6RA@mail.gmail.com>
+Subject: Update on June 8th
+To: Kenneth Lerer <klerer@lererhippeau.com>, Lauren Baldino
+	<lauren@lererhippeau.com>
+CC: "Parrish, Daniel" <parrishd@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11373008be604a0533234df1"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11373008be604a0533234df1
+Content-Type: text/plain; charset="UTF-8"
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Ken -
+
+Thanks so much for an incredibly solid start. Wanted to give you the
+latest.
+
+We had another couple sign up at the $33,400 per person, I updated your
+numbers to reflect our emails this morning, and now include a guest who is
+giving significantly ($75,000) that we are counting towards this event
+(Eric Schoenberg).
+
+This puts us at 42 attendees, and $602,200 in commitments with $378,800 in
+hand and $233,400 outstanding left to collect.
+
+This is quite a start, so a huge, huge thank you. Looks like we're on track
+to hit our goal and sell this out in advance. Famous last words.
+
+I have an email into the WH re: timing and will revert as soon as I hear.
+
+Best,
+Zach
+
+
+
+*EVENT TOTAL*
+
+*$602,200*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*$233,400*
+
+*$378,800*
+
+*42*
+
+*FIRST*
+
+*LAST*
+
+*RAISER(S)*
+
+*COMMIT*
+
+*IN-HAND*
+
+*ATTEND*
+
+Tiffany
+
+Adams
+
+Lerer/Sailer
+
+
+
+$10,000
+
+1
+
+Jonathan
+
+Bellack
+
+DNC
+
+
+
+$33,400
+
+1
+
+Matthew
+
+Blank
+
+Lerer/Sailer
+
+
+
+$20,000
+
+1
+
+Susan
+
+Blank
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+Jennifer
+
+Bonnell
+
+DNC
+
+
+
+$33,400
+
+1
+
+David
+
+Bryan
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+GUEST
+
+Bryan
+
+Lerer/Sailer
+
+
+
+
+
+?
+
+Richard
+
+Christiansen
+
+DNC
+
+
+
+$20,000
+
+1
+
+Tamar
+
+Dor-Ner
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+Tina
+
+Exhoras
+
+Lerer/Sailer
+
+$20,000
+
+
+
+1
+
+Rob
+
+Fishman
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Mark
+
+Gallogly
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Arthur
+
+Krystal
+
+DNC
+
+
+
+$10,000
+
+1
+
+Benjamin
+
+Lerer
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Emily
+
+Lerer
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Isabel
+
+Lerer
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Kenneth
+
+Lerer
+
+Lerer/Sailer
+
+$33,400
+
+HOST
+
+1
+
+David
+
+Levine
+
+DNC
+
+
+
+$13,400
+
+1
+
+Ruth
+
+Levine
+
+DNC
+
+
+
+$13,400
+
+1
+
+Giulio
+
+Martini
+
+DNC
+
+
+
+$10,000
+
+1
+
+Jody
+
+Martini
+
+DNC
+
+
+
+$10,000
+
+1
+
+Penny
+
+Mintz
+
+DNC
+
+
+
+$10,000
+
+1
+
+Jordan
+
+Muraskin
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Carole
+
+Robinson
+
+Lerer/Sailer
+
+$10,000
+
+
+
+1
+
+Katherine
+
+Sailer
+
+Lerer/Sailer
+
+
+HOST
+
+1
+
+Alexandra
+
+Schoenberg
+
+DNC
+
+
+
+
+
+1
+
+Eric
+
+Schoenberg
+
+DNC
+
+
+
+$75,000
+
+1
+
+David
+
+Singer
+
+Lerer/Sailer
+
+$20,000
+
+
+
+1
+
+GUEST
+
+Singer
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+GUEST
+
+Stampler
+
+DNC
+
+$10,000
+
+
+
+1
+
+Julie
+
+Stampler
+
+DNC
+
+$10,000
+
+
+
+1
+
+Sophie
+
+Stenbeck
+
+Lerer/Sailer
+
+
+
+$10,000
+
+1
+
+Lise
+
+Strickler
+
+Lerer/Sailer
+
+
+
+
+
+?
+
+Jack
+
+Taylor
+
+Lerer/Sailer
+
+
+
+$10,000
+
+1
+
+Franklin
+
+Thomas
+
+DNC
+
+
+
+
+
+1
+
+Are
+
+Traasdahl
+
+Lerer/Sailer
+
+
+
+$20,000
+
+1
+
+Siri Willoch
+
+Traasdahl
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+Jeff
+
+Weber
+
+DNC
+
+
+
+$33,400
+
+1
+
+Stacey
+
+Weber
+
+DNC
+
+
+
+$13,400
+
+1
+
+Kate
+
+Whitney
+
+DNC
+
+
+
+$33,400
+
+1
+
+Caroline
+
+Zaleski
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+Kenny
+
+Zaleski
+
+Lerer/Sailer
+
+
+
+
+
+1
+
+Michel
+
+Zaleski
+
+Lerer/Sailer
+
+$30,000
+
+
+
+1
+
+Ed
+
+Zimmerman
+
+DNC
+
+$10,000
+
+
+
+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Jeff
+
+Gural
+
+
+
+$10,000
+
+
+
+0
+
+
+
+-- 
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11373008be604a0533234df1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Ken -&nbsp;<div><br></div><div>Thanks so much for an incredi=
+bly solid start. Wanted to give you the latest.&nbsp;</div><div><br></div><=
+div>We had another couple sign up at the $33,400 per person, I updated your=
+ numbers to reflect our emails this morning, and now include a guest who is=
+ giving significantly ($75,000) that we are counting towards this event (Er=
+ic&nbsp;<span style=3D"color:rgb(0,0,0)">Schoenberg)</span>.&nbsp;</div><di=
+v><br></div><div>This puts us at 42 attendees, and $602,200 in commitments =
+with $378,800 in hand and $233,400 outstanding left to collect.&nbsp;</div>=
+<div><br></div><div>This is quite a start, so a huge, huge thank you. Looks=
+ like we're on track to hit our goal and sell this out in advance. Famous l=
+ast words.</div><div><br></div><div>I have an email into the WH re: timing =
+and will revert as soon as I hear.&nbsp;</div><div><br></div><div>Best,</di=
+v><div>Zach</div><div><br></div><div><br></div><div><br></div><div><table c=
+lass=3D"" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"border-=
+collapse:collapse">
+ <tbody><tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border:1pt solid w=
+indowtext;padding:0in 5.4pt;height:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">EVENT TOTAL</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-top-width:=
+1pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid=
+ solid none;border-top-color:windowtext;border-right-color:windowtext;borde=
+r-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black=
+">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">$602,200</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-top-width:1pt=
+;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid so=
+lid none;border-top-color:windowtext;border-right-color:windowtext;border-b=
+ottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+>
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+>
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+>
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">$233,400</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">$378,800</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">42</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">FIRST</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">LAST</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">RAISER(S)</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">COMMIT</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">IN-HAND</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">ATTEND</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Tiffany</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Adams</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jonathan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Bellack</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Matthew</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Blank</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Susan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Blank</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jennifer</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Bonnell</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Bryan</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Bryan</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">?</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Richard</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Christiansen</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Tamar</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Dor-Ner</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Tina</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Exhoras</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$20,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Rob</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Fishman</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Mark</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Gallogly</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Arthur</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Krystal</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Benjamin</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Lerer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Emily</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Lerer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Isabel</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Lerer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Kenneth</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Lerer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$33,400</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">HOST</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Levine</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Ruth</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Levine</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Giulio</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Martini</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jody</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Martini</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Penny</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Mintz</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jordan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Muraskin</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Carole</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Robinson</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Katherine</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Sailer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><br></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">HOST</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Alexandra</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Schoenberg</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Eric</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Schoenberg</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$75,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Singer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$20,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Singer</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Stampler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Julie</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Stampler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Sophie</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Stenbeck</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Lise</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Strickler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">?</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jack</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Taylor</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Franklin</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Thomas</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Are</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Traasdahl</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Siri Willoch</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Traasdahl</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jeff</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Weber</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Stacey</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Weber</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Kate</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Whitney</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Caroline</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Zaleski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Kenny</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Zaleski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Michel</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Zaleski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$30,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Ed</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Zimmerman</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Jeff</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt">
+  <p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span style=3D"co=
+lor:black">Gural</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.0001pt;te=
+xt-align:right"><span style=3D"color:black">&nbsp;</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt">
+  <p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><span style=3D"color:black">0</span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class=3D"MsoNormal">&nbsp;</p><div><br></div>-- <br><div class=3D"gmail_=
+signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zac=
+hary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Floor<br>New Y=
+ork, NY 10010<br><span><span id=3D"gc-number-172" class=3D"" title=3D"Call =
+with Google Voice">(646) 470-8689</span><span> direct | <span id=3D"gc-numb=
+er-173" class=3D"" title=3D"Call with Google Voice">(973) 618-5903</span> f=
+ax</span></span><span>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulti=
+ng.com" target=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></div></div><=
+/div></div></div>
+</div></div>
+
+--001a11373008be604a0533234df1--

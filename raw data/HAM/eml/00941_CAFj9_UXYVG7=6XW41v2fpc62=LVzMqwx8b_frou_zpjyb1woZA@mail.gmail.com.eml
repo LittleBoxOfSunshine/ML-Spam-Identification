@@ -1,0 +1,440 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 4 May
+ 2016 18:03:37 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 4 May 2016
+ 18:03:30 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 897149706
+ for KaplanJ@dnc.org; Wed, 04 May 2016 17:03:38 -0500
+X-Note-AR-ScanTimeLocal: 5/4/2016 5:03:36 PM
+X-Policy: dnc.org
+X-Primary: kaplanj@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.47 DOM:mjpratt.org ADDR:michael@mjpratt.org
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-160/SG:5 5/4/2016 5:03:04 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-20309-c
+X-Note-419: 31.2593 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/4/2016 5:03:25 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.47
+X-Note-Reverse-DNS: mail-vk0-f47.google.com
+X-Note-Return-Path: michael@mjpratt.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-vk0-f47.google.com ([209.85.213.47] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136829547
+ for KaplanJ@dnc.org; Wed, 04 May 2016 17:03:35 -0500
+Received: by mail-vk0-f47.google.com with SMTP id r16so4526621vkf.3        for
+ <KaplanJ@dnc.org>; Wed, 04 May 2016 15:03:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=mjpratt-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=746AzDZqcIYTs2e47n5ea8u0JXEV61GmdlYUA/1ukeM=;
+        b=hu97XTQOKf9B/T8qe51TphWqPZL+hTt/gysgH8hEIybtjUbs+n/9AFHwz7bpcLQ5N8
+         XvP8OVE5OVH7KD5fg2zo4DV3+fK3xtxgeZ215jawD/bdecB5amMznQhaPrXk//BXN3qQ
+         AbYZd4M4XWDlTyo/tSOqMtA0YyiiZmGn1kx9cDZOD9pye+EuFsmHvtB0ymRlKpfh9Xbk
+         7cE+TCIrNCF2xhQwt64ZpHLT26rLGolirgNHpQr2r2unvKnZKXZMIAmNB7KI38TjDXPt
+         pKzJS3kwP4yPmiOvIuZXpahZlSuUp49ePcDwfxVLx7yQaoNUIEsnafcgo8d0fhA1kmVQ
+         1Cqw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=746AzDZqcIYTs2e47n5ea8u0JXEV61GmdlYUA/1ukeM=;
+        b=Vz64/L7U2j0UYZ/ZSA4PZ5dJKRc5xvYfgvVBhSj2Obwa67YF7lNMTi8LdfYr4akNiK
+         29tGrMnCXfj7uRbqhN84e4QczHl3+EyNMpxVDBucXQA9dzoZ8TlMWPsaFxWuYZMx7Nr0
+         u36P84OICCeEJ6WIVLnN3PYIVOIHjzN6WU/0z57uCeiksobPodmD5Hj+S/5IhYWQ3hTL
+         NECshxfko+7NkwVWv6re3ABU707n6A6n5IEaGvS8ykhJ1aB8FGqnV+uWdK+0iTMKQPTA
+         AhN8TTCJjF5usZzpkt1bmdz2bsC6PZgp606Parsi9smQ9MfS9nrJaPJ0qWQanZtzcnhV
+         eJZw==
+X-Gm-Message-State: AOPr4FWLr8A+nvts+Nv+gw0SwarpRutp551LZnHUwMSTKXO31A3Lpwbp03bySajPR5gj7azjwjL763PXdhPXQQ==
+X-Received: by 10.31.47.69 with SMTP id v66mr370825vkv.138.1462399415249; Wed,
+ 04 May 2016 15:03:35 -0700 (PDT)
+Received: by 10.176.1.54 with HTTP; Wed, 4 May 2016 15:03:35 -0700 (PDT)
+In-Reply-To: <9AB02FD4-4BFA-4BB4-AE6C-F2CCA2E83526@dnc.org>
+References: <CAFj9_UUM_nmn+ByDfwQW8cf6LimnJKDwHBaG-w9gJVPPxSxMTg@mail.gmail.com>
+	<4EBBDED1-C48B-41C2-BAFD-C86F39F0AFD0@dnc.org>
+	<065207b89dcf4d72a37da76e518d5489@CN399EXCH2.whca.mil>
+	<9AB02FD4-4BFA-4BB4-AE6C-F2CCA2E83526@dnc.org>
+Date: Wed, 4 May 2016 18:03:35 -0400
+Message-ID: <CAFj9_UXYVG7=6XW41v2fpc62=LVzMqwx8b_frou_zpjyb1woZA@mail.gmail.com>
+Subject: Re: Cinco de Mayo
+From: Michael Pratt <michael@mjpratt.org>
+To: "Kaplan, Jordan" <KaplanJ@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11440384aa823d05320b650c"
+Return-Path: michael@mjpratt.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11440384aa823d05320b650c
+Content-Type: text/plain; charset="UTF-8"
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Appreciate you.
+
+On Wednesday, May 4, 2016, Kaplan, Jordan <KaplanJ@dnc.org> wrote:
+
+> That was easy.
+>
+> Jordan Kaplan
+> National Finance Director
+> Democratic National Committee
+> (202) 488-5002 (o) | (312) 339-0224 (c)
+> kaplanj@dnc.org <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');>
+>
+>
+> Begin forwarded message:
+>
+> *From:* "Mahoney, Caitria L. EOP/WHO" <caitria_l_mahoney@who.eop.gov
+> <javascript:_e(%7B%7D,'cvml','caitria_l_mahoney@who.eop.gov');>>
+> *Date:* May 4, 2016 at 5:28:21 PM EDT
+> *To:* "Kaplan, Jordan" <KaplanJ@dnc.org
+> <javascript:_e(%7B%7D,'cvml','KaplanJ@dnc.org');>>, "Allen, Angelica P.
+> EOP/WHO" <Angelica_P_Allen@who.eop.gov
+> <javascript:_e(%7B%7D,'cvml','Angelica_P_Allen@who.eop.gov');>>
+> *Subject:* *RE: Cinco de Mayo*
+>
+> They're all set - marked as attending.
+>
+>
+> -----Original Message-----
+> From: Mahoney, Caitria L. EOP/WHO
+> Sent: Wednesday, May 4, 2016 5:27 PM
+> To: 'Kaplan, Jordan' <KaplanJ@dnc.org
+> <javascript:_e(%7B%7D,'cvml','KaplanJ@dnc.org');>>; Allen, Angelica P.
+> EOP/WHO <Angelica_P_Allen@who.eop.gov
+> <javascript:_e(%7B%7D,'cvml','Angelica_P_Allen@who.eop.gov');>>
+> Subject: RE: Cinco de Mayo
+>
+> Don't think I sent you the most recent.
+>
+> Let me look.
+>
+>
+>
+> From: Kaplan, Jordan [mailto:KaplanJ@dnc.org
+> <javascript:_e(%7B%7D,'cvml','KaplanJ@dnc.org');>]
+> Sent: Wednesday, May 4, 2016 5:26 PM
+> To: Mahoney, Caitria L. EOP/WHO <caitria_l_mahoney@who.eop.gov
+> <javascript:_e(%7B%7D,'cvml','caitria_l_mahoney@who.eop.gov');>>; Allen,
+> Angelica P. EOP/WHO <Angelica_P_Allen@who.eop.gov
+> <javascript:_e(%7B%7D,'cvml','Angelica_P_Allen@who.eop.gov');>>
+> Subject: Fwd: Cinco de Mayo
+>
+>
+>
+> Hi guys
+>
+>
+>
+> See below. What do you think we should do - we know they rsvp'ed.
+>
+>
+>
+> Thanks.
+>
+> Jordan Kaplan
+>
+> National Finance Director
+>
+> Democratic National Committee
+>
+> (202) 488-5002 (o) | (312) 339-0224 (c)
+>
+> kaplanj@dnc.org <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');> <
+> mailto:kaplanj@dnc.org <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');>>
+>
+>
+>
+>
+> Begin forwarded message:
+>
+>    From: Michael Pratt <michael@mjpratt.org
+> <javascript:_e(%7B%7D,'cvml','michael@mjpratt.org');> <
+> mailto:michael@mjpratt.org
+> <javascript:_e(%7B%7D,'cvml','michael@mjpratt.org');>> >
+>    Date: May 4, 2016 at 5:23:00 PM EDT
+>    To: "Kaplan, Jordan" <kaplanj@dnc.org
+> <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');> <mailto:kaplanj@dnc.org
+> <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');>> >
+>    Subject: Cinco de Mayo
+>
+>    Jordan,
+>
+>
+>
+>    Three of our submissions for tomorrow' Cinco de Mayo were not included
+> on the RSVP report we got at the beginning of the week. Can we confirm that
+> these three folks are cleared for tomorrow.
+>
+>
+>
+>    Based on the RSVP report it looks like two members of their group Conor
+> McCloskey and Jeanne McCloskey each of an "unknown guest." I think this is
+> probably a mistake on the part of the family when they RSVP'd because they
+> are not bringing anyone with them, but the two folks below were left off.
+>
+>
+>
+>    Thanks for going to all this trouble.
+>
+>
+>
+>
+>
+>    Susan Marie Ragon
+>
+>    Female
+>
+>    D.O.B: 09/12/1950
+>
+>    S.S.N. 025-40- 7161
+>
+>    City/State of Residence: Cambridge, MA
+>
+>    Country of Birth: USA
+>
+>    Country of Citizenship: USA
+>
+>
+>
+>    Henry Thomas Hoey
+>
+>    Male
+>
+>    D.O.B.:02/01/1961
+>
+>    SSN: 020-54-6856
+>
+>    City/State of Residence: South Weymouth, MA
+>
+>    Country of Birth: USA
+>
+>    Country of Citizenship: USA
+>
+>
+>
+>    Evan Craig Lai
+>
+>    Male
+>
+>    D.O.B.: 11/14/1963
+>
+>    SSN: 547-43-7071
+>
+>    City/State of Residence: New York, NY
+>
+>    Country of Birth: USA
+>
+>    Country of Citizenship: USA
+>
+>
+
+--001a11440384aa823d05320b650c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">Ap=
+preciate you. &nbsp;<span></span><br><br>On Wednesday, May 4, 2016, Kaplan,=
+ Jordan &lt;<a href=3D"mailto:KaplanJ@dnc.org">KaplanJ@dnc.org</a>&gt; wrot=
+e:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-l=
+eft:1px #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div>That was easy.&nbsp;<br>
+<br>
+<span style=3D"background-color:rgba(255,255,255,0)">Jordan Kaplan&nbsp;</s=
+pan>
+<div><span style=3D"background-color:rgba(255,255,255,0)">National Finance =
+Director</span></div>
+<div><span style=3D"background-color:rgba(255,255,255,0)">Democratic Nation=
+al Committee&nbsp;</span></div>
+<div>(202) 488-5002 (o) | (312) 339-0224 (c)</div>
+<div><a href=3D"javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');" target=3D"=
+_blank">kaplanj@dnc.org</a></div>
+<div><br>
+</div>
+</div>
+<div><br>
+Begin forwarded message:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div><b>From:</b> &quot;Mahoney, Caitria L. EOP/WHO&quot; &lt;<a href=3D"ja=
+vascript:_e(%7B%7D,'cvml','caitria_l_mahoney@who.eop.gov');" target=3D"_bla=
+nk">caitria_l_mahoney@who.eop.gov</a>&gt;<br>
+<b>Date:</b> May 4, 2016 at 5:28:21 PM EDT<br>
+<b>To:</b> &quot;Kaplan, Jordan&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'=
+cvml','KaplanJ@dnc.org');" target=3D"_blank">KaplanJ@dnc.org</a>&gt;, &quot=
+;Allen, Angelica P. EOP/WHO&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml=
+','Angelica_P_Allen@who.eop.gov');" target=3D"_blank">Angelica_P_Allen@who.=
+eop.gov</a>&gt;<br>
+<b>Subject:</b> <b>RE: Cinco de Mayo</b><br>
+<br>
+</div>
+</blockquote>
+<blockquote type=3D"cite">
+<div><span>They're all set - marked as attending.</span><br>
+<span></span><br>
+<span></span><br>
+<span>-----Original Message-----</span><br>
+<span>From: Mahoney, Caitria L. EOP/WHO </span><br>
+<span>Sent: Wednesday, May 4, 2016 5:27 PM</span><br>
+<span>To: 'Kaplan, Jordan' &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','Kapl=
+anJ@dnc.org');" target=3D"_blank">KaplanJ@dnc.org</a>&gt;; Allen, Angelica =
+P. EOP/WHO &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','Angelica_P_Allen@who=
+.eop.gov');" target=3D"_blank">Angelica_P_Allen@who.eop.gov</a>&gt;</span><=
+br>
+<span>Subject: RE: Cinco de Mayo</span><br>
+<span></span><br>
+<span>Don't think I sent you the most recent.</span><br>
+<span></span><br>
+<span>Let me look. </span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>From: Kaplan, Jordan [<a href=3D"javascript:_e(%7B%7D,'cvml','KaplanJ=
+@dnc.org');" target=3D"_blank">mailto:KaplanJ@dnc.org</a>]
+</span><br>
+<span>Sent: Wednesday, May 4, 2016 5:26 PM</span><br>
+<span>To: Mahoney, Caitria L. EOP/WHO &lt;<a href=3D"javascript:_e(%7B%7D,'=
+cvml','caitria_l_mahoney@who.eop.gov');" target=3D"_blank">caitria_l_mahone=
+y@who.eop.gov</a>&gt;; Allen, Angelica P. EOP/WHO &lt;<a href=3D"javascript=
+:_e(%7B%7D,'cvml','Angelica_P_Allen@who.eop.gov');" target=3D"_blank">Angel=
+ica_P_Allen@who.eop.gov</a>&gt;</span><br>
+<span>Subject: Fwd: Cinco de Mayo</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Hi guys</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>See below. What do you think we should do - we know they rsvp'ed. </s=
+pan><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Thanks. </span><br>
+<span></span><br>
+<span>Jordan Kaplan &nbsp;</span><br>
+<span></span><br>
+<span>National Finance Director</span><br>
+<span></span><br>
+<span>Democratic National Committee </span><br>
+<span></span><br>
+<span>(202) 488-5002 (o) | (312) 339-0224 (c)</span><br>
+<span></span><br>
+<span><a href=3D"javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');" target=3D=
+"_blank">kaplanj@dnc.org</a> &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','ka=
+planj@dnc.org');" target=3D"_blank">mailto:kaplanj@dnc.org</a>&gt;
+</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Begin forwarded message:</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;From: Michael Pratt &lt;<a href=3D"javascript:_e(%7B%7D,=
+'cvml','michael@mjpratt.org');" target=3D"_blank">michael@mjpratt.org</a> &=
+lt;<a href=3D"javascript:_e(%7B%7D,'cvml','michael@mjpratt.org');" target=
+=3D"_blank">mailto:michael@mjpratt.org</a>&gt; &gt;</span><br>
+<span>&nbsp; &nbsp;Date: May 4, 2016 at 5:23:00 PM EDT</span><br>
+<span>&nbsp; &nbsp;To: &quot;Kaplan, Jordan&quot; &lt;<a href=3D"javascript=
+:_e(%7B%7D,'cvml','kaplanj@dnc.org');" target=3D"_blank">kaplanj@dnc.org</a=
+> &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');" target=3D=
+"_blank">mailto:kaplanj@dnc.org</a>&gt; &gt;</span><br>
+<span>&nbsp; &nbsp;Subject: Cinco de Mayo</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Jordan,</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Three of our submissions for tomorrow' Cinco de Mayo wer=
+e not included on the RSVP report we got at the beginning of the week. Can =
+we confirm that these three folks are cleared for tomorrow.</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Based on the RSVP report it looks like two members of th=
+eir group Conor McCloskey and Jeanne McCloskey each of an &quot;unknown gue=
+st.&quot; I think this is probably a mistake on the part of the family when=
+ they RSVP'd because they are not bringing anyone with
+ them, but the two folks below were left off.</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Thanks for going to all this trouble.</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Susan Marie Ragon</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Female</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;D.O.B: 09/12/1950</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;S.S.N. 025-40- 7161</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;City/State of Residence: Cambridge, MA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Birth: USA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Citizenship: USA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Henry Thomas Hoey</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Male</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;D.O.B.:02/01/1961</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;SSN: 020-54-6856</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;City/State of Residence: South Weymouth, MA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Birth: USA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Citizenship: USA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp; </span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Evan Craig Lai</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Male</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;D.O.B.: 11/14/1963</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;SSN: 547-43-7071</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;City/State of Residence: New York, NY</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Birth: USA</span><br>
+<span></span><br>
+<span>&nbsp; &nbsp;Country of Citizenship: USA</span><br>
+<span></span><br>
+</div>
+</blockquote>
+</div>
+
+</blockquote>
+
+--001a11440384aa823d05320b650c--

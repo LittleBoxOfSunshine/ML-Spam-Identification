@@ -1,0 +1,507 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 27 Apr
+ 2016 10:45:36 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 27 Apr 2016
+ 10:45:30 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 882738179;
+ Wed, 27 Apr 2016 09:45:37 -0500
+X-Note-AR-ScanTimeLocal: 4/27/2016 9:45:35 AM
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Primary: kaplanj@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.171 DOM:gmail.com ADDR:ericfeigenbaum@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-275/SG:5 4/27/2016 9:45:29 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-18452-c
+X-Note-419: 0 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/27/2016 9:45:29 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.171
+X-Note-Reverse-DNS: mail-io0-f171.google.com
+X-Note-Return-Path: ericfeigenbaum@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 G667 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f171.google.com ([209.85.223.171] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137428060;
+ Wed, 27 Apr 2016 09:45:35 -0500
+Received: by mail-io0-f171.google.com with SMTP id d62so48455326iof.2;
+        Wed, 27 Apr 2016 07:45:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc;
+        bh=wM8hURCh/j12sftJQ8EDUAcIAdHjhR23D3Di9LxV8WE=;
+        b=nCNS68WXF8geJPymLvb6XHesv/MN6QVxvXIGL4R6uPMnRAXIF1S4sHesrcnrJfVX6M
+         2bDtWFZoycAkeubSlduuIB5qZLTj6h2FIxeaiWgv57zBP18Tp8hgZmExebuvgv7/uU1H
+         77KDh1MYMseU1Vp1pbF0D9qj3A3VVjb81CsZId+2Mtn4tdMUyLIi4EYHsv8Fym2Abwsx
+         krbMENNk6MqlAtHWJpAwqk0UNxzCZkDZl07sfA4575TsKU7gOCBFiSAfLq1I5Us/iMIL
+         wQbdfS+7LWHenOKsuxTtQz1BACOeY4WDIymf872oFjXDGY7DF9Jtu+cly1b7Wd+ugmen
+         +d/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to:cc;
+        bh=wM8hURCh/j12sftJQ8EDUAcIAdHjhR23D3Di9LxV8WE=;
+        b=CqTmFCPRAODabz30yJPrhw7ikZYsqD0rrfLM5UpyaTkg9GLEI81gG0eckrnoTcFRdI
+         TwOf2ZG7jSD9kUDDrQARkqAv1DYYLfOQwPGE9zxPnvf0DO8Q6vX6CKrgS4UU5/x2zxvj
+         akxIwhhjlVxJi4JP377ohhljhFY824xVVF2yzLeGl7BNGIa9xr23/R91MVOthpLbiame
+         w/yLj0tZo4Mp71VsRvFSfwSwJV0sEq9HxhBRmLnCOgU5/7jEIxia1dfLWwZXRTkyseg9
+         OkqbBrwqzcd+s7korqte9qj8OzEunaF9KPJKYn6WHDGV7b5oer2AOXpCbKcwzl5KwqP0
+         dFzw==
+X-Gm-Message-State: AOPr4FXvLvDBT1JT/Rwc4/0ovQnunP+IvbteJepTRAtoAedChk6V375et5GWkzbbuOTTZ/pbLvRfp6Nff5Ls6g==
+X-Received: by 10.107.4.67 with SMTP id 64mr12186952ioe.22.1461768334820; Wed,
+ 27 Apr 2016 07:45:34 -0700 (PDT)
+Received: by 10.107.128.37 with HTTP; Wed, 27 Apr 2016 07:45:15 -0700 (PDT)
+In-Reply-To: <5C041D9C6CCC7845AE90EEADDBDC8D016F02E613@dncdag1.dnc.org>
+References: <CAEQ1GqQYsxpYYKgKh8nr-OF8jpq1=GorwbqeqgumDxVySyavHg@mail.gmail.com>
+ <9BF36BC2-824F-4021-AE42-184FFFBF97E2@dnc.org> <CAEQ1GqRqRW-ategdE1cU_2OU01CyuE7ixT6GmE0TpVDBu9m_WQ@mail.gmail.com>
+ <45D16833-82F8-4643-95E2-2E4B0F3D302E@dnc.org> <CAEQ1GqR233X53tw3Dw59Am+GPJh0fFctCUSGcD47TeHH5N7vsQ@mail.gmail.com>
+ <CAEQ1GqQ9Kqt7A_21N=gH3tQVHnFLNgu9tim-jSBdRerfLS8zDA@mail.gmail.com> <5C041D9C6CCC7845AE90EEADDBDC8D016F02E613@dncdag1.dnc.org>
+From: Eric Feigenbaum <ericfeigenbaum@gmail.com>
+Date: Wed, 27 Apr 2016 10:45:15 -0400
+Message-ID: <CAEQ1GqQFc=Key6MNRu+VdVacXCRf2_PVCUFuOuWaAO7XJYH2Kw@mail.gmail.com>
+Subject: Re: WH Tour
+To: "Comer, Scott" <ComerS@dnc.org>
+CC: "Kaplan, Jordan" <KaplanJ@dnc.org>
+Content-Type: multipart/alternative; boundary="001a113effb6575a2d0531787615"
+Return-Path: ericfeigenbaum@gmail.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113effb6575a2d0531787615
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Appreciate it.
+
+
+Eric Feigenbaum
+ericfeigenbaum@gmail.com
+203/430-6611
+
+On Wed, Apr 27, 2016 at 10:41 AM, Comer, Scott <ComerS@dnc.org> wrote:
+
+> Hey Eric =E2=80=93 I haven=E2=80=99t heard anything yet, but I=E2=80=99m =
+sending him another
+> request this morning, so I=E2=80=99ll be sure to see what=E2=80=99s up wi=
+th yours. They=E2=80=99re
+> usually a little slower with approvals this time of year.
+>
+>
+>
+> Thanks!
+>
+> Scott
+>
+>
+>
+> *From:* Eric Feigenbaum [mailto:ericfeigenbaum@gmail.com]
+> *Sent:* Wednesday, April 27, 2016 10:35 AM
+> *To:* Comer, Scott
+> *Cc:* Kaplan, Jordan
+> *Subject:* Re: WH Tour
+>
+>
+>
+> Hey Scott - wanted to check in on this. Thanks very much!
+>
+>
+>
+>
+> Eric Feigenbaum
+> ericfeigenbaum@gmail.com
+> 203/430-6611
+>
+>
+>
+> On Mon, Apr 4, 2016 at 2:35 PM, Eric Feigenbaum <ericfeigenbaum@gmail.com=
+>
+> wrote:
+>
+> Thanks so much, Scott. Here you go:
+>
+>
+>
+> Carolyn Arnold
+>
+> Party of 2
+>
+> Date requested May 18, 2016
+>
+>
+>
+> Let me know if you need any more info, and thanks again!
+>
+>
+>
+> Eric
+>
+>
+>
+>
+> Eric Feigenbaum
+> ericfeigenbaum@gmail.com
+> 203/430-6611
+>
+>
+>
+> On Mon, Apr 4, 2016 at 1:49 PM, Comer, Scott <ComerS@dnc.org> wrote:
+>
+> Hi Eric - all I need is the last name on the reservation request, the
+> number of people in the party, and the preferred dates. Once the request =
+is
+> approved, you'll receive an RSVP link where you can enter all of the
+> relevant security info.
+>
+> Sent from my iPhone
+>
+>
+> On Apr 4, 2016, at 1:48 PM, Eric Feigenbaum <ericfeigenbaum@gmail.com>
+> wrote:
+>
+> Hi Scott - can you please send me the WAVES doc or whatever I need to get
+> for a tour? Thanks!
+>
+>
+>
+>
+> Eric Feigenbaum
+> ericfeigenbaum@gmail.com
+> 203/430-6611
+>
+>
+>
+> On Mon, Apr 4, 2016 at 9:54 AM, Kaplan, Jordan <KaplanJ@dnc.org> wrote:
+>
+> Yeah, sorry, that is on me.
+>
+>
+>
+> Scott can you set up for a tour.
+>
+>
+> Jordan Kaplan
+> National Finance Director
+> Democratic National Committee
+> (202) 488-5002 (o) | (312) 339-0224 (c)
+> kaplanj@dnc.org
+>
+> <EFA0E494-461C-4D20-85BC-5D1CD9801DD6[11].png>
+>
+>
+>
+> On Apr 4, 2016, at 9:34 AM, Eric Feigenbaum <ericfeigenbaum@gmail.com>
+> wrote:
+>
+>
+>
+> Hey - thanks for helping me get a tour set up for some family friends. Ca=
+n
+> you have one of your guys send me the WAVES sheet, or whatever you need?
+>
+>
+>
+> We'll get a beer sometime...probably...
+>
+>
+>
+> thanks again
+>
+>
+>
+> Eric Feigenbaum
+> ericfeigenbaum@gmail.com
+> 203/430-6611
+>
+>
+>
+>
+>
+>
+>
+>
+>
+
+--001a113effb6575a2d0531787615
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Appreciate it.</div><div class=3D"gmail_extra"><br clear=3D"=
+all"><div><div class=3D"gmail_signature"><div><br></div>Eric Feigenbaum<br>=
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a><br>203/430-6611</div></div>
+<br><div class=3D"gmail_quote">On Wed, Apr 27, 2016 at 10:41 AM, Comer, Sco=
+tt <span dir=3D"ltr">&lt;<a href=3D"mailto:ComerS@dnc.org" target=3D"_blank=
+">ComerS@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote"=
+ style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hey Eric =E2=80=93 I have=
+n=E2=80=99t heard anything yet, but I=E2=80=99m sending him another request=
+ this morning, so I=E2=80=99ll be sure to see what=E2=80=99s up with yours.=
+ They=E2=80=99re usually a little
+ slower with approvals this time of year. <u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks!<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Scott<u></u><u></u></span=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Eric Fei=
+genbaum [mailto:<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blan=
+k">ericfeigenbaum@gmail.com</a>]
+<br>
+<b>Sent:</b> Wednesday, April 27, 2016 10:35 AM<br>
+<b>To:</b> Comer, Scott<br>
+<b>Cc:</b> Kaplan, Jordan<br>
+<b>Subject:</b> Re: WH Tour<u></u><u></u></span></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hey Scott - wanted to check in on this. Thanks very =
+much!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">Eric Feigenbaum<br>
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a><br>
+<a href=3D"tel:203%2F430-6611" value=3D"&#43;12034306611" target=3D"_blank"=
+>203/430-6611</a><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 4, 2016 at 2:35 PM, Eric Feigenbaum &lt;=
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks so much, Scott. Here you go:<u></u><u></u></p=
+>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Carolyn Arnold<u></u=
+><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Party of 2<u></u><u>=
+</u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Date requested&nbsp;=
+May 18, 2016<u></u><u></u></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt"><u></u>&nbsp;<u></u>=
+</span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Let me know if you n=
+eed any more info, and thanks again!<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt"><u></u>&nbsp;<u></u>=
+</span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Eric<u></u><u></u></=
+span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#888888"><br clear=3D"all">
+<span><u></u><u></u></span></span></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"color:#888888">Eric Feigenbaum<br>
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a><br>
+<a href=3D"tel:203%2F430-6611" target=3D"_blank">203/430-6611</a><u></u><u>=
+</u></span></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 4, 2016 at 1:49 PM, Comer, Scott &lt;<a =
+href=3D"mailto:ComerS@dnc.org" target=3D"_blank">ComerS@dnc.org</a>&gt; wro=
+te:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Hi Eric - all I need is the last name on the reserva=
+tion request, the number of people in the party, and the preferred dates. O=
+nce the request is approved, you'll receive an RSVP link where you can ente=
+r all of the relevant security info.&nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 4, 2016, at 1:48 PM, Eric Feigenbaum &lt;<a href=3D"mailto:ericfeige=
+nbaum@gmail.com" target=3D"_blank">ericfeigenbaum@gmail.com</a>&gt; wrote:<=
+u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Hi Scott - can you please send me the WAVES doc or w=
+hatever I need to get for a tour? Thanks!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">Eric Feigenbaum<br>
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a><br>
+<a href=3D"tel:203%2F430-6611" target=3D"_blank">203/430-6611</a><u></u><u>=
+</u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 4, 2016 at 9:54 AM, Kaplan, Jordan &lt;<=
+a href=3D"mailto:KaplanJ@dnc.org" target=3D"_blank">KaplanJ@dnc.org</a>&gt;=
+ wrote:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Yeah, sorry, that is on me. <u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Scott can you set up for a tour.&nbsp;<u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><br>
+Jordan Kaplan<br>
+National Finance Director<br>
+Democratic National Committee<br>
+<a href=3D"tel:%28202%29%20488-5002" target=3D"_blank">(202) 488-5002</a> (=
+o) | <a href=3D"tel:%28312%29%20339-0224" target=3D"_blank">
+(312) 339-0224</a> (c)<br>
+<a href=3D"mailto:kaplanj@dnc.org" target=3D"_blank">kaplanj@dnc.org</a><br=
+>
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black"><br>
+&lt;EFA0E494-461C-4D20-85BC-5D1CD9801DD6[11].png&gt; </span><u></u><u></u><=
+/p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">On Apr 4, 2016, at 9:34 AM, Eric Feigenbaum &lt;<a h=
+ref=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbaum@gm=
+ail.com</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Hey - thanks for helping me get a tour set up for so=
+me family friends. Can you have one of your guys send me the WAVES sheet, o=
+r whatever you need?
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We'll get a beer sometime...probably...<u></u><u></u=
+></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">thanks again<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">Eric Feigenbaum<br>
+<a href=3D"mailto:ericfeigenbaum@gmail.com" target=3D"_blank">ericfeigenbau=
+m@gmail.com</a><br>
+<a href=3D"tel:203%2F430-6611" target=3D"_blank">203/430-6611</a><u></u><u>=
+</u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a113effb6575a2d0531787615--

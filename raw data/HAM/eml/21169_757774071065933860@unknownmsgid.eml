@@ -1,0 +1,321 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 24 May
+ 2016 15:48:38 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 24 May 2016
+ 15:48:36 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 932796076
+ for ParrishD@dnc.org; Tue, 24 May 2016 14:48:37 -0500
+X-Note-AR-ScanTimeLocal: 5/24/2016 2:48:37 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.214.43 DOM:jo-ousterhout.com ADDR:jo@jo-ousterhout.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-305/SG:5 5/24/2016 2:47:47 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-14627-c
+X-Note-419: 0 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/24/2016 2:48:28 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->United States->
+X-Note-Sending-IP: 209.85.214.43
+X-Note-Reverse-DNS: mail-it0-f43.google.com
+X-Note-Return-Path: jo@jo-ousterhout.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-it0-f43.google.com ([209.85.214.43] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140295975
+ for ParrishD@dnc.org; Tue, 24 May 2016 14:48:37 -0500
+Received: by mail-it0-f43.google.com with SMTP id z189so51428300itg.0
+        for <ParrishD@dnc.org>; Tue, 24 May 2016 12:48:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=jo-ousterhout-com.20150623.gappssmtp.com; s=20150623;
+        h=from:mime-version:references:in-reply-to:date:message-id:subject:to;
+        bh=CLIYic3RgGBiryf9VLN4PVrVhk1qg4nSykoBH0lb9/8=;
+        b=U2u5Q8btodq4pCebQRHXJwuDeIytcuGUmGnaSTy+TAjgolONw52UvcCsxS5Pq2Y99b
+         qeJMyXL/i1kiz+yeFMBvr6LFqo3cDohBZBL/NrH/j2W08e0rQNUHibp+Am8ySqjz/JX/
+         5i/51WYvqS6J8cD1+aYvBvxklxSIFj//USl3jTSGaoWCAd2eAZ56Kct93qORQGlDe0qU
+         nUPpFg6h3O5GAyAqNApKDgsGXFCakFa/H7fFWrzePagzysAnlcKWQ1z8HgRNk9kpzb0w
+         4m8HhaedKlNuuwve0s+si5h4FFwmj7zpDHMG7XJwboRGUCdlUKHpgBLdHswFWl+ykW0r
+         i28Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:mime-version:references:in-reply-to:date
+         :message-id:subject:to;
+        bh=CLIYic3RgGBiryf9VLN4PVrVhk1qg4nSykoBH0lb9/8=;
+        b=Z+ZWv01cqkgHozuNJEqlOalvU6k1Yqkfp1harJ/0S7flRlMlEax06avmJ9GVwl1Fwg
+         yu2ulPaVuSaz4M7aTaJAGRQu0meN9QIuUtuPBI4jYNQa6dU6s8srH8Ra9PiZS9kiI18l
+         aaBFlIUykasvRGbX+2o3vtiuphfkzVE9HAi1nJNsSiyrStP3nZYYOP3dbt2URS2iUd06
+         TvsFij6aKp3dJa+VOiLZeujmD49vQdJomDliZ1HAWxRLgn90AsvpFlCwI78OM8wJcQ/O
+         OA0hH63B4M0LFUef9NktwMQ8ho0w4AG0rP1q+EbjmD3klHF87hZSsZEcRLc7ZqIUt0hW
+         Izpg==
+X-Gm-Message-State: ALyK8tKWLqxnt/WM2RHS8+CyKOfAStEniEG6wRXcHfTD63LEZMcBYY4Cln7Rxiu4wvLS29Mk50Lze0ID8vtx9A==
+X-Received: by 10.36.150.129 with SMTP id z123mr444927itd.85.1464119316782;
+ Tue, 24 May 2016 12:48:36 -0700 (PDT)
+From: Jo Ousterhout <jo@jo-ousterhout.com>
+References: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A996B5C8@dncdag2.dnc.org> <65D5797A-BEB6-4F2E-BBCA-320F13521195@dnc.org>
+In-Reply-To: <65D5797A-BEB6-4F2E-BBCA-320F13521195@dnc.org>
+Date: Tue, 24 May 2016 15:48:35 -0400
+Message-ID: <757774071065933860@unknownmsgid>
+Subject: Re: June 8th with President Obama
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="94eb2c087e42c9536505339bd712"
+Return-Path: jo@jo-ousterhout.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--94eb2c087e42c9536505339bd712
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Thanks, Dan!!
+
+Jo
+
+Jo Ousterhout
+Co Founder, Entrepreneurs for Hillary
+National Finance Council, Hillary for America
++1 917 207 5050 <+1%20917%20207%205050>
+
+Support Entrepreneurs for Hillary/Hillary for America
+<https://www.hillaryclinton.com/finance/entrepreneurs-for-hillary/?raiser=
+=3D39393>
+website: Entrepreneurs for Hillary <http://entrepreneursforhillary.com/>
+Like on FB:  Entrepreneurs for Hillary
+<https://www.facebook.com/entrepreneursforhillary?_rdr=3Dp>
+Follow:  @Entrepreneurs4H <https://twitter.com/Entrepreneurs4H>
+Connect on LinkedIn: Entrepreneurs for Hillary
+<https://www.linkedin.com/company/entrepreneurs-for-hillary>
+
+On May 24, 2016, at 15:42, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+Ms. Clark,
+
+I neglected to mention that your husband is welcome to attend as well. We'd
+love to see you both there if possible!
+
+Best,
+Dan
+
+On May 24, 2016, at 2:23 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+Ms. Clark,
+
+
+
+Laurie mentioned that you may be interested in attending our event with
+President Obama on June 8th. We=E2=80=99d love to see you there if you are
+available! Ken Lerer and Katherine Sailer are hosting what promises to be
+an intimate evening with remarks from the President and the chance to ask
+any questions you may have. We are expecting no more than 60 guests and
+each person will have the opportunity for a photo with the President.
+
+
+
+I=E2=80=99ve included the invitation for your reference and you can RSVP he=
+re
+<https://finance.democrats.org/page/contribute/NYDinnerJun8>. Tickets are
+selling out quickly, so we recommend letting us know at your earliest
+convenience if you are interested in attending.
+
+
+
+Please let me know if you have any questions about the event. I hope we=E2=
+=80=99ll
+see you in June!
+
+
+
+Best,
+
+Dan
+
+
+
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=
+=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93
+
+*Daniel Parrish*
+
+*Democratic National Committee*
+
+Finance | Deputy Tri-State Finance Director
+
+Phone: (202) 479-5141 | Mobile: (717) 283-7521
+
+430 South Capitol Street, SE | Washington, DC 20003
+
+
+
+<NY Dinner 060816.pdf>
+
+--94eb2c087e42c9536505339bd712
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div>Thanks, Dan!!<br><br><div class=3D"" style=3D"=
+text-align:-webkit-auto;word-wrap:break-word"><div style=3D"orphans: auto; =
+widows: auto;"><div class=3D"" style=3D"text-align:-webkit-auto;word-wrap:b=
+reak-word"><div style=3D"orphans: auto; widows: auto;"><div class=3D"" styl=
+e=3D"text-align:-webkit-auto;word-wrap:break-word"><div><span style=3D"back=
+ground-color:rgba(255,255,255,0)">Jo<br class=3D""><br class=3D"">Jo Ouster=
+hout<br class=3D"">Co Founder,&nbsp;Entrepreneurs for Hillary&nbsp;<br clas=
+s=3D"">National Finance Council, Hillary for America<br class=3D""><a dir=
+=3D"ltr" href=3D"tel:&#43;1%20917%20207%205050">&#43;1 917 207 5050</a><br =
+class=3D""><br class=3D"">Support&nbsp;<a href=3D"https://www.hillaryclinto=
+n.com/finance/entrepreneurs-for-hillary/?raiser=3D39393" class=3D"">Entrepr=
+eneurs for Hillary/Hillary for America<br class=3D""></a>website:&nbsp;<a h=
+ref=3D"http://entrepreneursforhillary.com/" class=3D"">Entrepreneurs for Hi=
+llary</a><br class=3D"">Like on FB: &nbsp;<a href=3D"https://www.facebook.c=
+om/entrepreneursforhillary?_rdr=3Dp" class=3D"">Entrepreneurs for&nbsp;Hill=
+ary</a><br class=3D"">Follow: &nbsp;<a href=3D"https://twitter.com/Entrepre=
+neurs4H" class=3D"">@Entrepreneurs4H</a><br class=3D"">Connect on&nbsp;<a h=
+ref=3D"https://www.linkedin.com/company/entrepreneurs-for-hillary" class=3D=
+"">LinkedIn:&nbsp;Entrepreneurs for Hillary</a></span></div></div></div></d=
+iv></div></div><span id=3D"signature"></span></div><div><br>On May 24, 2016=
+, at 15:42, Parrish, Daniel &lt;<a href=3D"mailto:ParrishD@dnc.org">Parrish=
+D@dnc.org</a>&gt; wrote:<br><br></div><blockquote type=3D"cite"><div>
+
+
+
+
+<div></div>
+<div>Ms. Clark,</div>
+<div><br>
+</div>
+<div>I neglected to mention that your husband is welcome to attend as well.=
+ We'd love to see you both there if possible!</div>
+<div><br>
+</div>
+<div>Best,</div>
+<div>Dan</div>
+<div><br>
+On May 24, 2016, at 2:23 PM, Parrish, Daniel &lt;<a href=3D"mailto:ParrishD=
+@dnc.org">ParrishD@dnc.org</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+<meta name=3D"Generator" content=3D"Microsoft Word 14 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Calibri","sans-serif";
+	color:windowtext;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Ms. Clark,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoPlainText">Laurie mentioned that you may be interested in at=
+tending our event with President Obama on June 8<sup>th</sup>. We=E2=80=99d=
+ love to see you there if you are available! Ken Lerer and Katherine Sailer=
+ are hosting what promises to be an intimate
+ evening with remarks from the President and the chance to ask any question=
+s you may have. We are expecting no more than 60 guests and each person wil=
+l have the opportunity for a photo with the President.</p>
+<p class=3D"MsoPlainText">&nbsp;</p>
+<p class=3D"MsoNormal">I=E2=80=99ve included the invitation for your refere=
+nce and you can RSVP
+<a href=3D"https://finance.democrats.org/page/contribute/NYDinnerJun8">here=
+</a>. Tickets are selling out quickly, so we recommend letting us know at y=
+our earliest convenience if you are interested in attending.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoPlainText">Please let me know if you have any questions abou=
+t the event. I hope we=E2=80=99ll see you in June!</p>
+<p class=3D"MsoPlainText">&nbsp;</p>
+<p class=3D"MsoPlainText">Best,</p>
+<p class=3D"MsoPlainText">Dan</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497d">=
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=
+=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93</span><span style=3D"font-size:1=
+0.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#222222"><=
+/span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><b><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497=
+d">Daniel Parrish</span></b><span style=3D"font-size:10.0pt;font-family:&qu=
+ot;Arial&quot;,&quot;sans-serif&quot;;color:#222222"></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><b><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497=
+d">Democratic National Committee</span></b></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497d">=
+Finance | Deputy Tri-State Finance Director</span><span style=3D"font-size:=
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#222222">=
+</span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497d">=
+Phone: (202) 479-5141 | Mobile: (717) 283-7521</span><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#22222=
+2"></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#1f497d">=
+430 South Capitol Street, SE | Washington, DC 20003</span><span style=3D"fo=
+nt-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#=
+222222"></span></p>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+</div>
+</blockquote>
+<blockquote type=3D"cite">
+<div>&lt;NY Dinner 060816.pdf&gt;</div>
+</blockquote>
+
+
+</div></blockquote></body></html>
+
+--94eb2c087e42c9536505339bd712--

@@ -1,0 +1,792 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 6 May
+ 2016 12:34:08 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 6 May 2016
+ 12:34:07 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 900899146
+ for ParrishD@dnc.org; Fri, 06 May 2016 11:34:10 -0500
+X-Note-AR-ScanTimeLocal: 5/6/2016 11:34:05 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.53 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-170/SG:5 5/6/2016 11:33:44 AM
+X-GBUdb-Analysis: 0, 209.85.215.53, Ugly c=0.798214 p=-0.982699 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 62.5094 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/6/2016 11:34:05 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.53
+X-Note-Reverse-DNS: mail-lf0-f53.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.215.53] (HELO mail-lf0-f53.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140430415
+ for ParrishD@dnc.org; Fri, 06 May 2016 11:34:05 -0500
+Received: by mail-lf0-f53.google.com with SMTP id y84so137955594lfc.0
+        for <ParrishD@dnc.org>; Fri, 06 May 2016 09:34:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=iIptwNas9VedwWUmqaYxIfikD6vmDv/LRgcXgTC8NFo=;
+        b=EfxoDPRaEyg5motBg/CRippEL37IUnCsR7qHnNOFKOYCdFlI5QjI2ojaoIj3iYgaBR
+         4Fxfhm0uSooEsfctjdN9KqLvPDe0LNc2XmdSpzIp7A95EseH+7dPK/hY+yumouP6V8M6
+         Rjw6QwrrV+Zyic4Hw7AHc1xXpsCQ95IxqNcG54HY6LWciQxzEOb7TPgMHW+tisNpWiNP
+         Lx1Icfu8EUn3hTLvtknJuz8Pd+qVB7qkR7iIIx5dsGkTM3YXvCD934CmpV0Q1Z/m0Vly
+         QkTsgxp0vz4erdwJA8Mfl/MQTEZLbKTtU2GS4J9eWXC1m6ywj1v9rKy2v8Bs2QxMNclh
+         U+qg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=iIptwNas9VedwWUmqaYxIfikD6vmDv/LRgcXgTC8NFo=;
+        b=dgCjX928uS3CvgdZgxhxMTjobPeqnVzrM/tZkZQFgQCJuVkRMEoIRkuyWpQuxRBnyI
+         hFZtCz7jhhJxRRLNHg0kArGx8iglaY14oXVun5bJJHGh8ASYGuz7Tw0NHPmR5eLt2Nc0
+         XTNc9I0272iJFHGguh8z3Q1tyrdHLeNg3oM2wyzNV9GfieftWBHy5KQKUBOYh47Ahb2e
+         aLd9QMkCd8Ti0acU6+kqADmAB2qHSwKfGHc/UNepMjh48VEqn2LGxxiVyzd3j2ejs5pl
+         +00HSmEEGNXsDtbQqsN6beyXGRtamxvsl5/OguVIDXx5SirGL9urKQ8ilSffi/Drm7lh
+         69VQ==
+X-Gm-Message-State: AOPr4FWMYYitiKmnk14Gr5nIxhMwkdbHOsKO7zTtGBM7XzCe6eYsUgEnE1RsV0HTcYIQuRnOpACKHMbw6aREfHL2
+X-Received: by 10.112.63.136 with SMTP id g8mr10206143lbs.135.1462552443774;
+ Fri, 06 May 2016 09:34:03 -0700 (PDT)
+Received: by 10.25.153.132 with HTTP; Fri, 6 May 2016 09:33:23 -0700 (PDT)
+In-Reply-To: <7E9D4272-C92B-4696-8FEE-401365166DA7@dnc.org>
+References: <NKGKOLZYY1@zendesk.com> <NKGKOLZYY1_572cb5be2bd89_5d63fd751acd31c5015e9_sprut@zendesk.com>
+ <NKGKOLZYY1_572b9416706b7_1142e3ff5bd4cd33882893f_sprut@zendesk.com>
+ <NKGKOLZYY1_572bb48b85df9_20c573f8bbeecd33896816_sprut@zendesk.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9954C99@dncdag1.dnc.org>
+ <F96513B1-7284-4792-A3FE-B5736FCDA61B@dnc.org> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A99557DD@dncdag1.dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9955810@dncdag1.dnc.org>
+ <NKGKOLZYY1_572cc4223b053_abef3fa7f14cd3201331da_sprut@zendesk.com> <7E9D4272-C92B-4696-8FEE-401365166DA7@dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Fri, 6 May 2016 12:33:23 -0400
+Message-ID: <CACG1p4opL7yCWfV68zv1w7uzSGU6CxsWpZkS6WSYwSJ+iec-Fw@mail.gmail.com>
+Subject: Re: [Democratic National Committee] Re: Invite
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11c3fd2ae0836705322f0684"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11c3fd2ae0836705322f0684
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+yup, except for the just $10k price point one, can it just say Ken and the
+wife invite, I don't like the DNC and them invite (mainly because I know he
+wont)
+
+On Fri, May 6, 2016 at 12:31 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Look ok? If you're good with both versions I'll save them to Dropbox as
+> soon as we're back from lunch.
+>
+>
+> Begin forwarded message:
+>
+> *From:* "Eric Ziminsky (Design Team)" <
+> design@democraticnationalcommittee.zendesk.com>
+> *Date:* May 6, 2016 at 12:19:46 PM EDT
+> *To:* Daniel Parrish <parrishd@dnc.org>
+> *Subject:* *[Democratic National Committee] Re: Invite*
+> *Reply-To:* Design Team <
+> design+id6192@democraticnationalcommittee.zendesk.com>
+>
+> ##- Please type your reply above this line -##
+>
+> Your request (6192) has been updated. To add additional comments, reply t=
+o
+> this email.
+> [image: Eric Zimin]
+>
+> *Eric Ziminsky* (Democratic National Committee)
+>
+> May 6, 12:19
+>
+> attached.
+>
+> Attachment(s)
+> 050516_Obama_Invite_NY_v2.pdf
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/jkSgtu=
+QDCuQk18BMnMEHZvZmt/?name=3D050516_Obama_Invite_NY_v2.pdf>
+>
+> [image: Daniel Par]
+>
+> *Daniel Parrish*
+>
+> May 6, 11:19
+>
+> We=E2=80=99d like to change both sections to evening. For now, let=E2=80=
+=99s leave it as
+> dinner on the full invite with the $33,400. Our host is requesting the
+> special invite. Thanks!
+>
+> Attachment(s)
+> image001.jpg
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/7bp7pH=
+be3qj4o15cWZ2eWTAAT/?name=3Dimage001.jpg>
+>
+> [image: Eric Zimin]
+>
+> *Eric Ziminsky* (Democratic National Committee)
+>
+> May 6, 11:18
+>
+> Is it still a dinner? On the second page for the form there is text that
+> says
+>
+> "Yes! I/we would like to attend the dinner on June 8TH"
+>
+> [image: Daniel Par]
+>
+> *Daniel Parrish*
+>
+> May 6, 11:12
+>
+> Thank you and sorry for the delay! Can we have a second invite that only
+> includes the 10k price? I have the new link below. We=E2=80=99d also like=
+ this
+> invite to say =E2=80=9Cevening=E2=80=9D instead of =E2=80=9Cdinner=E2=80=
+=9D if possible. We will use both
+> invites so no need to delete the other.
+>
+> Thanks!
+>
+> Dan
+>
+> https://finance.democrats.org/page/contribute/June8Evening
+>
+> Attachment(s)
+> image001.jpg
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/z4foST=
+SwNZbclsmKvUVzN9sAd/?name=3Dimage001.jpg>
+>
+> [image: Eric Zimin]
+>
+> *Eric Ziminsky* (Democratic National Committee)
+>
+> May 5, 17:00
+>
+> attached, and yes the link works!
+>
+> Attachment(s)
+> 050516_Obama_Invite_NY.pdf
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/FHvXla=
+BLzPt3ZERwEa6u6iyV4/?name=3D050516_Obama_Invite_NY.pdf>
+>
+> [image: Daniel Par]
+>
+> *Daniel Parrish*
+>
+> May 5, 14:52
+>
+> Thanks!! I have two questions- can we change the top to say our host
+> names? Ken Lerer and Katherine Sailer (written as on the pdf). And the li=
+nk
+> won't open, but I'm on my phone all day traveling. Does it work in genera=
+l?
+> Thank you for your help!
+>
+> [image: Eric Zimin]
+>
+> *Eric Ziminsky* (Democratic National Committee)
+>
+> May 5, 14:42
+>
+> attached.
+>
+> Attachment(s)
+> 050516_Obama_Invite_NY.pdf
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/rvxME8=
+risrrweU70SjxIWhqTM/?name=3D050516_Obama_Invite_NY.pdf>
+>
+> [image: Daniel Par]
+>
+> *Daniel Parrish*
+>
+> May 5, 13:29
+>
+> Hi,
+>
+> Is it possible to get a nice version of this sometime today? We just foun=
+d
+> out about it, so we=E2=80=99d like to send the invitation out widely as s=
+oon as we
+> can.
+>
+> Thank you for your help!
+>
+> Dan
+>
+> =E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93
+>
+> Daniel Parrish
+>
+> Democratic National Committee
+>
+> Finance | Director of Data & Strategic Initiatives
+>
+> Phone: (202) 479-5141 | Mobile: (717) 283-7521
+>
+> 430 South Capitol Street, SE | Washington, DC 20003
+>
+> Attachment(s)
+> NY Dinner 6.8.16 Invite.pdf
+> <https://democraticnationalcommittee.zendesk.com/attachments/token/yfieW6=
+8DxAqU4aOlgkjwzuerl/?name=3DNY+Dinner+6.8.16+Invite.pdf>
+> This email is a service from Democratic National Committee. Delivered by
+> Zendesk
+> <https://www.zendesk.com/product/tour/?utm_campaign=3Dtext&utm_content=3D=
+Democratic+National+Committee&utm_medium=3Dpoweredbyzendesk&utm_source=3Dem=
+ail-notification>
+> [NKGKOL-ZYY1]
+>
+>
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11c3fd2ae0836705322f0684
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">yup, except for the just $10k price point one, can it just s=
+ay Ken and the wife invite, I don't like the DNC and them invite (mainly be=
+cause I know he wont)</div><div class=3D"gmail_extra"><br><div class=3D"gma=
+il_quote">On Fri, May 6, 2016 at 12:31 PM, Parrish, Daniel <span dir=3D"ltr=
+">&lt;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.or=
+g</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margi=
+n:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div></div>
+<div>Look ok? If you're good with both versions I'll save them to Dropbox a=
+s soon as we're back from lunch.<br>
+<br>
+<br>
+Begin forwarded message:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div><span class=3D""><b>From:</b> &quot;Eric Ziminsky (Design Team)&quot; =
+&lt;<a href=3D"mailto:design@democraticnationalcommittee.zendesk.com" targe=
+t=3D"_blank">design@democraticnationalcommittee.zendesk.com</a>&gt;<br>
+</span><b>Date:</b> May 6, 2016 at 12:19:46 PM EDT<span class=3D""><br>
+<b>To:</b> Daniel Parrish &lt;<a href=3D"mailto:parrishd@dnc.org" target=3D=
+"_blank">parrishd@dnc.org</a>&gt;<br>
+<b>Subject:</b> <b>[Democratic National Committee] Re: Invite</b><br>
+<b>Reply-To:</b> Design Team &lt;<a href=3D"mailto:design&#43;id6192@democr=
+aticnationalcommittee.zendesk.com" target=3D"_blank">design&#43;id6192@demo=
+craticnationalcommittee.zendesk.com</a>&gt;<br>
+<br>
+</span></div>
+</blockquote>
+<blockquote type=3D"cite">
+<div>
+<div style=3D"padding:10px;line-height:18px;font-family:'Lucida Grande',Ver=
+dana,Arial,sans-serif;font-size:12px;color:#444444"><span class=3D"">
+<div style=3D"color:#b5b5b5">##- Please type your reply above this line -##=
+</div>
+<p>Your request (6192) has been updated. To add additional comments, reply =
+to this email.<br>
+</p>
+</span><div style=3D"margin-top:25px">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"E=
+ric Zimin" height=3D"40" src=3D"http://www.gravatar.com/avatar/d99360ace068=
+870080713aa191148594?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top"><span class=
+=3D"">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Eric Ziminsky</strong> <span>(Democratic National Committee)</span>
+</p>
+</span><p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucid=
+a Sans',Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bo=
+ttom:15px;margin-top:0;padding:0;color:#bbbbbb">
+May 6, 12:19 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+attached.</p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/jkSgtuQDCuQk18BMnMEHZvZmt/?name=3D050516_Obama_Invite_NY_v2.pdf" target=
+=3D"_blank">050516_Obama_Invite_NY_v2.pdf</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"D=
+aniel Par" height=3D"40" src=3D"http://www.gravatar.com/avatar/d47f22c8f62b=
+872262e521ccf460e910?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Daniel Parrish</strong> </p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 6, 11:19 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+We=E2=80=99d like to change both sections to evening. For now, let=E2=80=99=
+s leave it as dinner on the full invite with the $33,400. Our host is reque=
+sting the special invite. Thanks!</p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/7bp7pHbe3qj4o15cWZ2eWTAAT/?name=3Dimage001.jpg" target=3D"_blank">image00=
+1.jpg</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"E=
+ric Zimin" height=3D"40" src=3D"http://www.gravatar.com/avatar/d99360ace068=
+870080713aa191148594?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top"><span class=
+=3D"">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Eric Ziminsky</strong> <span>(Democratic National Committee)</span>
+</p>
+</span><p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucid=
+a Sans',Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bo=
+ttom:15px;margin-top:0;padding:0;color:#bbbbbb">
+May 6, 11:18 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Is it still a dinner? On the second page for the form there is text that sa=
+ys </p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+&quot;Yes! I/we would like to attend the dinner on June 8TH&quot;</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"D=
+aniel Par" height=3D"40" src=3D"http://www.gravatar.com/avatar/d47f22c8f62b=
+872262e521ccf460e910?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Daniel Parrish</strong> </p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 6, 11:12 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Thank you and sorry for the delay! Can we have a second invite that only in=
+cludes the 10k price? I have the new link below. We=E2=80=99d also like thi=
+s invite to say =E2=80=9Cevening=E2=80=9D instead of =E2=80=9Cdinner=E2=80=
+=9D if possible. We will use both invites so no need to delete the other.</=
+p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Thanks!</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Dan</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+<a href=3D"https://finance.democrats.org/page/contribute/June8Evening" rel=
+=3D"nofollow noreferrer" target=3D"_blank">https://finance.democrats.org/pa=
+ge/contribute/June8Evening</a></p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/z4foSTSwNZbclsmKvUVzN9sAd/?name=3Dimage001.jpg" target=3D"_blank">image00=
+1.jpg</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table><div><div class=3D"h5">
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"E=
+ric Zimin" height=3D"40" src=3D"http://www.gravatar.com/avatar/d99360ace068=
+870080713aa191148594?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Eric Ziminsky</strong> <span>(Democratic National Committee)</span>
+</p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 5, 17:00 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+attached, and yes the link works!</p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/FHvXlaBLzPt3ZERwEa6u6iyV4/?name=3D050516_Obama_Invite_NY.pdf" target=3D"_=
+blank">050516_Obama_Invite_NY.pdf</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"D=
+aniel Par" height=3D"40" src=3D"http://www.gravatar.com/avatar/d47f22c8f62b=
+872262e521ccf460e910?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Daniel Parrish</strong> </p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 5, 14:52 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Thanks!! I have two questions- can we change the top to say our host names?=
+ Ken Lerer and Katherine Sailer (written as on the pdf). And the link won't=
+ open, but I'm on my phone all day traveling. Does it work in general?<br>
+Thank you for your help!</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"E=
+ric Zimin" height=3D"40" src=3D"http://www.gravatar.com/avatar/d99360ace068=
+870080713aa191148594?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Eric Ziminsky</strong> <span>(Democratic National Committee)</span>
+</p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 5, 14:42 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+attached.</p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/rvxME8risrrweU70SjxIWhqTM/?name=3D050516_Obama_Invite_NY.pdf" target=3D"_=
+blank">050516_Obama_Invite_NY.pdf</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td width=3D"100%" style=3D"padding:15px 0;border-top:1px dotted #c5c5c5">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"table-layout:fixed">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0 15px 0 15px;width:40px"><img alt=3D"D=
+aniel Par" height=3D"40" src=3D"http://www.gravatar.com/avatar/d47f22c8f62b=
+872262e521ccf460e910?size=3D40&amp;default=3Dhttps%3A%2F%2Fassets.zendesk.c=
+om%2Fimages%2F2016%2Fdefault-avatar-80.png&amp;r=3Dg" style=3D"min-height:a=
+uto;line-height:100%;outline:none;text-decoration:none;border-radius:5px" w=
+idth=3D"40"></td>
+<td width=3D"100%" style=3D"padding:0;margin:0" valign=3D"top">
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:15px;line-height:18px;margin-bottom:0;=
+margin-top:0;padding:0;color:#1b1d1e">
+<strong>Daniel Parrish</strong> </p>
+<p style=3D"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans'=
+,Verdana,Tahoma,sans-serif;font-size:13px;line-height:25px;margin-bottom:15=
+px;margin-top:0;padding:0;color:#bbbbbb">
+May 5, 13:29 </p>
+<div style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grand=
+e','Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px =
+0">
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Hi,</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Is it possible to get a nice version of this sometime today? We just found =
+out about it, so we=E2=80=99d like to send the invitation out widely as soo=
+n as we can.</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Thank you for your help!</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Dan</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=
+=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Daniel Parrish</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Democratic National Committee</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Finance | Director of Data &amp; Strategic Initiatives</p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+Phone: <a href=3D"tel:%28202%29%20479-5141" value=3D"&#43;12024795141" targ=
+et=3D"_blank">(202) 479-5141</a> | Mobile: <a href=3D"tel:%28717%29%20283-7=
+521" value=3D"&#43;17172837521" target=3D"_blank">(717) 283-7521</a></p>
+<p style=3D"color:#2b2e2f;font-family:'Lucida Sans Unicode','Lucida Grande'=
+,'Tahoma',Verdana,sans-serif;font-size:14px;line-height:22px;margin:15px 0"=
+ dir=3D"auto">
+430 South Capitol Street, SE | Washington, DC 20003</p>
+</div>
+<p style=3D"line-height:22px;font-family:'Lucida Grande','Lucida Sans Unico=
+de','Lucida Sans',Verdana,Tahoma,sans-serif;margin-top:15px;margin-bottom:1=
+5px;font-size:14px;color:#333333">
+Attachment(s)<br>
+<a href=3D"https://democraticnationalcommittee.zendesk.com/attachments/toke=
+n/yfieW68DxAqU4aOlgkjwzuerl/?name=3DNY&#43;Dinner&#43;6.8.16&#43;Invite.pdf=
+" target=3D"_blank">NY Dinner 6.8.16 Invite.pdf</a><br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></div></div><div><div class=3D"h5">
+<div style=3D"color:#aaaaaa;margin:10px 0 14px 0;padding-top:10px;border-to=
+p:1px solid #eeeeee">
+This email is a service from Democratic National Committee. Delivered by <a=
+ href=3D"https://www.zendesk.com/product/tour/?utm_campaign=3Dtext&amp;utm_=
+content=3DDemocratic&#43;National&#43;Committee&amp;utm_medium=3Dpoweredbyz=
+endesk&amp;utm_source=3Demail-notification" style=3D"color:black" target=3D=
+"_blank">
+Zendesk</a> </div>
+</div></div></div>
+<span style=3D"color:#ffffff">[NKGKOL-ZYY1]</span>
+<div>
+<div>
+
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a11c3fd2ae0836705322f0684--

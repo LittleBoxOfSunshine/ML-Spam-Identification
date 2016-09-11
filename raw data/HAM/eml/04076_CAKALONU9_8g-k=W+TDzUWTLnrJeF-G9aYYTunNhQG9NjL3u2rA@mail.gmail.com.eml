@@ -1,0 +1,909 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 20 May
+ 2016 18:08:07 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 20 May 2016
+ 18:08:01 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 927354387
+ for MirandaL@dnc.org; Fri, 20 May 2016 17:08:15 -0500
+X-Note-AR-ScanTimeLocal: 5/20/2016 5:08:14 PM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.53 DOM:thehill.com ADDR:lhagen@thehill.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-300/SG:5 5/20/2016 5:07:20 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.2706 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/20/2016 5:08:04 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.53
+X-Note-Reverse-DNS: mail-vk0-f53.google.com
+X-Note-Return-Path: lhagen@thehill.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-vk0-f53.google.com ([209.85.213.53] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140153615
+ for MirandaL@dnc.org; Fri, 20 May 2016 17:08:13 -0500
+Received: by mail-vk0-f53.google.com with SMTP id f66so160600550vkh.2
+        for <MirandaL@dnc.org>; Fri, 20 May 2016 15:08:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=thehill-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=XxAMwKVrGPtc4iMhLjetw9sqoH218q22ChcQs6OxSVA=;
+        b=qrobdE7qG8HJGe63KW7iBOh753mroNxhYiwpLTsvjktLNEgpPntfQLjOVmri4QdShg
+         TGPxzXMBqgNZknMycefeRD3EsMK7y1j3rl1oFZr1W9mPhijsCxkp+/dsDRfG+uygLJXY
+         zDKCpIuK7lyFuxonGEU/Ykoo3YrQXJnJ6OhY8arFoZFe2rlaey4L/KQCOMvRP8hK2YYJ
+         rxj8Ae2FcR/RI693BbRvSBBav4hA9IigdFdoO0Q6N2YAc26sHTggR4QHbhzruKZCU6cy
+         WTfqH20t9yso1OW0Yrn1YEOIfR084KXlt/2hIQkS8bl9u+XM6sxNhZnvHh2TPSSbNMMo
+         ex6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=XxAMwKVrGPtc4iMhLjetw9sqoH218q22ChcQs6OxSVA=;
+        b=Q9B85txlhyh4WaxaJV7sdxGGtpQBl36JLBFmv/GpqBRJvpH1WBFdoO2V2WmG0ZqUkI
+         ZEx1jUAYj24c1ypuOtK4gnQ+254qTgU3R7SIadUJ0uszLC47A5qRMMO1wQiRL0a1TNIM
+         KjVeeY1Jb2LwU1hfXN/LGZ0xj5VAyvf/KKOXceQ8OL4ygYnFi97c/9Gc6ISfxO98oNY0
+         bX99E+3Xgx9bmtEDLw9Mmyp2WTkPQNTrDKd14A16z7nPGwicWqCcvvIx88mpU6nTIvxe
+         Jn8nDfCGuq/fxWY320uAGN/oa0Dd7T1Ib2dWoZxm4LjvEW/z7k+lf8YdQ3uMJqLEqDBR
+         GfUw==
+X-Gm-Message-State: AOPr4FUDeYMrkK2+6Eo/g7G+dR5Lg7HAB3KLVZ8qXLqL8rj1TaI9YVy07OCCMcCctUUyy+ISigd6eLGGVfy6Ug==
+X-Received: by 10.159.54.232 with SMTP id p95mr2794812uap.107.1463782084254;
+ Fri, 20 May 2016 15:08:04 -0700 (PDT)
+Received: by 10.31.59.76 with HTTP; Fri, 20 May 2016 15:08:04 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF2FE2C@dncdag1.dnc.org>
+References: <CAKALONW4ogqZzN9v-7FWgBifL3LyutBL-X6xvmbGhdA-mk3McQ@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF2EC87@dncdag1.dnc.org>
+	<CAKALONVJKiHQM4JKPfyxKwFxxHS+yObPpz9e+RNpB=RAVOJ78g@mail.gmail.com>
+	<qrhqjpqs73ow2g8cnin8myr8.1463767001970@email.android.com>
+	<CAKALONWdzAUX7OqLvJERDeziw9sQpmEnOzV6O6Q6qvESKbKZOw@mail.gmail.com>
+	<DB091DC3DEF527488ED2EB534FE59C1283BF84@dncdag1.dnc.org>
+	<CAKALONW-HYwjQUGJAxHZ_XmQnpGWnBK1AWh-spZ+SFyAXWuHww@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF2FE2C@dncdag1.dnc.org>
+Date: Fri, 20 May 2016 18:08:04 -0400
+Message-ID: <CAKALONU9_8g-k=W+TDzUWTLnrJeF-G9aYYTunNhQG9NjL3u2rA@mail.gmail.com>
+Subject: Re: The Hill inquiry follow-up
+From: Lisa Hagen <lhagen@thehill.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+CC: "Paustenbach, Mark" <PaustenbachM@dnc.org>
+Content-Type: multipart/alternative; boundary="94eb2c03c8502934e005334d537d"
+Return-Path: lhagen@thehill.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--94eb2c03c8502934e005334d537d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Thanks for passing this along, Luis. Have a great weekend!
+
+On Fri, May 20, 2016 at 4:53 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Lisa, some background for you to consider:
+>
+> The DNC Chair has repeatedly said on the air and otherwise that it=E2=80=
+=99s not
+> her job to tell either candidate to get out and has never called for anyo=
+ne
+> to get out of the race. She has talked in very positive terms
+> <https://www.democrats.org/Post/dnc-chair-statement-on-april-26-primary-r=
+esults>
+> about both of our candidates
+> <https://www.democrats.org/Post/dnc-chair-statement-on-south-carolina-pri=
+mary-results-feb-27>
+>  and the substantive campaigns they=E2=80=99ve run
+> <https://www.democrats.org/Post/dnc-chair-statement-on-new-hampshire-prim=
+ary-results>.
+> As for the stuff that Joe and Mika tried to rehash this morning about
+> debates, the fact is our debates earned far better ratings
+> <https://medium.com/@MiraLuisDC/democratic-debate-ratings-rank-far-ahead-=
+of-most-primary-debates-889d8ab42ca#.qepssg11f> overall
+> this year than they did in past cycles. And as NBC knows all too well, wh=
+en
+> we were able to get both campaigns to agree, we added four.
+>
+>
+>
+> The rules in place for this election have been pretty much the same for
+> several cycles. In fact, the major change from 2008 =E2=80=93 when Obama =
+beat
+> Clinton --- is that there are actually LESS unpledged =E2=80=9Csuper=E2=
+=80=9D delegates,
+> now down to 15% from 20% prior to the change. No one wrote or rewrote any
+> rules to help or hurt any specific candidate, these are the Party rules.
+>
+>
+>
+> The single biggest factor determining the nominee (85%) is the
+> participation of voters in primaries and caucuses. You can see a post we
+> did here that lays out the facts on Super Delegates
+> <https://medium.com/@patricetaylor/here-are-the-actual-facts-about-super-=
+delegates-7660c5c7dd1#.288n079v7>
+> . It also debunks the false myths about Iowa.
+>
+>
+>
+> The DNC=E2=80=99s delegate selection rules for this primary were set befo=
+re any of
+> these candidates declared, and are consistent with the rules in place for
+> several cycles =E2=80=93 including 2008 when Barack Obama defeated Hillar=
+y Clinton.
+>
+>
+>
+> There=E2=80=99s just no evidence that the process has been rigged. It cer=
+tainly
+> wasn=E2=80=99t rigged in Nevada this weekend, which was not a DNC event b=
+ut a state
+> party one. But don=E2=80=99t take it from us, here=E2=80=99s what Jon Ral=
+ston wrote:
+>
+>
+>
+>
+> http://www.rgj.com/story/news/politics/2016/05/17/ralston-reports-dems-ne=
+ed-unity-but-theyre-getting-mutiny-nevada-democratic-convention-hillary-cli=
+nton-bernie-sanders/84521894/?mc_cid=3D6001cbd708&mc_eid=3Db3f6d44b0b
+>
+>
+>
+> And here=E2=80=99s what Politifact said:
+> http://www.politifact.com/nevada/statements/2016/may/18/jeff-weaver/alleg=
+ations-fraud-and-misconduct-nevada-democratic/
+>
+> [image: Inline image 1]
+> <http://www.politifact.com/nevada/statements/2016/may/18/jeff-weaver/alle=
+gations-fraud-and-misconduct-nevada-democratic/>
+> ------------------------------
+> *From:* Lisa Hagen [lhagen@thehill.com]
+> *Sent:* Friday, May 20, 2016 2:18 PM
+> *To:* Paustenbach, Mark
+> *Cc:* Miranda, Luis
+>
+> *Subject:* Re: The Hill inquiry follow-up
+>
+> No problem, thanks for letting me know Mark. Talk soon!
+>
+> On Fri, May 20, 2016 at 2:16 PM, Paustenbach, Mark <PaustenbachM@dnc.org>
+> wrote:
+>
+>> Hey Lisa, sorry for the delay. Will give you a ring here shortly. Best,
+>> Mark
+>>
+>>
+>>
+>> Mark Paustenbach
+>>
+>> National Press Secretary &
+>> Deputy Communications Director
+>>
+>> Democratic National Committee
+>>
+>> W: 202.863.8148
+>> paustenbachm@dnc.org
+>>
+>>
+>>
+>> *From:* Lisa Hagen [mailto:lhagen@thehill.com]
+>> *Sent:* Friday, May 20, 2016 2:03 PM
+>> *To:* Miranda, Luis
+>> *Cc:* Paustenbach, Mark
+>>
+>> *Subject:* Re: The Hill inquiry follow-up
+>>
+>>
+>>
+>> That's no problem, Luis. And Mark, what time do you think you'll give me
+>> a call? I'm on a tight deadline, so the earlier, the better would be
+>> greatly appreciated. It shouldn't take long at all. Best number to reach=
+ me
+>> is 202-628-8535 (cell is 732-512-7845 just in case) Thanks!
+>>
+>>
+>>
+>> Best,
+>>
+>> Lisa Hagen
+>>
+>>
+>>
+>> On Fri, May 20, 2016 at 1:56 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+>>
+>> I'm travelling in Philly today, Mark will give you a call.
+>>
+>>
+>>
+>>
+>>
+>>
+>>
+>> Sent via the Samsung GALAXY S=C2=AE4, an AT&T 4G LTE smartphone
+>>
+>>
+>>
+>> -------- Original message --------
+>> From: Lisa Hagen <lhagen@thehill.com>
+>> Date: 05/20/2016 13:55 (GMT-05:00)
+>> To: "Miranda, Luis" <MirandaL@dnc.org>
+>> Cc: "Paustenbach, Mark" <PaustenbachM@dnc.org>
+>> Subject: Re: The Hill inquiry follow-up
+>>
+>> Hi Luis,
+>>
+>>
+>>
+>> I appreciate you responding back and sending over some links. Have a goo=
+d
+>> day, and weekend.
+>>
+>>
+>>
+>> Best,
+>>
+>> Lisa
+>>
+>>
+>>
+>> On Fri, May 20, 2016 at 12:03 PM, Miranda, Luis <MirandaL@dnc.org> wrote=
+:
+>>
+>> Hi Lisa, we've said all we need to say on it. We put out a statement
+>> earlier this week:
+>> http://www.democrats.org/Post/dnc-statement-on-nevada-democratic-party-l=
+etter
+>>
+>>
+>>
+>> And both the Chair and I have been on the air making it clear we need to
+>> focus on being united and winning in the general election:
+>>
+>>
+>> http://thehill.com/blogs/ballot-box/presidential-races/280370-dnc-chair-=
+responds-to-jeff-weavers-throwing-shade-remark
+>>
+>>
+>>
+>> https://twitter.com/dncpress/status/733086721575915520
+>>
+>>
+>>
+>>
+>> ------------------------------
+>>
+>> *From:* Lisa Hagen [lhagen@thehill.com]
+>> *Sent:* Friday, May 20, 2016 11:31 AM
+>> *To:* Miranda, Luis
+>> *Subject:* The Hill inquiry follow-up
+>>
+>> Hi Luis,
+>>
+>>
+>>
+>> My name is Lisa Hagen, and I'm a campaign reporter with The Hill
+>> newspaper in Washington. I reached out to both you and Mark yesterday an=
+d
+>> was hoping I could talk to one of you about the fallout from the Nevada
+>> convention and the back-and-forth between Chairwoman Wasserman Schultz a=
+nd
+>> the Sanders campaign. I wanted to give you guys a chance to respond and =
+be
+>> included in the story. If you can email or call me back as soon as
+>> possible, that'd be greatly appreciated. My contact info is below in my
+>> signature. Thanks in advance!
+>>
+>>
+>>
+>> --
+>>
+>> Lisa Hagen
+>>
+>> Campaign Reporter | The Hill
+>>
+>> O: 202-628-8535 | C: 732-512-7845
+>>
+>> lhagen@thehill.com | @LA_Hagen
+>>
+>>
+>>
+>>
+>>
+>> --
+>>
+>> Lisa Hagen
+>>
+>> Campaign Reporter | The Hill
+>>
+>> O: 202-628-8535 | C: 732-512-7845
+>>
+>> lhagen@thehill.com | @LA_Hagen
+>>
+>>
+>>
+>>
+>>
+>> --
+>>
+>> Lisa Hagen
+>>
+>> Campaign Reporter | The Hill
+>>
+>> O: 202-628-8535 | C: 732-512-7845
+>>
+>> lhagen@thehill.com | @LA_Hagen
+>>
+>
+>
+>
+> --
+> Lisa Hagen
+> Campaign Reporter | The Hill
+> O: 202-628-8535 | C: 732-512-7845
+> lhagen@thehill.com | @LA_Hagen
+>
+
+
+
+--=20
+Lisa Hagen
+Campaign Reporter | The Hill
+O: 202-628-8535 | C: 732-512-7845
+lhagen@thehill.com | @LA_Hagen
+
+--94eb2c03c8502934e005334d537d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Thanks for passing this along, Luis. Have a great weekend!</=
+div><div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Fri, May 2=
+0, 2016 at 4:53 PM, Miranda, Luis <span dir=3D"ltr">&lt;<a href=3D"mailto:M=
+irandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a>&gt;</span> wrote:<b=
+r><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:=
+1px #ccc solid;padding-left:1ex">
+
+
+
+
+<div>
+<div style=3D"direction:ltr;font-family:Tahoma;color:#000000;font-size:10pt=
+">Lisa, some background for you to consider:
+<div><br>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11p=
+t;font-family:Calibri,sans-serif">
+The DNC Chair has repeatedly said on the air and otherwise that it=E2=80=99=
+s not her job to tell either candidate to get out and has never called for =
+anyone to get out of the race. She has talked in&nbsp;<span style=3D"color:=
+rgb(31,73,125)"><a href=3D"https://www.democrats.org/Post/dnc-chair-stateme=
+nt-on-april-26-primary-results" style=3D"color:purple" target=3D"_blank">ve=
+ry
+ positive terms</a></span>about&nbsp;<span style=3D"color:rgb(31,73,125)"><=
+a href=3D"https://www.democrats.org/Post/dnc-chair-statement-on-south-carol=
+ina-primary-results-feb-27" style=3D"color:purple" target=3D"_blank">both o=
+f our candidates</a>&nbsp;</span>and<span style=3D"color:rgb(31,73,125)">&n=
+bsp;<a href=3D"https://www.democrats.org/Post/dnc-chair-statement-on-new-ha=
+mpshire-primary-results" style=3D"color:purple" target=3D"_blank">the
+ substantive campaigns they=E2=80=99ve run</a></span>. As for the stuff tha=
+t Joe and Mika tried to rehash this morning about debates, the fact is our =
+debates earned far better&nbsp;<a href=3D"https://medium.com/@MiraLuisDC/de=
+mocratic-debate-ratings-rank-far-ahead-of-most-primary-debates-889d8ab42ca#=
+.qepssg11f" style=3D"color:purple" target=3D"_blank">ratings</a>&nbsp;overa=
+ll
+ this year than they did in past cycles. And as NBC knows all too well, whe=
+n we were able to get both campaigns to agree, we added four.</p>
+<p class=3D"MsoNormal" style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11p=
+t;font-family:Calibri,sans-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+The rules in place for this election have been pretty much the same for sev=
+eral cycles. In fact, the major change from 2008 =E2=80=93 when Obama beat =
+Clinton --- is that there are actually LESS unpledged =E2=80=9Csuper=E2=80=
+=9D delegates, now down to 15% from 20% prior to the change.
+ No one wrote or rewrote any rules to help or hurt any specific candidate, =
+these are the Party rules.</p>
+<p style=3D"margin:0in 0in 0.0001pt;font-size:11pt;font-family:Calibri,sans=
+-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+The single biggest factor determining the nominee (85%) is the participatio=
+n of voters in primaries and caucuses. You can see a post we did here that =
+lays out the&nbsp;<span style=3D"color:rgb(31,73,125)"><a href=3D"https://m=
+edium.com/@patricetaylor/here-are-the-actual-facts-about-super-delegates-76=
+60c5c7dd1#.288n079v7" style=3D"color:purple" target=3D"_blank">facts
+ on Super Delegates</a>.&nbsp;</span>It also debunks the false myths about =
+Iowa.</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+The DNC=E2=80=99s delegate selection rules for this primary were set before=
+ any of these candidates declared, and are consistent with the rules in pla=
+ce for several cycles =E2=80=93 including 2008 when Barack Obama defeated H=
+illary Clinton.</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+There=E2=80=99s just no evidence that the process has been rigged. It certa=
+inly wasn=E2=80=99t rigged in Nevada this weekend, which was not a DNC even=
+t but a state party one. But don=E2=80=99t take it from us, here=E2=80=99s =
+what Jon Ralston wrote:</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+<a href=3D"http://www.rgj.com/story/news/politics/2016/05/17/ralston-report=
+s-dems-need-unity-but-theyre-getting-mutiny-nevada-democratic-convention-hi=
+llary-clinton-bernie-sanders/84521894/?mc_cid=3D6001cbd708&amp;mc_eid=3Db3f=
+6d44b0b" style=3D"color:purple" target=3D"_blank">http://www.rgj.com/story/=
+news/politics/2016/05/17/ralston-reports-dems-need-unity-but-theyre-getting=
+-mutiny-nevada-democratic-convention-hillary-clinton-bernie-sanders/8452189=
+4/?mc_cid=3D6001cbd708&amp;mc_eid=3Db3f6d44b0b</a></p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+&nbsp;</p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+And here=E2=80=99s what Politifact said:&nbsp;<a href=3D"http://www.politif=
+act.com/nevada/statements/2016/may/18/jeff-weaver/allegations-fraud-and-mis=
+conduct-nevada-democratic/" style=3D"color:purple" target=3D"_blank">http:/=
+/www.politifact.com/nevada/statements/2016/may/18/jeff-weaver/allegations-f=
+raud-and-misconduct-nevada-democratic/</a></p>
+<p style=3D"margin:0in 0in 0.0001pt 0.5in;font-size:11pt;font-family:Calibr=
+i,sans-serif">
+<a href=3D"http://www.politifact.com/nevada/statements/2016/may/18/jeff-wea=
+ver/allegations-fraud-and-misconduct-nevada-democratic/" style=3D"color:pur=
+ple" target=3D"_blank"><span style=3D"color:windowtext;text-decoration:none=
+"><img alt=3D"Inline image 1" height=3D"146" width=3D"545" border=3D"0"></s=
+pan></a></p>
+<div style=3D"font-family:Times New Roman;color:#000000;font-size:16px">
+<hr>
+<div style=3D"direction:ltr"><font face=3D"Tahoma" size=3D"2" color=3D"#000=
+000"><b>From:</b> Lisa Hagen [<a href=3D"mailto:lhagen@thehill.com" target=
+=3D"_blank">lhagen@thehill.com</a>]<br>
+<b>Sent:</b> Friday, May 20, 2016 2:18 PM<br>
+<b>To:</b> Paustenbach, Mark<br>
+<b>Cc:</b> Miranda, Luis<div><div class=3D"h5"><br>
+<b>Subject:</b> Re: The Hill inquiry follow-up<br>
+</div></div></font><br>
+</div><div><div class=3D"h5">
+<div></div>
+<div>
+<div dir=3D"ltr">No problem, thanks for letting me know Mark. Talk soon!</d=
+iv>
+<div class=3D"gmail_extra"><br>
+<div class=3D"gmail_quote">On Fri, May 20, 2016 at 2:16 PM, Paustenbach, Ma=
+rk <span dir=3D"ltr">
+&lt;<a href=3D"mailto:PaustenbachM@dnc.org" target=3D"_blank">PaustenbachM@=
+dnc.org</a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+<div lang=3D"EN-US">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;">Hey Lisa, sorry for the delay. Wil=
+l give you a ring here shortly. Best, Mark<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;">Mark Paustenbach<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;">National Press Secretary &amp;
+<br>
+Deputy Communications Director<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;">Democratic National Committee<u></=
+u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;">W:
+<a href=3D"tel:202.863.8148" value=3D"&#43;12028638148" target=3D"_blank">2=
+02.863.8148</a><br>
+<a href=3D"mailto:paustenbachm@dnc.org" target=3D"_blank"><span style=3D"co=
+lor:blue">paustenbachm@dnc.org</span></a>&nbsp;
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Pa=
+latino Linotype&quot;,&quot;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Lisa Hag=
+en [mailto:<a href=3D"mailto:lhagen@thehill.com" target=3D"_blank">lhagen@t=
+hehill.com</a>]
+<br>
+<b>Sent:</b> Friday, May 20, 2016 2:03 PM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Cc:</b> Paustenbach, Mark</span></p>
+<div>
+<div><br>
+<b>Subject:</b> Re: The Hill inquiry follow-up<u></u><u></u></div>
+</div>
+<p></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">That's no problem, Luis. And Mark, what time do you =
+think you'll give me a call? I'm on a tight deadline, so the earlier, the b=
+etter would be greatly appreciated. It shouldn't take long at all. Best num=
+ber to reach me is
+<a href=3D"tel:202-628-8535" value=3D"&#43;12026288535" target=3D"_blank">2=
+02-628-8535</a> (cell is
+<a href=3D"tel:732-512-7845" value=3D"&#43;17325127845" target=3D"_blank">7=
+32-512-7845</a> just in case) Thanks!<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Lisa Hagen<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 1:56 PM, Miranda, Luis &lt;<=
+a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a>&g=
+t; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">I'm travelling in Philly today, Mark will give you a=
+ call.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;color:#575757">Sent =
+via the Samsung GALAXY S=C2=AE4, an AT&amp;T 4G LTE smartphone<u></u><u></u=
+></span></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+<br>
+-------- Original message --------<br>
+From: Lisa Hagen &lt;<a href=3D"mailto:lhagen@thehill.com" target=3D"_blank=
+">lhagen@thehill.com</a>&gt;
+<br>
+Date: 05/20/2016 13:55 (GMT-05:00) <br>
+To: &quot;Miranda, Luis&quot; &lt;<a href=3D"mailto:MirandaL@dnc.org" targe=
+t=3D"_blank">MirandaL@dnc.org</a>&gt;
+<br>
+Cc: &quot;Paustenbach, Mark&quot; &lt;<a href=3D"mailto:PaustenbachM@dnc.or=
+g" target=3D"_blank">PaustenbachM@dnc.org</a>&gt;
+<br>
+Subject: Re: The Hill inquiry follow-up <u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Hi Luis, <u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I appreciate you responding back and sending over so=
+me links. Have a good day, and weekend.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Lisa<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 12:03 PM, Miranda, Luis &lt;=
+<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a>&=
+gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black">Hi Lisa, we've said all we n=
+eed to say on it. We put out a statement earlier this week:&nbsp;<a href=3D=
+"http://www.democrats.org/Post/dnc-statement-on-nevada-democratic-party-let=
+ter" target=3D"_blank">http://www.democrats.org/Post/dnc-statement-on-nevad=
+a-democratic-party-letter</a>
+<u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span><=
+/p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black">And both the Chair and I hav=
+e been on the air making it clear we need to focus on being united and winn=
+ing in the general election:<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"http://thehill.co=
+m/blogs/ballot-box/presidential-races/280370-dnc-chair-responds-to-jeff-wea=
+vers-throwing-shade-remark" target=3D"_blank">http://thehill.com/blogs/ball=
+ot-box/presidential-races/280370-dnc-chair-responds-to-jeff-weavers-throwin=
+g-shade-remark</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span><=
+/p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"https://twitter.c=
+om/dncpress/status/733086721575915520" target=3D"_blank">https://twitter.co=
+m/dncpress/status/733086721575915520</a>&nbsp;<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span><=
+/p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ta=
+homa&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span><=
+/p>
+<div>
+<div class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span=
+ style=3D"color:black">
+<hr size=3D"2" width=3D"100%" align=3D"center">
+</span></div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b><span style=3D"fon=
+t-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:b=
+lack">From:</span></b><span style=3D"font-size:10.0pt;font-family:&quot;Tah=
+oma&quot;,&quot;sans-serif&quot;;color:black"> Lisa Hagen [<a href=3D"mailt=
+o:lhagen@thehill.com" target=3D"_blank">lhagen@thehill.com</a>]<br>
+<b>Sent:</b> Friday, May 20, 2016 11:31 AM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> The Hill inquiry follow-up</span><span style=3D"color:black=
+"><u></u><u></u></span></p>
+</div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">Hi Luis, <u></u><u></u><=
+/span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><u></u>&nbsp;<u></u></sp=
+an></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">My name is Lisa Hagen, a=
+nd I'm a campaign reporter with The Hill newspaper in Washington. I reached=
+ out to both you and Mark yesterday and was hoping I could talk to one of y=
+ou about the fallout from the Nevada
+ convention and the back-and-forth between Chairwoman Wasserman Schultz and=
+ the Sanders campaign. I wanted to give you guys a chance to respond and be=
+ included in the story. If you can email or call me back as soon as possibl=
+e, that'd be greatly appreciated.
+ My contact info is below in my signature. Thanks in advance!<br clear=3D"a=
+ll">
+<u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><u></u>&nbsp;<u></u></sp=
+an></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"color:black">-- <u></u><u></u></span>=
+</p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt;color:black">Lisa Hag=
+en</span><span style=3D"color:black"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">Campaign Reporter | The =
+Hill<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">O: <a href=3D"tel:202-62=
+8-8535" target=3D"_blank">
+202-628-8535</a> | C: <a href=3D"tel:732-512-7845" target=3D"_blank">732-51=
+2-7845</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><a href=3D"mailto:lhagen=
+@thehill.com" target=3D"_blank">lhagen@thehill.com</a>&nbsp;| @LA_Hagen<u><=
+/u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Lisa Hagen</span><u>=
+</u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Campaign Reporter | The Hill<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">O: <a href=3D"tel:202-628-8535" target=3D"_blank">20=
+2-628-8535</a> | C:
+<a href=3D"tel:732-512-7845" target=3D"_blank">732-512-7845</a><u></u><u></=
+u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"mailto:lhagen@thehill.com" target=3D"_bla=
+nk">lhagen@thehill.com</a>&nbsp;| @LA_Hagen<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt">Lisa Hagen</span><u>=
+</u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Campaign Reporter | The Hill<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">O: <a href=3D"tel:202-628-8535" value=3D"&#43;120262=
+88535" target=3D"_blank">
+202-628-8535</a> | C: <a href=3D"tel:732-512-7845" value=3D"&#43;1732512784=
+5" target=3D"_blank">
+732-512-7845</a><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"mailto:lhagen@thehill.com" target=3D"_bla=
+nk">lhagen@thehill.com</a>&nbsp;| @LA_Hagen<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<br>
+<br clear=3D"all">
+<div><br>
+</div>
+-- <br>
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div><span style=3D"font-size:12.8px">Lisa Hagen</span><br>
+</div>
+<div>Campaign Reporter | The Hill</div>
+<div>O: <a href=3D"tel:202-628-8535" value=3D"&#43;12026288535" target=3D"_=
+blank">202-628-8535</a> | C: <a href=3D"tel:732-512-7845" value=3D"&#43;173=
+25127845" target=3D"_blank">732-512-7845</a></div>
+<div><a href=3D"mailto:lhagen@thehill.com" target=3D"_blank">lhagen@thehill=
+.com</a>&nbsp;| @LA_Hagen</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
+</div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr=
+"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div><span style=3D"fo=
+nt-size:12.8px">Lisa Hagen</span><br></div><div>Campaign Reporter | The Hil=
+l</div><div>O: 202-628-8535 | C: 732-512-7845</div><div><a href=3D"mailto:l=
+hagen@thehill.com" target=3D"_blank">lhagen@thehill.com</a>&nbsp;| @LA_Hage=
+n</div></div></div></div></div></div></div></div></div>
+</div>
+
+--94eb2c03c8502934e005334d537d--

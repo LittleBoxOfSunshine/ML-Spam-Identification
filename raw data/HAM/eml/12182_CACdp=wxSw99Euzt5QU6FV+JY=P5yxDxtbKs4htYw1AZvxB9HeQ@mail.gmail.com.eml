@@ -1,0 +1,1863 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 16 May
+ 2016 12:12:54 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 16 May 2016
+ 12:12:52 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 917288568
+ for MirandaL@dnc.org; Mon, 16 May 2016 11:13:01 -0500
+X-Note-AR-ScanTimeLocal: 5/16/2016 11:12:51 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.49 DOM:hattaway.com ADDR:igriacova@hattaway.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-190/SG:5 5/16/2016 11:12:52 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6294 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/16/2016 11:12:52 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.49
+X-Note-Reverse-DNS: mail-wm0-f49.google.com
+X-Note-Return-Path: igriacova@hattaway.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G443 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f49.google.com ([74.125.82.49] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138796483
+ for MirandaL@dnc.org; Mon, 16 May 2016 10:57:36 -0500
+Received: by mail-wm0-f49.google.com with SMTP id a17so143441712wme.0
+        for <MirandaL@dnc.org>; Mon, 16 May 2016 08:57:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hattaway-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=X+P5gI8HueIt/40SCeKRcMYzIC1qx2SHThtnFNkmTno=;
+        b=sOG1+rjVqC2ZG3RCUOUBP8hLsnclCDPau/lXw3AzDF0klz7NTyWzBPIcqpTmNaQXga
+         Ek1HN8JLdQ3UDlTNSWj0xm9MZX2ULPloHlhoO8cQCkQ0+d78+nMk9DfrZsefgjLoU4jp
+         +3+Sr0QD/NLApN8wMELZl797QQZO9vPqcbm0NEFKIvQieogtOoBnhsGpqNYVbJtezt3F
+         60QvjAZMN3hQzOTbFXg2fgOZnlfXlqAC0jzNRfl4dTZRVmfaW56j2yp8d97N2kPbgQYW
+         tgKyK1Y8xAFIGkH8bpWkGw1RUZCq9X4Hl2108A1SQY0jKDrP3GT+7RdPkjf/+QB1bNR5
+         v3Qw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=X+P5gI8HueIt/40SCeKRcMYzIC1qx2SHThtnFNkmTno=;
+        b=SOIjK6/KXLDic1NThXmAvJQNUsWhrFogsEjJzzlS0+AVkNrXblJkzd99zAdxMYnOSF
+         t71Rc5gmgC05nYy9tyZg7tLkcn36Mc5GY9OIOLZZZtUKEeSPqzvVDCzIZ7ZX9THtWbi3
+         gwWF6M+NsWZNvJppHh9yvhlMjl1YkaDrU+Wl4O3E0rGmtrh9zA6cQ/hxFF6ELZPL/zKy
+         A63VjtfOob/uButVTDFSjPhCMeTUR/cE6tDrPZyHtQzWtVikfxkDIbMWi8G8JGD3OFHT
+         hK5yZYV2vwdvaQ+0XdqnAZqB5gLY+QeUyrNpJMzwcpORoD0Uo+uERHEMMp0qQIhrcEJ7
+         +ufg==
+X-Gm-Message-State: AOPr4FVl4fw0i0joZi2dhvRhaGGqoifMRq+dmfXT7BDuSfyeyWEBhQbZV22ehqdFk4F5mGqMGfvlPW+YHlX3C0hN
+X-Received: by 10.28.150.211 with SMTP id y202mr18959321wmd.41.1463414255420;
+ Mon, 16 May 2016 08:57:35 -0700 (PDT)
+Received: by 10.28.158.207 with HTTP; Mon, 16 May 2016 08:57:35 -0700 (PDT)
+In-Reply-To: <2EF1CAC3C7B5554CB6B5E13F3F018955FE546D15@dncdag1.dnc.org>
+References: <2EF1CAC3C7B5554CB6B5E13F3F018955FE4BADB4@dncdag1.dnc.org>
+	<CAFexGLrUBz16fEiUb+FCEyh86Qa6fcN3LNYqCQfYKx+upN-Aog@mail.gmail.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE4BEB7D@dncdag1.dnc.org>
+	<3487AC802B53BB4E9094AEEE8F8B93C46E84023B@dncdag1.dnc.org>
+	<CY1PR13MB0110B169D941975B2A5C8420C26C0@CY1PR13MB0110.namprd13.prod.outlook.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE4BFADB@dncdag1.dnc.org>
+	<CAB_YztVnwLQVP=hJ1_=mCTAUdDFMOV5CNE5c03TCYLdKVNNa8w@mail.gmail.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE4CE6B7@dncdag1.dnc.org>
+	<CAB_YztUBapUUayCtY=vKUs=RjpOYkw-sXQinAyfDFr=93H+BjA@mail.gmail.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE4D4287@dncdag1.dnc.org>
+	<9639F04E-47B3-46C8-9FB7-3FA1CCE7C477@dnc.org>
+	<CAB_YztVLtpoaxHVX=pyc9+EKFPvyTWOpjOQHScCk0_p-yVqQtQ@mail.gmail.com>
+	<B26720D5-600F-4DCE-9E70-6EC5FD5D1F24@dnc.org>
+	<3487AC802B53BB4E9094AEEE8F8B93C46E854436@dncdag1.dnc.org>
+	<CACdp=wzB2=qXaDH-P5ykNAE4Zx0PsmFe6Ldrats7S7P7sMcnCw@mail.gmail.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE4DC85B@dncdag1.dnc.org>
+	<CACdp=wxB6px-5kD7hi9NTzxTXevaM1ibZeemx5zCLyhc+154DQ@mail.gmail.com>
+	<2EF1CAC3C7B5554CB6B5E13F3F018955FE546D15@dncdag1.dnc.org>
+Date: Mon, 16 May 2016 11:57:35 -0400
+Message-ID: <CACdp=wxSw99Euzt5QU6FV+JY=P5yxDxtbKs4htYw1AZvxB9HeQ@mail.gmail.com>
+Subject: Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @ 7:30pm EST
+From: Ivana Griacova <igriacova@hattaway.com>
+To: "Bonosky, Garret" <BonoskyG@dnc.org>
+CC: "Guerra, Liana" <GuerraL@dnc.org>, Abigail Omojola
+	<aomojola@rabengroup.com>, Sarah Guy <sguy@demconvention.com>, Steve Pierce
+	<spierce@hattaway.com>, Cynthia Jasso-Rotunno <cjrotunno@demconvention.com>,
+	Davey McKissick <dmckissick@demconvention.com>, Sonia Ahmed
+	<sahmed@hattaway.com>, Kate Houghton <HoughtonK@dnc.org>, "Kroll, Amy"
+	<KrollA@dnc.org>, "Miranda, Luis" <MirandaL@dnc.org>, "Banfill, Ryan"
+	<BanfillR@dnc.org>, "Palermo, Rachel" <PalermoR@dnc.org>
+Content-Type: multipart/alternative; boundary="001a114b2d18db18c10532f7ae2a"
+X-Note-AR-ScanTimeLocal: 5/16/2016 10:57:37 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.49 DOM:hattaway.com ADDR:igriacova@hattaway.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-310/SG:5 5/16/2016 10:56:51 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8793 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/16/2016 10:57:32 AM
+X-Delay: Delay processing for sidekickopen04.com 3:57 PM GMT
+Return-Path: igriacova@hattaway.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a114b2d18db18c10532f7ae2a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+That works for Hattaway. Thank you.
+
+
+--
+
+Ivana Griacova
+Senior Operations Associate
+Hattaway Communications, Inc.
+202.266.3329
+www.hattaway.com <http://hattaway.com/>
+
+Helping visionary leaders & organizations achieve great things.
+
+On Mon, May 16, 2016 at 11:44 AM, Bonosky, Garret <BonoskyG@dnc.org> wrote:
+
+> Hi everyone =E2=80=93 circling back as there is now a DCCC conflict on th=
+e same
+> night and time of the narrative working dinner; does 5/25 at 6:15pm EST
+> work for everyone in DC?
+>
+>
+>
+> I am adding Luis Miranda (DNC National Communications Director) and Ryan
+> Banfill, the Chairwoman=E2=80=99s Senior Communications Advisor. Luis / R=
+yan =C3=A0
+> let me know if this date works for you as well since you should both atte=
+nd
+> as well.
+>
+>
+>
+> *From:* Bonosky, Garret
+> *Sent:* Monday, April 25, 2016 1:58 PM
+> *To:* 'Ivana Griacova'
+> *Cc:* Guerra, Liana; Abigail Omojola; Sarah Guy; Steve Pierce; Cynthia
+> Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy
+> *Subject:* RE: DATES/TIMES: Narrative Project Working Dinner - 5/23 @
+> 7:30pm EST
+>
+>
+>
+> Great thank you
+>
+>
+>
+> *From:* Ivana Griacova [mailto:igriacova@hattaway.com
+> <igriacova@hattaway.com>]
+> *Sent:* Monday, April 25, 2016 1:30 PM
+> *To:* Bonosky, Garret
+> *Cc:* Guerra, Liana; Abigail Omojola; Sarah Guy; Steve Pierce; Cynthia
+> Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy
+>
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @
+> 7:30pm EST
+>
+>
+>
+> Thanks Garret!
+>
+>
+>
+> Let's have Doug Hattaway and Steve Pierce from our end.
+>
+>
+>
+> Best,
+>
+>
+>
+> Ivana
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Mon, Apr 25, 2016 at 12:38 PM, Bonosky, Garret <BonoskyG@dnc.org>
+> wrote:
+>
+> Thanks everyone. We are *confirmed for 5/23 at 7:30pm EST*. will circle
+> back with location later.
+>
+>
+>
+> *Hattaway* =C3=A0 *Confirmed*. Let us know who all will be joining
+>
+>
+>
+> *Raben* *Group* =C3=A0 *Confirmed*. Let us know who all will be joining
+>
+>
+>
+> *Liana* =C3=A0 Kate is *confirmed*. Tracie is not required to attend and =
+will
+> not be at the meeting.
+>
+>
+>
+> *Sarah* =C3=A0 Since it is just the narrative project working dinner Leah=
+ is
+> not required to be in attendance.
+>
+>
+>
+> *From:* Ivana Griacova [mailto:igriacova@hattaway.com]
+> *Sent:* Monday, April 25, 2016 9:42 AM
+> *To:* Guerra, Liana
+> *Cc:* Bonosky, Garret; Abigail Omojola; Sarah Guy; Steve Pierce; Cynthia
+> Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy
+>
+>
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @
+> 7:30pm EST
+>
+>
+>
+> Good morning all:
+>
+>
+>
+> This will work for the Hattaway team.
+>
+>
+>
+> Best,
+>
+>
+>
+> Ivana
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Mon, Apr 25, 2016 at 8:41 AM, Guerra, Liana <GuerraL@dnc.org> wrote:
+>
+> Good morning =E2=80=93
+>
+>
+>
+> Yes, this works for Kate. Tracie will not be in this meeting.
+>
+>
+>
+> Best,
+>
+> Liana
+>
+>
+>
+> *From:* Bonosky, Garret
+> *Sent:* Monday, April 25, 2016 6:40 AM
+> *To:* Abigail Omojola
+> *Cc:* Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno;
+> Davey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @
+> 7:30pm EST
+>
+>
+>
+> Thanks Abby
+>
+>
+>
+> *Liana* - does this work for Tracie/Kate?
+>
+>
+>
+> *Sarah* - does this work for Leah?
+>
+>
+>
+> *Hattaway* - does this work on your end?
+>
+> *Garret Bonosky*
+>
+> Deputy Director
+>
+> Office of the Chair
+>
+> Democratic National Committee
+>
+>
+>
+>
+> On Apr 24, 2016, at 5:34 PM, Abigail Omojola <aomojola@rabengroup.com>
+> wrote:
+>
+> Garret,
+>
+>
+>
+> That will work for The Raben Group.
+>
+>
+>
+> Thanks,
+>
+> Abby
+>
+>
+> ___________________
+>
+> ABIGAIL OMOJOLA |  SENIOR ASSOCIATE  |  THE RABEN GROUP
+>
+> 1341 G ST NW, 5TH FLOOR  |  WASHINGTON DC 20005
+> 202 930 6810 DIRECT  |  202 466 8585 MAIN  |  504 610 2043
+> <504%20610%202043> CELL
+>
+> AOMOJOLA@RABENGROUP.COM  |  WWW.RABENGROUP.COM
+> <http://www.rabengroup.com/>
+>
+>
+>
+> On Sun, Apr 24, 2016 at 10:07 AM, Bonosky, Garret <BonoskyG@dnc.org>
+> wrote:
+>
+> Does 5/23 at 7:30pm EST work?
+>
+> *Garret Bonosky*
+>
+> Deputy Director
+>
+> Office of the Chair
+>
+> Democratic National Committee
+>
+>
+>
+>
+> On Apr 22, 2016, at 12:16 PM, Bonosky, Garret <BonoskyG@dnc.org> wrote:
+>
+> We will check for another date/time and circle back. thanks.
+>
+>
+>
+> *From:* Abigail Omojola [mailto:aomojola@rabengroup.com
+> <aomojola@rabengroup.com>]
+> *Sent:* Thursday, April 21, 2016 11:29 AM
+> *To:* Bonosky, Garret
+> *Cc:* Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno;
+> Davey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hi Garret,
+>
+>
+>
+> Jamal will be out on his honeymoon between the 14th and 20th, so
+> unfortunately the 18th won't work. If there is no way to do the May 10, l=
+et
+> me know.
+>
+>
+>
+> Abby
+>
+>
+>
+>
+>
+>
+> ___________________
+>
+> ABIGAIL OMOJOLA |  SENIOR ASSOCIATE  |  THE RABEN GROUP
+>
+> 1341 G ST NW, 5TH FLOOR  |  WASHINGTON DC 20005
+> 202 930 6810 DIRECT  |  202 466 8585 MAIN  |  504 610 2043
+> <504%20610%202043> CELL
+>
+> AOMOJOLA@RABENGROUP.COM  |  WWW.RABENGROUP.COM
+> <http://www.rabengroup.com/>
+>
+>
+>
+> On Thu, Apr 21, 2016 at 11:11 AM, Bonosky, Garret <BonoskyG@dnc.org>
+> wrote:
+>
+> Following up on this to see if we can lock in 5/18 and start reaching out
+> to members.
+>
+>
+>
+> *From:* Bonosky, Garret
+> *Sent:* Tuesday, April 19, 2016 3:58 PM
+> *To:* 'Abigail Omojola'
+> *Cc:* Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno;
+> Davey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy
+> *Subject:* RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hi Abigail =E2=80=93 is there any way you can make the 18th work on your =
+end? It
+> works for everyone else and it would also make sense to do this working
+> dinner after the CHC meeting is completed and the proposed date for that =
+is
+> 5/11.
+>
+>
+>
+> *From:* Abigail Omojola [mailto:aomojola@rabengroup.com
+> <aomojola@rabengroup.com>]
+> *Sent:* Tuesday, April 19, 2016 2:33 PM
+> *To:* Bonosky, Garret
+> *Cc:* Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno;
+> Davey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy
+>
+>
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hi Garret,
+>
+>
+>
+> Unfortunately, May 18th won't work on The Raben Group's end. The 10th doe=
+s
+> work for us though.
+>
+>
+>
+>
+>
+> Best,
+>
+> Abby
+>
+>
+> ___________________
+>
+> ABIGAIL OMOJOLA |  SENIOR ASSOCIATE  |  THE RABEN GROUP
+>
+> 1341 G ST NW, 5TH FLOOR  |  WASHINGTON DC 20005
+> 202 930 6810 DIRECT  |  202 466 8585 MAIN  |  504 610 2043
+> <504%20610%202043> CELL
+>
+> AOMOJOLA@RABENGROUP.COM  |  WWW.RABENGROUP.COM
+> <http://www.rabengroup.com/>
+>
+>
+>
+> On Tue, Apr 19, 2016 at 2:09 PM, Bonosky, Garret <BonoskyG@dnc.org> wrote=
+:
+>
+> Great; thanks Sarah and Liana
+>
+>
+>
+> *Abigail* =C3=A0 let me know if this works for Raben group and then we ca=
+n
+> move forward and get this out to members
+>
+>
+>
+> *From:* Sarah Guy [mailto:sguy@demconvention.com]
+> *Sent:* Tuesday, April 19, 2016 2:01 PM
+> *To:* Guerra, Liana; Bonosky, Garret; Steve Pierce
+> *Cc:* Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacova; Sonia
+> Ahmed; Abigail Omojola; Kate Houghton; Kroll, Amy
+>
+>
+> *Subject:* RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hey Garret,
+>
+> 5/18 works for LDD.
+>
+>
+>
+> Best,
+>
+> Sarah
+>
+>
+>
+> *From:* Guerra, Liana [mailto:GuerraL@dnc.org <GuerraL@dnc.org>]
+> *Sent:* Tuesday, April 19, 2016 1:59 PM
+> *To:* Bonosky, Garret <BonoskyG@dnc.org>; Steve Pierce <
+> spierce@hattaway.com>
+> *Cc:* Sarah Guy <sguy@demconvention.com>; Cynthia Jasso-Rotunno <
+> cjrotunno@demconvention.com>; Davey McKissick <
+> dmckissick@demconvention.com>; Ivana Griacova <igriacova@hattaway.com>;
+> Sonia Ahmed <sahmed@hattaway.com>; Abigail Omojola <
+> aomojola@rabengroup.com>; Kate Houghton <HoughtonK@dnc.org>; Kroll, Amy <
+> KrollA@dnc.org>
+> *Subject:* RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hi Garret =E2=80=93
+>
+>
+>
+> Kate is available for this working dinner. Tracie will not be joining.
+> Thank you!
+>
+>
+>
+> Best,
+>
+> Liana
+>
+>
+>
+> *From:* Bonosky, Garret
+> *Sent:* Tuesday, April 19, 2016 12:43 PM
+> *To:* Steve Pierce
+> *Cc:* Sarah Guy; Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacova;
+> Sonia Ahmed; Abigail Omojola; Kate Houghton; Guerra, Liana; Kroll, Amy
+> *Subject:* RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Thanks Steve
+>
+>
+>
+> *Abigail* =C3=A0 would 5/18 at 7:30pm EST work for Raben?
+>
+>
+>
+> *Sarah Guy* =C3=A0 would 5/18 at 7:30pm EST work for Leah?
+>
+>
+>
+> *Liana* =C3=A0 Does 5/18 at 7:30pm EST work for Kate and Tracie?
+>
+>
+>
+> *From:* Steve Pierce [mailto:spierce@hattaway.com <spierce@hattaway.com>]
+> *Sent:* Tuesday, April 19, 2016 12:36 PM
+> *To:* Bonosky, Garret
+> *Cc:* Sarah Guy; Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacova;
+> Sonia Ahmed; Abigail Omojola; Kate Houghton; Guerra, Liana; Kroll, Amy
+> *Subject:* Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or
+> 5/18
+>
+>
+>
+> Hi Garrett,
+>
+>
+>
+> It looks like either date could potentially work for the Hattaway team,
+> although 5/18 would be the more preferable of the two.
+>
+>
+>
+>  Thanks!
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Tue, Apr 19, 2016 at 8:41 AM, Bonosky, Garret <BonoskyG@dnc.org> wrote=
+:
+>
+> Hi Everyone =E2=80=93 do either of the dates/times below work for a narra=
+tive
+> project working dinner in Washington, DC with a small group of members fo=
+r
+> you?
+>
+>
+>
+> *5/10* =C3=A0 7:30pm EST
+>
+>
+>
+> *5/18* =C3=A0 7:30pm EST
+>
+>
+>
+>
+>
+> Garret Bonosky
+>
+> Deputy Director, Office of the Chair
+>
+> Democratic National Committee
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+
+--001a114b2d18db18c10532f7ae2a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">That works for Hattaway. Thank you.&nbsp;<img src=3D"http://=
+t.sidekickopen52.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8gbVdV=
+5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3Ddc2aa78=
+b-56fe-4ef8-a238-54df6ea4d574" style=3D"display:none!important" height=3D"1=
+" width=3D"1"></div><div class=3D"gmail_extra"><br clear=3D"all"><div><div =
+class=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=
+=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:rgb(255,=
+255,255);word-wrap:break-word"><font color=3D"#000000"><br></font></div><di=
+v style=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:r=
+gb(255,255,255);word-wrap:break-word"><font color=3D"#000000">--</font></di=
+v><div style=3D"font-family:Helvetica;text-align:-webkit-auto;background-co=
+lor:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000"><br></fo=
+nt></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;backgr=
+ound-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">I=
+vana Griacova<br></font></div><div style=3D"font-family:Helvetica;backgroun=
+d-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">Seni=
+or Operations Associate<br></font></div><div style=3D"font-family:Helvetica=
+;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-=
+word"><font color=3D"#000000">Hattaway Communications, Inc.</font></div><di=
+v style=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:r=
+gb(255,255,255);word-wrap:break-word"><font color=3D"#000000">202.266.3329<=
+/font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;bac=
+kground-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000=
+"><a href=3D"http://hattaway.com/" target=3D"_blank">www.hattaway.com</a><b=
+r></font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;=
+background-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000=
+000"><br></font></div><div style=3D"font-family:Helvetica;background-color:=
+rgb(255,255,255)"><div style=3D"text-align:-webkit-auto;word-wrap:break-wor=
+d"><font color=3D"#000000">Helping visionary leaders &amp; organizations ac=
+hieve great things.&nbsp;</font></div></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Mon, May 16, 2016 at 11:44 AM, Bonosky, G=
+arret <span dir=3D"ltr">&lt;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_=
+blank">BonoskyG@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail=
+_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:=
+1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi everyone =E2=80=93 cir=
+cling back as there is now a DCCC conflict on the same night and time of th=
+e narrative working dinner; does 5/25 at 6:15pm EST work for everyone
+ in DC?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">I am adding Luis Miranda =
+(DNC National Communications Director) and Ryan Banfill, the Chairwoman=E2=
+=80=99s Senior Communications Advisor. Luis / Ryan
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings;color:#1f497d"=
+>=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,&quot;sans-serif&quot;;color:#1f497d"> let me know if this date works fo=
+r you as well since you should both attend as well.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Bonosky,=
+ Garret
+<br>
+<b>Sent:</b> Monday, April 25, 2016 1:58 PM<br>
+<b>To:</b> 'Ivana Griacova'<br>
+<b>Cc:</b> Guerra, Liana; Abigail Omojola; Sarah Guy; Steve Pierce; Cynthia=
+ Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy<br>
+<b>Subject:</b> RE: DATES/TIMES: Narrative Project Working Dinner - 5/23 @ =
+7:30pm EST<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Great thank you
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Ivana Gr=
+iacova [<a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">mailto:=
+igriacova@hattaway.com</a>]
+<br>
+<b>Sent:</b> Monday, April 25, 2016 1:30 PM<br>
+<b>To:</b> Bonosky, Garret<br>
+<b>Cc:</b> Guerra, Liana; Abigail Omojola; Sarah Guy; Steve Pierce; Cynthia=
+ Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy</sp=
+an></p><div><div class=3D"h5"><br>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @ =
+7:30pm EST<u></u><u></u></div></div><p></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks Garret!&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Let's have Doug Hattaway and Steve Pierce from our e=
+nd.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Ivana<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D16=
+1b04cd-a094-4a14-82ef-aa775de75965"><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">--</span><span =
+style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><=
+u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Ivana Griacova<=
+/span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Senior Operatio=
+ns Associate</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;s=
+ans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Hattaway Commun=
+ications, Inc.</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot=
+;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"tel:=
+202.266.3329" value=3D"&#43;12022663329" target=3D"_blank">202.266.3329</a>=
+</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&qu=
+ot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"http=
+://hattaway.com/" target=3D"_blank">www.hattaway.com</a></span><span style=
+=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Helping visiona=
+ry leaders &amp; organizations achieve great things.&nbsp;</span><span styl=
+e=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></=
+u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 25, 2016 at 12:38 PM, Bonosky, Garret &l=
+t;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Thanks everyone. We are
+<b><u>confirmed for 5/23 at 7:30pm EST</u></b>. will circle back with locat=
+ion later.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">Hattaway</span></b><span style=3D"fo=
+nt-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings">=C3=A0</span>=
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-=
+serif&quot;">
+<i>Confirmed</i>. Let us know who all will be joining</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">Raben</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+<b>Group</b> </span><span style=3D"font-size:11.0pt;font-family:Wingdings">=
+=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot=
+;,&quot;sans-serif&quot;">
+<i>Confirmed</i>. Let us know who all will be joining</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">Liana</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings">=C3=A0</span>=
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-=
+serif&quot;"> Kate is
+<i>confirmed</i>. Tracie is not required to attend and will not be at the m=
+eeting.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">Sarah</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings">=C3=A0</span>=
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-=
+serif&quot;"> Since it is just the narrative project working dinner Leah is=
+ not required to be in attendance.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Ivana Gr=
+iacova [mailto:<a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">=
+igriacova@hattaway.com</a>]
+<br>
+<b>Sent:</b> Monday, April 25, 2016 9:42 AM<br>
+<b>To:</b> Guerra, Liana<br>
+<b>Cc:</b> Bonosky, Garret; Abigail Omojola; Sarah Guy; Steve Pierce; Cynth=
+ia Jasso-Rotunno; Davey McKissick; Sonia Ahmed; Kate Houghton; Kroll, Amy</=
+span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @ =
+7:30pm EST<u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Good morning all:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">This will work for the Hattaway team.&nbsp;<u></u><u=
+></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Ivana<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3Dce=
+d8a1a9-03cd-4b6d-c28e-27a547d1e94d"><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&n=
+bsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black">--</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&n=
+bsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black">Ivana Griacova</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black">Senior Operations Associate</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black">Hattaway Communications, Inc.</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black"><a href=3D"tel:202.266.3329" target=3D"_blank">202.266.3329</a></=
+span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black"><a href=3D"http://hattaway.com/" target=3D"_blank">www.hattaway.c=
+om</a></span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;">&n=
+bsp;</span><u></u><u></u></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black">Helping visionary leaders &amp; organizations achieve great thing=
+s.&nbsp;</span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 25, 2016 at 8:41 AM, Guerra, Liana &lt;<=
+a href=3D"mailto:GuerraL@dnc.org" target=3D"_blank">GuerraL@dnc.org</a>&gt;=
+ wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Good morning =E2=80=93</s=
+pan><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Yes, this works for Kate.=
+ Tracie will not be in this meeting.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Liana
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Bonosky,=
+ Garret
+<br>
+<b>Sent:</b> Monday, April 25, 2016 6:40 AM<br>
+<b>To:</b> Abigail Omojola<br>
+<b>Cc:</b> Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno; D=
+avey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy<br>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/23 @ =
+7:30pm EST
+</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks Abby<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b>Liana</b> - does this work for Tracie/Kate?&nbsp;=
+<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b>Sarah</b> - does this work for Leah?&nbsp;<u></u>=
+<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b>Hattaway</b> - does this work on your end?&nbsp;<=
+br>
+<br>
+<b>Garret Bonosky</b><u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Deputy Director&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Office of the Chair<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Democratic National Committee&nbsp;<u></u><u></u></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 24, 2016, at 5:34 PM, Abigail Omojola &lt;<a href=3D"mailto:aomojola=
+@rabengroup.com" target=3D"_blank">aomojola@rabengroup.com</a>&gt; wrote:<u=
+></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Garret,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">That will work for The Raben Group.</span><=
+u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Thanks,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Abby</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">___________________</span><u>=
+</u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">ABIGAIL OMOJOLA</span><span s=
+tyle=3D"font-size:7.5pt;color:navy">&nbsp;</span><span style=3D"font-size:7=
+.5pt;color:gray">| &nbsp;SENIOR ASSOCIATE &nbsp;|&nbsp; THE RABEN GROUP</sp=
+an><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:gray">1341 G ST NW, 5TH FLOOR &nbsp;|&=
+nbsp; WASHINGTON DC 20005</span><span style=3D"font-size:10.0pt;color:gray"=
+><br>
+</span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:202%20930%=
+206810" target=3D"_blank">202 930 6810</a> DIRECT&nbsp; |&nbsp;&nbsp;<a hre=
+f=3D"tel:202%20466%208585" target=3D"_blank">202 466 8585</a>&nbsp;MAIN&nbs=
+p;&nbsp;|</span><span style=3D"font-size:9.5pt;color:#500050">&nbsp;&nbsp;<=
+/span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:504%20610%2=
+02043" target=3D"_blank">504
+ 610 2043</a>&nbsp;CELL</span><span style=3D"font-size:9.5pt;color:#500050"=
+>&nbsp;</span><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"color:#500050"><a href=3D"mailto:AOMOJOLA@RABENGROUP.COM" ta=
+rget=3D"_blank"><span style=3D"font-size:7.5pt">AOMOJOLA@RABENGROUP.COM</sp=
+an></a></span><span style=3D"font-size:7.5pt;color:gray">&nbsp; |&nbsp;&nbs=
+p;</span><span style=3D"color:#500050"><a href=3D"http://www.rabengroup.com=
+/" target=3D"_blank"><span style=3D"font-size:7.5pt">WWW.RABENGROUP.COM</sp=
+an></a></span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Sun, Apr 24, 2016 at 10:07 AM, Bonosky, Garret &l=
+t;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Does 5/23 at 7:30pm EST work?&nbsp;<span style=3D"co=
+lor:#888888"><br>
+<br>
+<b>Garret Bonosky</b> </span><u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#888888">Deputy Director&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Office of the Chair<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Democratic National Committee&nbsp;<u></u><u></u></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 22, 2016, at 12:16 PM, Bonosky, Garret &lt;<a href=3D"mailto:Bonosky=
+G@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a>&gt; wrote:<u></u><u></u><=
+/p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">We will check for another=
+ date/time and circle back. thanks.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Abigail =
+Omojola [<a href=3D"mailto:aomojola@rabengroup.com" target=3D"_blank">mailt=
+o:aomojola@rabengroup.com</a>]
+<br>
+<b>Sent:</b> Thursday, April 21, 2016 11:29 AM<br>
+<b>To:</b> Bonosky, Garret<br>
+<b>Cc:</b> Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno; D=
+avey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy<br>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Hi Garret,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Jamal will be out on his honeymoon between =
+the 14th and 20th, so unfortunately the 18th won't work. If there is no
+ way to do the May 10, let me know.</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Abby</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">___________________</span><u>=
+</u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">ABIGAIL OMOJOLA</span><span s=
+tyle=3D"font-size:7.5pt;color:navy">&nbsp;</span><span style=3D"font-size:7=
+.5pt;color:gray">| &nbsp;SENIOR ASSOCIATE &nbsp;|&nbsp; THE RABEN GROUP</sp=
+an><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:gray">1341 G ST NW, 5TH FLOOR &nbsp;|&=
+nbsp; WASHINGTON DC 20005</span><span style=3D"font-size:10.0pt;color:gray"=
+><br>
+</span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:202%20930%=
+206810" target=3D"_blank">202 930 6810</a> DIRECT&nbsp; |&nbsp;&nbsp;<a hre=
+f=3D"tel:202%20466%208585" target=3D"_blank">202 466 8585</a>&nbsp;MAIN&nbs=
+p;&nbsp;|</span><span style=3D"font-size:9.5pt;color:#500050">&nbsp;&nbsp;<=
+/span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:504%20610%2=
+02043" target=3D"_blank">504
+ 610 2043</a>&nbsp;CELL</span><span style=3D"font-size:9.5pt;color:#500050"=
+>&nbsp;</span><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"color:#500050"><a href=3D"mailto:AOMOJOLA@RABENGROUP.COM" ta=
+rget=3D"_blank"><span style=3D"font-size:7.5pt">AOMOJOLA@RABENGROUP.COM</sp=
+an></a></span><span style=3D"font-size:7.5pt;color:gray">&nbsp; |&nbsp;&nbs=
+p;</span><span style=3D"color:#500050"><a href=3D"http://www.rabengroup.com=
+/" target=3D"_blank"><span style=3D"font-size:7.5pt">WWW.RABENGROUP.COM</sp=
+an></a></span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Thu, Apr 21, 2016 at 11:11 AM, Bonosky, Garret &l=
+t;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Following up on this to s=
+ee if we can lock in 5/18 and start reaching out to members.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Bonosky,=
+ Garret
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 3:58 PM<br>
+<b>To:</b> 'Abigail Omojola'<br>
+<b>Cc:</b> Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno; D=
+avey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy<br>
+<b>Subject:</b> RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi Abigail =E2=80=93 is t=
+here any way you can make the 18<sup>th</sup> work on your end? It works fo=
+r everyone
+ else and it would also make sense to do this working dinner after the CHC =
+meeting is completed and the proposed date for that is 5/11.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Abigail =
+Omojola [<a href=3D"mailto:aomojola@rabengroup.com" target=3D"_blank">mailt=
+o:aomojola@rabengroup.com</a>]
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 2:33 PM<br>
+<b>To:</b> Bonosky, Garret<br>
+<b>Cc:</b> Sarah Guy; Guerra, Liana; Steve Pierce; Cynthia Jasso-Rotunno; D=
+avey McKissick; Ivana Griacova; Sonia Ahmed; Kate Houghton; Kroll, Amy</spa=
+n><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18<u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Hi Garret,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Unfortunately, May 18th won't work on The R=
+aben Group's end. The 10th does work for us though.&nbsp;</span><u></u><u><=
+/u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Best,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Tahoma&quot;,&quot;=
+sans-serif&quot;;color:#0b5394">Abby</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">___________________</span><u>=
+</u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:#cc5820">ABIGAIL OMOJOLA</span><span s=
+tyle=3D"font-size:7.5pt;color:navy">&nbsp;</span><span style=3D"font-size:7=
+.5pt;color:gray">| &nbsp;SENIOR ASSOCIATE &nbsp;|&nbsp; THE RABEN GROUP</sp=
+an><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"font-size:7.5pt;color:gray">1341 G ST NW, 5TH FLOOR &nbsp;|&=
+nbsp; WASHINGTON DC 20005</span><span style=3D"font-size:10.0pt;color:gray"=
+><br>
+</span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:202%20930%=
+206810" target=3D"_blank">202 930 6810</a> DIRECT&nbsp; |&nbsp;&nbsp;<a hre=
+f=3D"tel:202%20466%208585" target=3D"_blank">202 466 8585</a>&nbsp;MAIN&nbs=
+p;&nbsp;|</span><span style=3D"font-size:9.5pt;color:#500050">&nbsp;&nbsp;<=
+/span><span style=3D"font-size:7.5pt;color:gray"><a href=3D"tel:504%20610%2=
+02043" target=3D"_blank">504
+ 610 2043</a>&nbsp;CELL</span><span style=3D"font-size:9.5pt;color:#500050"=
+>&nbsp;</span><u></u><u></u></p>
+<p style=3D"margin:0in;margin-bottom:.0001pt;background-image:initial;backg=
+round-repeat:initial">
+<span style=3D"color:#500050"><a href=3D"mailto:AOMOJOLA@RABENGROUP.COM" ta=
+rget=3D"_blank"><span style=3D"font-size:7.5pt">AOMOJOLA@RABENGROUP.COM</sp=
+an></a></span><span style=3D"font-size:7.5pt;color:gray">&nbsp; |&nbsp;&nbs=
+p;</span><span style=3D"color:#500050"><a href=3D"http://www.rabengroup.com=
+/" target=3D"_blank"><span style=3D"font-size:7.5pt">WWW.RABENGROUP.COM</sp=
+an></a></span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Tue, Apr 19, 2016 at 2:09 PM, Bonosky, Garret &lt=
+;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a>=
+&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Great; thanks Sarah and L=
+iana
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Abigail</span></b><spa=
+n style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-seri=
+f&quot;;color:#1f497d">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings;color:#1f497d"=
+>=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,&quot;sans-serif&quot;;color:#1f497d"> let me know if this works for Rab=
+en group and then we can move forward and get this out to members</span><u>=
+</u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Sarah Gu=
+y [mailto:<a href=3D"mailto:sguy@demconvention.com" target=3D"_blank">sguy@=
+demconvention.com</a>]
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 2:01 PM<br>
+<b>To:</b> Guerra, Liana; Bonosky, Garret; Steve Pierce<br>
+<b>Cc:</b> Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacova; Sonia Ah=
+med; Abigail Omojola; Kate Houghton; Kroll, Amy</span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>Subject:</b> RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hey Garret,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">5/18 works for LDD.</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Sarah
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a name=3D"m_-748767085495305004_m_-7768820157928579=
+536_m_518961263257475"></a><span style=3D"font-size:11.0pt;font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><=
+u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Guerra=
+, Liana [<a href=3D"mailto:GuerraL@dnc.org" target=3D"_blank">mailto:Guerra=
+L@dnc.org</a>]
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 1:59 PM<br>
+<b>To:</b> Bonosky, Garret &lt;<a href=3D"mailto:BonoskyG@dnc.org" target=
+=3D"_blank">BonoskyG@dnc.org</a>&gt;; Steve Pierce &lt;<a href=3D"mailto:sp=
+ierce@hattaway.com" target=3D"_blank">spierce@hattaway.com</a>&gt;<br>
+<b>Cc:</b> Sarah Guy &lt;<a href=3D"mailto:sguy@demconvention.com" target=
+=3D"_blank">sguy@demconvention.com</a>&gt;; Cynthia Jasso-Rotunno &lt;<a hr=
+ef=3D"mailto:cjrotunno@demconvention.com" target=3D"_blank">cjrotunno@demco=
+nvention.com</a>&gt;; Davey McKissick &lt;<a href=3D"mailto:dmckissick@demc=
+onvention.com" target=3D"_blank">dmckissick@demconvention.com</a>&gt;;
+ Ivana Griacova &lt;<a href=3D"mailto:igriacova@hattaway.com" target=3D"_bl=
+ank">igriacova@hattaway.com</a>&gt;; Sonia Ahmed &lt;<a href=3D"mailto:sahm=
+ed@hattaway.com" target=3D"_blank">sahmed@hattaway.com</a>&gt;; Abigail Omo=
+jola &lt;<a href=3D"mailto:aomojola@rabengroup.com" target=3D"_blank">aomoj=
+ola@rabengroup.com</a>&gt;;
+ Kate Houghton &lt;<a href=3D"mailto:HoughtonK@dnc.org" target=3D"_blank">H=
+oughtonK@dnc.org</a>&gt;; Kroll, Amy &lt;<a href=3D"mailto:KrollA@dnc.org" =
+target=3D"_blank">KrollA@dnc.org</a>&gt;<br>
+<b>Subject:</b> RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi Garret =E2=80=93</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Kate is available for thi=
+s working dinner. Tracie will not be joining. Thank you!</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Liana
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Bonosky,=
+ Garret
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 12:43 PM<br>
+<b>To:</b> Steve Pierce<br>
+<b>Cc:</b> Sarah Guy; Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacov=
+a; Sonia Ahmed; Abigail Omojola; Kate Houghton; Guerra, Liana; Kroll, Amy<b=
+r>
+<b>Subject:</b> RE: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks Steve</span><u></u=
+><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Abigail</span></b><spa=
+n style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-seri=
+f&quot;;color:#1f497d">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings;color:#1f497d"=
+>=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,&quot;sans-serif&quot;;color:#1f497d"> would 5/18 at 7:30pm EST work for=
+ Raben?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Sarah Guy</span></b><s=
+pan style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-se=
+rif&quot;;color:#1f497d">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings;color:#1f497d"=
+>=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,&quot;sans-serif&quot;;color:#1f497d"> would 5/18 at 7:30pm EST work for=
+ Leah?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Liana</span></b><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&=
+quot;;color:#1f497d">
+</span><span style=3D"font-size:11.0pt;font-family:Wingdings;color:#1f497d"=
+>=C3=A0</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quo=
+t;,&quot;sans-serif&quot;;color:#1f497d"> Does 5/18 at 7:30pm EST work for =
+Kate and Tracie?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Steve Pi=
+erce [<a href=3D"mailto:spierce@hattaway.com" target=3D"_blank">mailto:spie=
+rce@hattaway.com</a>]
+<br>
+<b>Sent:</b> Tuesday, April 19, 2016 12:36 PM<br>
+<b>To:</b> Bonosky, Garret<br>
+<b>Cc:</b> Sarah Guy; Cynthia Jasso-Rotunno; Davey McKissick; Ivana Griacov=
+a; Sonia Ahmed; Abigail Omojola; Kate Houghton; Guerra, Liana; Kroll, Amy<b=
+r>
+<b>Subject:</b> Re: DATES/TIMES: Narrative Project Working Dinner - 5/10 or=
+ 5/18</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Garrett,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">It looks like either date could potentially work for=
+ the Hattaway team, although 5/18 would be the more preferable of the two.<=
+u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;Thanks!<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><u></=
+u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" target=3D"_b=
+lank">202.688.2468</a></span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a></sp=
+an><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Tue, Apr 19, 2016 at 8:41 AM, Bonosky, Garret &lt=
+;<a href=3D"mailto:BonoskyG@dnc.org" target=3D"_blank">BonoskyG@dnc.org</a>=
+&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Hi Everyone =E2=80=93 do either of the dates/times b=
+elow work for a narrative project working dinner in Washington, DC with a s=
+mall group of members for you?<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><b>5/10</b>
+<span style=3D"font-family:Wingdings">=C3=A0</span> 7:30pm EST<u></u><u></u=
+></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><b>5/18</b>
+<span style=3D"font-family:Wingdings">=C3=A0</span> 7:30pm EST<u></u><u></u=
+></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Garret Bonosky<u></u><u></u></p>
+<p class=3D"MsoNormal">Deputy Director, Office of the Chair<u></u><u></u></=
+p>
+<p class=3D"MsoNormal">Democratic National Committee<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a114b2d18db18c10532f7ae2a--

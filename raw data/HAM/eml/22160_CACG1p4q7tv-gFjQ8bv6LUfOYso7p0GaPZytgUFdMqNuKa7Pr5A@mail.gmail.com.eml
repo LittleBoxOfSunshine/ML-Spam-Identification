@@ -1,0 +1,650 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 9 May
+ 2016 23:41:36 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 9 May 2016
+ 23:41:34 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 905696709
+ for ParrishD@dnc.org; Mon, 09 May 2016 22:41:40 -0500
+X-Note-AR-ScanTimeLocal: 5/9/2016 10:41:33 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.48 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-205/SG:5 5/9/2016 10:40:52 PM
+X-GBUdb-Analysis: 0, 74.125.82.48, Ugly c=0.864643 p=-0.978207 Source White
+X-Signature-Violations: 0-0-0-27868-c
+X-Note-419: 31.2533 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/9/2016 10:41:22 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.48
+X-Note-Reverse-DNS: mail-wm0-f48.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [74.125.82.48] (HELO mail-wm0-f48.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140868162
+ for ParrishD@dnc.org; Mon, 09 May 2016 22:41:33 -0500
+Received: by mail-wm0-f48.google.com with SMTP id g17so3846836wme.1        for
+ <ParrishD@dnc.org>; Mon, 09 May 2016 20:41:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc;
+        bh=tOuzIaCFtvXX1yC1OJbWgsGrnMNmYp3caJM1k+Ak5iw=;
+        b=B7Ei49bOJWm2g0DcbdMLTqi8XXQm/pvlHutV7QjXVJXc5KbmreC0gFrCNxAnq75lua
+         caLqEbRh84grkB4fMZD7JO5oQh8KEx0vTvigq8S0fFXZKJZPYlyw9BzymrksIlu3Jc9v
+         oXL2w1YFC00nJkDTAwhwsSwe1oTnF2ZBUDkmPowxx0Fb69BO03iXAiOT5o6FOnqAi0al
+         ExBu3g/tawKEa3BfAM4i7elWXL9cZkLANeYHZMoK0UF+EAdbOdpWl1zTOfcgpYeKJ6P3
+         KX+RTEOtx9fCQy99e1jTP6a8TcGpGZywdRL1RprszmBJzHmeEA+LEHvBP/pu6hk6nw3X
+         RnTw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to:cc;
+        bh=tOuzIaCFtvXX1yC1OJbWgsGrnMNmYp3caJM1k+Ak5iw=;
+        b=LtUGYAw812z+Cv+WRxdQS0BNssZyDO++Cgi+jVGRZ41+D2VN6LqzoAx3fCzTsR3fY3
+         7973hF8Lll1uAlaxL6yCbZxJNpLQ4Ul/nMtukUlcRfIkRVzasF5I5PjjMhZHkPpqzaT0
+         nqUg8Ig3Ob41v5yVk3bfXYYH1ov8oz5P5TgZTC41zfNF4gDFo3RB2l11HyiqtMU5aB2d
+         P4AujuF7zKyfljXd84WNYg7F7iLHsSF/TkfQOmtuWnlnoyHT816SXyqjRoBNbjNGS97j
+         U+5vUiDFbh938cJ+CwEUR9dernX4m4DmJWcZu+BkxXxHpG+jiVasQ5KQk8+ymcpxd1rT
+         XxPQ==
+X-Gm-Message-State: AOPr4FWhJOnsOQCapYpq+7ZsiywIAbD8j6ZvvXSuZ/4yeURMShi5xOck/vMjKWckRqA9xPgiqtQiidWSAEEozKeT
+X-Received: by 10.194.85.132 with SMTP id h4mr10767736wjz.50.1462851691720;
+ Mon, 09 May 2016 20:41:31 -0700 (PDT)
+Received: by 10.28.128.132 with HTTP; Mon, 9 May 2016 20:40:52 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9957D14@dncdag1.dnc.org>
+References: <F63DF1F46F967140A7002BB65A5C10F04F7B1E98@NAEXMB05.sidley.com>
+ <D4028F01-ECFB-4EF8-A853-51CFD1FF0511@me.com> <CACG1p4q-PBL8z4SAk0m87bfk0Cx9xSiKFYAdKg=2P6CfD8aF+Q@mail.gmail.com>
+ <6D949D42FE092D42B7E096EB3AA062076F7647CB@dncdag1.dnc.org>
+ <CACG1p4peB=8ef2u878XBav3ve9vktJ9NbEotwTwYxQMKm7D4tw@mail.gmail.com>
+ <79ACC8DBC3582F6A.FDB49511-82A3-4ACD-BE7B-B3E4C2BF048A@mail.outlook.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9957D14@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Mon, 9 May 2016 23:40:52 -0400
+Message-ID: <CACG1p4q7tv-gFjQ8bv6LUfOYso7p0GaPZytgUFdMqNuKa7Pr5A@mail.gmail.com>
+Subject: Re: POTUS
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+CC: "Shapiro, Alexandra" <ShapiroA@dnc.org>, "Marquez, Karina"
+	<MarquezK@dnc.org>
+Content-Type: multipart/alternative; boundary="089e0102e29471cc63053274b375"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--089e0102e29471cc63053274b375
+Content-Type: text/plain; charset="UTF-8"
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Wait, so are they good? Should I tell them? Just let me know. Thanks!
+
+On Mon, May 9, 2016 at 2:16 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Fuchs
+>
+> Nancy
+>
+> E
+>
+> 057462263
+>
+> 1956-09-14
+>
+> Female
+>
+>
+>
+>
+>
+> *From:* Shapiro, Alexandra
+> *Sent:* Monday, May 09, 2016 12:39 PM
+> *To:* Zachary Allen
+> *Cc:* Parrish, Daniel
+> *Subject:* Re: POTUS
+>
+>
+>
+> Chris and Bonnie are set and we can take care of Nancy on Bob's $ too. No
+> prob
+>
+>
+>
+> Mind shooting vitals over for that one too? Thanks!
+>
+> Alexandra Shapiro
+> (858) 361-2468
+> DNC Mid-Atlantic & PAC Finance Director
+>
+>
+>
+>
+>
+> On Mon, May 9, 2016 at 7:24 AM -0700, "Zachary Allen" <
+> zallen@tipahconsulting.com> wrote:
+>
+> He'll qualify anyway cause he maxes annually. I can take care of them at
+> my dinner if need be. It's Chris AND Bonnie coming, yes?
+>
+> On Monday, May 9, 2016, Shapiro, Alexandra <ShapiroA@dnc.org> wrote:
+>
+> So this is a two for one? No chance of getting more $ out of them, is
+> there?
+>
+>
+>
+> Push the convention packages as an incentive?
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+> *Sent:* Monday, May 09, 2016 10:20 AM
+> *To:* Shapiro, Alexandra; Parrish, Daniel
+> *Subject:* Fwd: POTUS
+>
+>
+>
+> Yup, here it is
+>
+> ---------- Forwarded message ----------
+> From: *Christopher Lowe* <cmlowe@me.com>
+> Date: Monday, May 9, 2016
+> Subject: Fwd: POTUS
+> To: Zachary Allen <zallen@tipahconsulting.com>
+>
+> Putting this in your court.  I have not and will not tell him my deal.
+>
+> Sent from my iPhone
+>
+>
+> Begin forwarded message:
+>
+> *From:* "Pietrzak, A. Robert" <rpietrzak@sidley.com>
+> *Date:* May 9, 2016 at 10:03:42 AM EDT
+> *To:* Christopher Lowe <cmlowe@me.com>
+> *Cc:* Nancy Fuchs <nfuchs@kayescholer.com>
+> *Subject:* *RE: POTUS*
+>
+> We would like to do the discussion in DC if we can both attend on my
+> existing max out for this year (we haven't attended any other events yet).
+> If not, we'd do the dinner.
+>
+>
+>
+>
+> Sent with Good Work (www.good.com)
+>
+> *From: *Christopher Lowe <cmlowe@me.com>
+>
+> *Date: *Sunday, May 08, 2016, 11:02 AM
+>
+> *To: *Pietrzak, A. Robert <rpietrzak@sidley.com>
+>
+> *Subject: *Re: POTUS
+>
+>
+>
+> 60 people dinner.  Don't know yet.
+>
+> Sent from my iPhone
+>
+>
+> On May 8, 2016, at 10:52 AM, Pietrzak, A. Robert <rpietrzak@sidley.com>
+> wrote:
+>
+> We would love to do one of these. Do you have any sense how large the
+> dinner would be? We'd love to do the discussion, but need to get back to NY
+> that night so the time would be important.
+>
+> Which are you attending?
+>
+>
+>
+> Sent with Good Work (www.good.com
+> <https://urldefense.proofpoint.com/v2/url?u=http-3A__www.good.com&d=CwMCaQ&c=Od00qP2XTg0tXf_H69-T2w&r=b9dI7g4hRGjZ0wPpJQPCNWKejLib7L6joWe-usO-5_Q&m=o2Fg5U4vgdtuclcrRhy-51gBrBXxOWiqsagAkNcbtRk&s=vxD-s8h-RBK-d8znzc4G1riMPJTlzqpv7I03YPHoGrs&e=>
+> )
+>
+> *From: *Christopher Lowe <cmlowe@me.com>
+>
+> *Date: *Sunday, May 08, 2016, 8:12 AM
+>
+> *To: *Pietrzak, A. Robert <rpietrzak@sidley.com>, Nancy E. Fuchs <
+> nancy.fuchs@kayescholer.com>
+>
+> *Subject: *POTUS
+>
+>
+>
+> Thought you would want to see these - just announced - probably the last
+> two POTUS events on the East Coast.
+>
+> All the best.
+>
+> >
+>
+> >
+> >
+> > All the best.
+> >
+>
+>
+>
+>
+> ****************************************************************************************************
+> This e-mail is sent by a law firm and may contain information that is
+> privileged or confidential.
+> If you are not the intended recipient, please delete the e-mail and any
+> attachments and notify us
+> immediately.
+>
+>
+> ****************************************************************************************************
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+
+
+
+-- 
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--089e0102e29471cc63053274b375
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Wait, so are they good? Should I tell them? Just let me know=
+. Thanks!&nbsp;</div><div class=3D"gmail_extra"><br><div class=3D"gmail_quo=
+te">On Mon, May 9, 2016 at 2:16 PM, Parrish, Daniel <span dir=3D"ltr">&lt;<=
+a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&g=
+t;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0=
+ .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"995" style=
+=3D"width:746.0pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:23.25pt">
+<td width=3D"283" nowrap=3D"" valign=3D"bottom" style=3D"width:212.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Fuchs<u></u><u></u></span></p>
+</td>
+<td width=3D"261" nowrap=3D"" valign=3D"bottom" style=3D"width:196.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Nancy<u></u><u></u></span></p>
+</td>
+<td width=3D"57" nowrap=3D"" valign=3D"bottom" style=3D"width:43.0pt;paddin=
+g:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">E<u></u><u></u></span></p>
+</td>
+<td width=3D"147" nowrap=3D"" valign=3D"bottom" style=3D"width:110.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">057462263<u></u><u></u></span></p>
+</td>
+<td width=3D"152" nowrap=3D"" valign=3D"bottom" style=3D"width:114.0pt;padd=
+ing:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">1956-09-14<u></u><u></u></span></p>
+</td>
+<td width=3D"95" nowrap=3D"" valign=3D"bottom" style=3D"width:71.0pt;paddin=
+g:0in 5.4pt 0in 5.4pt;height:23.25pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:18.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Female<u></u><u></u></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Shapiro,=
+ Alexandra
+<br>
+<b>Sent:</b> Monday, May 09, 2016 12:39 PM<br>
+<b>To:</b> Zachary Allen<br>
+<b>Cc:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: POTUS<u></u><u></u></span></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Chris and Bonnie are set and we can take care of Nan=
+cy on Bob's $ too. No prob<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Mind shooting vitals =
+over for that one too? Thanks!&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Alexandra Shapiro<br>
+<a href=3D"tel:(858)%20361-2468" target=3D"_blank">(858) 361-2468</a><br>
+DNC Mid-Atlantic &amp; PAC Finance Director<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+<br>
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">On Mon, May 9, 2016 a=
+t 7:24 AM -0700, &quot;Zachary Allen&quot; &lt;<a href=3D"mailto:zallen@tip=
+ahconsulting.com" target=3D"_blank">zallen@tipahconsulting.com</a>&gt; wrot=
+e:<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">He'll qualify anyway cause he maxes annually. I can =
+take care of them at my dinner if need be. It's Chris AND Bonnie coming, ye=
+s?<br>
+<br>
+On Monday, May 9, 2016, Shapiro, Alexandra &lt;<a href=3D"mailto:ShapiroA@d=
+nc.org" target=3D"_blank">ShapiroA@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:#1f497d">So th=
+is is a two for one? No chance of getting more $ out of them, is there?
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:#1f497d">&nbsp=
+;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:#1f497d">Push =
+the convention packages as an incentive?
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:#1f497d">&nbsp=
+;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a>zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Monday, May 09, 2016 10:20 AM<br>
+<b>To:</b> Shapiro, Alexandra; Parrish, Daniel<br>
+<b>Subject:</b> Fwd: POTUS</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Yup, here it is&nbsp;=
+<br>
+<br>
+---------- Forwarded message ----------<br>
+From: <b>Christopher Lowe</b> &lt;<a>cmlowe@me.com</a>&gt;<br>
+Date: Monday, May 9, 2016<br>
+Subject: Fwd: POTUS<br>
+To: Zachary Allen &lt;<a>zallen@tipahconsulting.com</a>&gt;<u></u><u></u></=
+p>
+<div>
+<div>
+<p class=3D"MsoNormal">Putting this in your court.&nbsp; I have not and wil=
+l not tell him my deal. &nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+Begin forwarded message:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b>From:</b> &quot;Pi=
+etrzak, A. Robert&quot; &lt;<a href=3D"mailto:rpietrzak@sidley.com" target=
+=3D"_blank">rpietrzak@sidley.com</a>&gt;<br>
+<b>Date:</b> May 9, 2016 at 10:03:42 AM EDT<br>
+<b>To:</b> Christopher Lowe &lt;<a href=3D"mailto:cmlowe@me.com" target=3D"=
+_blank">cmlowe@me.com</a>&gt;<br>
+<b>Cc:</b> Nancy Fuchs &lt;<a href=3D"mailto:nfuchs@kayescholer.com" target=
+=3D"_blank">nfuchs@kayescholer.com</a>&gt;<br>
+<b>Subject:</b> <b>RE: POTUS</b><u></u><u></u></p>
+</div>
+</blockquote>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">We would like to do the discussion in DC if we can b=
+oth attend on my existing max out for this year (we haven't attended any ot=
+her events yet). If not, we'd do the dinner.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+Sent with Good Work (<a href=3D"http://www.good.com" target=3D"_blank">www.=
+good.com</a>)<u></u><u></u></p>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:5.0pt 0in =
+0in 0in">
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">From:
+</span></b><span style=3D"font-size:10.5pt">Christopher Lowe &lt;<a href=3D=
+"mailto:cmlowe@me.com" target=3D"_blank">cmlowe@me.com</a>&gt;</span><u></u=
+><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">Date:
+</span></b><span style=3D"font-size:10.5pt">Sunday, May 08, 2016, 11:02 AM<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">To:
+</span></b><span style=3D"font-size:10.5pt">Pietrzak, A. Robert &lt;<a href=
+=3D"mailto:rpietrzak@sidley.com" target=3D"_blank">rpietrzak@sidley.com</a>=
+&gt;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">Subject:
+</span></b><span style=3D"font-size:10.5pt">Re: POTUS</span><u></u><u></u><=
+/p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">60 people dinner.&nbsp; Don't know yet. &nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 8, 2016, at 10:52 AM, Pietrzak, A. Robert &lt;<a href=3D"mailto:rpie=
+trzak@sidley.com" target=3D"_blank">rpietrzak@sidley.com</a>&gt; wrote:<u><=
+/u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">We would love to do one of these. Do you have any se=
+nse how large the dinner would be? We'd love to do the discussion, but need=
+ to get back to NY that night so the time would be
+ important.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Which are you attending?<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+<br>
+Sent with Good Work (<a href=3D"https://urldefense.proofpoint.com/v2/url?u=
+=3Dhttp-3A__www.good.com&amp;d=3DCwMCaQ&amp;c=3DOd00qP2XTg0tXf_H69-T2w&amp;=
+r=3Db9dI7g4hRGjZ0wPpJQPCNWKejLib7L6joWe-usO-5_Q&amp;m=3Do2Fg5U4vgdtuclcrRhy=
+-51gBrBXxOWiqsagAkNcbtRk&amp;s=3DvxD-s8h-RBK-d8znzc4G1riMPJTlzqpv7I03YPHoGr=
+s&amp;e=3D" target=3D"_blank">www.good.com</a>)<u></u><u></u></p>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:5.0pt 0in =
+0in 0in">
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">From:
+</span></b><span style=3D"font-size:10.5pt">Christopher Lowe &lt;<a href=3D=
+"mailto:cmlowe@me.com" target=3D"_blank">cmlowe@me.com</a>&gt;</span><u></u=
+><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">Date:
+</span></b><span style=3D"font-size:10.5pt">Sunday, May 08, 2016, 8:12 AM</=
+span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">To:
+</span></b><span style=3D"font-size:10.5pt">Pietrzak, A. Robert &lt;<a href=
+=3D"mailto:rpietrzak@sidley.com" target=3D"_blank">rpietrzak@sidley.com</a>=
+&gt;, Nancy E. Fuchs &lt;<a href=3D"mailto:nancy.fuchs@kayescholer.com" tar=
+get=3D"_blank">nancy.fuchs@kayescholer.com</a>&gt;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt">Subject:
+</span></b><span style=3D"font-size:10.5pt">POTUS</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-s=
+ize:10.0pt">Thought you would want to see these - just announced - probably=
+ the last two POTUS events on the East Coast.<br>
+<br>
+All the best.</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt">&gt;
+</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-s=
+ize:10.0pt">&gt;
+<br>
+&gt; <br>
+&gt; All the best.<br>
+&gt; </span><u></u><u></u></p>
+</div>
+</div>
+</div>
+<p>&nbsp;<u></u><u></u></p>
+<p>************************************************************************=
+****************************<br>
+This e-mail is sent by a law firm and may contain information that is privi=
+leged or confidential.<br>
+If you are not the intended recipient, please delete the e-mail and any att=
+achments and notify us<br>
+immediately.<br>
+<br>
+***************************************************************************=
+*************************<u></u><u></u></p>
+</div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a>=
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a =
+href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--089e0102e29471cc63053274b375--

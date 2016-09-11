@@ -1,0 +1,768 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 11 May
+ 2016 11:24:17 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 11 May 2016
+ 11:24:13 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 909137288
+ for KaplanJ@dnc.org; Wed, 11 May 2016 10:24:08 -0500
+X-Note-AR-ScanTimeLocal: 5/11/2016 10:24:06 AM
+X-Policy: dnc.org
+X-Primary: kaplanj@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:157.56.110.119 DOM:mesirowfinancial.com ADDR:kseeman@mesirowfinancial.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-325/SG:5 5/11/2016 10:23:55 AM
+X-GBUdb-Analysis: 0, 157.56.110.119, Ugly c=0.746151 p=-0.87957 Source Normal
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8742 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/11/2016 10:24:00 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->PRIVATE->LOCAL->->->->United States->
+X-Note-Sending-IP: 157.56.110.119
+X-Note-Reverse-DNS: mail-bn1on0119.outbound.protection.outlook.com
+X-Note-Return-Path: kseeman@mesirowfinancial.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [157.56.110.119] (HELO
+ na01-bn1-obe.outbound.protection.outlook.com)  by inbound.appriver.com
+ (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140018067 for KaplanJ@dnc.org;
+ Wed, 11 May 2016 10:23:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=mesirow.onmicrosoft.com; s=selector1-mesirowfinancial-com;
+ h=From:To:Date:Subject:Message-ID:Content-Type:MIME-Version;
+ bh=OHQ+y1KThgvPZ3FTsesMDpbCZ1lOMgIWmF24dSxIwAs=;
+ b=ECJq6QMvX5F94HEbrfoHC/lPEhNds5IalIlpKaz8pa7Xov2vvbKTEWJd2mVtQ/3SCfRz6tzNLurMPCpW2VyC6OjheboPmsU5iPI6o0k+n2kZWqT4baEDGswmOLLz65nte4UDydBUlBMuwlPvqPp5VV7S6xJqVrTxe2y7cKR81FY=
+Received: from BN3PR0401CA0027.namprd04.prod.outlook.com (10.162.159.165) by
+ CO1PR04MB299.namprd04.prod.outlook.com (10.141.70.21) with Microsoft SMTP
+ Server (TLS) id 15.1.492.11; Wed, 11 May 2016 15:23:38 +0000
+Received: from BN1BFFO11FD040.protection.gbl (2a01:111:f400:7c10::1:119) by
+ BN3PR0401CA0027.outlook.office365.com (2a01:111:e400:51d1::37) with Microsoft
+ SMTP Server (TLS) id 15.1.492.11 via Frontend Transport; Wed, 11 May 2016
+ 15:23:37 +0000
+Authentication-Results: spf=pass (sender IP is 204.153.74.66)
+ smtp.mailfrom=mesirowfinancial.com; dnc.org; dkim=none (message not signed)
+ header.d=none;dnc.org; dmarc=bestguesspass action=none
+ header.from=mesirowfinancial.com;
+Received-SPF: Pass (protection.outlook.com: domain of mesirowfinancial.com
+ designates 204.153.74.66 as permitted sender)
+ receiver=protection.outlook.com; client-ip=204.153.74.66;
+ helo=zixgateway02.mesirowfinancial.com;
+Received: from zixgateway02.mesirowfinancial.com (204.153.74.66) by
+ BN1BFFO11FD040.mail.protection.outlook.com (10.58.144.103) with Microsoft
+ SMTP Server (TLS) id 15.1.492.8 via Frontend Transport; Wed, 11 May 2016
+ 15:23:36 +0000
+Received: from zixgateway02.mesirowfinancial.com (ZixVPM [127.0.0.1])	by
+ Outbound.mesirowfinancial.com (Proprietary) with ESMTP id 230753FE8A	for
+ <KaplanJ@dnc.org>; Wed, 11 May 2016 10:23:36 -0500 (CDT)
+Received: from RDWNCASHUB1.mesirow.net (rdwncashub1 [172.21.41.144])	(using
+ TLSv1 with cipher AES256-SHA (256/256 bits))	(No client certificate
+ requested)	by zixgateway02.mesirowfinancial.com (Proprietary) with ESMTP id
+ 9574D3FDD1;	Wed, 11 May 2016 10:20:12 -0500 (CDT)
+Received: from RDWNEXCHG1.mesirow.net ([fe80::50d5:8cc9:5701:2fd3]) by
+ RDWNCASHUB1.mesirow.net ([::1]) with mapi id 14.03.0174.001; Wed, 11 May 2016
+ 10:20:12 -0500
+From: "Seeman, Katie" <kseeman@mesirowfinancial.com>
+To: "'Cox, Clayton'" <CoxC@dnc.org>, "'Kaplan, Jordan'" <KaplanJ@dnc.org>
+Subject: RE: David Simas
+Thread-Topic: David Simas
+Thread-Index: AQHRqr1/dyMhCxCp+UCYivdDi8hoBp+yvUMwgABJx4CAAPlDgP//2IsQgAACazA=
+Date: Wed, 11 May 2016 15:20:12 +0000
+Message-ID: <E4D0CDA0CF5CD3419322EC95FE12A4E1885052CB@RDWNEXCHG1.mesirow.net>
+References: <6BEE53FD-4B79-4E6F-86B5-B459346C1AEE@dnc.org>,<E4D0CDA0CF5CD3419322EC95FE12A4E1884FE858@RDWNEXCHG1.mesirow.net>
+ <CFB86814-A53C-4005-8163-EA24645593B1@dnc.org>
+ <E4D0CDA0CF5CD3419322EC95FE12A4E1885036B1@RDWNEXCHG1.mesirow.net>
+ <E8340FA46589874A8DC284BB5E13C938FE87C67C@dncdag1.dnc.org>
+In-Reply-To: <E8340FA46589874A8DC284BB5E13C938FE87C67C@dncdag1.dnc.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [172.21.40.225]
+Content-Type: multipart/alternative;
+	boundary="_000_E4D0CDA0CF5CD3419322EC95FE12A4E1885052CBRDWNEXCHG1mesir_"
+Return-Path: kseeman@mesirowfinancial.com
+X-EOPAttributedMessage: 0
+X-Forefront-Antispam-Report: CIP:204.153.74.66;IPV:NLI;CTRY:US;EFV:NLI;SFV:NSPM;SFS:(10019020)(2980300002)(438002)(189002)(24454002)(377454003)(199003)(106466001)(106116001)(189998001)(19617315012)(19300405004)(1220700001)(93886004)(86362001)(107886002)(84326002)(512954002)(5001770100001)(5001970100001)(19580395003)(92566002)(6806005)(221733001)(260700001)(19580405001)(5250100002)(19625215002)(102836003)(3846002)(790700001)(55846006)(5003600100002)(53416004)(5004730100002)(11100500001)(76176999)(5008740100001)(2906002)(54356999)(50986999)(6116002)(8936002)(87936001)(15975445007)(3480700004)(2950100001)(2920100001)(2900100001)(450100001)(9686002)(16601075003)(33656002)(586003)(1680700002)(16236675004);DIR:OUT;SFP:1102;SCL:1;SRVR:CO1PR04MB299;H:zixgateway02.mesirowfinancial.com;FPR:;SPF:Pass;MLV:sfv;MX:1;A:1;LANG:en;
+X-Microsoft-Exchange-Diagnostics: 1;BN1BFFO11FD040;1:tq0tcoy0u9lSIkmM3pUR6qTkQGp50T0L+UKTRebtBL5bfSGx1T2uCiw5TYm26eMH+kPTEpfDK/B/4VQbE3v5NZtUi5UF9iGKexvRn3BxDDTYtSj7tCrfWMMrHiYJFTJpzHULnH1pNfTrEjkon7FWN8scwsiU/QMtel6gOqzYi+6reFwtFVVHIjMUcISLSwYbpCS2LEx2Id+A8hDHWijRiw2W0AVYYNaU/0oUn8/b8o7g96BwRgtN/5NBUPKpsvwhpIOy4nZMNgopMNkn0vmMg84ccdIq5Db+k1lKZ/fCr4P6hJBcDGa3xaw5Tzd86NyOyvAa7N9NpTrHe9QGkg1v8W3OGtvux5IDKfVq3KVRBbUzL8A5cl2Z/n1I81Q+Qelgqonrsnojn3q8VKlbEVm67SKmYqgn1Fo5uiZkhCe+unR/TTFSug64Cf+uo5o+1Egs+J8Z7MukWwrVqHSTnce7u5mNHpsCZRNC1MArsPDAD43h8YQEtkOpzqDtCR4HUX1QCRYk3EBQ+mSbKWQOppw1GQ==
+X-MS-Office365-Filtering-Correlation-Id: 24ecaf63-9150-4bb6-83ad-08d379b0392e
+X-Microsoft-Exchange-Diagnostics:
+ 1;CO1PR04MB299;2:68+OunsvHsGnLsj/fhdfZhhoMG86uPWRkZlvIPEoa1u3iE5yNkWpdPLIgZJbrvVo715kdyG+6z8xUJllLJk3pQ0l3MZdXpA5V/ozZ1SgrdztmB94RFFfuSoAC3yhB47HBfto8/M/Dkynp4HMlHO29TZpZXdzNmh3S48uEhKcaiY/aDkBDVHNpZIy2ABX1Mmd;3:H71povJe5BzLeLDy1ndeEcpLB21h3gfd5QmLm4pTQpz/AyX/X8IAtbUO1WNw9kapch9jvzTQ6u+d/LSAktVB6YLv7Q2MPFzvtLiGIr2Fa0uDmQIFT8Y5ZR3Vekq7wihxYjMfniQ8yOce5Gc9sHN1Ywh4iIiO2fT1drxKHJ8iQTz3S0AJNIzvSGhlotn2gqejMFJUjTAFTz2xiEyi89qA/IdSaVriMmp/0XyDFxOrQYtQR+qc5IADYr/LXjCdJzDwTq/dRH/AXqn8CrSdfChaMw==;25:IiaXCg95MobbMg4EWGpBTnBhLepGIzPdCGkFZmbGro3JCyo88G/T4+iVN2xTKDk9zFA7dsTab5WyGOiniiRe4HlcaCNIJtnibQxZ9vsaCGp6Y/2FXq2zW4e9Z/ohzQ/hIU5TQxhbbcmsQW3XvWVSn8vVhrVPAH5sbUpeE164NmRBg/xP5s4ja3Dey2u8kRj5tZ6kBr5hTDL1GUfvijVrO+wqYfUPOd3OfUqygvFrDEvtcWdpbCj3S035q+KxjauEJoSdYZlQGbPxN9LgRPqj53kfNxaxh1gdSVZuQ6Ld9icKz2m75XqfWDBrXLMLv8PZMQegft68MtuwzyFE4N4IdvkBDgfszq2jPPx2mi9JPjdudqNRMvTX0D0WahKI3Ys1uV7IsDtfo927juz15EvQCYIXoNum0arDYelTQ7kKtXwFY780fEsB31LzeHoEf3GsYJ1E4+B3jy34Gophsv8SJw==
+X-Microsoft-Antispam: UriScan:;BCL:0;PCL:0;RULEID:(8251501002);SRVR:CO1PR04MB299;
+X-Microsoft-Exchange-Diagnostics: 1;CO1PR04MB299;20:dRlgUpbfzsTQnDFEAXYyemnekC+e1UiC28RBctr3i155iwHgw40w6ADiScsYP/Zj2ejIRGXJfHi5T38u/6ams+/1UsuwaTVd/xdydk01kVrLp2upDjZ4GKooAP7iKzLlcgjNmKu6/DkKU++pi89CGJ/Fi14XfeHi3MQlwgvaOTP1h6TT/+yNIe0QaVX64AFPf/+yWymOKekcSzMitCoYlD16ZNoBylLlqU8Bgba8NYzF2nX7Uk7wZUNfUI3mIPMU/KLCzzbNcNAunp6zSa/JPZJuBWk1f10XEr0zopQZd1FQg7TJBP33sU8q+x19oNnQhbAfypyVYK1a4baCzYF7F3IRmYhLjWEOYtJgRVaeWVUne2sH55SmcXRVChh14UcfA71oi3wxvqBOCyeEKHEyizTKWWeUyv5WvvQMhr7U9GOK42HLIhALOX4fGqeveYhKR+itzKzGXFZwe+sePxlaFoHu1fTr72l9Cnd0Ewr7JRJzBK1FaHe7Um6Idb/d+FQt
+X-Microsoft-Antispam-PRVS: <CO1PR04MB299896EEAD5D1041EF0BC7FDE720@CO1PR04MB299.namprd04.prod.outlook.com>
+X-Exchange-Antispam-Report-Test: UriScan:;
+X-Exchange-Antispam-Report-CFA-Test: BCL:0;PCL:0;RULEID:(601004)(2401047)(13018025)(13017025)(13024025)(13023025)(13015025)(5005006)(8121501046)(10201501046)(3002001);SRVR:CO1PR04MB299;BCL:0;PCL:0;RULEID:;SRVR:CO1PR04MB299;
+X-Microsoft-Exchange-Diagnostics: 1;CO1PR04MB299;4:8xPZcrACbVFkLLV+f2eFQgnTsusZmvpx5OEEWKHQchLRP12Dd47XJqZn+Bf/BfD0ZcWpJfICvPU+MAT5Of9mADOaxtfShB/P0ysCgzxuVz4xlI7vfdDI6LyRE1Ug6KXZKFYGb1wXHi5/NoyyMaOOviVetqD0xibShNOJXrNoWcMgfGNGuPdSOpV17h1v0dtE3sbu8/BmaJaF8yFKN2UdhYQjb++dgnhAwqGnRhF0ZPPFDQoto3SO/Yi0wV3lDE6nuWGCP09uSr8HC6ZZQa/r0v+fpbC/PV2g8RXXd1wVbD0YIxiNueNsqO98tcYZ6LvSorxaidCEH1NYUABYvaHKBsVL4b/rj2YcUYRMmZFEHO45kxgcZBJp5uJeIkiTc9zo/3izHVtuv7NimkrMj7/PPpI3EVPqeTcKkZbQZAA3MGt2c5Dzwkp35xrm6v1ljfZfLpN+4fK8efXSsgGZVoIWUg==
+X-Forefront-PRVS: 0939529DE2
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1;CO1PR04MB299;23:jsk+Q9lR4tCavvQaoN2JSJjwUoFuVT6dImnUkozCbX?=
+ =?us-ascii?Q?uEEVo57Cob/XyB6nQ4zc2qxtISur7BDKwJjMh/Jir0cd4yYQJ2Dbg5G5D6sG?=
+ =?us-ascii?Q?B4txRH+NM2gnAJpXSy4O8+8pC1kLeN56jm0gRjfg4bksprvCzPo8RBros0Zu?=
+ =?us-ascii?Q?TR13+toWhKvBqLnX3mfk123rXP+mC14dYFkgRwSRFwdjvX41CbRpXvyY7H+K?=
+ =?us-ascii?Q?Q/zK7pM+WQbv/ouPiF51P32QNBQk6MFAs708c3MgPY1GkOkYuBO9LZRIQBk/?=
+ =?us-ascii?Q?GTlaeVa7GiMgj0S3yVgDB6TuFP3z9oI/IusvQXMNvHxphsB2kVO/DgY3HLGw?=
+ =?us-ascii?Q?HkC8prAG+34L9CIzTBFXHuOtpCyLTXTKRJm3QssV06TzKZUWMlp2NdoIAV+6?=
+ =?us-ascii?Q?J4pyf3vHRsLebzNDioKj9GE/R0KJWVdVuHaoerpusN+YNUq+pWXkK3xym08V?=
+ =?us-ascii?Q?nWVDs29/RbFONVLereLBRI+qFHsns9Bq/8fQSKnmtf4ro4x2sRuAP1tr6JLP?=
+ =?us-ascii?Q?yqySJxB8zj6yfmBiSE9R1+QbvLJRP06UvUhr8Jg79e8ghXjv2LO8OovXnrQN?=
+ =?us-ascii?Q?aeiwMo3k7gLccxLOixzcB/Bq0gq61Vl9NVeqG7rZ/h6vCwSfeXHfCeKtxQEx?=
+ =?us-ascii?Q?zvETuWujwt6yXFn1rhY2aBxTskN9OqhW+YnFeVsFfLXravkgmWFnCbTG/EzV?=
+ =?us-ascii?Q?jzWszkgcy4vs0xUq3R9SAFnLkSkRaiGbIOuXIIS4lkrnqMSJZ9xD++nkYtiv?=
+ =?us-ascii?Q?Z6tgzfw13rKr4HKh5UkcbaO2IAHv2DP1jPVgevEre6SEGYwXjis/z6FEzAy1?=
+ =?us-ascii?Q?cSRSPGJ1jGIu+UJnZt7z6O7BMx0V1y6MvkRAVYqVXPwP7HjdmrXcSS/I6cQe?=
+ =?us-ascii?Q?kg0sOARmqIy/U+As5/5EzEvj5JQ17hQEOreu7VuW1+FY/Fk1WnZavCsV96C1?=
+ =?us-ascii?Q?o74bSvcTd6Q/zagt15ibfNQb5IicyqIx/IdKqC8ZhzTY+qHfcwF9M5mg8kmC?=
+ =?us-ascii?Q?wxDJLouH0NV3yyfx9qgD944XNKsdtq4EKw0PlPIobVIo+6RhAhm3KuMkM5ms?=
+ =?us-ascii?Q?K5AcAlLCxOvDORM2Vofk7Ro/ekt4yXAFQ3drynZKCLyG904EwSen5CqRF7W5?=
+ =?us-ascii?Q?1qa0y9rHA+dhQUQG+bUEk9sf7lk8A4KTzyc7sSH3vIW5HoauPWyLeGPfruE3?=
+ =?us-ascii?Q?LbVbkQhOY55N6PuHk4UJstJt5VOu2+7kNPtjidCiFaj+I5+P2mHCYsGx9HLx?=
+ =?us-ascii?Q?qpMa3f42QRDaZeztTRFhpzeSS9SVSY9k063sPKds3pbf95aXv0AfLQWjMbmH?=
+ =?us-ascii?Q?4pz95kUzheKneI9JCF57evaZgIbtmmsNpCecyqHE16YYHXWAsm0UQHSzIuc9?=
+ =?us-ascii?Q?ELv9JacmeXsmUsbXAHbiONocwMZ0lHZbjuaRTmFXhrrj2qaRemL1aL/INoUV?=
+ =?us-ascii?Q?YUuQ4BF51LKpn3gE7MsyaeU1yEP80quJYr0D6Bh1EEKPuMuQ/W?=
+X-Microsoft-Exchange-Diagnostics: 1;CO1PR04MB299;5:K9vugAnls+otoSucrRFrd1GszHClQIs356hdtWKmIQsvVuidmL9+iE2kJGwc8mDV4slqoegNfamWz5WoOMu9xrKjfQcUU084Fb5FUuZPv4Pk2jm7l8H729cE7RoczKkE7ugViDyt+kb902hQH3ftgQ==;24:vFO3YV3E/g+7Hkn1+I5JwjGTD6TMiwqa+aRfnoDRZNrNLPGruJBhqKjhzvnthYrINDjLkK7sfmS6bOdKv6HJ9dYJDFnjz0ixdWJ8KyeoCs8=;7:nXRloXQfeo761q13DbVtgKw+0U6CiIwu9gij3VFJMedY0k5RVIn+FYT/g8LIRXuRo2hrUyn9zp+QcSmCq1uWxYPVOKpTQ3cDVqzcbW+azPTGM0ALy9rO/U+Aweu6NAY/zgf0t91GWVBa+XNuMt6Ov/FOwiMVLvBCBaQTUzkoJgFsYWGWE3Lt4oZMRbljDt0D;20:Fg7ajuiKQpBCXA3mHzZ2yaDGEC9mqNt1JOClSUBgvMRje7QHUCVmYA2HWGOfgfvxn/0uM8Y209K7qjJLEvIWSuVtmigoZmCxFpGhh8e3Of3JwCTNM75Yff2jqwRWwbzhxam1hmUf3E1bnjXm2bMqYI4kpfWMuIFPdWTBT8CA9YQ=
+SpamDiagnosticOutput: 1:23
+SpamDiagnosticMetadata: NSPM
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2016 15:23:36.8990
+ (UTC)
+X-MS-Exchange-CrossTenant-Id: 675d34f2-dff9-4286-9abb-78bebd16f146
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=675d34f2-dff9-4286-9abb-78bebd16f146;Ip=[204.153.74.66];Helo=[zixgateway02.mesirowfinancial.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1PR04MB299
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--_000_E4D0CDA0CF5CD3419322EC95FE12A4E1885052CBRDWNEXCHG1mesir_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Clayton,
+
+We are located at 353 N. Clark Street. Upon arrival, David should check-in =
+with security and then directed to our 4th floor receptionist. He should ch=
+eck-in there and they will alert us of his arrival.
+
+We look forward to seeing him next Thursday, May 19th at 3:30pm CST.
+
+Best,
+Katie
+
+Katie Seeman
+v 312.595.6249
+
+From: Cox, Clayton [mailto:CoxC@dnc.org]
+Sent: Wednesday, May 11, 2016 10:12 AM
+To: Seeman, Katie; Kaplan, Jordan
+Subject: RE: David Simas
+
+Katie-
+
+3:30pm on Thursday, May 19th works for David's schedule. When you have a ch=
+ance can you send over the address for Richard's office and any details we =
+will need for entering the building.
+
+Thank you and please let me know if you need anything else from our end.
+
+
+Clayton
+
+--
+Clayton Cox
+Regional Finance Director
+Florida, Georgia & Midwest
+Democratic National Committee
+CoxC@dnc.org<mailto:CoxC@dnc.org>
+Office: (202) 572-5453
+Cell: (678) 595-4557
+Contribute today: https://finance.democrats.org/page/contribute/Midwest2015
+
+From: Seeman, Katie [mailto:kseeman@mesirowfinancial.com]
+Sent: Wednesday, May 11, 2016 9:31 AM
+To: Kaplan, Jordan
+Cc: Cox, Clayton
+Subject: RE: David Simas
+
+He could do a 3:30pm meeting on Thursday afternoon, would that work?
+
+Katie Seeman
+v 312.595.6249
+
+From: Kaplan, Jordan [mailto:KaplanJ@dnc.org]
+Sent: Tuesday, May 10, 2016 5:39 PM
+To: Seeman, Katie
+Cc: Cox, Clayton
+Subject: Re: David Simas
+
+Thanks Katie
+
+We have a little more clarity on his schedule now and he needs to take a te=
+n am flight on Friday.
+
+Any chance he can do breakfast at 8 on Friday.
+
+Also on Thursday he is wide open except for an 11. He can do early drink, l=
+ate lunch. Wide open!
+
+Thanks.
+
+Jordan Kaplan
+National Finance Director
+Democratic National Committee
+(202) 488-5002 (o) | (312) 339-0224 (c)
+kaplanj@dnc.org<mailto:kaplanj@dnc.org>
+
+
+On May 10, 2016, at 6:16 PM, Seeman, Katie <kseeman@mesirowfinancial.com<ma=
+ilto:kseeman@mesirowfinancial.com>> wrote:
+Hi Jordan,
+
+Yes, he could do it Friday around 9:30am. Would that work for David's sched=
+ule?
+
+Thanks!
+Katie
+
+Katie Seeman
+v 312.595.6249
+
+From: Kaplan, Jordan [mailto:KaplanJ@dnc.org]
+Sent: Tuesday, May 10, 2016 8:12 AM
+To: Seeman, Katie
+Cc: Cox, Clayton
+Subject: David Simas
+
+Hi Katie -
+
+David Simas, Sr Advisor to the President, will be in Chicago next Thursday =
+and Friday for a series of meetings with people.  Does Richard have any tim=
+e/interest in seeing him? He is basically an open book so let us know.
+
+This is simply just a catch up and talk meeting.
+
+Thanks - Jordan
+
+
+
+Jordan Kaplan
+National Finance Director
+Democratic National Committee
+(202) 488-5002 (o) | (312) 339-0224 (c)
+kaplanj@dnc.org<mailto:kaplanj@dnc.org>
+
+<image001.png>
+
+Visit us on the Web at mesirowfinancial.com<http://mesirowfinancial.com>
+
+This communication may contain privileged and/or confidential information. =
+It is intended solely for the use of the addressee. If you are not the inte=
+nded recipient, you are strictly prohibited from disclosing, copying, distr=
+ibuting or using any of this information. If you received this communicatio=
+n in error, please contact the sender immediately and destroy the material =
+in its entirety, whether electronic or hard copy. Confidential, proprietary=
+ or time-sensitive communications should not be transmitted via the Interne=
+t, as there can be no assurance of actual or timely delivery, receipt and/o=
+r confidentiality. This is not an offer, or solicitation of any offer to bu=
+y or sell any security, investment or other product.
+Visit us on the Web at mesirowfinancial.com
+
+This communication may contain privileged and/or confidential information. =
+It is intended solely for the use of the addressee. If you are not the inte=
+nded recipient, you are strictly prohibited from disclosing, copying, distr=
+ibuting or using any of this information. If you received this communicatio=
+n in error, please contact the sender immediately and destroy the material =
+in its entirety, whether electronic or hard copy. Confidential, proprietary=
+ or time-sensitive communications should not be transmitted via the Interne=
+t, as there can be no assurance of actual or timely delivery, receipt and/o=
+r confidentiality. This is not an offer, or solicitation of any offer to bu=
+y or sell any security, investment or other product.
+Visit us on the Web at mesirowfinancial.com
+
+This communication may contain privileged and/or confidential information. =
+It is intended solely for the use of the addressee. If you are not the inte=
+nded recipient, you are strictly prohibited from disclosing, copying, distr=
+ibuting or using any of this information. If you received this communicatio=
+n in error, please contact the sender immediately and destroy the material =
+in its entirety, whether electronic or hard copy. Confidential, proprietary=
+ or time-sensitive communications should not be transmitted via the Interne=
+t, as there can be no assurance of actual or timely delivery, receipt and/o=
+r confidentiality. This is not an offer, or solicitation of any offer to bu=
+y or sell any security, investment or other product.
+
+--_000_E4D0CDA0CF5CD3419322EC95FE12A4E1885052CBRDWNEXCHG1mesir_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"Generator" content=3D"Microsoft Word 14 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle20
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle21
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Clayton,
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">We are located at 353 N. =
+Clark Street. Upon arrival, David should check-in with security and then di=
+rected to our 4<sup>th</sup> floor receptionist. He should
+ check-in there and they will alert us of his arrival. <o:p></o:p></span></=
+p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">We look forward to seeing=
+ him next Thursday, May 19<sup>th</sup> at 3:30pm CST.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Best,
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Katie
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:black">Katie Seeman</span></b><span style=3D"co=
+lor:#1F497D"><br>
+</span><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&qu=
+ot;sans-serif&quot;;color:black">v</span></b><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black"> 312.59=
+5.6249</span><span style=3D"color:#1F497D"><o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Cox, Cla=
+yton [mailto:CoxC@dnc.org]
+<br>
+<b>Sent:</b> Wednesday, May 11, 2016 10:12 AM<br>
+<b>To:</b> Seeman, Katie; Kaplan, Jordan<br>
+<b>Subject:</b> RE: David Simas<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Katie-
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">3:30pm on Thursday, May 1=
+9<sup>th</sup> works for David&#8217;s schedule. When you have a chance can=
+ you send over the address for Richard&#8217;s office and any details
+ we will need for entering the building. <o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Thank you and please let =
+me know if you need anything else from our end.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><br>
+Clayton <o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D">--</span><span style=3D"font-size:11.0pt;font-f=
+amily:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D">Clayton Cox
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><i><span style=3D"font-family:&quot;Cambria&quot;,&q=
+uot;serif&quot;;color:#1F497D">Regional Finance Director
+</span></i><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+&quot;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><i><span style=3D"font-family:&quot;Cambria&quot;,&q=
+uot;serif&quot;;color:#1F497D">Florida, Georgia &amp; Midwest</span></i><sp=
+an style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-ser=
+if&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D">Democratic National Committee
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D"><a href=3D"mailto:CoxC@dnc.org"><span style=3D"=
+color:#1F497D">CoxC@dnc.org</span></a>
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D">Office: (202) 572-5453
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Cambria&quot;,&quot=
+;serif&quot;;color:#1F497D">Cell: (678) 595-4557&nbsp;&nbsp;
+</span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Cambria&quot;,&q=
+uot;serif&quot;;color:#1F497D">Contribute today:
+<a href=3D"https://finance.democrats.org/page/contribute/Midwest2015">https=
+://finance.democrats.org/page/contribute/Midwest2015</a>
+</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+&quot;sans-serif&quot;;color:#1F497D"><o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Seeman, =
+Katie [<a href=3D"mailto:kseeman@mesirowfinancial.com">mailto:kseeman@mesir=
+owfinancial.com</a>]
+<br>
+<b>Sent:</b> Wednesday, May 11, 2016 9:31 AM<br>
+<b>To:</b> Kaplan, Jordan<br>
+<b>Cc:</b> Cox, Clayton<br>
+<b>Subject:</b> RE: David Simas<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">He could do a 3:30pm meet=
+ing on Thursday afternoon, would that work?<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:black">Katie Seeman</span></b><span style=3D"co=
+lor:#1F497D"><br>
+</span><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&qu=
+ot;sans-serif&quot;;color:black">v</span></b><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black"> 312.59=
+5.6249</span><span style=3D"color:#1F497D"><o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span><=
+/p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Kaplan, =
+Jordan [<a href=3D"mailto:KaplanJ@dnc.org">mailto:KaplanJ@dnc.org</a>]
+<br>
+<b>Sent:</b> Tuesday, May 10, 2016 5:39 PM<br>
+<b>To:</b> Seeman, Katie<br>
+<b>Cc:</b> Cox, Clayton<br>
+<b>Subject:</b> Re: David Simas<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class=3D"MsoNormal">Thanks Katie<o:p></o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal">We have a little more clarity on his schedule now an=
+d he needs to take a ten am flight on Friday.&nbsp;<o:p></o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal">Any chance he can do breakfast at 8 on Friday.&nbsp;=
+<o:p></o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal">Also on Thursday he is wide open except for an 11. H=
+e can do early drink, late lunch. Wide open!&nbsp;<o:p></o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div id=3D"AppleMailSignature">
+<p class=3D"MsoNormal">Thanks.&nbsp;<br>
+<br>
+Jordan Kaplan&nbsp; <o:p></o:p></p>
+<div>
+<p class=3D"MsoNormal">National Finance Director<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Democratic National Committee&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">(202) 488-5002 (o) | (312) 339-0224 (c)<o:p></o:p></=
+p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"mailto:kaplanj@dnc.org">kaplanj@dnc.org</=
+a><o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 10, 2016, at 6:16 PM, Seeman, Katie &lt;<a href=3D"mailto:kseeman@me=
+sirowfinancial.com">kseeman@mesirowfinancial.com</a>&gt; wrote:<o:p></o:p><=
+/p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Hi Jordan,
+</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">&nbsp;</span><o:p></o:p><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Yes, he could do it Frida=
+y around 9:30am. Would that work for David&#8217;s schedule?</span><o:p></o=
+:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">&nbsp;</span><o:p></o:p><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks!</span><o:p></o:p>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">Katie
+</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">&nbsp;</span><o:p></o:p><=
+/p>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;;color:black">Katie Seeman</span></b><span style=3D"co=
+lor:#1F497D"><br>
+</span><b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&qu=
+ot;sans-serif&quot;;color:black">v</span></b><span style=3D"font-size:10.0p=
+t;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black"> 312.59=
+5.6249</span><o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">&nbsp;</span><o:p></o:p><=
+/p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Kaplan, =
+Jordan [<a href=3D"mailto:KaplanJ@dnc.org">mailto:KaplanJ@dnc.org</a>]
+<br>
+<b>Sent:</b> Tuesday, May 10, 2016 8:12 AM<br>
+<b>To:</b> Seeman, Katie<br>
+<b>Cc:</b> Cox, Clayton<br>
+<b>Subject:</b> David Simas</span><o:p></o:p></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+<p class=3D"MsoNormal">Hi Katie -&nbsp; <o:p></o:p></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">David Simas, Sr Advisor to the President, will be in=
+ Chicago next Thursday and Friday for a series of meetings with people. &nb=
+sp;Does Richard have any time/interest in seeing him? He is basically an op=
+en book so let us know.<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">This is simply just a catch up and talk meeting. &nb=
+sp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks - Jordan&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+Jordan Kaplan<br>
+National Finance Director<br>
+Democratic National Committee<br>
+(202) 488-5002 (o) | (312) 339-0224 (c)<br>
+<a href=3D"mailto:kaplanj@dnc.org">kaplanj@dnc.org</a><br>
+<span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;col=
+or:black"><br>
+&lt;image001.png&gt;</span><o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><b>Visit us on the Web at <a href=3D"http://mesirowf=
+inancial.com">
+mesirowfinancial.com</a></b> <br>
+<br>
+<i>This communication may contain privileged and/or confidential informatio=
+n. It is intended solely for the use of the addressee. If you are not the i=
+ntended recipient, you are strictly prohibited from disclosing, copying, di=
+stributing or using any of this
+ information. If you received this communication in error, please contact t=
+he sender immediately and destroy the material in its entirety, whether ele=
+ctronic or hard copy. Confidential, proprietary or time-sensitive communica=
+tions should not be transmitted
+ via the Internet, as there can be no assurance of actual or timely deliver=
+y, receipt and/or confidentiality. This is not an offer, or solicitation of=
+ any offer to buy or sell any security, investment or other product.</i>
+<o:p></o:p></p>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><b>Visit us on the Web at mesirowfinancial.com</b> <=
+br>
+<br>
+<i>This communication may contain privileged and/or confidential informatio=
+n. It is intended solely for the use of the addressee. If you are not the i=
+ntended recipient, you are strictly prohibited from disclosing, copying, di=
+stributing or using any of this
+ information. If you received this communication in error, please contact t=
+he sender immediately and destroy the material in its entirety, whether ele=
+ctronic or hard copy. Confidential, proprietary or time-sensitive communica=
+tions should not be transmitted
+ via the Internet, as there can be no assurance of actual or timely deliver=
+y, receipt and/or confidentiality. This is not an offer, or solicitation of=
+ any offer to buy or sell any security, investment or other product.</i>
+<o:p></o:p></p>
+</div>
+<b>Visit us on the Web at mesirowfinancial.com</b> <br>
+<br>
+<i>This communication may contain privileged and/or confidential informatio=
+n. It is intended solely for the use of the addressee. If you are not the i=
+ntended recipient, you are strictly prohibited from disclosing, copying, di=
+stributing or using any of this
+ information. If you received this communication in error, please contact t=
+he sender immediately and destroy the material in its entirety, whether ele=
+ctronic or hard copy. Confidential, proprietary or time-sensitive communica=
+tions should not be transmitted
+ via the Internet, as there can be no assurance of actual or timely deliver=
+y, receipt and/or confidentiality. This is not an offer, or solicitation of=
+ any offer to buy or sell any security, investment or other product.</i>
+</body>
+</html>
+
+--_000_E4D0CDA0CF5CD3419322EC95FE12A4E1885052CBRDWNEXCHG1mesir_--

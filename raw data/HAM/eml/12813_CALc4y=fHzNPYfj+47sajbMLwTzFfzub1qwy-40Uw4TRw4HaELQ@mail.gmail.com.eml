@@ -1,0 +1,448 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sat, 30 Apr
+ 2016 12:44:45 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sat, 30 Apr 2016
+ 12:44:33 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 889262001
+ for MirandaL@dnc.org; Sat, 30 Apr 2016 11:44:46 -0500
+X-Note-AR-ScanTimeLocal: 4/30/2016 11:44:45 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.161.169 DOM:thehill.com ADDR:jeasley@thehill.com
+X-Note: SPF: Pass
+X-Note: ICH-CT/SI:0-774/SG:1 4/30/2016 11:44:01 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-168/SG:8 4/30/2016 11:44:01 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-27547-c
+X-Note-419: 31.2555 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/30/2016 11:44:41 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.161.169
+X-Note-Reverse-DNS: mail-yw0-f169.google.com
+X-Note-Return-Path: jeasley@thehill.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 G418 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-yw0-f169.google.com ([209.85.161.169] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136299703
+ for MirandaL@dnc.org; Sat, 30 Apr 2016 11:44:45 -0500
+Received: by mail-yw0-f169.google.com with SMTP id o66so227355753ywc.3
+        for <MirandaL@dnc.org>; Sat, 30 Apr 2016 09:44:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=thehill-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=vIpuunXACLDCWXVkTc3L3SMXhjpfdQ8v4MDOlgFQHP8=;
+        b=G0T1OaKjkwXH17MMJ/K+jUiCdpwlSHd8yg1tpLdigL88uuLssYESBcwn/zUYW/+SJQ
+         tvZerlCtkLntwZGf0tCl91MjhV34Vs4MFxxoQeqg4yxGQyzbHzbmZaoaxhUB8QUXK/sq
+         D52o7FHajnCjfL9mLW71pAkFP3h1VMZtAnzRQgjicfCm+W7FndKqbdGzrPzDdnFH28JI
+         WeWykcuzwoXSojeJ+sfrypk6Nz/ycd6YtroxSoK+m7aTHx+whzqzeL0Bend2Itr6qqoj
+         B2KqXcAoCui78EpRzffyrN5mjjhsX38EHpeCqeuQpXoOa6qf66dEwN7aP7k6IWSZiJZL
+         uonw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=vIpuunXACLDCWXVkTc3L3SMXhjpfdQ8v4MDOlgFQHP8=;
+        b=Jk2cycjsgXbTLnu2Zv3gx2U/DAkr1Xndd962hHbLbXVQrBhIWSKXmb27p9Lq1SkRTg
+         oAHTDPR83sFb6GaHgcXa8yWVBKk7FOMvsO4cQkLy+aAGEqAdwXDWwFKri9n1ytEN3XB3
+         y+LzfshgD5Dlo5lFsDadvEJoQ4idLfKM3AMZmWp6KRm351l960J9Yr7sMepuuCQhX3FX
+         Ik8DFVr5ZgFQul7eErwvKCFAPRLNryiNFQSGaE10JjNwIPxV+ZXEydiorCHb5NswewW6
+         ww/MkGWDdRNQHEVlisUDP4cmqB962/yxe5X01xdZpw77cyN/T4L/tA8056d7r3HgkKN0
+         SW3w==
+X-Gm-Message-State: AOPr4FVZ/nlDIt6t/y4D7JwZq5kkA/FIcCat75/14MAYGwAxF3McfSRHfH3GKEJPWf7NwI4n0bAMona7dLVlqA==
+X-Received: by 10.37.98.131 with SMTP id w125mr4189722ybb.9.1462034683254;
+ Sat, 30 Apr 2016 09:44:43 -0700 (PDT)
+Received: by 10.13.196.6 with HTTP; Sat, 30 Apr 2016 09:44:03 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DEFC992@dncdag1.dnc.org>
+References: <05E01258E71AC046852ED29DFCD139D54DEFC992@dncdag1.dnc.org>
+From: Jonathan Easley <jeasley@thehill.com>
+Date: Sat, 30 Apr 2016 12:44:03 -0400
+Message-ID: <CALc4y=fHzNPYfj+47sajbMLwTzFfzub1qwy-40Uw4TRw4HaELQ@mail.gmail.com>
+Subject: Re: Your story didn't include DNC Statement
+To: "Miranda, Luis" <MirandaL@dnc.org>
+Content-Type: multipart/related; boundary="001a1142ea2af23dd00531b679a3"
+Return-Path: jeasley@thehill.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1142ea2af23dd00531b679a3
+Content-Type: multipart/alternative; boundary="001a1142ea2af23dca0531b679a2"
+
+--001a1142ea2af23dca0531b679a2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hi Luis, what story is this? I'm not familiar with PoliticsUSA and my
+colleague wrote up the DNC/Sanders lawsuit story.
+
+On Fri, Apr 29, 2016 at 6:29 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Hi Jonathan, your story on Politicsusa didn=E2=80=99t include any DNC per=
+spective.
+> Here=E2=80=99s a quote from me and below that our DNC statement:
+>
+> =E2=80=9CThe forensic analysis conducted by the cybersecurity firm CrowdS=
+trike
+> confirmed that the DNC=E2=80=99s initial findings, which were the basis o=
+f the
+> temporary shutdown in December, were accurate. The audit confirmed that o=
+ne
+> campaign gained unauthorized access to the data of another, and the audit
+> further confirmed that the results of those searches were saved within th=
+e
+> system and that data was exported. Following the conclusion of the audit
+> that confirmed the DNC's original findings, the Sanders campaign withdrew
+> its lawsuit.=E2=80=9D  - DNC Communications Director Luis Miranda
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+> For Immediate Release
+>
+> April 29, 2016
+>
+>
+>
+> Contact: DNC Press =E2=80=93 202-863-8148
+>
+>
+>
+> *DNC Statement*
+>
+>
+>
+> On December 18, 2015, the Democratic National Committee and Bernie 2016
+> appeared in United States District Court on Bernie 2016=E2=80=99s indicat=
+ion that
+> it would be seeking an injunction in the breach of contract action it fil=
+ed
+> against the DNC earlier that day. The Sanders campaign alleged that the D=
+NC
+> wrongfully terminated its access to the party-administered voter file
+> system, VoteBuilder, following DNC=E2=80=99s discovery that Sanders campa=
+ign
+> personnel had discovered a flaw in system security and had accessed Clint=
+on
+> campaign proprietary score data.
+>
+>
+>
+> The parties proceeded in the course of the hearing to settle the immediat=
+e
+> issue before the Court. The DNC agreed to restore access to VoteBuilder b=
+y
+> the next day, and the campaign agreed to cooperate in an independent
+> investigation of the data breach.  The Sanders campaign also agreed as pa=
+rt
+> of this investigation to assume a share of the costs of the investigation=
+.
+>
+>
+>
+> The DNC and the Sanders campaign agreed on the retention of CrowdStrike t=
+o
+> conduct the investigation. Over a five-week period and the commitment to
+> the work of 128 hours, CrowdStrike examined user activity within
+> VoteBuilder by three Democratic Presidential campaigns: Hillary for
+> America, Bernie 2016, and O=E2=80=99Malley for President.  Additionally,
+> CrowdStrike conducted a forensic examination of two systems belonging to
+> the Bernie 2016 campaign. The investigation sought to first identify
+> whether any campaigns=E2=80=99 users accessed data via the VoteBuilder sy=
+stem in an
+> unauthorized fashion and then determine the nature of any unauthorized
+> access that did occur.
+>
+>
+>
+> The cybersecurity firm CrowdStrike has concluded the independent
+> investigation agreed to by the DNC and Bernie 2016.  It identified eviden=
+ce
+> of unauthorized access via four user accounts from the Bernie 2016
+> campaign.  All unauthorized access occurred during a one-hour period from
+> 10:41 to 11:42 EST on December 16, 2015.
+>
+>
+>
+> During that time, the four users conducted 25 searches using proprietary
+> Hillary for America score data across 11 states.  All of the results of
+> these searches were saved within the VoteBuilder system, with the excepti=
+on
+> of one instance where a user exported a statistical summary of a search
+> using HFA scoring in New Hampshire.
+>
+>
+>
+> CrowdStrike found no evidence of unauthorized access by the Hillary for
+> America or O=E2=80=99Malley for President campaigns.
+>
+>
+>
+> Today, the Sanders campaign also voluntarily dismissed the breach of
+> contract action pending against the DNC.
+>
+>
+>
+> ###
+>
+>
+>
+
+
+
+--=20
+Jonathan Easley
+Campaigns Reporter
+The Hill
+office: (202) 407-8016
+cell: (949) 306-8671
+@joneasley <https://twitter.com/JonEasley>
+
+--001a1142ea2af23dca0531b679a2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hi Luis, what story is this? I'm not familiar with PoliticsU=
+SA and my colleague wrote up the DNC/Sanders lawsuit story.<br></div><div c=
+lass=3D"gmail_extra"><br><div class=3D"gmail_quote">On Fri, Apr 29, 2016 at=
+ 6:29 PM, Miranda, Luis <span dir=3D"ltr">&lt;<a href=3D"mailto:MirandaL@dn=
+c.org" target=3D"_blank">MirandaL@dnc.org</a>&gt;</span> wrote:<br><blockqu=
+ote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc s=
+olid;padding-left:1ex">
+
+
+
+
+
+<div link=3D"blue" vlink=3D"purple" lang=3D"EN-US">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Jonathan, your stor=
+y on Politicsusa didn=E2=80=99t include any DNC perspective. Here=E2=80=99s=
+ a quote from me and below that our DNC statement:<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"color:#1f4=
+97d">=E2=80=9CThe forensic analysis conducted by the cybersecurity firm Cro=
+wdStrike confirmed that the DNC=E2=80=99s initial findings, which were the =
+basis of the temporary shutdown in December, were accurate.
+ The audit confirmed that one campaign gained unauthorized access to the da=
+ta of another, and the audit further confirmed that the results of those se=
+arches were saved within the system and that data was exported. Following t=
+he conclusion of the audit that
+ confirmed the DNC's original findings, the Sanders campaign withdrew its l=
+awsuit.=E2=80=9D &nbsp;- DNC Communications Director Luis Miranda<u></u><u>=
+</u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d"><u></u>&nbsp;<u></u></=
+span></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img src=3D"cid:image001.png@01D1A245.088AEAE0" alt=3D"SigDems"=
+ title=3D"" height=3D"71" hspace=3D"12" align=3D"left" border=3D"0" width=
+=3D"77"></a><u></u><b><span style=3D"font-size:12.0pt;color:#1f497d">Luis
+ Miranda, </span></b><span style=3D"color:#1f497d">Communications Director<=
+u></u><u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"color:#1f497d">Democratic National=
+ Committee<u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d"><a href=3D"tel:202-863=
+-8148" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a> =E2=80=
+=93 <a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">
+MirandaL@dnc.org</a> - <a href=3D"https://www.twitter.com/MiraLuisDC" targe=
+t=3D"_blank">@MiraLuisDC</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d"><u></u>&nbsp;<u></u></=
+span></p>
+</div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></s=
+pan></b></p>
+<p class=3D"MsoNormal">For Immediate Release<u></u><u></u></p>
+<p class=3D"MsoNormal">April 29, 2016<u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Contact: DNC Press =E2=80=93 <a href=3D"tel:202-863-=
+8148" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a><u></u><=
+u></u></p>
+<p class=3D"MsoNormal"><b><u></u>&nbsp;<u></u></b></p>
+<p class=3D"MsoNormal" style=3D"text-align:center" align=3D"center"><b>DNC =
+Statement<u></u><u></u></b></p>
+<p class=3D"MsoNormal"><b><u></u>&nbsp;<u></u></b></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">On December 18, 2015, th=
+e Democratic National Committee and Bernie 2016 appeared in United States D=
+istrict Court on Bernie 2016=E2=80=99s indication that it would be seeking =
+an injunction in the breach of contract action
+ it filed against the DNC earlier that day. The Sanders campaign alleged th=
+at the DNC wrongfully terminated its access to the party-administered voter=
+ file system, VoteBuilder, following DNC=E2=80=99s discovery that Sanders c=
+ampaign personnel had discovered a flaw
+ in system security and had accessed Clinton campaign proprietary score dat=
+a.&nbsp; <u></u>
+<u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">The parties proceeded in=
+ the course of the hearing to settle the immediate issue before the Court. =
+The DNC agreed to restore access to VoteBuilder by the next day, and the ca=
+mpaign agreed to cooperate in an independent
+ investigation of the data breach.&nbsp; The Sanders campaign also agreed a=
+s part of this investigation to assume a share of the costs of the investig=
+ation.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">The DNC and the Sanders =
+campaign agreed on the retention of CrowdStrike to conduct the investigatio=
+n. Over a five-week period and the commitment to the work of 128 hours, Cro=
+wdStrike examined user activity within
+ VoteBuilder by three Democratic Presidential campaigns: Hillary for Americ=
+a, Bernie 2016, and O=E2=80=99Malley for President.&nbsp; Additionally, Cro=
+wdStrike conducted a forensic examination of two systems belonging to the B=
+ernie 2016 campaign. The investigation sought
+ to first identify whether any campaigns=E2=80=99 users accessed data via t=
+he VoteBuilder system in an unauthorized fashion and then determine the nat=
+ure of any unauthorized access that did occur.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">The cybersecurity firm C=
+rowdStrike has concluded the independent investigation agreed to by the DNC=
+ and Bernie 2016.&nbsp; It identified evidence of unauthorized access via f=
+our user accounts from the Bernie 2016 campaign.
+ &nbsp;All unauthorized access occurred during a one-hour period from 10:41=
+ to 11:42 EST on December 16, 2015.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">During that time, the fo=
+ur users conducted 25 searches using proprietary Hillary for America score =
+data across 11 states.&nbsp; All of the results of these searches were save=
+d within the VoteBuilder system, with the
+ exception of one instance where a user exported a statistical summary of a=
+ search using HFA scoring in New Hampshire.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">CrowdStrike found no evi=
+dence of unauthorized access by the Hillary for America or O=E2=80=99Malley=
+ for President campaigns.&nbsp;
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">Today, the Sanders campa=
+ign also voluntarily dismissed the breach of contract action pending agains=
+t the DNC.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal" style=3D"text-align:center" align=3D"center">###<u><=
+/u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-align:center" align=3D"center"><u></u>=
+&nbsp;<u></u></p>
+</div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><br>-- <br><div class=3D"gmail_sig=
+nature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div><div><div>Jonathan=
+ Easley<br></div>Campaigns Reporter<br></div>The Hill<br></div><div>office:=
+ (202) 407-8016<br></div>cell: (949) 306-8671<br></div><a href=3D"https://t=
+witter.com/JonEasley" target=3D"_blank">@joneasley</a><br></div></div></div=
+></div>
+</div>
+
+--001a1142ea2af23dca0531b679a2--
+
+--001a1142ea2af23dd00531b679a3
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1A245.088AEAE0>
+X-Attachment-Id: 772b1bb5b6314ff3_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--001a1142ea2af23dd00531b679a3--

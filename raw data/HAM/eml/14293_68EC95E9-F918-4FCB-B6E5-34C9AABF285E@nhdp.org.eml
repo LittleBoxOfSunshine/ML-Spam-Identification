@@ -1,0 +1,466 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 28 Apr
+ 2016 12:54:24 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 28 Apr 2016
+ 12:54:15 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 885668418
+ for Comm_d@dnc.org; Thu, 28 Apr 2016 11:54:25 -0500
+X-Note-AR-ScanTimeLocal: 4/28/2016 11:54:24 AM
+X-Policy: dnc.org
+X-Primary: comm_d@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.182 DOM:nhdp.org ADDR:tnuccio@nhdp.org
+X-Note: SPF: None
+X-Note-SnifferID: 100
+X-Signature: Too many sniffer hits, truncated list.
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 100-5946664-5991-6171-m
+	100-5946664-5991-6185-m
+	100-5946662-6161-15390-m
+	100-5946664-5991-15834-m
+	100-5941377-15759-15835-m
+	100-5952969-15822-15838-m
+	100-5946664-5991-15948-m
+	100-5946664-0-23083-f
+X-Note-419: 15.6255 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/28/2016 11:54:14 AM
+X-Warn: OPTOUT
+X-Warn: BULKMAILER
+X-Note: Spam Tests Failed: OPTOUT, BULKMAILER
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.182
+X-Note-Reverse-DNS: mail-ig0-f182.google.com
+X-Note-Return-Path: tnuccio@nhdp.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G280 G285 G373 G375 G572 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-ig0-f182.google.com ([209.85.213.182] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 135501334
+ for Comm_d@dnc.org; Thu, 28 Apr 2016 11:54:24 -0500
+Received: by mail-ig0-f182.google.com with SMTP id u10so109717577igr.1
+        for <Comm_d@dnc.org>; Thu, 28 Apr 2016 09:54:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nhdp-org.20150623.gappssmtp.com; s=20150623;
+        h=from:content-transfer-encoding:mime-version:subject:message-id:date
+         :references:to;
+        bh=yAncXTAD8UZyNZdhLCEdtU3bLtGZAgwoOiob6mKFDI0=;
+        b=WDogQA6n/g+uYax8o5iAkWilI2HJiaMV0/1rY4cWXkKiDCKmQ2qcFNonA4sKZWHGOK
+         ESpo4nCkgP2TrAcCGm/OwjMj9YnVr4onx70QJg9MFYMuZq53B3AFiU1caLyk/5jWT/wb
+         5ljzFF0m82hu0fkc4PtmdNcyPU+ddiHe0qV6ufy7kowndMs2aEBIJYCgBstVRyEAjk69
+         wdNvJdyW98aGoM7fPEhesUdgOxOtrvZt7+1XW3lXfxWSw89cLpjeXYBZtgv+i34wvPuK
+         N8LBvNvqN58z6qOgWlVgRDNIIH7bFVfs9l3zMMIUR4TJwidE/jjqfrDk2bEWgfCQU63i
+         b1lA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version
+         :subject:message-id:date:references:to;
+        bh=yAncXTAD8UZyNZdhLCEdtU3bLtGZAgwoOiob6mKFDI0=;
+        b=cYwDho3k/9YfNDT+DrkNFgF6EHXSRsHIQZ/9sIhGtWQxlho1jOkiwR0Z0zb2ACzqJo
+         j0v4hsVEAFFhaDlnyU8C4oJ8a6s1hyb6QFa975yWoZykQsoVZXEDMAjff+oHyP0dqXER
+         Bj0xrwBrTyXLsF5ozFGbGH895JQc/S19JzMFundIKpE7Wm7a40rDj9xdAVr6gEV0FARW
+         TKbM4rghQsVtn74HWzFEr0HS1zFYBlIIxkjT0OG7VwI59NyIp7crqPvushxKWop/W/LA
+         tyvnGnq4DTGBs+DcACohFBD5yBdU2x/MRcRDnKNn9yvX0+0H5Wkv24mGPtTS9h5EnWYI
+         g7gA==
+X-Gm-Message-State: AOPr4FUYkjvWwFIPBVdp7wtjUqxrqPDUBkMiKxJSZzFYiF2aIud0ppPLV+fWvtkRCY8BWQ==
+X-Received: by 10.50.29.45 with SMTP id g13mr12338182igh.93.1461862461836;
+        Thu, 28 Apr 2016 09:54:21 -0700 (PDT)
+Return-Path: <tnuccio@nhdp.org>
+Received: from ?IPv6:2600:1009:b11c:51d1:f500:ac01:7288:449e?
+ ([2600:1009:b11c:51d1:f500:ac01:7288:449e])        by smtp.gmail.com with
+ ESMTPSA id i74sm7783975ioe.37.2016.04.28.09.54.20        for <Comm_d@dnc.org>
+        (version=TLSv1/SSLv3 cipher=OTHER);        Thu, 28 Apr 2016 09:54:20
+ -0700 (PDT)
+From: Thomas Nuccio <tnuccio@nhdp.org>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail-97CBADE3-3623-470B-AD04-014E5C80AE68"
+Content-Transfer-Encoding: 7bit
+Subject: Cruz email: It's all on Indiana  
+Message-ID: <68EC95E9-F918-4FCB-B6E5-34C9AABF285E@nhdp.org>
+Date: Thu, 28 Apr 2016 12:54:18 -0400
+References: <6B.DC.61155.CF932275@dc4mta01>
+To: <Comm_d@dnc.org>
+X-Mailer: iPhone Mail (13E238)
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+MIME-Version: 1.0
+
+--Apple-Mail-97CBADE3-3623-470B-AD04-014E5C80AE68
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+
+
+> From: "ted@tedcruz.org (urgent)" <ted@tedcruz.org>
+> Date: April 28, 2016 at 11:42:22 AM EDT
+> To: Thomas Nuccio <nuccio001@connect.wcsu.edu>
+> Subject: It's all on Indiana =20
+> Reply-To: <ted@tedcruz.org>
+>=20
+>=20
+>=20
+> Thomas,=20
+>=20
+> In just five days, Hoosiers will cast their votes to determine which candi=
+date will capture their 52 delegates.
+>=20
+> This is the single, biggest, most important day for our campaign so far.=20=
+
+>=20
+> Carly and I are barnstorming Indiana to capture every last vote =E2=80=93 a=
+s we fight to win the GOP nomination.=20
+>=20
+> I can't emphasize enough how important the vote in Indiana is going to be,=
+ and frankly, it could be the deciding factor.
+>=20
+> Thomas, let me be blunt: I can't win Indiana =E2=80=93 and this nomination=
+ =E2=80=93 if you don't step forward right now with a game-changing campaign=
+ gift.=20
+>=20
+> It's now or never =E2=80=93 and I really need you.=20
+>=20
+> I've asked my team to place the secure, Instant Donate buttons below so th=
+at it will take you less than two minutes to help:
+>=20
+> Indiana Victory Fund: Instant Donate >> $5
+>=20
+> Indiana Victory Fund: Instant Donate >> $35
+>=20
+> Indiana Victory Fund: Instant Donate >> $100
+>=20
+> Indiana Victory Fund: Instant Donate >> $500
+>=20
+> Indiana Victory Fund: Instant Donate >> $1000
+>=20
+> Indiana Victory Fund: Instant Donate >> Other Amount
+>=20
+> Make no mistake, Indiana is absolutely pivotal.=20
+>=20
+> The bad news is if Trump wins all the delegates in Indiana, his nomination=
+ could be all but determined; but the good news is if we are going to win en=
+ough delegates in Indiana =E2=80=93 Trump's path to secure 1,237 delegates b=
+efore the convention is virtually impossible.=20
+>=20
+> It all comes down to this: we need a minimum of 10,000 individual donation=
+s before May 3rd =E2=80=93 primary day. Will you help us reach this critical=
+ goal by making an Instant Donation right now to our Indiana Victory Fund =E2=
+=80=93 ensuring we have the resources needed to win?
+>=20
+> Indiana Victory Fund: Instant Donate >> $5
+>=20
+> Indiana Victory Fund: Instant Donate >> $35
+>=20
+> Indiana Victory Fund: Instant Donate >> $100
+>=20
+> Indiana Victory Fund: Instant Donate >> $500
+>=20
+> Indiana Victory Fund: Instant Donate >> $1000
+>=20
+> Indiana Victory Fund: Instant Donate >> Other Amount
+>=20
+> I am convinced that if we fail to throw everything we have into ensuring v=
+ictory in Indiana...come November when we watch Hillary win by historic marg=
+ins =E2=80=93 just as every reliable poll predicts she will against Donald T=
+rump =E2=80=93 we will wish we had pushed just a little harder right now.
+>=20
+> URGENT: 10,000 donations needed before May 3rd =E2=80=93 pledge your suppo=
+rt right now >>
+>=20
+> Yesterday's announcement of Carly Fiorina as my choice for VP promises bet=
+ter days ahead for conservatives and America, but we need your immediate hel=
+p to fight back against Donald Trump's onslaught of attacks in Indiana.
+>=20
+> It's all come down to this, Thomas.
+>=20
+> Stand with us today with a contribution to the Indiana Victory Fund.
+>=20
+> For liberty,
+>=20
+> Ted Cruz
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+> PAID FOR BY CRUZ FOR PRESIDENT
+> www.tedcruz.org
+> Copyright =C2=A9 2016 All Rights Reserved | Privacy Policy
+>=20
+>=20
+> This message was intended for: nuccio001@connect.wcsu.edu=20
+> You were added to the system February 25, 2016.
+> For more information click here. Update your preferences
+> Unsubscribe | Unsubscribe via email
+>=20
+
+--Apple-Mail-97CBADE3-3623-470B-AD04-014E5C80AE68
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div><br></div><div><br></div><blockquote type=3D"c=
+ite"><div><b>From:</b> &quot;<a href=3D"mailto:ted@tedcruz.org">ted@tedcruz=
+.org</a> (urgent)&quot; &lt;<a href=3D"mailto:ted@tedcruz.org">ted@tedcruz.=
+org</a>&gt;<br><b>Date:</b> April 28, 2016 at 11:42:22 AM EDT<br><b>To:</b>=
+ Thomas Nuccio &lt;<a href=3D"mailto:nuccio001@connect.wcsu.edu">nuccio001@=
+connect.wcsu.edu</a>&gt;<br><b>Subject:</b> <b>It's all on Indiana&nbsp; </=
+b><br><b>Reply-To:</b> &lt;<a href=3D"mailto:ted@tedcruz.org">ted@tedcruz.o=
+rg</a>&gt;<br><br></div></blockquote><blockquote type=3D"cite"><div>
+<title>Cruz For President</title>
+
+
+
+
+
+<span class=3D"preheader" style=3D"display: none !important; visibility: hi=
+dden; opacity: 0; color: transparent; height: 0; width: 0;">In just five da=
+ys,
+Hoosiers will cast their votes to determine which candidate will capture th=
+eir 52 delegates.</span>
+
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff" style=3D"background-color:#fff;">
+	<tbody><tr>
+		<td bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+=09
+			<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"20" i=
+d=3D"content" bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+				<tbody><tr>
+					<td><center><a href=3D"http://paracom.paramountcommunication.com/ct/35=
+063709:sN6t1gCNQ:m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><img sr=
+c=3D"http://paracom.paramountcommunication.com/cimages/dab618f2b5829757ddb8=
+a46fc88cfff8/TCCF-1.jpg" border=3D"0" width=3D"310" height=3D"110" alt=3D"C=
+ruz For
+President" class=3D"banner_scale"></a></center></td>
+				</tr>
+				<tr>
+				  <td width=3D"100%" valign=3D"top" align=3D"left" bgcolor=3D"#ffffff" =
+style=3D"font-family: Times, 'Times New Roman', serif;  font-size:19px;
+line-height:22px; color:#000; background-color:#fff;" class=3D"maintext"><f=
+ont style=3D"font-family: Times, 'Times New Roman', serif;  font-size:19px;
+line-height:22px; color:#000; background-color:#fff;" id=3D"maintext">
+Thomas,
+<br><br>
+In just five days, Hoosiers will cast their votes to determine which candid=
+ate will capture their 52 delegates.<br><br>
+
+This is the single, biggest, most important day for our campaign so far.
+<br><br>
+Carly and I are barnstorming Indiana to capture every last vote =E2=80=93 a=
+s we fight to win the GOP nomination.
+<br><br>
+I can't emphasize enough how important the vote in Indiana is going to be, =
+<strong>and frankly, it could be the deciding factor.</strong><br><br>
+Thomas, let me be blunt:  I can't win Indiana =E2=80=93 and  this nominatio=
+n =E2=80=93 if you don't step forward right now with a game-changing campai=
+gn
+gift.
+<br><br>
+It's now or never =E2=80=93 and I really need you.
+<br><br>
+<strong>I've asked my team to place the secure, Instant Donate buttons belo=
+w so that it will take you less than two minutes to help:</strong><br><br>
+
+<center>
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063710:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$5</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063711:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$35</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063712:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$100</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063713:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$500</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063714:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$1000</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063709:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt; Other&nbsp;Amount</strong></a><br><br>
+</center>
+Make no mistake, Indiana is absolutely pivotal.=20
+<br><br>
+
+The <strong>bad news</strong> is if Trump wins all the delegates in Indiana=
+, his nomination could be all but determined; but the <strong>good
+news</strong> is if we are going to win enough delegates in Indiana =E2=80=
+=93 Trump's path to secure 1,237 delegates before the convention is virtual=
+ly
+impossible. <br>
+<br>
+
+It all comes down to this: <strong>we need a minimum of 10,000 individual d=
+onations before May 3rd =E2=80=93 primary day.</strong> Will you help us
+reach this critical goal by making an Instant Donation right now to our Ind=
+iana Victory Fund =E2=80=93 ensuring we have the resources needed to win?<b=
+r>
+<br>
+
+
+<center>
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063710:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$5</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063711:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$35</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063712:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$100</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063713:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$500</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063714:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt;&nbsp;$1000</strong></a><br><br>
+
+<a href=3D"http://paracom.paramountcommunication.com/ct/35063709:sN6t1gCNQ:=
+m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r"><strong>Indiana Victory =
+Fund: Instant
+Donate&nbsp;&gt;&gt; Other&nbsp;Amount</strong></a><br><br>
+</center>
+
+I am convinced that if we fail to throw everything we have into ensuring vi=
+ctory in Indiana...come November when we watch Hillary win by historic
+margins =E2=80=93  just as every reliable poll predicts she will against Do=
+nald Trump <strong>=E2=80=93 we will wish we had pushed just a little harde=
+r
+right now.</strong><br><br>
+
+<center><strong><a href=3D"http://paracom.paramountcommunication.com/ct/350=
+63709:sN6t1gCNQ:m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r">URGENT: =
+10,000 donations needed
+before May 3rd =E2=80=93 pledge your support right now&nbsp;&gt;&gt;</a></s=
+trong><br><br></center>
+
+<span style=3D"background-color:#FFF300;"><strong>Yesterday's announcement =
+of Carly Fiorina as my choice for VP promises better days ahead for
+conservatives and America, but we need your immediate help to fight back ag=
+ainst Donald Trump's onslaught of attacks in Indiana.</strong></span><br><b=
+r>
+
+It's all come down to this, Thomas.<br><br>
+
+Stand with us today with a contribution to the <a href=3D"http://paracom.pa=
+ramountcommunication.com/ct/35063709:sN6t1gCNQ:m:1:1306726831:1849846283211=
+9673E176D1ECEC0F0FF:r"><strong>Indiana Victory Fund.</strong></a><br><br>
+
+For liberty,<br>
+<img src=3D"http://paracom.paramountcommunication.com/cimages/dab618f2b5829=
+757ddb8a46fc88cfff8/tc-sig-b.jpg" height=3D"80" width=3D"178" border=3D"0" =
+alt=3D"Ted
+Cruz"><br>
+Ted Cruz<br><br>
+
+
+
+<br><br><br><br><br><br><br><br></font><br><br><br>
+		<br>
+		<center>
+			<table width=3D"280" cellspacing=3D"0" cellpadding=3D"0" border=3D"1" st=
+yle=3D"border:thin solid #000;" id=3D"disclaimer">
+               	<tbody>
+                   	<tr>
+                       	<td valign=3D"top" align=3D"center">
+						<center>
+							<table width=3D"270" cellspacing=3D"0" cellpadding=3D"5" border=3D"0=
+" id=3D"disclaimer2">
+								<tbody>
+									<tr>
+										<td><center><font size=3D"2" face=3D"Arial, Verdana, Geneva" styl=
+e=3D"font-size: 13px; font-family: arial,verdana,helvetica,sans-serif;
+line-height:14px !important;" id=3D"disclaimertext">PAID FOR BY CRUZ FOR PR=
+ESIDENT<br><a href=3D"http://www.tedcruz.org">www.tedcruz.org</a></font></c=
+enter></td>
+									</tr>
+								</tbody>
+							</table>
+						</center>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+           <font style=3D"font-size:9px;">Copyright =C2=A9 2016 All Rights =
+Reserved | <a href=3D"http://paracom.paramountcommunication.com/ct/35063715=
+:sN6t1gCNQ:m:1:1306726831:18498462832119673E176D1ECEC0F0FF:r">Privacy Polic=
+y</a></font>
+		</center>
+				  </td>
+				</tr>
+			</tbody></table>
+
+	=09
+<br><br>
+		</td>
+	</tr>
+</tbody></table>
+
+<img src=3D"http://paracom.paramountcommunication.com/imagelibrary/N-sN6t1g=
+CNQ-EE51B42A9AB32D19A55D104349CAD4B9.jpg" width=3D"1" height=3D"1" style=3D=
+"border:none; visibility:hidden; max-height:0px; max-width:0px; overflow:hi=
+dden;">
+
+
+
+
+
+
+<p><font face=3D"Verdana, Arial, Helvetica, sans-serif" size=3D"1" color=3D=
+"#999999">
+            This message was intended for: <a href=3D"mailto:nuccio001@conn=
+ect.wcsu.edu">nuccio001@connect.wcsu.edu</a> <br>
+            You were added to the system February 25, 2016.<br>
+            For more information <a href=3D"http://paracom.paramountcommuni=
+cation.com/p/isN6t1gCNQ">click here</a>. <a href=3D"http://paracom.paramoun=
+tcommunication.com/p/osN6t1gCNQ">Update your preferences</a><br>
+            <a href=3D"http://paracom.paramountcommunication.com/p/osN6t1gC=
+NQ">Unsubscribe</a> | <a href=3D"mailto:unsub-34332877698-echo3-038AEC513A8=
+84540129D9D3EF92CF1AF@emailsendr.net?Subject=3DUnsubscribe&amp;body=3DPleas=
+e%20remove%20me%20from%20further%20mailings">Unsubscribe via email</a><br>
+            <br>
+            </font></p>
+</div></blockquote></body></html>=
+
+--Apple-Mail-97CBADE3-3623-470B-AD04-014E5C80AE68--

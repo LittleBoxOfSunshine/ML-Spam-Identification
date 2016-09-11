@@ -1,0 +1,693 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 25 Apr
+ 2016 10:29:09 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 25 Apr 2016
+ 10:29:07 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 878038617
+ for ParrishD@dnc.org; Mon, 25 Apr 2016 09:29:11 -0500
+X-Note-AR-ScanTimeLocal: 4/25/2016 9:29:10 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/19/2016 8:05:20 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.43 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-460/SG:5 4/25/2016 9:28:48 AM
+X-GBUdb-Analysis: 0, 209.85.215.43, Ugly c=0.783738 p=-0.984072 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8746 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/25/2016 9:29:10 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.43
+X-Note-Reverse-DNS: mail-lf0-f43.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G404 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.215.43] (HELO mail-lf0-f43.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138053291
+ for ParrishD@dnc.org; Mon, 25 Apr 2016 09:29:09 -0500
+Received: by mail-lf0-f43.google.com with SMTP id u64so17341954lff.3
+        for <ParrishD@dnc.org>; Mon, 25 Apr 2016 07:29:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=+2rh68n2qqt5xvVkALdPJ9b1RlI1maEudIQWl331RlU=;
+        b=kybK7W81Aj8Vhp58O2RtFigXoCUAF6flt6NPAu2f2YEI9Q9QEmrvIAVlwnOyOrs8DU
+         nWlkCg0octwU8LJTkgcVRpFOf9nB3L5kKwa1kVKxTe1zv9HIqEA/Grebp3TwX+jG+Z1f
+         74DmNL7etYEoDw3bQxLQNYSkOS+79y8wyo0F8HYm9vzg0+CZBzIOhUVR36aDYZxa03V8
+         qrhdXoxHP1K66GC/OVBuEOy+nI4EDs3LbPOKqBd1LgJc2mG5VZX/dAtABdcKXAFWJEIy
+         XF3WuxNBRU8gUItni9JViBC/X97KxiPuyYNASHYaURypsEq3LDOAjfEMjRNYO/ApAtNH
+         p+Cg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=+2rh68n2qqt5xvVkALdPJ9b1RlI1maEudIQWl331RlU=;
+        b=MfNxmMrU3lgnWAFhpG40Lh6F5IYq4Ra2T6NAACDmI5h/XHHSFscqD4IMHoHqGrMHa6
+         G02FcXRuOsNpWFMVPiMq4valZIyGcd2APvBV4fmt8ZG9ztpfEa/AfJjHKOhxRiXO5gna
+         dzOd5ZJQ4B7GJgK1dr/BbDe1h0sAREH8li0Q70V30ByjCB52HSIHW6GIuSZ9atmeKDtY
+         hlLoc+dBa0c+acGYGVmYk5UVY65AzH8hHVh9t1ixS7bWJI53/8iibHLl5C2jn0WqFxRj
+         d1BfG1pXM8eWuMhMN60Uz7IITRHDW8tDB3agJW27n3D9Z4KhK9qCrB19ECnlvsw16WUY
+         4fnQ==
+X-Gm-Message-State: AOPr4FUVhrlBc9VMOCgmJw6PnnNQ80ltq2fNvJtz5gHD3PRrxFN5cKO3YvUhbFtXw6wdH831UnhHkHcMq+UAOhLR
+X-Received: by 10.25.86.144 with SMTP id k138mr14312406lfb.6.1461594546289;
+ Mon, 25 Apr 2016 07:29:06 -0700 (PDT)
+Received: by 10.25.153.140 with HTTP; Mon, 25 Apr 2016 07:28:26 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994EA59@dncdag1.dnc.org>
+References: <2EF1CAC3C7B5554CB6B5E13F3F018955FE4D5E8D@dncdag1.dnc.org>
+ <CACG1p4rKezUDcR7BUPNZMmDhpkkifmMtVdqMj=vZoGVo=Kz+bg@mail.gmail.com>
+ <2C124416-D386-4689-AE05-E37B51C6CA4E@dnc.org> <CACG1p4qvtvHPCxVP7-Kap7iBjw=-xn_aySc0SKw-u+ZSoq-xmg@mail.gmail.com>
+ <5C041D9C6CCC7845AE90EEADDBDC8D016F02B926@dncdag1.dnc.org> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994EA59@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Mon, 25 Apr 2016 10:28:26 -0400
+Message-ID: <CACG1p4pR0w2UBb7aOAJaXu5pon5zY-7Scpz26StqtdLdg8JsbQ@mail.gmail.com>
+Subject: Re: FW: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a1140820ebcdc4f05314ffffa"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1140820ebcdc4f05314ffffa
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+My thoughts exactly. We probably have to, to get the $ though, right?
+
+On Mon, Apr 25, 2016 at 10:27 AM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Do you want to put the George meeting on this trip? I don=E2=80=99t want =
+it to
+> backfire if we end up having to fill time.
+>
+>
+>
+> *From:* Comer, Scott
+> *Sent:* Monday, April 25, 2016 10:27 AM
+> *To:* Zachary Allen
+> *Cc:* Parrish, Daniel
+> *Subject:* RE: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC
+>
+>
+>
+> Cool. Dan =E2=80=93 can you fill out the event request form? I=E2=80=99ll=
+ get it to them
+> today for their scheduling meeting later this week.
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com
+> <zallen@tipahconsulting.com>]
+> *Sent:* Friday, April 22, 2016 5:39 PM
+> *To:* Comer, Scott
+> *Cc:* Parrish, Daniel
+> *Subject:* Re: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC
+>
+>
+>
+> Seconded. Don't let JK get wind.
+>
+> On Friday, April 22, 2016, Comer, Scott <ComerS@dnc.org> wrote:
+>
+> Correct =F0=9F=99=8C=F0=9F=8F=BB
+>
+> Sent from my iPhone
+>
+>
+> On Apr 22, 2016, at 5:35 PM, Zachary Allen <zallen@tipahconsulting.com>
+> wrote:
+>
+> Ugh. This is all Dws4C time, so we're not on the hook, right?
+>
+> ---------- Forwarded message ----------
+> From: *Bonosky, Garret* <BonoskyG@dnc.org>
+> Date: Friday, April 22, 2016
+> Subject: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC
+> To: "Herries, Rebecca" <HerriesR@dnc.org>, Kate Houghton <
+> HoughtonK@dnc.org>, "Kroll, Amy" <KrollA@dnc.org>, "Guerra, Liana" <
+> GuerraL@dnc.org>, Anna Stolitzka <Stolitzka.anna@gmail.com>, Ryan Banfill
+> <ryban1001@gmail.com>, "Wei, Shu-Yen" <WeiS@dnc.org>, "Walker, Eric" <
+> WalkerE@dnc.org>, "Manriquez, Pablo" <ManriquezP@dnc.org>, "Walsh, Tom" <
+> WalshT@dnc.org>, "Paustenbach, Mark" <PaustenbachM@dnc.org>, "Miranda,
+> Luis" <MirandaL@dnc.org>, "Palermo, Rachel" <PalermoR@dnc.org>, "Price,
+> Jenna" <PriceJ@dnc.org>, "Comer, Scott" <ComerS@dnc.org>, "Marquez,
+> Karina" <MarquezK@dnc.org>, "Parrish, Daniel" <ParrishD@dnc.org>, Zachary
+> Allen <zallen@tipahconsulting.com>, "Moore, Colby" <MooreC@dnc.org>,
+> "Alvillar, Raul" <alvillarr@dnc.org>, "Wilson, Erin" <WilsonE@dnc.org>,
+> "Davis, Marilyn" <DavisM@dnc.org>, "Scott, Jillian" <ScottJ@dnc.org>,
+> "Gonzalez, Elias" <GonzalezE@dnc.org>, "Fernandez, Miles" <
+> FernandezM@dnc.org>, "Weinberg, Aaron" <WeinbergA@dnc.org>, "Mohib,
+> Laila" <MohibL@dnc.org>, "Rivera, PaaWee" <RiveraP@dnc.org>, "Maggard,
+> Lindsey" <MaggardL@dnc.org>, Maureen Garde <GardeM@dnc.org>, "Bagchi,
+> K.J." <BagchiK@dnc.org>, "Meloy, Sean" <MeloyS@dnc.org>,
+> "Gottschalk-Marconi, Emily" <Gottschalk-MarconiE@dnc.org>, "Burke,
+> Morgan" <BurkeM@dnc.org>, "Trierweiler, Sonja" <TrierweilerS@dnc.org>,
+> "Domino, Cate" <DominoC@dnc.org>, "Sanchez, Jennifer" <SanchezJ@dnc.org>,
+> Lindsey Reynolds <ReynoldsL@dnc.org>, "courtney@dwsforcongress.com" <
+> courtney@dwsforcongress.com>
+>
+> *<<< The chairwoman will be traveling to New York City
+> 2016.05.02-2016.05.03 for a DNC Comms driven trip. The sketch for the tri=
+p
+> is below. Add anyone by replying all and adding the staffer=E2=80=99s ema=
+il
+> address. Reminder that all briefings are due 48 hours prior to the
+> beginning of the travel swing. Reply all with additions and edits. Let me
+> know if you have any questions >>>*
+>
+>
+>
+> *Monday, May 2, 2016 =E2=80=93 New York, NY (EST)*
+>
+>
+>
+> Staff on Ground:                     Garret Bonosky
+>
+>                                                 Mark Paustenbach
+>
+>
+>
+> 7:30am EST-8:00am EST      to be booked =E2=80=93 Savoya to Drive DWS to =
+FLL (25
+> Minutes)
+>
+>                                                 Car Manifest:
+>
+>
+>
+> 8:00am EST-9:00am EST      DO NOT SCHEDULE - Check-in/Go through security
+>
+>
+>
+> 9:00am EST-12;01pm EST    to be booked =E2=80=93 DWS Flight to LGA =E2=80=
+=93 Delta 1088
+>
+> Depart FLL: 9:00am EST
+>
+> Arrive LGA: 12:01pm EST
+>
+> Confirmation: TBD
+>
+> Seat: TBD
+>
+>
+>
+> 12:01pm EST-12:15pm EST  DO NOT SCHEDULE - Get off plane/pick up bags/mee=
+t
+> driver
+>
+>
+>
+> 12:15pm EST-1:00pm EST    to be booked =E2=80=93 Savoya to Drive DWS to T=
+BD
+>
+>                                                 Car Manifest:
+>
+>
+>
+> 1:00pm EST-2:00pm EST      MUST DO - LUNCH
+>
+>
+>
+> 2:00pm EST-10:00pm EST    OPEN TIME COMMS / DWS4C
+>
+>
+>
+> RON                                        TBD, New York, NY
+>
+>
+>
+> *Tuesday, May 3, 2016 =E2=80=93 New York, NY (EST)*
+>
+>
+>
+> Staff on Ground:                     Garret Bonosky
+>
+>                                                 Mark Paustenbach
+>
+>
+>
+> 6:00am EST-5:45pm EST      OPEN TIME COMMS / DWS4C
+>
+>
+>
+> 5:45pm EST-7:00pm EST      to be booked =E2=80=93 Savoya to Drive DWS to =
+JFK (XX
+> Minutes)
+>
+>                                                 Car Manifest:
+>
+>
+>
+> 7:00pm EST-8:00pm EST      DO NOT SCHEDULE - Check-in/Go through security
+>
+>
+>
+> 8:00pm EST-11:21pm PST    to be booked =E2=80=93 DWS Flight to LAX =E2=80=
+=93 American
+> Airlines 293
+>
+> Depart JFK =E2=80=93 8:00pm EST
+>
+> Arrive LAX =E2=80=93 11:21pm PST
+>
+> Confirmation:
+>
+> Seat =E2=80=93 TBD
+>
+>
+>
+> 11:21pm PST-11:40pm PST  DO NOT SCHEDULE - Get off plane/pick up bags/mee=
+t
+> driver
+>
+>
+>
+> 11:40pm PST-12:15pm PST  Courtney to Drive DWS to Beverly Hilton Hotel (3=
+6
+> Minutes)
+>
+>
+>
+> RON                                        to be booked =E2=80=93 Beverly=
+ Hilton,
+> 9876 Wilshire Boulevard, Beverly Hills, CA 90210
+>
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a1140820ebcdc4f05314ffffa
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">My thoughts exactly. We probably have to, to get the $ thoug=
+h, right?</div><div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On=
+ Mon, Apr 25, 2016 at 10:27 AM, Parrish, Daniel <span dir=3D"ltr">&lt;<a hr=
+ef=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&gt;</=
+span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8e=
+x;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Do you want to put the Ge=
+orge meeting on this trip? I don=E2=80=99t want it to backfire if we end up=
+ having to fill time.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Comer, S=
+cott
+<br>
+<b>Sent:</b> Monday, April 25, 2016 10:27 AM<span class=3D""><br>
+<b>To:</b> Zachary Allen<br>
+<b>Cc:</b> Parrish, Daniel<br>
+</span><b>Subject:</b> RE: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC=
+<u></u><u></u></span></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Cool. Dan =E2=80=93 can y=
+ou fill out the event request form? I=E2=80=99ll get it to them today for t=
+heir scheduling meeting later this week.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">mail=
+to:zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Friday, April 22, 2016 5:39 PM<br>
+<b>To:</b> Comer, Scott<br>
+<b>Cc:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC<u></u>=
+<u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Seconded. Don't let JK get wind.&nbsp;<br>
+<br>
+On Friday, April 22, 2016, Comer, Scott &lt;<a href=3D"mailto:ComerS@dnc.or=
+g" target=3D"_blank">ComerS@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Correct <span style=3D"font-family:&quot;Segoe UI Sy=
+mbol&quot;,&quot;sans-serif&quot;">
+=F0=9F=99=8C</span>=F0=9F=8F=BB<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 22, 2016, at 5:35 PM, Zachary Allen &lt;<a>zallen@tipahconsulting.co=
+m</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Ugh. This is all Dws4=
+C time, so we're not on the hook, right?&nbsp;<br>
+<br>
+---------- Forwarded message ----------<br>
+From: <b>Bonosky, Garret</b> &lt;<a>BonoskyG@dnc.org</a>&gt;<br>
+Date: Friday, April 22, 2016<br>
+Subject: CHAIR TRAVEL SKETCH: 2016.05.02-2016.05.03 - NYC<br>
+To: &quot;Herries, Rebecca&quot; &lt;<a>HerriesR@dnc.org</a>&gt;, Kate Houg=
+hton &lt;<a>HoughtonK@dnc.org</a>&gt;, &quot;Kroll, Amy&quot; &lt;<a>KrollA=
+@dnc.org</a>&gt;,
+ &quot;Guerra, Liana&quot; &lt;<a>GuerraL@dnc.org</a>&gt;, Anna Stolitzka &=
+lt;<a>Stolitzka.anna@gmail.com</a>&gt;, Ryan Banfill
+ &lt;<a>ryban1001@gmail.com</a>&gt;, &quot;Wei, Shu-Yen&quot; &lt;<a>WeiS@d=
+nc.org</a>&gt;, &quot;Walker, Eric&quot; &lt;<a>WalkerE@dnc.org</a>&gt;,
+ &quot;Manriquez, Pablo&quot; &lt;<a>ManriquezP@dnc.org</a>&gt;, &quot;Wals=
+h, Tom&quot; &lt;<a>WalshT@dnc.org</a>&gt;, &quot;Paustenbach, Mark&quot; &=
+lt;<a>PaustenbachM@dnc.org</a>&gt;,
+ &quot;Miranda, Luis&quot; &lt;<a>MirandaL@dnc.org</a>&gt;, &quot;Palermo, =
+Rachel&quot; &lt;<a>PalermoR@dnc.org</a>&gt;, &quot;Price, Jenna&quot; &lt;=
+<a>PriceJ@dnc.org</a>&gt;,
+ &quot;Comer, Scott&quot; &lt;<a>ComerS@dnc.org</a>&gt;, &quot;Marquez, Kar=
+ina&quot; &lt;<a>MarquezK@dnc.org</a>&gt;, &quot;Parrish, Daniel&quot; &lt;=
+<a>ParrishD@dnc.org</a>&gt;,
+ Zachary Allen &lt;<a>zallen@tipahconsulting.com</a>&gt;, &quot;Moore, Colb=
+y&quot; &lt;<a>MooreC@dnc.org</a>&gt;, &quot;Alvillar, Raul&quot;
+ &lt;<a>alvillarr@dnc.org</a>&gt;, &quot;Wilson, Erin&quot; &lt;<a>WilsonE@=
+dnc.org</a>&gt;, &quot;Davis, Marilyn&quot; &lt;<a>DavisM@dnc.org</a>&gt;,
+ &quot;Scott, Jillian&quot; &lt;<a>ScottJ@dnc.org</a>&gt;, &quot;Gonzalez, =
+Elias&quot; &lt;<a>GonzalezE@dnc.org</a>&gt;, &quot;Fernandez, Miles&quot; =
+&lt;<a>FernandezM@dnc.org</a>&gt;,
+ &quot;Weinberg, Aaron&quot; &lt;<a>WeinbergA@dnc.org</a>&gt;, &quot;Mohib,=
+ Laila&quot; &lt;<a>MohibL@dnc.org</a>&gt;, &quot;Rivera, PaaWee&quot; &lt;=
+<a>RiveraP@dnc.org</a>&gt;,
+ &quot;Maggard, Lindsey&quot; &lt;<a>MaggardL@dnc.org</a>&gt;, Maureen Gard=
+e &lt;<a>GardeM@dnc.org</a>&gt;, &quot;Bagchi, K.J.&quot; &lt;<a>BagchiK@dn=
+c.org</a>&gt;,
+ &quot;Meloy, Sean&quot; &lt;<a>MeloyS@dnc.org</a>&gt;, &quot;Gottschalk-Ma=
+rconi, Emily&quot; &lt;<a>Gottschalk-MarconiE@dnc.org</a>&gt;,
+ &quot;Burke, Morgan&quot; &lt;<a>BurkeM@dnc.org</a>&gt;, &quot;Trierweiler=
+, Sonja&quot; &lt;<a>TrierweilerS@dnc.org</a>&gt;, &quot;Domino, Cate&quot;=
+ &lt;<a>DominoC@dnc.org</a>&gt;,
+ &quot;Sanchez, Jennifer&quot; &lt;<a>SanchezJ@dnc.org</a>&gt;, Lindsey Rey=
+nolds &lt;<a>ReynoldsL@dnc.org</a>&gt;, &quot;<a>courtney@dwsforcongress.co=
+m</a>&quot;
+ &lt;<a>courtney@dwsforcongress.com</a>&gt;<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"color:red;background:yellow">&lt;&=
+lt;&lt;
+</span><span style=3D"background:yellow">The chairwoman will be traveling t=
+o New York City 2016.05.02-2016.05.03 for a DNC Comms driven trip. The sket=
+ch for the trip is below. Add anyone by replying all and adding the staffer=
+=E2=80=99s email address. Reminder that all
+ briefings are due 48 hours prior to the beginning of the travel swing. Rep=
+ly all with additions and edits. Let me know if you have any questions
+<span style=3D"color:red">&gt;&gt;&gt;</span></span></b><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><b><u><span style=3D"font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;">Monday, May 2, 2016 =E2=80=93 New York, NY (EST)</sp=
+an></u></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">Staff on Ground:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp; Garret Bonosky</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Mark Paustenbach
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">7:30am EST-8:00am EST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style=3D"background:red">to be booked</span> =E2=80=93 Savoya to Driv=
+e DWS to FLL (25 Minutes)</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Car Manifest:</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">8:00am EST-9:00am EST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO NOT=
+ SCHEDULE - Check-in/Go through security</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">9:00am EST-12;01pm EST&nbsp;&nbsp;&nbsp;
+<span style=3D"background:red">to be booked</span> =E2=80=93 DWS Flight to =
+LGA =E2=80=93 Delta 1088</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:1.5in;text-indent:.5in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Depart=
+ FLL: 9:00am EST</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Arrive=
+ LGA: 12:01pm EST</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Confir=
+mation: TBD</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Seat: =
+TBD</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">12:01pm EST-12:15pm EST&nbsp; DO NOT SCHEDULE - Get off pl=
+ane/pick up bags/meet driver</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">12:15pm EST-1:00pm EST&nbsp;&nbsp;&nbsp;
+<span style=3D"background:red">to be booked</span> =E2=80=93 Savoya to Driv=
+e DWS to TBD</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Car Manifest:</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">1:00pm EST-2:00pm EST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MUST D=
+O - LUNCH</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;;background:yellow">2:00pm EST-10:00pm EST&nbsp;&nbsp;&nbsp;=
+ OPEN TIME COMMS / DWS4C</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">RON&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style=3D"background:red">TBD</span>, New York, NY</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><b><u><span style=3D"font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;">Tuesday, May 3, 2016 =E2=80=93 New York, NY (EST)</s=
+pan></u></b><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">Staff on Ground:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp; Garret Bonosky</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Mark Paustenbach
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;;background:yellow">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;;background:yellow">6:00am EST-5:45pm EST&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; OPEN TIME COMMS / DWS4C</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">5:45pm EST-7:00pm EST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to be =
+booked =E2=80=93 Savoya to Drive DWS to JFK (XX Minutes)</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =
+Car Manifest:</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">7:00pm EST-8:00pm EST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO NOT=
+ SCHEDULE - Check-in/Go through security</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">8:00pm EST-11:21pm PST&nbsp;&nbsp;&nbsp;
+<span style=3D"background:red">to be booked</span> =E2=80=93 DWS Flight to =
+LAX =E2=80=93 American Airlines 293</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:1.5in;text-indent:.5in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Depart=
+ JFK =E2=80=93 8:00pm EST</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Arrive=
+ LAX =E2=80=93 11:21pm PST</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Confir=
+mation: </span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Seat =
+=E2=80=93 TBD</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">11:21pm PST-11:40pm PST&nbsp; DO NOT SCHEDULE - Get off pl=
+ane/pick up bags/meet driver</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">11:40pm PST-12:15pm PST&nbsp; Courtney to Drive DWS to Bev=
+erly Hilton Hotel (36 Minutes)</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">RON&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+<span style=3D"background:red">to be booked</span> =E2=80=93 Beverly Hilton=
+, 9876 Wilshire Boulevard, Beverly Hills, CA 90210</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-left:2.0in">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">&nbsp;=
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a>
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a =
+href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a1140820ebcdc4f05314ffffa--

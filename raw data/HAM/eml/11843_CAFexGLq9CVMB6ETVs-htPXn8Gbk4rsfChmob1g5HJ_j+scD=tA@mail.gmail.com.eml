@@ -1,0 +1,1516 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 27 Apr
+ 2016 11:17:10 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 27 Apr 2016
+ 11:17:04 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 882851910
+ for MirandaL@dnc.org; Wed, 27 Apr 2016 10:17:11 -0500
+X-Note-AR-ScanTimeLocal: 4/27/2016 10:17:09 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.161.180 DOM:hattaway.com ADDR:spierce@hattaway.com
+X-Note: SPF: None
+X-Note: ICH-CT/SI:0-765/SG:1 4/27/2016 10:15:29 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-456/SG:8 4/27/2016 10:15:29 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.2292 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/27/2016 10:16:50 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.161.180
+X-Note-Reverse-DNS: mail-yw0-f180.google.com
+X-Note-Return-Path: spierce@hattaway.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 G418 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-yw0-f180.google.com ([209.85.161.180] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137440061
+ for MirandaL@dnc.org; Wed, 27 Apr 2016 10:17:09 -0500
+Received: by mail-yw0-f180.google.com with SMTP id g133so77258779ywb.2
+        for <MirandaL@dnc.org>; Wed, 27 Apr 2016 08:17:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hattaway-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=8u9GM5DKytaCzAiCsvJV0aiz//lrZQc6c4sxdPGYpHM=;
+        b=bvw8mSGm663o2xdhdG/rFTy3H93jpojBvZmRfSeW6/meV+7QuBW8b8AOZqBugw7+me
+         nDo7giOhIuYu6ieByyYMtnXSBiYKOIrREwh2vAxaRZhHcV6QSai/oRfzMWyR4JoaXr4K
+         23N9p3PGnm26RvDxEZuDSYPZL0aTHNlGNUAPO5KKmayL1xX8uFr4/kQ8UiGgR4A5W9Oq
+         sZdVdOuu7ZVD6Kk+vb4x2nK4idlvJ+r0oXEc869Kq3JZFgIED6sL1twJh5YQ6xdrWnQ9
+         Knknri5BVZr0moIeuF7UXtsK16IqIk+YNFYXT9h8LnELRcSylWGn4M5zQH4Csqst1RTN
+         UMmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=8u9GM5DKytaCzAiCsvJV0aiz//lrZQc6c4sxdPGYpHM=;
+        b=eyiP8Ul4uH+VlD9c4cIEPyXYBUvsFCtgqiow+PP2Nvi9nBEk/LezEQGdLKL8/BtHC+
+         gAPK0Tjps3H61dOX9L3WffddDxEFirgMTKrFA57pY8KQKih1TL4KpR5y16b4cwdQ5GuA
+         /5C9xJew4YfP+2xpoCd+W3JEZjJiJpvPH8lJMGnrf0EccEQzgNEMBfbcko4odqW4oi7O
+         Nq1tPA8BxLi5c76kj7t35+BLLVrQ7AcKhLJVQUtnwoYZ3B2rLKFsyrkb73z9wUyV5rEa
+         Ns0e6+vBR7gdWKyKyYPrwXvyDyApqM2RFhCWHiFm+e6eVk/qYrdZZ355Bm/BLNAj8xFB
+         glSw==
+X-Gm-Message-State: AOPr4FURdNhfsTcrF3GFtPfhfA+tgwhFTRrBbqWSyIUDTg6r8peo+XTQ0O2AxLpiKNzxIwjzIU6sW5xIU59U9+9g
+X-Received: by 10.176.2.50 with SMTP id 47mr4659862uas.45.1461770228437; Wed,
+ 27 Apr 2016 08:17:08 -0700 (PDT)
+Received: by 10.103.33.80 with HTTP; Wed, 27 Apr 2016 08:17:08 -0700 (PDT)
+In-Reply-To: <106729BB5B59F14384E378B2609ED0946F409CA5@dncdag1.dnc.org>
+References: <CAFexGLojt_u-vfng0384ZNmPzs4x-xQTezeofezAVP81+eqLCQ@mail.gmail.com>
+	<106729BB5B59F14384E378B2609ED0946F3881A9@dncdag1.dnc.org>
+	<CAFexGLqhJq0H1VTFTy6huvwUO4M_=D2E4ByhNGmbQT6a5NeBXQ@mail.gmail.com>
+	<106729BB5B59F14384E378B2609ED0946F38FEDF@dncdag1.dnc.org>
+	<106729BB5B59F14384E378B2609ED0946F3DCAB4@dncdag1.dnc.org>
+	<CAFexGLobRSySsuzLbshua2Q1zXuZCzb-6BnPEZCb1+R_E39nRA@mail.gmail.com>
+	<3E36362B-FCA8-40A6-A798-DB0E432A274D@dnc.org>
+	<106729BB5B59F14384E378B2609ED0946F3FDC0B@dncdag1.dnc.org>
+	<CAFexGLpN+rR8tvZYRs8J-oOjKP=nht3vTfqw93ODEcCzTdcaZg@mail.gmail.com>
+	<106729BB5B59F14384E378B2609ED0946F409CA5@dncdag1.dnc.org>
+Date: Wed, 27 Apr 2016 11:17:08 -0400
+Message-ID: <CAFexGLq9CVMB6ETVs-htPXn8Gbk4rsfChmob1g5HJ_j+scD=tA@mail.gmail.com>
+Subject: Re: Regional advisors for Narrative Project
+From: Steve Pierce <spierce@hattaway.com>
+To: "Alvillar, Raul" <alvillarr@dnc.org>
+CC: "Davis, Marilyn" <DavisM@dnc.org>, "Miranda, Luis" <MirandaL@dnc.org>,
+	"Moore, Colby" <MooreC@dnc.org>
+Content-Type: multipart/related; boundary="001a1137241635e9a2053178e7fd"
+Return-Path: spierce@hattaway.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1137241635e9a2053178e7fd
+Content-Type: multipart/alternative; boundary="001a1137241635e99f053178e7fc"
+
+--001a1137241635e99f053178e7fc
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+That makes sense, Raul. We'll be back in touch once we figure out the most
+effective way to collect their input. Thanks again!
+
+--
+
+Steve Pierce
+Senior Associate
+Hattaway Communications, Inc.
+202.688.2468
+www.hattaway.com
+
+Helping visionary leaders & organizations achieve great things.
+
+On Tue, Apr 26, 2016 at 10:34 AM, Alvillar, Raul <alvillarr@dnc.org> wrote:
+
+> Great.  I would like to have my team do the initial outreach to them and
+> connect you all and you can go from there.
+>
+>
+>
+> Best,
+>
+>
+>
+> Raul
+>
+>
+>
+> Raul Alvillar
+>
+> National Political Director
+>
+> Democratic National Committee
+>
+> Tele. 202.863.8000
+>
+>
+>
+> [image: cid:image001.png@01D0CE9B.F742D770]
+>
+>
+>
+> *From:* Steve Pierce [mailto:spierce@hattaway.com]
+> *Sent:* Tuesday, April 26, 2016 9:56 AM
+> *To:* Alvillar, Raul
+> *Cc:* Davis, Marilyn; Miranda, Luis; Moore, Colby
+>
+> *Subject:* Re: Regional advisors for Narrative Project
+>
+>
+>
+> Thanks, Raul. This is a great list. I'll talk it through with Doug and le=
+t
+> you know how he wants to proceed, but we'll definitely want to engage the=
+se
+> folks in one way or another.
+>
+>
+>
+> Marilyn =E2=80=94 Anyone else you would add?
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Fri, Apr 22, 2016 at 4:47 PM, Alvillar, Raul <alvillarr@dnc.org> wrote=
+:
+>
+> Here is Political suggestions.
+>
+>
+>
+> If you like any of them let me know and we can reach out to let them know=
+.
+>
+>
+>
+> Narrative Project Political Names
+>
+>
+>
+> Midwest
+>
+> =E2=80=A2                     Isabel Framer (OH) =E2=80=93 Latino leader
+>
+> =E2=80=A2                     Mary Barrett (NE) =E2=80=93 Former DNC Wome=
+n=E2=80=99s Outreach
+> Director, now heads up Brad Ashford=E2=80=99s reelection campaign
+>
+> =E2=80=A2                     Doug Brooks (MO) =E2=80=93 DNC Midwest Cauc=
+us Chair
+>
+> =E2=80=A2                     Eileen Weir (MO) =E2=80=93 Independence May=
+or
+>
+>
+>
+> Northeast
+>
+> =E2=80=A2                     Ayanna Pressley (MA) =E2=80=93 Member, Bost=
+on City Council
+>
+> =E2=80=A2                     Michael Nutter (PA) =E2=80=93 Former Philad=
+elphia May
+>
+> =E2=80=A2                     Tom McGee (MA) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Ray Buckley (NH) =E2=80=93 Chairman, New Ha=
+mpshire
+> Democratic Party
+>
+> =E2=80=A2                     Shavonda Corbin (NJ) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Josh Shapiro (PA) =E2=80=93 County Commissi=
+oner/Attn. Gen.
+> Candidate
+>
+> =E2=80=A2                     Howard Dean (VT) =E2=80=93 Former Governor
+>
+> =E2=80=A2                     Stephanie Miner (NY) =E2=80=93 Syracuse May=
+or
+>
+> =E2=80=A2                     Kathy Sheehan (NY) =E2=80=93 Albany Mayor
+>
+> =E2=80=A2                     Yvette Lewis (MD) =E2=80=93 DNC Member-at-L=
+arge
+>
+> =E2=80=A2                     Hans Reimer (MD) =E2=80=93 Member, Montgome=
+ry County Council
+>
+> South
+>
+> =E2=80=A2                     Greg Casar (TX) =E2=80=93 Member, Austin Ci=
+ty Council
+>
+> =E2=80=A2                     Gilda Cobb Hunter (SC) =E2=80=93 Chair, DNC=
+ Southern Caucus
+>
+> =E2=80=A2                     Anton Gunn (SC) =E2=80=93 Chief Diversity O=
+fficer, USC
+> Hospital
+>
+> =E2=80=A2                     Dr. Joyce Glaise (VA) =E2=80=93 Virginia Un=
+ion College
+>
+> =E2=80=A2                     Clarence Tong (VA) =E2=80=93 President, Ale=
+xandria Democrats
+>
+> =E2=80=A2                     Louise Lucas (VA) =E2=80=93 State Senator
+>
+> =E2=80=A2                     Mike Hamlar (VA) =E2=80=93 CEO, Hamlar Ente=
+rprises
+>
+> =E2=80=A2                     Rashad Taylor (GA) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Calvin Smyre (GA) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Stacey Abrams (GA) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Teresa Tomlinson (GA) =E2=80=93 Columbus Ma=
+yor
+>
+> =E2=80=A2                     Aaron Harris (MS) =E2=80=93 Political Activ=
+ist
+>
+>
+>
+> West
+>
+> =E2=80=A2                     Crisanta Duran (CO) =E2=80=93 State House M=
+ajority Leader
+>
+> =E2=80=A2                     Aja Brown (CA) =E2=80=93 Compton Mayor
+>
+> =E2=80=A2                     Cyrus Habib (WA) =E2=80=93 State Senate Dem=
+ocratic Whip
+>
+> =E2=80=A2                     Will Guzzardi (IL) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Jack Franks (IL) =E2=80=93 State Rep
+>
+> =E2=80=A2                     Aaron Ford (NV) =E2=80=93 State Senate Mino=
+rity Leader
+>
+> =E2=80=A2                     Quentin Hart (IA) =E2=80=93 Waterloo Mayor
+>
+>
+>
+>
+>
+> Raul Alvillar
+>
+> National Political Director
+>
+> Democratic National Committee
+>
+> Tele. 202.863.8000
+>
+>
+>
+> [image: cid:image001.png@01D0CE9B.F742D770]
+>
+>
+>
+> *From:* Davis, Marilyn
+> *Sent:* Thursday, April 21, 2016 11:55 PM
+> *To:* Steve Pierce
+> *Cc:* Alvillar, Raul; Miranda, Luis; Moore, Colby
+>
+>
+> *Subject:* Re: Regional advisors for Narrative Project
+>
+>
+>
+> Are there specific states your interested in? Battleground states?
+> Non-Battleground?
+>
+> Marilyn D. Davis
+>
+> National Director of Community Engagement
+>
+> Democratic National Convention
+>
+> M: 609-218-3254
+>
+> Twitter: @marilynddavis
+>
+> Facebook.com/marilynddavis <http://facebook.com/marilynddavis>
+>
+>
+>
+> Sent from my iPhone, please excuse any typos
+>
+>
+> On Apr 18, 2016, at 11:24 AM, Steve Pierce <spierce@hattaway.com> wrote:
+>
+> Thanks, all. Any leads on folks from outside DC who are smart about
+> message/strategy and would provide good input on a confidential basis wou=
+ld
+> be much appreciated!
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Mon, Apr 18, 2016 at 11:22 AM, Alvillar, Raul <alvillarr@dnc.org>
+> wrote:
+>
+> Sorry I thought I had looped Marilyn.  She would also be a good resource
+> for you as well.
+>
+>
+>
+> Raul Alvillar
+>
+> National Political Director
+>
+> Democratic National Committee
+>
+> Tele. 202.863.8000
+>
+>
+>
+> <image001.png>
+>
+>
+>
+> *From:* Alvillar, Raul
+> *Sent:* Thursday, April 14, 2016 4:14 PM
+> *To:* 'Steve Pierce'
+> *Cc:* Miranda, Luis; Moore, Colby
+> *Subject:* RE: Regional advisors for Narrative Project
+>
+>
+>
+> Yes.
+>
+>
+>
+> Raul Alvillar
+>
+> National Political Director
+>
+> Democratic National Committee
+>
+> Tele. 202.863.8000
+>
+>
+>
+> <image001.png>
+>
+>
+>
+> *From:* Steve Pierce [mailto:spierce@hattaway.com <spierce@hattaway.com>]
+> *Sent:* Thursday, April 14, 2016 3:54 PM
+> *To:* Alvillar, Raul
+> *Cc:* Miranda, Luis
+> *Subject:* Re: Regional advisors for Narrative Project
+>
+>
+>
+> It would be great if we could get your ideas by next Friday, if possible.
+> Would that work?
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Thu, Apr 14, 2016 at 11:04 AM, Alvillar, Raul <alvillarr@dnc.org>
+> wrote:
+>
+> Yes of course when do you need these by?
+>
+>
+>
+> Raul Alvillar
+>
+> National Political Director
+>
+> Democratic National Committee
+>
+> Tele. 202.863.8000
+>
+>
+>
+> <image001.png>
+>
+>
+>
+> *From:* Steve Pierce [mailto:spierce@hattaway.com]
+> *Sent:* Thursday, April 14, 2016 9:54 AM
+> *To:* Miranda, Luis; Alvillar, Raul
+> *Subject:* Regional advisors for Narrative Project
+>
+>
+>
+> Hi Luis and Raul,
+>
+>
+>
+> Hope all is well with you both. As part of the Narrative Project, we want
+> to make sure we're getting outside the "beltway bubble" and talking to
+> folks beyond the usual suspects here in DC to make sure the messages we
+> develop will also resonate on the ground.
+>
+>
+>
+> To do that, we'd like to engage some smart, trusted folks from around the
+> country to get their input on our drafts and learn from their
+> experience/perspective. However, being DC-based consultants, we realize o=
+ur
+> contact list in other parts of the country is fairly limited =E2=80=94 an=
+d that's
+> where we thought you guys might be the best people to help us.
+>
+>
+>
+> I know you guys work with the top Democratic operatives and consultants
+> around the country on a regular basis. Would you be able to pull together=
+ a
+> list of folks you think are smart on this type of stuff and able to keep
+> things discrete who you think would be worth talking to and getting their
+> input in the mix? We'd greatly appreciate any help or direction you could
+> provide.
+>
+>
+>
+> Let me know. Thanks in advance!
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+>
+>
+>
+>
+
+--001a1137241635e99f053178e7fc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">That makes sense, Raul. We'll be back in touch once we figur=
+e out the most effective way to collect their input. Thanks again!</div><di=
+v class=3D"gmail_extra"><br clear=3D"all"><div><div class=3D"gmail_signatur=
+e"><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"font-family:Arial,s=
+ans-serif"><div><span style=3D"font-size:small">--</span><br></div><div><fo=
+nt size=3D"2"><br></font></div><div><font size=3D"2">Steve Pierce<br></font=
+></div></div><div style=3D"font-family:Arial,sans-serif"><font size=3D"2">S=
+enior Associate</font></div><div style=3D"font-family:Arial,sans-serif"><fo=
+nt size=3D"2">Hattaway Communications, Inc.</font></div><div style=3D"font-=
+family:Arial,sans-serif"><font size=3D"2">202.688.2468</font></div><div sty=
+le=3D"font-family:Arial,sans-serif"><a href=3D"http://www.hattaway.com/" st=
+yle=3D"color:rgb(17,85,204)" target=3D"_blank"><font size=3D"2">www.hattawa=
+y.com</font></a></div><div style=3D"font-family:Arial,sans-serif"><font siz=
+e=3D"2"><br></font></div><div style=3D"font-family:Arial,sans-serif"><font =
+size=3D"2">Helping visionary leaders &amp; organizations achieve great thin=
+gs.</font></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Tue, Apr 26, 2016 at 10:34 AM, Alvillar, =
+Raul <span dir=3D"ltr">&lt;<a href=3D"mailto:alvillarr@dnc.org" target=3D"_=
+blank">alvillarr@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left=
+:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Great.&nbsp; I would like=
+ to have my team do the initial outreach to them and connect you all and yo=
+u can go from there.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,<u></u><u></u></span=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul
+<u></u><u></u></span></p><span class=3D"">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul Alvillar
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">National Political Direct=
+or
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Tele. <a href=3D"tel:202.=
+863.8000" value=3D"&#43;12028638000" target=3D"_blank">202.863.8000</a><u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><img width=3D"77" height=
+=3D"71" src=3D"cid:image001.png@01D19FA7.3C7A7C30" alt=3D"cid:image001.png@=
+01D0CE9B.F742D770"><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+</span><p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-famil=
+y:&quot;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D=
+"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> S=
+teve Pierce [mailto:<a href=3D"mailto:spierce@hattaway.com" target=3D"_blan=
+k">spierce@hattaway.com</a>]
+<br>
+<b>Sent:</b> Tuesday, April 26, 2016 9:56 AM<br>
+<b>To:</b> Alvillar, Raul<br>
+<b>Cc:</b> Davis, Marilyn; Miranda, Luis; Moore, Colby</span></p><div><div =
+class=3D"h5"><br>
+<b>Subject:</b> Re: Regional advisors for Narrative Project<u></u><u></u></=
+div></div><p></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks, Raul. This is a great list. I'll talk it thr=
+ough with Doug and let you know how he wants to proceed, but we'll definite=
+ly want to engage these folks in one way or another.<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Marilyn =E2=80=94 Anyone else you would add?<u></u><=
+u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><span style=3D"font-fa=
+mily:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><span style=3D"fon=
+t-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><span=
+ style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u><=
+/u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" value=3D"&#4=
+3;12026882468" target=3D"_blank">202.688.2468</a></span><span style=3D"font=
+-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a><u><=
+/u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><span style=3D"font-family:&quot;Arial&quo=
+t;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, Apr 22, 2016 at 4:47 PM, Alvillar, Raul &lt;=
+<a href=3D"mailto:alvillarr@dnc.org" target=3D"_blank">alvillarr@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Here is Political suggest=
+ions.&nbsp;
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">If you like any of them l=
+et me know and we can reach out to let them know.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+Narrative Project Political Names<u></u><u></u></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Midwest<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Isabel Framer (OH) =E2=80=93 Latino leader<u></u><u></u>=
+</p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Mary Barrett (NE) =E2=80=93 Former DNC Women=E2=80=99s O=
+utreach Director, now heads up Brad Ashford=E2=80=99s reelection campaign<u=
+></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Doug Brooks (MO) =E2=80=93 DNC Midwest Caucus Chair<u></=
+u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Eileen Weir (MO) =E2=80=93 Independence Mayor<u></u><u><=
+/u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Northeast<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Ayanna Pressley (MA) =E2=80=93 Member, Boston City Council<u></u><u></u></p=
+>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Michael Nutter (PA) =E2=80=93 Former Philadelphia May<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Tom McGee (MA) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Ray Buckley (NH) =E2=80=93 Chairman, New Hampshire Democratic Party<u></u><=
+u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Shavonda Corbin (NJ) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Josh Shapiro (PA) =E2=80=93 County Commissioner/Attn. Gen. Candidate<u></u>=
+<u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Howard Dean (VT) =E2=80=93 Former Governor<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Stephanie Miner (NY) =E2=80=93 Syracuse Mayor<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Kathy Sheehan (NY) =E2=80=93 Albany Mayor<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Yvette Lewis (MD) =E2=80=93 DNC Member-at-Large<u></u><u></u></p>
+<p style=3D"margin-left:.75in">=E2=80=A2<span style=3D"font-size:7.0pt">&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Hans Reimer (MD) =E2=80=93 Member, Montgomery County Council<u></u><u></u><=
+/p>
+<p class=3D"MsoNormal">South<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Greg Casar (TX) =E2=80=93 Member, Austin City Council<u>=
+</u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Gilda Cobb Hunter (SC) =E2=80=93 Chair, DNC Southern Cau=
+cus<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Anton Gunn (SC) =E2=80=93 Chief Diversity Officer, USC H=
+ospital<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Dr. Joyce Glaise (VA) =E2=80=93 Virginia Union College<u=
+></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Clarence Tong (VA) =E2=80=93 President, Alexandria Democ=
+rats<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Louise Lucas (VA) =E2=80=93 State Senator<u></u><u></u><=
+/p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Mike Hamlar (VA) =E2=80=93 CEO, Hamlar Enterprises<u></u=
+><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Rashad Taylor (GA)&nbsp;=E2=80=93 State Rep<u></u><u></u=
+></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Calvin Smyre (GA) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Stacey Abrams (GA) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Teresa Tomlinson (GA) =E2=80=93 Columbus Mayor<u></u><u>=
+</u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Aaron Harris (MS) =E2=80=93 Political Activist<u></u><u>=
+</u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">West<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Crisanta Duran (CO) =E2=80=93 State House Majority Leade=
+r<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Aja Brown (CA) =E2=80=93 Compton Mayor<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Cyrus Habib (WA) =E2=80=93 State Senate Democratic Whip<=
+u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Will Guzzardi (IL) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Jack Franks (IL) =E2=80=93 State Rep<u></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Aaron Ford (NV) =E2=80=93 State Senate Minority Leader<u=
+></u><u></u></p>
+<p style=3D"margin-right:0in;margin-bottom:0in;margin-left:.75in;margin-bot=
+tom:.0001pt">
+=E2=80=A2<span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp; </span>Quentin Hart (IA) =E2=80=93 Waterloo Mayor<u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul Alvillar
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">National Political Direct=
+or
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Tele.
+<a href=3D"tel:202.863.8000" target=3D"_blank">202.863.8000</a></span><u></=
+u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><img border=3D"0" width=
+=3D"77" height=3D"71" src=3D"cid:image001.png@01D19FA7.3C7A7C30" alt=3D"cid=
+:image001.png@01D0CE9B.F742D770"></span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Davis, M=
+arilyn
+<br>
+<b>Sent:</b> Thursday, April 21, 2016 11:55 PM<br>
+<b>To:</b> Steve Pierce<br>
+<b>Cc:</b> Alvillar, Raul; Miranda, Luis; Moore, Colby</span><u></u><u></u>=
+</p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>Subject:</b> Re: Regional advisors for Narrative Project<u></u><u></u></=
+p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Are there specific st=
+ates your interested in? Battleground states? Non-Battleground?&nbsp;<u></u=
+><u></u></p>
+<div>
+<p class=3D"MsoNormal">Marilyn D. Davis<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">National Director of Community Engagement<u></u><u><=
+/u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Democratic National Convention<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">M:
+<a href=3D"tel:609-218-3254" target=3D"_blank">609-218-3254</a><u></u><u></=
+u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Twitter: @marilynddavis<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"http://facebook.com/marilynddavis" target=
+=3D"_blank">Facebook.com/marilynddavis</a>&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">Sent from my iPhone, please excuse any typos<u></u><=
+u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 18, 2016, at 11:24 AM, Steve Pierce &lt;<a href=3D"mailto:spierce@ha=
+ttaway.com" target=3D"_blank">spierce@hattaway.com</a>&gt; wrote:<u></u><u>=
+</u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Thanks, all. Any leads on folks from outside DC who =
+are smart about message/strategy and would provide good input on a confiden=
+tial basis would be much appreciated!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><u></=
+u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" target=3D"_b=
+lank">202.688.2468</a></span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a></sp=
+an><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, Apr 18, 2016 at 11:22 AM, Alvillar, Raul &lt=
+;<a href=3D"mailto:alvillarr@dnc.org" target=3D"_blank">alvillarr@dnc.org</=
+a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Sorry I thought I had loo=
+ped Marilyn.&nbsp; She would also be a good resource for you as well.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul Alvillar
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">National Political Direct=
+or
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Tele.
+<a href=3D"tel:202.863.8000" target=3D"_blank">202.863.8000</a></span><u></=
+u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&lt;image001.png&gt;</spa=
+n><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Alvillar=
+, Raul
+<br>
+<b>Sent:</b> Thursday, April 14, 2016 4:14 PM<br>
+<b>To:</b> 'Steve Pierce'<br>
+<b>Cc:</b> Miranda, Luis; Moore, Colby<br>
+<b>Subject:</b> RE: Regional advisors for Narrative Project</span><u></u><u=
+></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Yes.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul Alvillar
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">National Political Direct=
+or
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Tele.
+<a href=3D"tel:202.863.8000" target=3D"_blank">202.863.8000</a></span><u></=
+u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&lt;image001.png&gt;</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Steve Pi=
+erce [<a href=3D"mailto:spierce@hattaway.com" target=3D"_blank">mailto:spie=
+rce@hattaway.com</a>]
+<br>
+<b>Sent:</b> Thursday, April 14, 2016 3:54 PM<br>
+<b>To:</b> Alvillar, Raul<br>
+<b>Cc:</b> Miranda, Luis<br>
+<b>Subject:</b> Re: Regional advisors for Narrative Project</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">It would be great if we could get your ideas by next=
+ Friday, if possible. Would that work?<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><u></=
+u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" target=3D"_b=
+lank">202.688.2468</a></span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a></sp=
+an><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Thu, Apr 14, 2016 at 11:04 AM, Alvillar, Raul &lt=
+;<a href=3D"mailto:alvillarr@dnc.org" target=3D"_blank">alvillarr@dnc.org</=
+a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Yes of course when do you=
+ need these by?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Raul Alvillar
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">National Political Direct=
+or
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Tele.
+<a href=3D"tel:202.863.8000" target=3D"_blank">202.863.8000</a></span><u></=
+u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&lt;image001.png&gt;</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Steve Pi=
+erce [mailto:<a href=3D"mailto:spierce@hattaway.com" target=3D"_blank">spie=
+rce@hattaway.com</a>]
+<br>
+<b>Sent:</b> Thursday, April 14, 2016 9:54 AM<br>
+<b>To:</b> Miranda, Luis; Alvillar, Raul<br>
+<b>Subject:</b> Regional advisors for Narrative Project</span><u></u><u></u=
+></p>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Luis and Raul,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Hope all is well with you both. As part of the Narra=
+tive Project, we want to make sure we're getting outside the &quot;beltway =
+bubble&quot; and talking to folks beyond the usual suspects
+ here in DC to make sure the messages we develop will also resonate on the =
+ground.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">To do that, we'd like to engage some smart, trusted =
+folks from around the country to get their input on our drafts and learn fr=
+om their experience/perspective. However, being DC-based
+ consultants, we realize our contact list in other parts of the country is =
+fairly limited =E2=80=94 and that's where we thought you guys might be the =
+best people to help us.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I know you guys work with the top Democratic operati=
+ves and consultants around the country on a regular basis. Would you be abl=
+e to pull together a list of folks you think are smart
+ on this type of stuff and able to keep things discrete who you think would=
+ be worth talking to and getting their input in the mix? We'd greatly appre=
+ciate any help or direction you could provide.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Let me know. Thanks in advance!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><u></=
+u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" target=3D"_b=
+lank">202.688.2468</a></span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a></sp=
+an><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a1137241635e99f053178e7fc--
+
+--001a1137241635e9a2053178e7fd
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D19FA7.3C7A7C30>
+X-Attachment-Id: 44a9112acec5cac0_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+SUVORK5CYII=
+
+--001a1137241635e9a2053178e7fd--

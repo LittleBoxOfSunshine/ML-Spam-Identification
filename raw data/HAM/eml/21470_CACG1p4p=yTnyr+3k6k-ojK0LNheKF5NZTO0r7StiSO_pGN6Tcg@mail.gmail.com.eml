@@ -1,0 +1,782 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 24 May
+ 2016 17:34:17 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 24 May 2016
+ 17:34:08 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 933053327
+ for ParrishD@dnc.org; Tue, 24 May 2016 16:34:04 -0500
+X-Note-AR-ScanTimeLocal: 5/24/2016 4:31:45 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.49 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-420/SG:5 5/24/2016 4:31:31 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6244 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/24/2016 4:31:33 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.49
+X-Note-Reverse-DNS: mail-oi0-f49.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-oi0-f49.google.com ([209.85.218.49] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140753584
+ for ParrishD@dnc.org; Tue, 24 May 2016 16:31:45 -0500
+Received: by mail-oi0-f49.google.com with SMTP id k23so48561445oih.0
+        for <ParrishD@dnc.org>; Tue, 24 May 2016 14:31:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc;
+        bh=HcTjGEkMOcW0OEYut0q0gaKGrqgIADoLX8fBhBCgXY4=;
+        b=ioyFTdDcyA9mQRKRlHCrg2nA48Cq4YsJ4fYSPsD8pfiDvSD+tNDQDDSj5obXj4SNC9
+         FM0hqpOP8FkbMg/PAuoHOEQNhO9FYo9e5aEdwD4g7ZNUzsuyJSYcQw19BhiVY7fumZf4
+         wg7BXkxJVElgIKZwDtZoDxX+WQp0LLBiNbZeb4XD3by3TvpMMBbk0NU7wc6t9sdll+0j
+         S/1qRq5zNtvFpxcc4sEaGNIM+lbBv6OPDKPfJHvGtzcEvcmllT6v8RHm5H19JDjjtwXP
+         bgLnm3CHIyG5kh9EYyAhqTCyjNpYOY7IVweKnQuI7h1/6nBnxcUOtmA4Gzsc7QC4aJFT
+         bSHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to:cc;
+        bh=HcTjGEkMOcW0OEYut0q0gaKGrqgIADoLX8fBhBCgXY4=;
+        b=NnWP0Cphb2qEhyAg2nnP8gFcw1yvTODvz2nCByYkM35YFmwifqMqyExkMvmfhA0+89
+         fZDqyMrTF+7qPlEzH+JDBAlkdSCihowd1C8ffbK2Saufk9pmljM/GVtNjqMyTaPDoVqf
+         OXwutQLKwGVOlNUpy99oLhfp+ymc9csPWXL2vL0DjxFoZwvOyQKEouDE9KgO29+/PI4v
+         qscXEHiIhS6AKn7S/LGY44uS0QA8rxZ5J5PG0/SO5FjPRFF+UnweOMqpueAJXtYnH4LH
+         P0NVfPwj0xV5M/bexuLvA3ii2cDFn7akIedl3gvV106N+7Mud13smOnW9rwk88eDlm6B
+         TdSA==
+X-Gm-Message-State: ALyK8tLc/KWIZDq2IXth/1f7tzdok78V8ymgF6RxyZJ6HomJ2yrJ8OKQNql8BB9XiwQOu1XRVik7PjUDqiqzxBly
+X-Received: by 10.202.168.143 with SMTP id r137mr236757oie.40.1464125493765;
+ Tue, 24 May 2016 14:31:33 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Tue, 24 May 2016 14:30:54 -0700 (PDT)
+In-Reply-To: <9F294E2E-2C03-4E15-B233-B54655C006CB@dnc.org>
+References: <7E5770E1-72EB-4149-8912-0657DA4D5736@lererhippeau.com>
+ <CACG1p4o1HQ0JxLrJZ6wCej0a=UJdWZYsWB2ETQZ6PH6mgkmZFA@mail.gmail.com>
+ <CY1PR0801MB0970A6D40C8A121C1B5286D6A97F0@CY1PR0801MB0970.namprd08.prod.outlook.com>
+ <CACG1p4rdsL+p1nQ9NJ8j+j2m-MJdDzFOh+rRzE0L-ybJYbVbZw@mail.gmail.com>
+ <CY1PR0801MB0970DFEBFC7F38300FE3FC5AA97F0@CY1PR0801MB0970.namprd08.prod.outlook.com>
+ <CACG1p4rZ_iHsOTF0ZhHVZ0FR02xKGKFcAExS3-Cy0Nb8fEStYA@mail.gmail.com>
+ <CY1PR0801MB097013D024B96BBC5E273A4DA9720@CY1PR0801MB0970.namprd08.prod.outlook.com>
+ <9F294E2E-2C03-4E15-B233-B54655C006CB@dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Tue, 24 May 2016 17:30:54 -0400
+Message-ID: <CACG1p4p=yTnyr+3k6k-ojK0LNheKF5NZTO0r7StiSO_pGN6Tcg@mail.gmail.com>
+Subject: Re: inrto
+To: Ellen Thrower <ThrowerE@dnc.org>
+CC: "O'Brien, Lillian" <lobrien@unionsquareevents.com>, "Parrish, Daniel"
+	<ParrishD@dnc.org>, Caroline Taylor <ctaylor_2ndchapter@yahoo.com>, "Gaines,
+ Carolyn" <cgaines@unionsquareevents.com>
+Content-Type: multipart/alternative; boundary="001a113cd7baf6746005339d471b"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113cd7baf6746005339d471b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+We now have a rough estimate on timing: 6-8pm (with his arrival being 7pm).
+Thanks!
+
+On Wed, May 11, 2016 at 4:59 PM, Ellen Thrower <ThrowerE@dnc.org> wrote:
+
+> Hey there!
+>
+> Please make out to the following:
+>
+> Bradley Marshall
+> Democratic National Committee
+> 430 S. Capitol St. SE.
+> Washington, DC 20003
+> Phone: 2028637126
+>
+> Thank you!
+>
+>
+> Ellen Thrower
+> Events Director
+> Democratic National Committee
+> c: 202-549-1467
+> throwere@dnc.org
+>
+> On May 11, 2016, at 3:41 PM, O'Brien, Lillian <
+> lobrien@unionsquareevents.com> wrote:
+>
+> Good afternoon Ellen,
+>
+>
+>
+> I hope you are well! Zachary mentioned that you would be the person to
+> reach out to for the name, address and telephone number of the person we
+> are making the contract out to for the June 8th event. Would you be able
+> to send this information over to us?
+>
+>
+>
+> Thank you!
+>
+>
+>
+> *LILLIAN O=E2=80=99BRIEN *EVENT SALES MANAGER
+>
+>
+>
+> *UNION SQUARE EVENTS *640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 10=
+001
+>
+> *P *646.747.0584 *M *646.315.4443 *E *LOBRIEN@UNIONSQUAREEVENTS.COM
+> <LOBRIEN@unionsquareevents.com>
+>
+> UNIONSQUAREEVENTS.COM <http://unionsquareevents.com> =E2=96=AA @UNIONSQEV=
+ENTS
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com
+> <zallen@tipahconsulting.com>]
+> *Sent:* Sunday, May 08, 2016 12:51 PM
+> *To:* O'Brien, Lillian <lobrien@unionsquareevents.com>
+> *Cc:* Ellen Thrower <ThrowerE@dnc.org>; Parrish, Daniel <parrishd@dnc.org=
+>;
+> Caroline Taylor <ctaylor_2ndchapter@yahoo.com>; Gaines, Carolyn <
+> cgaines@unionsquareevents.com>
+> *Subject:* Re: inrto
+>
+>
+>
+> Use my cell - (301) 651-5222
+>
+>
+>
+> Thanks!
+>
+> On Sunday, May 8, 2016, O'Brien, Lillian <lobrien@unionsquareevents.com>
+> wrote:
+>
+> Great, thank you! Yes 4pm is perfect. Is (646) 470-8689 the best number
+> to reach you on?
+>
+>
+>
+> *LILLIAN O=E2=80=99BRIEN *EVENT SALES MANAGER
+>
+>
+>
+> *UNION SQUARE EVENTS *640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 10=
+001
+>
+> *P *646.747.0584 *M *646.315.4443 *E *LOBRIEN@UNIONSQUAREEVENTS.COM
+>
+> UNIONSQUAREEVENTS.COM =E2=96=AA @UNIONSQEVENTS
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+> *Sent:* Sunday, May 08, 2016 12:34 PM
+> *To:* O'Brien, Lillian <lobrien@unionsquareevents.com>
+> *Cc:* Ellen Thrower <ThrowerE@dnc.org>; Parrish, Daniel <parrishd@dnc.org=
+>;
+> Caroline Taylor <ctaylor_2ndchapter@yahoo.com>; Gaines, Carolyn <
+> cgaines@unionsquareevents.com>
+> *Subject:* Re: inrto
+>
+>
+>
+> Lillian -
+>
+>
+>
+> Good catch, apologies for not mentioning - passport #s are only required
+> for folks without SSNs.
+>
+>
+>
+> As for a call on Wednesday, I can do 4pm - will that work?
+>
+>
+>
+> Thanks!
+>
+> On Sunday, May 8, 2016, O'Brien, Lillian <lobrien@unionsquareevents.com>
+> wrote:
+>
+> Hi Zachary,
+>
+>
+>
+> Thank you for sending this over! Can you confirm that we will need
+> passport #=E2=80=99s or is just social security #=E2=80=99s ok?
+>
+>
+>
+> Are you also available for a quick call sometime on Wednesday? Anytime
+> after 11am will work for me!
+>
+>
+>
+> *LILLIAN O=E2=80=99BRIEN *EVENT SALES MANAGER
+>
+>
+>
+> *UNION SQUARE EVENTS *640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 10=
+001
+>
+> *P *646.747.0584 *M *646.315.4443 *E *LOBRIEN@UNIONSQUAREEVENTS.COM
+>
+> UNIONSQUAREEVENTS.COM =E2=96=AA @UNIONSQEVENTS
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com
+> <zallen@tipahconsulting.com>]
+> *Sent:* Saturday, May 07, 2016 1:49 PM
+> *To:* Ellen Thrower <ThrowerE@dnc.org>; Parrish, Daniel <parrishd@dnc.org=
+>
+> *Cc:* O'Brien, Lillian <lobrien@unionsquareevents.com>; Caroline Taylor <
+> ctaylor_2ndchapter@yahoo.com>
+> *Subject:* Re: inrto
+>
+>
+>
+> Thanks so much, Ken (moving you to BCC to spare your inbox while you're
+> away) - and great to meet you Lillian. We look forward to working togethe=
+r!
+>
+>
+>
+> Copied here are Ellen Thrower, our Events Director, and Dan Parrish on my
+> team who will be helping me with this event.
+>
+>
+>
+> For starters, attached is the security information sheet we'll need for
+> anyone on site June 8th. We will need this by June 5th, so certainly no
+> rush but wanted to get it to you now so you had it.
+>
+>
+>
+> Have a great weekend.
+>
+>
+>
+> Best,
+>
+> Zach
+>
+>
+>
+> On Sat, May 7, 2016 at 9:22 AM, Kenneth Lerer <klerer@lererhippeau.com>
+> wrote:
+>
+> Zach. meet Lillian from Union Square Co. Lillian, meet Zach who is in
+> charge of June 8. Can you two talk whenever you need to. Ill do menu with
+> you Lillian when we return and in meantime you guys can touch base if you
+> need to.
+>
+> It will be passed everything. buffet dinner and passed water and white
+> wine. Ill explain the mechanics next week. In the meantime you two now kn=
+ow
+> each other.
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+>
+>
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a113cd7baf6746005339d471b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">We now have a rough estimate on timing: 6-8pm (with his arri=
+val being 7pm). Thanks!&nbsp;</div><div class=3D"gmail_extra"><br><div clas=
+s=3D"gmail_quote">On Wed, May 11, 2016 at 4:59 PM, Ellen Thrower <span dir=
+=3D"ltr">&lt;<a href=3D"mailto:ThrowerE@dnc.org" target=3D"_blank">ThrowerE=
+@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=
+=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div>Hey there!</div>
+<div><br>
+</div>
+<div>Please make out to the following:</div>
+<div><br>
+</div>
+<div>Bradley Marshall<br>
+Democratic National Committee<br>
+430 S. Capitol St. SE.<br>
+Washington, DC 20003</div>
+<div></div>
+<div>Phone: <a href=3D"tel:2028637126" value=3D"&#43;12028637126" target=3D=
+"_blank">2028637126</a></div>
+<div><br>
+</div>
+<div>Thank you!<span class=3D"HOEnZb"><font color=3D"#888888"><br>
+<br>
+<div><br>
+</div>
+<div>Ellen Thrower</div>
+<div>Events Director</div>
+<div>Democratic National Committee</div>
+<div>c: <a href=3D"tel:202-549-1467" value=3D"&#43;12025491467" target=3D"_=
+blank">202-549-1467</a></div>
+<div><a href=3D"mailto:throwere@dnc.org" target=3D"_blank">throwere@dnc.org=
+</a></div>
+</font></span></div><div><div class=3D"h5">
+<div><br>
+On May 11, 2016, at 3:41 PM, O'Brien, Lillian &lt;<a href=3D"mailto:lobrien=
+@unionsquareevents.com" target=3D"_blank">lobrien@unionsquareevents.com</a>=
+&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+
+
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Good afternoon Ellen,
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">I hope you are well! Zachary mentione=
+d that you would be the person to reach out to for the name, address and te=
+lephone number of the person we are making the
+ contract out to for the June 8<sup>th</sup> event. Would you be able to se=
+nd this information over to us?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Thank you!<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><b><span style=3D"font=
+-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#7e7e7e">LILLI=
+AN O=E2=80=99BRIEN
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">EVENT SALES MANAGER</span><span style=3D"font-size=
+:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:gray"><u></u><u></u=
+></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:gray"><u></u>&nbs=
+p;<u></u></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><b><span style=3D"font=
+-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#7e7e7e">UNION=
+ SQUARE EVENTS
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 1=
+0001
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><b><span style=3D"font=
+-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#7e7e7e">P
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e"><a href=3D"tel:646.747.0584" value=3D"&#43;1646747=
+0584" target=3D"_blank">646.747.0584</a>
+<b>M </b><a href=3D"tel:646.315.4443" value=3D"&#43;16463154443" target=3D"=
+_blank">646.315.4443</a> <b>E </b><a href=3D"mailto:LOBRIEN@unionsquareeven=
+ts.com" target=3D"_blank">LOBRIEN@UNIONSQUAREEVENTS.COM</a></span><span sty=
+le=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:blue=
+">
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span style=3D"font-si=
+ze:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#7e7e7e"><a href=
+=3D"http://unionsquareevents.com" target=3D"_blank">UNIONSQUAREEVENTS.COM</=
+a> =E2=96=AA @UNIONSQEVENTS
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Zachary Allen [<a href=3D"mail=
+to:zallen@tipahconsulting.com" target=3D"_blank">mailto:zallen@tipahconsult=
+ing.com</a>]
+<br>
+<b>Sent:</b> Sunday, May 08, 2016 12:51 PM<br>
+<b>To:</b> O'Brien, Lillian &lt;<a href=3D"mailto:lobrien@unionsquareevents=
+.com" target=3D"_blank">lobrien@unionsquareevents.com</a>&gt;<br>
+<b>Cc:</b> Ellen Thrower &lt;<a href=3D"mailto:ThrowerE@dnc.org" target=3D"=
+_blank">ThrowerE@dnc.org</a>&gt;; Parrish, Daniel &lt;<a href=3D"mailto:par=
+rishd@dnc.org" target=3D"_blank">parrishd@dnc.org</a>&gt;; Caroline Taylor =
+&lt;<a href=3D"mailto:ctaylor_2ndchapter@yahoo.com" target=3D"_blank">ctayl=
+or_2ndchapter@yahoo.com</a>&gt;; Gaines,
+ Carolyn &lt;<a href=3D"mailto:cgaines@unionsquareevents.com" target=3D"_bl=
+ank">cgaines@unionsquareevents.com</a>&gt;<br>
+<b>Subject:</b> Re: inrto<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Use my cell - <a href=3D"tel:%28301%29%20651-5222" v=
+alue=3D"&#43;13016515222" target=3D"_blank">(301) 651-5222</a>&nbsp;<u></u>=
+<u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks!<br>
+<br>
+On Sunday, May 8, 2016, O'Brien, Lillian &lt;<a href=3D"mailto:lobrien@unio=
+nsquareevents.com" target=3D"_blank">lobrien@unionsquareevents.com</a>&gt; =
+wrote:<u></u><u></u></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-right:0in">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Great, thank you! Yes 4pm is perfect.=
+ Is <a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=
+=3D"_blank">(646) 470-8689</a> the best number to reach you on?</span><u></=
+u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">LILLIAN O=E2=80=99BRIEN
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">EVENT SALES MANAGER</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:gray">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">UNION SQUARE EVENTS
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 1=
+0001
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">P
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e"><a href=3D"tel:646.747.0584" value=3D"&#43;1646747=
+0584" target=3D"_blank">646.747.0584</a>
+<b>M </b><a href=3D"tel:646.315.4443" value=3D"&#43;16463154443" target=3D"=
+_blank">646.315.4443</a> <b>E </b><a>LOBRIEN@UNIONSQUAREEVENTS.COM</a></spa=
+n><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif=
+;color:blue">
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:#7e7e7e"><a href=3D"http://UNIONSQUAREEVENTS.COM" target=3D"_blank">UN=
+IONSQUAREEVENTS.COM</a> =E2=96=AA @UNIONSQEVENTS
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Zachary Allen [mailto:<a>zalle=
+n@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Sunday, May 08, 2016 12:34 PM<br>
+<b>To:</b> O'Brien, Lillian &lt;<a>lobrien@unionsquareevents.com</a>&gt;<br=
+>
+<b>Cc:</b> Ellen Thrower &lt;<a>ThrowerE@dnc.org</a>&gt;; Parrish, Daniel &=
+lt;<a>parrishd@dnc.org</a>&gt;; Caroline Taylor &lt;<a>ctaylor_2ndchapter@y=
+ahoo.com</a>&gt;;
+ Gaines, Carolyn &lt;<a>cgaines@unionsquareevents.com</a>&gt;<br>
+<b>Subject:</b> Re: inrto</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Lillian -&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Good catch, apologies for not mentioning - passport =
+#s are only required for folks without SSNs.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">As for a call on Wednesday, I can do 4pm - will that=
+ work?&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks!<br>
+<br>
+On Sunday, May 8, 2016, O'Brien, Lillian &lt;<a>lobrien@unionsquareevents.c=
+om</a>&gt; wrote:<u></u><u></u></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Hi Zachary,
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Thank you for sending this over! Can =
+you confirm that we will need passport #=E2=80=99s or is just social securi=
+ty
+ #=E2=80=99s ok? </span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">Are you also available for a quick ca=
+ll sometime on Wednesday? Anytime after 11am will work for me!
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">LILLIAN O=E2=80=99BRIEN
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">EVENT SALES MANAGER</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:gray">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">UNION SQUARE EVENTS
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e">640 W 28TH STREET, 7TH FL =E2=96=AA NEW YORK, NY 1=
+0001
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-seri=
+f;color:#7e7e7e">P
+</span></b><span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,s=
+ans-serif;color:#7e7e7e"><a href=3D"tel:646.747.0584" value=3D"&#43;1646747=
+0584" target=3D"_blank">646.747.0584</a>
+<b>M </b><a href=3D"tel:646.315.4443" value=3D"&#43;16463154443" target=3D"=
+_blank">646.315.4443</a> <b>E </b><a href=3D"mailto:LOBRIEN@UNIONSQUAREEVEN=
+TS.COM" target=3D"_blank">LOBRIEN@UNIONSQUAREEVENTS.COM</a></span><span sty=
+le=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:blue=
+">
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none">
+<span style=3D"font-size:8.0pt;font-family:&quot;Verdana&quot;,sans-serif;c=
+olor:#7e7e7e"><a href=3D"http://UNIONSQUAREEVENTS.COM" target=3D"_blank">UN=
+IONSQUAREEVENTS.COM</a> =E2=96=AA @UNIONSQEVENTS
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#1f497d">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif">From:</span></b><span style=3D"font-size:11.0pt;=
+font-family:&quot;Calibri&quot;,sans-serif"> Zachary Allen [<a href=3D"mail=
+to:zallen@tipahconsulting.com" target=3D"_blank">mailto:zallen@tipahconsult=
+ing.com</a>]
+<br>
+<b>Sent:</b> Saturday, May 07, 2016 1:49 PM<br>
+<b>To:</b> Ellen Thrower &lt;<a href=3D"mailto:ThrowerE@dnc.org" target=3D"=
+_blank">ThrowerE@dnc.org</a>&gt;; Parrish, Daniel &lt;<a href=3D"mailto:par=
+rishd@dnc.org" target=3D"_blank">parrishd@dnc.org</a>&gt;<br>
+<b>Cc:</b> O'Brien, Lillian &lt;<a href=3D"mailto:lobrien@unionsquareevents=
+.com" target=3D"_blank">lobrien@unionsquareevents.com</a>&gt;; Caroline Tay=
+lor &lt;<a href=3D"mailto:ctaylor_2ndchapter@yahoo.com" target=3D"_blank">c=
+taylor_2ndchapter@yahoo.com</a>&gt;<br>
+<b>Subject:</b> Re: inrto</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks so much, Ken (moving you to BCC to spare your=
+ inbox while you're away) - and great to meet you Lillian. We look forward =
+to working together!&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Copied here are Ellen Thrower, our Events Director, =
+and Dan Parrish on my team who will be helping me with this event.&nbsp;<u>=
+</u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">For starters, attached is the security information s=
+heet we'll need for anyone on site June 8th. We will need this by June 5th,=
+ so certainly no rush but wanted to get it to you
+ now so you had it.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Have a great weekend.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Zach<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Sat, May 7, 2016 at 9:22 AM, Kenneth Lerer &lt;<a=
+ href=3D"mailto:klerer@lererhippeau.com" target=3D"_blank">klerer@lererhipp=
+eau.com</a>&gt; wrote:<u></u><u></u></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<p class=3D"MsoNormal">Zach. meet Lillian from Union Square Co. Lillian, me=
+et Zach who is in charge of June 8. Can you two talk whenever you need to. =
+Ill do menu with you Lillian when we return and in
+ meantime you guys can touch base if you need to.<br>
+<br>
+It will be passed everything. buffet dinner and passed water and white wine=
+. Ill explain the mechanics next week. In the meantime you two now know eac=
+h other.
+<u></u><u></u></p>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">--
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a =
+href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | (973) 618-5903 fax&nbsp;| <a>
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | (973) 618-5903 fax&nbsp;| <a href=3D"mai=
+lto:ZAllen@TIPAHConsulting.com" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</blockquote>
+</div></div></div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a113cd7baf6746005339d471b--

@@ -1,0 +1,634 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 25 Apr
+ 2016 13:14:58 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 25 Apr 2016
+ 13:14:55 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 878536253
+ for StoweE@dnc.org; Mon, 25 Apr 2016 12:14:59 -0500
+X-Note-AR-ScanTimeLocal: 4/25/2016 12:14:58 PM
+X-Policy: dnc.org
+X-Primary: stowee@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/19/2016 8:05:20 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.192.45 DOM:nextgenclimate.org ADDR:jenna.narayanan@nextgenclimate.org
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-210/SG:5 4/25/2016 12:14:07 PM
+X-GBUdb-Analysis: 0, 209.85.192.45, Ugly c=0.828769 p=-0.983923 Source White
+X-Signature-Violations: 0-0-0-25652-c
+X-Note-419: 46.8742 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/25/2016 12:14:49 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.192.45
+X-Note-Reverse-DNS: mail-qg0-f45.google.com
+X-Note-Return-Path: jenna.narayanan@nextgenclimate.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.192.45] (HELO mail-qg0-f45.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138106501
+ for StoweE@dnc.org; Mon, 25 Apr 2016 12:14:53 -0500
+Received: by mail-qg0-f45.google.com with SMTP id f74so78939938qge.2
+        for <StoweE@dnc.org>; Mon, 25 Apr 2016 10:14:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nextgenclimate.org; s=google;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=jDIay3KubFgYHuXlpI5DiU7/lsTXUn+892Tw7fKtd/M=;
+        b=gr9pu8KiplgYxqobagFpJuwed86U9FDCw2IbqPEk6c0MWmfH0MvM9bJ2NTtzbX/t4M
+         s/ytdca1iRjgTCA+Ae1VQrSnEPBuZhVcm88n/7G9Ju/qKyJ2u7YuKQrIT2L9UUtXic8C
+         pDx8ncOJIhtPeflJS/pZs5hSbxq8hQxcVSmos=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=jDIay3KubFgYHuXlpI5DiU7/lsTXUn+892Tw7fKtd/M=;
+        b=B82J812XRWMJUAfWBUexA7S4qZw8dFKHG4I7XGZYiUtP8WXMQPUrJoncu86zrbWMqA
+         rjbdACzTyCqlb/s7phRre6AZf+voM++mEbo0t9JH6zRPvF1jourMcLQIwHjOPyLoLJLP
+         bnV2S1qoYqT0a3/M3XOG5qMcz+WHNGCrM72vyjK7bM/ZCi6x6oCyEhV1Ofo5XhQMkppG
+         hEDCzro0X6CsU5g8Xss93lN1OS4CDuiaI/MRPShIjq3BiGaYQuMoAW/m406wTgo+NfRs
+         Gl8EyJw4PlswJ2zkNvM2lWuXyYur8roeLHogbS6FQSLr1HXly/fy+pbdY2s4c622ks39
+         N1vQ==
+X-Gm-Message-State: AOPr4FVkM16hMwbMSSlhMDeEumj4MwM8yjdP9uGERKWKzHrZ8qmHVswi5jkufQ6O4N3LrI2blLgQ0BSKxggi28xz
+X-Received: by 10.140.99.80 with SMTP id p74mr35382162qge.97.1461604491632;
+ Mon, 25 Apr 2016 10:14:51 -0700 (PDT)
+Received: by 10.140.31.74 with HTTP; Mon, 25 Apr 2016 10:14:51 -0700 (PDT)
+In-Reply-To: <A53A516D7A8B644592D970450A35002174A5B6F4@dncdag1.dnc.org>
+References: <8E05C362-3FA9-4A05-95D1-839E69337C3D@dnc.org>
+	<C07FF74C-EBEE-4753-ACA9-35B47D0F6E3F@gmail.com>
+	<F12F7AC2-9B0C-4C21-87FC-FC98AFDF0204@nextgenclimate.org>
+	<D32977A2.9E80A%stowee@dnc.org>
+	<CAMi1UfhdGNzO5M-nEPRNPJMiDzYpdMJmh-G=+wXOwGZ4Nce=wQ@mail.gmail.com>
+	<D32979B5.9E814%stowee@dnc.org>
+	<A53A516D7A8B644592D970450A35002174A5B6F4@dncdag1.dnc.org>
+Date: Mon, 25 Apr 2016 10:14:51 -0700
+Message-ID: <CAFWsQrVJ7wPumAORXygOEpQ6r8ryU9dABurrqJR5Yp0N1KvcKQ@mail.gmail.com>
+Subject: Re: Steyer
+From: Jenna Narayanan <jenna.narayanan@nextgenclimate.org>
+To: "Stowe, Erik" <StoweE@dnc.org>
+CC: Alex Fujinaka <alex.fujinaka@fahrllc.com>
+Content-Type: multipart/alternative; boundary="001a113db84c86b099053152506b"
+Return-Path: jenna.narayanan@nextgenclimate.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113db84c86b099053152506b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hi Erik,
+
+Not yet, but I will get it in the mail to you soon. Will let you know when
+it is on its way.
+
+Jenna
+
+On Mon, Apr 25, 2016 at 7:52 AM, Stowe, Erik <StoweE@dnc.org> wrote:
+
+> Also wanted to follow up with you guys about Tom=E2=80=99s contribution. =
+ Did you
+> guys get a chance to mail the check?  I just want to make sure I am
+> tracking properly on our end?
+>
+>
+>
+> *From:* Stowe, Erik
+> *Sent:* Tuesday, April 05, 2016 5:20 PM
+> *To:* Alex Fujinaka
+> *Cc:* Jenna Narayanan
+> *Subject:* Re: Steyer
+>
+>
+>
+> That=E2=80=99s correct, the home is in SF.  Let me know if there is anyth=
+ing else
+> you need.
+>
+>
+>
+> -Erik Stowe
+>
+>
+>
+> *From: *Alex Fujinaka <alex.fujinaka@fahrllc.com>
+> *Date: *Tuesday, April 5, 2016 at 2:17 PM
+> *To: *robert stowe <stowee@dnc.org>
+> *Cc: *Jenna Narayanan <jenna.narayanan@nextgenclimate.org>
+> *Subject: *Re: Steyer
+>
+>
+>
+> Thanks Erik!
+>
+>
+>
+> And just to confirm, this is 553 Arkansas St, San Francisco, CA 94107?
+> Tom's schedule is packed this day so trying to make sure we have logistic=
+s
+> down. Thanks!
+>
+>
+>
+> On Tue, Apr 5, 2016 at 2:11 PM, Stowe, Erik <StoweE@dnc.org> wrote:
+>
+> Still ironing out final details with Secret Service and I will send aroun=
+d
+> an update email on Thursday with all event details.  Call time for the
+> event will be at 3:45pm and the event should last until 6pm.  The address
+> is 553 Arkansas street.  Stayed tuned for final arrival details=E2=80=A6
+>
+>
+>
+> Thanks Jenna!!
+>
+>
+>
+> -Erik Stowe
+>
+>
+>
+> *From: *Jenna Narayanan <jenna.narayanan@nextgenclimate.org>
+> *Date: *Tuesday, April 5, 2016 at 1:50 PM
+> *To: *robert stowe <stowee@dnc.org>
+> *Cc: *Alex Fujinaka <alex.fujinaka@fahrllc.com>
+> *Subject: *Re: Steyer
+>
+>
+>
+> Hey Erik-
+>
+>
+>
+> Just wanted to follow up and make sure you got this. Can you send me
+> address and details?
+>
+> Jenna Narayanan
+>
+> NextGen Climate
+>
+> VP, Development
+>
+> M: 202.320.4554
+>
+>
+> On Apr 3, 2016, at 9:20 PM, Jenna Narayanan <jennanar@gmail.com> wrote:
+>
+> Hey Erik-
+>
+>
+>
+> *Thomas Fahr Steyer*
+>
+> SSN: 083-48-3626
+>
+> DOB: 6/27/1957
+>
+> City: San Francisco
+>
+> Let me know what else you need.
+>
+>
+> -Jenna
+>
+>
+> On Apr 1, 2016, at 12:50 PM, Kaplan, Jordan <KaplanJ@dnc.org> wrote:
+>
+> Stowe -
+>
+>
+>
+> Jenna is working with Mr. Steyer.  I will let you two take it from here!
+>
+>
+>
+> Great introduction, huh.
+>
+>
+>
+> Jordan
+>
+>
+> Jordan Kaplan
+> National Finance Director
+> Democratic National Committee
+> (202) 488-5002 (o) | (312) 339-0224 (c)
+> kaplanj@dnc.org
+>
+> <EFA0E494-461C-4D20-85BC-5D1CD9801DD6[11].png>
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> *ALEX FUJINAKA*
+> Personal Aide
+>
+> O:  415-802-2427
+> E: alex.fujinaka@fahrllc.com
+>
+
+
+
+--=20
+
+
+Jenna Narayanan
+
+VP, Development
+
+NextGen Climate
+
+M: 202-320-4554
+
+--001a113db84c86b099053152506b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hi Erik,&nbsp;<div><br></div><div>Not yet, but I will get it=
+ in the mail to you soon. Will let you know when it is on its way.&nbsp;</d=
+iv><div><br></div><div>Jenna</div></div><div class=3D"gmail_extra"><br><div=
+ class=3D"gmail_quote">On Mon, Apr 25, 2016 at 7:52 AM, Stowe, Erik <span d=
+ir=3D"ltr">&lt;<a href=3D"mailto:StoweE@dnc.org" target=3D"_blank">StoweE@d=
+nc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" style=3D"=
+margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Also wanted to follow up =
+with you guys about Tom=E2=80=99s contribution.&nbsp; Did you guys get a ch=
+ance to mail the check?&nbsp; I just want to make sure I am tracking proper=
+ly
+ on our end?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Stowe, E=
+rik
+<br>
+<b>Sent:</b> Tuesday, April 05, 2016 5:20 PM<br>
+<b>To:</b> Alex Fujinaka<br>
+<b>Cc:</b> Jenna Narayanan<br>
+<b>Subject:</b> Re: Steyer<u></u><u></u></span></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">That=E2=80=99s correct, the=
+ home is in SF.&nbsp; Let me know if there is anything else you need.<u></u=
+><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">-Erik Stowe<u></u><u></u></=
+span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:black">From:
+</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+&quot;sans-serif&quot;;color:black">Alex Fujinaka &lt;<a href=3D"mailto:ale=
+x.fujinaka@fahrllc.com" target=3D"_blank">alex.fujinaka@fahrllc.com</a>&gt;=
+<br>
+<b>Date: </b>Tuesday, April 5, 2016 at 2:17 PM<br>
+<b>To: </b>robert stowe &lt;<a href=3D"mailto:stowee@dnc.org" target=3D"_bl=
+ank">stowee@dnc.org</a>&gt;<br>
+<b>Cc: </b>Jenna Narayanan &lt;<a href=3D"mailto:jenna.narayanan@nextgencli=
+mate.org" target=3D"_blank">jenna.narayanan@nextgenclimate.org</a>&gt;<br>
+<b>Subject: </b>Re: Steyer<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Thanks Erik!
+<u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">And just to confirm, this i=
+s&nbsp;553 Arkansas St, San Francisco, CA 94107? Tom's schedule is packed t=
+his day so trying to make sure we have logistics down. Thanks!<u></u><u></u=
+></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">On Tue, Apr 5, 2016 at 2:11=
+ PM, Stowe, Erik &lt;<a href=3D"mailto:StoweE@dnc.org" target=3D"_blank">St=
+oweE@dnc.org</a>&gt; wrote:<u></u><u></u></span></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Still ironing out final det=
+ails with Secret Service and I will send around an update email on Thursday=
+ with all event details.&nbsp; Call time for the event will be
+ at 3:45pm and the event should last until 6pm.&nbsp; The address is 553 Ar=
+kansas street.&nbsp; Stayed tuned for final arrival details=E2=80=A6<u></u>=
+<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Thanks Jenna!!<u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">-Erik Stowe<u></u><u></u></=
+span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:black">From:
+</span></b><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,=
+&quot;sans-serif&quot;;color:black">Jenna Narayanan &lt;<a href=3D"mailto:j=
+enna.narayanan@nextgenclimate.org" target=3D"_blank">jenna.narayanan@nextge=
+nclimate.org</a>&gt;<br>
+<b>Date: </b>Tuesday, April 5, 2016 at 1:50 PM<br>
+<b>To: </b>robert stowe &lt;<a href=3D"mailto:stowee@dnc.org" target=3D"_bl=
+ank">stowee@dnc.org</a>&gt;<br>
+<b>Cc: </b>Alex Fujinaka &lt;<a href=3D"mailto:alex.fujinaka@fahrllc.com" t=
+arget=3D"_blank">alex.fujinaka@fahrllc.com</a>&gt;<br>
+<b>Subject: </b>Re: Steyer<u></u><u></u></span></p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Hey Erik-<u></u><u></u></sp=
+an></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Just wanted to follow up an=
+d make sure you got this. Can you send me address and details?<br>
+<br>
+Jenna Narayanan <u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">NextGen Climate<u></u><u></=
+u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">VP, Development<u></u><u></=
+u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">M:
+<a href=3D"tel:202.320.4554" target=3D"_blank">202.320.4554</a><u></u><u></=
+u></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-s=
+ize:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:bla=
+ck"><br>
+On Apr 3, 2016, at 9:20 PM, Jenna Narayanan &lt;<a href=3D"mailto:jennanar@=
+gmail.com" target=3D"_blank">jennanar@gmail.com</a>&gt; wrote:<u></u><u></u=
+></span></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Hey Erik-<u></u><u></u></sp=
+an></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"color:black">Thomas Fahr Steyer</s=
+pan></b><span style=3D"color:black"><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">SSN:&nbsp;<a href=3D"tel=
+:083-48-3626" target=3D"_blank">083-48-3626</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">DOB: 6/27/1957<u></u><u>=
+</u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:black">City: San Francisco<u></=
+u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Let me know what else you n=
+eed.&nbsp;<u></u><u></u></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><br>
+-Jenna<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-s=
+ize:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:bla=
+ck"><br>
+On Apr 1, 2016, at 12:50 PM, Kaplan, Jordan &lt;<a href=3D"mailto:KaplanJ@d=
+nc.org" target=3D"_blank">KaplanJ@dnc.org</a>&gt; wrote:<u></u><u></u></spa=
+n></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Stowe -&nbsp;
+<u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Jenna is working with Mr. S=
+teyer.&nbsp; I will let you two take it from here!&nbsp;<u></u><u></u></spa=
+n></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Great introduction, huh.<u>=
+</u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">Jordan&nbsp;<u></u><u></u><=
+/span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><br>
+Jordan Kaplan<br>
+National Finance Director<br>
+Democratic National Committee<br>
+<a href=3D"tel:%28202%29%20488-5002" target=3D"_blank">(202) 488-5002</a> (=
+o) | <a href=3D"tel:%28312%29%20339-0224" target=3D"_blank">
+(312) 339-0224</a> (c)<br>
+<a href=3D"mailto:kaplanj@dnc.org" target=3D"_blank">kaplanj@dnc.org</a><br=
+>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:black"><br>
+&lt;EFA0E494-461C-4D20-85BC-5D1CD9801DD6[11].png&gt;</span><span style=3D"f=
+ont-size:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;colo=
+r:black"><u></u><u></u></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><br>
+<br clear=3D"all">
+<u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:black">--
+<u></u><u></u></span></p>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b><span style=3D"fon=
+t-size:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:=
+#888888">ALEX FUJINAKA</span></b><span style=3D"font-size:9.5pt;font-family=
+:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#888888"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Calibri&quot;,&quo=
+t;sans-serif&quot;;color:#666666">Personal Aide</span><span style=3D"font-s=
+ize:9.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#888=
+888"><br>
+<br>
+O: &nbsp;</span><span style=3D"font-size:10.5pt;font-family:&quot;Calibri&q=
+uot;,&quot;sans-serif&quot;;color:black"><a href=3D"tel:415-802-2427" value=
+=3D"&#43;14158022427" target=3D"_blank">415-802-2427</a></span><span style=
+=3D"font-size:9.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;=
+color:#888888"><br>
+E: </span><span style=3D"font-size:9.5pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:black"><a href=3D"mailto:alex.fujinaka@fahrllc.c=
+om" target=3D"_blank">alex.fujinaka@fahrllc.com</a></span><span style=3D"fo=
+nt-size:10.5pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color=
+:black"><u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><p style=3D"fon=
+t-size:12.8px"><b><span style=3D"font-size:9pt;color:rgb(0,112,192)"><br></=
+span></b></p><p style=3D"margin:0in;margin-bottom:.0001pt;background:white"=
+><span style=3D"font-size:9.0pt;font-family:Arial;color:#0070c0">Jenna&nbsp=
+;Narayanan</span><span style=3D"font-size:9.5pt;font-family:Arial;color:#22=
+2222"></span></p><p style=3D"margin:0in;margin-bottom:.0001pt;background:wh=
+ite;text-align:start;word-spacing:0px"><span style=3D"font-size:9.0pt;font-=
+family:Arial;color:#0070c0">VP,&nbsp;Development</span><span style=3D"font-=
+size:9.5pt;font-family:Arial;color:#222222"></span></p><p style=3D"margin:0=
+in;margin-bottom:.0001pt;background:white;text-align:start;word-spacing:0px=
+"><span style=3D"font-size:9.0pt;font-family:Arial;color:#0070c0">NextGen&n=
+bsp;Climate</span></p><p style=3D"margin:0in;margin-bottom:.0001pt;backgrou=
+nd:white;text-align:start;word-spacing:0px"><span style=3D"color:rgb(0,112,=
+192);font-family:Arial;font-size:9pt">M: 202-320-4554</span></p><p style=3D=
+"font-size:12.8px"><b><span style=3D"font-size:9pt;color:rgb(0,112,192)"><b=
+r></span></b></p><p style=3D"font-size:12.8px"><br></p><p style=3D"font-siz=
+e:12.8px"><br></p></div></div></div></div>
+</div>
+
+--001a113db84c86b099053152506b--

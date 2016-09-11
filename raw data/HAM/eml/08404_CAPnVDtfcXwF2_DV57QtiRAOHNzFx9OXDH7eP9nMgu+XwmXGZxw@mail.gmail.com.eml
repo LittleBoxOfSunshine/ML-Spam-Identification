@@ -1,0 +1,554 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 16 May
+ 2016 11:14:35 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 16 May 2016
+ 11:14:33 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 917108001
+ for MirandaL@dnc.org; Mon, 16 May 2016 10:14:42 -0500
+X-Note-AR-ScanTimeLocal: 5/16/2016 10:14:33 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.161.169 DOM:gmail.com ADDR:markpaustenbach@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-460/SG:5 5/16/2016 10:14:29 AM
+X-GBUdb-Analysis: 0, 209.85.161.169, Ugly c=0.840619 p=-0.987389 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6183 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/16/2016 10:14:31 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.161.169
+X-Note-Reverse-DNS: mail-yw0-f169.google.com
+X-Note-Return-Path: markpaustenbach@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G675 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.161.169] (HELO mail-yw0-f169.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 142044008
+ for MirandaL@dnc.org; Mon, 16 May 2016 10:14:33 -0500
+Received: by mail-yw0-f169.google.com with SMTP id g133so164519059ywb.2
+        for <MirandaL@dnc.org>; Mon, 16 May 2016 08:14:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=cKwk3StyKSjqOp8WkJ62uMtedIYn6lJMUm9Zvrmo5+E=;
+        b=xARgM8N0VpjP3sODz7Bp3qMOWr98AwJqseRRPCOyvibp0It6Fri9NyrQlbJ7e9VvW8
+         Qt1fvgbra/fkB284IE00wXo0n3OMMSsRsYYpvK64wTFIJNx08kLtVhQPZ2g8ieFdI8mY
+         ZGOd91A6NgbdEgFv6OuUeFWYh1sxoC4YoBGm9kf9+mWZsKfHpRvZWpu2QFoOOPHM09G0
+         Fzlw+6lVoYuZf4JfecUJyTEkyMOrozOIZ1ZlahaSQOrYOypi/clanDZLGYZJdjkb1RY1
+         71FLCH9l/tAn/MssXcR6WR4l0zJbeSkTQRYfjWXK7rAAYN73Kw9GVLgvc/MUglO8t7fp
+         jfGA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=cKwk3StyKSjqOp8WkJ62uMtedIYn6lJMUm9Zvrmo5+E=;
+        b=HMZDFWCl/PXAkkkvrEAC2nX+QCu9Iq9R+FwgaA3n1EMFiWvWbaBso4wN3yevRDtAzW
+         /fy/EObWWyeMp/BBETwSA0bfTTzzjlCYjYpNAWE/Tz67Thet4cSNcNk3TaX5LMrJYtg2
+         ZD9MVzuTyQpb/GhTMqAznULf7Hc2q/tuLGmxTXyahseKj6lD4hslQ3A4TGl3Xgwm1C/L
+         Ej1VyMePSHYGlyQks8d7+cACIIShIS7zXuudON/6p8aPHkPIXuB+uWp5K3G/7e37TIKj
+         rb/qnqqlC7mvFXCWDxYF0AEal33uVgGNeikjSIZBWy0fwldb/tj4aAZFUlAw+a0jufrU
+         24YQ==
+X-Gm-Message-State: AOPr4FXfObM0aD6xkXyPxIe1ud/TjtpxHDceVF2RiV5vMY4cXGf/QO+HXGP/M9N1zKe3XCq0N9MNge1lbMNxtA==
+X-Received: by 10.13.204.69 with SMTP id o66mr14144206ywd.168.1463411673072;
+ Mon, 16 May 2016 08:14:33 -0700 (PDT)
+Received: by 10.13.216.77 with HTTP; Mon, 16 May 2016 08:14:33 -0700 (PDT)
+In-Reply-To: <6m6i3t79lij7chbyd69lrgsn.1463411043917@email.android.com>
+References: <97162FFD-7390-4979-B15A-5DD55E14B9A5@gmail.com>
+	<6m6i3t79lij7chbyd69lrgsn.1463411043917@email.android.com>
+Date: Mon, 16 May 2016 11:14:33 -0400
+Message-ID: <CAPnVDtfcXwF2_DV57QtiRAOHNzFx9OXDH7eP9nMgu+XwmXGZxw@mail.gmail.com>
+Subject: Re: Worth sending transcript or excerpts as an ICYMI?
+From: Mark Paustenbach <markpaustenbach@gmail.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+Content-Type: multipart/alternative; boundary="001a114fd0f0ef079a0532f71440"
+Return-Path: markpaustenbach@gmail.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a114fd0f0ef079a0532f71440
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Obama Swipes at Trump, but Doesn=E2=80=99t Name Him, in Speech at Rutgers
+
+By GARDINER HARRIS
+<http://topics.nytimes.com/top/reference/timestopics/people/h/gardiner_harr=
+is/index.html>MAY
+15, 2016
+
+President Obama
+<http://topics.nytimes.com/top/reference/timestopics/people/o/barack_obama/=
+index.html?inline=3Dnyt-per>
+took
+several sharp swipes at Donald J. Trump
+<http://www.nytimes.com/interactive/2016/us/elections/donald-trump-on-the-i=
+ssues.html?inline=3Dnyt-per>
+on
+Sunday during a commencement address that could be the beginning of a
+forceful effort to help elect a Democratic successor as president.
+
+Addressing Rutgers University
+<http://topics.nytimes.com/top/reference/timestopics/organizations/r/rutger=
+s_the_state_university/index.html?inline=3Dnyt-org>=E2=80=99s
+class of 2016 at the school=E2=80=99s 250th anniversary commencement, Mr. O=
+bama
+never mentioned Mr. Trump by name. But his target was clear, and his
+assessments earned raucous cheers from the graduates.
+
+=E2=80=9CThe world is more interconnected than ever before, and it=E2=80=99=
+s becoming more
+connected every day,=E2=80=9D Mr. Obama told the graduates. =E2=80=9CBuildi=
+ng walls won=E2=80=99t
+change that.=E2=80=9D
+
+Mr. Trump, the presumptive Republican presidential nominee, has proposed
+building a wall between the United States and Mexico and forcing Mexico to
+pay for its potential multibillion dollar construction costs. Mr. Trump has
+also denounced much of the modern international trading and economic
+system, and he has proposed banning Muslim visitors and immigrants from the
+country, at least temporarily =E2=80=94 all ideas Mr. Obama condemned on Su=
+nday.
+
+Mr. Obama and Mr. Trump have exchanged zingers before. Mr. Trump was a
+leading voice questioning Mr. Obama=E2=80=99s birth location
+<http://thecaucus.blogs.nytimes.com/2011/04/27/obamas-long-form-birth-certi=
+ficate-released/?rref=3Dcollection%2Ftimestopic%2FBirther%20Movement>
+and
+citizenship, and Mr. Obama has responded
+<http://www.nytimes.com/2016/05/07/us/politics/obama-jobs-economy-donald-tr=
+ump.html?rref=3Dcollection%2Ftimestopic%2FBirther%20Movement&_r=3D0>
+by
+taking particular delight in skewering Mr. Trump.
+
+But Mr. Obama is altering his stump speech in important ways to go after
+Mr. Trump. As his remaining time in office draws to less than a school
+year, Mr. Obama has alternated between mild and mock horror, pointed humor
+and a touch of disbelief in his attacks on the Republican front-runner.
+
+=E2=80=9CWe live in an age of global supply chains, and a lot of folks have
+legitimate concerns with the way globalization has progressed,=E2=80=9D Mr.=
+ Obama
+said. =E2=80=9CBut the answer isn=E2=80=99t to stop trading with other coun=
+tries. In this
+global economy, that=E2=80=99s not even possible.=E2=80=9D
+
+Mr. Obama said that isolating and disparaging Muslims was not only a
+betrayal of American values but =E2=80=9Cwould alienate the very communitie=
+s at
+home and abroad who are our most important partners in combating violent
+extremism.=E2=80=9D
+
+Wearing a crimson robe with black sashes and a purple doctoral hood that a
+fierce wind kept blowing off his shoulders, Mr. Obama told the graduates
+that the knowledge they had earned through years of studying was something
+they should insist political leaders value and possess themselves.
+
+=E2=80=9CFacts, evidence, reason, logic, an understanding of science =E2=80=
+=94 these are
+good things. These are qualities you want in people making policy,=E2=80=9D=
+ Mr.
+Obama said, adding later, =E2=80=9CIn politics and in life, ignorance is no=
+t a
+virtue.=E2=80=9D
+
+Mr. Obama seemed to especially take pleasure in advocating the use of facts
+in politics while speaking to an academic audience. His point with such
+arguments is usually to press for action against climate change
+<http://topics.nytimes.com/top/news/science/topics/globalwarming/index.html=
+?inline=3Dnyt-classifier>,
+one of the signature policies of his administration and one that nearly all
+climate scientists support.
+
+But while Mr. Obama mentioned climate change, he also used his points about
+facts and experience to take yet another swipe at an unnamed Mr. Trump.
+
+He noted that when people get sick, they want an experienced doctor to
+treat them; when they fly, they want experienced pilots.
+
+=E2=80=9CAnd yet in our public lives, we suddenly say, =E2=80=98I don=E2=80=
+=99t want somebody who=E2=80=99s
+done it before=E2=80=99?=E2=80=9D he asked in derision.
+
+Mr. Trump has no experience as a politician, a quality that has been viewed
+as one of the most important reasons for his success as a presidential
+candidate.
+
+Mr. Obama came to Rutgers after students, faculty members and even
+relatives of students spent the past three years lobbying the White House
+for him to speak on this anniversary for the school.
+
+=E2=80=9CThe truth is, Rutgers, I came here because you asked. You are the =
+first to
+launch a three-year campaign,=E2=80=9D he said. =E2=80=9CEmails, letters, t=
+weets, YouTube
+videos. I even got three notes from the grandmother of your student body
+president,=E2=80=9D Mr. Obama said, drawing laughter. =E2=80=9CAnd I have t=
+o say that
+really sealed the deal. That was smart because I have a soft spot for
+grandmas.=E2=80=9D
+
+But Mr. Obama made clear that Rutgers was precisely the kind of institution
+that he wanted to celebrate. Last week, Mr. Obama spoke at thecommencement
+of Howard University
+<http://www.nytimes.com/2016/05/08/us/obama-says-thought-and-compromise-are=
+-key-to-bringing-change.html>,
+a historically black university, and told the next generation of black
+leaders that passion must be tempered by strategic thinking and a
+willingness to compromise.
+
+Rutgers, one of the first nine government-chartered institutions in the
+American colonies, =E2=80=9Ccould be the most diverse student body in Ameri=
+ca,=E2=80=9D he
+said. And he likened Rutgers=E2=80=99 long history of success with that of =
+the
+country as a whole.
+
+And while he celebrated that history, he made clear to the graduates that
+no period in history was as prosperous as this one.
+
+=E2=80=9CThe good old days weren=E2=80=99t all that good,=E2=80=9D Mr. Obam=
+a said. =E2=80=9CIn fact, by
+almost every measure, America is better and the world is better than it was
+50 years ago or 30 years ago or even eight years ago.=E2=80=9D
+
+One of Mr. Obama=E2=80=99s frustrations during his presidency has been the
+country=E2=80=99s persistently sour mood
+<http://www.gallup.com/poll/1669/general-mood-country.aspx> despite what he
+sees as a remarkable turnaround in the nation=E2=80=99s economy
+<http://www.nytimes.com/2016/05/01/magazine/president-obama-weighs-his-econ=
+omic-legacy.html>,
+the passage of wide-ranging health care legislation and the nation=E2=80=99=
+s
+pre-eminent strength militarily.
+
+He cited those accomplishments and many others, including declining rates
+of crime, teenage pregnancy and poverty, as well as improvements in life
+expectancy, the status of blacks and Latinos and clean energy.
+
+=E2=80=9CMarriage equality is the law of the land,=E2=80=9D he added, to ro=
+bust cheers.
+
+As he often does in such speeches, Mr. Obama told the graduates that they
+needed to participate in the political process and be satisfied with
+incremental change. Democrats generally fare better than Republicans in
+high-turnout elections, and while young people overwhelmingly support
+Democrats, they rarely vote. So Mr. Obama and Michelle Obama, the first
+lady, always urge student audiences to show up at the polls on Election Day=
+.
+
+=E2=80=9CBecause apathy has consequences,=E2=80=9D the president said.
+
+He said changes, even small ones, were worth fighting for.
+
+=E2=80=9CI always tell my daughters, =E2=80=98Better is good,=E2=80=99=E2=
+=80=9D Mr. Obama said near the end
+of his speech, adding, =E2=80=9CDon=E2=80=99t waste your time waiting.=E2=
+=80=9D
+
+On Mon, May 16, 2016 at 11:04 AM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> What was good about them?
+>
+>
+>
+> Sent via the Samsung GALAXY S=C2=AE4, an AT&T 4G LTE smartphone
+>
+>
+> -------- Original message --------
+> From: Mark Paustenbach <markpaustenbach@gmail.com>
+> Date: 05/16/2016 10:47 (GMT-05:00)
+> To: "Dillon, Lauren" <DillonL@dnc.org>, "Freundlich, Christina" <
+> FreundlichC@dnc.org>, "Miranda, Luis" <MirandaL@dnc.org>
+> Subject: Worth sending transcript or excerpts as an ICYMI?
+>
+>
+> Transcript of President Obama's commencement address at Rutgers
+>
+>
+> http://www.phillyvoice.com/transcript-president-obamas-commencement-addre=
+ss-rutgers/
+>
+>
+> Mark Paustenbach
+> National Press Secretary &
+> Deputy Communications Director
+> Democratic National Committee
+> 202.863.8148
+> paustenbachm@dnc.org
+>
+
+--001a114fd0f0ef079a0532f71440
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div id=3D"story-meta" class=3D"" style=3D"margin-bottom:20p=
+x"><h1 itemprop=3D"headline" id=3D"headline" class=3D"" style=3D"font-size:=
+2.125rem;line-height:2.375rem;font-style:italic;margin:0px 0px 10px;color:r=
+gb(0,0,0)">Obama Swipes at Trump, but Doesn=E2=80=99t Name Him, in Speech a=
+t Rutgers</h1><div id=3D"story-meta-footer" class=3D"" style=3D"border-top-=
+width:1px;border-top-style:solid;border-top-color:rgb(226,226,226);padding-=
+top:14px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-co=
+lor:rgb(226,226,226);padding-bottom:16px;display:flex"><p class=3D"" style=
+=3D"margin:0px 45px 3px 0px;font-size:1rem;line-height:17px;font-family:geo=
+rgia,'times new roman',times,serif"><span class=3D"" itemprop=3D"author cre=
+ator" itemscopeitemtype=3D"http://schema.org/Person" style=3D"font-size:0.6=
+875rem;line-height:0.75rem;font-weight:700;font-family:nyt-cheltenham-sh,ge=
+orgia,'times new roman',times,serif;margin-right:12px">By&nbsp;<a href=3D"h=
+ttp://topics.nytimes.com/top/reference/timestopics/people/h/gardiner_harris=
+/index.html" title=3D"More Articles by GARDINER HARRIS" style=3D"text-decor=
+ation:none;color:rgb(0,0,0)"><span class=3D"" itemprop=3D"name" style=3D"wh=
+ite-space:nowrap">GARDINER HARRIS</span></a></span>MAY 15, 2016</p><div cla=
+ss=3D"" style=3D"margin-top:0px;display:flex"><div id=3D"sharetools-story-m=
+eta-footer" class=3D""><br></div></div></div></div><div class=3D"" style=3D=
+"display:flex;color:rgb(51,51,51);font-family:nyt-cheltenham,georgia,'times=
+ new roman',times,serif;font-size:16px"><div class=3D"" style=3D"width:705p=
+x"><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-=
+height:1.625rem;font-family:georgia,'times new roman',times,serif;max-width=
+:none;width:570px"><a href=3D"http://topics.nytimes.com/top/reference/times=
+topics/people/o/barack_obama/index.html?inline=3Dnyt-per" title=3D"More art=
+icles about Barack Obama" class=3D"" style=3D"color:rgb(50,104,145)">Presid=
+ent Obama</a>&nbsp;took several sharp swipes at&nbsp;<a href=3D"http://www.=
+nytimes.com/interactive/2016/us/elections/donald-trump-on-the-issues.html?i=
+nline=3Dnyt-per" title=3D"More articles about Donald J. Trump." class=3D"" =
+style=3D"color:rgb(50,104,145)">Donald J. Trump</a>&nbsp;on Sunday during a=
+ commencement address that could be the beginning of a forceful effort to h=
+elp elect a Democratic successor as president.</p><p class=3D"" style=3D"ma=
+rgin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:=
+georgia,'times new roman',times,serif;max-width:none;width:570px">Addressin=
+g&nbsp;<a href=3D"http://topics.nytimes.com/top/reference/timestopics/organ=
+izations/r/rutgers_the_state_university/index.html?inline=3Dnyt-org" title=
+=3D"More articles about Rutgers" class=3D"" style=3D"color:rgb(50,104,145)"=
+>Rutgers University</a>=E2=80=99s class of 2016 at the school=E2=80=99s 250=
+th anniversary commencement, Mr. Obama never mentioned Mr. Trump by name. B=
+ut his target was clear, and his assessments earned raucous cheers from the=
+ graduates.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0=
+625rem;line-height:1.625rem;font-family:georgia,'times new roman',times,ser=
+if;max-width:none;width:570px">=E2=80=9CThe world is more interconnected th=
+an ever before, and it=E2=80=99s becoming more connected every day,=E2=80=
+=9D Mr. Obama told the graduates. =E2=80=9CBuilding walls won=E2=80=99t cha=
+nge that.=E2=80=9D</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-s=
+ize:1.0625rem;line-height:1.625rem;font-family:georgia,'times new roman',ti=
+mes,serif;max-width:none;width:570px">Mr. Trump, the presumptive Republican=
+ presidential nominee, has proposed building a wall between the United Stat=
+es and Mexico and forcing Mexico to pay for its potential multibillion doll=
+ar construction costs. Mr. Trump has also denounced much of the modern inte=
+rnational trading and economic system, and he has proposed banning Muslim v=
+isitors and immigrants from the country, at least temporarily =E2=80=94 all=
+ ideas Mr. Obama condemned on Sunday.</p><p class=3D"" style=3D"margin:0px =
+0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'=
+times new roman',times,serif;max-width:none;width:570px">Mr. Obama and Mr. =
+Trump have exchanged zingers before. Mr. Trump was a leading voice&nbsp;<a =
+href=3D"http://thecaucus.blogs.nytimes.com/2011/04/27/obamas-long-form-birt=
+h-certificate-released/?rref=3Dcollection%2Ftimestopic%2FBirther%20Movement=
+" style=3D"color:rgb(50,104,145)">questioning Mr. Obama=E2=80=99s birth loc=
+ation</a>&nbsp;and citizenship, and Mr. Obama&nbsp;<a href=3D"http://www.ny=
+times.com/2016/05/07/us/politics/obama-jobs-economy-donald-trump.html?rref=
+=3Dcollection%2Ftimestopic%2FBirther%20Movement&amp;_r=3D0" style=3D"color:=
+rgb(50,104,145)">has responded</a>&nbsp;by taking particular delight in ske=
+wering Mr. Trump.</p><p class=3D"" id=3D"story-continues-1" style=3D"margin=
+:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:geor=
+gia,'times new roman',times,serif;max-width:none;width:570px">But Mr. Obama=
+ is altering his stump speech in important ways to go after Mr. Trump. As h=
+is remaining time in office draws to less than a school year, Mr. Obama has=
+ alternated between mild and mock horror, pointed humor and a touch of disb=
+elief in his attacks on the Republican front-runner.</p><p class=3D"" style=
+=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-f=
+amily:georgia,'times new roman',times,serif;max-width:none;width:570px">=E2=
+=80=9CWe live in an age of global supply chains, and a lot of folks have le=
+gitimate concerns with the way globalization has progressed,=E2=80=9D Mr. O=
+bama said. =E2=80=9CBut the answer isn=E2=80=99t to stop trading with other=
+ countries. In this global economy, that=E2=80=99s not even possible.=E2=80=
+=9D</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;l=
+ine-height:1.625rem;font-family:georgia,'times new roman',times,serif;max-w=
+idth:none;width:570px">Mr. Obama said that isolating and disparaging Muslim=
+s was not only a betrayal of American values but =E2=80=9Cwould alienate th=
+e very communities at home and abroad who are our most important partners i=
+n combating violent extremism.=E2=80=9D</p><p class=3D"" style=3D"margin:0p=
+x 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia=
+,'times new roman',times,serif;max-width:none;width:570px">Wearing a crimso=
+n robe with black sashes and a purple doctoral hood that a fierce wind kept=
+ blowing off his shoulders, Mr. Obama told the graduates that the knowledge=
+ they had earned through years of studying was something they should insist=
+ political leaders value and possess themselves.</p><p class=3D"" style=3D"=
+margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-famil=
+y:georgia,'times new roman',times,serif;max-width:none;width:570px">=E2=80=
+=9CFacts, evidence, reason, logic, an understanding of science =E2=80=94 th=
+ese are good things. These are qualities you want in people making policy,=
+=E2=80=9D Mr. Obama said, adding later, =E2=80=9CIn politics and in life, i=
+gnorance is not a virtue.=E2=80=9D</p><p class=3D"" style=3D"margin:0px 0px=
+ 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'tim=
+es new roman',times,serif;max-width:none;width:570px">Mr. Obama seemed to e=
+specially take pleasure in advocating the use of facts in politics while sp=
+eaking to an academic audience. His point with such arguments is usually to=
+ press for action against&nbsp;<a href=3D"http://topics.nytimes.com/top/new=
+s/science/topics/globalwarming/index.html?inline=3Dnyt-classifier" title=3D=
+"Recent and archival news about global warming." class=3D"" style=3D"color:=
+rgb(50,104,145)">climate change</a>, one of the signature policies of his a=
+dministration and one that nearly all climate scientists support.</p><p cla=
+ss=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.=
+625rem;font-family:georgia,'times new roman',times,serif;max-width:none;wid=
+th:570px">But while Mr. Obama mentioned climate change, he also used his po=
+ints about facts and experience to take yet another swipe at an unnamed Mr.=
+ Trump.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625r=
+em;line-height:1.625rem;font-family:georgia,'times new roman',times,serif;m=
+ax-width:none;width:570px">He noted that when people get sick, they want an=
+ experienced doctor to treat them; when they fly, they want experienced pil=
+ots.</p><p class=3D"" id=3D"story-continues-2" style=3D"margin:0px 0px 1em =
+75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'times ne=
+w roman',times,serif;max-width:none;width:570px">=E2=80=9CAnd yet in our pu=
+blic lives, we suddenly say, =E2=80=98I don=E2=80=99t want somebody who=E2=
+=80=99s done it before=E2=80=99?=E2=80=9D he asked in derision.</p><p class=
+=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.62=
+5rem;font-family:georgia,'times new roman',times,serif;max-width:none;width=
+:570px">Mr. Trump has no experience as a politician, a quality that has bee=
+n viewed as one of the most important reasons for his success as a presiden=
+tial candidate.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size=
+:1.0625rem;line-height:1.625rem;font-family:georgia,'times new roman',times=
+,serif;max-width:none;width:570px">Mr. Obama came to Rutgers after students=
+, faculty members and even relatives of students spent the past three years=
+ lobbying the White House for him to speak on this anniversary for the scho=
+ol.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;l=
+ine-height:1.625rem;font-family:georgia,'times new roman',times,serif;max-w=
+idth:none;width:570px">=E2=80=9CThe truth is, Rutgers, I came here because =
+you asked. You are the first to launch a three-year campaign,=E2=80=9D he s=
+aid. =E2=80=9CEmails, letters, tweets, YouTube videos. I even got three not=
+es from the grandmother of your student body president,=E2=80=9D Mr. Obama =
+said, drawing laughter. =E2=80=9CAnd I have to say that really sealed the d=
+eal. That was smart because I have a soft spot for grandmas.=E2=80=9D</p><p=
+ class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-heigh=
+t:1.625rem;font-family:georgia,'times new roman',times,serif;max-width:none=
+;width:570px">But Mr. Obama made clear that Rutgers was precisely the kind =
+of institution that he wanted to celebrate. Last week, Mr. Obama spoke at t=
+he<a href=3D"http://www.nytimes.com/2016/05/08/us/obama-says-thought-and-co=
+mpromise-are-key-to-bringing-change.html" style=3D"color:rgb(50,104,145)">c=
+ommencement of Howard University</a>, a historically black university, and =
+told the next generation of black leaders that passion must be tempered by =
+strategic thinking and a willingness to compromise.</p><p class=3D"" style=
+=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-f=
+amily:georgia,'times new roman',times,serif;max-width:none;width:570px">Rut=
+gers, one of the first nine government-chartered institutions in the Americ=
+an colonies, =E2=80=9Ccould be the most diverse student body in America,=E2=
+=80=9D he said. And he likened Rutgers=E2=80=99 long history of success wit=
+h that of the country as a whole.</p><p class=3D"" style=3D"margin:0px 0px =
+1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'time=
+s new roman',times,serif;max-width:none;width:570px">And while he celebrate=
+d that history, he made clear to the graduates that no period in history wa=
+s as prosperous as this one.</p><p class=3D"" style=3D"margin:0px 0px 1em 7=
+5px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'times new=
+ roman',times,serif;max-width:none;width:570px">=E2=80=9CThe good old days =
+weren=E2=80=99t all that good,=E2=80=9D Mr. Obama said. =E2=80=9CIn fact, b=
+y almost every measure, America is better and the world is better than it w=
+as 50 years ago or 30 years ago or even eight years ago.=E2=80=9D</p><p cla=
+ss=3D"" id=3D"story-continues-3" style=3D"margin:0px 0px 1em 75px;font-size=
+:1.0625rem;line-height:1.625rem;font-family:georgia,'times new roman',times=
+,serif;max-width:none;width:570px">One of Mr. Obama=E2=80=99s frustrations =
+during his presidency has been the country=E2=80=99s&nbsp;<a href=3D"http:/=
+/www.gallup.com/poll/1669/general-mood-country.aspx" style=3D"color:rgb(50,=
+104,145)">persistently sour mood</a>&nbsp;despite what he sees as&nbsp;<a h=
+ref=3D"http://www.nytimes.com/2016/05/01/magazine/president-obama-weighs-hi=
+s-economic-legacy.html" style=3D"color:rgb(50,104,145)">a remarkable turnar=
+ound in the nation=E2=80=99s economy</a>, the passage of wide-ranging healt=
+h care legislation and the nation=E2=80=99s pre-eminent strength militarily=
+.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;lin=
+e-height:1.625rem;font-family:georgia,'times new roman',times,serif;max-wid=
+th:none;width:570px">He cited those accomplishments and many others, includ=
+ing declining rates of crime, teenage pregnancy and poverty, as well as imp=
+rovements in life expectancy, the status of blacks and Latinos and clean en=
+ergy.</p><p class=3D"" style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem=
+;line-height:1.625rem;font-family:georgia,'times new roman',times,serif;max=
+-width:none;width:570px">=E2=80=9CMarriage equality is the law of the land,=
+=E2=80=9D he added, to robust cheers.</p><p class=3D"" style=3D"margin:0px =
+0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgia,'=
+times new roman',times,serif;max-width:none;width:570px">As he often does i=
+n such speeches, Mr. Obama told the graduates that they needed to participa=
+te in the political process and be satisfied with incremental change. Democ=
+rats generally fare better than Republicans in high-turnout elections, and =
+while young people overwhelmingly support Democrats, they rarely vote. So M=
+r. Obama and Michelle Obama, the first lady, always urge student audiences =
+to show up at the polls on Election Day.</p><p class=3D"" style=3D"margin:0=
+px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;font-family:georgi=
+a,'times new roman',times,serif;max-width:none;width:570px">=E2=80=9CBecaus=
+e apathy has consequences,=E2=80=9D the president said.</p><p class=3D"" st=
+yle=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;fon=
+t-family:georgia,'times new roman',times,serif;max-width:none;width:570px">=
+He said changes, even small ones, were worth fighting for.</p><p class=3D""=
+ style=3D"margin:0px 0px 1em 75px;font-size:1.0625rem;line-height:1.625rem;=
+font-family:georgia,'times new roman',times,serif;max-width:none;width:570p=
+x">=E2=80=9CI always tell my daughters, =E2=80=98Better is good,=E2=80=99=
+=E2=80=9D Mr. Obama said near the end of his speech, adding, =E2=80=9CDon=
+=E2=80=99t waste your time waiting.=E2=80=9D</p></div></div></div><div clas=
+s=3D"gmail_extra"><br><div class=3D"gmail_quote">On Mon, May 16, 2016 at 11=
+:04 AM, Miranda, Luis <span dir=3D"ltr">&lt;<a href=3D"mailto:MirandaL@dnc.=
+org" target=3D"_blank">MirandaL@dnc.org</a>&gt;</span> wrote:<br><blockquot=
+e class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc sol=
+id;padding-left:1ex">
+
+
+
+
+
+<div>
+<div>
+<div>What was good about them?</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div>
+<div style=3D"font-size:85%;color:#575757">Sent via the Samsung GALAXY S=C2=
+=AE4, an AT&amp;T 4G LTE smartphone</div>
+</div><div><div class=3D"h5">
+<br>
+<br>
+-------- Original message --------<br>
+From: Mark Paustenbach &lt;<a href=3D"mailto:markpaustenbach@gmail.com" tar=
+get=3D"_blank">markpaustenbach@gmail.com</a>&gt; <br>
+Date: 05/16/2016 10:47 (GMT-05:00) <br>
+To: &quot;Dillon, Lauren&quot; &lt;<a href=3D"mailto:DillonL@dnc.org" targe=
+t=3D"_blank">DillonL@dnc.org</a>&gt;, &quot;Freundlich, Christina&quot; &lt=
+;<a href=3D"mailto:FreundlichC@dnc.org" target=3D"_blank">FreundlichC@dnc.o=
+rg</a>&gt;, &quot;Miranda, Luis&quot; &lt;<a href=3D"mailto:MirandaL@dnc.or=
+g" target=3D"_blank">MirandaL@dnc.org</a>&gt;
+<br>
+Subject: Worth sending transcript or excerpts as an ICYMI? <br>
+<br>
+</div></div></div><div><div class=3D"h5">
+<font size=3D"2"><span style=3D"font-size:10pt">
+<div><br>
+Transcript of President Obama's commencement address at Rutgers <br>
+<br>
+<a href=3D"http://www.phillyvoice.com/transcript-president-obamas-commencem=
+ent-address-rutgers/" target=3D"_blank">http://www.phillyvoice.com/transcri=
+pt-president-obamas-commencement-address-rutgers/</a><br>
+<br>
+<br>
+Mark Paustenbach<br>
+National Press Secretary &amp;<br>
+Deputy Communications Director<br>
+Democratic National Committee<br>
+<a href=3D"tel:202.863.8148" value=3D"&#43;12028638148" target=3D"_blank">2=
+02.863.8148</a><br>
+<a href=3D"mailto:paustenbachm@dnc.org" target=3D"_blank">paustenbachm@dnc.=
+org</a></div>
+</span></font>
+</div></div></div>
+
+</blockquote></div><br></div>
+
+--001a114fd0f0ef079a0532f71440--

@@ -1,0 +1,412 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 27 Apr
+ 2016 21:57:24 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 27 Apr 2016
+ 21:57:16 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 884239402
+ for Comm_d@dnc.org; Wed, 27 Apr 2016 20:57:24 -0500
+X-Note-AR-ScanTimeLocal: 4/27/2016 8:57:23 PM
+X-Policy: dnc.org
+X-Primary: comm_d@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.171 DOM:nhdp.org ADDR:tnuccio@nhdp.org
+X-Note: SPF: None
+X-Note-SnifferID: 100
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 100-5952969-15113-15129-m
+	100-5952969-0-22727-f
+X-Note-419: 15.6277 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/27/2016 8:57:18 PM
+X-Warn: OPTOUT
+X-Warn: BULKMAILER
+X-Note: Spam Tests Failed: OPTOUT, BULKMAILER
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.171
+X-Note-Reverse-DNS: mail-io0-f171.google.com
+X-Note-Return-Path: tnuccio@nhdp.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G280 G285 G373 G375 G572 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f171.google.com ([209.85.223.171] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 135529996
+ for Comm_d@dnc.org; Wed, 27 Apr 2016 20:57:22 -0500
+Received: by mail-io0-f171.google.com with SMTP id u185so74230439iod.3
+        for <Comm_d@dnc.org>; Wed, 27 Apr 2016 18:57:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nhdp-org.20150623.gappssmtp.com; s=20150623;
+        h=from:content-transfer-encoding:mime-version:subject:message-id:date
+         :references:to;
+        bh=0wtESChrFmtNaA5qWI0l0yxYK9or5y4eixNPXOXYT7A=;
+        b=ao/sfv3h0emcwF5sMCxHHgMaIY8oFT7+r3cbLnPy5E4pRnwO0TfnL1bR0D4Rz6k/Il
+         2vXJEWr7Jdqzy9W6h9VdjPesKn2y3nrhY4e7+cHFQJFkq1pc5uIySEhM4PTpDtxc9YJ3
+         xIWMzDJeBfopN1ansXMjdwb+sIL0YEkz3sqA2hLjY88D8wO4W0OCSnVw8As1tsyFcFqz
+         o5EvqUOX7Dy1NbucrYMS+dyiUug9EoToepFQKvXlhYN5f3kYAwkc1ch5mJqqHSQIh7gs
+         GifE1Uj47bHTC5Sg6GJPpu25L3uPF0yV9y75G8fzIs4/nv0VR8IVIXJ3duX+x5VkMjux
+         Tgzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version
+         :subject:message-id:date:references:to;
+        bh=0wtESChrFmtNaA5qWI0l0yxYK9or5y4eixNPXOXYT7A=;
+        b=ZpdvwXxNeKs9QlYIh9B6vk65jzRXiijkGv2mQ8w4/wo+6/kUbEPapR7QnSnNMA/yZr
+         lO9giGF71Q3ZiZstp5OQvHWaMIjAPwp7VldfQtGxGPROekhGDBQdCJpj/BlZF8p8AqBm
+         rDHAo+RLHuYlGGs71+BL0DmpR5t+UIIeZmF9f5yDcGQ/8rE+mKzp0+LClIbpoZqYK8tO
+         KwubAEgZmvDENiA6yQyhtkdyubqnNKHiCmXzCKVu1zFRYxYqtH1Xo53udR11VhL302gO
+         rcOtgzdxl8BesZoNMN2xGBC1P0qHokG7V6dleLBXd8Kh0CK2TfRCuhVb8HqmoYv47xNg
+         ZvuA==
+X-Gm-Message-State: AOPr4FVAWnz+Y9BWDRTaJdgSaBP7IxIG5CNOxvYpupcxZ3FuXDRWoIZwWG6jBp9ryK9OCw==
+X-Received: by 10.107.47.37 with SMTP id j37mr13681417ioo.168.1461808642544;
+        Wed, 27 Apr 2016 18:57:22 -0700 (PDT)
+Return-Path: <tnuccio@nhdp.org>
+Received: from ?IPv6:2602:30a:2e39:f930:2801:b04e:dd89:f985?
+ ([2602:30a:2e39:f930:2801:b04e:dd89:f985])        by smtp.gmail.com with
+ ESMTPSA id c70sm6094650iod.7.2016.04.27.18.57.21        for <Comm_d@dnc.org>
+        (version=TLSv1/SSLv3 cipher=OTHER);        Wed, 27 Apr 2016 18:57:21
+ -0700 (PDT)
+From: Thomas Nuccio <tnuccio@nhdp.org>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail-EAB04072-6E3E-46BE-ADA6-15150A111866"
+Content-Transfer-Encoding: 7bit
+Subject: Cruz email: Fwd: Why I accepted:  
+Message-ID: <6BA4C66A-5D1A-4CCD-93C1-EA0BD7494F58@nhdp.org>
+Date: Wed, 27 Apr 2016 21:57:20 -0400
+References: <3C.93.31701.B5061275@dc4mta03>
+To: <Comm_d@dnc.org>
+X-Mailer: iPhone Mail (13E238)
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+MIME-Version: 1.0
+
+--Apple-Mail-EAB04072-6E3E-46BE-ADA6-15150A111866
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+
+> From: "Carly Fiorina" <carly.f@tedcruz.org>
+> Date: April 27, 2016 at 8:13:32 PM EDT
+> To: Thomas Nuccio <nuccio001@connect.wcsu.edu>
+> Subject: Why I accepted: =20
+> Reply-To: <carly.f@tedcruz.org>
+>=20
+>=20
+>=20
+> Thomas,
+>=20
+> Today, I am proud to announce that I have accepted Ted Cruz's offer to be h=
+is Vice Presidential nominee.=20
+>=20
+> As a loyal supporter, I want to tell you why:=20
+>=20
+> It's clear the media elites are ready to anoint Donald Trump as the Republ=
+ican nominee before this race is even over. It's also clear, that Donald Tru=
+mp's nomination would be a disaster for America.=20
+>=20
+> If Trump is our nominee, conservatives will be forced to choose between tw=
+o liberals in November: both corrupt, both big government crony capitalists,=
+ and both part of the system that has gotten us in the mess we're in.=20
+>=20
+> Worse, if we nominate Donald Trump, we would be guaranteeing four years of=
+ Hillary Clinton in the White House.=20
+>=20
+> That's why I'm asking you to please stop what you are doing right now and c=
+ommit to joining our campaign by making a special, urgent contribution.
+>=20
+>  STAND WITH TED AND CARLY=20
+>=20
+> Over the past weeks, I've traveled the country with Senator Cruz and his w=
+ife Heidi. I have come to know him and his family.=20
+>=20
+> I know the Ted Cruz the media won't tell you about =E2=80=93 the loving fa=
+ther, the devoted husband, the movie buff. (Did you know he can recite every=
+ single line from The Princess Bride?)=20
+>=20
+> Ted Cruz is a constitutional conservative who has made enemies in both par=
+ties =E2=80=93 because he's dared to stand up to bipartisan corruption in Wa=
+shington.
+>=20
+> He has fought tirelessly to change the system. And I know, if elected, he w=
+ill bring back American jobs, protect our constitutional freedoms, and defen=
+d our nation.
+>=20
+> Our country is being taken away by the elites, the crony capitalists, and t=
+he special interests that have captured both parties. They want to take away=
+ what we treasure about this nation.=20
+>=20
+> And without your immediate support =E2=80=93 they will get away with it.
+>=20
+> With your help, Ted and I can stop them =E2=80=93 but only if you will joi=
+n us right now by making an immediate and urgent contribution to show your s=
+upport.
+>=20
+>  STAND WITH TED AND CARLY=20
+>=20
+> As you have heard me say before, we need to take our country back. I belie=
+ve Ted Cruz is the man to lead that fight now. And I am prepared to give eve=
+rything I have to ensure we defeat Donald Trump and Hillary Clinton.=20
+>=20
+> Make no mistake: this is a fight now. Ted and I can't do this without your=
+ help.=20
+>=20
+> But this fight is about all of us.=20
+>=20
+> It's about whether we want our kids to be able to get a good paying job wh=
+en they get out of school. It's about whether we want to turn our backs on r=
+eligious liberty and our second amendment. It's about whether we want to liv=
+e in a nation that secures its borders and calls Islamic terrorism by its na=
+me.=20
+>=20
+> Thomas, it's about the future of the American people, the character of our=
+ nation, and the great country we must rebuild together.=20
+>=20
+> This is why we fight.=20
+>=20
+> I would consider it a personal favor if you would join us by making an urg=
+ent contribution right now. Please join us.
+>=20
+> Carly=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+> PAID FOR BY CRUZ FOR PRESIDENT
+> www.tedcruz.org
+> Copyright =C2=A9 2016 All Rights Reserved | Privacy Policy
+>=20
+>=20
+> This message was intended for: nuccio001@connect.wcsu.edu=20
+> You were added to the system February 25, 2016.
+> For more information click here. Update your preferences
+> Unsubscribe | Unsubscribe via email
+>=20
+
+--Apple-Mail-EAB04072-6E3E-46BE-ADA6-15150A111866
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div><br></div><blockquote type=3D"cite"><div><b>Fr=
+om:</b> &quot;Carly Fiorina&quot; &lt;<a href=3D"mailto:carly.f@tedcruz.org=
+">carly.f@tedcruz.org</a>&gt;<br><b>Date:</b> April 27, 2016 at 8:13:32 PM =
+EDT<br><b>To:</b> Thomas Nuccio &lt;<a href=3D"mailto:nuccio001@connect.wcs=
+u.edu">nuccio001@connect.wcsu.edu</a>&gt;<br><b>Subject:</b> <b>Why I accep=
+ted:&nbsp; </b><br><b>Reply-To:</b> &lt;<a href=3D"mailto:carly.f@tedcruz.o=
+rg">carly.f@tedcruz.org</a>&gt;<br><br></div></blockquote><blockquote type=
+=3D"cite"><div>
+<title>Cruz For President</title>
+
+
+
+
+
+<span class=3D"preheader" style=3D"display: none !important; visibility: hi=
+dden; opacity: 0; color: transparent; height: 0; width: 0;">Today, I am pro=
+ud
+to announce that I have accepted Ted Cruz's offer to be his Vice Presidenti=
+al nominee. </span>
+
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff" style=3D"background-color:#fff;">
+	<tbody><tr>
+		<td bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+=09
+			<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"20" i=
+d=3D"content" bgcolor=3D"#ffffff" style=3D"background-color:#fff;">
+				<tbody><tr>
+					<td><center><a href=3D"http://paracom.paramountcommunication.com/ct/35=
+051184:sIhxiRCNu:m:1:1306726831:5FA53803D23778899595870DD3C95E3D:r"><img sr=
+c=3D"http://paracom.paramountcommunication.com/cimages/dab618f2b5829757ddb8=
+a46fc88cfff8/TCCF-1.jpg" border=3D"0" width=3D"310" height=3D"110" alt=3D"C=
+ruz For
+President" class=3D"banner_scale"></a></center></td>
+				</tr>
+				<tr>
+				  <td width=3D"100%" valign=3D"top" align=3D"left" bgcolor=3D"#ffffff" =
+style=3D"font-family: Times, 'Times New Roman', serif;  font-size:19px;
+line-height:22px; color:#000; background-color:#fff;" class=3D"maintext"><f=
+ont style=3D"font-family: Times, 'Times New Roman', serif;  font-size:19px;
+line-height:22px; color:#000; background-color:#fff;" id=3D"maintext">Thoma=
+s,<br><br>
+
+Today, I am proud to announce that I have accepted Ted Cruz's offer to be h=
+is Vice Presidential nominee.
+<br><br>
+As a loyal supporter,  I want to tell you why:
+<br><br>
+<u>It's clear the media elites are ready to anoint Donald Trump as the Repu=
+blican nominee</u> before this race is even over. It's also clear,  that
+Donald Trump's nomination would be a disaster for America.
+<br><br>
+If Trump is our nominee, conservatives will be forced to choose between two=
+ liberals in November: both corrupt, both big government crony capitalists,
+and both part of the system that has gotten us in the mess we're in.
+<br><br>
+Worse, if we nominate Donald Trump, we would be guaranteeing four years of =
+Hillary Clinton in the White House.
+<br><br>
+<a href=3D"http://paracom.paramountcommunication.com/ct/35051184:sIhxiRCNu:=
+m:1:1306726831:5FA53803D23778899595870DD3C95E3D:r"><strong>That's why I'm a=
+sking you to please stop what
+you are doing right now and commit to joining our campaign by making a spec=
+ial, urgent contribution.</strong></a><br><br>
+<center><a href=3D"http://paracom.paramountcommunication.com/ct/35051184:sI=
+hxiRCNu:m:1:1306726831:5FA53803D23778899595870DD3C95E3D:r" style=3D"width: =
+240px; height: 50px;
+border-radius: 4px; background-color: #BF3239; display: block; border:2px s=
+olid #711D21; display: inline-table; cursor: pointer; text-decoration:
+none; margin: 5px auto; display: table-cell; vertical-align: middle; color:=
+ #FF0004; font-size: 18px; font-family: arial, sans-serif; text-align:
+center; font-weight:bold; color:#FFFFFF;">&nbsp;STAND WITH TED AND CARLY&nb=
+sp;</a><br><br></center>
+Over the past weeks, I've traveled the country with Senator Cruz and his wi=
+fe Heidi. I have come to know him and his family.
+<br><br>
+I know the Ted Cruz the media won't tell you about =E2=80=93 the loving fat=
+her, the devoted husband, the movie buff. (Did you know he can recite every
+single line from <em>The Princess Bride</em>?) <br><br>
+<strong>Ted Cruz is a constitutional conservative who has made enemies in b=
+oth parties =E2=80=93 because he's dared to stand up to bipartisan corrupti=
+on
+in Washington.</strong><br><br>
+He has fought tirelessly to change the system. And I know, if elected, he w=
+ill bring back American jobs, protect our constitutional freedoms, and
+defend our nation.<br><br>
+
+Our country is being taken away by the elites, the crony capitalists, and t=
+he special interests that have captured both parties. They want to take
+away what we treasure about this nation.
+<br><br>
+<strong>And without your immediate support =E2=80=93 they will get away wit=
+h it.</strong><br><br>
+With your help, Ted and I can stop them =E2=80=93 <a href=3D"http://paracom=
+.paramountcommunication.com/ct/35051184:sIhxiRCNu:m:1:1306726831:5FA53803D2=
+3778899595870DD3C95E3D:r"><strong>but only if you will join us right now by=
+ making
+an immediate and urgent contribution to show your support.</strong></a><br>=
+<br>
+<center><a href=3D"http://paracom.paramountcommunication.com/ct/35051184:sI=
+hxiRCNu:m:1:1306726831:5FA53803D23778899595870DD3C95E3D:r" style=3D"width: =
+240px; height: 50px;
+border-radius: 4px; background-color: #BF3239; display: block; border:2px s=
+olid #711D21; display: inline-table; cursor: pointer; text-decoration:
+none; margin: 5px auto; display: table-cell; vertical-align: middle; color:=
+ #FF0004; font-size: 18px; font-family: arial, sans-serif; text-align:
+center; font-weight:bold; color:#FFFFFF;">&nbsp;STAND WITH TED AND CARLY&nb=
+sp;</a><br><br></center>
+
+As you have heard me say before, we need to take our country back. I believ=
+e Ted Cruz is the man to lead that fight now. And I am prepared to give
+everything I have to ensure we defeat Donald Trump and Hillary Clinton.
+<br><br>
+Make no mistake: <strong>this is a fight now.</strong> Ted and I can't do t=
+his without your help. <br><br>
+But this fight is about all of us.
+<br><br>
+It's about whether we want our kids to be able to get a good paying job whe=
+n they get out of school. It's about whether we want to turn our backs on
+religious liberty and our second amendment. It's about whether we want to l=
+ive in a nation that secures its borders and calls Islamic terrorism by its
+name.
+<br><br>
+Thomas, it's about the future of the American people, the character of our =
+nation, and the great country we must rebuild together.
+<br><br>
+This is why we fight.=20
+<br><br>
+I would consider it a personal favor if you would join us by making an urge=
+nt contribution right now.&nbsp;<a href=3D"http://paracom.paramountcommunic=
+ation.com/ct/35051184:sIhxiRCNu:m:1:1306726831:5FA53803D23778899595870DD3C9=
+5E3D:r"><strong>Please join us.</strong></a><br><br>
+Carly
+<br><br>
+
+
+
+<br><br><br><br><br><br><br><br></font><br><br><br>
+		<br>
+		<center>
+			<table width=3D"280" cellspacing=3D"0" cellpadding=3D"0" border=3D"1" st=
+yle=3D"border:thin solid #000;" id=3D"disclaimer">
+               	<tbody>
+                   	<tr>
+                       	<td valign=3D"top" align=3D"center">
+						<center>
+							<table width=3D"270" cellspacing=3D"0" cellpadding=3D"5" border=3D"0=
+" id=3D"disclaimer2">
+								<tbody>
+									<tr>
+										<td><center><font size=3D"2" face=3D"Arial, Verdana, Geneva" styl=
+e=3D"font-size: 13px; font-family: arial,verdana,helvetica,sans-serif;
+line-height:14px !important;" id=3D"disclaimertext">PAID FOR BY CRUZ FOR PR=
+ESIDENT<br><a href=3D"http://www.tedcruz.org">www.tedcruz.org</a></font></c=
+enter></td>
+									</tr>
+								</tbody>
+							</table>
+						</center>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+           <font style=3D"font-size:9px;">Copyright =C2=A9 2016 All Rights =
+Reserved | <a href=3D"http://paracom.paramountcommunication.com/ct/35051185=
+:sIhxiRCNu:m:1:1306726831:5FA53803D23778899595870DD3C95E3D:r">Privacy Polic=
+y</a></font>
+		</center>
+				  </td>
+				</tr>
+			</tbody></table>
+
+	=09
+<br><br>
+		</td>
+	</tr>
+</tbody></table>
+
+<img src=3D"http://paracom.paramountcommunication.com/imagelibrary/N-sIhxiR=
+CNu-F34430E6F95C4DAF22B59D5FE2C7867B.jpg" width=3D"1" height=3D"1" style=3D=
+"border:none; visibility:hidden; max-height:0px; max-width:0px; overflow:hi=
+dden;">
+
+
+
+
+
+
+<p><font face=3D"Verdana, Arial, Helvetica, sans-serif" size=3D"1" color=3D=
+"#999999">
+            This message was intended for: <a href=3D"mailto:nuccio001@conn=
+ect.wcsu.edu">nuccio001@connect.wcsu.edu</a> <br>
+            You were added to the system February 25, 2016.<br>
+            For more information <a href=3D"http://paracom.paramountcommuni=
+cation.com/p/isIhxiRCNu">click here</a>. <a href=3D"http://paracom.paramoun=
+tcommunication.com/p/osIhxiRCNu">Update your preferences</a><br>
+            <a href=3D"http://paracom.paramountcommunication.com/p/osIhxiRC=
+Nu">Unsubscribe</a> | <a href=3D"mailto:unsub-34310885426-echo3-78F12325EEC=
+DEE6BE015E6844A75D103@emailsendr.net?Subject=3DUnsubscribe&amp;body=3DPleas=
+e%20remove%20me%20from%20further%20mailings">Unsubscribe via email</a><br>
+            <br>
+            </font></p>
+</div></blockquote></body></html>=
+
+--Apple-Mail-EAB04072-6E3E-46BE-ADA6-15150A111866--

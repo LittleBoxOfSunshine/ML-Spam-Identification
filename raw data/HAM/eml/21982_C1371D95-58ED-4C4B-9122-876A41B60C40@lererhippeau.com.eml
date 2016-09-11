@@ -1,0 +1,1857 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 19 May
+ 2016 10:32:22 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 19 May 2016
+ 10:32:18 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 923980839
+ for ParrishD@dnc.org; Thu, 19 May 2016 09:32:30 -0500
+X-Note-AR-ScanTimeLocal: 5/19/2016 9:32:28 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.179 DOM:lererhippeau.com ADDR:klerer@lererhippeau.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-170/SG:5 5/19/2016 9:32:18 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 78.1203 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/19/2016 9:32:19 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.179
+X-Note-Reverse-DNS: mail-io0-f179.google.com
+X-Note-Return-Path: klerer@lererhippeau.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f179.google.com ([209.85.223.179] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139762554
+ for ParrishD@dnc.org; Thu, 19 May 2016 09:31:26 -0500
+Received: by mail-io0-f179.google.com with SMTP id i75so109321656ioa.3
+        for <ParrishD@dnc.org>; Thu, 19 May 2016 07:31:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lererhippeau-com.20150623.gappssmtp.com; s=20150623;
+        h=from:content-transfer-encoding:mime-version:subject:message-id:date
+         :references:in-reply-to:to;
+        bh=YJYovKSNpYrhNVoOZ3XtKBXenZ6V/BTkhc6pgV4RA1k=;
+        b=tzggSgvhtohHwYFpND0CVJ0+d7Rdcg40wy16nDBczDiZ85eVIANlQp7Y/Ug4zIm1bH
+         dnQbA8176VqRgnDuAprxGCPD0M8quU1Yg9rKwvoUZ7R+pRpraAOozC4RMgrn0bKVTnt0
+         VzHmPQhmRlF1IyKJ795jT+ghz1XRkNw0V136PHnGc43ZgEbZsVdKhWXxE457gg8kk3Xp
+         y7mhkubRyqAUtBBxmH3e07iAkoRkaSSht6t/Icinz2ANYgBA/9t5Q47zsF5EQ6Rl6J1t
+         r2hjL6GT+LQZ7B0nRjyPIovi0TgH5YMBAUiU+irnXa67s3Gpelr+FcE1mBPOxmEmLRqD
+         kgFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version
+         :subject:message-id:date:references:in-reply-to:to;
+        bh=YJYovKSNpYrhNVoOZ3XtKBXenZ6V/BTkhc6pgV4RA1k=;
+        b=jiBlmrC4iLcg0naA70o0z709A3TShJgcoQPHMNo2m+pxgHZjC4vuFGRiFiUuJvNIMM
+         mzX8EBT5wXJAyl0NBCKDGA8WGD4m4JWiILeoAovENbt93UzNqaywHHjlC2I5lBX93GKP
+         jHcEhaaBsUnseosnu5+XQUkNIMOjABpCFI/GJNYiEag2RwGB5RTSzBGJKZu+rlFV3p4e
+         bX47W1KOTry+HaL+Xu+ZYPQ4FVNXUZRcINLNcILMPBJHDyjw1H9TzQrH2h+7NpyNwEfM
+         60wJM42N5x0uwtdZKiHsTC8GFJF1Paqc1z7PNgNatgHSEMlqDtbJ7dlda+yZggdBRk2X
+         BvLw==
+X-Gm-Message-State: AOPr4FUbaPHtdj5l5T/ZnPXTN7z89fNQ9obuPjdnhYEhBAPOljut5T5e5pk4JNL9FbXVUZsG
+X-Received: by 10.36.43.135 with SMTP id h129mr3429665ita.60.1463668277003;
+        Thu, 19 May 2016 07:31:17 -0700 (PDT)
+Return-Path: <klerer@lererhippeau.com>
+Received: from ?IPv6:2600:1017:b820:25f9:78a6:c73f:78bf:b01b?
+ ([2600:1017:b820:25f9:78a6:c73f:78bf:b01b])        by smtp.gmail.com with
+ ESMTPSA id uh3sm4383009igb.3.2016.05.19.07.31.13        for
+ <ParrishD@dnc.org>        (version=TLSv1/SSLv3 cipher=OTHER);        Thu, 19
+ May 2016 07:31:14 -0700 (PDT)
+From: Kenneth Lerer <klerer@lererhippeau.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail-14C195BD-08D0-401F-992E-A3BF2D5B68E2"
+Content-Transfer-Encoding: 7bit
+Subject: Re: Update on June 8th
+Message-ID: <C1371D95-58ED-4C4B-9122-876A41B60C40@lererhippeau.com>
+Date: Thu, 19 May 2016 10:31:12 -0400
+References: <CACG1p4rksLThogb3ikbH+7t90_2EqNsuM18NPGW53BE9BxC6RA@mail.gmail.com> <EBCDDA67-94AD-48AC-9092-E86EDE97E816@lererhippeau.com> <CACG1p4o05uF+d0KE_G3cP9=M9mS4sAOtR5hHJN2y-8ZhSat8-A@mail.gmail.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995EB53@dncdag1.dnc.org>
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995EB53@dncdag1.dnc.org>
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+X-Mailer: iPhone Mail (13E238)
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--Apple-Mail-14C195BD-08D0-401F-992E-A3BF2D5B68E2
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+2 total=20
+
+> On May 19, 2016, at 10:29 AM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+>=20
+> Hi Ken,
+> =20
+> Is this two in addition to Fred and Stephanie? Or two total for the Harman=
+s?
+> =20
+> Thanks,
+> Dan
+> =20
+> From: Zachary Allen [mailto:zallen@tipahconsulting.com]=20
+> Sent: Thursday, May 19, 2016 10:26 AM
+> To: Kenneth Lerer; Parrish, Daniel
+> Subject: Re: Update on June 8th
+> =20
+> Got em
+> =20
+> On Thu, May 19, 2016 at 10:22 AM, Kenneth Lerer <klerer@lererhippeau.com> w=
+rote:
+> Harman. Add 2=20
+>=20
+> On May 18, 2016, at 3:59 PM, Zachary Allen <zallen@tipahconsulting.com> wr=
+ote:
+>=20
+> Ken -=20
+> =20
+> Thanks so much for an incredibly solid start. Wanted to give you the lates=
+t.=20
+> =20
+> We had another couple sign up at the $33,400 per person, I updated your nu=
+mbers to reflect our emails this morning, and now include a guest who is giv=
+ing significantly ($75,000) that we are counting towards this event (Eric Sc=
+hoenberg).=20
+> =20
+> This puts us at 42 attendees, and $602,200 in commitments with $378,800 in=
+ hand and $233,400 outstanding left to collect.=20
+> =20
+> This is quite a start, so a huge, huge thank you. Looks like we're on trac=
+k to hit our goal and sell this out in advance. Famous last words.
+> =20
+> I have an email into the WH re: timing and will revert as soon as I hear.=20=
+
+> =20
+> Best,
+> Zach
+> =20
+> =20
+> =20
+> EVENT TOTAL
+> $602,200
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> $233,400
+> $378,800
+> 42
+> FIRST
+> LAST
+> RAISER(S)
+> COMMIT
+> IN-HAND
+> ATTEND
+> Tiffany
+> Adams
+> Lerer/Sailer
+> =20
+> $10,000
+> 1
+> Jonathan
+> Bellack
+> DNC
+> =20
+> $33,400
+> 1
+> Matthew
+> Blank
+> Lerer/Sailer
+> =20
+> $20,000
+> 1
+> Susan
+> Blank
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> Jennifer
+> Bonnell
+> DNC
+> =20
+> $33,400
+> 1
+> David
+> Bryan
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> GUEST
+> Bryan
+> Lerer/Sailer
+> =20
+> =20
+> ?
+> Richard
+> Christiansen
+> DNC
+> =20
+> $20,000
+> 1
+> Tamar
+> Dor-Ner
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> Tina
+> Exhoras
+> Lerer/Sailer
+> $20,000
+> =20
+> 1
+> Rob
+> Fishman
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Mark
+> Gallogly
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Arthur
+> Krystal
+> DNC
+> =20
+> $10,000
+> 1
+> Benjamin
+> Lerer
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Emily
+> Lerer
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Isabel
+> Lerer
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Kenneth
+> Lerer
+> Lerer/Sailer
+> $33,400
+> HOST
+> 1
+> David
+> Levine
+> DNC
+> =20
+> $13,400
+> 1
+> Ruth
+> Levine
+> DNC
+> =20
+> $13,400
+> 1
+> Giulio
+> Martini
+> DNC
+> =20
+> $10,000
+> 1
+> Jody
+> Martini
+> DNC
+> =20
+> $10,000
+> 1
+> Penny
+> Mintz
+> DNC
+> =20
+> $10,000
+> 1
+> Jordan
+> Muraskin
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Carole
+> Robinson
+> Lerer/Sailer
+> $10,000
+> =20
+> 1
+> Katherine
+> Sailer
+> Lerer/Sailer
+> HOST
+> 1
+> Alexandra
+> Schoenberg
+> DNC
+> =20
+> =20
+> 1
+> Eric
+> Schoenberg
+> DNC
+> =20
+> $75,000
+> 1
+> David
+> Singer
+> Lerer/Sailer
+> $20,000
+> =20
+> 1
+> GUEST
+> Singer
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> GUEST
+> Stampler
+> DNC
+> $10,000
+> =20
+> 1
+> Julie
+> Stampler
+> DNC
+> $10,000
+> =20
+> 1
+> Sophie
+> Stenbeck
+> Lerer/Sailer
+> =20
+> $10,000
+> 1
+> Lise
+> Strickler
+> Lerer/Sailer
+> =20
+> =20
+> ?
+> Jack
+> Taylor
+> Lerer/Sailer
+> =20
+> $10,000
+> 1
+> Franklin
+> Thomas
+> DNC
+> =20
+> =20
+> 1
+> Are
+> Traasdahl
+> Lerer/Sailer
+> =20
+> $20,000
+> 1
+> Siri Willoch
+> Traasdahl
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> Jeff
+> Weber
+> DNC
+> =20
+> $33,400
+> 1
+> Stacey
+> Weber
+> DNC
+> =20
+> $13,400
+> 1
+> Kate
+> Whitney
+> DNC
+> =20
+> $33,400
+> 1
+> Caroline
+> Zaleski
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> Kenny
+> Zaleski
+> Lerer/Sailer
+> =20
+> =20
+> 1
+> Michel
+> Zaleski
+> Lerer/Sailer
+> $30,000
+> =20
+> 1
+> Ed
+> Zimmerman
+> DNC
+> $10,000
+> =20
+> 1
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> =20
+> Jeff
+> Gural
+> =20
+> $10,000
+> =20
+> 0
+> =20
+> =20
+> --
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>=20
+>=20
+> =20
+> --
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--Apple-Mail-14C195BD-08D0-401F-992E-A3BF2D5B68E2
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body dir="auto"><div></div><div>2 total&nbsp;</div><div><br>On May 19, 2016, at 10:29 AM, Parrish, Daniel &lt;<a href="mailto:ParrishD@dnc.org">ParrishD@dnc.org</a>&gt; wrote:<br><br></div><blockquote type="cite"><div>
+
+
+<meta name="Generator" content="Microsoft Word 14 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+span.hoenzb
+	{mso-style-name:hoenzb;}
+span.EmailStyle18
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri","sans-serif";}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+
+
+<div class="WordSection1">
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D">Hi Ken,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D">Is this two in addition to Fred and Stephanie? Or two total for the Harmans?<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D">Thanks,<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D">Dan<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:#1F497D"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><b><span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style="font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary Allen [<a href="mailto:zallen@tipahconsulting.com">mailto:zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 10:26 AM<br>
+<b>To:</b> Kenneth Lerer; Parrish, Daniel<br>
+<b>Subject:</b> Re: Update on June 8th<o:p></o:p></span></p>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class="MsoNormal">Got em<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class="MsoNormal">On Thu, May 19, 2016 at 10:22 AM, Kenneth Lerer &lt;<a href="mailto:klerer@lererhippeau.com" target="_blank">klerer@lererhippeau.com</a>&gt; wrote:<o:p></o:p></p>
+<div>
+<div>
+<p class="MsoNormal">Harman. Add 2&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal" style="margin-bottom:12.0pt"><br>
+On May 18, 2016, at 3:59 PM, Zachary Allen &lt;<a href="mailto:zallen@tipahconsulting.com" target="_blank">zallen@tipahconsulting.com</a>&gt; wrote:<o:p></o:p></p>
+</div>
+<blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class="MsoNormal">Ken -&nbsp;<o:p></o:p></p>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">Thanks so much for an incredibly solid start. Wanted to give you the latest.&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">We had another couple sign up at the $33,400 per person, I updated your numbers to reflect our emails this morning, and now include a guest who is giving significantly ($75,000) that we are counting towards this event (Eric&nbsp;<span style="color:black">Schoenberg)</span>.&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">This puts us at 42 attendees, and $602,200 in commitments with $378,800 in hand and $233,400 outstanding left to collect.&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">This is quite a start, so a huge, huge thank you. Looks like we're on track to hit our goal and sell this out in advance. Famous last words.<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">I have an email into the WH re: timing and will revert as soon as I hear.&nbsp;<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal">Best,<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal">Zach<o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+<tbody>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">EVENT TOTAL</span></b><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">$602,200</span></b><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border:solid windowtext 1.0pt;border-left:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">&nbsp;</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">$233,400</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">$378,800</span></b><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">42</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">FIRST</span></b><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">LAST</span></b><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">RAISER(S)</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">COMMIT</span></b><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">IN-HAND</span></b><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;background:black;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<b><span style="color:white">ATTEND</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Tiffany</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Adams</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jonathan</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Bellack</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$33,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Matthew</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Blank</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$20,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Susan</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Blank</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jennifer</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Bonnell</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$33,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">David</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Bryan</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">GUEST</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Bryan</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">?</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Richard</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Christiansen</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$20,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Tamar</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Dor-Ner</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Tina</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Exhoras</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$20,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Rob</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Fishman</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Mark</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Gallogly</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Arthur</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Krystal</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Benjamin</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Lerer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Emily</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Lerer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Isabel</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Lerer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Kenneth</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Lerer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$33,400</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">HOST</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">David</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Levine</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$13,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Ruth</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Levine</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$13,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Giulio</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Martini</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jody</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Martini</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Penny</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Mintz</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jordan</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Muraskin</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Carole</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Robinson</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Katherine</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Sailer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">HOST</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Alexandra</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Schoenberg</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Eric</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Schoenberg</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$75,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">David</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Singer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$20,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">GUEST</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Singer</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">GUEST</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Stampler</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Julie</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Stampler</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Sophie</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Stenbeck</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Lise</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Strickler</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">?</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jack</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Taylor</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Franklin</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Thomas</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Are</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Traasdahl</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$20,000</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Siri Willoch</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Traasdahl</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jeff</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Weber</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$33,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Stacey</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Weber</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$13,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Kate</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Whitney</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$33,400</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Caroline</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Zaleski</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Kenny</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Zaleski</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Michel</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Zaleski</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">Lerer/Sailer</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$30,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Ed</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Zimmerman</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">DNC</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">1</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+</tr>
+<tr style="height:14.65pt">
+<td width="118" valign="top" style="width:88.3pt;border:solid windowtext 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Jeff</span><o:p></o:p></p>
+</td>
+<td width="121" valign="top" style="width:90.75pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" style="mso-margin-top-alt:auto"><span style="color:black">Gural</span><o:p></o:p></p>
+</td>
+<td width="104" valign="top" style="width:78.0pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">$10,000</span><o:p></o:p></p>
+</td>
+<td width="99" valign="top" style="width:74.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="right" style="mso-margin-top-alt:auto;text-align:right">
+<span style="color:black">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width="59" valign="top" style="width:44.15pt;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:14.65pt">
+<p class="MsoNormal" align="center" style="mso-margin-top-alt:auto;text-align:center">
+<span style="color:black">0</span><o:p></o:p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="MsoNormal" style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto">&nbsp;<o:p></o:p></p>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal"><span class="hoenzb"><span style="color:#888888">-- <o:p></o:p></span></span></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class="MsoNormal"><span style="color:#888888">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href="tel:%28646%29%20470-8689" target="_blank">(646) 470-8689</a> direct | <a href="tel:%28973%29%20618-5903" target="_blank">
+(973) 618-5903</a> fax&nbsp;| <a href="mailto:ZAllen@TIPAHConsulting.com" target="_blank">
+ZAllen@TIPAHConsulting.com</a></span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+<p class="MsoNormal"><br>
+<br clear="all">
+<o:p></o:p></p>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<p class="MsoNormal">-- <o:p></o:p></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class="MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+(646) 470-8689 direct | (973) 618-5903 fax&nbsp;| <a href="mailto:ZAllen@TIPAHConsulting.com" target="_blank">
+ZAllen@TIPAHConsulting.com</a><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div></blockquote></body></html>
+--Apple-Mail-14C195BD-08D0-401F-992E-A3BF2D5B68E2--

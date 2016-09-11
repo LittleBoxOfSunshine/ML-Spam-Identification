@@ -1,0 +1,441 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sat, 7 May
+ 2016 13:57:56 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sat, 7 May 2016
+ 13:57:55 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 902386897
+ for ParrishD@dnc.org; Sat, 07 May 2016 12:57:59 -0500
+X-Note-AR-ScanTimeLocal: 5/7/2016 12:57:59 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.42 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-100/SG:5 5/7/2016 12:57:47 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-22470-c
+X-Note-419: 31.2586 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/7/2016 12:57:54 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.42
+X-Note-Reverse-DNS: mail-lf0-f42.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-lf0-f42.google.com ([209.85.215.42] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137620546
+ for ParrishD@dnc.org; Sat, 07 May 2016 12:57:58 -0500
+Received: by mail-lf0-f42.google.com with SMTP id y84so162984596lfc.0
+        for <ParrishD@dnc.org>; Sat, 07 May 2016 10:57:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=7gDkBzrv2/7LJyXKS7w0SScwAkLu9WCP1Q6qtnrFA9k=;
+        b=xv0AzbXHJSBZEt/H2uR+RHaErx3NVk8lDKdYieN2FOyIh7vMBZOiOe+j15H+kCTv36
+         MRw631h/y7IezH9METG34j8xfav4pdJ0F7LR4b7yoyQOta4MyKtmYzX/oPN3cauxZdD/
+         zuOHDXtePlQVbfPxNAmj44SNqAP3dy/Ya+N0BVjmnhR06aIp/t0SUThQl8EyC+Peps9z
+         sarFl92pEsjrCfbRs6YrzUkcE9ncZK1xoW0tUdcvgJIDaQdPKYfqjnkY2xeyMAI4LBMN
+         xwZKVWezKsuWdXGcox/x6kSLqlxuGGeW6dz5MRsuPbwUjck26IeyszCN2JOfyfYwXu0b
+         0OQA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=7gDkBzrv2/7LJyXKS7w0SScwAkLu9WCP1Q6qtnrFA9k=;
+        b=VcJZtiqLiR01Cds09NpY5oppE8vPRa9wS8xB0oQBPU5QJIwrGC6ubZugTal4/4fI//
+         gQwZgY92W3mP2CzQTpsUirsY8Z1WKYQN5dKqtdZY2aIA8m7lkEWlvjjkOtBo+BKnKEUO
+         KPcZ7wATs8REIuD1P/VYZ16LxOyJqu0a7Gu0mwdblkHQleX9ULIZxNCzpAiwdQX/Xh37
+         iyBNzZu/P3k4mxFI39JAhIsm/n2GrHL+dYjMQQ3lUG+2cAwlEIjvJ3f/piqfjEMk8ZGf
+         XRZHrhACcGXJTR7+USjUdgbM0UzQNDf5VOVzItzz1m0cy87its7olmWlVXvObE0+P6rA
+         WYiA==
+X-Gm-Message-State: AOPr4FU5UAYQ2Wym3e5/sTYRnZfixftioWm6zPEdIXwI9Qug2tYPX6oL5feKqwPQgSAQb6fGITmtUcIOj7aCbNxg
+X-Received: by 10.25.87.65 with SMTP id l62mr4435904lfb.4.1462643873590; Sat,
+ 07 May 2016 10:57:53 -0700 (PDT)
+Received: by 10.25.153.132 with HTTP; Sat, 7 May 2016 10:57:13 -0700 (PDT)
+In-Reply-To: <63E4FFAA-14C0-48D0-B901-C18AE797ECCD@dnc.org>
+References: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9955AE6@dncdag1.dnc.org>
+ <89CDFE4A-F3AD-4AE3-81BC-28D9C440DC93@cornerstone.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9955EF7@dncdag1.dnc.org>
+ <03A422EF-C227-4FB8-85F9-239E01CA41C7@cornerstone.com> <63E4FFAA-14C0-48D0-B901-C18AE797ECCD@dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Sat, 7 May 2016 12:57:13 -0500
+Message-ID: <CACG1p4ppfo5H6C-gYhegAqtD1dyRaE69yVUdAiCwQipDKGbhig@mail.gmail.com>
+Subject: Re: June 8th with President Obama
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11418d4084b3da05324450c2"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11418d4084b3da05324450c2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Nice work!
+
+On Sat, May 7, 2016 at 12:56 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> I'm so glad you'll be able to attend! Here is the link for your RSVP when
+> you're ready. Let me know if you have any other questions, and thank you =
+so
+> much for your support!
+>
+> https://finance.democrats.org/page/contribute/NYDinnerJun8
+>
+> Best,
+> Dan
+>
+> On May 7, 2016, at 1:53 PM, Rozoff, Jon <JRozoff@cornerstone.com> wrote:
+>
+> Yes I would like to attend the dinner with a guest. I will take care of
+> the details as soon as can.
+>
+>
+>
+> On May 6, 2016, at 3:56 PM, Parrish, Daniel <ParrishD@dnc.org<
+> mailto:ParrishD@dnc.org <ParrishD@dnc.org>>> wrote:
+>
+>
+> Hi Jon,
+>
+>
+>
+> I hope the timing works out, it would be great to have you there! As for
+> the ticket levels, we=E2=80=99ve found this election season that some fol=
+ks have
+> wanted to max out in light of our opposition. The difference is mostly in
+> name only, but it also allows your name to be listed on the invitation as
+> part of the host committee. In your case, attending at the co-host level
+> would also qualify you for the Main Line convention package. I=E2=80=99ve=
+ attached
+> our convention package descriptions for your reference, but please feel
+> free to reach out if you have any questions.
+>
+>
+>
+> I hope that helps!
+>
+>
+>
+> Thanks,
+>
+> Dan
+>
+>
+>
+>
+>
+> -----Original Message-----
+> From: Rozoff, Jon [mailto:JRozoff@cornerstone.com
+> <JRozoff@cornerstone.com>]
+> Sent: Friday, May 06, 2016 3:42 PM
+> To: Parrish, Daniel
+> Cc: Zachary Allen
+> Subject: Re: June 8th with President Obama
+>
+>
+>
+> Thanks. Trying to see if can make that timing work. What is the differenc=
+e
+> between cohost and guest levels?
+>
+>
+>
+>
+>
+> On May 6, 2016, at 1:47 PM, Parrish, Daniel <ParrishD@dnc.org<
+> mailto:ParrishD@dnc.org <ParrishD@dnc.org><mailto:ParrishD@dnc.org
+> <ParrishD@dnc.org>%3cmailto:ParrishD@dnc.org>>> wrote:
+>
+>
+>
+> Jonathan,
+>
+>
+>
+> I hope you are well. I want to personally invite you to our upcoming even=
+t
+> with President Obama  on the evening of June 8th. We will be advertising
+> this event more publicly in the coming days, but I wanted to make sure yo=
+u
+> were among the first to know. Ken Lerer and Katherine Sailer are hosting
+> what promises to be an intimate evening with remarks from the President a=
+nd
+> the chance to ask any questions you may have. We are expecting no more th=
+an
+> 60 guests and each person will have the opportunity for a photo with the
+> President.
+>
+>
+>
+> We=E2=80=99d love to see you there if you are available. I=E2=80=99ve inc=
+luded the
+> invitation for your reference and you can RSVP here<
+> https://finance.democrats.org/page/contribute/NYDinnerJun8>. Please let
+> me know if you have any questions about the event. I hope we=E2=80=99ll s=
+ee you in
+> June!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> =E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93
+>
+> Daniel Parrish
+>
+> Democratic National Committee
+>
+> Finance | Director of Data & Strategic Initiatives
+>
+> Phone: (202) 479-5141 | Mobile: (717) 283-7521
+>
+> 430 South Capitol Street, SE | Washington, DC 20003
+>
+>
+>
+> <NY Dinner 060816.pdf.attachctrl>
+>
+> ***********************************************************
+>
+> Warning: This email may contain confidential or privileged information
+> intended only for the use of the individual or entity to whom it is
+> addressed. If you are not the intended recipient, please understand that
+> any disclosure, copying, distribution, or use of the contents of this ema=
+il
+> is strictly prohibited.
+>
+> ***********************************************************
+>
+>
+>
+> <2016 Convention Packages - Individual.pdf.attachctrl>
+> ***********************************************************
+> Warning: This email may contain confidential or privileged information
+> intended only for the use of the individual or entity to whom it is
+> addressed. If you are not the intended recipient, please understand
+> that any disclosure, copying, distribution, or use of the contents
+> of this email is strictly prohibited.
+> ***********************************************************
+>
+>
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11418d4084b3da05324450c2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Nice work!&nbsp;</div><div class=3D"gmail_extra"><br><div cl=
+ass=3D"gmail_quote">On Sat, May 7, 2016 at 12:56 PM, Parrish, Daniel <span =
+dir=3D"ltr">&lt;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">Parri=
+shD@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" styl=
+e=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div></div>
+<div>I'm so glad you'll be able to attend! Here is the link for your RSVP w=
+hen you're ready. Let me know if you have any other questions, and thank yo=
+u so much for your support!</div>
+<div><br>
+</div>
+<div><a href=3D"https://finance.democrats.org/page/contribute/NYDinnerJun8"=
+ target=3D"_blank">https://finance.democrats.org/page/contribute/NYDinnerJu=
+n8</a></div>
+<div><br>
+</div>
+<div>Best,</div>
+<div>Dan</div><div><div class=3D"h5">
+<div><br>
+On May 7, 2016, at 1:53 PM, Rozoff, Jon &lt;<a href=3D"mailto:JRozoff@corne=
+rstone.com" target=3D"_blank">JRozoff@cornerstone.com</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div><span>Yes I would like to attend the dinner with a guest. I will take =
+care of the details as soon as can.</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>On May 6, 2016, at 3:56 PM, Parrish, Daniel &lt;<a href=3D"mailto:Par=
+rishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&lt;<a href=3D"mailto:=
+ParrishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>&gt;&gt; wro=
+te:</span><br>
+<span></span><br>
+<span></span><br>
+<span>Hi Jon,</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>I hope the timing works out, it would be great to have you there! As =
+for the ticket levels, we=E2=80=99ve found this election season that some f=
+olks have wanted to max out in light of our opposition. The difference is m=
+ostly in name only, but it also allows your
+ name to be listed on the invitation as part of the host committee. In your=
+ case, attending at the co-host level would also qualify you for the Main L=
+ine convention package. I=E2=80=99ve attached our convention package descri=
+ptions for your reference, but please feel
+ free to reach out if you have any questions.</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>I hope that helps!</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Thanks,</span><br>
+<span></span><br>
+<span>Dan</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>-----Original Message-----</span><br>
+<span>From: Rozoff, Jon [<a href=3D"mailto:JRozoff@cornerstone.com" target=
+=3D"_blank">mailto:JRozoff@cornerstone.com</a>]</span><br>
+<span>Sent: Friday, May 06, 2016 3:42 PM</span><br>
+<span>To: Parrish, Daniel</span><br>
+<span>Cc: Zachary Allen</span><br>
+<span>Subject: Re: June 8th with President Obama</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Thanks. Trying to see if can make that timing work. What is the diffe=
+rence between cohost and guest levels?</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>On May 6, 2016, at 1:47 PM, Parrish, Daniel &lt;<a href=3D"mailto:Par=
+rishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&lt;<a href=3D"mailto:=
+ParrishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>&lt;<a href=
+=3D"mailto:ParrishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>%=
+3cmailto:ParrishD@<a href=3D"http://dnc.org" target=3D"_blank">dnc.org</a>&=
+gt;&gt;&gt;
+ wrote:</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Jonathan,</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>I hope you are well. I want to personally invite you to our upcoming =
+event with President Obama &nbsp;on the evening of June 8th. We will be adv=
+ertising this event more publicly in the coming days, but I wanted to make =
+sure you were among the first to know.
+ Ken Lerer and Katherine Sailer are hosting what promises to be an intimate=
+ evening with remarks from the President and the chance to ask any question=
+s you may have. We are expecting no more than 60 guests and each person wil=
+l have the opportunity for a photo
+ with the President.</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>We=E2=80=99d love to see you there if you are available. I=E2=80=99ve=
+ included the invitation for your reference and you can RSVP here&lt;<a hre=
+f=3D"https://finance.democrats.org/page/contribute/NYDinnerJun8" target=3D"=
+_blank">https://finance.democrats.org/page/contribute/NYDinnerJun8</a>&gt;.
+ Please let me know if you have any questions about the event. I hope we=E2=
+=80=99ll see you in June!</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>Best,</span><br>
+<span></span><br>
+<span>Dan</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=
+=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93</span><br>
+<span></span><br>
+<span>Daniel Parrish</span><br>
+<span></span><br>
+<span>Democratic National Committee</span><br>
+<span></span><br>
+<span>Finance | Director of Data &amp; Strategic Initiatives</span><br>
+<span></span><br>
+<span>Phone: <a href=3D"tel:%28202%29%20479-5141" value=3D"&#43;12024795141=
+" target=3D"_blank">(202) 479-5141</a> | Mobile: <a href=3D"tel:%28717%29%2=
+0283-7521" value=3D"&#43;17172837521" target=3D"_blank">(717) 283-7521</a><=
+/span><br>
+<span></span><br>
+<span>430 South Capitol Street, SE | Washington, DC 20003</span><br>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>&lt;NY Dinner 060816.pdf.attachctrl&gt;</span><br>
+<span></span><br>
+<span>***********************************************************</span><br=
+>
+<span></span><br>
+<span>Warning: This email may contain confidential or privileged informatio=
+n intended only for the use of the individual or entity to whom it is addre=
+ssed. If you are not the intended recipient, please understand that any dis=
+closure, copying, distribution,
+ or use of the contents of this email is strictly prohibited.</span><br>
+<span></span><br>
+<span>***********************************************************</span><br=
+>
+<span></span><br>
+<span></span><br>
+<span></span><br>
+<span>&lt;2016 Convention Packages - Individual.pdf.attachctrl&gt;</span><b=
+r>
+<span>***********************************************************</span><br=
+>
+<span>Warning: This email may contain confidential or privileged informatio=
+n</span><br>
+<span>intended only for the use of the individual or entity to whom it is</=
+span><br>
+<span>addressed. If you are not the intended recipient, please understand <=
+/span>
+<br>
+<span>that any disclosure, copying, distribution, or use of the contents </=
+span><br>
+<span>of this email is strictly prohibited.</span><br>
+<span>***********************************************************</span><br=
+>
+<span></span><br>
+</div>
+</blockquote>
+</div></div></div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a11418d4084b3da05324450c2--

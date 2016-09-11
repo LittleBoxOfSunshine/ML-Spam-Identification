@@ -1,0 +1,841 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sat, 7 May
+ 2016 13:35:22 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sat, 7 May 2016
+ 13:35:21 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 902375843;
+ Sat, 07 May 2016 12:35:25 -0500
+X-Note-AR-ScanTimeLocal: 5/7/2016 12:35:24 PM
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.43 DOM:gmail.com ADDR:jimosmandc@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-105/SG:5 5/7/2016 12:35:22 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-31803-c
+X-Note-419: 15.6252 ms. Fail:1 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:1-1324/SG:1 5/7/2016 12:35:07 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.43
+X-Note-Reverse-DNS: mail-lf0-f43.google.com
+X-Note-Return-Path: jim.osman.dc@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G675 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-lf0-f43.google.com ([209.85.215.43] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139373984;
+ Sat, 07 May 2016 12:35:24 -0500
+Received: by mail-lf0-f43.google.com with SMTP id u64so162590577lff.3;
+        Sat, 07 May 2016 10:35:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=/RqjDVPUs4r9preXhhJ4hyaOmBu4PhKFaT8PIqPmUxs=;
+        b=mfsEixW4txmBcJdaH29PFn6VWANYpJIOU0bTbRdjM0g/CBolz4zH2JNIss4jmAsWA5
+         s5INPiGPNjmbHGKwF5/Hnm9WkeOrZNukf/myDksx5fWRJgNZ+jgGtoudMXYO59lFOnLX
+         DMJ5ZmzowSUfzjXCNEeBV9+XA9WY7gydiJ1nwjzQxwClO14Hx8pbNOQ41nBzpj92XEKk
+         WAYnUF8esJ4FuZSlMynPkltbMy61x26yXE0L7Hp9M0tHAW80+WScVEl5Yukf9/o5Ol8S
+         hoYHDlOikgitZ3MO63YsBJHS3OcTO6n6xLIYe0tMIhzF5TivJLbbZEbPtaNtuXu1fF/W
+         +Xpg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=/RqjDVPUs4r9preXhhJ4hyaOmBu4PhKFaT8PIqPmUxs=;
+        b=Hm3UcICryv9JOjF3pCE5jWTqOPcka/k/NN+haKr2jXATzQoI0z1aROBiXszMS7NDvJ
+         kOSc936uOj7XSuiHnNS13XXBSlR9lpYvFezAhuikY/mddSKErLFDWj9lkbCp/frG1ke9
+         X6LQ1MgZ8AfMVaeJ3wpolfV11SeFoyvzuLnShocW3rbm+bY9F0O+tEeKK5lXH6EbU6YW
+         wGHf8++DJQLbIuEagGAEq6I9YV6y7cfrUWY2qcz/9hosGFBeDOePL7ujj8Lhr2IXTg+k
+         AGjHHZEmAXLFrIfwBkUQp8QpYvEcgzFS1J6JFhh3JRyiSn1cJxNVCSIDYU1ebsnrsC6s
+         eFIw==
+X-Gm-Message-State: AOPr4FUhfW5+QqdzPgAf1m0OryhSmAoBna3fivmtf58IE8iygxJM0/9DhibVCpbWluQ8+Qqd76MJAAMcff5PGA==
+X-Received: by 10.112.72.193 with SMTP id f1mr11766269lbv.114.1462642518721;
+ Sat, 07 May 2016 10:35:18 -0700 (PDT)
+Received: by 10.114.79.132 with HTTP; Sat, 7 May 2016 10:35:18 -0700 (PDT)
+In-Reply-To: <32093ADAFE81DA4B99303B283D2BF5BE6EEA3B75@dncdag1.dnc.org>
+References: <CAOzQwgBhrxaSULjMizc4zgikijfojQwQgwv7+iq93Z4m9XjQAA@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DD50F69@dncdag1.dnc.org>
+	<32093ADAFE81DA4B99303B283D2BF5BE6EE70559@dncdag1.dnc.org>
+	<CAOzQwgADMch3aVEArk_-Ej2BkEPq_peJam=YxpBw8Mpczi4yPQ@mail.gmail.com>
+	<32093ADAFE81DA4B99303B283D2BF5BE6EE706A4@dncdag1.dnc.org>
+	<62ED8023-DDAF-4419-98B5-0E3F4416702F@gmail.com>
+	<32093ADAFE81DA4B99303B283D2BF5BE6EE9E05B@dncdag1.dnc.org>
+	<81AF7577-DB89-427D-BB54-B7F2032F104A@gmail.com>
+	<32093ADAFE81DA4B99303B283D2BF5BE6EE9E114@dncdag1.dnc.org>
+	<397D158A-2199-4B41-8993-541657E18B90@gmail.com>
+	<32093ADAFE81DA4B99303B283D2BF5BE6EEA3B75@dncdag1.dnc.org>
+Date: Sat, 7 May 2016 13:35:18 -0400
+Message-ID: <CAOzQwgBpjkkOkpMRYPWLgm-HJd0jSrO3mamYHE55K6JaKS0QAg@mail.gmail.com>
+Subject: Re: Media General Television DC
+From: Jim Osman <jim.osman.dc@gmail.com>
+To: "Garcia, Walter" <GarciaW@dnc.org>, "Miranda, Luis" <mirandal@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11c33d9ec30f59053243ff70"
+Return-Path: jim.osman.dc@gmail.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11c33d9ec30f59053243ff70
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+=E2=80=8BHey Walter - I never did get a chance to schedule this in the fall=
+. It's
+the DC Bureau Chief for Media General TV Jim Osman - Media General operates
+48 stations covering 23 million US households.
+
+Was originally connected from my buddy John Blandford through Luis.  Can we
+scheduled a time for me to come over and meet folks and say hello? Thanks.
+Jim
+
+On Tue, Nov 24, 2015 at 9:09 AM, Garcia, Walter <GarciaW@dnc.org> wrote:
+
+> Sounds good. I=E2=80=99ll look forward to hearing from you.
+>
+>
+>
+> *From:* jim.osman.dc@gmail.com [mailto:jim.osman.dc@gmail.com]
+> *Sent:* Tuesday, November 24, 2015 6:09 AM
+>
+> *To:* Garcia, Walter
+> *Subject:* Re: Media General Television DC
+>
+>
+>
+> Walter --- I have to fly out this morning to Iowa. Let me check in next
+> week to see if  Luis and I can grab lunch wifh John Blandford. Apologies.
+> Jim
+>
+> Sent from my iPhone
+>
+>
+> On Nov 23, 2015, at 9:16 AM, Garcia, Walter <GarciaW@dnc.org> wrote:
+>
+> Great, we=E2=80=99ll see you tomorrow then! Let me know when you arrive a=
+t the
+> DNC, and I=E2=80=99ll come down to get you.
+>
+>
+>
+> *From:* jim.osman.dc@gmail.com [mailto:jim.osman.dc@gmail.com
+> <jim.osman.dc@gmail.com>]
+> *Sent:* Monday, November 23, 2015 9:14 AM
+> *To:* Garcia, Walter
+> *Subject:* Re: Media General Television DC
+>
+>
+>
+> Yes that works.
+>
+> Sent from my iPhone
+>
+>
+> On Nov 23, 2015, at 9:12 AM, Garcia, Walter <GarciaW@dnc.org> wrote:
+>
+> Circling back to see if we can find a time that works for you and Luis to
+> meet. Does tomorrow at 11:30 am work for you?
+>
+>
+>
+> *From:* Garcia, Walter
+> *Sent:* Wednesday, November 18, 2015 9:05 AM
+> *To:* 'jim.osman.dc@gmail.com'
+> *Subject:* RE: Media General Television DC
+>
+>
+>
+> How about next Monday at 11:30 am?
+>
+>
+>
+> *From:* jim.osman.dc@gmail.com [mailto:jim.osman.dc@gmail.com
+> <jim.osman.dc@gmail.com>]
+> *Sent:* Wednesday, November 18, 2015 8:12 AM
+> *To:* Garcia, Walter
+> *Subject:* Re: Media General Television DC
+>
+>
+>
+> Hi Walter:
+>
+>
+>
+> What would be another good day? I have to go to the Hill today on the
+> refugee story. Thanks Jim
+>
+> Sent from my iPhone
+>
+>
+> On Nov 13, 2015, at 4:11 PM, Garcia, Walter <GarciaW@dnc.org> wrote:
+>
+> We=E2=80=99re at: 430 S Capitol St SE, Washington, DC 2000
+>
+>
+>
+> My cell is: (818) 403-9071
+>
+>
+>
+> Send me an email when you arrive at the DNC, and I=E2=80=99ll come down t=
+o get
+> you.
+>
+>
+>
+> *From:* Jim Osman [mailto:jim.osman.dc@gmail.com <jim.osman.dc@gmail.com>=
+]
+>
+> *Sent:* Friday, November 13, 2015 4:08 PM
+> *To:* Garcia, Walter
+> *Subject:* Re: Media General Television DC
+>
+>
+>
+> That's fine.  What's the address and you=E2=80=8Br cell?  Thanks.
+>
+>
+>
+> On Fri, Nov 13, 2015 at 4:00 PM, Garcia, Walter <GarciaW@dnc.org> wrote:
+>
+> Hi there Jim,
+>
+>
+>
+> Moving Luis to BCC as we try to schedule this. Would this upcoming
+> Wednesday at 3:30 pm ET work for you?
+>
+>
+>
+> *From:* Miranda, Luis
+> *Sent:* Friday, November 13, 2015 1:53 PM
+> *To:* Jim Osman
+> *Cc:* Garcia, Walter
+> *Subject:* RE: Media General Television DC
+>
+>
+>
+> Hi Jim, absolutely. I'm copying Walter in our office to make sure we get
+> it scheduled.
+> ------------------------------
+>
+> *From:* Jim Osman [jim.osman.dc@gmail.com]
+> *Sent:* Friday, November 13, 2015 1:50 PM
+> *To:* Miranda, Luis
+> *Subject:* Media General Television DC
+>
+> Hi Luis -- My name is Jim Osman. I am the Washington Bureau Chief for
+> Media General Television. We own 48 television stations nationwide coveri=
+ng
+> 23 million households.
+>
+>
+>
+> John Blandford, a friend and colleague, gave me your information.  I'd
+> like to see if I could pay a visit to your team or set up coffee to
+> introduce you to what our bureau is covering and about.
+>
+>
+>
+> We are based at 400 North Capitol and have built out a newsroom on the 8t=
+h
+> floor where NBC Newschannel is.
+>
+>
+> --
+>
+> Sincerely,
+>
+> Jim Osman
+>
+> Washington Bureau Chief
+>
+> Media General Television
+>
+> 202.570.5610 Cell
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> Sincerely,
+>
+> Jim Osman
+>
+> Washington Bureau Chief
+>
+> Media General Television
+>
+> 202.570.5610 Cell
+>
+>
+>
+>
+>
+>
+>
+>
+
+
+--=20
+Jim Osman
+Washington Bureau Chief
+Media General Television
+202.570.5610 (cell)
+Twitter: @jimosman
+
+--001a11c33d9ec30f59053243ff70
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-size:small">=E2=
+=80=8BHey Walter - I never did get a chance&nbsp;to schedule this in the fa=
+ll. It's the DC Bureau Chief for Media General TV Jim Osman - Media General=
+ operates 48 stations covering 23 million US households.&nbsp; </div><div c=
+lass=3D"gmail_default" style=3D"font-size:small"><br></div><div class=3D"gm=
+ail_default" style=3D"font-size:small">Was originally connected from my bud=
+dy John Blandford through Luis.&nbsp; Can we scheduled a time for me to com=
+e over and meet folks and say hello? Thanks. Jim </div></div><div class=3D"=
+gmail_extra"><br><div class=3D"gmail_quote">On Tue, Nov 24, 2015 at 9:09 AM=
+, Garcia, Walter <span dir=3D"ltr">&lt;<a href=3D"mailto:GarciaW@dnc.org" t=
+arget=3D"_blank">GarciaW@dnc.org</a>&gt;</span> wrote:<br><blockquote class=
+=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padd=
+ing-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" vlink=3D"purple" link=3D"blue">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Sounds good. I=E2=80=
+=99ll look forward to hearing from you.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt"><u></u>&nbsp;<u></u>=
+</span></p>
+<div>
+<div style=3D"border-width:1pt medium medium;border-style:solid none none;b=
+order-color:rgb(181,196,223) currentColor currentColor;padding:3pt 0in 0in"=
+>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt"> <a href=3D"m=
+ailto:jim.osman.dc@gmail.com" target=3D"_blank">jim.osman.dc@gmail.com</a> =
+[mailto:<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">jim.osm=
+an.dc@gmail.com</a>]
+<br>
+<b>Sent:</b> Tuesday, November 24, 2015 6:09 AM</span><div><div class=3D"h5=
+"><br>
+<b>To:</b> Garcia, Walter<br>
+<b>Subject:</b> Re: Media General Television DC<u></u><u></u></div></div><p=
+></p>
+</p></div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Walter --- I have to fly out this morning to Iowa. L=
+et me check in next week to see if &nbsp;Luis and I can grab lunch wifh Joh=
+n Blandford. Apologies. Jim<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12pt"><br>
+On Nov 23, 2015, at 9:16 AM, Garcia, Walter &lt;<a href=3D"mailto:GarciaW@d=
+nc.org" target=3D"_blank">GarciaW@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5pt;margin-bottom:5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Great, we=E2=80=99ll=
+ see you tomorrow then! Let me know when you arrive at the DNC, and I=E2=80=
+=99ll come down to get you.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<div>
+<div style=3D"border-width:1pt medium medium;border-style:solid none none;b=
+order-color:rgb(181,196,223) currentColor currentColor;padding:3pt 0in 0in"=
+>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt">
+<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">jim.osman.dc@gm=
+ail.com</a> [<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">ma=
+ilto:jim.osman.dc@gmail.com</a>]
+<br>
+<b>Sent:</b> Monday, November 23, 2015 9:14 AM<br>
+<b>To:</b> Garcia, Walter<br>
+<b>Subject:</b> Re: Media General Television DC</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Yes that works.&nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12pt"><br>
+On Nov 23, 2015, at 9:12 AM, Garcia, Walter &lt;<a href=3D"mailto:GarciaW@d=
+nc.org" target=3D"_blank">GarciaW@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5pt;margin-bottom:5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Circling back to see=
+ if we can find a time that works for you and Luis to meet. Does tomorrow a=
+t 11:30 am work for you?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<div>
+<div style=3D"border-width:1pt medium medium;border-style:solid none none;b=
+order-color:rgb(181,196,223) currentColor currentColor;padding:3pt 0in 0in"=
+>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt"> Garcia, Walt=
+er
+<br>
+<b>Sent:</b> Wednesday, November 18, 2015 9:05 AM<br>
+<b>To:</b> '<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">jim=
+.osman.dc@gmail.com</a>'<br>
+<b>Subject:</b> RE: Media General Television DC</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">How about next Monda=
+y at 11:30 am?
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<div>
+<div style=3D"border-width:1pt medium medium;border-style:solid none none;b=
+order-color:rgb(181,196,223) currentColor currentColor;padding:3pt 0in 0in"=
+>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt">
+<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">jim.osman.dc@gm=
+ail.com</a> [<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">ma=
+ilto:jim.osman.dc@gmail.com</a>]
+<br>
+<b>Sent:</b> Wednesday, November 18, 2015 8:12 AM<br>
+<b>To:</b> Garcia, Walter<br>
+<b>Subject:</b> Re: Media General Television DC</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Walter:<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">What would be another good day? I have to go to the =
+Hill today on the refugee story. Thanks Jim<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12pt"><br>
+On Nov 13, 2015, at 4:11 PM, Garcia, Walter &lt;<a href=3D"mailto:GarciaW@d=
+nc.org" target=3D"_blank">GarciaW@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5pt;margin-bottom:5pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">We=E2=80=99re at: 43=
+0 S Capitol St SE, Washington, DC 2000</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">My cell is: <a href=
+=3D"tel:%28818%29%20403-9071" target=3D"_blank" value=3D"&#43;18184039071">=
+(818) 403-9071</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Send me an email whe=
+n you arrive at the DNC, and I=E2=80=99ll come down to get you.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt"> Jim Osman [<=
+a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">mailto:jim.osman=
+.dc@gmail.com</a>]
+<br>
+<b>Sent:</b> Friday, November 13, 2015 4:08 PM<br>
+<b>To:</b> Garcia, Walter<br>
+<b>Subject:</b> Re: Media General Television DC</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">That's fine.&nbsp; What's the address and you=E2=80=
+=8Br cell?&nbsp; Thanks.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, Nov 13, 2015 at 4:00 PM, Garcia, Walter &lt;=
+<a href=3D"mailto:GarciaW@dnc.org" target=3D"_blank">GarciaW@dnc.org</a>&gt=
+; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Hi there Jim,</span>=
+<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">Moving Luis to BCC a=
+s we try to schedule this. Would this upcoming Wednesday at 3:30 pm ET work=
+ for
+ you?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:rgb(31,73,125);font-family:&quo=
+t;Calibri&quot;,&quot;sans-serif&quot;;font-size:11pt">&nbsp;</span><u></u>=
+<u></u></p>
+<div>
+<div style=3D"border-width:1pt medium medium;border-style:solid none none;b=
+order-color:currentColor;padding:3pt 0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Tahoma&quot;,&qu=
+ot;sans-serif&quot;;font-size:10pt">From:</span></b><span style=3D"font-fam=
+ily:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt"> Miranda, Lui=
+s
+<br>
+<b>Sent:</b> Friday, November 13, 2015 1:53 PM<br>
+<b>To:</b> Jim Osman<br>
+<b>Cc:</b> Garcia, Walter<br>
+<b>Subject:</b> RE: Media General Television DC</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-family:&quot;Tahoma&=
+quot;,&quot;sans-serif&quot;;font-size:10pt">Hi Jim, absolutely. I'm copyin=
+g Walter in our office to make sure we get it scheduled.</span><u></u><u></=
+u></p>
+<div>
+<div align=3D"center" class=3D"MsoNormal" style=3D"text-align:center"><span=
+ style=3D"color:black">
+<hr width=3D"100%" size=3D"2" align=3D"center">
+</span></div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12pt"><b><span style=3D"color=
+:black;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;font-size:10pt=
+">From:</span></b><span style=3D"color:black;font-family:&quot;Tahoma&quot;=
+,&quot;sans-serif&quot;;font-size:10pt"> Jim Osman
+ [<a href=3D"mailto:jim.osman.dc@gmail.com" target=3D"_blank">jim.osman.dc@=
+gmail.com</a>]<br>
+<b>Sent:</b> Friday, November 13, 2015 1:50 PM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> Media General Television DC</span><u></u><u></u></p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">Hi Luis -- My name is Ji=
+m Osman. I am the Washington Bureau Chief for Media General Television.&nbs=
+p;We own 48 television stations nationwide covering 23 million
+ households.&nbsp; </span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;</span><u></u><u><=
+/u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">John Blandford, a friend=
+ and colleague, gave me your information.&nbsp; I'd like to see if I could =
+pay a visit to your team or set up coffee to introduce you
+ to what our bureau is covering and about.&nbsp; </span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;</span><u></u><u><=
+/u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">We are based at 400 Nort=
+h Capitol and have built out a newsroom on the 8th floor where NBC Newschan=
+nel is.&nbsp;
+<br clear=3D"all">
+</span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><br>
+-- </span><u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-size:13.5pt">Sincere=
+ly,</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-size:13.5pt">Jim Osm=
+an
+</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-size:13.5pt">Washing=
+ton Bureau Chief
+</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-size:13.5pt">Media G=
+eneral Television
+</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-size:13.5pt"><a href=
+=3D"tel:202.570.5610" target=3D"_blank">202.570.5610</a> Cell
+</span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black;font-family:&quot;Garamon=
+d&quot;,&quot;serif&quot;;font-size:13.5pt">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;</span><u></u><u><=
+/u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black">&nbsp;</span><u></u><u><=
+/u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:13.5pt">Sincerely,</span><u=
+></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:13.5pt">Jim Osman </span><u=
+></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:13.5pt">Washington Bureau C=
+hief </span>
+<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:13.5pt">Media General Telev=
+ision </span>
+<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:13.5pt"><a href=3D"tel:202.=
+570.5610" target=3D"_blank" value=3D"&#43;12025705610">202.570.5610</a> Cel=
+l </span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;;font-size:13.5pt">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><br>-- <br><div class=3D"gmail_sig=
+nature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><=
+div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">=
+<div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"l=
+tr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><font face=3D"arial bl=
+ack,sans-serif" size=3D"4">Jim Osman </font></div><div><font face=3D"arial =
+black,sans-serif" size=3D"4">Washington Bureau Chief </font></div><div><fon=
+t face=3D"arial black,sans-serif" size=3D"4">Media General Television </fon=
+t></div><div><font face=3D"arial black,sans-serif" size=3D"4">202.570.5610 =
+(cell) </font></div><div><font face=3D"arial black,sans-serif" size=3D"4">T=
+witter: @jimosman</font></div></div><font face=3D"Garamond" size=3D"4"><div=
+><br></div></font><div><font face=3D"garamond,serif" size=3D"4"><br></font>=
+</div><div><font face=3D"monospace,monospace"></font><br></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div>
+</div>
+
+--001a11c33d9ec30f59053243ff70--

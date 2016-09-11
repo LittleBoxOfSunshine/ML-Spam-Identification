@@ -1,0 +1,791 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 10 May
+ 2016 11:19:34 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 10 May 2016
+ 11:19:32 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 906698587
+ for Finance_D@dnc.org; Tue, 10 May 2016 10:19:38 -0500
+X-Note-AR-ScanTimeLocal: 5/10/2016 10:19:32 AM
+X-Policy: dnc.org
+X-Primary: finance_d@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.54 DOM:mjpratt.org ADDR:michael@mjpratt.org
+X-Note: SPF: Pass
+X-Note-SnifferID: 100
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 100-5953485-6597-6611-m
+	100-5953485-25240-25254-m
+	100-5953485-30016-30030-m
+	100-5953485-31505-31519-m
+	100-5953485-0-31686-f
+X-Note-419: 31.2503 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/10/2016 10:19:25 AM
+X-Warn: WEBBUG
+X-Warn: OPTOUT
+X-Warn: BULKMAILER
+X-Note: Spam Tests Failed: WEBBUG, OPTOUT, BULKMAILER
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.54
+X-Note-Reverse-DNS: mail-vk0-f54.google.com
+X-Note-Return-Path: michael@mjpratt.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G281 G286 G374 G376 G398 G580 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-vk0-f54.google.com ([209.85.213.54] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137567376
+ for Finance_D@dnc.org; Tue, 10 May 2016 10:19:32 -0500
+Received: by mail-vk0-f54.google.com with SMTP id m188so20297901vka.1
+        for <Finance_D@dnc.org>; Tue, 10 May 2016 08:19:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=mjpratt-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=5vdgnh0I0z+5kDL9WRksV66GlSDiDROYccE0Z62iNTg=;
+        b=zctOz+cy43t522hAj0+rJI2svMtstN8gcXOEJTXYwqc0m9VhT+DvI6Oy7E0w4XEObH
+         1kwluFHFhpWR/ODMdQX2rcMp+Snqcn9f7pxxr2hQS43FPH4aNZ7n7Vt2vB++inGmzif9
+         s3apwBzyD7gZqqWBIOGAN+1nFisJFX60E5a04tFgoYZDQ6+mcSitI2zo+otGyMmlBSeO
+         0h6ibYDaw/1ypq7Kdj1w57P+b2xB3ZgizR1aFPrkGQaQ3CVCCNhoK8eyBorBKcApg9DR
+         U5B8IonKMyuRI7tSmuKVbiSKsKk5NpBGH9pw5cDi5Ot3GumfJtW03ovIiJ3qlz/4YgtE
+         uOdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=5vdgnh0I0z+5kDL9WRksV66GlSDiDROYccE0Z62iNTg=;
+        b=GB/3wo6o+JWuYmmoHdZg+/7d9JQ1DPG/fTq2ATfdAYwan2y41GZqfc+YDDxahde+Lk
+         F9HqLtMCP515acMdb1V2mKQ8KmLaoJgFTDDb1kH4mzsAx0CASbt0+cbH3fMHaYvstllG
+         CjdwRfSofKXzyrZpUF7FBGdLfyXBg5ZFYK8iUsMOhX72pNjKyGdpOvKFBRMK98gPSZoa
+         UUpLhs4/Rj6Wk+Qq7J3XQG0qQfi/G7rSxjwz+p4BnHyUSVs+A+620ZPRueght8IMn9wx
+         Bf7i99q+xS2e116XDBiEDZ09TN0WJkdWAu2n8OhGvxKv3Er6H8j9RfTgjFPaFUf6lyZe
+         LSIg==
+X-Gm-Message-State: AOPr4FW9p4NthkDId2n2upnLrLMZWShk6wF3ySnIhObtoC/OH+jYHLpacyrf4z7Oojxz8ecPRXX/9IIbIDrg1g==
+X-Received: by 10.159.40.99 with SMTP id c90mr23603594uac.85.1462893572005;
+ Tue, 10 May 2016 08:19:32 -0700 (PDT)
+Received: by 10.176.1.54 with HTTP; Tue, 10 May 2016 08:19:31 -0700 (PDT)
+In-Reply-To: <801474A7-2EDF-48A5-B71F-7A700DBEA26B@dnc.org>
+References: <1124668696115.1109617158274.2101382380.0.231002JL.1002@scheduler.constantcontact.com>
+	<801474A7-2EDF-48A5-B71F-7A700DBEA26B@dnc.org>
+Date: Tue, 10 May 2016 11:19:31 -0400
+Message-ID: <CAFj9_UUcMq-uyuhygjXXkCCd77YhjwQUtD8uhFSmYy5cC03MxQ@mail.gmail.com>
+Subject: Re: Fundraisers' Night Out!
+From: Michael Pratt <michael@mjpratt.org>
+To: "Kaplan, Jordan" <KaplanJ@dnc.org>
+CC: Finance_D <Finance_D@dnc.org>
+Content-Type: multipart/alternative; boundary="94eb2c048618b4378605327e73af"
+Return-Path: michael@mjpratt.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+Keywords: Imported 6/9/14,My Contacts
+MIME-Version: 1.0
+
+--94eb2c048618b4378605327e73af
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+I am dying to know what's in the "VIP swag bag."
+
+On Tuesday, May 10, 2016, Kaplan, Jordan <KaplanJ@dnc.org> wrote:
+
+>
+> Can someone volunteer to attend this in dc. I'm so curious.
+>
+>
+> Jordan Kaplan
+> National Finance Director
+> Democratic National Committee
+> (202) 488-5002 (o) | (312) 339-0224 (c)
+> kaplanj@dnc.org <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');>
+>
+>
+> Begin forwarded message:
+>
+> *From:* National Association of Political Fundraisers <jwhitefield@napf.u=
+s
+> <javascript:_e(%7B%7D,'cvml','jwhitefield@napf.us');>>
+> *Date:* May 10, 2016 at 10:05:34 AM EDT
+> *To:* <kaplanj@dnc.org <javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');>>
+> *Subject:* *Fundraisers' Night Out!*
+> *Reply-To:* <jwhitefield@napf.us
+> <javascript:_e(%7B%7D,'cvml','jwhitefield@napf.us');>>
+>
+> *5:00 - 6:00pm*
+> VIP Reception
+> *FOR NAPF MEMBERS ONLY*
+>
+> *6:00 - 7:30pm*
+> General Reception
+> *OPEN TO ALL POLITICAL FUNDRAISERS*
+>
+>
+> REGISTRATION IS FREE
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vsRLInoLhvONXsT8SPDERWHGmz=
+UXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsmfu4Z3lLTrFl903JkWefPQ29i=
+J6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOS=
+sb6P8ICSUbj22xg=3D=3D&ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao=
+6ejEOQ=3D=3D>
+>
+> REGISTER NOW
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vsRLInoLhvONXsT8SPDERWHGmz=
+UXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsmfu4Z3lLTrFl903JkWefPQ29i=
+J6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOS=
+sb6P8ICSUbj22xg=3D=3D&ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao=
+6ejEOQ=3D=3D>
+>
+>
+>
+> * This event will bring together political fundraising professionals
+> across the political spectrum. You can't miss this special night out in
+> Washington, DC! Drinks and hors d'oeuvres will be served. *
+>
+>
+> *All current NAPF members will receive a VIP Swag Bag at the event.* A
+> $50 membership discount will be given to those who join during the event
+> and will be entered in a giveaway.
+>
+>
+>
+> REGISTER NOW
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vsRLInoLhvONXsT8SPDERWHGmz=
+UXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsmfu4Z3lLTrFl903JkWefPQ29i=
+J6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOS=
+sb6P8ICSUbj22xg=3D=3D&ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao=
+6ejEOQ=3D=3D>
+> *STAY CONNECTED:*
+> [image: Like us on Facebook]
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHQGQ89QU2m_2uyNHDN0Al2PF10223o4NsODguMPNQz1aCVAiKOaA_YV76tnyPs=
+OapqYio12TcWqVQMnAznwsgXEegnpR-V1JBpH2L42H925m0s2YK4PuIoUj2byYair1AD-qOAUv-=
+dX-dwfne7ql2BHDwiKAJR6Xmd3EJJLfSB0cUOehMj81qQlCqd9Q95Ej7AkJu8AqhkEB&c=3DdzD=
+5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&ch=3DjQTbnZWW_vzc=
+J7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D>
+> [image: Follow us on Twitter]
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHQGQ89QU2m_2vaN8mmXznkkIprOYDc2TTiwsY-0a0FwG4w3njVfnNHTRNQO6eo=
+0ufjaXe4Gkrizkn8eA34dmRRlUWXcU7MitsyusgJqFWXWyz6eQYOlbuwGB1yoYJk8HfKz0xfHvT=
+fRC&c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&ch=3Dj=
+QTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D>
+> [image: View our profile on LinkedIn]
+> <http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xxPw3VmkQWo_Z=
+fFxMPm4YpM-_aHQGQ89QU2m_2nwur8bzGtEXtV49r7rSMQcYeqXNC3n860_5lorAx9_iiZR4Iof=
+LqQoi9XisJXoFmFSTEKlrQ85yDNwLDrJwBQ2YUsx5_8ERrdkhJmU2iHlfH9_VUd93Ks3DWOrvbM=
+k-y2GzZhIgKOSo5vS8wR5GRY9BsSiJau34YURfM53UBbsrsP_UY7l41SQ=3D=3D&c=3DdzD5xbr=
+CiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&ch=3DjQTbnZWW_vzcJ7Fq=
+PytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D>
+> National Association of Political Fundraisers, 2313 N. Broadway, Ada,
+>  OK 74820
+> SafeUnsubscribe=E2=84=A2 kaplanj@dnc.org
+> <http://visitor.constantcontact.com/do?p=3Dun&m=3D001dzAoD-N9dfYr_7Bl2dGU=
+aA%3D%3D&ch=3D26e25970-b879-11e5-bb78-d4ae5292c426&ca=3Df6f43539-3bec-4b76-=
+9543-5b5065db33ff>
+> Update Profile
+> <http://visitor.constantcontact.com/do?p=3Doo&m=3D001dzAoD-N9dfYr_7Bl2dGU=
+aA%3D%3D&ch=3D26e25970-b879-11e5-bb78-d4ae5292c426&ca=3Df6f43539-3bec-4b76-=
+9543-5b5065db33ff>
+>  | About our service provider
+> <http://www.constantcontact.com/legal/service-provider?cc=3Dabout-service=
+-provider>
+> Sent by jwhitefield@napf.us
+> <javascript:_e(%7B%7D,'cvml','jwhitefield@napf.us');> in collaboration
+> with
+> [image: Constant Contact]
+> <http://www.constantcontact.com/index.jsp?cc=3DPT1129>
+> Try it free today <http://www.constantcontact.com/index.jsp?cc=3DPT1129>
+>
+>
+
+--94eb2c048618b4378605327e73af
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">I =
+am d<span></span>ying to know what's in the &quot;VIP&nbsp;swag bag.&quot;<=
+br><br>On Tuesday, May 10, 2016, Kaplan, Jordan &lt;<a href=3D"mailto:Kapla=
+nJ@dnc.org">KaplanJ@dnc.org</a>&gt; wrote:<br><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex=
+">
+
+
+
+<div dir=3D"auto">
+<div><br>
+Can someone volunteer to attend this in dc. I'm so curious.&nbsp;</div>
+<div><br>
+</div>
+<div><br>
+<span style=3D"background-color:rgba(255,255,255,0)">Jordan Kaplan&nbsp;</s=
+pan>
+<div><span style=3D"background-color:rgba(255,255,255,0)">National Finance =
+Director</span></div>
+<div><span style=3D"background-color:rgba(255,255,255,0)">Democratic Nation=
+al Committee&nbsp;</span></div>
+<div>(202) 488-5002 (o) | (312) 339-0224 (c)</div>
+<div><a href=3D"javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');" target=3D"=
+_blank">kaplanj@dnc.org</a></div>
+<div><br>
+</div>
+</div>
+<div><br>
+Begin forwarded message:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div><b>From:</b> National Association of Political Fundraisers &lt;<a href=
+=3D"javascript:_e(%7B%7D,'cvml','jwhitefield@napf.us');" target=3D"_blank">=
+jwhitefield@napf.us</a>&gt;<br>
+<b>Date:</b> May 10, 2016 at 10:05:34 AM EDT<br>
+<b>To:</b> &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','kaplanj@dnc.org');" =
+target=3D"_blank">kaplanj@dnc.org</a>&gt;<br>
+<b>Subject:</b> <b>Fundraisers' Night Out!</b><br>
+<b>Reply-To:</b> &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','jwhitefield@na=
+pf.us');" target=3D"_blank">jwhitefield@napf.us</a>&gt;<br>
+<br>
+</div>
+</blockquote>
+<blockquote type=3D"cite">
+<div>
+<div><img src=3D"http://r20.rs6.net/on.jsp?a=3D1109617158274&amp;r=3D3&amp;=
+c=3D266fe890-b879-11e5-bb55-d4ae5292c426&amp;d=3D1124668696115&amp;ch=3D26e=
+25970-b879-11e5-bb78-d4ae5292c426&amp;ca=3Df6f43539-3bec-4b76-9543-5b5065db=
+33ff&amp;o=3Dhttps://imgssl.constantcontact.com/ui/images1/s.gif" height=3D=
+"1" width=3D"1">
+<div style=3D"background-color:#000000" bgcolor=3D"#000000" align=3D"center=
+">
+<table style=3D"background-color:#000000;margin-left:auto;margin-right:auto=
+" bgcolor=3D"#000000" border=3D"0" width=3D"100%" cellspacing=3D"0" cellpad=
+ding=3D"0">
+<tbody>
+<tr>
+<td rowspan=3D"1" colspan=3D"1"><img height=3D"5" vspace=3D"0" border=3D"0"=
+ hspace=3D"0" width=3D"1" alt=3D"" src=3D"https://static.ctctcdn.com/letter=
+s/images/1101116784221/S.gif"></td>
+<td style=3D"width:610px" valign=3D"top" width=3D"610" rowspan=3D"1" colspa=
+n=3D"1" align=3D"center">
+<div style=3D"max-width:610px;margin-left:auto;margin-right:auto" align=3D"=
+center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:15px 5px 15px 5px" valign=3D"top" rowspan=3D"1" colspa=
+n=3D"1" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0px 0px 8px 0px" valign=3D"top" width=3D"100%" rowspan=
+=3D"1" colspan=3D"1" align=3D"center">
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color:#ffffff" bgcolor=3D"#FFFFFF" border=3D"0" =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:18px 20px 18px 20px" valign=3D"top" width=3D"100%" row=
+span=3D"1" colspan=3D"1" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0px 0px 0px 0px;color:#59554d;font-family:Arial,Verdan=
+a,Helvetica,sans-serif;font-size:10pt" valign=3D"top" rowspan=3D"1" colspan=
+=3D"1" align=3D"center">
+<table width=3D"563" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"color:#59554d" width=3D"100%" rowspan=3D"1" colspan=3D"1">
+<div align=3D"center"><img style=3D"display:block;min-height:auto!important=
+;max-width:100%!important" vspace=3D"0" border=3D"0" name=3D"m_-11562768381=
+35262546_ACCOUNT.IMAGE.1146" hspace=3D"0" width=3D"563" src=3D"http://files=
+.ctctcdn.com/288265a5201/7f7c1599-3a41-402a-a70c-7c02a85707e2.png"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color:#000000" bgcolor=3D"#000000" border=3D"0" =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:#59554d;font-family:Arial,Verdan=
+a,Helvetica,sans-serif;font-size:10pt" valign=3D"top" rowspan=3D"1" colspan=
+=3D"1" align=3D"center">
+<span style=3D"font-family:Calibri,Helvetica,Arial,sans-serif;color:#ffffff=
+;font-size:12pt">
+<div><b>5:00 - 6:00pm</b></div>
+<div style=3D"font-size:16pt">VIP Reception</div>
+<div><strong>FOR NAPF MEMBERS ONLY</strong></div>
+<div><strong><br>
+</strong></div>
+<div><strong>6:00 - 7:30pm</strong></div>
+<div style=3D"font-size:16pt">General Reception</div>
+<div><em>OPEN TO <span style=3D"text-decoration:underline">ALL</span> POLIT=
+ICAL FUNDRAISERS</em></div>
+</span><br>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color:#000000" bgcolor=3D"#000000" border=3D"0" =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:rgb(0,0,0);font-family:Calibri,H=
+elvetica,Arial,sans-serif;font-size:12pt" valign=3D"top" rowspan=3D"1" cols=
+pan=3D"1">
+<table style=3D"background-color:#007da1;width:auto!important;border-radius=
+:5px;border-style:none;border-width:0px;text-align:center" bgcolor=3D"#007D=
+A1" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding:9px 15px 10px 15px;color:rgb(0,0,0);vertical-align:top=
+" valign=3D"top" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<div>
+<div style=3D"color:#ffffff;text-decoration:none;font-weight:bold">&nbsp;</=
+div>
+<a style=3D"font-weight:bold;color:rgb(255,255,255);text-decoration:none" s=
+hape=3D"rect" href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8Z=
+uvBgE8xxPw3VmkQWo_ZfFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vsRLIno=
+LhvONXsT8SPDERWHGmzUXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsmfu4Z3=
+lLTrFl903JkWefPQ29iJ6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&amp;c=3DdzD5xbrCiLkC4lyV=
+zGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&amp;ch=3DjQTbnZWW_vzcJ7FqPytiy=
+GFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D" alt=3D"http://napf.us/events/regis=
+ter.aspx?id=3D798992" target=3D"_blank">REGISTRATION
+ IS FREE</a></div>
+<br>
+<div><a style=3D"font-weight:bold;color:rgb(255,255,255);text-decoration:no=
+ne" shape=3D"rect" href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKt=
+ShF8ZuvBgE8xxPw3VmkQWo_ZfFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vs=
+RLInoLhvONXsT8SPDERWHGmzUXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsm=
+fu4Z3lLTrFl903JkWefPQ29iJ6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&amp;c=3DdzD5xbrCiLk=
+C4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&amp;ch=3DjQTbnZWW_vzcJ7Fq=
+PytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D" alt=3D"http://napf.us/events/=
+register.aspx?id=3D798992" target=3D"_blank">REGISTER
+ NOW</a>
+<div style=3D"color:#ffffff;text-decoration:none;font-weight:bold">&nbsp;</=
+div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color:#000000" bgcolor=3D"#000000" border=3D"0" =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:#59554d;font-family:Arial,Verdan=
+a,Helvetica,sans-serif;font-size:10pt" valign=3D"top" rowspan=3D"1" colspan=
+=3D"1" align=3D"center">
+<span style=3D"font-family:Calibri,Helvetica,Arial,sans-serif;color:#ffffff=
+;font-size:12pt">
+<div><strong>
+<div>This event will bring together political fundraising professionals acr=
+oss the political spectrum. You can't miss this special night out in Washin=
+gton, DC!<br>
+<br>
+</div>
+<div style=3D"font-size:10pt">Drinks and <span>hors d'oeuvres will be serve=
+d.</span></div>
+</strong></div>
+</span><br>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;height:1px;line-height:1px" valign=3D"=
+top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<table style=3D"height:1px" border=3D"0" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-bottom:0px;background-color:#000000;height:1px;line-he=
+ight:1px" height=3D"1" bgcolor=3D"#000000" rowspan=3D"1" colspan=3D"1" alig=
+n=3D"center">
+<img height=3D"1" vspace=3D"0" border=3D"0" hspace=3D"0" width=3D"5" style=
+=3D"display:block;min-height:1px;width:5px" alt=3D"" src=3D"https://static.=
+ctctcdn.com/letters/images/1101116784221/S.gif"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:#59554d;font-family:Arial,Verdan=
+a,Helvetica,sans-serif;font-size:10pt" valign=3D"top" rowspan=3D"1" colspan=
+=3D"1" align=3D"center">
+<span>
+<div><span>
+<div><span>
+<table style=3D"margin-right:5px" width=3D"175" cellspacing=3D"0" cellpaddi=
+ng=3D"0" align=3D"left">
+<tbody>
+<tr>
+<td style=3D"color:#59554d;padding:5px 0px 5px 5px" width=3D"100%" rowspan=
+=3D"1" colspan=3D"1">
+<div align=3D"center"><img height=3D"68" vspace=3D"0" border=3D"0" name=3D"=
+m_-1156276838135262546_ACCOUNT.IMAGE.971" hspace=3D"0" width=3D"175" src=3D=
+"http://files.ctctcdn.com/288265a5201/50ab8cd6-3732-4297-aeb9-4ebc0f41a442.=
+png"></div>
+</td>
+<td style=3D"height:1px;line-height:1px;padding-right:5px;color:#59554d" he=
+ight=3D"1" valign=3D"top" width=3D"5" rowspan=3D"1" colspan=3D"1" align=3D"=
+center">
+<img height=3D"1" vspace=3D"0" border=3D"0" hspace=3D"0" width=3D"5" src=3D=
+"https://static.ctctcdn.com/letters/images/1101116784221/S.gif"></td>
+</tr>
+</tbody>
+</table>
+<br>
+</span></div>
+<div style=3D"text-align:left;font-family:Calibri,Helvetica,Arial,sans-seri=
+f" align=3D"left">
+<span style=3D"font-size:10pt">
+<div><strong>All current NAPF members will receive a VIP Swag Bag at the ev=
+ent.</strong>&nbsp;A $50 membership discount will be given to those who joi=
+n during the event and will be entered in a giveaway.</div>
+</span></div>
+<div><span><br>
+</span></div>
+</span><br>
+</div>
+</span><br>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;height:1px;line-height:1px" valign=3D"=
+top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<table style=3D"height:1px" border=3D"0" width=3D"100%" cellspacing=3D"0" c=
+ellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-bottom:0px;background-color:#000000;height:1px;line-he=
+ight:1px" height=3D"1" bgcolor=3D"#000000" rowspan=3D"1" colspan=3D"1" alig=
+n=3D"center">
+<img height=3D"1" vspace=3D"0" border=3D"0" hspace=3D"0" width=3D"5" style=
+=3D"display:block;min-height:1px;width:5px" alt=3D"" src=3D"https://static.=
+ctctcdn.com/letters/images/1101116784221/S.gif"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"background-color:#ffffff" bgcolor=3D"#FFFFFF" border=3D"0" =
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:rgb(0,0,0);font-family:Calibri,H=
+elvetica,Arial,sans-serif;font-size:12pt" valign=3D"top" rowspan=3D"1" cols=
+pan=3D"1">
+<table style=3D"background-color:#007da1;width:auto!important;border-radius=
+:5px;border-style:none;border-width:0px;text-align:center" bgcolor=3D"#007D=
+A1" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding:9px 15px 10px 15px;color:rgb(0,0,0);vertical-align:top=
+" valign=3D"top" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<div>
+<div style=3D"color:#ffffff;text-decoration:none;font-weight:bold"><a style=
+=3D"font-weight:bold;color:rgb(255,255,255);text-decoration:none" shape=3D"=
+rect" href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8xx=
+Pw3VmkQWo_ZfFxMPm4YpM-_aHUwG9w-8pEjgDSzR9O1XMKpeaeASqnQZp3w1vsRLInoLhvONXsT=
+8SPDERWHGmzUXT_D4Y1NYTvaCXMAwNP0T88okmVlqUnUOpM34ZDgqyY3rwEQsmfu4Z3lLTrFl90=
+3JkWefPQ29iJ6i_SAZPk5Klz30QvRouNNMtQ=3D=3D&amp;c=3DdzD5xbrCiLkC4lyVzGwqyvn4=
+FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&amp;ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEf=
+v8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D" alt=3D"http://napf.us/events/register.aspx=
+?id=3D798992" target=3D"_blank">REGISTER
+ NOW</a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:9px 0px 8px 0px" valign=3D"top" width=3D"100%" rowspan=
+=3D"1" colspan=3D"1" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:8px 0px 9px 0px;color:rgb(0,0,0)" valign=3D"top" width=
+=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<table style=3D"margin:0px 0px 0px 0px" border=3D"0" width=3D"100%" cellspa=
+cing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding:0px 0px 10px;color:#000000" valign=3D"center" rowspan=
+=3D"1" colspan=3D"1" align=3D"center">
+<div style=3D"color:#59554d;font-family:Arial,Helvetica,sans-serif;text-dec=
+oration:none;font-size:10pt">
+<span style=3D"color:#ffffff"><strong>STAY CONNECTED:</strong></span><br>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"color:#000000" valign=3D"center" rowspan=3D"1" colspan=3D"1" a=
+lign=3D"center">
+<table border=3D"0" width=3D"1" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0px 5px 0px 5px;color:rgb(0,0,0)" valign=3D"center" ro=
+wspan=3D"1" colspan=3D"1" align=3D"center">
+<div><a href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8=
+xxPw3VmkQWo_ZfFxMPm4YpM-_aHQGQ89QU2m_2uyNHDN0Al2PF10223o4NsODguMPNQz1aCVAiK=
+OaA_YV76tnyPsOapqYio12TcWqVQMnAznwsgXEegnpR-V1JBpH2L42H925m0s2YK4PuIoUj2byY=
+air1AD-qOAUv-dX-dwfne7ql2BHDwiKAJR6Xmd3EJJLfSB0cUOehMj81qQlCqd9Q95Ej7AkJu8A=
+qhkEB&amp;c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&=
+amp;ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D" shap=
+e=3D"rect" alt=3D"https://www.facebook.com/National-Association-of-Politica=
+l-Fundraisers-531202930373545/" target=3D"_blank"><img height=3D"22" border=
+=3D"0" width=3D"22" alt=3D"Like us on Facebook" title=3D"Like us on Faceboo=
+k" src=3D"https://static.ctctcdn.com/ui/images1/ic_fbk_22.png"></a></div>
+</td>
+<td style=3D"padding:0px 5px 0px 5px;color:rgb(0,0,0)" valign=3D"center" ro=
+wspan=3D"1" colspan=3D"1" align=3D"center">
+<div><a href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8=
+xxPw3VmkQWo_ZfFxMPm4YpM-_aHQGQ89QU2m_2vaN8mmXznkkIprOYDc2TTiwsY-0a0FwG4w3nj=
+VfnNHTRNQO6eo0ufjaXe4Gkrizkn8eA34dmRRlUWXcU7MitsyusgJqFWXWyz6eQYOlbuwGB1yoY=
+Jk8HfKz0xfHvTfRC&amp;c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj=
+22xg=3D=3D&amp;ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=
+=3D=3D" shape=3D"rect" alt=3D"https://twitter.com/PoliticaFunders" target=
+=3D"_blank"><img height=3D"22" border=3D"0" width=3D"22" alt=3D"Follow us o=
+n Twitter" title=3D"Follow us on Twitter" src=3D"https://static.ctctcdn.com=
+/ui/images1/ic_twit_22.png"></a></div>
+</td>
+<td style=3D"padding:0px 5px 0px 5px;color:rgb(0,0,0)" valign=3D"center" ro=
+wspan=3D"1" colspan=3D"1" align=3D"center">
+<div><a href=3D"http://r20.rs6.net/tn.jsp?f=3D001q64rR09GphvduKtShF8ZuvBgE8=
+xxPw3VmkQWo_ZfFxMPm4YpM-_aHQGQ89QU2m_2nwur8bzGtEXtV49r7rSMQcYeqXNC3n860_5lo=
+rAx9_iiZR4IofLqQoi9XisJXoFmFSTEKlrQ85yDNwLDrJwBQ2YUsx5_8ERrdkhJmU2iHlfH9_VU=
+d93Ks3DWOrvbMk-y2GzZhIgKOSo5vS8wR5GRY9BsSiJau34YURfM53UBbsrsP_UY7l41SQ=3D=
+=3D&amp;c=3DdzD5xbrCiLkC4lyVzGwqyvn4FWC9u7u75WKrVOSsb6P8ICSUbj22xg=3D=3D&am=
+p;ch=3DjQTbnZWW_vzcJ7FqPytiyGFRrLEEfv8mcG1Qh1UC30vJfXao6ejEOQ=3D=3D" shape=
+=3D"rect" alt=3D"https://www.linkedin.com/in/national-assn-of-political-fun=
+draisers-06068610b" target=3D"_blank"><img height=3D"22" border=3D"0" width=
+=3D"22" alt=3D"View our profile on LinkedIn" title=3D"View our profile on L=
+inkedIn" src=3D"https://static.ctctcdn.com/ui/images1/ic_lkdin_22.png"></a>=
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td rowspan=3D"1" colspan=3D"1"><img height=3D"5" vspace=3D"0" border=3D"0"=
+ hspace=3D"0" width=3D"1" alt=3D"" src=3D"https://static.ctctcdn.com/letter=
+s/images/1101116784221/S.gif"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align=3D"center" style=3D"background-color:#ffffff">
+<table style=3D"background-color:#ffffff" border=3D"0" width=3D"100%" cellp=
+adding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td rowspan=3D"1" colspan=3D"1" align=3D"center">
+<table style=3D"background-color:#ffffff" border=3D"0" width=3D"100%" cells=
+pacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td rowspan=3D"1" colspan=3D"1"><img height=3D"5" vspace=3D"0" border=3D"0"=
+ hspace=3D"0" width=3D"1" src=3D"https://imgssl.constantcontact.com/letters=
+/images/1101116784221/S.gif"></td>
+<td style=3D"background-color:#ffffff" valign=3D"top" width=3D"610" rowspan=
+=3D"1" colspan=3D"1" align=3D"center">
+<div style=3D"max-width:610px;margin-left:auto;margin-right:auto" align=3D"=
+center">
+<table style=3D"margin-left:auto;margin-right:auto" border=3D"0" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:15px 10px 15px 10px" valign=3D"top" width=3D"100%" row=
+span=3D"1" colspan=3D"1" align=3D"center">
+<table style=3D"margin-left:auto;margin-right:auto" border=3D"0" width=3D"1=
+00%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-bottom:15px" valign=3D"top" width=3D"100%" rowspan=3D"=
+1" colspan=3D"1" align=3D"center">
+<div style=3D"font-family:Verdana,Geneva,sans-serif;font-size:13px;color:#5=
+d5d5d">
+<span>National Association of Political Fundraisers<span>,</span></span><sp=
+an> 2313&nbsp;N.&nbsp;Broadway<span>,</span></span><span>&nbsp;Ada<span>,</=
+span>&nbsp;OK&nbsp;74820</span></div>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"cent=
+er">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-bottom:5px" valign=3D"top" width=3D"100%" rowspan=3D"1=
+" colspan=3D"1" align=3D"center">
+<div style=3D"font-family:Verdana,Geneva,sans-serif;font-size:12px;color:#5=
+d5d5d;line-height:1.4">
+<a style=3D"color:#5d5d5d" shape=3D"rect" href=3D"http://visitor.constantco=
+ntact.com/do?p=3Dun&amp;m=3D001dzAoD-N9dfYr_7Bl2dGUaA%3D%3D&amp;ch=3D26e259=
+70-b879-11e5-bb78-d4ae5292c426&amp;ca=3Df6f43539-3bec-4b76-9543-5b5065db33f=
+f" target=3D"_blank"><span>SafeUnsubscribe=E2=84=A2</span>
+ kaplanj@dnc.org</a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"cent=
+er">
+<div style=3D"font-family:Verdana,Geneva,sans-serif;font-size:12px;color:#5=
+d5d5d;line-height:1.4">
+<span><a style=3D"color:#5d5d5d" shape=3D"rect" href=3D"http://visitor.cons=
+tantcontact.com/do?p=3Doo&amp;m=3D001dzAoD-N9dfYr_7Bl2dGUaA%3D%3D&amp;ch=3D=
+26e25970-b879-11e5-bb78-d4ae5292c426&amp;ca=3Df6f43539-3bec-4b76-9543-5b506=
+5db33ff" target=3D"_blank">Update
+ Profile</a><span>&nbsp;|&nbsp;</span></span><span><a style=3D"color:#5d5d5=
+d" shape=3D"rect" href=3D"http://www.constantcontact.com/legal/service-prov=
+ider?cc=3Dabout-service-provider" alt=3D"http://www.constantcontact.com/leg=
+al/service-provider?cc=3Dabout-service-provider" target=3D"_blank">About
+ our service provider</a></span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-top:5px" valign=3D"top" width=3D"100%" rowspan=3D"1" c=
+olspan=3D"1" align=3D"center">
+<div style=3D"font-family:Verdana,Geneva,sans-serif;font-size:12px;color:#5=
+d5d5d">
+Sent by <a style=3D"color:#5d5d5d" shape=3D"rect" href=3D"javascript:_e(%7B=
+%7D,'cvml','jwhitefield@napf.us');" target=3D"_blank">
+jwhitefield@napf.us</a> in collaboration with</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding-top:20px;padding-bottom:20px" valign=3D"top" width=3D"=
+100%" rowspan=3D"1" colspan=3D"1" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-bottom:5px" valign=3D"top" width=3D"100%" rowspan=3D"1=
+" colspan=3D"1" align=3D"center">
+<div><a shape=3D"rect" href=3D"http://www.constantcontact.com/index.jsp?cc=
+=3DPT1129" target=3D"_blank"><img border=3D"0" width=3D"180" style=3D"displ=
+ay:block;min-height:auto!important;max-width:100%!important" alt=3D"Constan=
+t Contact" src=3D"https://imgssl.constantcontact.com/ui/images1/ctct-logo.p=
+ng"></a></div>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"cent=
+er">
+<table border=3D"0" width=3D"128" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top" width=3D"100%" rowspan=3D"1" colspan=3D"1" align=3D"left=
+">
+<div style=3D"font-family:Verdana,Geneva,sans-serif;font-size:11px;color:#1=
+84f8e">
+<a style=3D"font-family:Verdana,Geneva,sans-serif;font-size:11px;color:#184=
+f8e;text-decoration:none" shape=3D"rect" href=3D"http://www.constantcontact=
+.com/index.jsp?cc=3DPT1129" target=3D"_blank">Try it free today</a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+<td rowspan=3D"1" colspan=3D"1"><img height=3D"5" vspace=3D"0" border=3D"0"=
+ hspace=3D"0" width=3D"1" src=3D"https://imgssl.constantcontact.com/letters=
+/images/1101116784221/S.gif"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+
+</blockquote>
+
+--94eb2c048618b4378605327e73af--

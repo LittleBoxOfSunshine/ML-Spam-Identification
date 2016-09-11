@@ -1,0 +1,666 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 5 May
+ 2016 12:35:47 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 5 May 2016
+ 12:35:39 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 898651839
+ for MirandaL@dnc.org; Thu, 05 May 2016 11:35:48 -0500
+X-Note-AR-ScanTimeLocal: 5/5/2016 11:35:45 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.170 DOM:nclusive.com ADDR:jacobperler@nclusive.com
+X-Note: SPF: SoftFail
+X-Note: ICH-CT/SI:0-778/SG:1 5/5/2016 11:35:14 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-304/SG:8 5/5/2016 11:35:14 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.881 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/5/2016 11:35:35 AM
+X-Warn: SPFSOFTFAIL SPF Softfail
+X-Note: Spam Tests Failed: SPFSOFTFAIL
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.170
+X-Note-Reverse-DNS: mail-io0-f170.google.com
+X-Note-Return-Path: jacob.perler@nclusive.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G395 G406 G418 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f170.google.com ([209.85.223.170] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136980997
+ for MirandaL@dnc.org; Thu, 05 May 2016 11:35:45 -0500
+Received: by mail-io0-f170.google.com with SMTP id f89so89690716ioi.0
+        for <MirandaL@dnc.org>; Thu, 05 May 2016 09:35:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nclusive-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=xPSpCUSVkFvpXMA9SaIrFICwvGSeHESMwD6OHRkajEs=;
+        b=GpTlI1UoNIE5jkCNLWn78fkQgbY/jDSCQC71Q/Tk0ra5lmOSlwmLM1ZdIiFaUfxJ5a
+         aYHvsSkpdCjdJu1RcvgMPgKaC+E3QwLBEkqJ1f79a8s1ic0amC7cooE5iH++qX/5tZ3m
+         vLKKf0/eIKaPLSWifDiKn3t2nSy/g2FluCDM764cg3kItk/qwUsGAKb9liApxpajOAho
+         AFD9y1PlfbiUpseqR5uaOBkA7396gD9+ibysCQ/zPffTp3aA3eFhVrZGwkk5NyarNk7K
+         /eBXwvwTAuuKqnxixCutOQtoTiFdstX5kIKUVd+Rm8rT+2ikC68/cUJrVrib5i9wOWA9
+         qgLg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=xPSpCUSVkFvpXMA9SaIrFICwvGSeHESMwD6OHRkajEs=;
+        b=iXsJP8WwQYeBmpTIsLVM887a78ayUxq6zDAYOfEnCv40xV55iJ8tk/bxOl4jRIMBE1
+         m+IhDMSq013RzVZ3E6OxiOGRZbVzuti2D7NADV60hLMj57jUWGhussmyp5bFApg0GNbg
+         MOqVsJyHQCy/bG9Hfuhrizn7LJ1pgRsanpybzgyn7RwLTpSxCtLiYpiB/9eoBgEaO+9b
+         XpZjEvLayAVsJNKixR5KK3WdJ129c0MFP2M6g/X1a1VwIPEXvH/k20sDcBAqQAigmRI5
+         FRo6CveT8pC4uFot8Z/WOft2PjkZdkV0CgZncDxkrJDczZe3q2G41WUAO7BpdkPCFfuQ
+         Z1UQ==
+X-Gm-Message-State: AOPr4FUlS8wGbRuIBXM1o64pK9W0fpycXpIOprTYR1gKLuOAwnOs8oVSNjy2uqQFNf3H+sRqAHoWLT5kZmAHdORs
+X-Received: by 10.107.138.33 with SMTP id m33mr18528374iod.181.1462466144383;
+ Thu, 05 May 2016 09:35:44 -0700 (PDT)
+Received: by 10.36.65.7 with HTTP; Thu, 5 May 2016 09:35:44 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF09D41@dncdag1.dnc.org>
+References: <CAEvYbpF82+GkKYd_UfObH-ZC-+xNeq9TQsJ+wFnjW4LJHSqTqQ@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF09D41@dncdag1.dnc.org>
+Date: Thu, 5 May 2016 09:35:44 -0700
+Message-ID: <CAEvYbpEfgt5FX+ydJ_9D_o5-ddDqFQr1uAFu5ZQdqdA=kSc+jA@mail.gmail.com>
+Subject: Re: DNC Messaging App Content, Emoji & Sticker Keyboard for the Election
+From: "Jacob R. Perler | NCLUSIVE" <jacob.perler@nclusive.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+Content-Type: multipart/related; boundary="001a113e8e6c08bf5f05321aeff0"
+Return-Path: jacob.perler@nclusive.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113e8e6c08bf5f05321aeff0
+Content-Type: multipart/alternative; boundary="001a113e8e6c08bf5c05321aefef"
+
+--001a113e8e6c08bf5c05321aefef
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Not a problem, Luis. Thank you for following up. I know you are super busy
+so I appreciate it.
+
+The platform is really cool and I'm working on building it out for the
+likes of Mayweather, Toni Braxton and others. Through the process I learned
+that it's beyond just branded content...there's a major messaging
+component. Essentially, whenever someone downloads a content pack, the DNC
+could be added as a "contact" in their various messaging apps like Skype,
+Whatsapp, Viber, etc. You could then reach out to them sporadically with
+direct messages in a non-obtrusive way. Obviously with millions of
+downloads comes millions of contact adds.
+
+I appreciate you sending this along and look forward to hearing if there is
+interest!
+
+Keep up the amazing work...I love getting my election news from you!
+
+Best,
+Jacob
+
+Jacob R. Perler
+*Chief Strategy Officer, Head of Ventures*
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::
+*NCLUSIVE*  |  *A Creative Agency & Venture Studio*
+Office:      +1 310.388.6855
+Personal: +1 516.398.7393
+Website: NCLUSIVE.com <http://nclusive.com/>
+Crunchbase: NCLUSIVE <http://www.crunchbase.com/company/nclusive>
+Social: Facebook <https://www.facebook.com/nclusive> / Twitter
+<https://twitter.com/NCLUSIVE> / Instagram <http://instagram.com/NCLUSIVE>
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::
+
+On Thu, May 5, 2016 at 8:27 AM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Didn=E2=80=99t forget about this, I sent it to our convention and digital=
+ teams.
+> Cool product. Thanks for sending it.
+>
+>
+>
+>
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+> *From:* Jacob R. Perler | NCLUSIVE [mailto:jacob.perler@nclusive.com]
+> *Sent:* Thursday, April 21, 2016 1:21 AM
+> *To:* Miranda, Luis
+> *Subject:* DNC Messaging App Content, Emoji & Sticker Keyboard for the
+> Election
+>
+>
+>
+> Hey Luis,
+>
+>
+>
+> Apologies on sending this a little delayed. Without diving too much into
+> detail, I recently took Snaapiq and our team to join forces with a creati=
+ve
+> agency and venture studio in Los Angeles called NCLUSIVE.
+>
+>
+>
+> We're working on a lot of interesting projects and creative programs with
+> clients of various sizes. With our venture studio, we build startups and
+> take equity stakes where feasible, which obviously lends to my skillset a=
+nd
+> strong desire in helping companies and entrepreneurs grow.
+>
+>
+>
+> One of our close partners, with whom we're doing a lot of work, are Swyft
+> Media <http://swyftmedia.com/>, and they build messaging app marketing
+> for brands, sports teams, movie studios, and overall, over 300 major
+> companies. The easiest way to first think about it is emoji keyboards,
+> stickers, etc. but there are a lot of other more powerful components to
+> what they do.
+>
+>
+>
+> I have been helping them think outside the box of where they can work wit=
+h
+> new partners and when we spoke, I realized that this could be a huge home
+> run for the DNC when the Democratic Candidate is elected. Targeting
+> millennials and messaging apps (i.e. Skype, WhatsApp, Viber, iMessage,
+> etc.), we could create fun, digital assets, with unique messages and
+> sayings tied to the candidate that people will want to share.
+>
+>
+>
+> Check out the attached deck which gives an overview and examples that wil=
+l
+> provide a foundational idea of how this might look.
+>
+>
+>
+> I'd love to hear your thoughts and am happy to chat soon if you like the
+> concept. If not, no big deal, figured I would throw the idea your way!
+>
+>
+>
+> Best,
+>
+> Jacob
+>
+>
+>
+>
+> Jacob R. Perler
+>
+> *Business Development & Strategy*
+>
+>
+>
+> :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::=
+::
+> :::::
+>
+> *NCLUSIVE*  |  *A Creative Agency & Venture Studio*
+>
+> Office:      +1 310.388.6855
+>
+> Personal: +1 516.398.7393
+>
+> Website: NCLUSIVE.com <http://nclusive.com/>
+>
+> Crunchbase: NCLUSIVE <http://www.crunchbase.com/company/nclusive>
+>
+> Social: Facebook <https://www.facebook.com/nclusive> / Twitter
+> <https://twitter.com/NCLUSIVE> / Instagram <http://instagram.com/NCLUSIVE=
+>
+>
+> :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::=
+::
+> :::::
+>
+>
+
+--001a113e8e6c08bf5c05321aefef
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Not a problem, Luis. Thank you for following up. I know you =
+are super busy so I appreciate it.<div><br></div><div>The platform is reall=
+y cool and I'm working on building it out for the likes of Mayweather, Toni=
+ Braxton and others. Through the process I learned that it's beyond just br=
+anded content...there's a major messaging component. Essentially, whenever =
+someone downloads a content pack, the DNC could be added as a &quot;contact=
+&quot; in their various messaging apps like Skype, Whatsapp, Viber, etc. Yo=
+u could then reach out to them sporadically with direct messages in a non-o=
+btrusive way. Obviously with millions of downloads comes millions of contac=
+t adds.<div><br></div><div>I appreciate you sending this along and look for=
+ward to hearing if there is interest!</div><div><br></div><div>Keep up the =
+amazing work...I love getting my election news from you!</div><div><br></di=
+v><div>Best,</div><div>Jacob<br><img src=3D"https://t.yesware.com/t/83a3700=
+80446a3256cd1ba7576a5f9c164e5a663/7d8137eaf96a4753e6a10b1ee3ee45c6/spacer.g=
+if" style=3D"border:0; width:0; height:0; overflow:hidden;" width=3D"0" hei=
+ght=3D"0"><img src=3D"http://t.yesware.com/t/83a370080446a3256cd1ba7576a5f9=
+c164e5a663/7d8137eaf96a4753e6a10b1ee3ee45c6/spacer.gif" style=3D"border:0; =
+width:0; height:0; overflow:hidden;" width=3D"0" height=3D"0"><font face=3D=
+"yw-83a370080446a3256cd1ba7576a5f9c164e5a663-7d8137eaf96a4753e6a10b1ee3ee45=
+c6--to" style=3D"display: none;"></font></div></div></div><div class=3D"gma=
+il_extra"><br clear=3D"all"><div><div class=3D"gmail_signature"><div dir=3D=
+"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div><div style=3D"margin:0px;color:rgb(35,35,35)=
+"><div style=3D"color:rgb(0,0,0);margin:0px"><span style=3D"font-family:'Ce=
+ntury Gothic';font-size:15px">Jacob R. Perler</span><br></div><div style=3D=
+"font-size:11px;font-family:'Times New Roman';color:rgb(0,0,0);margin:0px">=
+<i>Chief Strategy Officer, Head of Ventures</i></div><div style=3D"font-siz=
+e:11px;font-family:'Times New Roman';color:rgb(0,0,0);margin:0px"><i><br></=
+i></div></div></div><div style=3D"font-size:12.8px"><div><div style=3D"word=
+-wrap:break-word"><div style=3D"word-wrap:break-word"><div style=3D"word-wr=
+ap:break-word"><div style=3D"word-wrap:break-word"><div style=3D"word-wrap:=
+break-word"><div style=3D"word-wrap:break-word"><div style=3D"word-wrap:bre=
+ak-word"><div style=3D"word-wrap:break-word"><div style=3D"word-wrap:break-=
+word"><div style=3D"word-wrap:break-word"><span style=3D"border-collapse:se=
+parate;border-spacing:0px"><div style=3D"word-wrap:break-word"><div style=
+=3D"margin:0px;font-size:9px;font-family:'Rockwell Extra Bold';color:rgb(35=
+,35,35)"><span style=3D"text-align:-webkit-auto">::::::::::::::::::::::::::=
+:::::::::::::::::::::::::::::::::::::::::::::::::</span><span style=3D"colo=
+r:rgb(0,0,0);text-align:-webkit-auto">:::::</span></div><div style=3D"margi=
+n:0px;font-size:11px;font-family:Georgia;color:rgb(35,35,35)"><span style=
+=3D"font-size:17px;font-family:'Times New Roman'"><b>NCLUSIVE</b></span><sp=
+an style=3D"font-size:14px;font-family:'Times New Roman'">&nbsp;&nbsp;|</sp=
+an><span style=3D"font-size:15px;font-family:'Times New Roman'">&nbsp;&nbsp=
+;</span><i>A Creative Agency &amp; Venture Studio</i></div><div style=3D"ma=
+rgin:0px;font-size:10px;color:rgb(18,85,204)"><span style=3D"color:rgb(96,9=
+6,96)">Office: &nbsp; &nbsp; &nbsp;<a style=3D"color:rgb(34,34,34)"><span s=
+tyle=3D"color:rgb(18,85,204)">&#43;1 310.388.6855</span></a></span></div><d=
+iv style=3D"margin:0px;font-size:10px;color:rgb(18,85,204)"><span style=3D"=
+color:rgb(96,96,96)">Personal:&nbsp;<a style=3D"color:rgb(34,34,34)"><span =
+style=3D"color:rgb(18,85,204)">&#43;1 516.398.7393</span></a></span></div><=
+div style=3D"margin:0px;font-size:10px;color:rgb(18,85,204)"><span style=3D=
+"color:rgb(96,96,96)">Website:&nbsp;<a href=3D"http://nclusive.com/" style=
+=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=3D"color:rgb(18,85,=
+204)">NCLUSIVE.com</span></a></span></div><div style=3D"margin:0px;font-siz=
+e:10px;color:rgb(96,96,96)">Crunchbase:&nbsp;<a href=3D"http://www.crunchba=
+se.com/company/nclusive" style=3D"color:rgb(17,85,204)" target=3D"_blank"><=
+span style=3D"color:rgb(18,85,204)">NCLUSIVE</span></a></div><div style=3D"=
+margin:0px;font-size:10px;color:rgb(18,85,204)"><span style=3D"color:rgb(96=
+,96,96)">Social:&nbsp;<a href=3D"https://www.facebook.com/nclusive" style=
+=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=3D"color:rgb(18,85,=
+204)">Facebook</span></a>&nbsp;/&nbsp;<a href=3D"https://twitter.com/NCLUSI=
+VE" style=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=3D"color:r=
+gb(18,85,204)">Twitter</span></a>&nbsp;/&nbsp;<a href=3D"http://instagram.c=
+om/NCLUSIVE" style=3D"color:rgb(17,85,204)" target=3D"_blank"><span style=
+=3D"color:rgb(18,85,204)">Instagram</span></a></span></div><div style=3D"fo=
+nt-size:15px;margin:0px"><span style=3D"color:rgb(35,35,35);font-family:'Ro=
+ckwell Extra Bold';font-size:9px;text-align:-webkit-auto">:::::::::::::::::=
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span><span styl=
+e=3D"font-family:'Rockwell Extra Bold';font-size:9px;text-align:-webkit-aut=
+o;color:rgb(0,0,0)">:::::</span></div></div></span></div></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Thu, May 5, 2016 at 8:27 AM, Miranda, Lui=
+s <span dir=3D"ltr">&lt;<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blan=
+k">MirandaL@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quo=
+te" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"=
+>
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Didn=E2=80=99t forget abo=
+ut this, I sent it to our convention and digital teams. Cool product. Thank=
+s for sending it.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img border=3D"0" width=3D"77" height=3D"71" src=3D"cid:image00=
+1.png@01D1A6C1.271CE8C0" align=3D"left" hspace=3D"12" alt=3D"SigDems" title=
+=3D""></a><u></u><b><span style=3D"font-family:&quot;Calibri&quot;,&quot;sa=
+ns-serif&quot;;color:#1f497d">Luis
+ Miranda, </span></b><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,&quot;sans-serif&quot;;color:#1f497d">Communications Director<u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Co=
+mmittee<u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><a href=3D"tel:202-863-81=
+48" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a> =E2=80=93
+<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a> =
+- <a href=3D"https://www.twitter.com/MiraLuisDC" target=3D"_blank">
+@MiraLuisDC</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Jacob R.=
+ Perler | NCLUSIVE [mailto:<a href=3D"mailto:jacob.perler@nclusive.com" tar=
+get=3D"_blank">jacob.perler@nclusive.com</a>]
+<br>
+<b>Sent:</b> Thursday, April 21, 2016 1:21 AM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> DNC Messaging App Content, Emoji &amp; Sticker Keyboard for=
+ the Election<u></u><u></u></span></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hey Luis,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Apologies on sending this a little delayed. Without =
+diving too much into detail, I recently took Snaapiq and our team to join f=
+orces with a creative agency and venture studio in Los Angeles called NCLUS=
+IVE.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We're working on a lot of interesting projects and c=
+reative programs with clients of various sizes. With our venture studio, we=
+ build startups and take equity stakes where feasible, which obviously lend=
+s to my skillset and strong desire
+ in helping companies and entrepreneurs grow.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">One of our close partners, with whom we're doing a l=
+ot of work, are&nbsp;<a href=3D"http://swyftmedia.com/" target=3D"_blank">S=
+wyft Media</a>, and they build messaging app marketing for brands, sports t=
+eams, movie studios, and overall, over 300
+ major companies. The easiest way to first think about it is emoji keyboard=
+s, stickers, etc. but there are a lot of other more powerful components to =
+what they do.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I have been helping them think outside the box of wh=
+ere they can work with new partners and when we spoke, I realized that this=
+ could be a huge home run for the DNC when the Democratic Candidate is elec=
+ted. Targeting millennials and messaging
+ apps (i.e. Skype, WhatsApp, Viber, iMessage, etc.), we could create fun, d=
+igital assets, with unique messages and sayings tied to the candidate that =
+people will want to share.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Check out the attached deck which gives an overview =
+and examples that will provide a foundational idea of how this might look.&=
+nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'd love to hear your thoughts and am happy to chat =
+soon if you like the concept. If not, no big deal, figured I would throw th=
+e idea your way!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Jacob<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.5pt;font-family:&quot;Ce=
+ntury Gothic&quot;,&quot;sans-serif&quot;;color:black">Jacob R. Perler</spa=
+n><span style=3D"color:black"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><i><span style=3D"font-size:8.5pt;color:black">Busin=
+ess Development &amp; Strategy</span></i><span style=3D"font-size:8.5pt;col=
+or:black"><u></u><u></u></span></p>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.5pt"><u></u>&nbsp;<u></u>=
+</span></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.0pt;font-family:&quot;Roc=
+kwell Extra Bold&quot;,&quot;serif&quot;;color:#232323">:::::::::::::::::::=
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span><span style=
+=3D"font-size:7.0pt;font-family:&quot;Rockwell Extra Bold&quot;,&quot;serif=
+&quot;;color:black">:::::</span><span style=3D"font-size:7.0pt;font-family:=
+&quot;Rockwell Extra Bold&quot;,&quot;serif&quot;;color:#232323"><u></u><u>=
+</u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:13.0pt;color:#232323">NC=
+LUSIVE</span></b><span style=3D"font-size:10.5pt;color:#232323">&nbsp;&nbsp=
+;|</span><span style=3D"font-size:11.5pt;color:#232323">&nbsp;&nbsp;</span>=
+<i><span style=3D"font-size:8.5pt;font-family:&quot;Georgia&quot;,&quot;ser=
+if&quot;;color:#232323">A
+ Creative Agency &amp; Venture Studio</span></i><span style=3D"font-size:8.=
+5pt;font-family:&quot;Georgia&quot;,&quot;serif&quot;;color:#232323"><u></u=
+><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;color:#606060">Office=
+: &nbsp; &nbsp; &nbsp;</span><span style=3D"font-size:7.5pt;color:#1255cc">=
+<a href=3D"tel:%2B1%20310.388.6855" value=3D"&#43;13103886855" target=3D"_b=
+lank">&#43;1 310.388.6855</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;color:#606060">Person=
+al:&nbsp;</span><span style=3D"font-size:7.5pt;color:#1255cc"><a href=3D"te=
+l:%2B1%20516.398.7393" value=3D"&#43;15163987393" target=3D"_blank">&#43;1 =
+516.398.7393</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;color:#606060">Websit=
+e:&nbsp;<a href=3D"http://nclusive.com/" target=3D"_blank"><span style=3D"c=
+olor:#1255cc">NCLUSIVE.com</span></a></span><span style=3D"font-size:7.5pt;=
+color:#1255cc"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;color:#606060">Crunch=
+base:&nbsp;<a href=3D"http://www.crunchbase.com/company/nclusive" target=3D=
+"_blank"><span style=3D"color:#1255cc">NCLUSIVE</span></a><u></u><u></u></s=
+pan></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.5pt;color:#606060">Social=
+:&nbsp;<a href=3D"https://www.facebook.com/nclusive" target=3D"_blank"><spa=
+n style=3D"color:#1255cc">Facebook</span></a>&nbsp;/&nbsp;<a href=3D"https:=
+//twitter.com/NCLUSIVE" target=3D"_blank"><span style=3D"color:#1255cc">Twi=
+tter</span></a>&nbsp;/&nbsp;<a href=3D"http://instagram.com/NCLUSIVE" targe=
+t=3D"_blank"><span style=3D"color:#1255cc">Instagram</span></a></span><span=
+ style=3D"font-size:7.5pt;color:#1255cc"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:7.0pt;font-family:&quot;Roc=
+kwell Extra Bold&quot;,&quot;serif&quot;;color:#232323">:::::::::::::::::::=
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::</span><span style=
+=3D"font-size:7.0pt;font-family:&quot;Rockwell Extra Bold&quot;,&quot;serif=
+&quot;;color:black">:::::</span><span style=3D"font-size:11.5pt"><u></u><u>=
+</u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" src=3D"https://t.yesware.com/t/83a=
+370080446a3256cd1ba7576a5f9c164e5a663/b9840e87d6a73a4089cb51914ae303ed/spac=
+er.gif"><img border=3D"0" src=3D"http://t.yesware.com/t/83a370080446a3256cd=
+1ba7576a5f9c164e5a663/b9840e87d6a73a4089cb51914ae303ed/spacer.gif"><u></u><=
+u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a113e8e6c08bf5c05321aefef--
+
+--001a113e8e6c08bf5f05321aeff0
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1A6C1.271CE8C0>
+X-Attachment-Id: a521028ad355257d_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--001a113e8e6c08bf5f05321aeff0--

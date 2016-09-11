@@ -1,0 +1,573 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 11 May
+ 2016 15:53:01 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 11 May 2016
+ 15:52:59 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 909929221
+ for MirandaL@dnc.org; Wed, 11 May 2016 14:53:05 -0500
+X-Note-AR-ScanTimeLocal: 5/11/2016 2:53:04 PM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.45 DOM:hattaway.com ADDR:spierce@hattaway.com
+X-Note: SPF: None
+X-Note: ICH-CT/SI:0-779/SG:1 5/11/2016 2:52:17 PM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-504/SG:8 5/11/2016 2:52:17 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-25973-c
+X-Note-419: 31.2503 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/11/2016 2:52:59 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.45
+X-Note-Reverse-DNS: mail-vk0-f45.google.com
+X-Note-Return-Path: spierce@hattaway.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G419 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-vk0-f45.google.com ([209.85.213.45] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140098064
+ for MirandaL@dnc.org; Wed, 11 May 2016 14:53:03 -0500
+Received: by mail-vk0-f45.google.com with SMTP id f66so71168393vkh.2
+        for <MirandaL@dnc.org>; Wed, 11 May 2016 12:52:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hattaway-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=D9L3jc+tvgqq/PwvrYTwbknZpEUfFW2crF5w1gqdMXI=;
+        b=tPlzYictd0aYCEODsVD2t7JCKn9dDPyXJG1wj71S7Ve93PbJrI8Tl/bm/5UqbURGha
+         kY4MHXsPiyez49kBcZLRkiCC+EnSNm919dff13Uu46q+DX7nvU25qcIqYvuXwXuOIzCo
+         Kl2ml3BNU6lus4LOsevlZH1q0vnP+EU5qnhLPJBYtRJDRekwhPRWR7bc+a4itzmIyCi1
+         RP+Df3S6IOyGpy9ur4N/UIitEkg8On2Foe0iwl8EA8CNlORHnaWVr1XJOKAxVtW7HiHT
+         9OfDLR9Qpk0EWNvdr77av3aS5X93KmLVY66HjN5j1M58FDiuc5XXVovjxkzeDrw9mD+r
+         D5/Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=D9L3jc+tvgqq/PwvrYTwbknZpEUfFW2crF5w1gqdMXI=;
+        b=NyKKpTvMBiqDYl2dJpd5u451fzVKzRz/8109AhvynjI0NsL/H+8gsJEdb1x/TlUash
+         smCGAutAekhIPmvrhsm2YoDtEEhCkyhAUNv5WOj3+rXgskOoG7Lj/2oiaZIP87/qnUZF
+         3QaRZUiL1cJFZawWV+hYaUOChYuuDEh2Hjxz7zGF/MSFdwTnG3+JSkSjq0ZfqGYfoZUq
+         CVW8delvt4hsGUnzaGuoshWMXGUOZ38U6MLm2LkzbzqiObHLps0k8xnebvBYdTDqzDaW
+         EEm2QYcIcKYD3PGZ7+Vv9qvwqUXIpI1bA77tw2b2mm50KeuqgSlKJBnMY2JP9cKO4HZa
+         eHjA==
+X-Gm-Message-State: AOPr4FUkSTk77yXDIBrjCE9cIeo4bYaxeBFrhal8lQr2TKGoozHImyDbZLQpH8ktuZQYJsukZsiDYg9vJyvX0bHX
+X-Received: by 10.31.208.197 with SMTP id h188mr2672428vkg.84.1462996378053;
+ Wed, 11 May 2016 12:52:58 -0700 (PDT)
+Received: by 10.103.33.80 with HTTP; Wed, 11 May 2016 12:52:57 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF18325@dncdag1.dnc.org>
+References: <CAFexGLovBAeDqw0ET+rQEOWAiC7_O=O4v=YoGAS_kkzYMRunsg@mail.gmail.com>
+	<CAFexGLrmcHzov_oQo_v3=QnjbYOcAciyWUt++5w4b38402OS1g@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF18325@dncdag1.dnc.org>
+Date: Wed, 11 May 2016 15:52:57 -0400
+Message-ID: <CAFexGLo18YueckECwfM56gjq2FGU5qfsec7LJiXTOu6iOQDDdQ@mail.gmail.com>
+Subject: Re: Convention Toolkit for Communicators
+From: Steve Pierce <spierce@hattaway.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+CC: "Palermo, Rachel" <PalermoR@dnc.org>
+Content-Type: multipart/related; boundary="001a114ede566c6f4905329663da"
+Return-Path: spierce@hattaway.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a114ede566c6f4905329663da
+Content-Type: multipart/alternative; boundary="001a114ede566c6f4605329663d9"
+
+--001a114ede566c6f4605329663d9
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Thanks, Luis.
+
+Hi Rachel =E2=80=94 when is a good time for Luis? I can usually be reasonab=
+ly
+flexible.
+
+--
+
+Steve Pierce
+Senior Associate
+Hattaway Communications, Inc.
+202.688.2468
+www.hattaway.com
+
+Helping visionary leaders & organizations achieve great things.
+
+On Wed, May 11, 2016 at 3:49 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Plus Rachel to help us find a time.
+>
+>
+>
+>
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+> *From:* Steve Pierce [mailto:spierce@hattaway.com]
+> *Sent:* Wednesday, May 11, 2016 3:40 PM
+> *To:* Miranda, Luis
+> *Cc:* Garcia, Walter
+> *Subject:* Re: Convention Toolkit for Communicators
+>
+>
+>
+> Hi Luis,
+>
+>
+>
+> Just wanted to circle back around on this. We're trying to nail down
+> production numbers, and we'd love to get your input on who/how many would
+> benefit from these toolkits and could put them to use =E2=80=94 including=
+ state
+> party staff, committee staff, convention staff, speechwriters, etc.
+>
+>
+>
+> Let me know if it would be more helpful to hop on a call. Thanks!
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Thu, May 5, 2016 at 8:22 PM, Steve Pierce <spierce@hattaway.com> wrote=
+:
+>
+> Hi Luis,
+>
+>
+>
+> As you know, we're planning to roll out the narrative at the convention.
+> As part of that, we want to produce a toolkit with the content that we ca=
+n
+> give to Democratic communicators who are going to use it regularly in the=
+ir
+> jobs. We're thinking state party staff, comms staffs from the various
+> committees, and others who would make sense.
+>
+>
+>
+> Could you help us identify who you think would benefit from something lik=
+e
+> that? Not necessarily specific names, but groups/types of people. We want
+> to get a rough count for printing, so we'd love your help in fleshing out
+> who we should be producing these for and who could really put them to use=
+.
+>
+>
+>
+> Let me know. Thanks!
+>
+>
+> --
+>
+>
+>
+> Steve Pierce
+>
+> Senior Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.688.2468
+>
+> www.hattaway.com
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+
+--001a114ede566c6f4605329663d9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Thanks, Luis.<div><br></div><div>Hi Rachel =E2=80=94 when is=
+ a good time for Luis? I can usually be reasonably flexible.</div></div><di=
+v class=3D"gmail_extra"><br clear=3D"all"><div><div class=3D"gmail_signatur=
+e"><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"font-family:Arial,s=
+ans-serif"><div><span style=3D"font-size:small">--</span><br></div><div><fo=
+nt size=3D"2"><br></font></div><div><font size=3D"2">Steve Pierce<br></font=
+></div></div><div style=3D"font-family:Arial,sans-serif"><font size=3D"2">S=
+enior Associate</font></div><div style=3D"font-family:Arial,sans-serif"><fo=
+nt size=3D"2">Hattaway Communications, Inc.</font></div><div style=3D"font-=
+family:Arial,sans-serif"><font size=3D"2">202.688.2468</font></div><div sty=
+le=3D"font-family:Arial,sans-serif"><a href=3D"http://www.hattaway.com/" st=
+yle=3D"color:rgb(17,85,204)" target=3D"_blank"><font size=3D"2">www.hattawa=
+y.com</font></a></div><div style=3D"font-family:Arial,sans-serif"><font siz=
+e=3D"2"><br></font></div><div style=3D"font-family:Arial,sans-serif"><font =
+size=3D"2">Helping visionary leaders &amp; organizations achieve great thin=
+gs.</font></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Wed, May 11, 2016 at 3:49 PM, Miranda, Lu=
+is <span dir=3D"ltr">&lt;<a href=3D"mailto:MirandaL@dnc.org" target=3D"_bla=
+nk">MirandaL@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex=
+">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Plus Rachel to help us fi=
+nd a time.
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img border=3D"0" width=3D"77" height=3D"71" src=3D"cid:image00=
+1.png@01D1AB9C.B0440270" align=3D"left" hspace=3D"12" alt=3D"SigDems" title=
+=3D""></a><u></u><b><span style=3D"font-family:&quot;Calibri&quot;,&quot;sa=
+ns-serif&quot;;color:#1f497d">Luis
+ Miranda, </span></b><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,&quot;sans-serif&quot;;color:#1f497d">Communications Director<u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Co=
+mmittee<u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><a href=3D"tel:202-863-81=
+48" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a> =E2=80=93
+<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a> =
+- <a href=3D"https://www.twitter.com/MiraLuisDC" target=3D"_blank">
+@MiraLuisDC</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Steve Pi=
+erce [mailto:<a href=3D"mailto:spierce@hattaway.com" target=3D"_blank">spie=
+rce@hattaway.com</a>]
+<br>
+<b>Sent:</b> Wednesday, May 11, 2016 3:40 PM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Cc:</b> Garcia, Walter<br>
+<b>Subject:</b> Re: Convention Toolkit for Communicators<u></u><u></u></spa=
+n></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Luis,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Just wanted to circle back around on this. We're try=
+ing to nail down production numbers, and we'd love to get your input on who=
+/how many would benefit from these toolkits and could put them to use =E2=
+=80=94 including state party staff, committee
+ staff, convention staff, speechwriters, etc.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Let me know if it would be more helpful to hop on a =
+call. Thanks!<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><span style=3D"font-fa=
+mily:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><span style=3D"fon=
+t-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><span=
+ style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u><=
+/u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" value=3D"&#4=
+3;12026882468" target=3D"_blank">202.688.2468</a></span><span style=3D"font=
+-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a><u><=
+/u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><span style=3D"font-family:&quot;Arial&quo=
+t;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Thu, May 5, 2016 at 8:22 PM, Steve Pierce &lt;<a =
+href=3D"mailto:spierce@hattaway.com" target=3D"_blank">spierce@hattaway.com=
+</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Luis,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">As you know, we're planning to roll out the narrativ=
+e at the convention. As part of that, we want to produce a toolkit with the=
+ content that we can give to Democratic communicators who are going to use =
+it regularly in their jobs. We're
+ thinking state party staff, comms staffs from the various committees, and =
+others who would make sense.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Could you help us identify who you think would benef=
+it from something like that? Not necessarily specific names, but groups/typ=
+es of people. We want to get a rough count for printing, so we'd love your =
+help in fleshing out who we should
+ be producing these for and who could really put them to use.<u></u><u></u>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Let me know. Thanks!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">--<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Steve Pierce</span><span style=3D"font-fa=
+mily:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Senior Associate</span><span style=3D"fon=
+t-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u></u></span></p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Hattaway Communications, Inc.</span><span=
+ style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><u></u><u><=
+/u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.688.2468" target=3D"_b=
+lank">202.688.2468</a></span><span style=3D"font-family:&quot;Arial&quot;,&=
+quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><a href=3D"http://www.hattaway.com/" target=3D"_blank"><sp=
+an style=3D"font-size:10.0pt;color:#1155cc">www.hattaway.com</span></a><u><=
+/u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;">Helping visionary leaders &amp; organizat=
+ions achieve great things.</span><span style=3D"font-family:&quot;Arial&quo=
+t;,&quot;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a114ede566c6f4605329663d9--
+
+--001a114ede566c6f4905329663da
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1AB9C.B0440270>
+X-Attachment-Id: a2937b80ebc20a64_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--001a114ede566c6f4905329663da--

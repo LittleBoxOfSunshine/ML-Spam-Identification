@@ -1,0 +1,796 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sun, 15 May
+ 2016 02:00:09 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sun, 15 May 2016
+ 02:00:05 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 915636217
+ for MirandaL@dnc.org; Sun, 15 May 2016 01:00:15 -0500
+X-Note-AR-ScanTimeLocal: 5/15/2016 1:00:07 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.220.43 DOM:alaskadispatch.com ADDR:alex@alaskadispatch.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-50/SG:5 5/15/2016 12:59:34 AM
+X-GBUdb-Analysis: 0, 209.85.220.43, Ugly c=0.792956 p=-0.91898 Source Normal
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8775 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/15/2016 1:00:06 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: PRIVATE->->United States->
+X-Note-Sending-IP: 209.85.220.43
+X-Note-Reverse-DNS: mail-pa0-f43.google.com
+X-Note-Return-Path: alex@alaskadispatch.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.220.43] (HELO mail-pa0-f43.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 141887689
+ for MirandaL@dnc.org; Sun, 15 May 2016 01:00:07 -0500
+Received: by mail-pa0-f43.google.com with SMTP id bt5so53558653pac.3
+        for <MirandaL@dnc.org>; Sat, 14 May 2016 23:00:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=alaskadispatch-com.20150623.gappssmtp.com; s=20150623;
+        h=from:content-transfer-encoding:mime-version:subject:message-id:date
+         :references:in-reply-to:to;
+        bh=e8WCMJEEoAGwFiByM87kTmep5dsBhzkuEIS3StvrMro=;
+        b=UpErmSQW1eEr/u80EPiLBh5IKyck3mzhHqYEkMPo+5JlOJT6UQNn0raKDXUFb3r9Z8
+         WfpdWnflJDiW6569um0y87bIT06ZJRVdYklBhS46DbytYvNkeARD6cE6tNy2r/WAv3MK
+         JSgHBWH2yf3pSQQZXRTg7FEDpmyHMn9Vs2WZdrUtyNKJxTQ0iKqzTO6psaHsVOwy7/1J
+         cd+jJ8xUmlXXQAoELaKAVgeDo4ZOjg5z+eoi6858v6Ohjwhexa1Mf8pVfYrDNT3kX5x7
+         +M9TArWcq+wLv5T2oM92n4LWkk8NRpIgihBjDQ6V2TN2uU/u/A+OuCaLthhs7CQXcrLM
+         sp3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version
+         :subject:message-id:date:references:in-reply-to:to;
+        bh=e8WCMJEEoAGwFiByM87kTmep5dsBhzkuEIS3StvrMro=;
+        b=jy5iqBhaHvy3l+WGa2EVDWilZF91n/EhHE8k7NvNdsIBBQKckYzfQqhm1RJr7dYVV2
+         AUhA1rK3f+aQ196oU0+Ahk2+hYlQJk8F7vFRLhrVpnQ6DjkUmMc3uberiMyLPs7kV/N+
+         PujpCDWCTqlxy03W4n4MbjvdK9dn3cvSMsdOH1eYL2vKH8pTgLsuxquC1yPeArrhbxjy
+         YInGeBqi+Byj9GaIb7pKAfQxhR7cukIZN6jjutPXbbiZj237NxlZpfwirwANDJ2WFhqz
+         PdU84C14B/JKrOaD8glmw1vrXKrA2yMnZ7rRuyVchLaQHs8qAaOdPoWr8CcKkn83AF63
+         xCeA==
+X-Gm-Message-State: AOPr4FVvIv2VTo+eaE7luOja6MNYk6nDJEYBzu2/8wYlpI7i0Q0Au2wBNlRsmEJXF2nSWZz8
+X-Received: by 10.66.152.201 with SMTP id va9mr35230369pab.73.1463292006758;
+        Sat, 14 May 2016 23:00:06 -0700 (PDT)
+Return-Path: <alex@alaskadispatch.com>
+Received: from [10.126.37.57] ([24.237.158.7])        by smtp.gmail.com with
+ ESMTPSA id xd14sm38405993pac.6.2016.05.14.23.00.05        for
+ <MirandaL@dnc.org>        (version=TLSv1/SSLv3 cipher=OTHER);        Sat, 14
+ May 2016 23:00:05 -0700 (PDT)
+From: Alex DeMarban <alex@alaskadispatch.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail-1E935140-D4FE-4D00-8A4A-94E23211794B"
+Content-Transfer-Encoding: 7bit
+Subject: Re: DNC Chair
+Message-ID: <D827AC1A-1560-485E-9394-8D519B7DF771@alaskadispatch.com>
+Date: Sat, 14 May 2016 22:00:03 -0800
+References: <401klgu89csnu3kxklfh0itl.1463288485587@email.android.com> <a90pcqeovbj8nc93j0tyu0fl.1463291773752@email.android.com>
+In-Reply-To: <a90pcqeovbj8nc93j0tyu0fl.1463291773752@email.android.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+X-Mailer: iPhone Mail (13E238)
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--Apple-Mail-1E935140-D4FE-4D00-8A4A-94E23211794B
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+You are correct. There were at least 300 listening to her by my count.=20
+
+Sent from my iPhone
+
+> On May 14, 2016, at 9:58 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+>=20
+> Hey Alex, the room was packed during her speech. Not sure if you were ther=
+e for her remarks. See attached picture and this tweet has the standing ovat=
+ion she got at the end.
+>=20
+>=20
+>=20
+> https://twitter.com/LuisMiranda/status/731706788676960260
+>=20
+>=20
+>=20
+> Sent via the Samsung GALAXY S=C2=AE4, an AT&T 4G LTE smartphone
+>=20
+>=20
+> -------- Original message --------
+> From: "Miranda, Luis" <MirandaL@dnc.org>=20
+> Date: 05/14/2016 21:01 (GMT-09:00)=20
+> To: alex@alaskadispatch.com=20
+> Subject: DNC Chair=20
+>=20
+> For Immediate Release
+>=20
+>  May 14, 2016
+>=20
+> =20
+>=20
+> Contact: DNC Press =E2=80=93 202-863-8148
+>=20
+> =20
+>=20
+> Prepared Remarks for Delivery: DNC Chair Rep. Wasserman Schultz at Alaska S=
+tate Convention
+>=20
+> =20
+>=20
+> ANCHORAGE, ALASKA -- Tonight, DNC Chair Rep. Debbie Wasserman Schultz addr=
+essed the Alaska State Convention. Below you will find excerpts as prepared f=
+or delivery:
+>=20
+> =20
+>=20
+> =E2=80=9CAs chair of the DNC, I=E2=80=99ve committed myself to getting to k=
+now my fellow Democrats with visits to all fifty states =E2=80=93 and I=E2=80=
+=99ll be honest, it=E2=80=99s been a little easier to reach those lower fort=
+y-eight.
+>=20
+> =20
+>=20
+> =E2=80=A6
+>=20
+> =20
+>=20
+> =E2=80=9CBut I know I=E2=80=99m not the only one here tonight who travelle=
+d a great distance to be at the convention =E2=80=93 I understand there are e=
+ven as many as 40 high school students coming all the way from Juneau, and w=
+ho registered to be delegates =E2=80=93 let=E2=80=99s give them a hand for b=
+eing the future of our party.
+>=20
+>  ;;=E2=80=9CAnd let me just thank everyone else here who has travelled fro=
+m across our country=E2=80=99s largest state to show your support.
+>=20
+> =20
+>=20
+> =E2=80=9CYour enthusiasm, energy, your commitment, and your dedication to o=
+ur party will make all the difference on Election Day.
+>=20
+> =20
+>=20
+> =E2=80=A6
+>=20
+> =20
+>=20
+> =E2=80=9CSo we=E2=80=99ve taken the 50-state strategy that Howard Dean pio=
+neered when he was Chair of the National Party =E2=80=93 and we=E2=80=99ve g=
+one even further =E2=80=93
+>=20
+> =20
+>=20
+> =E2=80=9CProviding more funding; more infrastructure; more rocket fuel to k=
+eep the engines of our state parties firing on all cylinders and holding Rep=
+ublicans in office and in elections accountable.
+>=20
+> =20
+>=20
+> =E2=80=9CThat means that here in Alaska the DNC helps fund direct mail cam=
+paigns to reach voters and help get them to the polls on Election Day.
+>=20
+> =20
+>=20
+> =E2=80=9CWe fund salaries for critical staff under our state party partner=
+ships. In fact, Kay Brown can tell you, she was one of the first State Party=
+ Partnership employees we ever hired.
+>=20
+> =20
+>=20
+> =E2=80=9CSince 2009, the DNC has directly provided the Alaska Democratic P=
+arty more than $625,000 in direct support.
+>=20
+> =20
+>=20
+> =E2=80=9CBut it=E2=80=99s not just the funding -- the DNC has been out-pac=
+ing the GOP in how we offer direct support to our state parties with trainin=
+g, and bench-building; we share our deep research and communications capabil=
+ities in Alaska and across the country.
+>=20
+> =20
+>=20
+> =E2=80=9CSince 2013, we have quintupled the size of our digital team, to b=
+oost fundraising and provide training and support to our state parties.
+>=20
+> =20
+>=20
+> =E2=80=9CWe=E2=80=99ve organized a team of experts in messaging, branding,=
+ and polling to review the way we communicate, and we=E2=80=99ve built an in=
+-house Communications team to hold Republicans accountable every single day.=
+
+>=20
+> =20
+>=20
+> =E2=80=9CWe=E2=80=99ve built out a state-of-the-art media monitoring opera=
+tion to track and inform our rapid response operation.
+>=20
+> =20
+>=20
+> =E2=80=9COur teams are providing training, disseminating best practices, s=
+haring technology and design assets, and building community among State Part=
+y staff and the rest of the Democratic family.
+>=20
+> =20
+>=20
+> =E2=80=9CAnd combined with our national, state-of-the-art voter file, whic=
+h we=E2=80=99ve been building out for years, we have a real edge that=E2=80=99=
+s going to help carry us to victory.
+>=20
+> =20
+>=20
+> =E2=80=9CAnd we=E2=80=99ve done it all while paying off more than $20 mill=
+ion in debt after winning the 2012 presidential election and re-electing Bar=
+ack Obama.
+>=20
+> =20
+>=20
+> =E2=80=9CBut of course, our number one advantage comes from our candidates=
+, and the contrast they=E2=80=99re offering Alaska voters and the American p=
+eople.
+>=20
+> =20
+>=20
+> =E2=80=9CI couldn=E2=80=99t be more proud of the two candidates at the top=
+ of our ticket.
+>=20
+> =20
+>=20
+> =E2=80=9C=46rom Day One, Bernie Sanders and Hillary Clinton have been runn=
+ing smart, substantive campaigns focused on the issues that matter.
+>=20
+> =20
+>=20
+> =E2=80=9CWe=E2=80=99ve watched them engage honestly with voters, answer th=
+oughtfully at town halls and debates, and deliver an aspirational message th=
+at speaks to the hopes and dreams of the American people=E2=80=A6
+>=20
+> =20
+>=20
+> =E2=80=9CAnd no matter which one of our candidates becomes the nominee, we=
+ will be united coming out of our convention and headed toward Election Day.=
+
+>=20
+> =20
+>=20
+> =E2=80=9CIn the words of Barack Obama, Hillary Clinton and Bernie Sanders =E2=
+=80=98Trump will not be president.=E2=80=99
+>=20
+> =20
+>=20
+> =E2=80=A6
+>=20
+> =20
+>=20
+> =E2=80=9CAt the DNC we are not going to make ) same mistake his Republican=
+ opponents made.
+>=20
+> =20
+>=20
+> =E2=80=9CWe=E2=80=99re ready for Trump.
+>=20
+> =20
+>=20
+> =E2=80=9CReady to hold him accountable for the damage he=E2=80=99s doing a=
+s a candidate and the damage he=E2=80=99s promising he would do as president=
+.
+>=20
+> =20
+>=20
+> =E2=80=9CJust this week, Trump met with Paul Ryan and Mitch McConnell to s=
+how that despite their nasty, mud-slinging primary, they=E2=80=99re getting r=
+eady to sing =E2=80=98kumbaya=E2=80=99 and give us everything they=E2=80=99v=
+e got.
+>=20
+> =20
+>=20
+> =E2=80=9CAnd what they=E2=80=99ve got is the same old playbook: the same f=
+ailed trickle-down economic policies that preceded the Great Recession under=
+ the last Republican president.
+>=20
+> =20
+>=20
+> =E2=80=9CSo Trump isn=E2=80=99t something new =E2=80=93 he=E2=80=99s just t=
+he old Republican brand, but with a little extra bronzer on =E2=80=93 he=E2=80=
+=99s that much move dangerous.=20
+>=20
+> =20
+>=20
+> =E2=80=9CHe only looks out for himself. He lacks the temperament and judgm=
+ent to be commander in chief. And every aspect of his presidency would harm o=
+ur country and damage our standing in the world.
+>=20
+> =20
+>=20
+> =E2=80=9CEven as a candidate, Trump has damaged America=E2=80=99s relation=
+ships across the globe.
+>=20
+> In the White House, he would make America less safe.
+>=20
+> =20
+>=20
+> =E2=80=9CHe has no foreign policy experience =E2=80=93 but don=E2=80=99t w=
+orry about that - he said he=E2=80=99ll rely on his =E2=80=98good brain,=E2=80=
+=99 instead of listening to experts.
+>=20
+> =20
+>=20
+> =E2=80=9CHe has a decades-long record of denigrating women, which is why s=
+even out of ten women disapprove of his candidacy.
+>=20
+> =20
+>=20
+> =E2=80=9CHe exploits racial anxieties and cultural fears. His rallies have=
+ sparked violence against people of color, protestors, and the media.
+>=20
+> =20
+>=20
+> =E2=80=9CRecent reports found that bullying at schools is on the rise as a=
+ result of his hateful rhetoric. He=E2=80=99s making our communities less sa=
+fe and he=E2=80=99s only a candidate!
+>=20
+> =20
+>=20
+> =E2=80=9CAnd while he tries to paint a picture of his wealth and business s=
+uccess, his record is riddled with examples that he prefers to turn a quick b=
+uck even when it comes at the expense of workers.
+>=20
+> =20
+>=20
+> =E2=80=9CBut much of this the same old playbook gave George W. Bush two te=
+rms, so we have to treat Trump=E2=80=99s candidacy as a real threat because i=
+t is!
+>=20
+> =20
+>=20
+> =E2=80=A6
+>=20
+> =20
+>=20
+> =E2=80=9CI=E2=80=99m inspired here tonight =E2=80=93 I wish everyone could=
+ see how much dedication the Democrats of Alaska have.
+>=20
+> =20
+>=20
+> =E2=80=9CDon=E2=80=99t believe for a second that just because the pundits l=
+ike to paint Alaska red and say it isn=E2=80=99t a battleground state means y=
+ou=E2=80=99re sidelined.
+>=20
+> =20
+>=20
+> =E2=80=9CIn every presidential election since 2000, the percentage of Alas=
+kans casting their vote for the Democrat has increased =E2=80=93 from 27% in=
+ 2000 to more than 40% in 2012.
+>=20
+> =20
+>=20
+> =E2=80=9CThis has already been an exciting election year nationally =E2=80=
+=93 working together, I know we can Dump Trump and, eventually turn Alaska B=
+lue.
+>=20
+> =20
+>=20
+> =E2=80=9CI know we can count on you to keep working hard throughout this e=
+lection.
+>=20
+> =20
+>=20
+> =E2=80=9CSo thank you for all you=E2=80=99ve done to support our party, an=
+d thank you for everything you will do to bring us all the way to victory in=
+ November.
+>=20
+> =20
+>=20
+> =E2=80=9CNow on to victory! Thank you, Alaska Democrats!=E2=80=9D
+>=20
+> =20
+>=20
+> ###
+>=20
+> <20160514_201332-1_resized_1.jpg>
+
+--Apple-Mail-1E935140-D4FE-4D00-8A4A-94E23211794B
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div>You are correct. There were at least 300 liste=
+ning to her by my count.&nbsp;<br><br>Sent from my iPhone</div><div><br>On =
+May 14, 2016, at 9:58 PM, Miranda, Luis &lt;<a href=3D"mailto:MirandaL@dnc.=
+org">MirandaL@dnc.org</a>&gt; wrote:<br><br></div><blockquote type=3D"cite"=
+><div>
+
+
+
+
+<div>Hey Alex, the room was packed during her speech. Not sure if you were =
+there for her remarks. See attached picture and this tweet has the standing=
+ ovation she got at the end.</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div>
+<div><br>
+</div>
+<div><a href=3D"https://twitter.com/LuisMiranda/status/731706788676960260">=
+https://twitter.com/LuisMiranda/status/731706788676960260</a></div>
+<div></div>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div id=3D"composer_signature">
+<div style=3D"font-size:85%; color:#575757">Sent via the Samsung GALAXY S=
+=C2=AE4, an AT&amp;T 4G LTE smartphone</div>
+</div>
+<br>
+<br>
+-------- Original message --------<br>
+From: &quot;Miranda, Luis&quot; &lt;<a href=3D"mailto:MirandaL@dnc.org">Mir=
+andaL@dnc.org</a>&gt; <br>
+Date: 05/14/2016 21:01 (GMT-09:00) <br>
+To: <a href=3D"mailto:alex@alaskadispatch.com">alex@alaskadispatch.com</a> =
+<br>
+Subject: DNC Chair <br>
+<br>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt; font-family:&quo=
+t;Times New Roman&quot;,&quot;serif&quot;">For Immediate Release</span></b>=
+</p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt; font-family:&quo=
+t;Times New Roman&quot;,&quot;serif&quot;">&nbsp;May 14, 2016</span></b></p=
+>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">Contact: DNC Press =E2=80=93 202-86=
+3-8148</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;=
+serif&quot;">Prepared Remarks for Delivery: DNC Chair Rep. Wasserman Schult=
+z at Alaska State Convention</span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt; font-family:&quo=
+t;Times New Roman&quot;,&quot;serif&quot;">&nbsp;</span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt; font-family:&quo=
+t;Times New Roman&quot;,&quot;serif&quot;">ANCHORAGE, ALASKA</span></b><spa=
+n style=3D"font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;=
+serif&quot;"> --
+<a href=3D"">Tonight</a>, DNC Chair Rep. Debbie Wasserman Schultz addressed=
+ the Alaska State Convention. Below you will find excerpts as prepared for =
+delivery:</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAs chair of the DNC, I=E2=
+=80=99ve committed myself to getting to know my fellow Democrats with visit=
+s to all fifty states =E2=80=93 and I=E2=80=99ll be honest, it=E2=80=99s be=
+en a little easier to
+ reach those lower forty-eight.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=A6</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CBut I know I=E2=80=99m not=
+ the only one here
+<a href=3D"">tonight</a> who travelled a great distance to be at the conven=
+tion =E2=80=93 I understand there are even as many as 40 high school studen=
+ts coming all the way from Juneau, and who registered to be delegates =E2=
+=80=93 let=E2=80=99s give them a hand for being the future of
+ our party.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;;;</span><span style=3D"font-=
+family:'Times New Roman',serif; font-size:12pt">=E2=80=9CAnd let me just th=
+ank everyone else here who has travelled from across our country=E2=80=99s =
+largest
+ state to show your support.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CYour enthusiasm, energy, y=
+our commitment, and your dedication to our party will make all the differen=
+ce on Election Day.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=A6</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CSo we=E2=80=99ve taken the=
+ 50-state strategy that Howard Dean pioneered when he was Chair of the Nati=
+onal Party =E2=80=93 and we=E2=80=99ve gone even further =E2=80=93</span></=
+p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CProviding more funding; mo=
+re infrastructure; more rocket fuel to keep the engines of our state partie=
+s firing on all cylinders and holding Republicans in office and
+ in elections accountable.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CThat means that here in Al=
+aska the DNC helps fund direct mail campaigns to reach voters and help get =
+them to the polls on Election Day.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CWe fund salaries for criti=
+cal staff under our state party partnerships. In fact, Kay Brown can tell y=
+ou, she was one of the first State Party Partnership employees we
+ ever hired.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CSince 2009, the DNC has di=
+rectly provided the Alaska Democratic Party more than $625,000 in direct su=
+pport.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CBut it=E2=80=99s not just =
+the funding -- the DNC has been out-pacing the GOP in how we offer direct s=
+upport to our state parties with training, and bench-building; we share
+ our deep research and communications capabilities in Alaska and across the=
+ country.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CSince 2013, we have quintu=
+pled the size of our digital team, to boost fundraising and provide trainin=
+g and support to our state parties.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CWe=E2=80=99ve organized a =
+team of experts in messaging, branding, and polling to review the way we co=
+mmunicate, and we=E2=80=99ve built an in-house Communications team to hold =
+Republicans
+ accountable every single day.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CWe=E2=80=99ve built out a =
+state-of-the-art media monitoring operation to track and inform our rapid r=
+esponse operation.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9COur teams are providing tr=
+aining, disseminating best practices, sharing technology and design assets,=
+ and building community among State Party staff and the rest of
+ the Democratic family.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAnd combined with our nati=
+onal, state-of-the-art voter file, which we=E2=80=99ve been building out fo=
+r years, we have a real edge that=E2=80=99s going to help carry us to victo=
+ry.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAnd we=E2=80=99ve done it =
+all while paying off more than $20 million in debt after winning the 2012 p=
+residential election and re-electing Barack Obama.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CBut of course, our number =
+one advantage comes from our candidates, and the contrast they=E2=80=99re o=
+ffering Alaska voters and the American people.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CI couldn=E2=80=99t be more=
+ proud of the two candidates at the top of our ticket.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CFrom Day One, Bernie Sande=
+rs and Hillary Clinton have been running smart, substantive campaigns focus=
+ed on the issues that matter.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CWe=E2=80=99ve watched them=
+ engage honestly with voters, answer thoughtfully at town halls and debates=
+, and deliver an aspirational message that speaks to the hopes and dreams
+ of the American people=E2=80=A6</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAnd no matter which one of=
+ our candidates becomes the nominee, we will be united coming out of our co=
+nvention and headed toward Election Day.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CIn the words of Barack Oba=
+ma, Hillary Clinton and Bernie Sanders =E2=80=98Trump will not be president=
+.=E2=80=99</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=A6</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAt the DNC we are not goin=
+g to make ) same mistake his Republican opponents made.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CWe=E2=80=99re ready for Tr=
+ump.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CReady to hold him accounta=
+ble for the damage he=E2=80=99s doing as a candidate and the damage he=E2=
+=80=99s promising he would do as president.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CJust this week, Trump met =
+with Paul Ryan and Mitch McConnell to show that despite their nasty, mud-sl=
+inging primary, they=E2=80=99re getting ready to sing =E2=80=98kumbaya=E2=
+=80=99 and give
+ us everything they=E2=80=99ve got.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAnd what they=E2=80=99ve g=
+ot is the same old playbook: the same failed trickle-down economic policies=
+ that preceded the Great Recession under the last Republican president.</sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CSo Trump isn=E2=80=99t som=
+ething new =E2=80=93 he=E2=80=99s just the old Republican brand, but with a=
+ little extra bronzer on =E2=80=93 he=E2=80=99s that much move dangerous.&n=
+bsp;
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CHe only looks out for hims=
+elf. He lacks the temperament and judgment to be commander in chief. And ev=
+ery aspect of his presidency would harm our country and damage our
+ standing in the world.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CEven as a candidate, Trump=
+ has damaged America=E2=80=99s relationships across the globe.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">In the White House, he would make A=
+merica less safe.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CHe has no foreign policy e=
+xperience =E2=80=93 but don=E2=80=99t worry about that - he said he=E2=80=
+=99ll rely on his =E2=80=98good brain,=E2=80=99 instead of listening to exp=
+erts.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CHe has a decades-long reco=
+rd of denigrating women, which is why seven out of ten women disapprove of =
+his candidacy.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CHe exploits racial anxieti=
+es and cultural fears. His rallies have sparked violence against people of =
+color, protestors, and the media.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CRecent reports found that =
+bullying at schools is on the rise as a result of his hateful rhetoric. He=
+=E2=80=99s making our communities less safe and he=E2=80=99s only a candida=
+te!</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CAnd while he tries to pain=
+t a picture of his wealth and business success, his record is riddled with =
+examples that he prefers to turn a quick buck even when it comes
+ at the expense of workers. </span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CBut much of this the same =
+old playbook gave George W. Bush two terms, so we have to treat Trump=E2=80=
+=99s candidacy as a real threat because it is!</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=A6</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CI=E2=80=99m inspired here =
+tonight =E2=80=93 I wish everyone could see how much dedication the Democra=
+ts of Alaska have.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CDon=E2=80=99t believe for =
+a second that just because the pundits like to paint Alaska red and say it =
+isn=E2=80=99t a battleground state means you=E2=80=99re sidelined.
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CIn every presidential elec=
+tion since 2000, the percentage of Alaskans casting their vote for the Demo=
+crat has increased =E2=80=93 from 27% in 2000 to more than 40% in 2012.</sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CThis has already been an e=
+xciting election year nationally =E2=80=93 working together, I know we can =
+Dump Trump and, eventually turn Alaska Blue.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CI know we can count on you=
+ to keep working hard throughout this election.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CSo thank you for all you=
+=E2=80=99ve done to support our party, and thank you for everything you wil=
+l do to bring us all the way to victory in November.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">=E2=80=9CNow on to victory! Thank y=
+ou, Alaska Democrats!=E2=80=9D</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt; font-family:&quot;T=
+imes New Roman&quot;,&quot;serif&quot;">&nbsp;</span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:12.0pt; font-family:&quot;Times New Roman&quot;,&quot;ser=
+if&quot;">###</span></p>
+</div>
+
+
+</div></blockquote><blockquote type=3D"cite"><div>&lt;20160514_201332-1_res=
+ized_1.jpg&gt;</div></blockquote></body></html>=
+
+--Apple-Mail-1E935140-D4FE-4D00-8A4A-94E23211794B--

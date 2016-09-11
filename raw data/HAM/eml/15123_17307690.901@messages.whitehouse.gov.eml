@@ -1,0 +1,956 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 24 May
+ 2016 10:57:11 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 24 May 2016
+ 10:57:10 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 931880725
+ for allenz@dnc.org; Tue, 24 May 2016 09:57:10 -0500
+X-Note-AR-ScanTimeLocal: 5/24/2016 9:57:10 AM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Virus-Scan: V-
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.41
+X-Note-Reverse-DNS: mail-wm0-f41.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-Note: Headers Injected
+Received: from mail-wm0-f41.google.com ([74.125.82.41] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140382653
+ for allenz@dnc.org; Tue, 24 May 2016 09:57:09 -0500
+Received: by mail-wm0-f41.google.com with SMTP id a136so78704954wme.0
+        for <allenz@dnc.org>; Tue, 24 May 2016 07:57:09 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=SudQon1OdB4iRMXJOY2M8tJppmXvJIHIkegq2N5UArM=;
+        b=X0oVcPFa4lBEw8xR4NXvohsBO7podYE0pc/8Q0UFDHAMJsWhAUvu8zifsrl2AfGiCb
+         oyz6nXM/v5dU6MU5FiG5fJTN9N5sBtW9tYQfBh4KDplxEb74bqk8KOwLcTwhQvIwCJD3
+         g7GzS1tjB8xVrgsOmDYjc+B2pTfiSieJxzqp38QL6n9LHMsPalxk6jWrnUcUF9ExySRM
+         YVUDG23EPa8rGTpFVEYmabfir8Qv1p2C5LIdSM+bPD/t39JnZQnIk/62WY6JirfkLued
+         bSmOwS16VKFMDvPVTLLBZYeLRjQdD+54vbbZ6npxHGKCAYMNX0pSao5qS8b/865H54uV
+         h4kw==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.60 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-Gm-Message-State: ALyK8tKn+tUHSUIVHIrYDnQP2GhxoLUrsYXnVIQQhqHCp/0v7QBxJEZ5Tud5NJGg7CMJfc5qMd81w4OtnxC4GRD0YcZG2I0=
+X-Received: by 10.194.89.33 with SMTP id bl1mr4743961wjb.43.1464101828590;
+        Tue, 24 May 2016 07:57:08 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp699688wme;        Tue, 24 May
+ 2016 07:57:07 -0700 (PDT)
+X-Received: by 10.107.6.36 with SMTP id 36mr10586066iog.77.1464101827174;
+        Tue, 24 May 2016 07:57:07 -0700 (PDT)
+Return-Path: <info99@service.govdelivery.com>
+Received: from mailer158060.service.govdelivery.com
+ (mailer158060.service.govdelivery.com. [209.134.158.60])        by
+ mx.google.com with ESMTP id f199si4786966ioe.128.2016.05.24.07.57.06
+        for <dncpress@gmail.com>;        Tue, 24 May 2016 07:57:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.60 as permitted sender) client-ip=209.134.158.60;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.60 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-VirtualServer: VSG003, mailer158060.service.govdelivery.com, 172.24.0.60
+X-VirtualServerGroup: VSG003
+X-MailingID: 17307690::20160524.59402801::1001::MDB-PRD-BUL-20160524.59402801::dncpress@gmail.com::901_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_E88_45B8_391EC3C0.13538E9E"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3KtprhmDByLUG3MKzsLyqEHK2f56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: info99@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17307690.901@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK4168WJJ29RJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?FACT_SHEET:_World_Humanitarian_Su?= =?US-ASCII?Q?mmit_-_U.S._Government_Priorities?=
+Date: Tue, 24 May 2016 09:57:05 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_E88_45B8_391EC3C0.13538E9E
+Content-Type: text/plain; charset="Cp1252"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+THE WHITE HOUSE
+
+Office of the Press Secretary
+
+FOR IMMEDIATE RELEASE
+
+May 24, 2016
+
+*
+
+=A0
+
+*
+
+*FACT SHEET: World Humanitarian Summit - U.S. Government Priorities
+
+*
+
+=A0=20
+
+The World Humanitarian Summit is a high-level event convened to reinvigor=
+ate international commitments to humanitarian principles and strengthen t=
+he international community=92s response to crises caused by conflicts and=
+ natural disasters.=A0 Conflict-related crises and natural disasters affe=
+ct approximately 125 million people on an annual basis =96 a combined pop=
+ulation equivalent to the world=92s 12th largest nation.=A0 Conflict and =
+human rights abuses have forced approximately 60 million persons worldwid=
+e to flee their homes.=A0 Natural disasters have displaced an average of =
+26 million persons annually in recent years.=A0 These humanitarian crises=
+ have caused a staggering loss of life and destructive economic and socia=
+l impacts that have reversed decades of hard-earned development progress =
+in some locations.
+
+=A0
+
+The World Humanitarian Summit occurs at an historic moment when the scale=
+ of displaced populations in need of humanitarian assistance and protecti=
+on has reached levels unseen since World War II.=A0 United Nations Secret=
+ary General Ban Ki-moon convened the first World Humanitarian Summit to b=
+ring together more than 5,000 government, private sector, and civil socie=
+ty representatives in unity to draw attention to the issues of today.=A0 =
+Gayle Smith, Administrator of the U.S. Agency for International Developme=
+nt (USAID) led the U.S. delegation to the summit in Istanbul, which inclu=
+ded representatives from the White House, Department of State, including =
+the United States Mission to the United Nations, the Department of Defens=
+e, and USAID.
+
+=A0
+
+As the world=92s single largest humanitarian assistance donor with contri=
+butions of nearly $26 billion in the past 5 fiscal years, the United Stat=
+es views the World Humanitarian Summit as an important opportunity to pro=
+mote a stronger and more accountable international system capable of addr=
+essing today=92s unprecedented needs.=A0 The Summit is also an important =
+opportunity to emphasize that support and financing from a broad set of t=
+raditional donors as well as from new sources are essential to address em=
+ergencies effectively.=A0 President Obama=92s Leaders=92 Summit on Refuge=
+es in September 2016 will be a timely complement to the World Humanitaria=
+n Summit and will further efforts to address the needs of refugees, host =
+communities and other affected populations.
+
+=A0
+
+The United States=92 primary objectives for the World Humanitarian Summit=
+ are to:
+
+=B7=A0=A0=A0=A0=A0=A0=A0=A0 Reduce the impact of conflict on civilians, w=
+ith special attention to the impact on women and girls, and re-affirm our=
+ country=92s longstanding commitment to international humanitarian law;
+
+=B7=A0=A0=A0=A0=A0=A0=A0=A0 Strengthen the international humanitarian sys=
+tem, including how it is resourced, and its effectiveness in addressing n=
+eeds;
+
+=B7=A0=A0=A0=A0=A0=A0=A0=A0 Improve coherence between humanitarian and de=
+velopment assistance to better address recurring and protracted crises.
+
+=A0
+
+=A0
+
+*United States=92 Response to Humanitarian Emergencies
+
+*
+
+The United States is committed to helping people around the world during =
+this time of unprecedented need.=A0 In 2015, the U.S. government provided=
+ more than $6 billion in humanitarian assistance to more than 60 new and =
+protracted emergencies worldwide ranging from earthquakes, hurricanes, an=
+d floods to health epidemics, conflicts, and refugee influxes, with the v=
+ast majority of our assistance meeting needs in long running conflicts.=A0=
+ When the scope of a disaster overwhelms the capacity of an affected coun=
+try to respond, the United States is able to deploy a Disaster Assistance=
+ Response Team (DART) overseas to conduct disaster assessments, determine=
+ urgent needs, and coordinate response activities with affected governmen=
+ts and implementing partners.=A0 The U.S. government had a record five DA=
+RTs deployed simultaneously during 2015 to support large-scale relief eff=
+orts in West Africa[1] [ #_ftn1 ], South Sudan, Syria, Iraq, and Nepal.=A0=
+=A0 In addition, the U.S. government has more than 120 refugee coordinato=
+rs and emergency humanitarian response specialists stationed around the w=
+orld to advise and coordinate the U.S. government=92s humanitarian respon=
+se.=A0=20
+
+=A0
+
+*Reducing the Effect of Conflict on Civilians
+
+*
+
+Upholding humanity is at the core of humanitarian action and the United N=
+ations Charter reaffirms faith in the dignity and worth of the human pers=
+on.=A0 Protecting the vulnerable from harm and preserving their dignity, =
+in particular by upholding international law and seeking accountability f=
+or violations, should be at the very top of the international community=92=
+s agenda. The United States joins with 47 other countries in presenting a=
+ statement [ http://www.state.gov/r/pa/prs/ps/2016/05/257660.htm ] to rei=
+nforce commitment to the protection of civilians in conflict situations b=
+y honoring the full spirit and letter of international law and to reaffir=
+m and strengthen international respect for the core humanitarian principl=
+es of humanity, neutrality, impartiality, and independence that should se=
+rve as the foundation for all humanitarian response.=A0 *_
+
+_*
+
+=A0
+
+The international community should have more systematic approaches to add=
+ress the scope and nature of constraints placed on agencies delivering hu=
+manitarian relief in order to identify systematic access denials, devise =
+appropriate policy measures through multilateral fora, and take other app=
+ropriate action.=A0 We intend to work with other Member States, the UN, a=
+nd humanitarian organizations in the coming months to identify concrete w=
+ays to address more systematically challenges to humanitarian access to p=
+opulations in need.=A0=20
+
+=A0
+
+The United States believes that gender equality and the empowerment of wo=
+men and girls, which includes addressing gender-based violence (GBV), is =
+a critical priority and will continue to advance the Call to Action for w=
+omen and girls in emergencies, which is a global effort to fundamentally =
+change humanitarian response to GBV. This includes a pledge of an additio=
+nal $12.5 million in 2016 in support of Safe from the Start, a joint Depa=
+rtment of State-USAID initiative to better protect women and girls in cri=
+sis, bringing the U.S. total contribution to more than $50 million since =
+2013.
+
+=A0
+
+*Strengthening International Humanitarian Assistance Operations
+
+*
+
+The United States is working to strengthen how the international humanita=
+rian system operates, including how it is resourced.=A0 In response to hu=
+man suffering caused by conflict and disasters, many emergency relief age=
+ncies do outstanding work that saves countless lives.=A0 Despite increase=
+d global funding for emergency programs and an impressive expansion of se=
+rvices in recent years the international community has been unable to kee=
+p pace with the increased emergency needs worldwide.
+
+=A0
+
+At the Summit, the United States emphasized the importance of ensuring th=
+at emergency assistance is provided effectively and efficiently to meet t=
+he needs of crisis-affected people.=A0 The U.S. government calls on human=
+itarian organizations to work together better to assess needs among affec=
+ted populations, identify gaps in existing relief programs, and formulate=
+ collective response strategies that identify clear priorities according =
+to urgency of need and inclusive of all affected populations, including r=
+efugees.=A0 As a result of political commitments at the Summit, humanitar=
+ian agencies should be able and willing to strengthen their operational c=
+oordination to minimize service gaps and avoid duplication of programs.=A0=
+ UN humanitarian agencies should take steps to ensure that leadership of =
+humanitarian operations is effective and accountable.
+
+=A0
+
+The United States commits to providing flexible funding to enable humanit=
+arian agencies to more easily adjust emergency programs to address shifti=
+ng needs and longer time horizons where humanitarian agencies demonstrate=
+ increased accountability, efficiency, and effectiveness.=A0 The United S=
+tates is also committed to continuing its legacy of building local capaci=
+ty so that humanitarian response can be as local as possible and as inter=
+national as needed. The United States is joining with other donor governm=
+ents and humanitarian agencies in what is being called a =93Grand Bargain=
+=94 that will strengthen how humanitarian assistance efforts are designed=
+, funded, implemented, and evaluated so as to maximize their impact and e=
+fficiency and increase their accountability to affected populations.
+
+=A0
+
+*Fostering Humanitarian and Development Coherence
+
+*
+
+The United States is redoubling efforts to strengthen coherence between o=
+ur humanitarian and development assistance efforts.=A0 The destruction ca=
+used by conflicts and natural disasters has eroded and in some cases reve=
+rsed the hard-earned progress many communities had made toward long-term,=
+ sustainable development.=A0 The frequency of extreme weather events is i=
+ncreasing as a result of climate change, and too often refugees and inter=
+nally displaced persons become trapped in protracted displacement and dep=
+endency for years or decades.=A0 Their needs are closely related to the d=
+evelopment needs of communities that host them.=A0 The international comm=
+unity responds to emergencies to save lives, but it must also do a better=
+ job of ensuring that the people saved will have an opportunity to enjoy =
+a productive future.
+
+=A0
+
+To help bridge this gap, the U.S. government is providing leadership and =
+technical assistance to support global efforts to prioritize and strength=
+en education in emergencies and protracted crises, and will provide a $20=
+ million contribution to =93Education Cannot Wait: a Fund for Education i=
+n Emergencies=94 for one year, and looks forward to learning from its pro=
+gress. The UNICEF-managed Fund will help transform the global education s=
+ector and bridge the humanitarian and development divide through a more c=
+ollaborative, agile, and rapid response to education in emergencies. Ulti=
+mately, the Fund will increase safe and quality education so that all chi=
+ldren have the opportunity to learn even amid protracted emergency situat=
+ions.
+
+=A0
+
+The U.S. government also supports greater World Bank engagement in protra=
+cted and recurrent crises and its intent to establish a Global Crisis Res=
+ponse Platform.=A0 Initially, the Platform should provide support to deve=
+loping countries, irrespective of region or income level, that are hostin=
+g large numbers of refugees on a protracted basis, to enable these countr=
+ies to invest more in livelihoods and education opportunities for affecte=
+d populations, and alleviate strains on national infrastructure and socia=
+l services.=20
+
+=A0
+
+Additionally, the United States will initiate a Crisis Review Mechanism w=
+ithin the U.S. government that will review a crisis to determine whether =
+and how our relief programming should pivot to a combined humanitarian-de=
+velopment approach.=A0 And we will continue our work of building resilien=
+ce in fragile communities so they can more effectively prevent or withsta=
+nd shocks that trigger large-scale emergencies.=A0 The U.S. government is=
+ committed to support responsible national governments in reducing their =
+risks of disaster and strengthen their capacity to lead their own respons=
+e efforts when disasters strike, and will continue to build and support l=
+ocal capacity for disaster risk reduction and humanitarian response.=20
+
+=A0
+
+###
+
+________________________________________________________________________
+
+[1] [ #_ftnref1 ] Funding figures do not include supplemental resources a=
+llocated by Congress for the U.S. government response to Ebola in West Af=
+rica.
+=0A
+------=_NextPart_E88_45B8_391EC3C0.13538E9E
+Content-Type: text/html; charset="Cp1252"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252"><title>    FACT SHEET: World Humanitarian Summit - U.S. Government Pri=
+orities
+</title>
+
+
+</head>
+<body style=3D"">
+
+
+
+ =20
+
+
+
+ =20
+  <body>
+
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-priority:99;
+	mso-style-link:"Footnote Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+span.MsoFootnoteReference
+	{mso-style-priority:99;
+	vertical-align:super;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParag=
+raphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListPar=
+agraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagra=
+phCxSpLast
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.FootnoteTextChar
+	{mso-style-name:"Footnote Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Footnote Text";}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri",sans-serif;}
+p.wordsection1, li.wordsection1, div.wordsection1
+	{mso-style-name:wordsection1;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.EmailStyle24
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle25
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle26
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+/* Page Definitions */
+@page
+	{mso-endnote-separator:url("cid:header.htm\@01D1B5AA.9D4D1F40") es;
+	mso-endnote-continuation-separator:url("cid:header.htm\@01D1B5AA.9D4D1F40"=
+) ecs;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:925919025;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1101549674 67698689 67698691 67698693 67698689 67698=
+691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style>
+<!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+
+
+<div class=3D"WordSection1">
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center;background:white">
+<span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif;backg=
+round:white">THE WHITE HOUSE</span><span lang=3D"EN" style=3D"font-family:&=
+quot;Book Antiqua&quot;,serif"><p></p></span></p>
+<div style=3D"border:none;border-bottom:solid windowtext 1.0pt;padding:0in =
+0in 1.0pt 0in">
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center;background:white">
+<span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif;backg=
+round:white">Office of the Press Secretary<p></p></span></p>
+</div>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt;backgro=
+und:white">
+<span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif;backg=
+round:white">FOR IMMEDIATE RELEASE<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt;backgro=
+und:white">
+<span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif;backg=
+round:white">May 24, 2016<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><p>=
+&nbsp;</p></b></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">FACT SHEET: W=
+orld Humanitarian Summit - U.S. Government Priorities<p></p></span></b></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;
+<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The World Humanitarian=
+ Summit is a high-level event convened to reinvigorate international commit=
+ments to humanitarian principles and strengthen
+ the international community=92s response to crises caused by conflicts and=
+ natural disasters.&nbsp; Conflict-related crises and natural disasters aff=
+ect approximately 125 million people on an annual basis =96 a combined popu=
+lation equivalent to the world=92s 12<sup>th</sup>
+ largest nation.&nbsp; Conflict and human rights abuses have forced approxi=
+mately 60 million persons worldwide to flee their homes.&nbsp; Natural disa=
+sters have displaced an average of 26 million persons annually in recent ye=
+ars.&nbsp; These humanitarian crises have caused
+ a staggering loss of life and destructive economic and social impacts that=
+ have reversed decades of hard-earned development progress in some location=
+s.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The World Humanitarian=
+ Summit occurs at an historic moment when the scale of displaced population=
+s in need of humanitarian assistance and protection
+ has reached levels unseen since World War II.&nbsp; United Nations Secreta=
+ry General Ban Ki-moon convened the first World Humanitarian Summit to brin=
+g together more than 5,000 government, private sector, and civil society re=
+presentatives in unity to draw attention
+ to the issues of today.&nbsp; Gayle Smith, Administrator of the U.S. Agenc=
+y for International Development (USAID) led the U.S. delegation to the summ=
+it in Istanbul, which included representatives from the White House, Depart=
+ment of State, including the United States
+ Mission to the United Nations, the Department of Defense, and USAID.<p></p=
+></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">As the world=92s singl=
+e largest humanitarian assistance donor with contributions of nearly $26 bi=
+llion in the past 5 fiscal years, the United States
+ views the World Humanitarian Summit as an important opportunity to promote=
+ a stronger and more accountable international system capable of addressing=
+ today=92s unprecedented needs.&nbsp; The Summit is also an important oppor=
+tunity to emphasize that support and financing
+ from a broad set of traditional donors as well as from new sources are ess=
+ential to address emergencies effectively.&nbsp; President Obama=92s Leader=
+s=92 Summit on Refugees in September 2016 will be a timely complement to th=
+e World Humanitarian Summit and will further
+ efforts to address the needs of refugees, host communities and other affec=
+ted populations.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States=92 p=
+rimary objectives for the World Humanitarian Summit are to:<p></p></span></=
+p>
+<p class=3D"wordsection1CxSpMiddle" style=3D"mso-margin-top-alt:0in;margin-=
+right:0in;margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l0 level1 lfo2">
+<span style=3D"font-family:Symbol"><span style=3D"mso-list:Ignore">=B7<span=
+ style=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style=3D"font-family:&quot;Book Antiqua&quot;,se=
+rif">Reduce the impact of conflict on civilians, with special attention to =
+the impact on women and girls, and re-affirm our country=92s longstanding c=
+ommitment to international humanitarian
+ law;<p></p></span></p>
+<p class=3D"wordsection1CxSpMiddle" style=3D"mso-margin-top-alt:0in;margin-=
+right:0in;margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l0 level1 lfo2">
+<span style=3D"font-family:Symbol"><span style=3D"mso-list:Ignore">=B7<span=
+ style=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style=3D"font-family:&quot;Book Antiqua&quot;,se=
+rif">Strengthen the international humanitarian system, including how it is =
+resourced, and its effectiveness in addressing needs;<p></p></span></p>
+<p class=3D"wordsection1CxSpMiddle" style=3D"mso-margin-top-alt:0in;margin-=
+right:0in;margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l0 level1 lfo2">
+<span style=3D"font-family:Symbol"><span style=3D"mso-list:Ignore">=B7<span=
+ style=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span style=3D"font-family:&quot;Book Antiqua&quot;,se=
+rif">Improve coherence between humanitarian and development assistance to b=
+etter address recurring and protracted crises.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">United States=92 Re=
+sponse to Humanitarian Emergencies<p></p></span></b></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States is c=
+ommitted to helping people around the world during this time of unprecedent=
+ed need.&nbsp; In 2015, the U.S. government provided
+ more than $6 billion in humanitarian assistance to more than 60 new and pr=
+otracted emergencies worldwide ranging from earthquakes, hurricanes, and fl=
+oods to health epidemics, conflicts, and refugee influxes, with the vast ma=
+jority of our assistance meeting
+ needs in long running conflicts.&nbsp; When the scope of a disaster overwh=
+elms the capacity of an affected country to respond, the United States is a=
+ble to deploy a Disaster Assistance Response Team (DART) overseas to conduc=
+t disaster assessments, determine urgent
+ needs, and coordinate response activities with affected governments and im=
+plementing partners.&nbsp; The U.S. government had a record five DARTs depl=
+oyed simultaneously during 2015 to support large-scale relief efforts in We=
+st Africa<a style=3D"mso-footnote-id:ftn1" href=3D"#_ftn1" name=3D"_ftnref1=
+" title=3D""><span class=3D"MsoFootnoteReference">[1]</span></a>,
+ South Sudan, Syria, Iraq, and Nepal.&nbsp;&nbsp; In addition, the U.S. gov=
+ernment has more than 120 refugee coordinators and emergency humanitarian r=
+esponse specialists stationed around the world to advise and coordinate the=
+ U.S. government=92s humanitarian response.&nbsp;
+<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;<p></p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">Reducing the Effect=
+ of Conflict on Civilians<p></p></span></b></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Upholding humanity is =
+at the core of humanitarian action and the United Nations Charter reaffirms=
+ faith in the dignity and worth of the human person.&nbsp;
+ Protecting the vulnerable from harm and preserving their dignity, in parti=
+cular by upholding international law and seeking accountability for violati=
+ons, should be at the very top of the international community=92s agenda. T=
+he United States joins with
+<a href=3D"http://www.state.gov/r/pa/prs/ps/2016/05/257660.htm"><span style=
+=3D"color:windowtext">47 other countries in presenting a statement</span></=
+a> to reinforce commitment to the protection of civilians in conflict situa=
+tions by honoring the full spirit and
+ letter of international law and to reaffirm and strengthen international r=
+espect for the core humanitarian principles of humanity, neutrality, impart=
+iality, and independence that should serve as the foundation for all humani=
+tarian response.&nbsp;
+<b><u><p></p></u></b></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The international comm=
+unity should have more systematic approaches to address the scope and natur=
+e of constraints placed on agencies delivering humanitarian
+ relief in order to identify systematic access denials, devise appropriate =
+policy measures through multilateral fora, and take other appropriate actio=
+n.&nbsp; We intend to work with other Member States, the UN, and humanitari=
+an organizations in the coming months
+ to identify concrete ways to address more systematically challenges to hum=
+anitarian access to populations in need.&nbsp;
+<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States beli=
+eves that gender equality and the empowerment of women and girls, which inc=
+ludes addressing gender-based violence (GBV), is
+ a critical priority and will continue to advance the Call to Action for wo=
+men and girls in emergencies, which is a global effort to fundamentally cha=
+nge humanitarian response to GBV. This includes a pledge of an additional $=
+12.5 million in 2016 in support
+ of Safe from the Start, a joint Department of State-USAID initiative to be=
+tter protect women and girls in crisis, bringing the U.S. total contributio=
+n to more than $50 million since 2013.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">Strengthening Inter=
+national Humanitarian Assistance Operations<p></p></span></b></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States is w=
+orking to strengthen how the international humanitarian system operates, in=
+cluding how it is resourced.&nbsp; In response to human
+ suffering caused by conflict and disasters, many emergency relief agencies=
+ do outstanding work that saves countless lives.&nbsp; Despite increased gl=
+obal funding for emergency programs and an impressive expansion of services=
+ in recent years the international community
+ has been unable to keep pace with the increased emergency needs worldwide.=
+<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">At the Summit, the Uni=
+ted States emphasized the importance of ensuring that emergency assistance =
+is provided effectively and efficiently to meet
+ the needs of crisis-affected people.&nbsp; The U.S. government calls on hu=
+manitarian organizations to work together better to assess needs among affe=
+cted populations, identify gaps in existing relief programs, and formulate =
+collective response strategies that identify
+ clear priorities according to urgency of need and inclusive of all affecte=
+d populations, including refugees.&nbsp; As a result of political commitmen=
+ts at the Summit, humanitarian agencies should be able and willing to stren=
+gthen their operational coordination
+ to minimize service gaps and avoid duplication of programs.&nbsp; UN human=
+itarian agencies should take steps to ensure that leadership of humanitaria=
+n operations is effective and accountable.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States comm=
+its to providing flexible funding to enable humanitarian agencies to more e=
+asily adjust emergency programs to address shifting
+ needs and longer time horizons where humanitarian agencies demonstrate inc=
+reased accountability, efficiency, and effectiveness.&nbsp; The United Stat=
+es is also committed to continuing its legacy of building local capacity so=
+ that humanitarian response can be as
+ local as possible and as international as needed. The United States is joi=
+ning with other donor governments and humanitarian agencies in what is bein=
+g called a =93Grand Bargain=94 that will strengthen how humanitarian assist=
+ance efforts are designed, funded, implemented,
+ and evaluated so as to maximize their impact and efficiency and increase t=
+heir accountability to affected populations.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">Fostering Humanitar=
+ian and Development Coherence<p></p></span></b></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The United States is r=
+edoubling efforts to strengthen coherence between our humanitarian and deve=
+lopment assistance efforts.&nbsp; The destruction caused
+ by conflicts and natural disasters has eroded and in some cases reversed t=
+he hard-earned progress many communities had made toward long-term, sustain=
+able development.&nbsp; The frequency of extreme weather events is increasi=
+ng as a result of climate change, and
+ too often refugees and internally displaced persons become trapped in prot=
+racted displacement and dependency for years or decades.&nbsp; Their needs =
+are closely related to the development needs of communities that host them.=
+&nbsp; The international community responds
+ to emergencies to save lives, but it must also do a better job of ensuring=
+ that the people saved will have an opportunity to enjoy a productive futur=
+e.<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">To help bridge this ga=
+p, the U.S. government is providing leadership and technical assistance to =
+support global efforts to prioritize and strengthen
+ education in emergencies and protracted crises, and will provide a $20 mil=
+lion contribution to =93Education Cannot Wait: a Fund for Education in Emer=
+gencies=94 for one year, and looks forward to learning from its progress. T=
+he UNICEF-managed Fund will help transform
+ the global education sector and bridge the humanitarian and development di=
+vide through a more collaborative, agile, and rapid response to education i=
+n emergencies. Ultimately, the Fund will increase safe and quality educatio=
+n so that all children have the
+ opportunity to learn even amid protracted emergency situations.<p></p></sp=
+an></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">The U.S. government al=
+so supports greater World Bank engagement in protracted and recurrent crise=
+s and its intent to establish a Global Crisis Response
+ Platform.&nbsp; Initially, the Platform should provide support to developi=
+ng countries, irrespective of region or income level, that are hosting larg=
+e numbers of refugees on a protracted basis, to enable these countries to i=
+nvest more in livelihoods and education
+ opportunities for affected populations, and alleviate strains on national =
+infrastructure and social services.
+<p></p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Additionally, the Unit=
+ed States will initiate a Crisis Review Mechanism within the U.S. governmen=
+t that will review a crisis to determine whether
+ and how our relief programming should pivot to a combined humanitarian-dev=
+elopment approach.&nbsp; And we will continue our work of building resilien=
+ce in fragile communities so they can more effectively prevent or withstand=
+ shocks that trigger large-scale emergencies.&nbsp;
+ The U.S. government is committed to support responsible national governmen=
+ts in reducing their risks of disaster and strengthen their capacity to lea=
+d their own response efforts when disasters strike, and will continue to bu=
+ild and support local capacity for
+ disaster risk reduction and humanitarian response. <p></p></span></p>
+<div>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><p>&nbsp;</p></span></=
+p>
+</div>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">###<span style=
+=3D"color:#1F497D"><p></p></span></span></p>
+</div>
+<div style=3D"mso-element:footnote-list">
+<br clear=3D"all">
+<hr align=3D"left" size=3D"1" width=3D"33%">
+<div style=3D"mso-element:footnote" id=3D"ftn1">
+<p class=3D"MsoFootnoteText"><a style=3D"mso-footnote-id:ftn1" href=3D"#_ft=
+nref1" name=3D"_ftn1" title=3D""><span class=3D"MsoFootnoteReference">[1]</=
+span></a> Funding figures do not include supplemental resources allocated b=
+y Congress for the U.S. government response
+ to Ebola in West Africa.</p>
+</div>
+</div>
+
+</body>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_E88_45B8_391EC3C0.13538E9E--

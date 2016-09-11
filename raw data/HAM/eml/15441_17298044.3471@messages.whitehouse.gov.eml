@@ -1,0 +1,1077 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 25 Apr
+ 2016 14:41:52 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 25 Apr 2016
+ 14:41:44 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 878766772
+ for allenz@dnc.org; Mon, 25 Apr 2016 13:41:48 -0500
+X-Note-AR-ScanTimeLocal: 4/25/2016 1:41:48 PM
+X-Policy: dnc.org
+X-Note-AR-Scan: None - PIPE
+Received: by inbound.appriver.com (CommuniGate Pro PIPE 6.1.7)  with PIPE id
+ 134807958; Mon, 25 Apr 2016 13:41:48 -0500
+Received: from mail-wm0-f53.google.com ([74.125.82.53] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 134807951
+ for allenz@dnc.org; Mon, 25 Apr 2016 13:41:46 -0500
+Received: by mail-wm0-f53.google.com with SMTP id v188so109232889wme.1
+        for <allenz@dnc.org>; Mon, 25 Apr 2016 11:41:45 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=PD3pytdy5wpsKvdnTIWGANTGeP6K8AHQd9L7jg3B2mY=;
+        b=CJ67fgxd49Fo0nAYpmJh+t/39Wn/aO3mR/QkTWbkDS4av7YvMRlL5Bd9kS+wwAErfh
+         4L/wXp1JFe4CALHouy30keGpUZXjzCXcw52T7E9p36cliZzEKULC+ZpcGeWOD0t/bW9u
+         znr1m441rYI5qbNToEBJD0Gf4ncg/+oFe1+KaH8ZmV6HdyW4V1AcOpuUm71H3yqXz9xt
+         fAjo3BGmyFRair3/ACmeH1+ZaHXzGFLfeN8y2di7JB3NjNKNltF48Q0CT98vwl+31bGj
+         S6yje1ZMYubE+eZ6BX5tPlHPoPWP4DFCluFVOLcOzPyfjRWTJhNcRQjH7ca6s4w5yCxK
+         ucHA==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.58 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-Gm-Message-State: AOPr4FUOePkybyJeMOrewSkarwVGjZlXbSk3sAoBw96CiU4+6hg/ToJQHIJAcrlZdqoFle1/Ko1435jXPBiJiTq/F/iAzaM=
+X-Received: by 10.28.47.206 with SMTP id v197mr14029374wmv.87.1461609704064;
+        Mon, 25 Apr 2016 11:41:44 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp1152495wme;        Mon, 25 Apr
+ 2016 11:41:42 -0700 (PDT)
+X-Received: by 10.107.147.7 with SMTP id v7mr7895174iod.3.1461609702094;
+        Mon, 25 Apr 2016 11:41:42 -0700 (PDT)
+Return-Path: <info99@service.govdelivery.com>
+Received: from mailer151058.service.govdelivery.com
+ (mailer151058.service.govdelivery.com. [209.134.151.58])        by
+ mx.google.com with ESMTP id l7si19102187igm.98.2016.04.25.11.41.35        for
+ <dncpress@gmail.com>;        Mon, 25 Apr 2016 11:41:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.58 as permitted sender) client-ip=209.134.151.58;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.58 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-VirtualServer: VSG003, mailer151058.service.govdelivery.com, 172.24.0.186
+X-VirtualServerGroup: VSG003
+X-MailingID: 17298044::20160425.58229101::1001::MDB-PRD-BUL-20160425.58229101::dncpress@gmail.com::3471_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_FE3_3A9C_5E3FFB2B.0B951B32"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3Kt1zLqeIyXfzyG5MOBSKF7JGf56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: info99@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17298044.3471@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK3IHEJJJ9BWJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?FWD_FROM_DOJ:_DEPARTMENT_OF_JUSTICE_ANNOUNCES_NEW_?= =?US-ASCII?Q?REFORMS_TO_STRENGTHEN_THE_FEDERAL_BUREAU_OF_PRISONS?=
+Date: Mon, 25 Apr 2016 13:41:35 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-Note-AR-ScanTimeLocal: 4/25/2016 1:41:47 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:08:57 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Note: VCH-CT/SI:0-7734/SG:2 4/25/2016 1:41:02 PM
+X-Virus-Scan: V-X0H0M0
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.53
+X-Note-Reverse-DNS: mail-wm0-f53.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G294 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_FE3_3A9C_5E3FFB2B.0B951B32
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_FE4_05E8_7D75C2FC.7D513ACB"
+Content-Transfer-Encoding: 7bit
+
+------=_NextPart_FE4_05E8_7D75C2FC.7D513ACB
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+v\:* {behavior:url(#default#VML);} o\:* {behavior:url(#default#VML);} w\:=
+* {behavior:url(#default#VML);} .shape {behavior:url(#default#VML);}=20
+
+**
+
+_________________________________________________________________________=
+_____
+
+FOR IMMEDIATE RELEASE OPA
+
+MONDAY, APRIL 25, 2016 (202) 514-2007
+
+WWW.JUSTICE.GOV [ http://WWW.JUSTICE.GOV ] TTY (866) 544-5309
+
+*__*
+
+*_DEPARTMENT OF JUSTICE ANNOUNCES NEW REFORMS TO STRENGTHEN THE FEDERAL B=
+UREAU OF PRISONS_*
+
+**
+
+*"Attorney General Lynch Releases Roadmap to Reentry: The Justice Departm=
+ents Vision to Reduce Recidivism through Federal Reentry Reforms"*
+
+*""*
+
+WASHINGTON  As part of National Reentry Week, Attorney General Lynch toda=
+y in Philadelphia announced the Roadmap to Reentry [ https://www.justice.=
+gov/reentry/file/844356/download ], the Departments comprehensive vision =
+to reduce recidivism through reentry reforms at the Federal Bureau of Pri=
+sons (BOP). These efforts will help those who have paid their debt to soc=
+iety prepare for substantive opportunities beyond the prison gates, promo=
+te family unity, contribute to the health of our economy, advance public =
+safety and sustain the strength of our communities.=20
+
+
+
+Each year, more than 600,000 citizens return to our neighborhoods after s=
+erving time in federal and state prisons. Another 11.4 million individual=
+s cycle through local jails. And nearly one in three Americans of working=
+ age have had some sort of encounter with the criminal justice system  mo=
+stly for relatively minor, non-violent offenses, and sometimes from decad=
+es in the past. The long-term impact of a criminal record prevents many p=
+eople from obtaining employment, housing, higher education, and credit  a=
+nd these barriers affect returning individuals even if they have turned t=
+heir lives around and are unlikely to reoffend.=20
+
+
+
+The principles outlined in the Roadmap to Reentry [ https://www.justice.g=
+ov/reentry/file/844356/download ] are aligned with the work of the Federa=
+l Interagency Reentry Council [ https://www.justice.gov/reentry/file/8446=
+11/download ] which has been working since its creation five years ago to=
+ reduce recidivism and improve employment, education, housing, health and=
+ child welfare outcomes.=20
+
+
+
+*_PRINCIPLES TO REDUCE RECIDIVISM THROUGH REENTRY REFORMS AT THE FEDERAL =
+BUREAU OF PRISONS _*
+
+*__*
+
+*_Principle I_*
+
+""
+
+"Upon incarceration, every inmate should be provided an individualized re=
+entry plan tailored to his or her risk of recidivism and programmatic nee=
+ds."
+
+*__*
+
+The Department is enhancing BOPs risk and needs assessment tools to infor=
+m development of reentry plans tailored to the specific criminogenic need=
+s of each incarcerated individual.
+
+*__*
+
+*_Principle II_*
+
+""
+
+"While incarcerated, each inmate should be provided education, employment=
+ training, life skills, substance abuse, mental health, and other program=
+s that target their criminogenic needs and maximize their likelihood of s=
+uccess upon release."
+
+*__*
+
+The Department, through BOP, has launched an effort to assess its educati=
+on programs, life skills programs, and job skills programs to ensure thes=
+e programs are evidence-based and targeted to the criminogenic needs of i=
+nmates.
+
+*__*
+
+*_Principle III_*
+
+""
+
+"While incarcerated, each inmate should be provided the resources and opp=
+ortunity to build and maintain family relationships, strengthening the su=
+pport system available to them upon release."
+
+*__*
+
+The Department is enhancing the number and types of opportunities availab=
+le for people in federal prisons to strengthen family relationships durin=
+g their term of incarceration.
+
+*__*
+
+*_Principle IV_*
+
+""
+
+"During transition back to the community, halfway houses and supervised r=
+elease programs should ensure individualized continuity of care for retur=
+ning citizens."
+
+*__*
+
+In order to ensure that Residential Reentry Centers (RRC) are fulfilling =
+their vital role in the reentry process, the Department, with assistance =
+from outside consultants, is undertaking a robust evaluation and assessme=
+nt of the RRC experience to develop a specific plan for implementing impr=
+ovements to the existing RRC model that will provide residents enhanced r=
+eentry support and reduce recidivism.
+
+
+
+*_Principle V_*
+
+""
+
+"Before leaving custody, every person should be provided comprehensive re=
+entry-related information and access to resources necessary to succeed in=
+ the community."
+
+
+
+The Department is developing reentry-specific tools and support services =
+to help returning citizens succeed after leaving federal custody.
+
+
+
+As part of the national effort to increase awareness about these challeng=
+es, the Attorney General also sent a letter to governors with a request t=
+o permit citizens returning to their communities to exchange their Bureau=
+ of Prisons inmate identification card and authenticated release document=
+ation for state identification, or for these documents to satisfy the pri=
+mary identification document requirement for state-issued identification.=
+ Without government-issued identification, men and women leaving correcti=
+onal facilities face extreme challenges securing employment and housing, =
+registering for school, opening bank accounts as well as accessing other =
+benefits, such as health care, that are critical to successful reintegrat=
+ion.=20
+
+
+
+Leadership from across the Administration will be traveling around the co=
+untry to make policy announcements in support of National Reentry Week. T=
+hey will also be encouraging federal partners and grantees to work closel=
+y with stakeholders like federal defenders, legal aid providers and other=
+ partners across the country to increase the impact of these efforts. Nat=
+ional Reentry Week events are being planned in all 50 states, the Distric=
+t of Columbia, Puerto Rico and the Virgin Islands. U.S. Attorneys Offices=
+ alone are hosting over 200 events and BOP facilities are holding over 37=
+0 events.
+
+
+
+"Additional Resources: "
+
+National Reentry Week Webpage [ https://www.justice.gov/reentry/file/8446=
+11/download ]=20
+
+REPORT: Roadmap to Reentry [ https://www.justice.gov/reentry/file/844356/=
+download ]
+
+INFOGRAPHIC: Roadmap to Reentry [ https://www.justice.gov/reentry/file/84=
+4421/download ]
+
+FACT SHEET: BOP Reentry [ https://www.justice.gov/reentry/file/844616/dow=
+nload ]
+
+FACT SHEET: Federal Interagency Reentry Council [ https://www.justice.gov=
+/reentry/file/844611/download ]
+
+FACT SHEET: Fair Chance Business Pledge [ https://www.whitehouse.gov/the-=
+press-office/2016/04/11/fact-sheet-white-house-launches-fair-chance-busin=
+ess-pledge ]
+
+REPORT: CEA Report [ https://www.whitehouse.gov/sites/default/files/page/=
+files/20160423_cea_incarceration_criminal_justice.pdf ]
+
+"# # #"
+
+""
+
+16-493
+=0A
+------=_NextPart_FE4_05E8_7D75C2FC.7D513ACB
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><title>    FWD FROM DOJ: DEPARTMENT OF JUSTICE ANNOUNCES NEW REFORMS TO =
+STRENGTHEN THE FEDERAL BUREAU OF PRISONS
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"htt=
+p://www.w3.org/TR/REC-html40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+span.EmailStyle20
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal;text-autospace:none">
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><img width=3D"148" height=3D"148" id=3D"Picture_x0020_2" src=3D"cid:=
+image005.jpg@01D19EFF.07C560C0"></span></b><span style=3D"font-size:12.0pt;=
+font-family:&quot;Times New Roman&quot;,serif"><img width=3D"593" height=3D=
+"100" id=3D"Picture_x0020_1" src=3D"cid:image006.jpg@01D19EFF.07C560C0"><o:=
+p></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal;text-autospace:none">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">_______________________________________________________________________=
+_______<o:p></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<a name=3D"OLE_LINK4"><span style=3D"font-size:12.0pt;font-family:&quot;Tim=
+es New Roman&quot;,serif">FOR IMMEDIATE RELEASE&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></a><a name=3D"2"></a><span style=3D"font-size:12.0pt;font-family:&q=
+uot;Times New Roman&quot;,serif">OPA<o:p></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<a name=3D"3"></a><span style=3D"font-size:12.0pt;font-family:&quot;Times N=
+ew Roman&quot;,serif">MONDAY, APRIL 25, 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (202) 514-2007<o:p=
+></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><a href=3D"http://WWW.JUSTICE.GOV">WWW.JUSTICE.GOV</a>&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TTY =
+(866) 544-5309<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">DEPARTMENT OF JUSTICE ANNOUNCES NEW REFORMS TO STRENGTHEN THE FED=
+ERAL BUREAU OF PRISONS<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></b></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<b><i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Attorney General Lynch Releases Roadmap to Reentry: The Justice D=
+epartment&#8217;s Vision to Reduce Recidivism through Federal Reentry Refor=
+ms<o:p></o:p></span></i></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p>&nbsp;</o:p></span></i></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">WASHINGTON &#8211; As part of National Reentry Week, Attorney General L=
+ynch today in Philadelphia announced the &#8220;<span style=3D"color:#1F497=
+D"><a href=3D"https://www.justice.gov/reentry/file/844356/download">Roadmap
+ to Reentry</a></span>,&#8221; the Department&#8217;s comprehensive vision =
+to reduce recidivism through reentry reforms at the Federal Bureau of Priso=
+ns (BOP).&nbsp; These efforts wi<span style=3D"color:#222222">ll help those=
+ who have paid their debt to society prepare for substantive
+ opportunities beyond the prison gates, </span></span><span lang=3D"EN" sty=
+le=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif">promo=
+te family unity, contribute to the health of our economy, advance public sa=
+fety and sustain the strength of our communities.&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">Each year, more than 600,000 citizens return to our neighborhoods after=
+ serving time in federal and state prisons.&nbsp; Another 11.4 million indi=
+viduals cycle through local jails.&nbsp; And nearly one
+ in three Americans of working age have had some sort of encounter with the=
+ criminal justice system &#8212; mostly for relatively minor, non-violent o=
+ffenses, and sometimes from decades in the past.&nbsp; The long-term impact=
+ of a criminal record prevents many people
+ from obtaining employment, housing, higher education, and credit &#8212; a=
+nd these barriers affect returning individuals even if they have turned the=
+ir lives around and are unlikely to reoffend.&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">The principles outlined in the &#8220;<span style=3D"color:#1F497D"><a =
+href=3D"https://www.justice.gov/reentry/file/844356/download">Roadmap to Re=
+entry</a></span>&#8221; are aligned with the work of the
+<span style=3D"color:#1F497D"><a href=3D"https://www.justice.gov/reentry/fi=
+le/844611/download">Federal Interagency Reentry Council</a></span><span cla=
+ss=3D"MsoCommentReference">
+</span>which has been working since its creation five years ago to reduce r=
+ecidivism and improve employment, education, housing, health and child welf=
+are outcomes.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#222222"><o:p>&nbsp;</o:p></span></p>
+<div style=3D"border:solid windowtext 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt=
+">
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">PRINCIPLES TO REDUCE RECIDIVISM THROUGH REENTRY REFORMS AT THE FE=
+DERAL BUREAU OF PRISONS
+<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Principle I<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">Upon incarceration, every inmate should be provided an individualize=
+d reentry plan tailored to his or her risk of recidivism and programmatic n=
+eeds.<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">The Department is enhancing BOP&#8217;s risk and needs assessment tools=
+ to inform development of reentry plans tailored to the specific criminogen=
+ic needs of each incarcerated individual.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Principle II<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">While incarcerated, each inmate should be provided education, employ=
+ment training, life skills, substance abuse, mental health, and other progr=
+ams that target their criminogenic needs and
+ maximize their likelihood of success upon release.<o:p></o:p></span></i></=
+p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">The Department, through BOP, has launched an effort to assess its educa=
+tion programs, life skills programs, and job skills programs to ensure thes=
+e programs are evidence-based and targeted to
+ the criminogenic needs of inmates.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Principle III<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">While incarcerated, each inmate should be provided the resources and=
+ opportunity to build and maintain family relationships, strengthening the =
+support system available to them upon release.<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">The Department is enhancing the number and types of opportunities avail=
+able for people in federal prisons to strengthen family relationships durin=
+g their term of incarceration.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Principle IV<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">During transition back to the community, halfway houses and supervis=
+ed release programs should ensure individualized continuity of care for ret=
+urning citizens.<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif"><o:p><span style=3D"text-decoration:none">&nbsp;</span></o:p></sp=
+an></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">In order to ensure that Residential Reentry Centers (RRC) are fulfillin=
+g their vital role in the reentry process, the Department, with assistance =
+from outside consultants, is undertaking a robust
+ evaluation and assessment of the RRC experience to develop a specific plan=
+ for implementing improvements to the existing RRC model that will provide =
+residents enhanced reentry support and reduce recidivism.<o:p></o:p></span>=
+</p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<b><u><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quo=
+t;,serif">Principle V<o:p></o:p></span></u></b></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">Before leaving custody, every person should be provided comprehensiv=
+e reentry-related information and access to resources necessary to succeed =
+in the community.<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">The Department is developing reentry-specific tools and support service=
+s to help returning citizens succeed after leaving federal custody.<o:p></o=
+:p></span></p>
+</div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#222222">As part of the national effort to increase awareness abou=
+t these challenges,
+</span><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&qu=
+ot;,serif">the Attorney General also sent a letter to governors with a requ=
+est to permit citizens returning to their communities to exchange their Bur=
+eau of Prisons inmate identification card and
+ authenticated release documentation for state identification, or for these=
+ documents to satisfy the primary identification document requirement for s=
+tate-issued identification.&nbsp; Without government-issued identification,=
+ men and women leaving correctional facilities
+ face extreme challenges securing employment and housing, registering for s=
+chool, opening bank accounts as well as accessing other benefits, such as h=
+ealth care, that are critical to successful reintegration.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;tex=
+t-indent:.5in;line-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">Leadership from across the Administration will be traveling around the =
+country to make policy announcements in support of National Reentry Week. T=
+hey will also be encouraging federal partners
+ and grantees to work closely with stakeholders like federal defenders, leg=
+al aid providers and other partners across the country to increase the impa=
+ct of these efforts.&nbsp; National Reentry Week events are being planned i=
+n all 50 states, the District of Columbia,
+ Puerto Rico and the Virgin Islands.&nbsp; U.S. Attorney&#8217;s Offices al=
+one are hosting over 200 events and BOP facilities are holding over 370 eve=
+nts.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif">Additional Resources:
+<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#1F497D"><a href=3D"https://www.justice.gov/reentry/file/844611/do=
+wnload">National Reentry Week Webpage</a></span><span style=3D"font-size:12=
+.0pt;font-family:&quot;Times New Roman&quot;,serif">
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#1F497D"><a href=3D"https://www.justice.gov/reentry/file/844356/do=
+wnload">REPORT: Roadmap to Reentry</a></span><span style=3D"font-size:12.0p=
+t;font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#1F497D"><a href=3D"https://www.justice.gov/reentry/file/844421/do=
+wnload">INFOGRAPHIC: Roadmap to Reentry</a></span><span style=3D"font-size:=
+12.0pt;font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p=
+>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#1F497D"><a href=3D"https://www.justice.gov/reentry/file/844616/do=
+wnload">FACT SHEET: BOP Reentry</a></span><span style=3D"font-size:12.0pt;f=
+ont-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if;color:#1F497D"><a href=3D"https://www.justice.gov/reentry/file/844611/do=
+wnload">FACT SHEET: Federal Interagency Reentry Council</a></span><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,serif"><o:p>=
+</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><a href=3D"https://www.whitehouse.gov/the-press-office/2016/04/11/fact-=
+sheet-white-house-launches-fair-chance-business-pledge">FACT SHEET: Fair Ch=
+ance Business Pledge</a><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if"><a href=3D"https://www.whitehouse.gov/sites/default/files/page/files/20=
+160423_cea_incarceration_criminal_justice.pdf">REPORT: CEA Report</a><o:p><=
+/o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"># # #<o:p></o:p></span></i></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0in;margin-b=
+ottom:.0001pt;text-align:center;line-height:normal">
+<i><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,=
+serif"><o:p>&nbsp;</o:p></span></i></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:0in;margin-bottom:.0001pt;lin=
+e-height:normal">
+<span style=3D"font-size:12.0pt;font-family:&quot;Times New Roman&quot;,ser=
+if">16-493<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_FE4_05E8_7D75C2FC.7D513ACB--
+
+------=_NextPart_FE3_3A9C_5E3FFB2B.0B951B32
+Content-Type: application/octet-stream; name="image005.jpg"
+Content-Disposition: attachment; filename="image005.jpg"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned 'image005.jpg'. clean action=allow
+Content-Description: image005.jpg
+
+/9j/4AAQSkZJRgABAQEAeAB4AAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJSMg
+IyIoLTkwKCo2KyIjMkQyNjs9QEBAJjBGS0U+Sjk/QD3/2wBDAQsLCw8NDx0QEB09KSMpPT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT3/wAARCACUAJQDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD2aiii
+gApD0pHJAGMVTv8AUo9PgVpAXkdtiRryzt6CgC4SAMnoO5rIuNftY5zBaZu7jqY4sfKPUnpisi5m
+u9Yjt5Lid7W3nuBEIEI+4OpY9/wqnLqECm/jsYfLlmYRqQnyiJeDjHXNAGk2ravqCWxtPLtPtTlY
+1ZdzbB95z6Y9KozzRiOeefUJ7i2VvIghMuRPL3J9s1n3V3M+64ublbdVQRjy3yqoP4fY/WodTe30
+TT4tQvYj9jlACyD94m09/l6ZoAvPa6UzxWc8yyuPmuLpgWYH/nnGe1Rh9H8xr17NVEbeXFaxr8zZ
+/ikNR37CystPnsYkvLW8kWKOSBsBGbpkGqF3rs9m0RuNKuQlzKbaJgQC5HtQM24orYSm2tphJdyk
+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
+
+------=_NextPart_FE3_3A9C_5E3FFB2B.0B951B32
+Content-Type: application/octet-stream; name="image006.jpg"
+Content-Disposition: attachment; filename="image006.jpg"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned 'image006.jpg'. clean action=allow
+Content-Description: image006.jpg
+
+/9j/4AAQSkZJRgABAQEAeAB4AAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJSMg
+IyIoLTkwKCo2KyIjMkQyNjs9QEBAJjBGS0U+Sjk/QD3/wAALCABkAlEBAREA/8QAHwAAAQUBAQEB
+AQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1Fh
+ByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZ
+WmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/APZqKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK
+KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK4P4g+NtU8G31nNDYi
+405wfNbHIPpntXLyfH5NjeXpB3dsvxWLL8ddcaQmK1tVTsCM4rQ0n483Syquq6ejxk/M0RwR+Fev
+aHrdn4h0uK/0+TzIZPzB9DWhRRRRRRRRRRRRUVzdQ2kJluJFjjHVmOAKy38V6SLyC0hu0nuJzhI4
+juP1OOlbNFFFFFFFFFFFFQ3N1BZwmW5lWKMdWY4ArMbxXpJvoLOC7Se4mOFSI7j9T6Vs0UUUUUyS
+RIYy8jqiKMlmOAK4Pxd8WNO0CADT0N9KWxuX7g9efWtPwf8AECx8YyvHZQTI0SBpC44B9K6ymSyp
+DE8kjBUQFmJ7CvGfEvxuvYdRePRrNRbIxUSTA/P7ipdB+O6ECPXLIg/89Ien5V1Ft8VLB7SfUbyC
+W100HbBJIPmnPfArf8KeJF8Vac2oQRGO2LlYw33jjua3aKKKKKKq3epWdht+2XMcO77u9sZqnZeJ
+tM1HVHsLG5W4mjXc/l8hR7mr19fW+m2cl1dyCOGMZZjXBaD8YtJ1bUJ7SaN4nMuy2wM+aD/KvRAc
+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
+
+------=_NextPart_FE3_3A9C_5E3FFB2B.0B951B32--

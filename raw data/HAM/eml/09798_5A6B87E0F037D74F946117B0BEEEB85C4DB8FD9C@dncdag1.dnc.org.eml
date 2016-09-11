@@ -1,0 +1,946 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 13 May
+ 2016 18:14:03 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 13 May 2016
+ 18:13:59 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 914700213;
+ Fri, 13 May 2016 17:14:02 -0500
+X-Note-AR-ScanTimeLocal: 5/13/2016 5:13:54 PM
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Policy: Too many policies to list
+X-Primary: wartelj@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.220.58 DOM:googlegroups.com ADDR:demcommunicationsbncbcni7jxmyijrbind3g4qkgqeqmzohvi@googlegroups.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-60/SG:5 5/13/2016 5:13:23 PM
+X-GBUdb-Analysis: 1, 208.69.4.12, Ugly c=0.638335 p=-0.967347 Source Normal
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6303 ms. Fail:1 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:1-1324/SG:1 5/13/2016 5:13:45 PM
+X-Warn: OPTOUT
+X-Note: Spam Tests Failed: OPTOUT
+X-Country-Path: ->->United States->->->United States->
+X-Note-Sending-IP: 209.85.220.58
+X-Note-Reverse-DNS: mail-pa0-f58.google.com
+X-Note-Return-Path: demcommunications+bncBCNI7JXMYIJRBIND3G4QKGQEQMZOHVI@googlegroups.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G376 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-pa0-f58.google.com ([209.85.220.58] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138359773;
+ Fri, 13 May 2016 17:13:54 -0500
+Received: by mail-pa0-f58.google.com with SMTP id zy2sf26408537pac.0;
+        Fri, 13 May 2016 15:13:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlegroups.com; s=20120806;
+        h=sender:from:to:subject:thread-topic:thread-index:date:message-id
+         :references:in-reply-to:accept-language:content-language
+         :mime-version:x-original-sender:x-original-authentication-results
+         :precedence:mailing-list:list-id:x-spam-checked-in-group:list-post
+         :list-help:list-archive:list-unsubscribe;
+        bh=xBAXRcFwrYbsg1GjMhyJMJgEmVrouB6gGFMR/bvbJfY=;
+        b=FV4DxpZwsyQuco02kyN1ztPOfZizFU/H5Bnu0o5vlHYWw5LbTBt5hHZFjtDFiILoz5
+         cqADg3hMHEjquJFevgpzF9dUoFLjcs848WrNd9pIji8sHJsCWrCq7WtL0Q5lJ4ysNvSW
+         sVkP6xigu+nP/qRTRJZRbF5q+588If2hNZuJHKAR4A3V5w6C3A/ySytHKmo20Jo52oBM
+         c6p8BzcFvFxl3IVHaW9tQQcSfwbNt20fR/pfubnoRinHE6aLtLITEoCAA3vkNbdODLXn
+         2qi+V6CeeLckSjo3sjx3Xo7oDl9pAGoYnYhkblE/jUxjW1m4cBakj6TGeaaamwhjUUaw
+         B9vA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=sender:x-gm-message-state:from:to:subject:thread-topic:thread-index
+         :date:message-id:references:in-reply-to:accept-language
+         :content-language:mime-version:x-original-sender
+         :x-original-authentication-results:precedence:mailing-list:list-id
+         :x-spam-checked-in-group:list-post:list-help:list-archive
+         :list-unsubscribe;
+        bh=xBAXRcFwrYbsg1GjMhyJMJgEmVrouB6gGFMR/bvbJfY=;
+        b=Jc182/b9d2aQ2Y2szpMnt262naYTW0lN4bkRhmzGXV849yQnI5ZFm+RwiIVvZ5kwUI
+         yemHOc9ag3yNnwy30zk5GQlaU8hCL2asyvDUQd7ymmgKJ+5uyu21o1pTp10t3q8NQox9
+         GneONQCAH+yT0+Y+TJUqprJ5DwxgwLOnGAb8GI5gwzon+TmxVMQlpC0AkfwzD166k8vW
+         KkQvrECcbnozrq4dMzkuKTgorzOc8djPGr9abgf52YKe2OQqoa0BNULu64UIX96/mVXM
+         HUVJE56QYzDNEXUvOMvwqlMRoT+W3WrgiK3O4ibCIaWlfF0MUAvRl84fJXykaVVkXrKZ
+         x9SQ==
+Sender: <demcommunications@googlegroups.com>
+X-Gm-Message-State: AOPr4FVACYYUJU77QxXbfbGfAHG0i7nKftthQuKFYG4Zu85h9KidhMpPPTRKWRWkjgOdWQ==
+X-Received: by 10.36.20.206 with SMTP id 197mr85344itg.3.1463177633974;
+        Fri, 13 May 2016 15:13:53 -0700 (PDT)
+X-BeenThere: demcommunications@googlegroups.com
+Received: by 10.107.53.143 with SMTP id k15ls1242337ioo.89.gmail; Fri, 13 May
+ 2016 15:13:53 -0700 (PDT)
+X-Received: by 10.36.103.73 with SMTP id u70mr3577134itc.10.1463177633555;
+        Fri, 13 May 2016 15:13:53 -0700 (PDT)
+Received: from dncedge1.dnc.org (dncedge1.dnc.org. [208.69.4.12])        by
+ gmr-mx.google.com with ESMTPS id n204si1680218ywd.1.2016.05.13.15.13.53
+        for <demcommunications@googlegroups.com>        (version=TLS1
+ cipher=ECDHE-RSA-AES128-SHA bits=128/128);        Fri, 13 May 2016 15:13:53
+ -0700 (PDT)
+Received-SPF: pass (google.com: domain of HelmstetterT@dnc.org designates 208.69.4.12 as permitted sender) client-ip=208.69.4.12;
+Received: from DNCHUBCAS1.dnc.org (192.168.185.12) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 13 May
+ 2016 18:13:49 -0400
+Received: from DNCDAG1.dnc.org ([fe80::f85f:3b98:e405:6ebe]) by
+ DNCHUBCAS1.dnc.org ([fe80::ac16:e03c:a689:8203%11]) with mapi id
+ 14.03.0224.002; Fri, 13 May 2016 18:13:52 -0400
+From: "Helmstetter, TJ" <HelmstetterT@dnc.org>
+To: "Walker, Eric" <WalkerE@dnc.org>, "demcommunications@googlegroups.com"
+	<demcommunications@googlegroups.com>
+Subject: =?UTF-8?Q?=5BCOMMUNICATIONS=5D_RE=3A_Press_events_re=3A_this_week=E2=80=99s_?=
+	=?UTF-8?Q?Trump=2FRyan_meeting?=
+Thread-Topic: =?utf-8?B?UHJlc3MgZXZlbnRzIHJlOiB0aGlzIHdlZWvigJlzIFRydW1wL1J5YW4gbWVl?=
+ =?utf-8?Q?ting?=
+Thread-Index: AdGrhU8j1vda8Zj6QZiw6B47WMjRvgB3i8xw
+Date: Fri, 13 May 2016 22:13:52 +0000
+Message-ID: <5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9C@dncdag1.dnc.org>
+References: <2AE4202A723DAE418719D2AC271C35F36EFD28DC@dncdag1.dnc.org>
+In-Reply-To: <2AE4202A723DAE418719D2AC271C35F36EFD28DC@dncdag1.dnc.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [192.168.177.83]
+Content-Type: multipart/alternative;
+	boundary="_000_5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9Cdncdag1dncorg_"
+X-Original-Sender: helmstettert@dnc.org
+X-Original-Authentication-Results: gmr-mx.google.com;       spf=pass
+ (google.com: domain of HelmstetterT@dnc.org designates 208.69.4.12 as
+ permitted sender) smtp.mailfrom=HelmstetterT@dnc.org
+Precedence: list
+Mailing-list: list demcommunications@googlegroups.com; contact demcommunications+owners@googlegroups.com
+List-ID: <demcommunications.googlegroups.com>
+X-Spam-Checked-In-Group: demcommunications@googlegroups.com
+X-Google-Group-Id: 191713197092
+List-Post: <https://groups.google.com/group/demcommunications/post>, <mailto:demcommunications@googlegroups.com>
+List-Help: <https://groups.google.com/support/>, <mailto:demcommunications+help@googlegroups.com>
+List-Archive: <https://groups.google.com/group/demcommunications
+List-Unsubscribe: <mailto:googlegroups-manage+191713197092+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/group/demcommunications/subscribe>
+Return-Path: demcommunications+bncBCNI7JXMYIJRBIND3G4QKGQEQMZOHVI@googlegroups.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--_000_5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9Cdncdag1dncorg_
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hey folks,
+
+Thanks very much to the state parties who held press conferences or otherwi=
+se achieved media hits using the Trump-Ryan meeting hook. We want to encour=
+age more of these events moving forward. To be clear, the hook can and shou=
+ld be localized as much as possible, so you can adjust our templating to ma=
+ke it relevant to your markets.
+
+On Monday, we=E2=80=99ll be sending out some messaging related to National =
+Infrastructure Week and we=E2=80=99ll be asking you to think about how you =
+can use that hook to put on pressers and achieve TV and print hits in your =
+markets. On Friday of next week, the NRA is having its Leadership Forum wit=
+h Trump, Rubio, McConnell, Ryan, and others. Hope you can start thinking ab=
+out those two hooks over the weekend for events next week.
+
+Here are a few of the great clips we=E2=80=99ve seen from events this week:
+
+Dayton Congressman Turner says he=E2=80=99ll support Donald Trump
+<http://www.mydaytondailynews.com/news/news/local-govt-politics/dayton-cong=
+ressman-turner-says-hell-support-donald/nrL9H/>DAILY DAYTON NEWS // BARRIE =
+BARBER
+
+Iowa GOP leaders urge support behind Donald Trump<http://www.kcci.com/news/=
+iowa-gop-leaders-urge-support-behind-donald-trump/39524728>
+KCCI DES MOINES LOCAL 8 // MARK TAUSCHECK
+
+State Dem Party leaders blast Republican officials ahead of state GOP conve=
+ntion<http://gopconvos.wispolitics.com/2016/05/state-dem-party-leaders-blas=
+t.html>
+WISPOLITICS.COM
+
+Odds are against Iowa with a Trump agenda<http://www.desmoinesregister.com/=
+story/opinion/columnists/iowa-view/2016/05/12/odds-against-iowa-trump-agend=
+a/84293404/>
+DES MOINES REGISTER // IOWA DEMOCRATIC PARTY CHAIR ANDY MCGUIRE
+
+=E2=80=9CDonald Trump is the modern Republican Party,=E2=80=9D Democrats sa=
+y <http://iowadailydemocrat.com/news/2016/05/trump-is-the-modern-republican=
+-party/>
+IOWA DAILY DEMOCRAT // MIKE GLOVER
+
+
+
+From: demcommunications@googlegroups.com [mailto:demcommunications@googlegr=
+oups.com] On Behalf Of Walker, Eric
+Sent: Wednesday, May 11, 2016 9:13 AM
+To: demcommunications@googlegroups.com
+Subject: [COMMUNICATIONS] Press events re: this week=E2=80=99s Trump/Ryan m=
+eeting
+
+Hey everyone =E2=80=93
+
+Tomorrow, Donald Trump is coming to Washington D.C. to meet with Paul Ryan,=
+ Reince Priebus, and Mitch McConnell. The Ryan meeting is the highlight bec=
+ause Ryan has withheld his endorsement of Trump thus far. This is an ideal =
+opportunity to highlight the historic mess that is the Republican Party, wi=
+th the Speaker of the House of Representatives not ready to fully endorse h=
+is Party=E2=80=99s nominee, and a slew of former GOP presidential candidate=
+s, former Republican presidents and vulnerable Senate and House candidates =
+trying to distance themselves from their standard bearer.
+
+We=E2=80=99re asking state party communications directors to put together e=
+vents around Thursday morning=E2=80=99s Trump-Ryan meeting to deliver the m=
+essage that while Trump and Ryan may have a personal disagreement, they are=
+ both pushing the same divisive and dangerous agenda. We=E2=80=99re also as=
+king state party communications directors to echo these events with op-eds =
+and letters to the editor in local papers, and surrogates on television and=
+ radio.
+
+Attached please find a packet with materials to put together an event. In t=
+his packet you=E2=80=99ll find:
+
+
+=C2=B7         Sample talking points / message guidance
+
+=C2=B7         A sample advisory
+
+=C2=B7         A sample press release
+
+=C2=B7         A sample op-ed
+
+=C2=B7         Four sample letters to the editor
+DNC can offer national surrogates to appear via satellite or phone on local=
+ television and radio broadcasts to amplify the message. Please reach out t=
+o walker@dnc.org<mailto:walker@dnc.org> if you would like to book one of ou=
+r surrogates. Members of Congress and Senators who are currently in Washing=
+ton can also use our studio to do local hits.
+
+Here=E2=80=99s what we=E2=80=99re looking for in terms of event logistics:
+
+
+=C2=B7         Types of speakers:
+
+o   State Party Chairs, Vice-Chairs, and EDs
+
+o   Local Elected Officials
+
+o   Allied Groups =E2=80=93 Planned Parenthood, NAACP, Mi Familia Vota, etc=
+.
+
+o   Labor
+
+o   People sharing personal stories
+
+=C2=B7         About 15-20 supporters
+
+=C2=B7         Signs that say =E2=80=9CReject the Trump-Ryan Agenda=E2=80=
+=9D =E2=80=93 we have a mockup that can be found here<Trump-Ryan-Sign.pdf>.
+
+=C2=B7         A big push to get local TV to the event =E2=80=93 studies sh=
+ow that local TV is the dominant player in most markets and Americans trust=
+ local TV news about 20 points more than they trust national TV news.
+The Republican Party has elevated offensive policies and extreme voices usi=
+ng divisive campaigns for years, and now they=E2=80=99re stuck with Donald =
+Trump=E2=80=99s reckless and dangerous campaign heading into the general el=
+ection. We have to make sure we hold Republicans in Congress and in every s=
+tate accountable for their Party=E2=80=99s dysfunction as they chaotically =
+tumble toward the general election.
+
+And while Republicans argue, Democratic voters are overwhelming in agreemen=
+t that our primary has been exciting, and large majorities would support ei=
+ther one of our candidates.
+
+This meeting is also a reminder that what Trump has promised and what Repub=
+licans up and down the ballot have pushed for is the same brand of trickle-=
+down economic policies that help those at the top while costing hardworking=
+ Americans. It=E2=80=99s the same old Republican playbook of cutting taxes =
+for the rich at the expense of middle-class families, opposing measures lik=
+e equal pay and paid family leave, and reckless policies that would only to=
+ drag America back into a recession<http://www.theatlantic.com/business/arc=
+hive/2016/05/donald-trumps-economy/481743/>. We can=E2=80=99t afford to go =
+back to losing 800,000 jobs a month as the last Republican president left o=
+ffice.
+
+
+Eric Walker
+walkere@dnc.org<mailto:walkere@dnc.org>
+732-991-1489
+@ericmwalker<https://twitter.com/ericmwalker>
+
+--
+
+---
+You received this message because you are subscribed to the Google Groups "=
+Democratic State Party - Communications Staff" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to demcommunications+unsubscribe@googlegroups.com<mailto:demcommunicat=
+ions+unsubscribe@googlegroups.com>.
+To post to this group, send email to demcommunications@googlegroups.com<mai=
+lto:demcommunications@googlegroups.com>.
+To view this discussion on the web visit https://groups.google.com/d/msgid/=
+demcommunications/2AE4202A723DAE418719D2AC271C35F36EFD28DC%40dncdag1.dnc.or=
+g<https://groups.google.com/d/msgid/demcommunications/2AE4202A723DAE418719D=
+2AC271C35F36EFD28DC%40dncdag1.dnc.org?utm_medium=3Demail&utm_source=3Dfoote=
+r>.
+For more options, visit https://groups.google.com/d/optout.
+
+--=20
+
+---=20
+You received this message because you are subscribed to the Google Groups "=
+Democratic State Party - Communications Staff" group.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to demcommunications+unsubscribe@googlegroups.com.
+To post to this group, send email to demcommunications@googlegroups.com.
+To view this discussion on the web visit https://groups.google.com/d/msgid/=
+demcommunications/5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9C%40dncdag1.dnc.or=
+g.
+For more options, visit https://groups.google.com/d/optout.
+
+--_000_5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9Cdncdag1dncorg_
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 14 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParag=
+raphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListPar=
+agraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagra=
+phCxSpLast
+	{mso-style-priority:34;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+span.EmailStyle18
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:windowtext;}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle21
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:1420516090;
+	mso-list-type:hybrid;
+	mso-list-template-ids:76572734 67698689 67698691 67698693 67698689 6769869=
+1 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1501313638;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1593527710 67698689 67698691 67698693 67698689 6769=
+8691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">Hey folks, <o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">Thanks very much to th=
+e state parties who held press conferences or otherwise achieved media hits=
+ using the Trump-Ryan meeting hook. We want to encourage more of these even=
+ts moving forward. To be clear, the
+ hook can and should be localized as much as possible, so you can adjust ou=
+r templating to make it relevant to your markets.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">On Monday, we=E2=80=99=
+ll be sending out some messaging related to National Infrastructure Week an=
+d we=E2=80=99ll be asking you to think about how you can use that hook to p=
+ut on pressers and achieve TV and print hits in your
+ markets. On Friday of next week, the NRA is having its Leadership Forum wi=
+th Trump, Rubio, McConnell, Ryan, and others. Hope you can start thinking a=
+bout those two hooks over the weekend for events next week.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">Here are a few of the =
+great clips we=E2=80=99ve seen from events this week:<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><a href=3D"http://www.mydaytondailyn=
+ews.com/news/news/local-govt-politics/dayton-congressman-turner-says-hell-s=
+upport-donald/nrL9H/"><b><span style=3D"color:#1155CC;background:white">Day=
+ton
+ Congressman Turner says he=E2=80=99ll support Donald Trump</span></b><b><s=
+pan style=3D"color:black;background:white;text-decoration:none"><br>
+</span></b></a><b><span style=3D"color:black;background:white">DAILY DAYTON=
+ NEWS // BARRIE BARBER</span></b><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><a href=3D"http://www.kcci.com/news/=
+iowa-gop-leaders-urge-support-behind-donald-trump/39524728"><b><span style=
+=3D"color:#1155CC;background:white">Iowa GOP leaders urge support
+ behind Donald Trump</span></b></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;;color:black;background:white">KCCI=
+ DES MOINES LOCAL 8 // MARK TAUSCHECK</span></b><span style=3D"font-size:12=
+.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><a href=3D"http://gopconvos.wispolit=
+ics.com/2016/05/state-dem-party-leaders-blast.html"><b><span style=3D"color=
+:#1155CC;background:white">State Dem Party leaders blast Republican
+ officials ahead of state GOP convention</span></b></a><o:p></o:p></span></=
+p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;;color:black;background:white">WISP=
+OLITICS.COM
+</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Times New Roma=
+n&quot;,&quot;serif&quot;"><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><a href=3D"http://www.desmoinesregis=
+ter.com/story/opinion/columnists/iowa-view/2016/05/12/odds-against-iowa-tru=
+mp-agenda/84293404/"><b><span style=3D"color:#1155CC;background:white">Odds
+ are against Iowa with a Trump agenda</span></b></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;;color:black;background:white">DES =
+MOINES REGISTER // IOWA DEMOCRATIC PARTY CHAIR ANDY MCGUIRE<o:p></o:p></spa=
+n></b></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><a href=3D"http://iowadailydemocrat.=
+com/news/2016/05/trump-is-the-modern-republican-party/"><b><span style=3D"c=
+olor:#1155CC;background:white">=E2=80=9CDonald Trump is the modern Republic=
+an
+ Party,=E2=80=9D Democrats say </span></b></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;;color:black;background:white">IOWA=
+ DAILY DEMOCRAT // MIKE GLOVER</span></b><span style=3D"font-size:12.0pt;fo=
+nt-family:&quot;Times New Roman&quot;,&quot;serif&quot;"><o:p></o:p></span>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> demcommu=
+nications@googlegroups.com [mailto:demcommunications@googlegroups.com]
+<b>On Behalf Of </b>Walker, Eric<br>
+<b>Sent:</b> Wednesday, May 11, 2016 9:13 AM<br>
+<b>To:</b> demcommunications@googlegroups.com<br>
+<b>Subject:</b> [COMMUNICATIONS] Press events re: this week=E2=80=99s Trump=
+/Ryan meeting<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">Hey everyone =E2=80=93<o:p></o:p></s=
+pan></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">Tomorrow, Donald Trump is coming to =
+Washington D.C. to meet with Paul Ryan, Reince Priebus, and Mitch McConnell=
+. The Ryan meeting is the highlight because Ryan has withheld
+ his endorsement of Trump thus far. This is an ideal opportunity to highlig=
+ht the historic mess that is the Republican Party, with the Speaker of the =
+House of Representatives not ready to fully endorse his Party=E2=80=99s nom=
+inee, and a slew of former GOP presidential
+ candidates, former Republican presidents and vulnerable Senate and House c=
+andidates trying to distance themselves from their standard bearer.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Times New Roman&quot;,&quot;serif&quot;">We=E2=80=99re asking state party =
+communications directors to put together events around Thursday morning=E2=
+=80=99s Trump-Ryan meeting</span></b><span style=3D"font-size:12.0pt;font-f=
+amily:&quot;Times New Roman&quot;,&quot;serif&quot;">
+ to deliver the message that while Trump and Ryan may have a personal disag=
+reement, they are both pushing the same divisive and dangerous agenda. We=
+=E2=80=99re also asking state party communications directors to echo these =
+events with op-eds and letters to the editor
+ in local papers, and surrogates on television and radio.<span style=3D"col=
+or:#1F497D"><o:p></o:p></span></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">Attached please find a packet with m=
+aterials to put together an event. In this packet you=E2=80=99ll find:<o:p>=
+</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoListParagraphCxSpFirst" style=3D"text-indent:-.25in;mso-list=
+:l0 level1 lfo2">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Sample talk=
+ing points / message guidance<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"text-indent:-.25in;mso-lis=
+t:l0 level1 lfo2">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">A sample ad=
+visory<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"text-indent:-.25in;mso-lis=
+t:l0 level1 lfo2">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">A sample pr=
+ess release<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"text-indent:-.25in;mso-lis=
+t:l0 level1 lfo2">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">A sample op=
+-ed<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpLast" style=3D"text-indent:-.25in;mso-list:=
+l0 level1 lfo2">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Four sample=
+ letters to the editor<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">DNC can offer national surrogates to=
+ appear via satellite or phone on local television and radio broadcasts to =
+amplify the message. Please reach out to
+<a href=3D"mailto:walker@dnc.org">walker@dnc.org</a> if you would like to b=
+ook one of our surrogates. Members of Congress and Senators who are current=
+ly in Washington can also use our studio to do local hits.<o:p></o:p></span=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">Here=E2=80=99s what we=E2=80=99re lo=
+oking for in terms of event logistics:<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoListParagraphCxSpFirst" style=3D"text-indent:-.25in;mso-list=
+:l1 level1 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Types of sp=
+eakers:<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-left:1.0in;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l1 level2 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:&quot;Courier New&quot;"><span style=3D"mso-list:Ignore">o<span styl=
+e=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">State Party=
+ Chairs, Vice-Chairs, and EDs<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-left:1.0in;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l1 level2 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:&quot;Courier New&quot;"><span style=3D"mso-list:Ignore">o<span styl=
+e=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Local Elect=
+ed Officials<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-left:1.0in;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l1 level2 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:&quot;Courier New&quot;"><span style=3D"mso-list:Ignore">o<span styl=
+e=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Allied Grou=
+ps =E2=80=93 Planned Parenthood, NAACP, Mi Familia Vota, etc.<o:p></o:p></s=
+pan></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-left:1.0in;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l1 level2 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:&quot;Courier New&quot;"><span style=3D"mso-list:Ignore">o<span styl=
+e=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Labor<o:p><=
+/o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"margin-left:1.0in;mso-add-=
+space:auto;text-indent:-.25in;mso-list:l1 level2 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:&quot;Courier New&quot;"><span style=3D"mso-list:Ignore">o<span styl=
+e=3D"font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">People shar=
+ing personal stories<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"text-indent:-.25in;mso-lis=
+t:l1 level1 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">About 15-20=
+ supporters
+<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpMiddle" style=3D"text-indent:-.25in;mso-lis=
+t:l1 level1 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">Signs that =
+say =E2=80=9CReject the Trump-Ryan Agenda=E2=80=9D =E2=80=93 we have a mock=
+up that can be
+<a href=3D"Trump-Ryan-Sign.pdf">found here</a>.<o:p></o:p></span></p>
+<p class=3D"MsoListParagraphCxSpLast" style=3D"text-indent:-.25in;mso-list:=
+l1 level1 lfo4">
+<![if !supportLists]><span style=3D"font-size:12.0pt;line-height:115%;font-=
+family:Symbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.=
+0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;
+</span></span></span><![endif]><span style=3D"font-size:12.0pt;line-height:=
+115%;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;">A big push =
+to get local TV to the event =E2=80=93 studies show that local TV is the do=
+minant player in most markets and Americans trust local TV news
+ about 20 points more than they trust national TV news.<o:p></o:p></span></=
+p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">The Republican Party has elevated of=
+fensive policies and extreme voices using divisive campaigns for years, and=
+ now they=E2=80=99re stuck with Donald Trump=E2=80=99s reckless and dangero=
+us
+ campaign heading into the general election. We have to make sure we hold R=
+epublicans in Congress and in every state accountable for their Party=E2=80=
+=99s dysfunction as they chaotically tumble toward the general election. &n=
+bsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">And while Republicans argue, Democra=
+tic voters are overwhelming in agreement that our primary has been exciting=
+, and large majorities would support either one of our candidates.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">This meeting is also a reminder that=
+ what Trump has promised and what Republicans up and down the ballot have p=
+ushed for is the same brand of trickle-down economic policies
+ that help those at the top while costing hardworking Americans. It=E2=80=
+=99s the same old Republican playbook of cutting taxes for the rich at the =
+expense of middle-class families, opposing measures like equal pay and paid=
+ family leave, and reckless policies that
+ would only to drag America<span style=3D"color:#1F497D"> <a href=3D"http:/=
+/www.theatlantic.com/business/archive/2016/05/donald-trumps-economy/481743/=
+">
+back into a recession</a></span>. We can=E2=80=99t afford to go back to los=
+ing 800,000 jobs a month as the last Republican president left office.<span=
+ style=3D"color:#1F497D"><o:p></o:p></span></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Eric Walker<o:p></o:p></p>
+<p class=3D"MsoNormal"><a href=3D"mailto:walkere@dnc.org">walkere@dnc.org</=
+a><o:p></o:p></p>
+<p class=3D"MsoNormal">732-991-1489<o:p></o:p></p>
+<p class=3D"MsoNormal"><a href=3D"https://twitter.com/ericmwalker">@ericmwa=
+lker</a><o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;">--
+<br>
+<br>
+--- <br>
+You received this message because you are subscribed to the Google Groups &=
+quot;Democratic State Party - Communications Staff&quot; group.<br>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to
+<a href=3D"mailto:demcommunications&#43;unsubscribe@googlegroups.com">demco=
+mmunications&#43;unsubscribe@googlegroups.com</a>.<br>
+To post to this group, send email to <a href=3D"mailto:demcommunications@go=
+oglegroups.com">
+demcommunications@googlegroups.com</a>.<br>
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/d/msgid/demcommunications/2AE4202A723DAE418719D2AC271C35F36EFD28DC%40dnc=
+dag1.dnc.org?utm_medium=3Demail&amp;utm_source=3Dfooter">
+https://groups.google.com/d/msgid/demcommunications/2AE4202A723DAE418719D2A=
+C271C35F36EFD28DC%40dncdag1.dnc.org</a>.<br>
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+<p></p>
+
+-- <br>
+<br>
+--- <br>
+You received this message because you are subscribed to the Google Groups &=
+quot;Democratic State Party - Communications Staff&quot; group.<br>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:demcommunications&#43;unsubscribe@googlegroups.co=
+m">demcommunications&#43;unsubscribe@googlegroups.com</a>.<br>
+To post to this group, send email to <a href=3D"mailto:demcommunications@go=
+oglegroups.com">demcommunications@googlegroups.com</a>.<br>
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/d/msgid/demcommunications/5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9C%40dnc=
+dag1.dnc.org?utm_medium=3Demail&amp;utm_source=3Dfooter">https://groups.goo=
+gle.com/d/msgid/demcommunications/5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9C%=
+40dncdag1.dnc.org</a>.<br>
+For more options, visit <a href=3D"https://groups.google.com/d/optout">http=
+s://groups.google.com/d/optout</a>.<br>
+
+--_000_5A6B87E0F037D74F946117B0BEEEB85C4DB8FD9Cdncdag1dncorg_--

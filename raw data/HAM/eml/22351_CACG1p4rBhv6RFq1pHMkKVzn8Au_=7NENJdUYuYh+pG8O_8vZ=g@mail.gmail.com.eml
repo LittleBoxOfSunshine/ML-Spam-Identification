@@ -1,0 +1,705 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 16 May
+ 2016 11:09:10 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 16 May 2016
+ 11:09:09 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 917090717
+ for parrishd@dnc.org; Mon, 16 May 2016 10:09:17 -0500
+X-Note-AR-ScanTimeLocal: 5/16/2016 10:09:16 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.51 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-440/SG:5 5/16/2016 10:08:34 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8793 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/16/2016 10:09:14 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.51
+X-Note-Reverse-DNS: mail-wm0-f51.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f51.google.com ([74.125.82.51] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140819328
+ for parrishd@dnc.org; Mon, 16 May 2016 10:09:16 -0500
+Received: by mail-wm0-f51.google.com with SMTP id n129so105079390wmn.1
+        for <parrishd@dnc.org>; Mon, 16 May 2016 08:09:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=6XniTJ+o3wVUfwIZw/9X6uoqnqKREX8SUbrP+SZnvyY=;
+        b=hVvXZzUI5RhgTWv+SEh0PHHX2Hfjhy+0Of10//5gSzjLWOGwokKpTW4KkDW2IR1p0E
+         DkLrcXaM7gFO4A7VMJdqb6uNKC88Xv/75B1zP7G+uRtm5crIYFehjzebE3GDpNHrdDhl
+         X4U+pUH6mk+d2JrGKIiXkU6SI8e6fy9exCn6j47LZ6LndmLDeQJVgS4lFtGyY/4Zk5eP
+         VfRYG/sXbQo3fK+qucDtnUAk29wV2pqbylkBaLgYefirarKu5UNDk0XcE7ifmpPGgvnw
+         niebQpknVjzExU6vNtJLXcIdfKFI/nJPvzVHiHaoej4Ad8U2NBpiWrnqhgfsnO6FX4e1
+         Hrlw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=6XniTJ+o3wVUfwIZw/9X6uoqnqKREX8SUbrP+SZnvyY=;
+        b=M1MEAJ3SDZnNQPxGXjJGmNOgUW5DcPlyqZoFZPSw90GqGGF7SncA0sOEw86V6HZ+Ia
+         SLq7oNnzJT7OM5CYOHc4lGQF6VLl6QWrS254K3SjML2oqUgXUXB3Qwsx8WXSU2KyqLG+
+         PeWU9Ll42L4caqkujmQ4ozotzt2joke1pMtPQsGTHNb3uDLUDeQR9fd1/aJupwMVkb/c
+         qxLoGiB0ctGuzXztmHsDscv/5T5FDSf/YYNOYwQhIM0UZiRmniwa288IXcrIly0hi3hA
+         78rPyvM2oAQ1JyjyHXS2RiHuFaOtUMfFcaNw3cw1W6I5tFBJotezN8flnKU5i45046No
+         Ajmg==
+X-Gm-Message-State: AOPr4FUNC1vAe+fM0aI5xhfe2eRoS5jRQnl3tywykO9oqJyVuTncDS25wl3PWPB985lXSE5Nm3sVU5RX8UE624Hu
+X-Received: by 10.28.113.67 with SMTP id m64mr19232128wmc.58.1463411347242;
+ Mon, 16 May 2016 08:09:07 -0700 (PDT)
+Received: by 10.28.128.132 with HTTP; Mon, 16 May 2016 08:09:07 -0700 (PDT)
+In-Reply-To: <D6CF9EE3-90F4-4157-9A1E-103DA755507F@chandeliercreative.com>
+References: <CACG1p4oxQdBtZUr7u_YOe35KwPS5raDgON3CjtqZ3JpafJmSvA@mail.gmail.com>
+	<CACG1p4qmk250G0VyNU-DEWPz+5dwxD2PvWJbc+pCpwfO2L8VPA@mail.gmail.com>
+	<D9C39B25-8E2D-4D55-B067-225C5D43E66B@chandeliercreative.com>
+	<CACG1p4of2h-wmmppPXEFzM7iOqvnQ6za=xH-54VzFyf=cRewmw@mail.gmail.com>
+	<CACG1p4puZpsT6zpXs4-LnGVkP8y_OWRG2K_msoCHfP011pUqeA@mail.gmail.com>
+	<3FFA3CCB-FA34-4ECC-AFB8-93F664168781@chandeliercreative.com>
+	<CACG1p4qJ5vCM7EmfyQK3qOxW+FZvm-vHHAKDaS8hHq55+WiDkQ@mail.gmail.com>
+	<CACG1p4oe-tANrHDyYUDrF1doSF8tQyO_yF3cnqq9T1VSVVYmjQ@mail.gmail.com>
+	<CAOXuaea2gu+eXuQQRWKK-362Te5FMP0mZvTueTq5-jDbgHedFg@mail.gmail.com>
+	<D6CF9EE3-90F4-4157-9A1E-103DA755507F@chandeliercreative.com>
+Date: Mon, 16 May 2016 10:09:07 -0500
+Message-ID: <CACG1p4rBhv6RFq1pHMkKVzn8Au_=7NENJdUYuYh+pG8O_8vZ=g@mail.gmail.com>
+Subject: Re: Follow-up!
+From: Zachary Allen <zallen@tipahconsulting.com>
+To: Brandon Georger <brandon@chandeliercreative.com>
+CC: Dan Parrish <parrishd@dnc.org>
+Content-Type: multipart/alternative; boundary="001a1147dab0835f430532f7014c"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1147dab0835f430532f7014c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Yes - he's all set. Dan, copied, is handling all the security information
+we'll need for his guest. Thanks!
+
+On Monday, May 16, 2016, Brandon Georger <brandon@chandeliercreative.com>
+wrote:
+
+> Hi Zach!
+>
+> Can you please confirm Richard is all set. I filled out the form online,
+> and also was not able to print a receipt?!
+>
+> Brandon
+>
+> =E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94=E2=80=94
+>
+> <http://chandeliercreative.com/>
+>
+> *BRANDON GEORGER*
+> EXECUTIVE ASSISTANT
+> 611 BROADWAY, PENTHOUSE
+> NEW YORK, NY 10012
+> O. +1 212 620 5252
+> M. +1 585 750 6632
+>
+> On May 16, 2016, at 8:45 AM, Richard Christiansen <
+> richard@chandeliercreative.com
+> <javascript:_e(%7B%7D,'cvml','richard@chandeliercreative.com');>> wrote:
+>
+> Looping in Brandon who can help sort!
+>
+> Thanks,
+>
+> Brandon
+>
+> On Mon, May 16, 2016 at 7:36 AM, Zachary Allen <zallen@tipahconsulting.co=
+m
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>> wrote:
+>
+>> Richard -
+>>
+>> Sorry for the delay. I have two spots saved for you - will just need the
+>> name, DOB, and SSN of your guest. He/she can email that to me, or if the=
+y
+>> prefer can call Dan Parrish anytime at (717) 283-7521. Am so thrilled
+>> you'll be there!
+>>
+>> The contribution can be made online at
+>> https://finance.democrats.org/page/contribute/NYDinnerJun8.
+>>
+>> If you have any questions, please don't hesitate to call or email - look
+>> forward to seeing you June 8th, if not before!
+>>
+>> My best,
+>> Zach
+>>
+>>
+>>
+>> On Sun, May 15, 2016 at 11:13 PM, Zachary Allen <
+>> zallen@tipahconsulting.com
+>> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>> wrote:
+>>
+>>> Richard - Great to hear from you, thrilled you'll be there! Was out of
+>>> town this weekend, apologies on the delay in replying. Will follow up
+>>> formally tomorrow!
+>>>
+>>> On Sunday, May 15, 2016, Richard Christiansen <
+>>> richard@chandeliercreative.com
+>>> <javascript:_e(%7B%7D,'cvml','richard@chandeliercreative.com');>> wrote=
+:
+>>>
+>>>> Hi Zach!
+>>>> My schedule got sorted and I am all in for June
+>>>> Can I get two of us - me and one of my friends?
+>>>> 10k each, right?
+>>>> Very happy to contribute.
+>>>>
+>>>> x
+>>>>
+>>>> R
+>>>>
+>>>> -------------------------------------
+>>>>
+>>>> Richard Christiansen
+>>>> Founder
+>>>> Chandelier Creative
+>>>> 611 Broadway
+>>>> Penthouse
+>>>> NYC, 10012
+>>>> +1 212 620 5252
+>>>> +1 917 549 2353
+>>>>
+>>>> INSTAGRAM: chandeliercreative
+>>>>
+>>>> On May 8, 2016, at 11:50 AM, Zachary Allen <zallen@tipahconsulting.com=
+>
+>>>> wrote:
+>>>>
+>>>> Richard -
+>>>>
+>>>> And as luck would have it, I now have President Obama in NYC for an
+>>>> event June 8th. It will be a 60-70 person dinner, and Ken Lerer and
+>>>> Katherine Sailer are hosting (if you know them). Obviously not as
+>>>> small/intimate as the roundtable which is still happening, but did wan=
+t to
+>>>> put it on your radar.
+>>>>
+>>>> Finally, I hope you had a lovely dinner with Stephen and James! Will
+>>>> you be attending their event June 13th for NC AG Roy Cooper?
+>>>>
+>>>> Let me know, and look forward to hearing from you!
+>>>>
+>>>> My best,
+>>>> Zach
+>>>>
+>>>>
+>>>> On Wed, May 4, 2016 at 5:28 AM, Zachary Allen <
+>>>> zallen@tipahconsulting.com> wrote:
+>>>>
+>>>>> Richard -
+>>>>>
+>>>>> Amazing! Sorry for the delay in responding.
+>>>>>
+>>>>> This event is in Washington, so would involve getting down there and
+>>>>> will take place across the street from the WH. And while there will b=
+e the
+>>>>> posed photo component of course, see the attached for some idea as to=
+ what
+>>>>> it looks like. That is off the record of course, and certainly not fo=
+r
+>>>>> public viewing. It will be in the late afternoon, I imagine.
+>>>>>
+>>>>> When I say qualify for a convention package, and apologies for
+>>>>> speaking in the weeds here, I mean the DNC grants packages to their
+>>>>> supporters based on the contributions in 2015 and 2016 (see attached)=
+. You
+>>>>> contributed $33,400 last year, so if you choose to do so again this y=
+ear -
+>>>>> say to attend this event May 18 - you would automatically be qualifie=
+d for
+>>>>> the benefits of the Mainline Package.
+>>>>>
+>>>>> This can all be a bit confusing, so if you have any questions - just
+>>>>> give a shout!
+>>>>>
+>>>>> Best,
+>>>>> Zach
+>>>>>
+>>>>>
+>>>>> On Tue, May 3, 2016 at 4:18 PM, Richard Christiansen <
+>>>>> richard@chandeliercreative.com> wrote:
+>>>>>
+>>>>>> Amazing!
+>>>>>> Thanks Zach! I=E2=80=99d definitely interested. Let me see if I am i=
+n town.
+>>>>>> Do you know roughly what time it would be? Pic opportunity!?
+>>>>>>
+>>>>>> Quick question, what do you mean by  qualify for a convention packag=
+e?
+>>>>>> Sounds like so much fun.
+>>>>>>
+>>>>>> Richard
+>>>>>>
+>>>>>> -------------------------------------
+>>>>>>
+>>>>>> Richard Christiansen
+>>>>>> Founder
+>>>>>> Chandelier Creative
+>>>>>> 611 Broadway
+>>>>>> Penthouse
+>>>>>> NYC, 10012
+>>>>>> +1 212 620 5252
+>>>>>> +1 917 549 2353
+>>>>>>
+>>>>>> INSTAGRAM: chandeliercreative
+>>>>>>
+>>>>>> On May 3, 2016, at 1:39 PM, Zachary Allen <zallen@tipahconsulting.co=
+m>
+>>>>>> wrote:
+>>>>>>
+>>>>>> Richard -
+>>>>>>
+>>>>>> And on that last note - a new development on that last part (re: the
+>>>>>> DNC).
+>>>>>>
+>>>>>> I wanted to let you know about a special event we're doing with the
+>>>>>> President in Washington on Wednesday, May 18th. It's a 20 person rou=
+nd
+>>>>>> table discussion with him (off the record) for our top supporters
+>>>>>> ($33,400), something you had mentioned potentially wanting to do in =
+order
+>>>>>> to qualify for a convention package.
+>>>>>>
+>>>>>> If you'd like me to reserve your spot, just let me know! No pressure
+>>>>>> either way, but wanted you to be the first to hear. We would, of cou=
+rse,
+>>>>>> invite you to the gala in the fall as our guest.
+>>>>>>
+>>>>>> Have a lovely dinner with James & Stephen!
+>>>>>>
+>>>>>> Best,
+>>>>>> Zach
+>>>>>>
+>>>>>> On Mon, May 2, 2016 at 5:21 PM, Zachary Allen <
+>>>>>> zallen@tipahconsulting.com> wrote:
+>>>>>>
+>>>>>>> Richard -
+>>>>>>>
+>>>>>>> It was so great speaking today, thank you for making the time after
+>>>>>>> what sounds like an absolutely incredible journey!
+>>>>>>>
+>>>>>>> Per our conversation, wanted to follow up on two counts.
+>>>>>>>
+>>>>>>> The event for NC AG Roy Cooper at James & Stephen's is June 13th,
+>>>>>>> and the details are attached and below. If you have any questions o=
+n that,
+>>>>>>> please don't hesitate to ask! We'd love your help spreading the wor=
+d - this
+>>>>>>> is an important race getting some national attention. If you'd like=
+ to join
+>>>>>>> as a co-host, just let me know!
+>>>>>>>
+>>>>>>> Reception for North Carolina Attorney General Roy Cooper
+>>>>>>> June 13th | 6:00p.m.
+>>>>>>>
+>>>>>>> At the home of Stephen Henderson & James LaForce
+>>>>>>>
+>>>>>>> 142 West 26th Street, Apt 9
+>>>>>>> New York, NY
+>>>>>>>
+>>>>>>> RSVP: www.actblue.com/contribute/page/nyc613
+>>>>>>>
+>>>>>>> Secondly, wanted to make sure you had the convention packages we
+>>>>>>> discussed - you'll find that information attached as well. With you=
+r
+>>>>>>> contribution in 2015 of $33,400, you are halfway to qualifying for =
+the Main
+>>>>>>> Line package. If you're interested in making a contribution this ye=
+ar, one
+>>>>>>> can be made online at https://my.democrats.org/tristate2016. As I
+>>>>>>> mentioned on the phone, while they are not 100% related, we do try =
+and
+>>>>>>> invite all of our maxout supporters to the holiday parties.
+>>>>>>>
+>>>>>>> Either way, I very much look forward to seeing you at James &
+>>>>>>> Stephen's, if not before! If you have any questions, call or email =
+anytime!
+>>>>>>>
+>>>>>>> My best,
+>>>>>>> Zach
+>>>>>>>
+>>>>>>> --
+>>>>>>> Zachary Allen
+>>>>>>> TIPAH Consulting
+>>>>>>> 304 Park Avenue South, 8th Floor
+>>>>>>> New York, NY 10010
+>>>>>>> (646) 470-8689 direct | (973) 618-5903 fax |
+>>>>>>> ZAllen@TIPAHConsulting.com
+>>>>>>>
+>>>>>>
+>>>>>>
+>>>>>>
+>>>>>> --
+>>>>>> Zachary Allen
+>>>>>> TIPAH Consulting
+>>>>>> 304 Park Avenue South, 8th Floor
+>>>>>> New York, NY 10010
+>>>>>> (646) 470-8689 direct | (973) 618-5903 fax |
+>>>>>> ZAllen@TIPAHConsulting.com
+>>>>>>
+>>>>>>
+>>>>>>
+>>>>>
+>>>>>
+>>>>> --
+>>>>> Zachary Allen
+>>>>> TIPAH Consulting
+>>>>> 304 Park Avenue South, 8th Floor
+>>>>> New York, NY 10010
+>>>>> (646) 470-8689 direct | (973) 618-5903 fax |
+>>>>> ZAllen@TIPAHConsulting.com
+>>>>>
+>>>>
+>>>>
+>>>>
+>>>> --
+>>>> Zachary Allen
+>>>> TIPAH Consulting
+>>>> 304 Park Avenue South, 8th Floor
+>>>> New York, NY 10010
+>>>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.co=
+m
+>>>> <NY Dinner 060816.pdf>
+>>>>
+>>>>
+>>>>
+>>>
+>>> --
+>>> Zachary Allen
+>>> TIPAH Consulting
+>>> 304 Park Avenue South, 8th Floor
+>>> New York, NY 10010
+>>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>>>
+>>>
+>>
+>>
+>> --
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>>
+>
+>
+>
+> --
+> -------------------------------------
+>
+> Richard Christiansen
+> Founder
+> Chandelier Creative
+> 611 Broadway
+> Penthouse
+> NYC, 10012
+> +1 212 620 5252
+> +1 917 549 2353
+>
+> INSTAGRAM: ChandelierCreative
+>
+>
+>
+>
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a1147dab0835f430532f7014c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">Ye=
+s - he's all set. Dan, copied, is handling all the security information we'=
+ll need for his guest. Thanks!<span></span><br><br>On Monday, May 16, 2016,=
+ Brandon Georger &lt;<a href=3D"mailto:brandon@chandeliercreative.com">bran=
+don@chandeliercreative.com</a>&gt; wrote:<br><blockquote class=3D"gmail_quo=
+te" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"=
+><div style=3D"word-wrap:break-word">Hi Zach!&nbsp;<div><br></div><div>Can =
+you please confirm Richard is all set. I filled out the form online, and al=
+so was not able to print a receipt?!</div><div><br></div><div>Brandon<br><d=
+iv>
+<div><p align=3D"left"><font face=3D"helvetica">=E2=80=94=E2=80=94=E2=80=94=
+=E2=80=94=E2=80=94=E2=80=94<br><br></font></p><font face=3D"helvetica"><div=
+ align=3D"left"><a href=3D"http://chandeliercreative.com/" target=3D"_blank=
+"><img src=3D"http://chandeliercreative.com/img/chandeliersignature.png"></=
+a></div><br><p align=3D"left"><font face=3D"helvetica"><font size=3D"2"><st=
+rong>BRANDON GEORGER</strong>&nbsp;<br>EXECUTIVE ASSISTANT<br>611 BROADWAY,=
+ PENTHOUSE<br>NEW YORK, NY 10012<br>O. &#43;1 212 620 5252&nbsp;<br>M. &#43=
+;1 585 750 6632&nbsp;</font></font></p></font></div>
+</div>
+<br><div><blockquote type=3D"cite"><div>On May 16, 2016, at 8:45 AM, Richar=
+d Christiansen &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','richard@chandeli=
+ercreative.com');" target=3D"_blank">richard@chandeliercreative.com</a>&gt;=
+ wrote:</div><br><div><div dir=3D"ltr">Looping in Brandon who can help sort=
+!<div><br></div><div>Thanks,</div><div><br></div><div>Brandon</div></div><d=
+iv class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Mon, May 16, 201=
+6 at 7:36 AM, Zachary Allen <span dir=3D"ltr">&lt;<a href=3D"javascript:_e(=
+%7B%7D,'cvml','zallen@tipahconsulting.com');" target=3D"_blank">zallen@tipa=
+hconsulting.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" =
+style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><di=
+v dir=3D"ltr">Richard -&nbsp;<div><br></div><div>Sorry for the delay. I hav=
+e two spots saved for you - will just need the name, DOB, and SSN of your g=
+uest. He/she can email that to me, or if they prefer can call Dan Parrish a=
+nytime at&nbsp;<a href=3D"tel:%28717%29%20283-7521" value=3D"&#43;171728375=
+21" target=3D"_blank">(717) 283-7521</a>. Am so thrilled you'll be there!&n=
+bsp;</div><div><br></div><div>The contribution can be made online at <a hre=
+f=3D"https://finance.democrats.org/page/contribute/NYDinnerJun8" target=3D"=
+_blank">https://finance.democrats.org/page/contribute/NYDinnerJun8</a>.&nbs=
+p;</div><div><br></div><div>If you have any questions, please don't hesitat=
+e to call or email - look forward to seeing you June 8th, if not before!&nb=
+sp;</div><div><br></div><div>My best,</div><div>Zach</div>
+	=09
+=09
+=09
+		<div title=3D"Page 2">
+			<div>
+				<div><p><span style=3D"font-size:9pt;font-family:GothamBold;color:rgb(5=
+0,173,227)">&nbsp;<br></span></p>
+				</div>
+			</div>
+		</div></div><div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On =
+Sun, May 15, 2016 at 11:13 PM, Zachary Allen <span dir=3D"ltr">&lt;<a href=
+=3D"javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');" target=3D"_=
+blank">zallen@tipahconsulting.com</a>&gt;</span> wrote:<br><blockquote clas=
+s=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;pad=
+ding-left:1ex">Richard - Great to hear from you, thrilled you'll be there! =
+Was out of town this weekend, apologies on the delay in replying. Will foll=
+ow up formally tomorrow!&nbsp;<div><div><span></span><div><br>On Sunday, Ma=
+y 15, 2016, Richard Christiansen &lt;<a href=3D"javascript:_e(%7B%7D,'cvml'=
+,'richard@chandeliercreative.com');" target=3D"_blank">richard@chandeliercr=
+eative.com</a>&gt; wrote:<br><blockquote class=3D"gmail_quote" style=3D"mar=
+gin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex"><div style=3D"w=
+ord-wrap:break-word">Hi Zach!<div>My schedule got sorted and I am all in fo=
+r June&nbsp;</div><div>Can I get two of us - me and one of my friends?</div=
+><div>10k each, right?</div><div>Very happy to contribute.</div><div><br></=
+div><div>x</div><div><br></div><div>R</div><div><br></div><div><div>
+<div style=3D"letter-spacing:normal;text-align:start;text-indent:0px;text-t=
+ransform:none;white-space:normal;word-spacing:0px;word-wrap:break-word"><di=
+v>-------------------------------------<br><br>Richard Christiansen<br>Foun=
+der<br>Chandelier Creative<br>611 Broadway<br>Penthouse<br>NYC, 10012<br><a=
+ href=3D"tel:%2B1%20212%20620%205252" value=3D"&#43;12126205252" target=3D"=
+_blank">&#43;1 212 620 5252</a><br><a href=3D"tel:%2B1%20917%20549%202353" =
+value=3D"&#43;19175492353" target=3D"_blank">&#43;1 917 549 2353</a></div><=
+div><br></div><div>INSTAGRAM: chandeliercreative</div></div>
+
+</div>
+<br><div><blockquote type=3D"cite"><div>On May 8, 2016, at 11:50 AM, Zachar=
+y Allen &lt;<a>zallen@tipahconsulting.com</a>&gt; wrote:</div><br><div><div=
+ dir=3D"ltr" style=3D"font-family:Helvetica;font-size:12px;font-style:norma=
+l;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:=
+normal;text-align:start;text-indent:0px;text-transform:none;white-space:nor=
+mal;word-spacing:0px">Richard -&nbsp;<div><br></div><div>And as luck would =
+have it, I now have President Obama in NYC for an event June 8th. It will b=
+e a 60-70 person dinner, and&nbsp;<span style=3D"font-size:12.8px">Ken Lere=
+r and Katherine Sailer are hosting (if you know them). Obviously not as sma=
+ll/intimate as the roundtable which is still happening, but did want to put=
+ it on your radar.&nbsp;</span></div><div><span style=3D"font-size:12.8px">=
+<br></span></div><div><span style=3D"font-size:12.8px">Finally, I hope you =
+had a lovely dinner with Stephen and James! Will you be attending their eve=
+nt June 13th for NC AG Roy Cooper?&nbsp;</span></div><div><span style=3D"fo=
+nt-size:12.8px"><br></span></div><div><span style=3D"font-size:12.8px">Let =
+me know, and look forward to hearing from you!&nbsp;</span></div><div><span=
+ style=3D"font-size:12.8px"><br></span></div><div><span style=3D"font-size:=
+12.8px">My best,</span></div><div><span style=3D"font-size:12.8px">Zach<br>=
+</span><div><br></div><div><div class=3D"gmail_extra"><br><div class=3D"gma=
+il_quote">On Wed, May 4, 2016 at 5:28 AM, Zachary Allen<span>&nbsp;</span><=
+span dir=3D"ltr">&lt;<a>zallen@tipahconsulting.com</a>&gt;</span><span>&nbs=
+p;</span>wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0px 0p=
+x 0px 0.8ex;border-left-width:1px;border-left-color:rgb(204,204,204);border=
+-left-style:solid;padding-left:1ex"><div dir=3D"ltr"><span>Richard -&nbsp;<=
+div><br></div><div>Amazing! Sorry for the delay in responding.&nbsp;</div><=
+div><br></div><div>This event is in Washington, so would involve getting do=
+wn there and will take place across the street from the WH. And while there=
+ will be the posed photo component of course, see the attached for some ide=
+a as to what it looks like. That is off the record of course, and certainly=
+ not for public viewing. It will be in the late afternoon, I imagine.&nbsp;=
+</div><div><br></div><div>When I say qualify for a convention package, and =
+apologies for speaking in the weeds here, I mean the DNC grants packages to=
+ their supporters based on the contributions in 2015 and 2016 (see attached=
+). You contributed $33,400 last year, so if you choose to do so again this =
+year - say to attend this event May 18 - you would automatically be qualifi=
+ed for the benefits of the Mainline Package.&nbsp;</div><div><br></div><div=
+>This can all be a bit confusing, so if you have any questions - just give =
+a shout!&nbsp;</div><div><br></div><div>Best,</div><div>Zach</div></span><d=
+iv><br><div class=3D"gmail_extra"><br><div class=3D"gmail_quote"><span>On T=
+ue, May 3, 2016 at 4:18 PM, Richard Christiansen<span>&nbsp;</span><span di=
+r=3D"ltr">&lt;<a>richard@chandeliercreative.com</a>&gt;</span><span>&nbsp;<=
+/span>wrote:<br></span><div><div><blockquote class=3D"gmail_quote" style=3D=
+"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-color:rgb(204,2=
+04,204);border-left-style:solid;padding-left:1ex"><div style=3D"word-wrap:b=
+reak-word">Amazing!<div>Thanks Zach! I=E2=80=99d definitely interested. Let=
+ me see if I am in town. Do you know roughly what time it would be? Pic opp=
+ortunity!?</div><div><br></div><div>Quick question, what do you mean by &nb=
+sp;qualify for a convention package?</div><div>Sounds like so much fun.</di=
+v><div><br></div><div>Richard</div><div><br></div><div><div style=3D"letter=
+-spacing:normal;text-align:start;text-indent:0px;text-transform:none;white-=
+space:normal;word-spacing:0px;word-wrap:break-word"><div>------------------=
+-------------------<br><br>Richard Christiansen<br>Founder<br>Chandelier Cr=
+eative<br>611 Broadway<br>Penthouse<br>NYC, 10012<br><a href=3D"tel:%2B1%20=
+212%20620%205252" value=3D"&#43;12126205252" target=3D"_blank">&#43;1 212 6=
+20 5252</a><br><a href=3D"tel:%2B1%20917%20549%202353" value=3D"&#43;191754=
+92353" target=3D"_blank">&#43;1 917 549 2353</a></div><div><br></div><div>I=
+NSTAGRAM: chandeliercreative</div></div></div><div><div><br><div><blockquot=
+e type=3D"cite"><div>On May 3, 2016, at 1:39 PM, Zachary Allen &lt;<a>zalle=
+n@tipahconsulting.com</a>&gt; wrote:</div><br><div><div dir=3D"ltr">Richard=
+ -<div><br></div><div>And on that last note - a new development on that las=
+t part (re: the DNC).&nbsp;</div><div><br></div><div><div style=3D"font-siz=
+e:12.8px">I wanted to let you know about a special event we're doing with t=
+he President in Washington on Wednesday, May 18th. It's a 20 person round t=
+able discussion with him (off the record) for our top supporters ($33,400),=
+ something you had mentioned potentially wanting to do in order to qualify =
+for a convention package.&nbsp;</div><div style=3D"font-size:12.8px"><br></=
+div><div style=3D"font-size:12.8px">If you'd like me to reserve your spot, =
+just let me know! No pressure either way, but wanted you to be the first to=
+ hear. We would, of course, invite you to the gala in the fall as our guest=
+.&nbsp;</div></div><div style=3D"font-size:12.8px"><br></div><div style=3D"=
+font-size:12.8px">Have a lovely dinner with James &amp; Stephen!&nbsp;</div=
+><div style=3D"font-size:12.8px"><br></div><div style=3D"font-size:12.8px">=
+Best,</div><div style=3D"font-size:12.8px">Zach</div></div><div class=3D"gm=
+ail_extra"><br><div class=3D"gmail_quote">On Mon, May 2, 2016 at 5:21 PM, Z=
+achary Allen<span>&nbsp;</span><span dir=3D"ltr">&lt;<a>zallen@tipahconsult=
+ing.com</a>&gt;</span><span>&nbsp;</span>wrote:<br><blockquote class=3D"gma=
+il_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-le=
+ft-color:rgb(204,204,204);border-left-style:solid;padding-left:1ex"><div di=
+r=3D"ltr">Richard -&nbsp;<div><br></div><div>It was so great speaking today=
+, thank you for making the time after what sounds like an absolutely incred=
+ible journey!&nbsp;</div><div><br></div><div>Per our conversation, wanted t=
+o follow up on two counts.&nbsp;</div><div><br></div><div>The event for NC =
+AG Roy Cooper at James &amp; Stephen's is June 13th, and the details are at=
+tached and below. If you have any questions on that, please don't hesitate =
+to ask! We'd love your help spreading the word - this is an important race =
+getting some national attention. If you'd like to join as a co-host, just l=
+et me know!&nbsp;</div><div><br></div><div><div style=3D"font-size:12.8px">=
+<div style=3D"text-align:center;font-size:12.8px">Reception for North Carol=
+ina Attorney General Roy Cooper</div><div style=3D"text-align:center;font-s=
+ize:12.8px">June 13th | 6:00p.m.</div><div style=3D"text-align:center;font-=
+size:12.8px"><br></div><span style=3D"font-size:12.8px"><div style=3D"text-=
+align:center"><span style=3D"font-size:12.8px">At the home of Stephen Hende=
+rson &amp; James LaForce</span></div></span><div style=3D"margin:1.65pt 4.8=
+pt 0.0001pt;font-size:12.8px;text-align:center"><span style=3D"font-size:18=
+pt;font-family:Cambria,serif;color:rgb(31,73,125)"></span><br></div><span s=
+tyle=3D"font-size:12.8px"><div style=3D"text-align:center"><span style=3D"f=
+ont-size:12.8px">142 West 26th Street, Apt 9</span></div></span></div><div =
+style=3D"text-align:center;font-size:12.8px"><span style=3D"font-size:12.8p=
+x">New York, NY</span></div><div style=3D"text-align:center;font-size:12.8p=
+x"><br></div><div style=3D"text-align:center;font-size:12.8px">RSVP:&nbsp;<=
+a href=3D"http://www.actblue.com/contribute/page/nyc613" target=3D"_blank">=
+www.actblue.com/contribute/page/nyc613</a></div></div><div><br></div><div>S=
+econdly, wanted to make sure you had the convention packages we discussed -=
+ you'll find that information attached as well. With your contribution in 2=
+015 of $33,400, you are halfway to qualifying for the Main Line package. If=
+ you're interested in making a contribution this year, one can be made onli=
+ne at&nbsp;<a href=3D"https://my.democrats.org/tristate2016" target=3D"_bla=
+nk">https://my.democrats.org/tristate2016</a>. As I mentioned on the phone,=
+ while they are not 100% related, we do try and invite all of our maxout su=
+pporters to the holiday parties.&nbsp;</div><div><br></div><div>Either way,=
+ I very much look forward to seeing you at James &amp; Stephen's, if not be=
+fore! If you have any questions, call or email anytime!&nbsp;</div><div><br=
+></div><div>My best,</div><div>Zach<span><font color=3D"#888888"><br clear=
+=3D"all"><div><br></div>--<span>&nbsp;</span><br><div><div dir=3D"ltr"><div=
+><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<b=
+r>304 Park Avenue South, 8th Floor<br>New York, NY 10010<br><span><span tit=
+le=3D"Call with Google Voice"><span title=3D"Call with Google Voice"><a hre=
+f=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_blank"=
+>(646) 470-8689</a></span></span><span><span>&nbsp;</span>direct |<span>&nb=
+sp;</span><span title=3D"Call with Google Voice"><span title=3D"Call with G=
+oogle Voice"><a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;19736185903=
+" target=3D"_blank">(973) 618-5903</a></span></span><span>&nbsp;</span>fax<=
+/span></span><span>&nbsp;|<span>&nbsp;</span></span><a>ZAllen@TIPAHConsulti=
+ng.com</a></div></div></div></div></div></div></font></span></div></div></b=
+lockquote></div><br><br clear=3D"all"><div><br></div>--<span>&nbsp;</span><=
+br><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zachar=
+y Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Floor<br>New York=
+, NY 10010<br><a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;1646470868=
+9" target=3D"_blank">(646) 470-8689</a><span>&nbsp;</span>direct |<span>&nb=
+sp;</span><a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;19736185903" t=
+arget=3D"_blank">(973) 618-5903</a><span>&nbsp;</span>fax<span>&nbsp;|<span=
+>&nbsp;</span></span><a>ZAllen@TIPAHConsulting.com</a></div></div></div></d=
+iv></div></div></div></div></blockquote></div><br></div></div></div></block=
+quote></div></div></div><div><div><br><br clear=3D"all"><div><br></div>--<s=
+pan>&nbsp;</span><br><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div =
+dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th=
+ Floor<br>New York, NY 10010<br><span><span title=3D"Call with Google Voice=
+"><a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D=
+"_blank">(646) 470-8689</a></span><span><span>&nbsp;</span>direct |<span>&n=
+bsp;</span><span title=3D"Call with Google Voice"><a href=3D"tel:%28973%29%=
+20618-5903" value=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a>=
+</span><span>&nbsp;</span>fax</span></span><span>&nbsp;|<span>&nbsp;</span>=
+</span><a>ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div=
+></div></div></div></div><span></span><span></span></div></blockquote></div=
+><br><br clear=3D"all"><div><br></div>--<span>&nbsp;</span><br><div><div di=
+r=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIPA=
+H Consulting<br>304 Park Avenue South, 8th Floor<br>New York, NY 10010<br><=
+span><span title=3D"Call with Google Voice"><span title=3D"Call with Google=
+ Voice"><a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" tar=
+get=3D"_blank">(646) 470-8689</a></span></span><span><span>&nbsp;</span>dir=
+ect |<span>&nbsp;</span><span title=3D"Call with Google Voice"><span title=
+=3D"Call with Google Voice"><a href=3D"tel:%28973%29%20618-5903" value=3D"&=
+#43;19736185903" target=3D"_blank">(973) 618-5903</a></span></span><span>&n=
+bsp;</span>fax</span></span><span>&nbsp;|<span>&nbsp;</span></span><a>ZAlle=
+n@TIPAHConsulting.com</a></div></div></div></div></div></div></div></div></=
+div></div><span>&lt;NY Dinner 060816.pdf&gt;</span></div></blockquote></div=
+><br></div></div></blockquote></div><br><span><font color=3D"#888888"><br>-=
+- <br><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary =
+Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Floor<br>New York, =
+NY 10010<br><a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689"=
+ target=3D"_blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%206=
+18-5903" value=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fa=
+x<span>&nbsp;| </span><a href=3D"javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHC=
+onsulting.com');" target=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></d=
+iv></div></div></div><br>
+</font></span></div></div></blockquote></div><span><font color=3D"#888888">=
+<br><br clear=3D"all"><div><br></div>-- <br><div><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304=
+ Park Avenue South, 8th Floor<br>New York, NY 10010<br><a href=3D"tel:%2864=
+6%29%20470-8689" value=3D"&#43;16464708689" target=3D"_blank">(646) 470-868=
+9</a> direct | <a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;197361859=
+03" target=3D"_blank">(973) 618-5903</a> fax<span>&nbsp;| </span><a href=3D=
+"javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');" target=3D"_bla=
+nk">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</font></span></div>
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div><div di=
+r=3D"ltr"><div><div dir=3D"ltr">-------------------------------------<br><b=
+r>Richard Christiansen<br>Founder<br>Chandelier Creative<br>611 Broadway<br=
+>Penthouse<br>NYC, 10012<br>&#43;1 212 620 5252<br>&#43;1 917 549 2353<br><=
+br>INSTAGRAM: ChandelierCreative<br><br><br></div></div></div></div>
+</div>
+</div></blockquote></div><br></div></div></blockquote><br><br>-- <br><div d=
+ir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIP=
+AH Consulting<br>304 Park Avenue South, 8th Floor<br>New York, NY 10010<br>=
+(646) 470-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a href=3D"m=
+ailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">ZAllen@TIPAHConsulting.=
+com</a></div></div></div></div></div><br>
+
+--001a1147dab0835f430532f7014c--

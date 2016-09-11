@@ -1,0 +1,413 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 24 May
+ 2016 08:18:21 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 24 May 2016
+ 08:18:10 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 930951097
+ for parrishd@dnc.org; Mon, 23 May 2016 21:01:58 -0500
+X-Note-AR-ScanTimeLocal: 5/23/2016 9:02:08 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.51 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-120/SG:5 5/23/2016 9:01:25 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-21271-c
+X-Note-419: 15.6202 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/23/2016 9:01:49 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.51
+X-Note-Reverse-DNS: mail-oi0-f51.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-oi0-f51.google.com ([209.85.218.51] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140561304
+ for parrishd@dnc.org; Mon, 23 May 2016 21:02:08 -0500
+Received: by mail-oi0-f51.google.com with SMTP id b65so4828163oia.1        for
+ <parrishd@dnc.org>; Mon, 23 May 2016 19:01:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc;
+        bh=fjKERV8WVJXKdUVT+BCDVsG+Lo469ECcDelAS8dA5IE=;
+        b=jAUU/9pKc/oV8hy83k/Bhvs/EK1V5j4tDerzmoJGUfBbMFaBwYKIIoRjtvkQyCFVYT
+         SA/rHjvSetxE1K9MFPDZksAI8v6onIh/mavi/85Zhu/LnEbp9Td2ImJvkokLxMfE4Qmi
+         +3fDMLfRYgvsgSk7Mco1z+N4c+YN/aahou+8tbAYKPnhjdIa2pYzmXY6blJLrcXR/Qtz
+         YMyjq25mGK9PCqV6YtPOzag+nqLvV4Sak78dspUQd4HRE+sIqKrxRYVvQ9C1jQ9voSK/
+         KF43BQ6NYzzyDZkNM6Z31S8wRf2Ju9PrODjCCIEU9InoipsJyV44W/1OJKT7vywoNusM
+         eqTA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to:cc;
+        bh=fjKERV8WVJXKdUVT+BCDVsG+Lo469ECcDelAS8dA5IE=;
+        b=OYfZoDulNkZ1BoWjeYn/BUc2hsipyHKK9Ve/bpPsiPFdoj78UWjmcTG0MsZOlhiRLz
+         m6hbINXdbDwuiSjR28EzV4MqyytwkIEzF5286WgXJ25mnA7Gz39wgIFZX+MpEhKTYg/j
+         mw5BI1pgOm4s+o3Bkr4lGAlCIO2SyRMoDGe+FuVERJWflsb/5DP1Zin0Z5q+CqgU6d6p
+         mjMVML4VTe5RFjpVgeagmfBz9PJQHmX4m7un4SS5DrxhnvpRg9qKuYvWgWYSMAhs1DQB
+         C3UNGcbAXUJNXlEDu1BBH2mHW5YGITPfWqYKUfd7QAocLZzN6/dOq9w+ZyJe8UO/nDfF
+         f8lQ==
+X-Gm-Message-State: ALyK8tIQ6tzbRK1Wid8vINlFOI3q7yC9kyGz66eL72qcqkPVU/EJbW2kBDP++CiD9DtdX1zJTM+o2bnNR9odXni6
+X-Received: by 10.157.54.170 with SMTP id h39mr1074613otc.36.1464055317545;
+ Mon, 23 May 2016 19:01:57 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Mon, 23 May 2016 19:01:18 -0700 (PDT)
+In-Reply-To: <C5621CFC-128B-4B9E-9CE0-1CF31C40D375@lererhippeau.com>
+References: <CACG1p4pwKt8YcY8GG6Qw-e-WrwU5-dEt=GRHp400vQCYZn4vFg@mail.gmail.com>
+ <C5621CFC-128B-4B9E-9CE0-1CF31C40D375@lererhippeau.com>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Mon, 23 May 2016 22:01:18 -0400
+Message-ID: <CACG1p4oMRcJ6UQ6AAAoS7mZEO+ZeRPgmt63EFTza8Tz8mkYubw@mail.gmail.com>
+Subject: Re: List
+To: Kenneth Lerer <klerer@lererhippeau.com>
+CC: Lauren Baldino <lauren@lererhippeau.com>, "Parrish, Daniel"
+	<parrishd@dnc.org>
+Content-Type: multipart/alternative; boundary="001a113e2d1e225b5405338cf194"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113e2d1e225b5405338cf194
+Content-Type: text/plain; charset="UTF-8"
+
+Sure, Dan and I will send over tomorrow.
+
+I now have a rough estimate on timing: 6-8pm. I just let Lise's folks and
+the Morelli's know and will see how those turn out as well.
+
+With the contribution from Stanley Pantowich we got earlier, we are at 52.
+Again, this doesn't include Fred and Stephanie Harman or Rob Fishman.
+
+On Mon, May 23, 2016 at 9:52 PM, Kenneth Lerer <klerer@lererhippeau.com>
+wrote:
+
+> Can you send me nos and I can followup
+>
+> On May 23, 2016, at 10:27 AM, Zachary Allen <zallen@tipahconsulting.com>
+> wrote:
+>
+> Ken -
+>
+> Sorry for the delay. We are at 50 attendees, listed below. We had another
+> person who wanted to contribute in addition to his attendance at this
+> event, so our event total is $668,900. We will continue to follow up with
+> folks regarding payment and will assume that is when they are officially
+> confirmed. Looking like we'll wrap this, this week - which is amazing.
+> Thank you!
+>
+>
+>    - Lise Strickler is unsure she's able to miss something, so is not
+>    counted here.
+>    - Ben Morelli is awaiting timing, so he and his wife are not counted
+>    here.
+>    - Fred and Stephanie Harman haven't yet replied, so are not counted
+>    here.
+>    - Rob Fishman wasn't yet ready to commit, so is not counted here.
+>
+>
+>    1. Tiffany Adams
+>    2. Jonathan Bellack
+>    3. Matthew Blank
+>    4. Susan Blank
+>    5. Jennifer Bonnell
+>    6. David Bryan
+>    7. Laurie Campbell
+>    8. Richard Christiansen
+>    9. Greg Coleman
+>    10. Mike Corbett
+>    11. Michael Cox
+>    12. Tamar Dor-Ner
+>    13. Tina Exarhos
+>    14. Mark Gallogly
+>    15. Arthur Krystal
+>    16. Mike Lazerow (2)
+>    17. Benjamin Lerer
+>    18. Emily Lerer
+>    19. Isabel Lerer
+>    20. Kenneth Lerer
+>    21. David Levine
+>    22. Ruth Levine
+>    23. Jordy Levy
+>    24. Gabriella Martini
+>    25. Giulio Martini
+>    26. Jody Martini
+>    27. Judy McGrath
+>    28. Penny Mintz
+>    29. Jordan Muraskin
+>    30. Carole Robinson
+>    31. Katherine Sailer
+>    32. Alexandra Schoenberg
+>    33. Eric Schoenberg
+>    34. David Singer (2)
+>    35. Heidi Stamas
+>    36. Julie Stampler (2)
+>    37. Sophie Stenbeck
+>    38. Mayo Stuntz
+>    39. Liz Stuntz
+>    40. Jack Taylor
+>    41. Franklin Thomas
+>    42. Jeff Weber
+>    43. Stacey Weber
+>    44. Kate Whitney
+>    45. Caroline Rob
+>    46. Michel Zaleski
+>    47. Ed Zimmerman
+>
+>
+> --
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+
+
+-- 
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a113e2d1e225b5405338cf194
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Sure, Dan and I will send over tomorrow.&nbsp;<div><br></div=
+><div>I now have a rough estimate on timing: 6-8pm. I just let Lise's folks=
+ and the Morelli's know and will see how those turn out as well.&nbsp;</div=
+><div><br></div><div>With the contribution from Stanley Pantowich we got ea=
+rlier, we are at 52. Again, this doesn't include Fred and Stephanie Harman =
+or&nbsp;Rob Fishman.&nbsp;</div><div class=3D"gmail_extra"><br><div class=
+=3D"gmail_quote">On Mon, May 23, 2016 at 9:52 PM, Kenneth Lerer <span dir=
+=3D"ltr">&lt;<a href=3D"mailto:klerer@lererhippeau.com" target=3D"_blank">k=
+lerer@lererhippeau.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_=
+quote" style=3D"margin:0px 0px 0px 0.8ex;border-left-width:1px;border-left-=
+style:solid;border-left-color:rgb(204,204,204);padding-left:1ex"><div dir=
+=3D"auto"><div></div><div>Can you send me nos and I can followup&nbsp;</div=
+><div><div class=3D"h5"><div><br>On May 23, 2016, at 10:27 AM, Zachary Alle=
+n &lt;<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zalle=
+n@tipahconsulting.com</a>&gt; wrote:<br><br></div><blockquote type=3D"cite"=
+><div><div dir=3D"ltr">Ken -&nbsp;<div><br></div><div>Sorry for the delay. =
+We are at 50 attendees, listed below. We had another person who wanted to c=
+ontribute in addition to his attendance at this event, so our event total i=
+s $668,900. We will continue to follow up with folks regarding payment and =
+will assume that is when they are officially confirmed. Looking like we'll =
+wrap this, this week - which is amazing. Thank you!&nbsp;</div><div><br></d=
+iv><div><ul><li>Lise Strickler is unsure she's able to miss something, so i=
+s not counted here.</li><li>Ben Morelli is awaiting timing, so he and his w=
+ife are not counted here.</li><li>Fred and Stephanie Harman haven't yet rep=
+lied, so are not counted here.</li><li>Rob Fishman wasn't yet ready to comm=
+it, so is not counted here.&nbsp;</li></ul></div><div><p class=3D"MsoNormal=
+" style=3D"margin-bottom:0.0001pt"></p><ol><li><span style=3D"color:black">=
+Tiffany </span>Adams<br></li><li>Jonathan
+Bellack<br></li><li>Matthew
+Blank<br></li><li>Susan
+Blank<br></li><li>Jennifer
+Bonnell<br></li><li>David
+Bryan<br></li><li>Laurie
+Campbell<br></li><li>Richard
+Christiansen<br></li><li>Greg
+Coleman<br></li><li>Mike
+Corbett<br></li><li>Michael
+Cox<br></li><li><span style=3D"color:black">Tamar Dor-Ner</span><br></li><l=
+i><span style=3D"color:black">Tina </span>Exarhos<br></li><li><span style=
+=3D"color:black">Mark </span>Gallogly<br></li><li><span style=3D"color:blac=
+k">Arthur </span>Krystal<br></li><li><span style=3D"color:black">Mike </spa=
+n>Lazerow (2)</li><li><span style=3D"color:black">Benjamin </span>Lerer<br>=
+</li><li><span style=3D"color:black">Emily </span>Lerer<br></li><li><span s=
+tyle=3D"color:black">Isabel </span>Lerer<br></li><li><span style=3D"color:b=
+lack">Kenneth </span>Lerer<br></li><li><span style=3D"color:black">David </=
+span>Levine<br></li><li><span style=3D"color:black">Ruth </span>Levine<br><=
+/li><li><span style=3D"color:black">Jordy </span>Levy<br></li><li><span sty=
+le=3D"color:black">Gabriella </span>Martini<br></li><li><span style=3D"colo=
+r:black">Giulio </span>Martini<br></li><li><span style=3D"color:black">Jody=
+ </span>Martini<br></li><li><span style=3D"color:black">Judy </span>McGrath=
+<br></li><li><span style=3D"color:black">Penny </span>Mintz<br></li><li><sp=
+an style=3D"color:black">Jordan </span>Muraskin<br></li><li>Carole
+Robinson<br></li><li><span style=3D"color:black">Katherine </span>Sailer<br=
+></li><li><span style=3D"color:black">Alexandra </span>Schoenberg<br></li><=
+li><span style=3D"color:black">Eric </span>Schoenberg<br></li><li><span sty=
+le=3D"color:black">David </span>Singer (2)</li><li><span style=3D"color:bla=
+ck">Heidi </span>Stamas</li><li><span style=3D"color:black">Julie Stampler =
+(2)</span><br></li><li><span style=3D"color:black">Sophie Stenbeck</span><b=
+r></li><li><span style=3D"color:black">Mayo </span>Stuntz<br></li><li><span=
+ style=3D"color:black">Liz </span>Stuntz<br></li><li><span style=3D"color:b=
+lack">Jack </span>Taylor<br></li><li><span style=3D"color:black">Franklin <=
+/span>Thomas<br></li><li><span style=3D"color:black">Jeff </span>Weber<br><=
+/li><li><span style=3D"color:black">Stacey </span>Weber<br></li><li><span s=
+tyle=3D"color:black">Kate </span>Whitney<br></li><li>Caroline
+Rob<br></li><li><span style=3D"color:black">Michel Zaleski</span><br></li><=
+li>Ed Zimmerman<br></li></ol><p></p><p class=3D"MsoNormal" style=3D"margin-=
+bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt=
+"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=
+=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" =
+style=3D"margin-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin=
+-bottom:0.0001pt"></p><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001p=
+t"></p><p></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+
+
+
+
+
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p>
+
+
+
+<p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"></p><div><br></div>=
+-- <br><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Za=
+chary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Floor<br>New =
+York, NY 10010<br><span><span title=3D"Call with Google Voice"><span title=
+=3D"Call with Google Voice"><a href=3D"tel:%28646%29%20470-8689" value=3D"&=
+#43;16464708689" target=3D"_blank">(646) 470-8689</a></span></span><span> d=
+irect | <span title=3D"Call with Google Voice"><span title=3D"Call with Goo=
+gle Voice"><a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;19736185903" =
+target=3D"_blank">(973) 618-5903</a></span></span> fax</span></span><span>&=
+nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blan=
+k">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div></div>
+</div></blockquote></div></div></div></blockquote></div><br><br clear=3D"al=
+l"><div><br></div>-- <br><div class=3D"gmail_signature"><div dir=3D"ltr"><d=
+iv><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIPAH Consulting=
+<br>304 Park Avenue South, 8th Floor<br>New York, NY 10010<br><span><span i=
+d=3D"gc-number-7" class=3D"" title=3D"Call with Google Voice"><span id=3D"g=
+c-number-10" class=3D"gc-cs-link" title=3D"Call with Google Voice">(646) 47=
+0-8689</span></span><span> direct | <span id=3D"gc-number-11" class=3D"gc-c=
+s-link" title=3D"Call with Google Voice">(973) 618-5903</span> fax</span></=
+span><span>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" tar=
+get=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div>=
+</div>
+</div></div>
+
+--001a113e2d1e225b5405338cf194--

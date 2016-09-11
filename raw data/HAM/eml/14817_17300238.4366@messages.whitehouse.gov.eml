@@ -1,0 +1,2213 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sun, 1 May
+ 2016 15:23:07 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sun, 1 May 2016
+ 15:23:03 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 890052480
+ for allenz@dnc.org; Sun, 01 May 2016 14:23:05 -0500
+X-Note-AR-ScanTimeLocal: 5/1/2016 2:23:05 PM
+X-Policy: dnc.org
+X-Note-AR-Scan: None - PIPE
+Received: by inbound.appriver.com (CommuniGate Pro PIPE 6.1.7)  with PIPE id
+ 139308267; Sun, 01 May 2016 14:23:05 -0500
+Received: from [74.125.82.48] (HELO mail-wm0-f48.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139308262
+ for allenz@dnc.org; Sun, 01 May 2016 14:23:02 -0500
+Received: by mail-wm0-f48.google.com with SMTP id g17so112979964wme.1
+        for <allenz@dnc.org>; Sun, 01 May 2016 12:23:00 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=SKCkN1e6lXkCrRLxINyahwVPJy4JFhUAcW8dlOccKJU=;
+        b=VdCSoXtQTs16oEP8o0xqoFbByC/Z1l/JsONILB3onnn9JlhF+eKgqhdxa5YLnMeF2y
+         9WnYWFLobGP42RLvM9EJoQ596z1L1RJr4SfuuEmGC1GDk/NR05ZoI8NS2Jzw58JWUSCO
+         zYP9XkYsJFqFwUBHSm4xN+Sf5db/OUSaxwg9E4ANQ+hdAHuFWMzrGBly75ZxzxtigErM
+         lC5/+APLD19uqh40ZZwGgeAJh7mtK+S4k3YidCWzXiMm4yaej0e0Mt7egTasv/QPQNGK
+         +wCZqamMCT2rijo1rHQSGoGzkQFI6rFHOXvTbzsU2Pe2IxeTjPOsRWLLSPZ+Ze5impnn
+         L0VA==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.56 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-Gm-Message-State: AOPr4FVWiPSKLFDDBe5iI3d3RlrAU8pSNa7GRVn72Vp0VX5tycbo/1TPrdvcGzpyVOfrZMlZBjH0QqR0ZsSldZ4ZdTvt4sU=
+X-Received: by 10.28.92.69 with SMTP id q66mr15826716wmb.102.1462130579410;
+        Sun, 01 May 2016 12:22:59 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp806837wme;        Sun, 1 May 2016
+ 12:22:57 -0700 (PDT)
+X-Received: by 10.107.17.151 with SMTP id 23mr35038761ior.101.1462130577903;
+        Sun, 01 May 2016 12:22:57 -0700 (PDT)
+Return-Path: <info99@service.govdelivery.com>
+Received: from mailer151056.service.govdelivery.com
+ (mailer151056.service.govdelivery.com. [209.134.151.56])        by
+ mx.google.com with ESMTP id n88si12126164ioo.185.2016.05.01.12.22.50
+        for <dncpress@gmail.com>;        Sun, 01 May 2016 12:22:57 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.56 as permitted sender) client-ip=209.134.151.56;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.56 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-VirtualServer: VSG003, mailer151056.service.govdelivery.com, 172.24.0.184
+X-VirtualServerGroup: VSG003
+X-MailingID: 17300238::20160501.58489281::1001::MDB-PRD-BUL-20160501.58489281::dncpress@gmail.com::4366_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_478_3C41_7B54D6F4.5370652F"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3KtLLbfvJHMNF0MDGDbS6AwQ2f56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: info99@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17300238.4366@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK404FSJJC1YJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?CORRECTED:_MAY_IN-TOWN_POOL_ROTATION_2016?=
+Date: Sun, 1 May 2016 14:22:38 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-Note-AR-ScanTimeLocal: 5/1/2016 2:23:03 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Note: VCH-CT/SI:0-3879/SG:1 5/1/2016 2:23:01 PM
+X-Virus-Scan: V-X0H0M0
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.48
+X-Note-Reverse-DNS: mail-wm0-f48.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G294 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_478_3C41_7B54D6F4.5370652F
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_479_B8F3_36C9C127.7D519168"
+Content-Transfer-Encoding: 7bit
+
+------=_NextPart_479_B8F3_36C9C127.7D519168
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+*MAY IN-TOWN POOL ROTATION 2016*
+
+=20
+
+DATE
+
+=20
+
+PRINT
+
+=20
+
+RADIO=20
+
+=20
+
+TV
+
+=20
+
+1-May
+
+=20
+
+BNA
+
+=20
+
+CBS
+
+=20
+
+CNN
+
+=20
+
+2-May
+
+=20
+
+Baltimore Sun
+
+=20
+
+FOX
+
+=20
+
+FOX
+
+=20
+
+3-May
+
+=20
+
+Boston Globe
+
+=20
+
+NPR
+
+=20
+
+NBC
+
+=20
+
+4-May
+
+=20
+
+BuzzFeed
+
+=20
+
+SRN
+
+=20
+
+ABC
+
+=20
+
+5-May
+
+=20
+
+CS Monitor
+
+=20
+
+Sirius XM
+
+=20
+
+CBS
+
+=20
+
+6-May
+
+=20
+
+Daily Beast
+
+=20
+
+Talk Media News
+
+=20
+
+CNN
+
+=20
+
+7-May
+
+=20
+
+Daily Caller
+
+=20
+
+VOA
+
+=20
+
+FOX
+
+=20
+
+8-May
+
+=20
+
+Dallas Morning News
+
+=20
+
+WW1
+
+=20
+
+NBC
+
+=20
+
+9-May
+
+=20
+
+Financial Times
+
+=20
+
+ABC
+
+=20
+
+ABC
+
+=20
+
+10-May
+
+=20
+
+The Guardian
+
+=20
+
+AP
+
+=20
+
+CBS
+
+=20
+
+11-May
+
+=20
+
+Hearst Newspapers
+
+=20
+
+AURN
+
+=20
+
+CNN
+
+=20
+
+12-May
+
+=20
+
+The Hill
+
+=20
+
+CBS
+
+=20
+
+FOX
+
+=20
+
+13-May
+
+=20
+
+Houston Chronicle
+
+=20
+
+FOX
+
+=20
+
+NBC
+
+=20
+
+14-May
+
+=20
+
+Huffington Post
+
+=20
+
+NPR
+
+=20
+
+ABC
+
+=20
+
+15-May
+
+=20
+
+McClatchy
+
+=20
+
+SRN
+
+=20
+
+CBS
+
+=20
+
+16-May
+
+=20
+
+Media News
+
+=20
+
+Sirius XM
+
+=20
+
+CNN
+
+=20
+
+17-May
+
+=20
+
+National Journal
+
+=20
+
+Talk Media News
+
+=20
+
+FOX
+
+=20
+
+18-May
+
+=20
+
+Newsday
+
+=20
+
+VOA
+
+=20
+
+NBC
+
+=20
+
+19-May
+
+=20
+
+NY Post
+
+=20
+
+ABC
+
+=20
+
+ABC
+
+=20
+
+20-May
+
+=20
+
+NY Times
+
+=20
+
+AP
+
+=20
+
+CBS
+
+=20
+
+21-May
+
+=20
+
+Politico
+
+=20
+
+AURN
+
+=20
+
+CNN
+
+=20
+
+22-May
+
+=20
+
+Real Clear Politics
+
+=20
+
+CBS
+
+=20
+
+FOX
+
+=20
+
+23-May
+
+=20
+
+Regional Reporters
+
+=20
+
+FOX
+
+=20
+
+NBC
+
+=20
+
+24-May
+
+=20
+
+Roll Call
+
+=20
+
+NPR
+
+=20
+
+ABC
+
+=20
+
+25-May
+
+=20
+
+The Root
+
+=20
+
+SRN
+
+=20
+
+CBS
+
+=20
+
+26-May
+
+=20
+
+Talking Points Memo
+
+=20
+
+Sirius XM
+
+=20
+
+CNN
+
+=20
+
+27-May
+
+=20
+
+Tampa Bay Times
+
+=20
+
+Talk Media News
+
+=20
+
+FOX
+
+=20
+
+28-May
+
+=20
+
+Tribune
+
+=20
+
+VOA
+
+=20
+
+NBC
+
+=20
+
+29-May
+
+=20
+
+USA Today
+
+=20
+
+ABC
+
+=20
+
+ABC
+
+=20
+
+30-May
+
+=20
+
+Wall Street Journal
+
+=20
+
+AP
+
+=20
+
+CBS
+
+=20
+
+31-May
+
+=20
+
+Washington Blade
+
+=20
+
+AURN
+
+=20
+
+CNN
+
+=20
+
+1-Jun
+
+=20
+
+Washington Examiner
+
+=20
+
+CBS
+
+=20
+
+FOX
+
+=20
+
+2-Jun
+
+=20
+
+Washington Post
+
+=20
+
+FOX
+
+=20
+
+NBC
+
+=20
+
+3-Jun
+
+=20
+
+Washington Times
+
+=20
+
+NPR
+
+=20
+
+ABC
+
+=20
+
+4-Jun
+
+=20
+
+Yahoo
+
+=20
+
+SRN
+
+=20
+
+CBS
+
+=20
+
+5-Jun
+
+=20
+
+BNA
+
+=20
+
+Sirius XM
+
+=20
+
+CNN
+
+=20
+
+6-Jun
+
+=20
+
+Baltimore Sun
+
+=20
+
+Talk Media News
+
+=20
+
+FOX
+
+=20
+
+7-Jun
+
+=20
+
+Boston Globe
+
+=20
+
+VOA
+
+=20
+
+NBC
+
+=20
+
+
+=0A
+------=_NextPart_479_B8F3_36C9C127.7D519168
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><title>    CORRECTED: MAY IN-TOWN POOL ROTATION 2016
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:x=3D"urn:schemas-microsoft-com:office:excel" xmlns:m=3D"http://sche=
+mas.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-ht=
+ml40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"766" style=3D"width:383.0pt;border-collapse:collapse">
+<tbody>
+<tr style=3D"height:15.5pt">
+<td width=3D"766" nowrap=3D"" colspan=3D"4" style=3D"width:383.0pt;border-t=
+op:solid windowtext 1.0pt;border-left:solid windowtext 1.0pt;border-bottom:=
+none;border-right:solid black 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5=
+pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><b><spa=
+n style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;colo=
+r:black">MAY IN-TOWN POOL ROTATION 2016<o:p></o:p></span></b></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">DATE<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border:solid windowtex=
+t 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">PRINT<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border:solid windowte=
+xt 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">RADIO
+<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border:solid windowtext=
+ 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">TV<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">1-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">BNA<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">2-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Baltimore Sun<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">3-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Boston Globe<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NPR<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">4-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">BuzzFeed<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">SRN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">5-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CS Monitor<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Sirius XM<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">6-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Daily Beast<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Talk Media News<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">7-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Daily Caller<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">VOA<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">8-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Dallas Morning News<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">WW1<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">9-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Financial Times<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">10-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">The Guardian<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AP<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">11-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Hearst Newspapers<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AURN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">12-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">The Hill<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">13-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Houston Chronicle<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">14-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Huffington Post<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NPR<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">15-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">McClatchy<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">SRN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">16-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Media News<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Sirius XM<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">17-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">National Journal<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Talk Media News<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">18-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Newsday<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">VOA<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">19-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NY Post<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">20-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NY Times<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AP<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">21-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Politico<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AURN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">22-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Real Clear Politics<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">23-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Regional Reporters<o:p></o:p></span></p=
+>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">24-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Roll Call<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NPR<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">25-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">The Root<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">SRN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">26-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Talking Points Memo<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Sirius XM<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">27-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Tampa Bay Times<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Talk Media News<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">28-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Tribune<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">VOA<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">29-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">USA Today<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">30-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Wall Street Journal<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AP<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">31-May<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Washington Blade<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">AURN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">1-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Washington Examiner<o:p></o:p></span></=
+p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">2-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border:none;border-rig=
+ht:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Washington Post<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">3-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border:solid windowtex=
+t 1.0pt;border-left:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Washington Times<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NPR<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">ABC<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">4-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Yahoo<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">SRN<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CBS<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">5-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">BNA<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Sirius XM<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">CNN<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">6-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Baltimore Sun<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Talk Media News<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">FOX<o:p></o:p></span></p>
+</td>
+</tr>
+<tr style=3D"height:15.5pt">
+<td width=3D"111" nowrap=3D"" style=3D"width:55.3pt;border:solid windowtext=
+ 1.0pt;border-top:none;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal" align=3D"right" style=3D"text-align:right"><span sty=
+le=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;color:bla=
+ck">7-Jun<o:p></o:p></span></p>
+</td>
+<td width=3D"320" nowrap=3D"" style=3D"width:160.2pt;border-top:none;border=
+-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowte=
+xt 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">Boston Globe<o:p></o:p></span></p>
+</td>
+<td width=3D"255" nowrap=3D"" style=3D"width:127.55pt;border-top:none;borde=
+r-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowt=
+ext 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">VOA<o:p></o:p></span></p>
+</td>
+<td width=3D"80" nowrap=3D"" style=3D"width:39.95pt;border-top:none;border-=
+left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtex=
+t 1.0pt;background:white;padding:0in 5.4pt 0in 5.4pt;height:15.5pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif;color:black">NBC<o:p></o:p></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoPlainText"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_479_B8F3_36C9C127.7D519168--
+
+------=_NextPart_478_3C41_7B54D6F4.5370652F
+Content-Type: application/octet-stream;
+	name="MAY+IN-TOWN+POOL+ROTATION+2016.xlsx"
+Content-Disposition: attachment;
+	filename="MAY+IN-TOWN+POOL+ROTATION+2016.xlsx"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned 'MAY+IN-TOWN+POOL+ROTATION+2016.xlsx'. clean action=allow
+Content-Description: MAY+IN-TOWN+POOL+ROTATION+2016.xlsx
+
+UEsDBBQABgAIAAAAIQCy/OHMlQEAAA0HAAATAAgCW0NvbnRlbnRfVHlwZXNdLnhtbCCiBAIooAAC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8
+VUtLw0AQvgv+h7BXabZWEJGmHnwcVVDB65qdNkv3xc60tv/eyVaLSG0tKV4Skt35XrOZDK8WzhZz
+SGiCr8Rp2RcF+Dpo4yeVeHm+612IAkl5rWzwUIkloLgaHR8Nn5cRsOBqj5VoiOKllFg34BSWIYLn
+lXFIThE/pomMqp6qCchBv38u6+AJPPWoxRCj4Q2M1cxScbvg1yslb8aL4nq1r6WqhIrRmloRC5Vz
+r3+Q9MJ4bGrQoZ45hi4xJlAaGwBytozJMGN6AiI2hkJu5ExgcT/ST1clV2Zh2JiIJ2z9F4Z25XdX
+n3UP3I5kNBSPKtG9cuxdLqx8D2n6FsK03A6ybzQ5otIp4790b+HPm1Hm2+mBhbT+MvAOHcRnDGS+
+dpeQYXYQIi0t4KFjz6C7mBuVQD8Rn97JwQV8x96mo54hBffqrDQE7jGFiN1zX4O2eJDIwPqz2XT8
+NmgYdG5Idw1n/62Bx1tuAE/QBPuTf42rtroX/5T8mpHHb2e30M53DXpf7lWnDhT2BnKZf2ajDwAA
+AP//AwBQSwMEFAAGAAgAAAAhABNevmUCAQAA3wIAAAsACAJfcmVscy8ucmVscyCiBAIooAACAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACskk1L
+AzEQhu+C/yHMvTvbKiLSbC9F6E1k/QExmf1gN5mQpLr990ZBdKG2Hnqcr3eeeZn1ZrKjeKMQe3YS
+lkUJgpxm07tWwkv9uLgHEZNyRo3sSMKBImyq66v1M40q5aHY9T6KrOKihC4l/4AYdUdWxYI9uVxp
+OFiVchha9EoPqiVcleUdht8aUM00xc5ICDtzA6I++Lz5vDY3Ta9py3pvyaUjK5CmRM6QWfiQ2ULq
+8zWiVqGlJMGwfsrpiMr7ImMDHida/Z/o72vRUlJGJYWaA53m+ew4BbS8pEVzE3/cmUZ85zC8Mg+n
+WG4vyaL3MbE9Y85XzzcSzt6y+gAAAP//AwBQSwMEFAAGAAgAAAAhAN+kZygaAQAAZAQAABoACAF4
+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
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8kl1PwjAUhu9N/A9Nr9m6jo9gs40EkXghQuIU413T
+HmBx65a2OvDX240PIRovt/ft0+ecNBptixx9gjZZqWJM/QAjUKKUmVrH+DmdekOMjOVK8rxUEOMd
+GDxKrq8iUTFRaljosgJtMzDIkZRhoorxxtqKEWLEBgpufNdQLlyVuuDWfeo1qbh452sgYRAMSAGW
+S245aYBedSLiA1KKE7L60HkLkIJADgUoawj1KfnpWtCF+fNAm5w1i8zuKjfTQfecLcU+PLW3JjsV
+67r2626r4fwpeZ09PLWjeplqdiUAJ5EUTGjgttTJmGsFpoMmYDINgB79iJzFzSpzbuzMbX2VgRzv
+khfIvzpoAc4YpT66my/I8n4ekd9Nd0871v4ykMiJsv1Yx2TZvZ2kU5yEAe15lHphLw27jIYsHL41
+IhfnG/H9j+Kg8z9x4AV9L6ApvWG0z/q9M+IRkLTel48l+QYAAP//AwBQSwMEFAAGAAgAAAAhAAEx
+xZyNAQAAFAMAABAACAFkb2NQcm9wcy9hcHAueG1sIKIEASigAAEAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+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
+
+------=_NextPart_478_3C41_7B54D6F4.5370652F--

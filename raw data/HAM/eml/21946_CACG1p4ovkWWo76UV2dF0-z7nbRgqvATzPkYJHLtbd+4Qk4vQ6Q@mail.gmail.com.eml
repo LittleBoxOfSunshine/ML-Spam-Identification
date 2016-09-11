@@ -1,0 +1,528 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 19 May
+ 2016 17:24:07 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 19 May 2016
+ 17:24:03 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 925187009
+ for ParrishD@dnc.org; Thu, 19 May 2016 16:24:15 -0500
+X-Note-AR-ScanTimeLocal: 5/19/2016 4:24:04 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.53 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-655/SG:5 5/19/2016 4:23:18 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-25466-c
+X-Note-419: 140.6395 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/19/2016 4:24:00 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.53
+X-Note-Reverse-DNS: mail-oi0-f53.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-oi0-f53.google.com ([209.85.218.53] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139457421
+ for ParrishD@dnc.org; Thu, 19 May 2016 16:23:51 -0500
+Received: by mail-oi0-f53.google.com with SMTP id x201so150285543oif.3
+        for <ParrishD@dnc.org>; Thu, 19 May 2016 14:23:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to
+         :cc;
+        bh=pO6JJVQAlZCJRSBvAEAXuGwqbDfJJaDtNol566iwJsc=;
+        b=nueUGy1SM5gfdtLW9Hwv1BAsEby8I3Trzc9I0b26oF/tR97HtBhFFnKutjTg128OrP
+         BPxiQbZ856iNJYvoW66i5A1Zx/mxCZukhAocKx+cig8ZYP8enDYd9WNNro4nNHDFLVJS
+         zk6NBVMHDdcw7AUh5GuzXFQYqs5yfZyn9DaTk75tiXLFPILGCIok1cGkCmhTsNJ8v/ti
+         LrQff1/FnKoKqMV+1VxOetzadCXTfmuaaIA/hHIMtAsZhEOaTk+CBQcTUXE5Ftch/qfy
+         IfToCq/PI0ySgqLL3crz5+8PHKp8dYMsh1diZFl5Z4qOYAcmIR4ikzoO/fpIGJTtH3Fb
+         JgXQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to:cc;
+        bh=pO6JJVQAlZCJRSBvAEAXuGwqbDfJJaDtNol566iwJsc=;
+        b=NMhOI4Y0mz5/fFNGL5s729W48pwjebHUIIDEZBHCDztwy8BTgn7B53d6DYO0e6WIdx
+         qL/5fJDKOYQZjjn6Tuaapyw/DEiKcDI2UpDIsukDVIHyF1XS8D9mPkVSvVn3raPWdmgR
+         RtxRYqTJQ4o6BVM8MxJhAa/mcy/cO8GqaWsxmJlH4DKPL9OwyA6R1lUH43DYN5H+x3Id
+         g7AwvWphLznXQsJ7dNmyj+TTTREeT2RsOGp2g1M0By2poxUCjreo9tXcz7sMj/h+rBMM
+         Y5FRAIdmmRLPzL/Z7DKewtlH7gxRrGLPX67VKB3BEBfs0dYqfPoZnIrXjR7pwkkmHo5a
+         zbWQ==
+X-Gm-Message-State: AOPr4FUqawIJay9BeKF2WuV3IoihZjr8Ol4c/gST2LqybQrPxE+0q5yQJmy36Dxv/Et3J5eL7EjgeI/0TiHH0xip
+X-Received: by 10.157.52.154 with SMTP id g26mr10399767otc.123.1463693030745;
+ Thu, 19 May 2016 14:23:50 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Thu, 19 May 2016 14:23:11 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F482@dncdag1.dnc.org>
+References: <F8D579D7-32FA-4DF5-B67F-878C8C645862@jo-ousterhout.com>
+ <4173B5B1E2999743BF266F5506C0FEDC23A7AF0B@dncdag1.dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F1E6@dncdag1.dnc.org>
+ <4173B5B1E2999743BF266F5506C0FEDC23A7B06D@dncdag1.dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F2B2@dncdag1.dnc.org>
+ <4173B5B1E2999743BF266F5506C0FEDC23A7B283@dncdag1.dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F333@dncdag1.dnc.org>
+ <4173B5B1E2999743BF266F5506C0FEDC23A7B5FE@dncdag1.dnc.org> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F482@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Thu, 19 May 2016 17:23:11 -0400
+Message-ID: <CACG1p4ovkWWo76UV2dF0-z7nbRgqvATzPkYJHLtbd+4Qk4vQ6Q@mail.gmail.com>
+Subject: Re: June 8 POTUS dinner NYC
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+CC: Claire Olszewski <OlszewskiC@dnc.org>
+Content-Type: multipart/alternative; boundary="001a113cfc442897270533389709"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113cfc442897270533389709
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+I so appreciate the help, but he's going to get the next 10. If she says
+yes, then I'll push back. Yes, a good problem to have.
+
+On Thu, May 19, 2016 at 5:16 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Oh definitely! I still think it=E2=80=99s a good plan, but it=E2=80=99s g=
+ood to know who
+> we=E2=80=99re dealing with.
+>
+>
+>
+> *From:* Claire Olszewski
+> *Sent:* Thursday, May 19, 2016 5:14 PM
+> *To:* Parrish, Daniel
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> Cool.  Let me know what you hear.  This is Laurie Campbell, and she=E2=80=
+=99s been
+> a very consistent DNC giver.  I think it=E2=80=99s a solid 10k.
+>
+>
+>
+> *From:* Parrish, Daniel
+> *Sent:* Thursday, May 19, 2016 4:43 PM
+> *To:* Claire Olszewski
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> Haha very true. And Zach agrees with that plan. Thanks for being patient!
+>
+>
+>
+> *From:* Claire Olszewski
+> *Sent:* Thursday, May 19, 2016 4:42 PM
+> *To:* Parrish, Daniel
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> It=E2=80=99s a good problem to have!
+>
+>
+>
+> *From:* Parrish, Daniel
+> *Sent:* Thursday, May 19, 2016 4:40 PM
+> *To:* Claire Olszewski
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> Ok I asked him, I=E2=80=99ll let you know! Sorry about this, I know it=E2=
+=80=99s
+> obnoxious, but our host came through in a much bigger way yesterday than =
+we
+> expected so things are a little iffy.
+>
+>
+>
+> *From:* Claire Olszewski
+> *Sent:* Thursday, May 19, 2016 4:36 PM
+> *To:* Parrish, Daniel
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> I=E2=80=99m happy to say that to Jo.  Want to check in with Zach just in =
+case he=E2=80=99s
+> heard something different?  I think this is a totally fine plan though.
+>
+>
+>
+> *From:* Parrish, Daniel
+> *Sent:* Thursday, May 19, 2016 4:21 PM
+> *To:* Claire Olszewski
+> *Subject:* RE: June 8 POTUS dinner NYC
+>
+>
+>
+> Don=E2=80=99t hate me, but things are iffy. We=E2=80=99re at 50/60 seats =
+right now, and
+> they don=E2=80=99t have the capacity to go over. Our host is panicking be=
+cause he
+> thinks he has to turn people down (unlikely, we think he=E2=80=99s postur=
+ing).
+> Maybe say we aren=E2=80=99t saving seats, but to let us know if she is in=
+terested
+> and we can check the availability? I know that=E2=80=99s kind of dickish,=
+ but with
+> so many layers in between it=E2=80=99s at least believable. What do you t=
+hink?
+>
+>
+>
+> If you=E2=80=99d rather I can cc and ask Zach and pretend I didn=E2=80=99=
+t write this
+> email =E2=80=93 he=E2=80=99s talking to the host throughout the day, so h=
+e has a better
+> immediate sense of what we actually have to play with (rather than what i=
+s
+> committed).
+>
+>
+>
+> *From:* Claire Olszewski
+> *Sent:* Thursday, May 19, 2016 4:17 PM
+> *To:* Parrish, Daniel
+> *Subject:* FW: June 8 POTUS dinner NYC
+> *Importance:* High
+>
+>
+>
+> Any word on selling seats to the POTUS dinner?
+>
+>
+>
+> *From:* Jo Ousterhout [mailto:jo@jo-ousterhout.com <jo@jo-ousterhout.com>=
+]
+>
+> *Sent:* Thursday, May 19, 2016 3:24 PM
+> *To:* Claire Olszewski
+> *Subject:* June 8 POTUS dinner NYC
+> *Importance:* High
+>
+>
+>
+> Claire - A friend  would like to attend=E2=80=A6can you save a seat for h=
+er while
+> she double checks with her compliance folks?
+>
+>
+>
+> Do I need to send her a particular link or can you attribute to me anyway=
+?
+>
+>
+>
+>
+>
+>
+>
+> Jo
+>
+> Jo Ousterhout
+> Co Founder, Entrepreneurs for Hillary
+> National Finance Council, Hillary for America
+> +1 917 207 5050
+>
+> Support Entrepreneurs for Hillary/Hillary for America
+>
+> <https://www.hillaryclinton.com/finance/entrepreneurs-for-hillary/?raiser=
+=3D39393>
+> website: Entrepreneurs for Hillary <http://entrepreneursforhillary.com/>
+> Like on FB:  Entrepreneurs for Hillary
+> <https://www.facebook.com/entrepreneursforhillary?_rdr=3Dp>
+> Follow:  @Entrepreneurs4H <https://twitter.com/Entrepreneurs4H>
+> Connect on LinkedIn: Entrepreneurs for Hillary
+> <https://www.linkedin.com/company/entrepreneurs-for-hillary>
+>
+>
+>
+
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a113cfc442897270533389709
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">I so appreciate the help, but he's going to get the next 10.=
+ If she says yes, then I'll push back. Yes, a good problem to have.</div><d=
+iv class=3D"gmail_extra"><br><div class=3D"gmail_quote">On Thu, May 19, 201=
+6 at 5:16 PM, Parrish, Daniel <span dir=3D"ltr">&lt;<a href=3D"mailto:Parri=
+shD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&gt;</span> wrote:<br><b=
+lockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px =
+#ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Oh definitely! I still th=
+ink it=E2=80=99s a good plan, but it=E2=80=99s good to know who we=E2=80=99=
+re dealing with.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Claire O=
+lszewski
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 5:14 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Cool.&nbsp; Let me know w=
+hat you hear.&nbsp; This is Laurie Campbell, and she=E2=80=99s been a very =
+consistent DNC giver.&nbsp; I think it=E2=80=99s a solid 10k.<u></u><u></u>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Parrish,=
+ Daniel
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:43 PM<br>
+<b>To:</b> Claire Olszewski<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Haha very true. And Zach =
+agrees with that plan. Thanks for being patient!<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Claire O=
+lszewski
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:42 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">It=E2=80=99s a good probl=
+em to have!<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Parrish,=
+ Daniel
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:40 PM<br>
+<b>To:</b> Claire Olszewski<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Ok I asked him, I=E2=80=
+=99ll let you know! Sorry about this, I know it=E2=80=99s obnoxious, but ou=
+r host came through in a much bigger way yesterday than we expected so thin=
+gs
+ are a little iffy.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Claire O=
+lszewski
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:36 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">I=E2=80=99m happy to say =
+that to Jo.&nbsp; Want to check in with Zach just in case he=E2=80=99s hear=
+d something different?&nbsp; I think this is a totally fine plan though.<u>=
+</u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Parrish,=
+ Daniel
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:21 PM<br>
+<b>To:</b> Claire Olszewski<br>
+<b>Subject:</b> RE: June 8 POTUS dinner NYC<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Don=E2=80=99t hate me, bu=
+t things are iffy. We=E2=80=99re at 50/60 seats right now, and they don=E2=
+=80=99t have the capacity to go over. Our host is panicking because he thin=
+ks he
+ has to turn people down (unlikely, we think he=E2=80=99s posturing). Maybe=
+ say we aren=E2=80=99t saving seats, but to let us know if she is intereste=
+d and we can check the availability? I know that=E2=80=99s kind of dickish,=
+ but with so many layers in between it=E2=80=99s at least believable.
+ What do you think?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">If you=E2=80=99d rather I=
+ can cc and ask Zach and pretend I didn=E2=80=99t write this email =E2=80=
+=93 he=E2=80=99s talking to the host throughout the day, so he has a better=
+ immediate sense
+ of what we actually have to play with (rather than what is committed).<u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Claire O=
+lszewski
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 4:17 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> FW: June 8 POTUS dinner NYC<br>
+<b>Importance:</b> High<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Any word on selling seats=
+ to the POTUS dinner?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Jo Ouste=
+rhout [<a href=3D"mailto:jo@jo-ousterhout.com" target=3D"_blank">mailto:jo@=
+jo-ousterhout.com</a>]
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 3:24 PM<br>
+<b>To:</b> Claire Olszewski<br>
+<b>Subject:</b> June 8 POTUS dinner NYC<br>
+<b>Importance:</b> High<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Claire - A friend &nbsp;would like to attend=E2=80=
+=A6can you save a seat for her while she double checks with her compliance =
+folks?<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Do I need to send her a particular link&nbsp;or can =
+you attribute to me anyway?<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Jo<br>
+<br>
+Jo Ousterhout<br>
+Co Founder,&nbsp;Entrepreneurs for Hillary&nbsp;<br>
+National Finance Council, Hillary for&nbsp;America<br>
+<a href=3D"tel:%2B1%20917%20207%205050" value=3D"&#43;19172075050" target=
+=3D"_blank">&#43;1 917 207 5050</a><br>
+<br>
+Support&nbsp;<a href=3D"https://www.hillaryclinton.com/finance/entrepreneur=
+s-for-hillary/?raiser=3D39393" target=3D"_blank">Entrepreneurs for&nbsp;Hil=
+lary/Hillary for America<br>
+</a>website:&nbsp;<a href=3D"http://entrepreneursforhillary.com/" target=3D=
+"_blank">Entrepreneurs for Hillary</a><br>
+Like on FB: &nbsp;<a href=3D"https://www.facebook.com/entrepreneursforhilla=
+ry?_rdr=3Dp" target=3D"_blank">Entrepreneurs for&nbsp;Hillary</a><br>
+Follow: &nbsp;<a href=3D"https://twitter.com/Entrepreneurs4H" target=3D"_bl=
+ank">@Entrepreneurs4H</a><br>
+Connect on&nbsp;<a href=3D"https://www.linkedin.com/company/entrepreneurs-f=
+or-hillary" target=3D"_blank">LinkedIn:&nbsp;Entrepreneurs&nbsp;for Hillary=
+</a><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a113cfc442897270533389709--

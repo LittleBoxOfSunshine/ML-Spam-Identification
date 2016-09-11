@@ -1,0 +1,515 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 19 May
+ 2016 16:02:46 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 19 May 2016
+ 16:02:42 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 924990139
+ for ParrishD@dnc.org; Thu, 19 May 2016 15:02:54 -0500
+X-Note-AR-ScanTimeLocal: 5/19/2016 3:02:44 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.42 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-205/SG:5 5/19/2016 3:02:38 PM
+X-GBUdb-Analysis: 0, 209.85.218.42, Ugly c=0.845183 p=-0.990677 Source White
+X-Signature-Violations: 0-0-0-23724-c
+X-Note-419: 46.8788 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/19/2016 3:02:38 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.42
+X-Note-Reverse-DNS: mail-oi0-f42.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.218.42] (HELO mail-oi0-f42.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 142875231
+ for ParrishD@dnc.org; Thu, 19 May 2016 15:02:44 -0500
+Received: by mail-oi0-f42.google.com with SMTP id x19so146894375oix.2
+        for <ParrishD@dnc.org>; Thu, 19 May 2016 13:02:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=sTAoIVEPN84GRkhERKWJ5zHJm7kCYZ9YJD8dL53GtGs=;
+        b=OYzm3aHnY3EcgD7RDBuFix7tjJeJFLIALgLx6yELzn3Awh//a2vvoR3M8yixsp7GJo
+         7BxZcyAAVmLjeUZ130MgrFv/TIwVYkQD9F/Tv5Uhmf+/2/JLVozD8f6lhaE9wpeS4dlf
+         rLvIl9YjF9AviD2yNg7cGSdEuKIc5cXAEuDcn9S8BK41E/wVWPkOcpZh5NfJo2sitNOJ
+         ZKzFAgwSMIz3QOpvakVHKCyvn87ryorP/stWJW5GLKpSWCEbamkZiAx54V/3rWdcBA6N
+         mR9IAqhrlDXqbozXSB9VrDFezn8jz9HPg2ouYyn72fAarofdu5yosYaaR9ls6SQMcey1
+         WKdg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=sTAoIVEPN84GRkhERKWJ5zHJm7kCYZ9YJD8dL53GtGs=;
+        b=SpaoIH7xgwsvZ79gJ5nwLUP8kEOqnwAGNq2fqBBoYPdT4/TOoP6ODQaNtjNA/bi9LF
+         d1txKmm6UmybmY0JyK7ZNnP5Q0+H2Td6hEndgU7LlSOKa3KDTxbJM0fCQJmfXlnJtGSZ
+         RQhWi3EsPesaQkuxKRqfRu/tstBACxqPyZHd6tO7sB8h5E423GJZ6fpy0Tl/xfb+W3K9
+         oiz+aQsJto2iia5lBoG46UYHogt2kjgxHkOLwYNNqqFLNuxa8oil9HgIDFLHj4H8lvzE
+         PEKnqsJx85Dzkahle93Wo7WwjUyi/M2W2NQOy4z6naUPs4xubMPUa2HNC2vh12CT4D2t
+         lobg==
+X-Gm-Message-State: AOPr4FVpBHAd9XwX5TbDsxDdvL843CsnDjGLCyYJz6UTnDVq4MqApq8NG07sLD8bEFrdU+y9rNONiGiDG1SS44YM
+X-Received: by 10.157.38.227 with SMTP id i32mr9772143otd.20.1463688164283;
+ Thu, 19 May 2016 13:02:44 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Thu, 19 May 2016 13:02:04 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F112@dncdag1.dnc.org>
+References: <0e2301d1b1f9$bd741710$385c4530$@gmail.com> <C6B93C43-8235-4462-AFFD-D3F0274929DD@dnc.org>
+ <2EA43217-D7F5-4A7F-8E37-003D8FF6BB6D@dnc.org> <CACG1p4oQRcnyAJsrxuRSnW3ZGrgwRtySB0fSm_0+ZFS8KZ+RBg@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F112@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Thu, 19 May 2016 16:02:04 -0400
+Message-ID: <CACG1p4oEEKZOdSHQcBHK8z8vfuxkX7PC-AN4wGAoiatQfAaDdw@mail.gmail.com>
+Subject: Re: Contribution: LGBT Leadership Council (one-time only) / Michael
+ Cox / 16,700.00 USD -- $33,400 - June 8 and Convention
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a113e4a0c182df30533377577"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113e4a0c182df30533377577
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Of course not.
+
+On Thu, May 19, 2016 at 4:01 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Do you mind if I recode that money to the event?
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+> *Sent:* Thursday, May 19, 2016 3:50 PM
+> *To:* Parrish, Daniel
+>
+> *Subject:* Re: Contribution: LGBT Leadership Council (one-time only) /
+> Michael Cox / 16,700.00 USD -- $33,400 - June 8 and Convention
+>
+>
+>
+> 10-4, thank you!
+>
+>
+>
+> On Thu, May 19, 2016 at 3:47 PM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>
+> That puts us at 50
+>
+>
+> Begin forwarded message:
+>
+> *From:* "Zach  Allen" <AllenZ@dnc.org>
+> *Date:* May 19, 2016 at 3:05:15 PM EDT
+> *To:* "Tobias, Andy" <atobias123@gmail.com>
+> *Cc:* "Kaplan, Jordan" <KaplanJ@dnc.org>, "Comer, Scott" <ComerS@dnc.org>=
+,
+> "Hoffman, Alex" <HoffmanA@dnc.org>, "Seminerio, Nick" <SeminerioN@dnc.org=
+>,
+> "Parrish, Daniel" <ParrishD@dnc.org>
+> *Subject:* *Re: Contribution: LGBT Leadership Council (one-time only) /
+> Michael Cox / 16,700.00 USD -- $33,400 - June 8 and Convention*
+>
+> Got him. Dan, we have vitals.
+>
+> Zachary Allen
+>
+> (301) 651-5222
+>
+> Sent from my iPhone
+>
+>
+> On May 19, 2016, at 2:10 PM, Andrew Tobias <atobias123@gmail.com> wrote:
+>
+> Zach =E2=80=93 please hold a place for Mike June 8 =E2=80=93 he=E2=80=99l=
+l know a few days ahead
+> whether he can make it.
+>
+>
+>
+> Team =E2=80=93 please note that this qualifies Mike for the Convention =
+=E2=80=93 he may
+> well NOT need a room, but let=E2=80=99s assume for now he will.
+>
+>
+>
+> Thanks!
+>
+>
+>
+> Andy
+>
+>
+>
+>
+>
+> *From:* Contribution [mailto:postmaster@my.democrats.org
+> <postmaster@my.democrats.org>]
+> *Sent:* Thursday, May 19, 2016 2:07 PM
+> *To:* kaplanj@dnc.org; atobias123@gmail.com; allenz@dnc.org;
+> comers@dnc.org; hoffmana@dnc.org; seminerion@dnc.org
+> *Subject:* Contribution: LGBT Leadership Council (one-time only) /
+> Michael Cox / 16,700.00 USD
+>
+>
+>
+>
+>
+> CONTRIBUTION DATA
+>
+> -----------------
+>
+>                       Page: LGBT Leadership Council (one-time only)
+>
+>                       Type: One-time
+>
+>               Total Amount: $16,700.00
+>
+>                 First Name: Michael
+>
+>                  Last Name: Cox
+>
+>                    Address: 6007 Glen Cove
+>
+>                             Houston, TX 77007
+>
+>                      Phone: 202-488-5015
+>
+>                      Email: donot@email.com
+>
+>                   Employer: Seabury Group
+>
+>           Employer Address:
+>
+>                             ,
+>
+>                 Occupation: Vice Chairman
+>
+>               Payment Type: Visa
+>
+>                  Account #: 1831
+>
+>              Transaction #: 15758592
+>
+>                  User Id #:
+>
+>           Contribution Key: IIAQbUPANs0Ft7HFVb
+>
+>
+>
+> CUSTOM FIELD DATA
+>
+> ------------------------------
+>
+> (Section header: "Additional Information")
+>
+> Fundraiser Code (Optional):
+>
+> Who Encouraged You To Make This Contribution?: Andrew Tobias
+>
+>
+>
+> GENERAL INFORMATION
+>
+> -------------------
+>
+>       Submit Date: Thu, 19 May 2016 14:06:10 -0400
+>
+>            Status: Under Review
+>
+> Client IP Address: 209.122.120.205
+>
+>    Client Browser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/=
+537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a113e4a0c182df30533377577
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Of course not.&nbsp;</div><div class=3D"gmail_extra"><br><di=
+v class=3D"gmail_quote">On Thu, May 19, 2016 at 4:01 PM, Parrish, Daniel <s=
+pan dir=3D"ltr">&lt;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">P=
+arrishD@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" =
+style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Do you mind if I recode t=
+hat money to the event?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blan=
+k">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 3:50 PM<br>
+<b>To:</b> Parrish, Daniel</span></p><div><div class=3D"h5"><br>
+<b>Subject:</b> Re: Contribution: LGBT Leadership Council (one-time only) /=
+ Michael Cox / 16,700.00 USD -- $33,400 - June 8 and Convention<u></u><u></=
+u></div></div><p></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">10-4, thank you!&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Thu, May 19, 2016 at 3:47 PM, Parrish, Daniel &lt=
+;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>=
+&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">That puts us at 50<br=
+>
+<br>
+<br>
+Begin forwarded message:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b>From:</b> &quot;Za=
+ch&nbsp; Allen&quot; &lt;<a href=3D"mailto:AllenZ@dnc.org" target=3D"_blank=
+">AllenZ@dnc.org</a>&gt;<br>
+<b>Date:</b> May 19, 2016 at 3:05:15 PM EDT<br>
+<b>To:</b> &quot;Tobias, Andy&quot; &lt;<a href=3D"mailto:atobias123@gmail.=
+com" target=3D"_blank">atobias123@gmail.com</a>&gt;<br>
+<b>Cc:</b> &quot;Kaplan, Jordan&quot; &lt;<a href=3D"mailto:KaplanJ@dnc.org=
+" target=3D"_blank">KaplanJ@dnc.org</a>&gt;, &quot;Comer, Scott&quot; &lt;<=
+a href=3D"mailto:ComerS@dnc.org" target=3D"_blank">ComerS@dnc.org</a>&gt;, =
+&quot;Hoffman, Alex&quot; &lt;<a href=3D"mailto:HoffmanA@dnc.org" target=3D=
+"_blank">HoffmanA@dnc.org</a>&gt;,
+ &quot;Seminerio, Nick&quot; &lt;<a href=3D"mailto:SeminerioN@dnc.org" targ=
+et=3D"_blank">SeminerioN@dnc.org</a>&gt;, &quot;Parrish, Daniel&quot; &lt;<=
+a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&g=
+t;<br>
+<b>Subject:</b> <b>Re: Contribution: LGBT Leadership Council (one-time only=
+) / Michael Cox / 16,700.00 USD -- $33,400 - June 8 and Convention</b><u></=
+u><u></u></p>
+</div>
+</blockquote>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Got him. Dan, we have=
+ vitals.&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"tel:%28301%29%20651-5222" target=3D"_blan=
+k">(301) 651-5222</a>&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 19, 2016, at 2:10 PM, Andrew Tobias &lt;<a href=3D"mailto:atobias123=
+@gmail.com" target=3D"_blank">atobias123@gmail.com</a>&gt; wrote:<u></u><u>=
+</u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Zach =E2=80=93 please hold a place for =
+Mike June 8 =E2=80=93 he=E2=80=99ll know a few days ahead whether he can ma=
+ke it.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Team =E2=80=93 please note that this qu=
+alifies Mike for the Convention =E2=80=93 he may well NOT need a room, but =
+let=E2=80=99s assume
+ for now he will.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Thanks!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Andy</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Contri=
+bution [<a href=3D"mailto:postmaster@my.democrats.org" target=3D"_blank">ma=
+ilto:postmaster@my.democrats.org</a>]
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 2:07 PM<br>
+<b>To:</b> <a href=3D"mailto:kaplanj@dnc.org" target=3D"_blank">kaplanj@dnc=
+.org</a>; <a href=3D"mailto:atobias123@gmail.com" target=3D"_blank">
+atobias123@gmail.com</a>; <a href=3D"mailto:allenz@dnc.org" target=3D"_blan=
+k">allenz@dnc.org</a>;
+<a href=3D"mailto:comers@dnc.org" target=3D"_blank">comers@dnc.org</a>; <a =
+href=3D"mailto:hoffmana@dnc.org" target=3D"_blank">
+hoffmana@dnc.org</a>; <a href=3D"mailto:seminerion@dnc.org" target=3D"_blan=
+k">seminerion@dnc.org</a><br>
+<b>Subject:</b> Contribution: LGBT Leadership Council (one-time only) / Mic=
+hael Cox / 16,700.00 USD</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<pre>&nbsp;<u></u><u></u></pre>
+<pre>CONTRIBUTION DATA<u></u><u></u></pre>
+<pre>-----------------<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page: LGBT Leaders=
+hip Council (one-time only)<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: One-time<u><=
+/u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp; Total Amount: $16,700.00<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp; First Name: Michael<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp; Last Name: Cox<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address: 6007 Glen Cove<u></u><u></u=
+></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp; Houston, TX 77007<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone: <a href=3D"tel:20=
+2-488-5015" target=3D"_blank">202-488-5015</a><u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email: <a href=3D"mailto=
+:donot@email.com" target=3D"_blank">donot@email.com</a><u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employer: Seabury Group<u></u><u></u></pre=
+>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employer Addres=
+s: <u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;,&nbsp; <u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;Occupation: Vice Chairman<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp; Payment Type: Visa<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp; Account #: 1831<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p; Transaction #: 15758592<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp; User Id #: <u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contributi=
+on Key: IIAQbUPANs0Ft7HFVb<u></u><u></u></pre>
+<pre>&nbsp;<u></u><u></u></pre>
+<pre>CUSTOM FIELD DATA<u></u><u></u></pre>
+<pre>------------------------------<u></u><u></u></pre>
+<pre>(Section header: &quot;Additional Information&quot;)<u></u><u></u></pr=
+e>
+<pre>Fundraiser Code (Optional): <u></u><u></u></pre>
+<pre>Who Encouraged You To Make This Contribution?: Andrew Tobias<u></u><u>=
+</u></pre>
+<pre>&nbsp;<u></u><u></u></pre>
+<pre>GENERAL INFORMATION<u></u><u></u></pre>
+<pre>-------------------<u></u><u></u></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Submit Date: Thu, 19 May 2016 14:06:10 =
+-0400<u></u><u></u></pre>
+<pre> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Status: U=
+nder Review<u></u><u></u></pre>
+<pre>Client IP Address: 209.122.120.205<u></u><u></u></pre>
+<pre>&nbsp;&nbsp; Client Browser: Mozilla/5.0 (Windows NT 10.0; Win64; x64)=
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Ed=
+ge/13.10586<u></u><u></u></pre>
+<pre>&nbsp;<u></u><u></u></pre>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax&nbsp;| <a =
+href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a113e4a0c182df30533377577--

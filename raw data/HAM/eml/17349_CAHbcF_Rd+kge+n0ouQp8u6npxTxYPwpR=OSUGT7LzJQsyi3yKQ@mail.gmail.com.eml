@@ -1,0 +1,506 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 11 May
+ 2016 18:10:19 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 11 May 2016
+ 18:10:16 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 910236036
+ for StoweE@dnc.org; Wed, 11 May 2016 17:10:23 -0500
+X-Note-AR-ScanTimeLocal: 5/11/2016 5:10:23 PM
+X-Policy: dnc.org
+X-Primary: stowee@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.161.170 DOM:gmail.com ADDR:esaigali@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-270/SG:5 5/11/2016 5:09:48 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-27144-c
+X-Note-419: 15.6141 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/11/2016 5:10:08 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.161.170
+X-Note-Reverse-DNS: mail-yw0-f170.google.com
+X-Note-Return-Path: esaigali@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G675 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-yw0-f170.google.com ([209.85.161.170] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140126504
+ for StoweE@dnc.org; Wed, 11 May 2016 17:10:23 -0500
+Received: by mail-yw0-f170.google.com with SMTP id g133so56625070ywb.2
+        for <StoweE@dnc.org>; Wed, 11 May 2016 15:10:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=IrmC2aL88RFcDghIitFK6z97Enrh2JR9ILwgj7gDxtU=;
+        b=f+DPewH1hev60n01nBLNycM5uin1LdA3znH1hLAhEV+stpzdpV+rny0N3zG1T8DIyp
+         kqpIc6rZsOgfCZlX+QAbAbhrbEhf5r5u80unw8Kw0S5UNlgyEYh3LkCL/Ejx5lScmgvY
+         +PArrhytRKAb9Jk5sMeFE7Q1+NvdDSKRSTP5wfZejb2NYspeqO7EMCPkFjDIAwqu+rJq
+         ZoZwiK0Wva4WjAslpvys0Dj2/PvScOQ0EUqBoTHDt3+caSGiD71A0oXgxOlgLE5wI0ud
+         3Km/3HK2Guqzb8BZjxqGCUuWVDZGeGsTSdj/xycqJcMJTzZRAcg9owRm+C7N2EXXdsI2
+         ECcA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=IrmC2aL88RFcDghIitFK6z97Enrh2JR9ILwgj7gDxtU=;
+        b=TrWBmHWyyidWq3W4/lS/qs6DjGrUgwtn5h+Mcir22gZONvNbyfXvQdZdg+EQXBw5Lo
+         z9fqGrmf8CfmHs4rNI9eEEDCPmAUKeB7sSSLQgA259K5WbBxVLjODCa1KmzWMbk+doXY
+         T063c2oby2d8y7qIQGWxB+cncjIKqusQSOOF3bOHJOFmPJY/Z2rtXtAI2GU1t2rYRWwz
+         eBDLrm8Zb5UarV/eN8NYViNFCkwULvaaJGcHPjEZAKJbJM6Wk6aY3453HaLmIbSjx8PV
+         taiHnM8wxdIX5+1V25xgFGxyVBgKNGOFMqHsW/WnyQiokP43iy0nP0pOEDR7QDYfaTlN
+         a99A==
+X-Gm-Message-State: AOPr4FVXeXi+c9fIY3AHAfDKSLzxhdNqoFcY/4C1zZRnPjxwtJjQqWt8NbA5OwAMO20m3MD3SBxJuNimvF56NA==
+X-Received: by 10.13.248.65 with SMTP id i62mr2784618ywf.13.1463004617515;
+ Wed, 11 May 2016 15:10:17 -0700 (PDT)
+Received: by 10.37.212.86 with HTTP; Wed, 11 May 2016 15:10:17 -0700 (PDT)
+In-Reply-To: <4BF5FC06A674424C802132F8635BE3BD01AEABC6@mbx032-e1-va-2.exch032.serverpod.net>
+References: <CAHbcF_SZ9oDjis2v-57U+krPWNOSbBkujuN9k8hKhJXykpYU=Q@mail.gmail.com>
+	<78C99B7F-DE96-4942-AC4A-9C40F85927EC@cookieparker.com>
+	<4BF5FC06A674424C802132F8635BE3BD01AEABC6@mbx032-e1-va-2.exch032.serverpod.net>
+Date: Wed, 11 May 2016 15:10:17 -0700
+Message-ID: <CAHbcF_Rd+kge+n0ouQp8u6npxTxYPwpR=OSUGT7LzJQsyi3yKQ@mail.gmail.com>
+Subject: Re: Democratic Party employment opportunities
+From: Elias Saigali <esaigali@gmail.com>
+To: Shefali Razdan Duggal <Shefali@shefalirazdanduggal.com>
+CC: Cookie Parker <cookie@cookieparker.com>, "Stowe, Erik" <StoweE@dnc.org>
+Content-Type: multipart/alternative; boundary="94eb2c081dac882b650532984e4d"
+Return-Path: esaigali@gmail.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--94eb2c081dac882b650532984e4d
+Content-Type: text/plain; charset="UTF-8"
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hello!
+
+Thank you Shefali and Cookie for your help and support. It is my dream to
+work with the DNC, and could think of nothing more rewarding ...unless the
+White House calls :).
+
+I look forward to any updates, and I hope you all have a pleasant day!
+
+Best regards,
+
+Elias Saigali
+
+
+
+*ELIAS SAIGALI*
+BA | UC BERKELEY
+UNITED STATES POLITICS
+
+On Wed, May 11, 2016 at 5:17 AM, Shefali Razdan Duggal <
+Shefali@shefalirazdanduggal.com> wrote:
+
+> Thanks so very much for your note, Elias, and I profusely apologize for
+> the delay!  I have been on heavy duty mommy duty the last few days (and,
+> throughout this week).
+>
+>
+>
+> I know that there is a lot of potential transition likely happening at the
+> DNC in the coming months, and thus not sure what the hiring situation will
+> be for the time being.  I had sent your information along to the DNC soon
+> after you sent it along to me, and as with all things, there likely is a
+> delay in response and/or influx of resumes they receive.
+>
+>
+>
+> Thank you, Cookie, for passing along!
+>
+>
+>
+> Sending my warmest wishes,
+>
+> Shefali
+>
+>
+>
+> *S**HEFALI** R**AZDAN** D**UGGAL*
+>
+> email:  *shefali@shefalirazdanduggal.com
+> <shefali@shefalirazdanduggal.com>*
+>
+> www.shefalirazdanduggal.com
+>
+> twitter: @ShefaliRazdan
+>
+> linked in:  www.linkedin.com/pub/shefali-razdan-duggal/3/29/271/
+>
+> facebook: http://facebook.com/shefali.razdanduggal.6
+>
+> to experience authentic joy to the heart & soul:
+> http://www.youtube.com/watch?v=OzQfFcy3KJg
+>
+> optimistic personal life philosophy:  The Glass is Always Full
+> <http://www.shefalirazdanduggal.com/wordpress/wp-content/uploads/2014/06/10245463_10152560033127228_309738601230194442_n.jpg>
+>
+> honor your precious uniqueness:  Being Genuine
+> <http://www.shefalirazdanduggal.com/wordpress/wp-content/uploads/2014/09/inspiration.jpg>
+>
+>
+>
+> *"Look* *to this day for it is life.  In its brief course lie all the
+> realities and truths of existence.  The joy of growth, the glory of action,
+> the splendor of beauty...today well-lived makes every yesterday a memory of
+> happiness and every tomorrow a vision of hope.  Look well, therefore, to
+> this day."*
+>
+> *--Ancient Sanskrit proverb*
+>
+>
+>
+> *From:* Cookie Parker [mailto:cookie@cookieparker.com]
+> *Sent:* Tuesday, May 10, 2016 7:58 PM
+> *To:* Elias Saigali
+> *Cc:* Shefali Razdan Duggal; Stowe, Erik
+> *Subject:* Re: Democratic Party employment opportunities
+>
+>
+>
+> I will forward to Buffy. I am not sure what openings there are but will
+> find out.
+>
+>
+>
+> Cookie
+>
+> Sent from my iPhone
+>
+> Cookie Parker
+>
+> 323.788.6000
+>
+> cookie@cookieparker.com
+>
+>
+> On May 10, 2016, at 5:29 PM, Elias Saigali <esaigali@gmail.com> wrote:
+>
+> Dear Shefali,
+>
+>
+>
+> I hope you are doing well. I have not yet heard from anyone regarding
+> employment opportunities with the Democratic Party here in Los Angeles. I
+> am still eagerly seeking any sort of position that would enable me to
+> exercise my political strengths in leadership, fundraising, community
+> outreach, and issue advocacy.
+>
+>
+>
+> Shefali -- you, Cookie, and Erik are by far the highest ranking officials
+> I know within the Democratic Party, so it would mean everything to me to
+> have your support in landing a paid position similar to the ones I tried
+> describing above. I am confident in my abilities to prove my effectiveness
+> in furthering our progress as Democrats. When given the chance, I look
+> forward to doing just that.
+>
+>
+>
+> As always, I am grateful for your time and responses. I have attached an
+> updated resume for you to review at your convenience. I know this is a
+> crucial time for the Democratic Party, and I am here to give it my all.
+> Please help me, and thank you in advance for your consideration.
+>
+>
+>
+> Sincerely,
+>
+>
+>
+> Elias Saigali
+>
+> <ELIAS SAIGALI OFFICIAL RESUME 2016.pdf>
+>
+>
+
+--94eb2c081dac882b650532984e4d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:garamond,s=
+erif">Hello!</div><div class=3D"gmail_default" style=3D"font-family:garamon=
+d,serif"><br></div><div class=3D"gmail_default" style=3D"font-family:garamo=
+nd,serif">Thank you Shefali and Cookie for your help and support. It is my =
+dream to work with the DNC, and could think of nothing more rewarding ...un=
+less the White House calls :).</div><div class=3D"gmail_default" style=3D"f=
+ont-family:garamond,serif"><br></div><div class=3D"gmail_default" style=3D"=
+font-family:garamond,serif">I look forward to any updates, and I hope you a=
+ll have a pleasant day!</div><div class=3D"gmail_default" style=3D"font-fam=
+ily:garamond,serif"><br></div><div class=3D"gmail_default" style=3D"font-fa=
+mily:garamond,serif">Best regards,</div><div class=3D"gmail_default" style=
+=3D"font-family:garamond,serif"><br></div><div class=3D"gmail_default" styl=
+e=3D"font-family:garamond,serif">Elias Saigali</div><div class=3D"gmail_def=
+ault" style=3D"font-family:garamond,serif"><br></div><div class=3D"gmail_de=
+fault" style=3D"font-family:garamond,serif"><br></div></div><div class=3D"g=
+mail_extra"><br clear=3D"all"><div><div class=3D"gmail_signature"><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div><font color=3D"#000000" face=3D"georgia, serif" size=3D"2"><b=
+>ELIAS SAIGALI</b></font></div><div><span style=3D"color:rgb(0,0,0);font-fa=
+mily:georgia,serif;font-size:small">BA | UC BERKELEY</span><br></div><div><=
+font color=3D"#000000" face=3D"georgia, serif" size=3D"2">UNITED STATES POL=
+ITICS</font></div></div></div></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Wed, May 11, 2016 at 5:17 AM, Shefali Raz=
+dan Duggal <span dir=3D"ltr">&lt;<a href=3D"mailto:Shefali@shefalirazdandug=
+gal.com" target=3D"_blank">Shefali@shefalirazdanduggal.com</a>&gt;</span> w=
+rote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;borde=
+r-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><a name=3D"m_-3801664318052750602__MailEndCompose">T=
+hanks so very much for your note, Elias, and I profusely apologize for the =
+delay!&nbsp; I have been on heavy duty mommy duty the last few days (and, t=
+hroughout this week).<u></u><u></u></a></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">I know that there is a lot of potential transition l=
+ikely happening at the DNC in the coming months, and thus not sure what the=
+ hiring situation will be for the time being.&nbsp; I had sent your informa=
+tion along to the DNC soon after you sent
+ it along to me, and as with all things, there likely is a delay in respons=
+e and/or influx of resumes they receive.&nbsp;
+<u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Thank you, Cookie, for passing along!&nbsp; <u></u><=
+u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">Sending my warmest wishes,<u></u><u></u></p>
+<p class=3D"MsoNormal">Shefali<u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><b><span style=3D"font-si=
+ze:11.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:maroo=
+n">S</span></b><b><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&=
+quot;,&quot;sans-serif&quot;;color:maroon">HEFALI</span></b><b><span style=
+=3D"font-size:11.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;=
+color:maroon">
+ R</span></b><b><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&qu=
+ot;,&quot;sans-serif&quot;;color:maroon">AZDAN</span></b><b><span style=3D"=
+font-size:11.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;colo=
+r:maroon"> D</span></b><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;;color:maroon">UGGAL</span></b><span st=
+yle=3D"font-size:11.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quo=
+t;;color:black">
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:black">e=
+mail:&nbsp;
+</span><u><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&q=
+uot;sans-serif&quot;;color:blue"><a href=3D"mailto:shefali@shefalirazdandug=
+gal.com" target=3D"_blank">shefali@shefalirazdanduggal.com</a></span></u><s=
+pan style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-ser=
+if&quot;;color:#0070c0"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><a href=3D"http://www.she=
+falirazdanduggal.com/" target=3D"_blank"><span style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">www.shefalirazdandugga=
+l.com</span></a><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&qu=
+ot;,&quot;sans-serif&quot;;color:black"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:black">t=
+witter:
+</span><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot=
+;sans-serif&quot;;color:blue">@ShefaliRazdan<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">linked in:<sp=
+an style=3D"color:blue"> &nbsp;</span></span><a href=3D"http://www.linkedin=
+.com/pub/shefali-razdan-duggal/3/29/271/" target=3D"_blank"><span style=3D"=
+font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">www=
+.linkedin.com/pub/shefali-razdan-duggal/3/29/271/</span></a><span style=3D"=
+font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;colo=
+r:blue">
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:black">f=
+acebook:
+</span><a href=3D"http://facebook.com/shefali.razdanduggal.6" target=3D"_bl=
+ank"><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;s=
+ans-serif&quot;">http://facebook.com/shefali.razdanduggal.6</span></a><span=
+ style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&=
+quot;;color:blue"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:black">t=
+o experience authentic joy to the heart &amp; soul:
+</span><a href=3D"http://www.youtube.com/watch?v=3DOzQfFcy3KJg" target=3D"_=
+blank"><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot=
+;sans-serif&quot;">http://www.youtube.com/watch?v=3DOzQfFcy3KJg</span></a><=
+span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-se=
+rif&quot;;color:blue"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">optimistic pe=
+rsonal life philosophy:<span style=3D"color:blue">&nbsp;
+</span></span><a href=3D"http://www.shefalirazdanduggal.com/wordpress/wp-co=
+ntent/uploads/2014/06/10245463_10152560033127228_309738601230194442_n.jpg" =
+target=3D"_blank"><span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&=
+quot;,&quot;sans-serif&quot;">The Glass is Always Full</span></a><span styl=
+e=3D"font-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;=
+;color:blue"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">honor your pr=
+ecious uniqueness<span style=3D"color:blue">:&nbsp;
+</span></span><a href=3D"http://www.shefalirazdanduggal.com/wordpress/wp-co=
+ntent/uploads/2014/09/inspiration.jpg" target=3D"_blank"><span style=3D"fon=
+t-size:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">Being =
+Genuine</span></a><u><span style=3D"font-size:10.0pt;font-family:&quot;Taho=
+ma&quot;,&quot;sans-serif&quot;;color:blue"><u></u><u></u></span></u></p>
+<p class=3D"MsoNormal" style=3D"background:white"><u><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;;color:blue"=
+><u></u><span style=3D"text-decoration:none">&nbsp;</span><u></u></span></u=
+></p>
+<p class=3D"MsoNormal" style=3D"background:white"><i><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black"=
+>&quot;Look</span></i><i><span style=3D"font-size:10.0pt;font-family:&quot;=
+Calibri&quot;,&quot;sans-serif&quot;;color:black">
+</span></i><i><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;=
+,&quot;sans-serif&quot;;color:black">to this day for it is life.&nbsp; In i=
+ts brief course lie all the realities and truths of existence.&nbsp; The jo=
+y of growth, the glory of action, the splendor of beauty...today
+ well-lived makes every yesterday a memory of happiness and every tomorrow =
+a vision of hope.&nbsp; Look well, therefore, to this day.&quot;</span></i>=
+<span style=3D"font-size:10.0pt;color:black"><u></u><u></u></span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><i><span style=3D"font-si=
+ze:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black"=
+>--Ancient Sanskrit proverb</span></i><span style=3D"font-size:10.0pt;font-=
+family:&quot;Calibri&quot;,&quot;sans-serif&quot;;color:black"><u></u><u></=
+u></span></p>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Cookie P=
+arker [mailto:<a href=3D"mailto:cookie@cookieparker.com" target=3D"_blank">=
+cookie@cookieparker.com</a>]
+<br>
+<b>Sent:</b> Tuesday, May 10, 2016 7:58 PM<br>
+<b>To:</b> Elias Saigali<br>
+<b>Cc:</b> Shefali Razdan Duggal; Stowe, Erik<br>
+<b>Subject:</b> Re: Democratic Party employment opportunities<u></u><u></u>=
+</span></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">I will forward to Buffy. I am not sure what openings=
+ there are but will find out.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Cookie<br>
+<br>
+Sent from my iPhone <u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Cookie Parker<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"tel:323.788.6000" value=3D"&#43;132378860=
+00" target=3D"_blank">323.788.6000</a><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"mailto:cookie@cookieparker.com" target=3D=
+"_blank">cookie@cookieparker.com</a><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 10, 2016, at 5:29 PM, Elias Saigali &lt;<a href=3D"mailto:esaigali@g=
+mail.com" target=3D"_blank">esaigali@gmail.com</a>&gt; wrote:<u></u><u></u>=
+</p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">Dear Shefali,<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">I hope you are doing well. I have not yet heard from anyone =
+regarding employment opportunities with the Democratic Party here in Los An=
+geles. I am still eagerly seeking any sort of position that
+ would enable me to exercise my political strengths in leadership, fundrais=
+ing, community outreach, and issue advocacy.<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">Shefali -- you, Cookie, and Erik are by far the highest rank=
+ing officials I know within the Democratic Party, so it would mean everythi=
+ng to me to have your support in landing a paid position
+ similar to the ones I tried describing above. I am confident in my abiliti=
+es to prove my effectiveness in furthering our progress as Democrats. When =
+given the chance, I look forward to doing just that.&nbsp;<u></u><u></u></s=
+pan></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">As always, I am grateful for your time and responses. I have=
+ attached an updated resume for you to review at your convenience. I know t=
+his is a crucial time for the Democratic Party, and I am
+ here to give it my all. Please help me, and thank you in advance for your =
+consideration.<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">Sincerely,<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;"><u></u>&nbsp;<u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Garamond&quot;,&quo=
+t;serif&quot;">Elias Saigali<u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</blockquote>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">&lt;ELIAS SAIGALI OFFICIAL RESUME 2016.pdf&gt;<u></u=
+><u></u></p>
+</div>
+</blockquote>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div>
+
+--94eb2c081dac882b650532984e4d--

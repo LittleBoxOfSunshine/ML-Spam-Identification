@@ -1,0 +1,686 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 23 May
+ 2016 17:01:50 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 23 May 2016
+ 17:01:38 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 930619402
+ for ParrishD@dnc.org; Mon, 23 May 2016 16:01:48 -0500
+X-Note-AR-ScanTimeLocal: 5/23/2016 4:01:59 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.54 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-455/SG:5 5/23/2016 4:01:38 PM
+X-GBUdb-Analysis: 0, 209.85.218.54, Ugly c=0.847032 p=-0.987611 Source White
+X-Signature-Violations: 0-0-0-29776-c
+X-Note-419: 15.6268 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/23/2016 4:01:57 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.54
+X-Note-Reverse-DNS: mail-oi0-f54.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.218.54] (HELO mail-oi0-f54.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 143545352
+ for ParrishD@dnc.org; Mon, 23 May 2016 16:01:59 -0500
+Received: by mail-oi0-f54.google.com with SMTP id b65so153691591oia.1
+        for <ParrishD@dnc.org>; Mon, 23 May 2016 14:01:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=B3h3PQj/cpkY4LAseknnOq36mftxx3YkcUE3WaA0vLI=;
+        b=qZoNw8WarFYpW/OUyWSe7WTM9ckyMUd+iXDzfKeFVx777FBTA8ZpasW0uz/Zh9f/Qq
+         y6EGUOEevmNCXkl0k4qF70Z87rVqioY8r9Z5ylkjNzO8ct7xtcelJ4XakVQ8tOyOj/mM
+         JQLIi9LkVSMmtJNtrPBbs7qIGzjNtVCh9dCEbTJq0O7N37bS2YAg+WzIOzI7CX7u+okN
+         MZbgNbcSeqaZiiQfQIC8l2VWAo9vAu6pQd8qnXBI1xsUdKed9IHFTbAcaf7ZALqSaIH7
+         QygNhDHnXrxU2MKMrtpWdJDckWl57NcgRKMUJCWFdzjsnLntdjxkJmDlOc8uPgGkbbob
+         A74A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=B3h3PQj/cpkY4LAseknnOq36mftxx3YkcUE3WaA0vLI=;
+        b=gv6LMwUmVQp/qR7aHCNgJstdsJrHX0bdBa0lVNmeKbBhsZUw60BcNilIt3Z6WDjc+1
+         Xzq5p+ka2GfVCVD50NFXK/pl3WhC8RsH79+eG1PxmXkGBf4UMFQi1x1Z4dbhCVi4CqeH
+         4MczF0r0LuQGhglnHGGl3I7ypGMNR4M3/Wilbpnp3SgcXJZGGSDU9htrySSIA7aTlHRJ
+         FQmc+USangFUzxBtnq7g+iZeQD4w5fGiL4rbmXr2U5OjSsBJTk4JutX0n5+XSYXQWPmx
+         cgYUzw/v/nLa2j9wGPKlulVNIG4cGzm3OB3r/dx949AthsEe97s9PBoeRZeoKZ/A/TE2
+         shuw==
+X-Gm-Message-State: AOPr4FVocw5zFt34+1yxQRWQ0rFJqq99ouyISyr+9iC5tdRzZ6AL30pCZQIVWoCGbEp3+pdIUGMWeWLhTzcE+q/O
+X-Received: by 10.202.62.215 with SMTP id l206mr10927884oia.19.1464037308113;
+ Mon, 23 May 2016 14:01:48 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Mon, 23 May 2016 14:01:48 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9963705@dncdag1.dnc.org>
+References: <-8889302074827184104@unknownmsgid>
+	<95189009-2CEB-4542-AA2C-287AB7D11BD7@lauriecampbell.us>
+	<DB1776E0-54ED-4163-BE3C-F941B71A86A9@dnc.org>
+	<FA8FE282-997B-4670-919D-372FC24EBDDE@dnc.org>
+	<A2824EDE-CAF6-4507-9FA0-4D8774F28AC9@lauriecampbell.us>
+	<81CEA887-E89B-4592-86A3-1CB9FC7ABA8A@jo-ousterhout.com>
+	<1A50D191-DC48-4D91-8B56-FB9F8620E99E@lauriecampbell.us>
+	<8A3BA5C3DED8F34DBD96D72CD1C4AA38A9963578@dncdag1.dnc.org>
+	<0F3647B8-42F0-4933-860D-5056A9ECC670@lauriecampbell.us>
+	<8A3BA5C3DED8F34DBD96D72CD1C4AA38A9963705@dncdag1.dnc.org>
+Date: Mon, 23 May 2016 17:01:48 -0400
+Message-ID: <CACG1p4r2ORE_EP9jpX8oL+nKKj8KHcTNjJgmDt2rvbXiGQTvAw@mail.gmail.com>
+Subject: Re: FW: POTUS dinner NYC June 8
+From: Zachary Allen <zallen@tipahconsulting.com>
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+CC: Claire Olszewski <OlszewskiC@dnc.org>
+Content-Type: multipart/alternative; boundary="001a113ccf58b04290053388bf98"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a113ccf58b04290053388bf98
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+I think I need to take care of Chris Lowe first. Can we get back to her on
+that?
+
+On Monday, May 23, 2016, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Are you ok with her inviting them?
+>
+>
+>
+> *From:* Laurie Campbell [mailto:mail@lauriecampbell.us
+> <javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');>]
+> *Sent:* Monday, May 23, 2016 4:58 PM
+> *To:* Parrish, Daniel
+> *Cc:* Jo Ousterhout; Claire Olszewski
+> *Subject:* Re: POTUS dinner NYC June 8
+>
+>
+>
+> Also I have a couple who we friends of mine who want to attend. Maura
+> Clark and Bill Long. Is there space?
+>
+> Sent from my iPhone
+>
+>
+> On May 23, 2016, at 3:59 PM, Parrish, Daniel <ParrishD@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ParrishD@dnc.org');>> wrote:
+>
+> Hi Laurie,
+>
+>
+>
+> Unfortunately we have not yet received anything on our end. Did you see a
+> =E2=80=9Cthank you=E2=80=9D page after you contributed? We=E2=80=99ll kee=
+p looking out for it- we
+> will be able to track down whether or not it was processed within the nex=
+t
+> 24 hours.
+>
+>
+>
+> As for the event, we know it will be early evening, but the exact timing
+> is still to be determined. I hope that helps!
+>
+>
+>
+> Thanks,
+>
+> Dan
+>
+>
+>
+> *From:* Laurie Campbell [mailto:mail@lauriecampbell.us
+> <javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');>]
+> *Sent:* Monday, May 23, 2016 9:07 AM
+> *To:* Jo Ousterhout
+> *Cc:* Parrish, Daniel; Claire Olszewski
+> *Subject:* Re: POTUS dinner NYC June 8
+>
+>
+>
+> Ok I just made the donation online and I am excited to attend the event.
+> Any idea what time we need to be at the host's home?
+>
+>
+>
+> Thanks-
+>
+> Laurie
+>
+> Sent from my iPhone
+>
+>
+> On May 22, 2016, at 2:55 PM, Jo Ousterhout <jo@jo-ousterhout.com
+> <javascript:_e(%7B%7D,'cvml','jo@jo-ousterhout.com');>> wrote:
+>
+> So glad you=E2=80=99re going to be able to attend, Laurie!
+>
+>
+>
+> Claire and Dan - thank you both SO much for your hope with this!
+>
+>
+>
+> All the best,
+>
+>
+>
+>
+>
+> Jo
+>
+> Jo Ousterhout
+> Co Founder, Entrepreneurs for Hillary
+> National Finance Council, Hillary for America
+> +1 917 207 5050
+>
+> Support Entrepreneurs for Hillary/Hillary for America
+>
+> <https://www.hillaryclinton.com/finance/entrepreneurs-for-hillary/?raiser=
+=3D39393>
+> website: Entrepreneurs for Hillary <http://entrepreneursforhillary.com/>
+> Like on FB:  Entrepreneurs for Hillary
+> <https://www.facebook.com/entrepreneursforhillary?_rdr=3Dp>
+> Follow:  @Entrepreneurs4H <https://twitter.com/Entrepreneurs4H>
+> Connect on LinkedIn: Entrepreneurs for Hillary
+> <https://www.linkedin.com/company/entrepreneurs-for-hillary>
+>
+>
+>
+> On May 22, 2016, at 12:46 PM, Laurie Campbell <mail@lauriecampbell.us
+> <javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');>> wrote:
+>
+>
+>
+> Great. Am at a graduation today but will submit tonight or first thing
+> tomorrow.
+>
+> Sent from my iPhone
+>
+>
+> On May 22, 2016, at 12:09 PM, Parrish, Daniel <ParrishD@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ParrishD@dnc.org');>> wrote:
+>
+> Laurie,
+>
+>
+>
+> I'm so glad you'll be joining us! I've included the link below for your
+> RSVP. Please let me know if you have any questions about the event.
+>
+>
+>
+> https://finance.democrats.org/page/contribute/June8Evening
+>
+>
+>
+> Thank you for your support!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+>
+> On May 22, 2016, at 12:05 PM, Claire Olszewski <OlszewskiC@dnc.org
+> <javascript:_e(%7B%7D,'cvml','OlszewskiC@dnc.org');>> wrote:
+>
+> Hi Laurie,
+>
+>
+>
+> Thank you so much for your patience. The greats news is that there is
+> definitely a seat for you! I'm adding Dan to this email. He can ensure th=
+at
+> you are registered and have all the info you need to attend.
+>
+>
+>
+> Thank you again for your generosity and support! So happy this will work!
+>
+> Claire
+>
+> Sent from my iPhone
+>
+>
+> On May 20, 2016, at 4:33 PM, Laurie Campbell <mail@lauriecampbell.us
+> <javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');>> wrote:
+>
+> I have my internal compliance approval from Bank of America so I am ready
+> to go if there is space.
+>
+> Laurie
+>
+> Sent from my iPhone
+>
+>
+> On May 19, 2016, at 5:46 PM, Jo Ousterhout <jo@jo-ousterhout.com
+> <javascript:_e(%7B%7D,'cvml','jo@jo-ousterhout.com');>> wrote:
+>
+> Claire =E2=80=93 please do keep Laurie Campbell on the list for the POTUS=
+ June 8
+> dinner.
+>
+>
+>
+>  Laurie is cc'ed here so that you can let her know directly and very
+> quickly if/when the list frees up and she can get a seat.
+>
+>
+>
+> Thank you so much, Claire!!  We really appreciate your help with this.
+>
+> Jo
+>
+> Jo Ousterhout
+> Co Founder, Entrepreneurs for Hillary
+> National Finance Council, Hillary for America
+> +1 917 207 5050 <+1%20917%20207%205050>
+>
+> Support Entrepreneurs for Hillary/Hillary for America
+>
+> <https://www.hillaryclinton.com/finance/entrepreneurs-for-hillary/?raiser=
+=3D39393>
+> website: Entrepreneurs for Hillary <http://entrepreneursforhillary.com/>
+> Like on FB:  Entrepreneurs for Hillary
+> <https://www.facebook.com/entrepreneursforhillary?_rdr=3Dp>
+> Follow:  @Entrepreneurs4H <https://twitter.com/Entrepreneurs4H>
+> Connect on LinkedIn: Entrepreneurs for Hillary
+> <https://www.linkedin.com/company/entrepreneurs-for-hillary>
+>
+>
+>
+>
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a113ccf58b04290053388bf98
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">I =
+think I need to take care of Chris Lowe first. Can we get back to her on th=
+at?<span></span><br><br>On Monday, May 23, 2016, Parrish, Daniel &lt;<a hre=
+f=3D"mailto:ParrishD@dnc.org">ParrishD@dnc.org</a>&gt; wrote:<br><blockquot=
+e class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc sol=
+id;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Are you ok with her invit=
+ing them?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Laurie C=
+ampbell [mailto:<a href=3D"javascript:_e(%7B%7D,'cvml','mail@lauriecampbell=
+.us');" target=3D"_blank">mail@lauriecampbell.us</a>]
+<br>
+<b>Sent:</b> Monday, May 23, 2016 4:58 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Jo Ousterhout; Claire Olszewski<br>
+<b>Subject:</b> Re: POTUS dinner NYC June 8<u></u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Also I have a couple who we friends of mine who want=
+ to attend. Maura Clark and Bill Long. Is there space?<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 23, 2016, at 3:59 PM, Parrish, Daniel &lt;<a href=3D"javascript:_e(%=
+7B%7D,'cvml','ParrishD@dnc.org');" target=3D"_blank">ParrishD@dnc.org</a>&g=
+t; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi Laurie,</span><u></u><=
+u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Unfortunately we have not=
+ yet received anything on our end. Did you see a =E2=80=9Cthank you=E2=80=
+=9D page after you contributed? We=E2=80=99ll keep looking out for it- we w=
+ill be
+ able to track down whether or not it was processed within the next 24 hour=
+s.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">As for the event, we know=
+ it will be early evening, but the exact timing is still to be determined. =
+I hope that helps!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks,</span><u></u><u><=
+/u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Laurie C=
+ampbell [<a href=3D"javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');"=
+ target=3D"_blank">mailto:mail@lauriecampbell.us</a>]
+<br>
+<b>Sent:</b> Monday, May 23, 2016 9:07 AM<br>
+<b>To:</b> Jo Ousterhout<br>
+<b>Cc:</b> Parrish, Daniel; Claire Olszewski<br>
+<b>Subject:</b> Re: POTUS dinner NYC June 8</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Ok I just made the donation online and I am excited =
+to attend the event. Any idea what time we need to be at the host's home?<u=
+></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks-<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Laurie<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 22, 2016, at 2:55 PM, Jo Ousterhout &lt;<a href=3D"javascript:_e(%7B=
+%7D,'cvml','jo@jo-ousterhout.com');" target=3D"_blank">jo@jo-ousterhout.com=
+</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">So glad you=E2=80=99re going to be able to attend, L=
+aurie!<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Claire&nbsp;and Dan - thank you&nbsp;both SO much fo=
+r your hope with this!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">All the best,&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">Jo<br>
+<br>
+Jo Ousterhout<br>
+Co Founder,&nbsp;Entrepreneurs for Hillary&nbsp;<br>
+National Finance Council, Hillary for&nbsp;America<br>
+&#43;1 917 207 5050<br>
+<br>
+Support&nbsp;<a href=3D"https://www.hillaryclinton.com/finance/entrepreneur=
+s-for-hillary/?raiser=3D39393" target=3D"_blank">Entrepreneurs for&nbsp;Hil=
+lary/Hillary for America<br>
+</a>website:&nbsp;<a href=3D"http://entrepreneursforhillary.com/" target=3D=
+"_blank">Entrepreneurs for Hillary</a><br>
+Like on FB: &nbsp;<a href=3D"https://www.facebook.com/entrepreneursforhilla=
+ry?_rdr=3Dp" target=3D"_blank">Entrepreneurs for&nbsp;Hillary</a><br>
+Follow: &nbsp;<a href=3D"https://twitter.com/Entrepreneurs4H" target=3D"_bl=
+ank">@Entrepreneurs4H</a><br>
+Connect on&nbsp;<a href=3D"https://www.linkedin.com/company/entrepreneurs-f=
+or-hillary" target=3D"_blank">LinkedIn:&nbsp;Entrepreneurs&nbsp;for Hillary=
+</a><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">On May 22, 2016, at 12:46 PM, Laurie Campbell &lt;<a=
+ href=3D"javascript:_e(%7B%7D,'cvml','mail@lauriecampbell.us');" target=3D"=
+_blank">mail@lauriecampbell.us</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Great. Am at a graduation today but will submit toni=
+ght or first thing tomorrow.&nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 22, 2016, at 12:09 PM, Parrish, Daniel &lt;<a href=3D"javascript:_e(=
+%7B%7D,'cvml','ParrishD@dnc.org');" target=3D"_blank">ParrishD@dnc.org</a>&=
+gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Laurie,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm so glad you'll be joining us! I've included the =
+link below for your RSVP. Please let me know if you have any questions abou=
+t the event.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"https://finance.democrats.org/page/contri=
+bute/June8Evening" target=3D"_blank">https://finance.democrats.org/page/con=
+tribute/June8Evening</a><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you for your support!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 22, 2016, at 12:05 PM, Claire Olszewski &lt;<a href=3D"javascript:_e=
+(%7B%7D,'cvml','OlszewskiC@dnc.org');" target=3D"_blank">OlszewskiC@dnc.org=
+</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Hi Laurie,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you so much for your patience. The greats news=
+ is that there is definitely a seat for you! I'm adding Dan to this email. =
+He can ensure that you are registered and have all the info you need to att=
+end.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you again for your generosity and support! So =
+happy this will work!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Claire&nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 20, 2016, at 4:33 PM, Laurie Campbell &lt;<a href=3D"javascript:_e(%=
+7B%7D,'cvml','mail@lauriecampbell.us');" target=3D"_blank">mail@lauriecampb=
+ell.us</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">I have my internal compliance approval from Bank of =
+America so I am ready to go if there is space.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Laurie<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 19, 2016, at 5:46 PM, Jo Ousterhout &lt;<a href=3D"javascript:_e(%7B=
+%7D,'cvml','jo@jo-ousterhout.com');" target=3D"_blank">jo@jo-ousterhout.com=
+</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Claire =E2=80=93 please do keep Laurie Campbell on t=
+he list for the POTUS June 8 dinner.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;Laurie is cc'ed here so that you can let her k=
+now directly and very quickly if/when the list frees up and she can get a s=
+eat. &nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Thank you so much, Cl=
+aire!!&nbsp; We really appreciate your help with this.&nbsp;<u></u><u></u><=
+/p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Jo<br>
+<br>
+Jo Ousterhout<br>
+Co Founder,&nbsp;Entrepreneurs for Hillary&nbsp;<br>
+National Finance Council, Hillary for America<br>
+<a href=3D"tel:&#43;1%20917%20207%205050" target=3D"_blank">&#43;1 917 207 =
+5050</a><br>
+<br>
+Support&nbsp;<a href=3D"https://www.hillaryclinton.com/finance/entrepreneur=
+s-for-hillary/?raiser=3D39393" target=3D"_blank">Entrepreneurs for Hillary/=
+Hillary for America<br>
+</a>website:&nbsp;<a href=3D"http://entrepreneursforhillary.com/" target=3D=
+"_blank">Entrepreneurs for Hillary</a><br>
+Like on FB: &nbsp;<a href=3D"https://www.facebook.com/entrepreneursforhilla=
+ry?_rdr=3Dp" target=3D"_blank">Entrepreneurs for&nbsp;Hillary</a><br>
+Follow: &nbsp;<a href=3D"https://twitter.com/Entrepreneurs4H" target=3D"_bl=
+ank">@Entrepreneurs4H</a><br>
+Connect on&nbsp;<a href=3D"https://www.linkedin.com/company/entrepreneurs-f=
+or-hillary" target=3D"_blank">LinkedIn:&nbsp;Entrepreneurs for Hillary</a><=
+u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+
+</blockquote><br><br>-- <br><div dir=3D"ltr"><div><div dir=3D"ltr"><div><di=
+v dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8=
+th Floor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fa=
+x<span>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=
+=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div><br=
+>
+
+--001a113ccf58b04290053388bf98--

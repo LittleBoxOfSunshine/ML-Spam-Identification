@@ -1,0 +1,570 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 23 May
+ 2016 10:48:36 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 23 May 2016
+ 10:48:25 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 929585077
+ for KaplanJ@dnc.org; Mon, 23 May 2016 09:48:34 -0500
+X-Note-AR-ScanTimeLocal: 5/23/2016 9:48:45 AM
+X-Policy: dnc.org
+X-Primary: kaplanj@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:98.138.91.166 DOM:yahoo.com ADDR:cynthiafriedman@yahoo.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-445/SG:5 5/23/2016 9:48:07 AM
+X-GBUdb-Analysis: 0, 98.138.91.166, Ugly c=0.676842 p=-0.727528 Source Normal
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6244 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/23/2016 9:48:30 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->LOCAL->United States->United States->United States->
+X-Note-Sending-IP: 98.138.91.166
+X-Note-Reverse-DNS: nm6-vm4.bullet.mail.ne1.yahoo.com
+X-Note-Return-Path: cynthiafriedman@yahoo.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G677 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from nm6-vm4.bullet.mail.ne1.yahoo.com ([98.138.91.166] verified)
+  by inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id
+ 142199579 for KaplanJ@dnc.org; Mon, 23 May 2016 09:48:44 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1464014913; bh=D9K0TbnKItE96CZIvFIK8SzAK0T76XmYfEAkRR6GAV8=; h=Date:From:Reply-To:To:Cc:In-Reply-To:References:Subject:From:Subject; b=Hxoa0QF7ZtyAFC1QPZazhmoRkHBVVfnjC3aRdLZWseuLx5JKUolhAm32gcHuhajFszaFVW39LoGHLrWqw78gfjHU+sMtYJ0cg1uJwRQ/kvoqM4dDdFPHNW3FuVa/GpT3zh/7Qssorkuco37eNuJPC9hqhjkygJKGYpj50n5bY6QP0CpsC0eauU9Ydb/76eFhifkSBwRmBzH6dpwMfcoraV7AmyM8/dZ96a1JbvU2+0Ejlo/AUrgTypHMr8pjYLgwcbRTCSwLur3v4sRN/cs4BLtlJO/wZLB7udBOxZ0uK4Vbcb2XikIXOjdaqT2lOXzChsRztJxG32rbsRo4ZUCO8w==
+Received: from [98.138.100.117] by nm6.bullet.mail.ne1.yahoo.com with NNFMP;
+ 23 May 2016 14:48:33 -0000
+Received: from [98.138.87.12] by tm108.bullet.mail.ne1.yahoo.com with NNFMP;
+ 23 May 2016 14:48:33 -0000
+Received: from [127.0.0.1] by omp1012.mail.ne1.yahoo.com with NNFMP; 23 May
+ 2016 14:48:33 -0000
+X-Yahoo-Newman-Property: ymail-3
+X-Yahoo-Newman-Id: 217192.7087.bm@omp1012.mail.ne1.yahoo.com
+X-YMail-OSG: f1Z.p0UVM1lS8.iVIPhWX5rMqWVrsp5gY9JgirpjyfCSsAFtfLEyay9CTyPkVMt
+ NkEXESHAGb5jpWPoVkEQNN9hTa5GtvcyBzvz_URZB4z4qLNHdSYBluqe61_3hBxsJe6d.UChQ1gQ
+ VYaKrCnbYakyBvuDqeXFNnw4Jg2gOO.woDDMMS9S9KqJY.0bYFlC7raZhfLgH1458tMOX3ULMlC0
+ _EIKperLTQPAfPnrySabHvvP9qEMZn_XmxrFPXRT7xvOch7gyOTRkVH3pVobXVF_oFj07RmRkA6e
+ n0fJeB4Lr5vPvi0ApyjGF_cJubSsqwCwHhb8Uc6TfzhneoEPA_VEQD5JctNiTjAU.541h_yQtXLQ
+ EEgKB0kGjV3ZhoIclh_2QMx2u_.a8ZDFdgtotkLNz8Fn5vVKnOUfZ8vR8lxrfw3kKf7c9PYH.iLM
+ 225NSuL3KjjAob44GfjDV3BFPIuMW3lPDHRWhkxQ0tYQzqHCawOEkJHgg5ct5VIYc7V7ijIphzoi
+ TRhMBF4w4ZljXWTRpRagPimUX3hDHvAUywrmqTKJf.zbnLuRFxTS4SzckX4hqyw--
+Received: from jws10028.mail.ne1.yahoo.com by
+ sendmailws110.mail.ne1.yahoo.com; Mon, 23 May 2016 14:48:32 +0000;
+ 1464014912.608
+Date: Mon, 23 May 2016 14:48:32 +0000
+From: cynthia friedman <cynthiafriedman@yahoo.com>
+Reply-To: cynthia friedman <cynthiafriedman@yahoo.com>
+To: Claire Olszewski <OlszewskiC@dnc.org>, "Kaplan, Jordan" <KaplanJ@dnc.org>
+CC: Carol Pensky <CarolPensky1@gmail.com>
+Message-ID: <746958910.870519.1464014912252.JavaMail.yahoo@mail.yahoo.com>
+In-Reply-To: <4173B5B1E2999743BF266F5506C0FEDC23A7F155@dncdag1.dnc.org>
+References: <1149991332.5676794.1463776560957.JavaMail.yahoo@mail.yahoo.com> <2F4BE67A-87C3-45D7-A2B3-E64A98E49317@yahoo.com> <4173B5B1E2999743BF266F5506C0FEDC23A7F155@dncdag1.dnc.org>
+Subject: Re: IDEA FOR THE CONVENTION -- Sen. Gillibrand and Ahmad and George
+ Clooney - TImely!
+Content-Type: multipart/alternative;
+	boundary="----=_Part_870518_91798347.1464014912236"
+Content-Length: 26539
+Return-Path: cynthiafriedman@yahoo.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_Part_870518_91798347.1464014912236
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Great!=C2=A0 I'm on it today.Cynthia
+
+      From: Claire Olszewski <OlszewskiC@dnc.org>
+ To: Cynthia Friedman <cynthiafriedman@yahoo.com>; "Kaplan, Jordan" <Kaplan=
+J@dnc.org>=20
+Cc: Carol Pensky <CarolPensky1@gmail.com>
+ Sent: Monday, May 23, 2016 10:33 AM
+ Subject: RE: IDEA FOR THE CONVENTION -- Sen. Gillibrand and Ahmad and Geor=
+ge Clooney - TImely!
+  =20
+#yiv7656386435 #yiv7656386435 -- _filtered #yiv7656386435 {font-family:Helv=
+etica;panose-1:2 11 6 4 2 2 2 2 2 4;} _filtered #yiv7656386435 {panose-1:2 =
+4 5 3 5 4 6 3 2 4;} _filtered #yiv7656386435 {font-family:Calibri;panose-1:=
+2 15 5 2 2 2 4 3 2 4;} _filtered #yiv7656386435 {font-family:Tahoma;panose-=
+1:2 11 6 4 3 5 4 4 2 4;}#yiv7656386435 #yiv7656386435 p.yiv7656386435MsoNor=
+mal, #yiv7656386435 li.yiv7656386435MsoNormal, #yiv7656386435 div.yiv765638=
+6435MsoNormal {margin:0in;margin-bottom:.0001pt;font-size:12.0pt;}#yiv76563=
+86435 a:link, #yiv7656386435 span.yiv7656386435MsoHyperlink {color:blue;tex=
+t-decoration:underline;}#yiv7656386435 a:visited, #yiv7656386435 span.yiv76=
+56386435MsoHyperlinkFollowed {color:purple;text-decoration:underline;}#yiv7=
+656386435 p.yiv7656386435MsoAcetate, #yiv7656386435 li.yiv7656386435MsoAcet=
+ate, #yiv7656386435 div.yiv7656386435MsoAcetate {margin:0in;margin-bottom:.=
+0001pt;font-size:8.0pt;}#yiv7656386435 span.yiv7656386435EmailStyle17 {colo=
+r:#1F497D;}#yiv7656386435 span.yiv7656386435BalloonTextChar {}#yiv765638643=
+5 .yiv7656386435MsoChpDefault {font-size:10.0pt;} _filtered #yiv7656386435 =
+{margin:1.0in 1.0in 1.0in 1.0in;}#yiv7656386435 div.yiv7656386435WordSectio=
+n1 {}#yiv7656386435 Hi Cynthia,  =C2=A0 Hope you had a great weekend!=C2=A0=
+ Jordan is traveling, so I=E2=80=99m happy to jump in here.=C2=A0 I think i=
+t=E2=80=99s absolutely the right step to go ahead with your email with Kirs=
+ten and include this new information in the email.=C2=A0 I can definitely d=
+raft up a fact sheet or official letter of invitation for the Clooney team =
+so that they can make their decision.=C2=A0 Ellen Thrower won=E2=80=99t be =
+able to go to Philadelphia until the first week of June at which time she w=
+ill be scouting venues for a number of DNC Finance events (ours included) s=
+o we won=E2=80=99t be able to give them much in the way of firm details yet=
+.=C2=A0 I=E2=80=99ll work on the letter/sheet today.  =C2=A0 I=E2=80=99ll m=
+ake sure that the Chair=E2=80=99s team and the DWA team (Lottie) are aware =
+of this so that we can move forward accordingly.  =C2=A0 I say go forth wit=
+h your email to Kirsten as we definitely want to get that ball rolling anyw=
+ay!=C2=A0 This isvery exciting news, and I hope it comes together!=C2=A0 It=
+ would be incredible for the organization.  =C2=A0 Thank you!! Claire  =C2=
+=A0 From: Cynthia Friedman [mailto:cynthiafriedman@yahoo.com]
+Sent: Saturday, May 21, 2016 5:29 PM
+To: Kaplan, Jordan
+Cc: Claire Olszewski; Carol Pensky
+Subject: Fwd: IDEA FOR THE CONVENTION -- Sen. Gillibrand and Ahmad and Geor=
+ge Clooney - TImely!  =C2=A0 Jordan -- TIMELY!! =C2=A0Carol P. and I were r=
+eady =C2=A0to send this draft letter (below)to Senator Gillibrand tomorrow =
+asking her and her organization "Off the sidelines", =C2=A0to cohost an eve=
+nt with WLF at the=C2=A0convention.  =C2=A0 However, I had also reached out=
+ last week to Jae Kim, a friend of mine and former WLF member now living in=
+ Vancouver, if she would feel comfortable contacting her best friend, Ahmal=
+ Clooney, to see if she might be part of this event. Jae called me today to=
+ say that she spoke to Ahmal, =C2=A0that George has been invited to speak a=
+t Convention, (hasn't accepted yet, but =C2=A0he's thinking it's too import=
+ant not to. . . ) and that if he accepts the speaking role, they would both=
+ consider being our special guests at this event. (great news!!) =C2=A0They=
+ also met Kirsten, are impressed with her,=C2=A0and would like to do someth=
+ing together with her.  =C2=A0 Jae is aware of WLF's importance at the Conv=
+ention , doesn't want EMILY and EMERGE to steal all the limelight. .! . and=
+ conveyed info about WLF to the =C2=A0Clooneys.  =C2=A0 Clooneys have asked=
+ for a fact sheet about the potential event to be emailed to their personal=
+ assistant next week. (Jae will send me contact info)  =C2=A0 =C2=A0=C2=A0W=
+e need your help right away, Jordan, to carry this event idea further to th=
+e DNC, to Inform DWS ,get her ok, etc.=C2=A0  =C2=A0 NOTE: =C2=A0we feel it=
+'s important that =C2=A0event be co-hosted by WLF, not the Women's Caucus o=
+r Debbie's umbrella women's organization, though all should be invited and =
+welcome at this reception.  =C2=A0 I will amend my email to Kirsten tomorro=
+w to include the outreach and possibility of the Clooneys coming on board. =
+ =C2=A0 Also, Lottie Shackleford -- She =C2=A0contacted Carol and me origin=
+ally about planning an event. =C2=A0I would like to bring her into planning=
+ stage soon as we get sign-off from you.  =C2=A0 what else??=C2=A0  =C2=A0 =
+Thanks, Jordan! =C2=A0This would be a high -Profile event for all women at =
+the Convention and on TV!  =C2=A0 Call me if you wish, including over the w=
+eekend. cynthia 561/329-0001 cell ,=20
+Sent from my iPhone=20
+Begin forwarded message:=20
+From: cynthia friedman <cynthiafriedman@yahoo.com>
+Date: May 20, 2016 at 4:36:00 PM EDT
+To: Carol Pensky <carolpensky1@gmail.com>,=C2=A0 Cynthia Friedman <cynthiaf=
+riedman@yahoo.com>
+Subject: IDEA FOR THE CONVENTION
+Reply-To: cynthia friedman <cynthiafriedman@yahoo.com>=20
+
+DRAFT=C2=A0=C2=A0=C2=A0=C2=A0  =C2=A0 Carol:=C2=A0 Here's my draft for our =
+letter to Kirsten.=C2=A0 Please review, edit, chop, etc.=C2=A0 I'd like to =
+finalize it=C2=A0this weekend so we email it to Kirsten Sunday night. . . .=
+ .before the beginning of the=C2=A0week sets in. cc: Emily and Stefanie  =
+=C2=A0  =C2=A0 Hello, Kirsten ~ I hope all's=C2=A0well with you, even throu=
+ghout this tumultuous=C2=A0political landscape ~ Carol Pensky and I both se=
+nd=C2=A0you=C2=A0warm personal wishes with this email.  =C2=A0 Carol and I=
+=C2=A0spoke=C2=A0with the DNC=C2=A0this week concerning ideas for WLF's pre=
+sence at the July Convention.=C2=A0 We all agreed how=C2=A0important it is =
+that WLF (=C2=A0DWA ??) and OTS =C2=A0are highlighted there, though=C2=A0no=
+t thru a fundraising event.=C2=A0 If your plans are still open, we would li=
+ke to propose holding a joint event with OTS and WLF, a festive reception t=
+o be underwritten=C2=A0by a woman's magazine or other sponsor,=C2=A0Tuesday=
+ afternoon, July 26th, 2:00-4:00PM.=C2=A0 We would focus on you as the spec=
+ial star attraction of the event.  =C2=A0 The idea made great sense to us s=
+ince you are the=C2=A0member of=C2=A0Congress who=C2=A0has done the absolut=
+e most for Democratic=C2=A0women candidates=C2=A0the past several cycles. T=
+he event would give you a platform to highlight your efforts, as well as=C2=
+=A0include a=C2=A0WLF message pointing out=C2=A0the importance of women's=
+=C2=A0=C2=A0involvement in the election processes, and serving as the Women=
+'s Host for the DNC.=C2=A0  =C2=A0 FYI, two organizations, Emerge and EMILY=
+'S List will hold gatherings that week, Emerge on Tuesday 4-7PM, and EMILY'=
+s List on Wednesday, 3-5 PM.  =C2=A0 Please note that we have both taken a =
+"special friend" advantage by contacting you directly (indeed, you are a sp=
+ecial friend) and it will be followed up by the official DNC Chair's invita=
+tion =C2=A0after our informal exploration of the idea.=C2=A0 We hope this p=
+lan holds a mgreat appeal to you, as well,=C2=A0and we look forward to hear=
+ing from you.  =C2=A0 With best wishes, Cynthia and=C2=A0Carol=C2=A0=20
+
+
+  
+------=_Part_870518_91798347.1464014912236
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body><div style=3D"color:#000; background-color:#fff; font-family:Hel=
+veticaNeue, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;fon=
+t-size:18px"><div><span>Great!&nbsp; I'm on it today.</span></div><div id=
+=3D"yui_3_16_0_ym19_1_1464014845697_4724"><span>Cynthia</span></div><div cl=
+ass=3D"qtdSeparateBR"><br><br></div><div class=3D"yahoo_quoted" id=3D"yui_3=
+_16_0_ym19_1_1464014845697_4731" style=3D"display: block;">  <div id=3D"yui=
+_3_16_0_ym19_1_1464014845697_4730" style=3D"font-family: HelveticaNeue, Hel=
+vetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; font-size: 18px;"=
+> <div id=3D"yui_3_16_0_ym19_1_1464014845697_4729" style=3D"font-family: He=
+lveticaNeue, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; f=
+ont-size: 16px;"> <div id=3D"yui_3_16_0_ym19_1_1464014845697_4728" dir=3D"l=
+tr"> <font id=3D"yui_3_16_0_ym19_1_1464014845697_4727" face=3D"Arial" size=
+=3D"2"> <hr size=3D"1"> <b id=3D"yui_3_16_0_ym19_1_1464014845697_4726"><spa=
+n id=3D"yui_3_16_0_ym19_1_1464014845697_4725" style=3D"font-weight: bold;">=
+From:</span></b> Claire Olszewski &lt;OlszewskiC@dnc.org&gt;<br> <b><span s=
+tyle=3D"font-weight: bold;">To:</span></b> Cynthia Friedman &lt;cynthiafrie=
+dman@yahoo.com&gt;; &quot;Kaplan, Jordan&quot; &lt;KaplanJ@dnc.org&gt; <br>=
+<b><span style=3D"font-weight: bold;">Cc:</span></b> Carol Pensky &lt;Carol=
+Pensky1@gmail.com&gt;<br> <b><span style=3D"font-weight: bold;">Sent:</span=
+></b> Monday, May 23, 2016 10:33 AM<br> <b id=3D"yui_3_16_0_ym19_1_14640148=
+45697_4733"><span id=3D"yui_3_16_0_ym19_1_1464014845697_4732" style=3D"font=
+-weight: bold;">Subject:</span></b> RE: IDEA FOR THE CONVENTION -- Sen. Gil=
+librand and Ahmad and George Clooney - TImely!<br> </font> </div> <div clas=
+s=3D"y_msg_container"><br><div id=3D"yiv7656386435"><style>#yiv7656386435 #=
+yiv7656386435 --
+=20
+ _filtered #yiv7656386435 {font-family:Helvetica;panose-1:2 11 6 4 2 2 2 2 =
+2 4;}
+ _filtered #yiv7656386435 {panose-1:2 4 5 3 5 4 6 3 2 4;}
+ _filtered #yiv7656386435 {font-family:Calibri;panose-1:2 15 5 2 2 2 4 3 2 =
+4;}
+ _filtered #yiv7656386435 {font-family:Tahoma;panose-1:2 11 6 4 3 5 4 4 2 4=
+;}
+#yiv7656386435 =20
+#yiv7656386435 p.yiv7656386435MsoNormal, #yiv7656386435 li.yiv7656386435Mso=
+Normal, #yiv7656386435 div.yiv7656386435MsoNormal
+	{margin:0in;margin-bottom:.0001pt;font-size:12.0pt;}
+#yiv7656386435 a:link, #yiv7656386435 span.yiv7656386435MsoHyperlink
+	{color:blue;text-decoration:underline;}
+#yiv7656386435 a:visited, #yiv7656386435 span.yiv7656386435MsoHyperlinkFoll=
+owed
+	{color:purple;text-decoration:underline;}
+#yiv7656386435 p.yiv7656386435MsoAcetate, #yiv7656386435 li.yiv7656386435Ms=
+oAcetate, #yiv7656386435 div.yiv7656386435MsoAcetate
+	{margin:0in;margin-bottom:.0001pt;font-size:8.0pt;}
+#yiv7656386435 span.yiv7656386435EmailStyle17
+	{color:#1F497D;}
+#yiv7656386435 span.yiv7656386435BalloonTextChar
+	{}
+#yiv7656386435 .yiv7656386435MsoChpDefault
+	{font-size:10.0pt;}
+ _filtered #yiv7656386435 {margin:1.0in 1.0in 1.0in 1.0in;}
+#yiv7656386435 div.yiv7656386435WordSection1
+	{}
+#yiv7656386435 </style><div>
+<div class=3D"yiv7656386435WordSection1">
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">Hi C=
+ynthia,</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;"> &nb=
+sp;</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">Hope=
+ you had a great weekend!&nbsp; Jordan is traveling, so I=E2=80=99m happy t=
+o jump in here.&nbsp; I think it=E2=80=99s absolutely the right step to go =
+ahead with your email with Kirsten
+ and include this new information in the email.&nbsp; I can definitely draf=
+t up a fact sheet or official letter of invitation for the Clooney team so =
+that they can make their decision.&nbsp; Ellen Thrower won=E2=80=99t be abl=
+e to go to Philadelphia until the first week of June
+ at which time she will be scouting venues for a number of DNC Finance even=
+ts (ours included) so we won=E2=80=99t be able to give them much in the way=
+ of firm details yet.&nbsp; I=E2=80=99ll work on the letter/sheet today.</s=
+pan></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;"> &nb=
+sp;</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">I=E2=
+=80=99ll make sure that the Chair=E2=80=99s team and the DWA team (Lottie) =
+are aware of this so that we can move forward accordingly.</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;"> &nb=
+sp;</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">I sa=
+y go forth with your email to Kirsten as we definitely want to get that bal=
+l rolling anyway!&nbsp; This is
+<u>very</u> exciting news, and I hope it comes together!&nbsp; It would be =
+incredible for the organization.</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;"> &nb=
+sp;</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">Than=
+k you!!</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;">Clai=
+re</span></div>=20
+<div class=3D"yiv7656386435MsoNormal"><span style=3D"font-size: 11pt;"> &nb=
+sp;</span></div>=20
+<div class=3D"yiv7656386435yqt3850553975" id=3D"yiv7656386435yqt78333"><div=
+>
+<div style=3D"border-width: 1pt medium medium; border-style: solid none non=
+e; border-color: rgb(181, 196, 223) currentColor currentColor; padding: 3pt=
+ 0in 0in; border-image: none;">
+<div class=3D"yiv7656386435MsoNormal"><b><span style=3D"font-size: 10pt;">F=
+rom:</span></b><span style=3D"font-size: 10pt;"> Cynthia Friedman [mailto:c=
+ynthiafriedman@yahoo.com]
+<br clear=3D"none">
+<b>Sent:</b> Saturday, May 21, 2016 5:29 PM<br clear=3D"none">
+<b>To:</b> Kaplan, Jordan<br clear=3D"none">
+<b>Cc:</b> Claire Olszewski; Carol Pensky<br clear=3D"none">
+<b>Subject:</b> Fwd: IDEA FOR THE CONVENTION -- Sen. Gillibrand and Ahmad a=
+nd George Clooney - TImely!</span></div>=20
+</div>
+</div>
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+<div>
+<div class=3D"yiv7656386435MsoNormal">Jordan -- TIMELY!! &nbsp;Carol P. and=
+ I were ready &nbsp;to send this draft letter (below)to Senator Gillibrand =
+tomorrow asking her and her organization &quot;Off the sidelines&quot;, &nb=
+sp;to cohost an event with WLF at the&nbsp;convention.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">However, I had also reached out last =
+week to Jae Kim, a friend of mine and former WLF member now living in Vanco=
+uver, if she would feel comfortable contacting her best friend, Ahmal Cloon=
+ey, to see if she might be part of this event.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Jae called me today to say that she s=
+poke to Ahmal, &nbsp;that George has been invited to speak at Convention, (=
+hasn't accepted yet, but &nbsp;he's thinking it's too important not to. . .=
+ ) and that if he accepts the speaking role, they would both
+ consider being our special guests at this event. (great news!!) &nbsp;They=
+ also met Kirsten, are impressed with her,&nbsp;and would like to do someth=
+ing together with her.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Jae is aware of WLF's importance at t=
+he Convention , doesn't want EMILY and EMERGE to steal all the limelight. .=
+! . and conveyed info about WLF to the &nbsp;Clooneys.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Clooneys have asked for a fact sheet =
+about the potential event to be emailed to their personal assistant next we=
+ek. (Jae will send me contact info)</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">&nbsp;&nbsp;We need your help right a=
+way, Jordan, to carry this event idea further to the DNC,</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">to Inform DWS ,get her ok, etc.&nbsp;=
+</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">NOTE: &nbsp;we feel it's important th=
+at &nbsp;event be co-hosted by WLF, not the Women's Caucus or Debbie's umbr=
+ella women's organization, though all should be invited and welcome at this=
+ reception.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">I will amend my email to Kirsten tomo=
+rrow to include the outreach and possibility of the Clooneys coming on boar=
+d.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Also, Lottie Shackleford -- She &nbsp=
+;contacted Carol and me originally about planning an event. &nbsp;I would l=
+ike to bring her into planning stage soon as we get sign-off from you.</div=
+>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">what else??&nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Thanks, Jordan! &nbsp;This would be a=
+ high -Profile event for all women at the Convention and on TV!</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"> &nbsp;</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">Call me if you wish, including over t=
+he weekend.</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">cynthia</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">561/329-0001 cell</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal">,</div>=20
+</div>
+<div id=3D"yiv7656386435AppleMailSignature">
+<div class=3D"yiv7656386435MsoNormal"><br clear=3D"none">
+Sent from my iPhone</div>=20
+</div>
+<div>
+<div class=3D"yiv7656386435MsoNormal" style=3D"margin-bottom: 12pt;"><br cl=
+ear=3D"none">
+Begin forwarded message:</div>=20
+</div>
+<blockquote style=3D"margin-top: 5pt; margin-bottom: 5pt;">
+<div>
+<div class=3D"yiv7656386435MsoNormal" style=3D"margin-bottom: 12pt;"><b>Fro=
+m:</b> cynthia friedman &lt;<a href=3D"mailto:cynthiafriedman@yahoo.com" ta=
+rget=3D"_blank" rel=3D"nofollow" shape=3D"rect" ymailto=3D"mailto:cynthiafr=
+iedman@yahoo.com">cynthiafriedman@yahoo.com</a>&gt;<br clear=3D"none">
+<b>Date:</b> May 20, 2016 at 4:36:00 PM EDT<br clear=3D"none">
+<b>To:</b> Carol Pensky &lt;<a href=3D"mailto:carolpensky1@gmail.com" targe=
+t=3D"_blank" rel=3D"nofollow" shape=3D"rect" ymailto=3D"mailto:carolpensky1=
+@gmail.com">carolpensky1@gmail.com</a>&gt;,&nbsp; Cynthia Friedman &lt;<a h=
+ref=3D"mailto:cynthiafriedman@yahoo.com" target=3D"_blank" rel=3D"nofollow"=
+ shape=3D"rect" ymailto=3D"mailto:cynthiafriedman@yahoo.com">cynthiafriedma=
+n@yahoo.com</a>&gt;<br clear=3D"none">
+<b>Subject:</b> <b>IDEA FOR THE CONVENTION</b><br clear=3D"none">
+<b>Reply-To:</b> cynthia friedman &lt;<a href=3D"mailto:cynthiafriedman@yah=
+oo.com" target=3D"_blank" rel=3D"nofollow" shape=3D"rect" ymailto=3D"mailto=
+:cynthiafriedman@yahoo.com">cynthiafriedman@yahoo.com</a>&gt;</div>=20
+</div>
+</blockquote>
+<blockquote style=3D"margin-top: 5pt; margin-bottom: 5pt;">
+<div>
+<div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25198">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">DRAFT&nbsp;&nbsp;&nbsp;&nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25564">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25494">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Carol:&nbsp; Here's my draft for our letter to K=
+irsten.&nbsp; Please review, edit, chop, etc.&nbsp; I'd like to finalize it=
+&nbsp;this weekend so we email
+ it to Kirsten Sunday night. . . . .before the beginning of the&nbsp;week s=
+ets in.</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25488">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">cc: Emily and Stefanie</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25489">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25579">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25487">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Hello, Kirsten ~</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25480">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">I hope all's&nbsp;well with you, even throughout=
+ this tumultuous&nbsp;political landscape ~</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25704">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Carol Pensky and I both send&nbsp;you&nbsp;warm =
+personal wishes with this email.</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25270">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25268">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Carol and I&nbsp;spoke&nbsp;with the DNC&nbsp;th=
+is week concerning ideas for WLF's presence at the July Convention.&nbsp;</=
+span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25271">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">We all agreed how&nbsp;important it is that WLF =
+(&nbsp;DWA ??) and OTS &nbsp;are highlighted there, though&nbsp;not thru a =
+fundraising event.&nbsp; If your
+ plans are still open, we would like to propose holding a joint event with =
+OTS and WLF, a festive reception to be underwritten&nbsp;by a woman's magaz=
+ine or other sponsor,&nbsp;Tuesday afternoon, July 26th, 2:00-4:00PM.&nbsp;=
+ We would focus on you as the special star attraction
+ of the event.</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25336">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25335">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">The idea made great sense to us since you are th=
+e&nbsp;member of&nbsp;Congress who&nbsp;has done the absolute most for Demo=
+cratic&nbsp;women candidates&nbsp;the
+ past several cycles. The event would give you a platform to highlight your=
+ efforts, as well as&nbsp;include a&nbsp;WLF message pointing out&nbsp;the =
+importance of women's&nbsp;&nbsp;involvement in the election processes, and=
+ serving as the Women's Host for the DNC.&nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25654">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25655">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">FYI, two organizations, Emerge and EMILY'S List =
+will hold gatherings that week, Emerge on Tuesday 4-7PM, and EMILY's List o=
+n Wednesday,
+ 3-5 PM.</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25676">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25666">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Please note that we have both taken a &quot;spec=
+ial friend&quot; advantage by contacting you directly (indeed, you are a sp=
+ecial friend) and
+ it will be followed up by the official DNC Chair's invitation &nbsp;after =
+our informal exploration of the idea.&nbsp; We hope this plan holds a mgrea=
+t appeal to you, as well,&nbsp;and we look forward to hearing from you.</sp=
+an></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25697">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;"> &nbsp;</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25698">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">With best wishes,</span></div>=20
+</div>
+<div id=3D"yiv7656386435yui_3_16_0_ym19_1_1463748466534_25779">
+<div class=3D"yiv7656386435MsoNormal" style=3D"background: white;"><span st=
+yle=3D"font-size: 13.5pt;">Cynthia and&nbsp;Carol&nbsp;
+</span></div>=20
+</div>
+</div>
+</div>
+</blockquote></div>
+</div>
+</div></div><br><br></div> </div> </div>  </div></div></body></html>=
+
+------=_Part_870518_91798347.1464014912236--

@@ -1,0 +1,819 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 9 May
+ 2016 09:47:06 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 9 May 2016
+ 09:47:04 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 903943338
+ for ParrishD@dnc.org; Mon, 09 May 2016 08:47:10 -0500
+X-Note-AR-ScanTimeLocal: 5/9/2016 8:47:04 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.47 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-580/SG:5 5/9/2016 8:45:28 AM
+X-GBUdb-Analysis: 0, 209.85.215.47, Ugly c=0.797902 p=-0.986117 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8607 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/9/2016 8:46:48 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.47
+X-Note-Reverse-DNS: mail-lf0-f47.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.215.47] (HELO mail-lf0-f47.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140717101
+ for ParrishD@dnc.org; Mon, 09 May 2016 08:47:04 -0500
+Received: by mail-lf0-f47.google.com with SMTP id j8so200004359lfd.2
+        for <ParrishD@dnc.org>; Mon, 09 May 2016 06:47:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=AiCis6RPZDUBfO0wkJqn8kTo1z2LQrPGvFdWrH+u5VM=;
+        b=kBn9/O13CWj95TDDa9mxfMJ2NQOkyWFSwPfe4YlzD+P/47JsS7iljUivxV5J3TUI82
+         t+3j1sE5J2DnkeTs3S886/a7P+xjtR4iMONlmIXIWQMGdyvO22Ggk9kgGn9NN6+0ytZT
+         HR46nR/mu8/c/PpKCKU8bxMcYZXxkL62iBJH4meUvG6iv1P/wu+gYZkEKSRHI9BGLXh7
+         tgZHF3DOTxDWnc90C/VrwtBL8eSia29+7nn1O77eTGp0TBHh/fWDhfqf/aebVyaS1aSB
+         rTtcrHMCC9Unep+75L2ET1FXD1vdlImmvRObyi00ZmRSNXmEY6QaJ8ZBnxkQkvtQN7Bl
+         1czA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=AiCis6RPZDUBfO0wkJqn8kTo1z2LQrPGvFdWrH+u5VM=;
+        b=Ws2beEkZQX9bjeACHpcrwdHf5xV+Zu/g93WWQZm3lMqIPOLUAuRQJF5VE4kGcLFwmP
+         bejQq7J6qmPFEo03pX6ucKgwmDvC6F/c9aoKKcULRgQXrdoIQSRG1x7GrNImPFOVthOU
+         yW9LzdDY2Opcc8uZfTzDBQba48U/uZejGyBFcLVPG+bmFyMm/LAl15qkFNcVBdHMLQPS
+         Z1tu7mVEGqejWnn73T9dAWesnlzocVaioc5AgdDogf85uhac089LZNKHIHYWoBjEEX9m
+         cC0NSL97bPxgwZAQDpXS66NifbZwV1qhcUZGmfY/jCrMjTF+VkKFRsqKQnnmBWMeKwaD
+         ry/g==
+X-Gm-Message-State: AOPr4FWD1JGly0uMq0qhBkzZfcjGmjEYHFoaAOScnX6oP0FBqCVUo33pkkt6qeO7pnDdTkU9gnoAzU2vP+ZuwTvz
+X-Received: by 10.25.87.65 with SMTP id l62mr7569997lfb.4.1462801622566; Mon,
+ 09 May 2016 06:47:02 -0700 (PDT)
+Received: by 10.25.153.132 with HTTP; Mon, 9 May 2016 06:47:02 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9957564@dncdag1.dnc.org>
+References: <D35386F4.138F4%HerriesR@dnc.org>
+	<DCA687AC-67AC-439B-92B7-3E73A793FD63@dnc.org>
+	<035f01d1a88a$55e96f50$01bc4df0$@gmail.com>
+	<CACG1p4rmptm1KYN9-SOor-24g_MJXUVrdcXo91iKHxRGa9Fn6w@mail.gmail.com>
+	<98D56F5B-8A63-4165-A4FC-BC86AF235AF6@dnc.org>
+	<CACG1p4qNM4s-yiW1W8mf2Eo2nFxM+0AjPHuTsParuFLhkVxwxg@mail.gmail.com>
+	<CACG1p4on79yHeSDKfGrtrSRCZvT0ucM3rJNFsHyhr=FosYG+7w@mail.gmail.com>
+	<8A3BA5C3DED8F34DBD96D72CD1C4AA38A9957564@dncdag1.dnc.org>
+Date: Mon, 9 May 2016 09:47:02 -0400
+Message-ID: <CACG1p4qsch_zivCS0Euo=a1QNCcXtbxkWhWZVJ5qQ3csg3XrYA@mail.gmail.com>
+Subject: Re: WH LGBT Reception | Names Due by 5/9 at 3:00PM
+From: Zachary Allen <zallen@tipahconsulting.com>
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11418d40171ed40532690b12"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11418d40171ed40532690b12
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Whatever Scott needs
+
+On Monday, May 9, 2016, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> No problem! Let me know if you need me to do anything more with it.
+>
+>
+>
+> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>]
+> *Sent:* Sunday, May 08, 2016 11:55 PM
+> *To:* Parrish, Daniel
+> *Subject:* Fwd: WH LGBT Reception | Names Due by 5/9 at 3:00PM
+>
+>
+>
+> Sorry, not sure who's doing this but wanted to make sure it was on track.
+> Thanks! Hope you're feeling better.
+>
+>
+>
+>
+>
+> ---------- Forwarded message ----------
+> From: *Zachary Allen* <zallen@tipahconsulting.com
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>>
+> Date: Sun, May 8, 2016 at 2:12 PM
+> Subject: Re: WH LGBT Reception | Names Due by 5/9 at 3:00PM
+> To: "Comer, Scott" <ComerS@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');>>
+> Cc: "Tobias, Andy" <atobias123@gmail.com
+> <javascript:_e(%7B%7D,'cvml','atobias123@gmail.com');>>
+>
+> Love me some Robbie Kaplan.
+>
+>
+>
+> I'd also put Tom Schumacher, who probably hasn't ever been but helped a
+> lot with Hamilton last year. On that note, probably would have to include
+> the producer Jeffrey Seller.
+>
+>
+>
+> Andy, what do you think about Adam Rose? And is Willard Brown gay?
+> Or Eric Schoenberg?
+>
+>
+>
+> I think we definitely have to do Paul Boskind and Ted Snowdon.
+>
+>
+>
+> I also think Chad Leat is probably good one. And maybe Henry van Amerigen
+> (invite would go to Christopher Cormier <chris@cormierco.com
+> <javascript:_e(%7B%7D,'cvml','chris@cormierco.com');>>
+>
+>
+>
+> I think that's it from me.
+>
+>
+>
+>
+>
+> On Sat, May 7, 2016 at 2:31 PM, Comer, Scott <ComerS@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');>> wrote:
+>
+> Yes, June 9th. I'd encourage you to submit folks who have been helpful in
+> the past, since this is President Obama's final LGBT reception.
+>
+>
+>
+> How about Robbie Kaplan as well?
+>
+> Sent from my iPhone
+>
+>
+> On May 7, 2016, at 2:02 PM, Zachary Allen <zallen@tipahconsulting.com
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>> wrote:
+>
+> June 9, day after our dinner actually.
+>
+>
+>
+> On these, they usually ask for new people but who knows anymore.
+>
+>
+>
+> Two names that popped immediately are Friederick Merck and Richard
+> Christiansen, who I'm working on getting a max from so he qualifies for a
+> convention package.
+>
+>
+>
+> On Sat, May 7, 2016 at 1:00 PM, Andrew Tobias <atobias123@gmail.com
+> <javascript:_e(%7B%7D,'cvml','atobias123@gmail.com');>> wrote:
+>
+> Do we have a date?
+>
+>
+>
+> I=E2=80=99d like to call folks whom I know will vet and ask whether they=
+=E2=80=99d want to
+> be invited.  Many will say no =E2=80=93 but will be grateful for having b=
+een
+> asked.  But for that, need to know the date.
+>
+>
+>
+> This will be the last one for Obama.  Should we try to invite folks who=
+=E2=80=99ve
+> never been; or folks who=E2=80=99ve =E2=80=9Cbeen with us from the beginn=
+ing.=E2=80=9D  What to do,
+> what to do.
+>
+>
+>
+> Andy
+>
+>
+>
+>
+>
+>
+>
+> *From:* Comer, Scott [mailto:ComerS@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');>]
+> *Sent:* Saturday, May 7, 2016 1:14 PM
+> *To:* Tobias, Andy <atobias123@gmail.com
+> <javascript:_e(%7B%7D,'cvml','atobias123@gmail.com');>>; Zachary Allen <
+> zallen@tipahconsulting.com
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>>
+> *Subject:* Fwd: WH LGBT Reception | Names Due by 5/9 at 3:00PM
+>
+>
+>
+> Hello Gentlemen - let me know who you would like to include in our
+> allotment. We will need the information requested in the attached
+> spreadsheet.
+>
+> Sent from my iPhone
+>
+>
+> Begin forwarded message:
+>
+> *From:* "Herries, Rebecca" <HerriesR@dnc.org
+> <javascript:_e(%7B%7D,'cvml','HerriesR@dnc.org');>>
+> *Date:* May 7, 2016 at 11:50:13 AM EDT
+> *To:* "Alvillar, Raul" <alvillarr@dnc.org
+> <javascript:_e(%7B%7D,'cvml','alvillarr@dnc.org');>>, "Kaplan, Jordan" <
+> KaplanJ@dnc.org <javascript:_e(%7B%7D,'cvml','KaplanJ@dnc.org');>>,
+> "Greene, Julie" <GreeneJ@dnc.org
+> <javascript:_e(%7B%7D,'cvml','GreeneJ@dnc.org');>>, Tracie Pough <
+> PoughT@dnc.org <javascript:_e(%7B%7D,'cvml','PoughT@dnc.org');>>, Kate
+> Houghton <HoughtonK@dnc.org
+> <javascript:_e(%7B%7D,'cvml','HoughtonK@dnc.org');>>, "Davis, Marilyn" <
+> DavisM@dnc.org <javascript:_e(%7B%7D,'cvml','DavisM@dnc.org');>>
+> *Cc:* "Moore, Colby" <MooreC@dnc.org
+> <javascript:_e(%7B%7D,'cvml','MooreC@dnc.org');>>, "Comer, Scott" <
+> ComerS@dnc.org <javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');>>,
+> "Shestopal, Olivia" <ShestopalO@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ShestopalO@dnc.org');>>, "Guerra, Liana" <
+> GuerraL@dnc.org <javascript:_e(%7B%7D,'cvml','GuerraL@dnc.org');>>,
+> "Scott, Jillian" <ScottJ@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ScottJ@dnc.org');>>
+> *Subject:* *WH LGBT Reception | Names Due by 5/9 at 3:00PM*
+>
+> Good morning -
+>
+>
+>
+> On Thursday, June 9, the President will host the LGBT Reception at the
+> White House. Timing is still to be determined. Please see below for the D=
+NC
+> allotment.
+>
+>
+>
+> Department POCs need to submit full contact information as well as
+> prefixes (spreadsheet attached) to me by *Monday, May 9* at *3:00pm*. We
+> will also need full information for each *plus one* attendee (i.e., if
+> you were allotted 22 invites, you should be submitting 44 names). This is=
+ a
+> fast turnaround as they would like to get invitations out next week.
+>
+>
+>
+> *DNC Allotment (** includes a plus one)*
+>
+>
+>
+> Political/CE =E2=80=93 22
+>
+> Finance =E2=80=93 22
+>
+> Secretary=E2=80=99s Office =E2=80=93 5
+>
+> Chair=E2=80=99s Office =E2=80=93 5
+>
+> CEO =E2=80=93 1
+>
+>
+>
+> Thank you so much,
+>
+> Becca
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>
+>
+>
+>
+>
+> --
+>
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11418d40171ed40532690b12
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">Wh=
+atever Scott needs&nbsp;<span></span><br><br>On Monday, May 9, 2016, Parris=
+h, Daniel &lt;<a href=3D"mailto:ParrishD@dnc.org">ParrishD@dnc.org</a>&gt; =
+wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;bord=
+er-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">No problem! Let me know i=
+f you need me to do anything more with it.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"javascript:_e(%7B%7D,'cvml','zallen@tipahconsultin=
+g.com');" target=3D"_blank">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Sunday, May 08, 2016 11:55 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Fwd: WH LGBT Reception | Names Due by 5/9 at 3:00PM<u></u><=
+u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Sorry, not sure who's doing this but wanted to make =
+sure it was on track. Thanks! Hope you're feeling better.&nbsp;<u></u><u></=
+u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">---------- Forwarded =
+message ----------<br>
+From: <b>Zachary Allen</b> &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','zall=
+en@tipahconsulting.com');" target=3D"_blank">zallen@tipahconsulting.com</a>=
+&gt;<br>
+Date: Sun, May 8, 2016 at 2:12 PM<br>
+Subject: Re: WH LGBT Reception | Names Due by 5/9 at 3:00PM<br>
+To: &quot;Comer, Scott&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','Co=
+merS@dnc.org');" target=3D"_blank">ComerS@dnc.org</a>&gt;<br>
+Cc: &quot;Tobias, Andy&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','at=
+obias123@gmail.com');" target=3D"_blank">atobias123@gmail.com</a>&gt;<br>
+<br>
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Love me some Robbie Kaplan.<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'd also put Tom Schumacher, who probably hasn't eve=
+r been but helped a lot with Hamilton last year. On that note, probably wou=
+ld have to include the producer Jeffrey Seller.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Andy, what do you think about Adam Rose? And is Will=
+ard Brown gay? Or&nbsp;Eric&nbsp;Schoenberg?<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I think we definitely have to do Paul Boskind and Te=
+d Snowdon.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I also think Chad Leat is probably good one. And may=
+be Henry van Amerigen (invite would go to&nbsp;Christopher Cormier &lt;<a h=
+ref=3D"javascript:_e(%7B%7D,'cvml','chris@cormierco.com');" target=3D"_blan=
+k">chris@cormierco.com</a>&gt;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I think that's it from me.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Sat, May 7, 2016 at 2:31 PM, Comer, Scott &lt;<a =
+href=3D"javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');" target=3D"_blank">C=
+omerS@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Yes, June 9th. I'd encourage you to submit folks who=
+ have been helpful in the past, since this is President Obama's final LGBT =
+reception.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">How about Robbie Kaplan as well?<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 7, 2016, at 2:02 PM, Zachary Allen &lt;<a href=3D"javascript:_e(%7B%=
+7D,'cvml','zallen@tipahconsulting.com');" target=3D"_blank">zallen@tipahcon=
+sulting.com</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">June 9, day after our dinner actually.&nbsp; <u></u>=
+<u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">On these, they usually ask for new people but who kn=
+ows anymore.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Two names that popped immediately are Friederick Mer=
+ck and Richard Christiansen, who I'm working on getting a max from so he qu=
+alifies for a convention package.&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Sat, May 7, 2016 at 1:00 PM, Andrew Tobias &lt;<a=
+ href=3D"javascript:_e(%7B%7D,'cvml','atobias123@gmail.com');" target=3D"_b=
+lank">atobias123@gmail.com</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Do we have a date?&nbsp;
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">I=E2=80=99d like to call folks whom I k=
+now will vet and ask whether they=E2=80=99d want to be invited.&nbsp; Many =
+will say no =E2=80=93 but
+ will be grateful for having been asked.&nbsp; But for that, need to know t=
+he date.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">This will be the last one for Obama.&nb=
+sp; Should we try to invite folks who=E2=80=99ve never been; or folks who=
+=E2=80=99ve =E2=80=9Cbeen with
+ us from the beginning.=E2=80=9D&nbsp; What to do, what to do.</span><u></u=
+><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">Andy</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;">&nbsp;</span><u></u><u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Comer,=
+ Scott [mailto:<a href=3D"javascript:_e(%7B%7D,'cvml','ComerS@dnc.org');" t=
+arget=3D"_blank">ComerS@dnc.org</a>]
+<br>
+<b>Sent:</b> Saturday, May 7, 2016 1:14 PM<br>
+<b>To:</b> Tobias, Andy &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','atobias=
+123@gmail.com');" target=3D"_blank">atobias123@gmail.com</a>&gt;; Zachary A=
+llen &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com=
+');" target=3D"_blank">zallen@tipahconsulting.com</a>&gt;<br>
+<b>Subject:</b> Fwd: WH LGBT Reception | Names Due by 5/9 at 3:00PM</span><=
+u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hello Gentlemen - let me know who you would like to =
+include in our allotment. We will need the information requested in the att=
+ached spreadsheet.&nbsp;<br>
+<br>
+Sent from my iPhone<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+Begin forwarded message:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b>From:</b> &quot;He=
+rries, Rebecca&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','HerriesR@d=
+nc.org');" target=3D"_blank">HerriesR@dnc.org</a>&gt;<br>
+<b>Date:</b> May 7, 2016 at 11:50:13 AM EDT<br>
+<b>To:</b> &quot;Alvillar, Raul&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'=
+cvml','alvillarr@dnc.org');" target=3D"_blank">alvillarr@dnc.org</a>&gt;, &=
+quot;Kaplan, Jordan&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','Kapla=
+nJ@dnc.org');" target=3D"_blank">KaplanJ@dnc.org</a>&gt;, &quot;Greene, Jul=
+ie&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','GreeneJ@dnc.org');" ta=
+rget=3D"_blank">GreeneJ@dnc.org</a>&gt;,
+ Tracie Pough &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','PoughT@dnc.org');=
+" target=3D"_blank">PoughT@dnc.org</a>&gt;, Kate Houghton &lt;<a href=3D"ja=
+vascript:_e(%7B%7D,'cvml','HoughtonK@dnc.org');" target=3D"_blank">Houghton=
+K@dnc.org</a>&gt;, &quot;Davis, Marilyn&quot; &lt;<a href=3D"javascript:_e(=
+%7B%7D,'cvml','DavisM@dnc.org');" target=3D"_blank">DavisM@dnc.org</a>&gt;<=
+br>
+<b>Cc:</b> &quot;Moore, Colby&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cv=
+ml','MooreC@dnc.org');" target=3D"_blank">MooreC@dnc.org</a>&gt;, &quot;Com=
+er, Scott&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','ComerS@dnc.org'=
+);" target=3D"_blank">ComerS@dnc.org</a>&gt;, &quot;Shestopal, Olivia&quot;=
+ &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','ShestopalO@dnc.org');" target=
+=3D"_blank">ShestopalO@dnc.org</a>&gt;,
+ &quot;Guerra, Liana&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','Guer=
+raL@dnc.org');" target=3D"_blank">GuerraL@dnc.org</a>&gt;, &quot;Scott, Jil=
+lian&quot; &lt;<a href=3D"javascript:_e(%7B%7D,'cvml','ScottJ@dnc.org');" t=
+arget=3D"_blank">ScottJ@dnc.org</a>&gt;<br>
+<b>Subject:</b> <b>WH LGBT Reception | Names Due by 5/9 at 3:00PM</b><u></u=
+><u></u></p>
+</div>
+</blockquote>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Good morning -&nbsp;</span><u></u>=
+<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">On Thursday, June 9, the President=
+ will host the LGBT Reception at the White House. Timing is still to be
+ determined. Please see below for the DNC allotment.&nbsp;</span><u></u><u>=
+</u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Times&quot;,&quot;s=
+erif&quot;">Department POCs need to submit full contact information as well=
+ as prefixes (spreadsheet attached) to me by&nbsp;</span><b><span style=3D"=
+font-size:10.5pt;font-family:&quot;Times&quot;,&quot;serif&quot;;color:blac=
+k">Monday,
+ May 9</span></b><span style=3D"font-family:&quot;Times&quot;,&quot;serif&q=
+uot;"> at </span><b><span style=3D"font-size:10.5pt;font-family:&quot;Times=
+&quot;,&quot;serif&quot;;color:black">3:00pm</span></b><span style=3D"font-=
+family:&quot;Times&quot;,&quot;serif&quot;">. We will also need full inform=
+ation for each
+</span><b><span style=3D"font-size:10.5pt;font-family:&quot;Times&quot;,&qu=
+ot;serif&quot;;color:black">plus one</span></b><span style=3D"font-family:&=
+quot;Times&quot;,&quot;serif&quot;"> attendee (i.e., if you were allotted 2=
+2 invites, you should be submitting 44 names). This is a fast turnaround as
+ they would like to get invitations out next week.</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><u><span style=3D"font-size:10.5pt;font-family:&q=
+uot;Times&quot;,&quot;serif&quot;;color:black">DNC Allotment (** includes a=
+ plus one)</span></u></b><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Political/CE&nbsp;=E2=80=93&nbsp;2=
+2</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Finance&nbsp;=E2=80=93&nbsp;22</sp=
+an><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Secretary=E2=80=99s Office =E2=80=
+=93 5</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Chair=E2=80=99s Office =E2=80=93 5=
+</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">CEO =E2=80=93 1</span><u></u><u></=
+u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Thank you so much,</span><u></u><u=
+></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;Ti=
+mes&quot;,&quot;serif&quot;;color:black">Becca&nbsp;</span><u></u><u></u></=
+p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;color:black">&nbsp;<=
+/span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:Consolas=
+;color:black">&nbsp;</span><u></u><u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" target=3D"_blank">(646) 470-8689</a> d=
+irect | <a href=3D"tel:%28973%29%20618-5903" target=3D"_blank">
+(973) 618-5903</a> fax&nbsp;| <a href=3D"javascript:_e(%7B%7D,'cvml','ZAlle=
+n@TIPAHConsulting.com');" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" target=3D"_blank">(646) 470-8689</a> d=
+irect | <a href=3D"tel:%28973%29%20618-5903" target=3D"_blank">
+(973) 618-5903</a> fax&nbsp;| <a href=3D"javascript:_e(%7B%7D,'cvml','ZAlle=
+n@TIPAHConsulting.com');" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<span>(646) 470-8689</span> direct | <span>
+(973) 618-5903</span> fax&nbsp;| <a href=3D"javascript:_e(%7B%7D,'cvml','ZA=
+llen@TIPAHConsulting.com');" target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</blockquote><br><br>-- <br><div dir=3D"ltr"><div><div dir=3D"ltr"><div><di=
+v dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8=
+th Floor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fa=
+x<span>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=
+=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div><br=
+>
+
+--001a11418d40171ed40532690b12--

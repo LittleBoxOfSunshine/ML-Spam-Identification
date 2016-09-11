@@ -1,0 +1,415 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 3 May
+ 2016 09:40:49 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 3 May 2016
+ 09:40:45 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 893212983
+ for MirandaL@dnc.org; Tue, 03 May 2016 08:40:50 -0500
+X-Note-AR-ScanTimeLocal: 5/3/2016 8:40:49 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.49 DOM:gawker.com ADDR:brendanoconnor@gawker.com
+X-Note: SPF: Pass
+X-Note: ICH-CT/SI:0-1548/SG:2 5/3/2016 8:40:06 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-1080/SG:10 5/3/2016 8:40:06 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-26295-c
+X-Note-419: 125.005 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/3/2016 8:40:47 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->United States->
+X-Note-Sending-IP: 209.85.213.49
+X-Note-Reverse-DNS: mail-vk0-f49.google.com
+X-Note-Return-Path: brendan.oconnor@gawker.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 G418 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-vk0-f49.google.com ([209.85.213.49] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138456628
+ for MirandaL@dnc.org; Tue, 03 May 2016 08:40:12 -0500
+Received: by mail-vk0-f49.google.com with SMTP id m188so23514100vka.1
+        for <MirandaL@dnc.org>; Tue, 03 May 2016 06:40:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gawker-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=FJvbZEqFcGu4/MCdBSzW09p9t/yjP4PYLTC17OZEuZk=;
+        b=cmH6w4rJO+8zyQXcyVXEvpaGGKweoW0vy0k6Ll2sPO5WvnQI/vXz0u3RpFeba1ApGA
+         75FBLHTXu+vpo1qchyKypudn17/pJWP7pl0B1EyVRSIfQT6j8btq+4XHsxjmcXqQ6SRX
+         OnckHyfGL00L6bfybF3aCh2P5v9zL9XrbOUALRVbiwvfDmpzc17cQy1pFIBnnbSHmXcl
+         NQH0mf41HQZbhZDoE3iDqxLzRRDASe+wcai6MqplWZK3lrG9sPPTHiDezecJN06BNEIp
+         E5k+DduMzGiwf9vlfJ7K3Cw7xbUWSqjONCG9geZHZW6lY7hiINUOMVMRvfr4rUwAdG9x
+         vDig==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=FJvbZEqFcGu4/MCdBSzW09p9t/yjP4PYLTC17OZEuZk=;
+        b=SV5aagtRz1TAEh5ORYyWUMR+u/TenlrG6t84dWNp7k+U7/Q/ELk/ehDVifvjSllgrm
+         SJO7lhbeG1ixgtE+utO/QDbpNKcap4aD1oD77c5qNZedozRSv+S6SkwmpS1ojOYAiQ7v
+         QsSRY2awwXXtl1tm75kr9/RhgMABc4KuxJPEC2nLBz4zCDiwXsM7n2RxVkMsGEj7revz
+         k36VLI3kPpXmLTBhv3nXDUxjHE49dCjzz4Dv9cBhVD25YxSd65EgJFG8s3zPF6emgGcE
+         PaAZm8+YMNMnodc66iLDnpa6HypifZdNUNVPziy++c69Dz9xYAn1thpW/lgdyrBeumU2
+         rsXA==
+X-Gm-Message-State: AOPr4FVZ0/LVRk+SB8IgpR/lHq0YJNuy3v4KLg7uiBkBt9EaXxkK6iF5KXIDTzFvLC5n1dwIBMotxmFiPU+K7i3l
+X-Received: by 10.176.64.4 with SMTP id h4mr923034uad.3.1462282810368; Tue, 03
+ May 2016 06:40:10 -0700 (PDT)
+References: <05E01258E71AC046852ED29DFCD139D54DF00A36@dncdag1.dnc.org>
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF00A36@dncdag1.dnc.org>
+From: Brendan O'Connor <brendan.oconnor@gawker.com>
+Date: Tue, 3 May 2016 13:40:00 +0000
+Message-ID: <CADO9MxfA132yt-EOWfgn6jEX+e2RQ_cPYJP40YV7WCMaH2c9eQ@mail.gmail.com>
+Subject: Re: Your story isn't balanced...
+To: "Miranda, Luis" <MirandaL@dnc.org>
+Content-Type: multipart/related; boundary="94eb2c124596799b060531f03f6b"
+Return-Path: brendan.oconnor@gawker.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--94eb2c124596799b060531f03f6b
+Content-Type: multipart/alternative; boundary="94eb2c124596799b010531f03f6a"
+
+--94eb2c124596799b010531f03f6a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hey Luis, thanks for reaching out. Would be happy to get on the phone to
+discuss later, but at first blush it doesn't seem like the questions you
+raise about our post (or the Politico story) really obtain: I mention (in a
+parenthetical, admittedly) that the Sanders campaign also has a joint fund;
+the claim isn't that states "only get to keep 1 percent of all money being
+raised" but that they have only *gotten* to keep 1 percent of money raised =
+*so
+far*; and the criticism isn't a legal one to begin with, so Election Law
+Blog's response doesn't really seem relevant, though it is informative. You
+are right that I should have mentioned that these funds are for the
+general, but I still think the stories hold up.
+
+On Mon, May 2, 2016 at 5:08 PM Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Brendan, saw your story on the victory fund and it lacks balance,
+> especially since Politico got its math wrong.
+>
+>
+>
+> The suggestion there=E2=80=99s anything unusual about our joint victory f=
+unds has
+> no basis in the law or reality, as recognized by numerous independent
+> experts that have looked at this. The fact is both campaigns signed on to
+> similar agreements. While only one campaign is currently using their join=
+t
+> victory fund we encourage both of our campaigns to identify opportunities
+> to support the national and state Democratic parties *now* so that we can
+> continue to build the infrastructure to help elect Democrats up and down
+> the ballot in November.
+>
+>
+>
+> For background, for example, take a look at what the Election Law Blog
+> posted: =E2=80=9Cit is hard to see what provision of the law=E2=80=9D is =
+at issue. As the
+> blog points out, =E2=80=9Clegally=E2=80=9D the criticism of the fund =E2=
+=80=9Cseems weak.=E2=80=9D
+> http://electionlawblog.org/?p=3D81996
+> <https://urldefense.proofpoint.com/v2/url?u=3Dhttp-3A__electionlawblog.or=
+g_-3Fp-3D81996&d=3DCwMFAg&c=3DXRWvQHnpdBDRh-yzrHjqLpXuHNC_9nanQc6pPG_SpT0&r=
+=3Dztfeb3sYMwYJc4m6DQzcZ1EDxKmQmE8pe5TrXm4gdCU&m=3DxosCmCfJlZ5AfIscnIGFPlKd=
+_WqB4JHLY4vSLilK-IE&s=3DIDZd2_ULQhvZFm33gwH-mCSwcJMtMpjuFI5_FJQQvqk&e=3D>
+>
+>
+>
+> Also on background, the math is wrong on the Politico story. Their claim
+> that state parties only get to keep 1 percent of all the money being rais=
+ed
+> is incorrect and comparing apples and oranges. They reference the total
+> amount of money that has been raised, but of that, many millions have bee=
+n
+> raised for state parties and just haven=E2=80=99t been distributed to the=
+m yet (nor
+> has it gone to the DNC or anywhere else). Because this is money for the
+> general election, and coordinated campaigns are just now starting to be
+> built at state parties, it is perfectly understandable that not all of th=
+at
+> money that will eventually go to state parties would have been distribute=
+d
+> yet.
+>
+> Happy to discuss at greater length.
+>
+>
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+--=20
+Brendan O'Connor
+Staff writer, Gawker
+732-804-2425
+
+--94eb2c124596799b010531f03f6a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hey Luis, thanks for reaching out. Would be happy to get on =
+the phone to discuss later, but at first blush it doesn't seem like the que=
+stions you raise about our post (or the Politico story) really obtain: I me=
+ntion (in a parenthetical, admittedly) that the Sanders campaign also has a=
+ joint fund; the claim isn't that states &quot;only get to keep 1 percent o=
+f all money being raised&quot; but that they have only <i>gotten</i>&nbsp;t=
+o keep 1 percent of money raised <i>so far</i>;&nbsp;and the criticism isn'=
+t a legal one to begin with, so Election Law Blog's response doesn't really=
+ seem relevant, though it is informative. You are right that I should have =
+mentioned that these funds are for the general, but I still think the stori=
+es hold up.</div><br><div class=3D"gmail_quote"><div dir=3D"ltr">On Mon, Ma=
+y 2, 2016 at 5:08 PM Miranda, Luis &lt;<a href=3D"mailto:MirandaL@dnc.org">=
+MirandaL@dnc.org</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" =
+style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal">Brendan, saw your story on the victory fund and it l=
+acks balance, especially since Politico got its math wrong.
+<u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">The suggestion there=E2=80=99s anything unusual abou=
+t our joint victory funds has no basis in the law or reality, as recognized=
+ by numerous independent experts that have looked at this. The fact is both=
+ campaigns signed on to similar agreements.
+ While only one campaign is currently using their joint victory fund we enc=
+ourage both of our campaigns to identify opportunities to support the natio=
+nal and state Democratic parties
+<i>now</i> so that we can continue to build the infrastructure to help elec=
+t Democrats up and down the ballot in November.<u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal">For background, for example, take a look at what the=
+ Election Law Blog posted: =E2=80=9Cit is hard to see what provision of the=
+ law=E2=80=9D is at issue. As the blog points out, =E2=80=9Clegally=E2=80=
+=9D the criticism of the fund =E2=80=9Cseems weak.=E2=80=9D &nbsp;&nbsp;<a =
+href=3D"https://urldefense.proofpoint.com/v2/url?u=3Dhttp-3A__electionlawbl=
+og.org_-3Fp-3D81996&amp;d=3DCwMFAg&amp;c=3DXRWvQHnpdBDRh-yzrHjqLpXuHNC_9nan=
+Qc6pPG_SpT0&amp;r=3Dztfeb3sYMwYJc4m6DQzcZ1EDxKmQmE8pe5TrXm4gdCU&amp;m=3Dxos=
+CmCfJlZ5AfIscnIGFPlKd_WqB4JHLY4vSLilK-IE&amp;s=3DIDZd2_ULQhvZFm33gwH-mCSwcJ=
+MtMpjuFI5_FJQQvqk&amp;e=3D" target=3D"_blank">http://electionlawblog.org/?p=
+=3D81996</a><u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Also on background, t=
+he math is wrong on the Politico story. Their claim that state parties only=
+ get to keep 1 percent of all the money being raised is incorrect and compa=
+ring apples and oranges. They reference
+ the total amount of money that has been raised, but of that, many millions=
+ have been raised for state parties and just haven=E2=80=99t been distribut=
+ed to them yet (nor has it gone to the DNC or anywhere else). Because this =
+is money for the general election, and coordinated
+ campaigns are just now starting to be built at state parties, it is perfec=
+tly understandable that not all of that money that will eventually go to st=
+ate parties would have been distributed yet.<u></u><u></u></p>
+<p class=3D"MsoNormal">Happy to discuss at greater length. <u></u><u></u></=
+p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img border=3D"0" width=3D"77" height=3D"71" src=3D"cid:image00=
+1.png@01D1A495.4978F040" align=3D"left" hspace=3D"12" alt=3D"SigDems" title=
+=3D""></a><u></u><b><span style=3D"font-size:12.0pt">Luis
+ Miranda, </span></b>Communications Director<u></u><u></u></p>
+<p class=3D"MsoNormal"><b>Democratic National Committee<u></u><u></u></b></=
+p>
+<p class=3D"MsoNormal">202-863-8148 =E2=80=93 <a href=3D"mailto:MirandaL@dn=
+c.org" target=3D"_blank"><span style=3D"color:blue">MirandaL@dnc.org</span>=
+</a> -
+<a href=3D"https://www.twitter.com/MiraLuisDC" target=3D"_blank"><span styl=
+e=3D"color:blue">@MiraLuisDC</span></a><u></u><u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+
+</blockquote></div><div dir=3D"ltr">-- <br></div><div dir=3D"ltr"><div>Bren=
+dan O'Connor</div><div>Staff writer, Gawker</div><div>732-804-2425</div></d=
+iv>
+
+--94eb2c124596799b010531f03f6a--
+
+--94eb2c124596799b060531f03f6b
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <15476d3c5a74cff311>
+X-Attachment-Id: 15476d3c5a74cff311
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--94eb2c124596799b060531f03f6b
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <>
+X-Attachment-Id:
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--94eb2c124596799b060531f03f6b--

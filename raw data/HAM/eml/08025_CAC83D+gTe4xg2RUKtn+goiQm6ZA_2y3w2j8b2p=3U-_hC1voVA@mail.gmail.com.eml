@@ -1,0 +1,1080 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sun, 24 Apr
+ 2016 22:30:49 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sun, 24 Apr 2016
+ 22:30:47 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 877301207
+ for Comm_d@dnc.org; Sun, 24 Apr 2016 21:30:50 -0500
+X-Note-AR-ScanTimeLocal: 4/24/2016 9:30:47 PM
+X-Policy: dnc.org
+X-Primary: comm_d@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/19/2016 8:05:20 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.49 DOM:nhdp.org ADDR:tnuccio@nhdp.org
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-110/SG:5 4/24/2016 9:30:12 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 46.8807 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/24/2016 9:30:38 PM
+X-Warn: OPTOUT
+X-Note: Spam Tests Failed: OPTOUT
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.49
+X-Note-Reverse-DNS: mail-wm0-f49.google.com
+X-Note-Return-Path: tnuccio@nhdp.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G373 G404 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f49.google.com ([74.125.82.49] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 135089740
+ for Comm_d@dnc.org; Sun, 24 Apr 2016 21:30:46 -0500
+Received: by mail-wm0-f49.google.com with SMTP id u206so105185410wme.1
+        for <Comm_d@dnc.org>; Sun, 24 Apr 2016 19:30:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nhdp-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:date:message-id:subject:from:to;
+        bh=medOhGDMpGK0pKvPwHErMmpklGhWDRL2WRH2hSJ9t+c=;
+        b=AwTIO6idDWQiq32IOb30yleByHStDRiIV7i1BjKCAEEieEwHvBOV2GfQv63O53quwD
+         qlMko7S5Lj6uKY8VvmviLHVyqRFJAYHOl6ilzlBJHVyvh4qWL/f68VN/uN+B0ggnF/tM
+         V66CR82fWzZr73uYVIlkMyM3L+Q16ENK0MnWHbOOTa9qcbefk7/HDipo5dHTJtJJW+nC
+         I6mSzPSgG8xCnzoVM5aliDgLhOdNvuK1GwJlAqtUrcsD4SRatvOnUjfecAikJIbJpd0w
+         SIfS29w3nYsA+o6EOt59ZwRYMyFsP8oY42S8cLbVZUFJLX3+8i5fx3QhPkzDrDNZWQuA
+         DiOw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+        bh=medOhGDMpGK0pKvPwHErMmpklGhWDRL2WRH2hSJ9t+c=;
+        b=V8wv2GsNITvt0YP3xu65tJViOcaOJGGy2+A1WI+XTEHpvofO87kc0VsiVyRh35hjxb
+         bdz7+lPkBd2bpBAA8MO0fxjAdgRYTbXC/DTFB2VTfCnYK/G+/NGWQQZDqZa18ETflbN9
+         +Xsiu24ASTkxC5bJ+nyIxN6SJDcnTuk1sT7PFbgAzp3rsN7KKFtbvKP9AQWCEb6Dxtcy
+         HtYNAGOfi+emIUZKNf2vkb/rQf1l74FRV7R15B9t+7WmlihjFVldRV5q0QfSqCdXSbG8
+         c+qUlOlbO2bPHmaH5Ce4sYkx5+yCj3KSGyZS+VGARcdDzbcCZ/UO//1wkDBkhJC3BCyM
+         t/5A==
+X-Gm-Message-State: AOPr4FX0nbV8rJGw7ws7+5BuckvHWuBpQzJrcSyVClufCUaJEhdZ7UfQuao5r9iHtX2winPimzAv/xeruYEeyg==
+X-Received: by 10.28.147.8 with SMTP id v8mr8818324wmd.92.1461551445733; Sun,
+ 24 Apr 2016 19:30:45 -0700 (PDT)
+Received: by 10.194.240.193 with HTTP; Sun, 24 Apr 2016 19:30:45 -0700 (PDT)
+Date: Sun, 24 Apr 2016 22:30:45 -0400
+Message-ID: <CAC83D+gTe4xg2RUKtn+goiQm6ZA_2y3w2j8b2p=3U-_hC1voVA@mail.gmail.com>
+Subject: Kasich email: Tuesday Event Cancelled
+From: Thomas Nuccio <tnuccio@nhdp.org>
+To: <Comm_d@dnc.org>
+Content-Type: multipart/alternative; boundary="001a114733acbe885e053145f6df"
+Return-Path: tnuccio@nhdp.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+MIME-Version: 1.0
+
+--001a114733acbe885e053145f6df
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+[image: Eventbrite]
+<http://www.eventbrite.com/home/?utm_source=3Deb_email&utm_medium=3Demail&u=
+tm_campaign=3Devent_reminder&utm_term=3Deb_logo>
+Find events
+<https://www.eventbrite.com/directory/?utm_source=3Deb_email&utm_medium=3De=
+mail&utm_campaign=3Devent_reminder&utm_term=3Dfindtickets>
+My
+Tickets
+<https://www.eventbrite.com/mytickets/?utm_source=3Deb_email&utm_medium=3De=
+mail&utm_campaign=3Devent_reminder&utm_term=3Dmytickets>
+
+*We=E2=80=99re reaching out to inform you that the Indianapolis Election Ni=
+ght
+Watch Party with Gov. John Kasich on Tuesday, April 26th has been
+cancelled.*
+
+We appreciate all that you=E2=80=99ve done to support Gov. John Kasich=E2=
+=80=99s campaign
+in Indiana and would encourage you to be sure to stay involved with our
+campaign in the other upcoming states.
+
+*Kasich For America Chief Strategist John Weaver announced this evening an
+agreement that=E2=80=99s been made with the Cruz campaign in an effort to d=
+eny
+Trump the nomination:*
+
+=E2=80=9CDonald Trump doesn=E2=80=99t have the support of a majority of Rep=
+ublicans =E2=80=93 not
+even close, but he currently does have almost half the delegates because
+he=E2=80=99s benefited from the existing primary system. Our goal is to hav=
+e an
+open convention in Cleveland, where we are confident a candidate capable of
+uniting the Party and winning in November will emerge as the nominee. We
+believe that will be John Kasich, who is the only candidate who can defeat
+Secretary Clinton and preserve our GOP majority in the Congress.
+
+Due to the fact that the Indiana primary is winner-take-all statewide and
+by congressional district, keeping Trump from winning a plurality in
+Indiana is critical to keeping him under 1237 bound delegates before
+Cleveland. We are very comfortable with our delegate position in Indiana
+already, and given the current dynamics of the primary there, we will shift
+our campaign=E2=80=99s resources West and give the Cruz campaign a clear pa=
+th in
+Indiana.
+
+In turn, we will focus our time and resources in New Mexico and Oregon,
+both areas that are structurally similar to the Northeast politically,
+where Gov. Kasich is performing well. We would expect independent
+third-party groups to do the same and honor the commitments made by the
+Cruz and Kasich campaigns.
+
+We expect to compete with both the Trump and Cruz campaigns in the
+remaining primary states.=E2=80=9D
+
+
+
+Thank you again.
+
+
+
+-Team Kasich
+
+Indianapolis Election Night Watch Party w/ Gov. John Kasich
+<http://kasich-indianapolis.eventbrite.com?utm_source=3Deb_email&utm_medium=
+=3Demail&utm_campaign=3Devent_reminder&utm_term=3Deventname>
+[image: date]
+Tuesday, April 26, 2016 from 7:00 PM to 10:30 PM (EDT)
+[image: date] Omni Severin Hotel, The Severin Lobby
+40 West Jackson Place
+Indianapolis, IN 46225
+
+Organized by Kasich for America
+<http://www.eventbrite.com/o/kasich-for-america-8268080242?utm_source=3Deb_=
+email&utm_medium=3Demail&utm_campaign=3Devent_reminder&utm_term=3Dorgname>
+[image: map]
+<http://maps.google.com/maps?q=3DOmni+Severin+Hotel%2C++The+Severin+Lobby+4=
+0+West+Jackson+Place+Indianapolis+IN+46225>
+Download Tickets
+<http://www.eventbrite.com/safe-redirect?next=3Dhttp%3A%2F%2Fwww.eventbrite=
+.com%2Fprint-ticket%2F512298929%2F645929835%2F512298929-645929835-tickets.p=
+df%2F%3Fc%3DNDkzOTgxMjM%253D%250A%26utm_source%3Deb_email%26utm_medium%3Dem=
+ail%26utm_campaign%3Dorder_confirm%26sig%3DAHTu1yYcf9EymQ5F8uswZXD7i67mieuj=
+eA&key=3DAH_ElWE4arO1uSf5JlZ7Ozm2k6nHq7FGJQ&utm_source=3Deb_email&utm_mediu=
+m=3Demail&utm_campaign=3Devent_reminder&utm_term=3Dmobiletickets>
+Mobile Tickets
+<https://www.eventbrite.com/eventbriteapp?utm_source=3Deb_email&utm_medium=
+=3Demail&utm_campaign=3Devent_reminder&utm_term=3Dmobiletickets>
+Contact the Organizer
+<https://www.eventbrite.com/contact-organizer?eid=3D24848788395?utm_source=
+=3Deb_email&utm_medium=3Demail&utm_campaign=3Devent_reminder&utm_term=3Dcon=
+tactthehost>
+
+About
+<http://eventbrite.com/about/?utm_source=3Deb_email&utm_medium=3Demail&utm_=
+campaign=3D&utm_term=3Dfooter_about&utm_content=3D&ref=3Deemail>
+Help
+<http://eventbrite.com/support/?utm_source=3Deb_email&utm_medium=3Demail&ut=
+m_campaign=3D&utm_term=3Dfooter_help&utm_content=3D&ref=3Deemail>
+My
+Account
+<http://eventbrite.com/login/?utm_source=3Deb_email&utm_medium=3Demail&utm_=
+campaign=3D&utm_term=3Dfooter_myaccount&utm_content=3D&ref=3Deemail>
+Contact
+Us
+<http://eventbrite.com/support/contact-us/?utm_source=3Deb_email&utm_medium=
+=3Demail&utm_campaign=3D&utm_term=3Dfooter_contactus&utm_content=3D&ref=3De=
+email>
+Privacy
+<http://eventbrite.com/privacypolicy/?utm_source=3Deb_email&utm_medium=3Dem=
+ail&utm_campaign=3D&utm_term=3Dfooter_privacy_policy&utm_content=3D&ref=3De=
+email>
+Terms
+<http://eventbrite.com/tos/?utm_source=3Deb_email&utm_medium=3Demail&utm_ca=
+mpaign=3D&utm_term=3Dfooter_tos&utm_content=3D&ref=3Deemail>
+Blog
+<https://www.eventbrite.com/blog/?utm_source=3Deb_email&utm_medium=3Demail&=
+utm_campaign=3D&utm_term=3Dfooter_blog&utm_content=3D&ref=3Deemail>
+[image:
+Facebook] <http://www.facebook.com/eventbrite> [image: Twitter]
+<http://www.twitter.com/eventbrite>
+
+
+This email was sent to nuccio001@connect.wcsu.edu
+To stop receiving emails from this organizer, you can unsubscribe
+<http://eventbrite.com/inviteunsubscribe?email=3Dnuccio001%40connect.wcsu.e=
+du&oid=3D8210606&sig=3DAGNbPwG5IJHVdQYxMgd_4IUNU6RLzXyheQ&invite_id=3D0>
+Eventbrite <http://eventbrite.com> | 155 5th St | San Francisco, CA 94103
+Copyright =C2=A9 2016 Eventbrite. All rights reserved.
+<http://eventbrite.com?utm_source=3Deb_email&utm_medium=3Demail&utm_campaig=
+n=3D&utm_term=3Dfooter_logo&utm_content=3D&ref=3Deemail>
+
+--001a114733acbe885e053145f6df
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div dir=3D"auto"><div style=3D"text-align:center"><br></div=
+><blockquote type=3D"cite"><div style=3D"text-align:center"><br></div></blo=
+ckquote><blockquote type=3D"cite"><div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" height=3D"100%" wid=
+th=3D"100%" bgcolor=3D"#F7F7F7" style=3D"text-align:center">
+
+    <tbody><tr>
+        <td style=3D"padding-right:10px;padding-left:10px">
+       =20
+       =20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"=
+#F7F7F7" style=3D"width:600px;max-width:600px;text-align:center">
+            <tbody><tr>
+                <td width=3D"33%" valign=3D"middle" style=3D"text-align:lef=
+t;padding:20px 0 10px 0">
+                    <a href=3D"http://www.eventbrite.com/home/?utm_source=
+=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3Devent_reminder&amp;ut=
+m_term=3Deb_logo" target=3D"_blank">
+                        <img src=3D"https://cdn.evbstatic.com/s3-s3/marketi=
+ng/emails/images/eb-logox2.png" width=3D"116" height=3D"35" border=3D"0" al=
+t=3D"Eventbrite" style=3D"width:116px;min-height:35px">
+                    </a>
+                </td>
+                <td width=3D"66%" valign=3D"middle" style=3D"font-family:'H=
+elvetica Neue',Helvetica,Arial,sans-serif;text-align:right;padding-top:12px=
+;vertical-align:middle">
+                   =20
+   =20
+   =20
+    <div>
+       =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif;font-size:13px;font-weight:500;color:#aaa;t=
+ext-decoration:none" href=3D"https://www.eventbrite.com/directory/?utm_sour=
+ce=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3Devent_reminder&amp;=
+utm_term=3Dfindtickets" target=3D"_blank">Find events</a>
+       =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif;font-size:13px;font-weight:500;color:#aaa;t=
+ext-decoration:none;padding-left:20px" href=3D"https://www.eventbrite.com/m=
+ytickets/?utm_source=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3De=
+vent_reminder&amp;utm_term=3Dmytickets" target=3D"_blank">My Tickets</a>
+    </div>
+
+
+
+                </td>
+            </tr>
+        </tbody></table>
+       =20
+        </td>
+    </tr>
+    <tr>
+        <td>
+       =20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" bgcolor=3D"=
+#F7F7F7" style=3D"width:600px;max-width:600px;text-align:center">
+            <tbody><tr>
+                <td colspan=3D"2" style=3D"background:#fff;border-radius:8p=
+x">
+                    <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%">
+                        <tbody><tr>
+                            <td style=3D"font-family:'Helvetica Neue',Helve=
+tica,Arial,sans-serif">
+                               =20
+
+
+
+
+
+       =20
+
+
+
+   =20
+    </td></tr><tr>
+        <td style=3D"font-family:'Helvetica neue',Helvetica,arial,sans-seri=
+f;padding:32px 40px;border-radius:6px 6px 0 0">
+           =20
+       =20
+   =20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody><tr width=3D"100%">
+        <td width=3D"100%">
+           =20
+       =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:17px;line-height:24px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif">
+   =20
+                <p><span style=3D"color:#ff0000"><strong><span style=3D"fon=
+t-family:arial,helvetica,sans-serif;font-size:medium">We=E2=80=99re reachin=
+g out to inform you that the Indianapolis Election Night Watch Party with G=
+ov. John Kasich on Tuesday, April 26th has been cancelled.</span></strong><=
+/span></p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium">=
+We appreciate all that you=E2=80=99ve done to support Gov. John Kasich=E2=
+=80=99s campaign in Indiana and would encourage you to be sure to stay invo=
+lved with our campaign in the other upcoming states.</span></p>
+<p><strong><span style=3D"font-family:arial,helvetica,sans-serif;font-size:=
+medium;background-color:rgb(255,255,0)">Kasich For America Chief Strategist=
+ John Weaver announced this evening an agreement that=E2=80=99s been made w=
+ith the Cruz campaign in an effort to deny Trump the nomination:</span></st=
+rong></p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium">=
+<span style=3D"background-color:rgb(255,255,0)">=E2=80=9CDonald Trump doesn=
+=E2=80=99t have the support of a majority of Republicans =E2=80=93 not even=
+ close,</span> but he currently does have almost half the delegates because=
+ he=E2=80=99s benefited from the existing primary system.&nbsp;Our goal is =
+to have an open convention in Cleveland, where we are confident a candidate=
+ capable of uniting the Party and winning in November will emerge as the no=
+minee.&nbsp;We believe that will be John Kasich, who is the only candidate =
+who can defeat Secretary Clinton and preserve our GOP majority in the Congr=
+ess.</span></p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium">=
+Due to the fact that the Indiana primary is winner-take-all statewide and b=
+y congressional district, k<span style=3D"background-color:rgb(255,255,0)">=
+eeping Trump from winning a plurality in Indiana is critical to keeping him=
+ under 1237 bound delegates before Cleveland. </span>We are very comfortabl=
+e with our delegate position in Indiana already, and given the current dyna=
+mics of the primary there, we will shift our campaign=E2=80=99s resources W=
+est and give the Cruz campaign a clear path in Indiana.&nbsp;</span></p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium;b=
+ackground-color:rgb(255,255,0)">In turn, we will focus our time and resourc=
+es in New Mexico and Oregon, both areas that are structurally similar to th=
+e Northeast politically, where Gov. Kasich is performing well. We would exp=
+ect independent third-party groups to do the same and honor the commitments=
+ made by the Cruz and Kasich campaigns.&nbsp;</span></p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium;b=
+ackground-color:rgb(255,255,0)">We expect to compete with both the Trump an=
+d Cruz campaigns in the remaining primary states.=E2=80=9D</span></p>
+<p>&nbsp;</p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium">=
+Thank you again.</span></p>
+<p>&nbsp;</p>
+<p><span style=3D"font-family:arial,helvetica,sans-serif;font-size:medium">=
+-Team Kasich</span></p>
+       =20
+</div>
+
+   =20
+        </td>
+    </tr>
+</tbody></table>
+
+
+   =20
+        </td>
+    </tr>
+
+
+       =20
+       =20
+<tr>
+    <td style=3D"padding:0 40px">
+       =20
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tbody><tr><td st=
+yle=3D"background-color:#dedede;width:100%;font-size:1px;height:1px;line-he=
+ight:1px">&nbsp;</td></tr></tbody></table>
+
+    </td>
+</tr>
+
+       =20
+    <tr>
+        <td style=3D"font-family:'Helvetica neue',Helvetica,arial,sans-seri=
+f;padding:10px 40px">
+           =20
+           =20
+
+<h2 style=3D"color:#404040;font-weight:300;margin:0 0 12px 0;font-size:24px=
+;line-height:30px;font-family:'Helvetica neue',Helvetica,arial,sans-serif">
+
+               =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif;text-decoration:none;color:#1090ba;font-wei=
+ght:normal" href=3D"http://kasich-indianapolis.eventbrite.com?utm_source=3D=
+eb_email&amp;utm_medium=3Demail&amp;utm_campaign=3Devent_reminder&amp;utm_t=
+erm=3Deventname" target=3D"_blank">
+       =20
+                    Indianapolis Election Night Watch Party w/ Gov. John Ka=
+sich
+               =20
+    </a>
+           =20
+</h2>
+
+           =20
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:260p=
+x;line-height:1.67;font-size:13px;text-align:left">
+    <tbody><tr>
+        <td>
+           =20
+               =20
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"line-hei=
+ght:1.67;font-size:13px" align=3D"">
+   =20
+                       =20
+   =20
+<tbody><tr>
+   =20
+       =20
+<td width=3D"20" height=3D"" style=3D"vertical-align:top;padding-right:10px=
+" align=3D"" valign=3D"" colspan=3D"1">
+   =20
+           =20
+
+<img src=3D"https://cdn.evbstatic.com/s3-s3/marketing/emails/order_confirma=
+tion/date-iconx2.png" title=3D"date" alt=3D"date" style=3D"width:20px;min-h=
+eight:20px;vertical-align:-2px" border=3D"0" width=3D"20" height=3D"20">
+
+
+       =20
+</td>
+
+       =20
+<td width=3D"" height=3D"" align=3D"" valign=3D"" colspan=3D"1">
+   =20
+           =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:15px;line-height:21px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif">
+   =20
+                Tuesday, April 26, 2016 from 7:00 PM to 10:30 PM (EDT)
+           =20
+</div>
+
+       =20
+</td>
+
+   =20
+</tr>
+
+
+                       =20
+   =20
+<tr>
+   =20
+       =20
+<td width=3D"20" height=3D"" style=3D"vertical-align:top;padding-right:10px=
+" align=3D"" valign=3D"" colspan=3D"1">
+   =20
+           =20
+
+<img src=3D"https://cdn.evbstatic.com/s3-s3/marketing/emails/order_confirma=
+tion/location-pin-iconx2.png" title=3D"date" alt=3D"date" style=3D"width:20=
+px;min-height:20px;vertical-align:-4px" border=3D"0" width=3D"20" height=3D=
+"20">
+
+
+       =20
+</td>
+
+       =20
+<td width=3D"" height=3D"" style=3D"padding-bottom:10px" align=3D"" valign=
+=3D"" colspan=3D"1">
+   =20
+            Omni Severin Hotel,  The Severin Lobby<br>40 West Jackson Place=
+<br>Indianapolis, IN 46225
+       =20
+</td>
+
+   =20
+</tr>
+
+
+                   =20
+<tr>
+   =20
+                       =20
+<td width=3D"20" height=3D"" style=3D"vertical-align:top;padding-right:10px=
+;padding-top:10px" align=3D"" valign=3D"" colspan=3D"1">
+   =20
+</td>
+
+                       =20
+<td width=3D"" height=3D"" style=3D"padding-top:10px" align=3D"" valign=3D"=
+" colspan=3D"1">
+   =20
+                           =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:15px;line-height:21px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif">
+   =20
+                               =20
+   =20
+   =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:15px;line-height:21px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif;font-weight:300">
+   =20
+   =20
+            Organized by <a href=3D"http://www.eventbrite.com/o/kasich-for-=
+america-8268080242?utm_source=3Deb_email&amp;utm_medium=3Demail&amp;utm_cam=
+paign=3Devent_reminder&amp;utm_term=3Dorgname" style=3D"color:#999" target=
+=3D"_blank">Kasich for America</a>
+   =20
+   =20
+</div>
+
+
+
+                           =20
+</div>
+
+                       =20
+</td>
+
+                   =20
+</tr>
+
+               =20
+</tbody></table>
+
+           =20
+        </td>
+    </tr>
+</tbody></table>
+
+               =20
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:240p=
+x;text-align:right;margin-top:5px">
+    <tbody><tr>
+        <td>
+           =20
+                   =20
+   =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"http://maps.google.com/maps?q=3DOm=
+ni&#43;Severin&#43;Hotel%2C&#43;&#43;The&#43;Severin&#43;Lobby&#43;40&#43;W=
+est&#43;Jackson&#43;Place&#43;Indianapolis&#43;IN&#43;46225" target=3D"_bla=
+nk">
+       =20
+       =20
+<img src=3D"https://www.eventbrite.com/staticmap_https_proxy?size=3D240x160=
+&amp;sensor=3Dtrue&amp;center=3D39.7639938%2C-86.15948449999996&amp;markers=
+=3Dlabel%3AA%7C39.7639938%2C-86.15948449999996&amp;zoom=3D13" title=3D"map"=
+ alt=3D"map" style=3D"width:240px;min-height:160px" border=3D"0" width=3D"2=
+40" height=3D"160">
+
+   =20
+    </a>
+
+               =20
+        </td>
+    </tr>
+</tbody></table>
+
+       =20
+        </td>
+    </tr>
+
+
+   =20
+</tbody></table><table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody><tr width=3D"100%">
+        <td width=3D"100%" style=3D"text-align:center">
+           =20
+       =20
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"margin-top:12px;margin-bottom:12px">
+    <tbody><tr>
+        <td>
+            <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=
+=3D"100%">
+                <tbody><tr>
+                    <td style=3D"border-radius:3px">
+                        <a href=3D"http://www.eventbrite.com/safe-redirect?=
+next=3Dhttp%3A%2F%2Fwww.eventbrite.com%2Fprint-ticket%2F512298929%2F6459298=
+35%2F512298929-645929835-tickets.pdf%2F%3Fc%3DNDkzOTgxMjM%253D%250A%26utm_s=
+ource%3Deb_email%26utm_medium%3Demail%26utm_campaign%3Dorder_confirm%26sig%=
+3DAHTu1yYcf9EymQ5F8uswZXD7i67mieujeA&amp;key=3DAH_ElWE4arO1uSf5JlZ7Ozm2k6nH=
+q7FGJQ&amp;utm_source=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3D=
+event_reminder&amp;utm_term=3Dmobiletickets" style=3D"display:inline-block;=
+color:#fff;font-weight:400;border-left:15px solid;border-right:15px solid;b=
+order-top:12px solid;border-bottom:12px solid;font-size:17px;text-decoratio=
+n:none;text-align:center;border-radius:3px;font-family:'Helvetica neue',Hel=
+vetica,arial,sans-serif;background-color:#7ad108;border-color:#7ad108" targ=
+et=3D"_blank">
+                            <span style=3D"padding-left:5px;padding-right:5=
+px">
+                                Download Tickets
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </tbody></table>
+        </td>
+    </tr>
+</tbody></table>
+
+   =20
+        </td>
+    </tr>
+</tbody></table>
+
+
+   =20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody><tr width=3D"100%">
+        <td width=3D"100%" style=3D"text-align:center;padding-bottom:12px">
+           =20
+       =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"https://www.eventbrite.com/eventbr=
+iteapp?utm_source=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3Deven=
+t_reminder&amp;utm_term=3Dmobiletickets" target=3D"_blank">Mobile Tickets</=
+a>
+   =20
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+   =20
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody><tr width=3D"100%">
+        <td width=3D"100%" style=3D"text-align:center;padding-bottom:20px">
+           =20
+       =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"https://www.eventbrite.com/contact=
+-organizer?eid=3D24848788395?utm_source=3Deb_email&amp;utm_medium=3Demail&a=
+mp;utm_campaign=3Devent_reminder&amp;utm_term=3Dcontactthehost" target=3D"_=
+blank">Contact the Organizer</a>
+   =20
+        </td>
+    </tr>
+</tbody></table>
+
+
+
+
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </td>
+            </tr>
+        </tbody></table>
+       =20
+
+       =20
+
+
+
+
+
+
+
+
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"text-align=
+:center;width:600px;max-width:600px;font-family:Helvetica,Arial,sans-serif"=
+>
+
+    <tbody><tr>
+        <td style=3D"padding-top:24px">
+           =20
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tbody><tr><td st=
+yle=3D"background-color:#dedede;width:100%;font-size:1px;height:1px;line-he=
+ight:1px">&nbsp;</td></tr></tbody></table>
+
+        </td>
+    </tr>
+
+   =20
+   =20
+    <tr>
+        <td style=3D"font-family:'Helvetica neue',Helvetica,arial,sans-seri=
+f;padding:9px 0;text-align:center">
+           =20
+       =20
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" align=3D"">
+   =20
+           =20
+<tbody><tr>
+   =20
+               =20
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/about/?utm_source=3Deb_email&=
+amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_about&amp;=
+utm_content=3D&amp;ref=3Deemail" target=3D"_blank">About</a><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/support/?utm_source=3Deb_emai=
+l&amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_help&amp=
+;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">Help</a><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/login/?utm_source=3Deb_email&=
+amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_myaccount&=
+amp;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">My Account</a><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/support/contact-us/?utm_sourc=
+e=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfoot=
+er_contactus&amp;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">Contact=
+ Us</a><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100=
+%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/privacypolicy/?utm_source=3De=
+b_email&amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_pr=
+ivacy_policy&amp;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">Privacy=
+</a><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"http://eventbrite.com/tos/?utm_source=3Deb_email&am=
+p;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_tos&amp;utm_=
+content=3D&amp;ref=3Deemail" target=3D"_blank">Terms</a><table border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;padding:9px 15=
+px 9px 10px;line-height:11px;text-align:center;background:url(&quot;https:/=
+/cdn.evbstatic.com/s3-s3/marketing/emails/email-footer-navigation-divider.p=
+ng&quot;) 100% 50% no-repeat" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;font-size:11px;color:#666666;text-trans=
+form:uppercase" href=3D"https://www.eventbrite.com/blog/?utm_source=3Deb_em=
+ail&amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfooter_blog&a=
+mp;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">Blog</a><table border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+           =20
+           =20
+
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+       =20
+   =20
+<td width=3D"auto" height=3D"" style=3D"display:inline-block;line-height:11=
+px;padding-left:10px;text-align:center" valign=3D"middle" colspan=3D"1">
+   =20
+        <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;display:inline-block;min-height:22px;ve=
+rtical-align:middle;margin-left:5px" href=3D"http://www.facebook.com/eventb=
+rite" target=3D"_blank">
+       =20
+               =20
+<img src=3D"https://cdn.evbstatic.com/s3-s3/marketing/emails/images/icons/f=
+acebook.png" title=3D"Facebook" alt=3D"Facebook" border=3D"0" width=3D"22" =
+height=3D"22">
+
+           =20
+    </a><a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helveti=
+ca neue',Helvetica,arial,sans-serif;display:inline-block;min-height:22px;ve=
+rtical-align:middle;margin-left:5px" href=3D"http://www.twitter.com/eventbr=
+ite" target=3D"_blank">
+       =20
+               =20
+<img src=3D"https://cdn.evbstatic.com/s3-s3/marketing/emails/images/icons/t=
+witter.png" title=3D"Twitter" alt=3D"Twitter" border=3D"0" width=3D"22" hei=
+ght=3D"22">
+
+           =20
+    </a><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%">
+           =20
+           =20
+
+   =20
+           =20
+
+   =20
+       =20
+        </table>
+   =20
+</td>
+
+
+   =20
+           =20
+</tr>
+
+       =20
+</tbody></table>
+
+   =20
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td>
+           =20
+<table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tbody><tr><td st=
+yle=3D"background-color:#dedede;width:100%;font-size:1px;height:1px;line-he=
+ight:1px">&nbsp;</td></tr></tbody></table>
+
+        </td>
+    </tr>
+   =20
+    <tr>
+        <td style=3D"font-family:'Helvetica neue',Helvetica,arial,sans-seri=
+f;padding:24px 0;text-align:center">
+           =20
+       =20
+   =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:13px;line-height:18px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif;font-weight:300;pa=
+dding-bottom:6px">
+   =20
+   =20
+       =20
+       =20
+           =20
+<span>
+                This email was sent to=20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"mailto:nuccio001@connect.wcsu.edu"=
+ target=3D"_blank">nuccio001@connect.wcsu.edu</a>
+            </span>
+
+
+       =20
+   =20
+</div>
+
+
+       =20
+       =20
+
+
+   =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:13px;line-height:18px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif;font-weight:300;pa=
+dding-bottom:6px">
+   =20
+   =20
+   =20
+   =20
+    To stop receiving emails from this organizer, you can=20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"http://eventbrite.com/inviteunsubs=
+cribe?email=3Dnuccio001%40connect.wcsu.edu&amp;oid=3D8210606&amp;sig=3DAGNb=
+PwG5IJHVdQYxMgd_4IUNU6RLzXyheQ&amp;invite_id=3D0" target=3D"_blank">unsubsc=
+ribe</a>
+
+   =20
+</div>
+
+
+
+       =20
+   =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:13px;line-height:18px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif;font-weight:300;pa=
+dding-bottom:6px">
+   =20
+   =20
+           =20
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"http://eventbrite.com" target=3D"_=
+blank">Eventbrite</a> | 155 5th St | San Francisco, CA 94103
+       =20
+   =20
+</div>
+
+
+       =20
+   =20
+
+<div style=3D"color:#666666;font-weight:400;font-size:13px;line-height:18px=
+;font-family:'Helvetica neue',Helvetica,arial,sans-serif;font-weight:300">
+   =20
+   =20
+            Copyright =C2=A9 2016 Eventbrite. All rights reserved.
+       =20
+   =20
+</div>
+
+
+   =20
+        </td>
+    </tr>
+
+   =20
+    <tr>
+        <td style=3D"font-family:'Helvetica neue',Helvetica,arial,sans-seri=
+f;padding:0 0 24px 0;text-align:center">
+           =20
+       =20
+
+
+    <a style=3D"text-decoration:none;color:#0f90ba;font-family:'Helvetica n=
+eue',Helvetica,arial,sans-serif" href=3D"http://eventbrite.com?utm_source=
+=3Deb_email&amp;utm_medium=3Demail&amp;utm_campaign=3D&amp;utm_term=3Dfoote=
+r_logo&amp;utm_content=3D&amp;ref=3Deemail" target=3D"_blank">
+       =20
+           =20
+<img src=3D"https://cdn.evbstatic.com/s3-s3/marketing/emails/invites/LogoBa=
+dgex2.png" title=3D"" alt=3D"" border=3D"0" width=3D"38" height=3D"38">
+
+       =20
+    </a>
+   =20
+        </td>
+    </tr>
+
+</tbody></table>
+
+
+       =20
+   =20
+
+
+
+
+</div></blockquote></div></div>
+
+--001a114733acbe885e053145f6df--

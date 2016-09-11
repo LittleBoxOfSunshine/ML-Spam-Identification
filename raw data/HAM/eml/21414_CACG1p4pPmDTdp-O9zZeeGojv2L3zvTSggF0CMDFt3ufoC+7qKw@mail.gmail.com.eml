@@ -1,0 +1,603 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 2 May
+ 2016 19:36:04 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 2 May 2016
+ 19:36:01 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 892407176
+ for ParrishD@dnc.org; Mon, 02 May 2016 18:36:05 -0500
+X-Note-AR-ScanTimeLocal: 5/2/2016 6:36:04 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.42 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-255/SG:5 5/2/2016 6:35:28 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-25127-c
+X-Note-419: 31.2437 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/2/2016 6:35:50 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.42
+X-Note-Reverse-DNS: mail-lf0-f42.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-lf0-f42.google.com ([209.85.215.42] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136618881
+ for ParrishD@dnc.org; Mon, 02 May 2016 18:36:04 -0500
+Received: by mail-lf0-f42.google.com with SMTP id m64so3720912lfd.1        for
+ <ParrishD@dnc.org>; Mon, 02 May 2016 16:36:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=91CO32RNhm2kQKbY2eeCaa/sJ4dG8/QNvgAN4m2QtZE=;
+        b=fvUd+X9Bew1avlzKk+92Lu7C4sQeXIAPNnLOuFx+UpWALfFS61MlQWzVSnCyMVwda7
+         wMg+CSXw5bTcD2AMpgTio/AkdMnXiaXvWu9LRcTr5C9C8/5a4Nvp4ywDXbw5JRioYrU7
+         EtqUbf3W07JK0GrL1JX3rNOEIa+EIv80ln3pxL4U6fJERPmBYAW/z7591cm72CIPD0ov
+         7hss0SoIttBret81zQz958BGcx95ho+ugtHGAuQt2Sppptarlgw7+Eug+vzADiGV4q3j
+         fUeQ4QLka3KhLUxUxAtO0PnA/erUYdoWpyCLmvpwEGoloEmsUoEQf+PhmZVaZ4AnT7yk
+         zMwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=91CO32RNhm2kQKbY2eeCaa/sJ4dG8/QNvgAN4m2QtZE=;
+        b=fli63iE5yfHSADNGR6L3qOBtw7craXgi9TTAUx5ahnw02HuztGCaVPDN35eHMJV5WP
+         MjjoLTgcSc8oii/stRdoXCjC9QltNNcwGOiEd4kf/uqXsvVRMyKJYbsU8YCqt+ZwjF/J
+         QC9PhhDa3JgwcpnZneemIikZFRfi4c65xCGfwO7F9vX72CnOfzTXE+YRV0/UVcWmj/Z6
+         GtcWOz7EC4ll4fisAUYz9IkQuVt7IbC8QmFRWU28WHOYOnVg/H8KTGpMBfC/aO3fq4YL
+         /nu3clqucHSuz3vpAt03n6gZAoh19eoIyt0CiaW3ahF0U9uA/dCR65ryA7mL4Z6KsfXs
+         35Gg==
+X-Gm-Message-State: AOPr4FWytBePnAqNIBdQw1iYTdImwhXKIgHl3ums8mhXoCVEEHEEjUCUhhNRgWqY4+auhlmJDEg4pfxV6YpMsZHo
+X-Received: by 10.112.154.5 with SMTP id vk5mr16362452lbb.126.1462232161296;
+ Mon, 02 May 2016 16:36:01 -0700 (PDT)
+Received: by 10.25.153.132 with HTTP; Mon, 2 May 2016 16:35:21 -0700 (PDT)
+In-Reply-To: <AEFFB4CD-AE69-4F37-A1D3-581A2A3EFAA4@dnc.org>
+References: <CACG1p4ps+HKvGC9vb9-qUDSGfPiMkPa7TyQ2xD=TL1aAuWAJCQ@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9952EC8@dncdag1.dnc.org>
+ <CACG1p4rdZ0jAbEis=NUL6gPZHhzVf2wGtROhEbJip7AqFVeofQ@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9952F14@dncdag1.dnc.org>
+ <CACG1p4qeO3b2itFGuBKiEjKU9hZJC82HQi0GpYTbpd0nE=gx2g@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9952F5D@dncdag1.dnc.org>
+ <CACG1p4oHO=_7tst98XoSfN04ebMyvJ2TiqLg1U4OmcU1+W9UHQ@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9952F99@dncdag1.dnc.org>
+ <CACG1p4qScAE8Bcg7kxgUxfHreQcXZkJMjKCds3JFnNTFZ2bEVA@mail.gmail.com> <AEFFB4CD-AE69-4F37-A1D3-581A2A3EFAA4@dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Mon, 2 May 2016 16:35:21 -0700
+Message-ID: <CACG1p4pPmDTdp-O9zZeeGojv2L3zvTSggF0CMDFt3ufoC+7qKw@mail.gmail.com>
+Subject: Re: Re:
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="089e0122933c8dba8a0531e474af"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--089e0122933c8dba8a0531e474af
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Great. Thanks!
+
+On Mon, May 2, 2016 at 4:33 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Yep, should all be fine. I just sent a reminder to Rachel to make sure
+> it's taken care of (I've been trying to stay neutral on the the Tri-State
+> requests). And sounds good for Thursday! I think we're around 13 bodies, =
+so
+> we could use another.
+>
+> On May 2, 2016, at 6:58 PM, Zachary Allen <zallen@tipahconsulting.com>
+> wrote:
+>
+> No worries, totally get it. Small heart attack though. She's good, right?
+>
+> If you need bodies, I bet she goes
+>
+> On Mon, May 2, 2016 at 3:56 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+>
+>> Ohh right. Sorry I=E2=80=99ve been staring at too many names today. I=E2=
+=80=99ll send it
+>> right now!
+>>
+>>
+>>
+>> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+>> *Sent:* Monday, May 02, 2016 6:54 PM
+>>
+>> *To:* Parrish, Daniel
+>> *Subject:* Re: Re:
+>>
+>>
+>>
+>> We promised her a package, Rachel cleared that. I think we created one -
+>> like Walnut or something. Does this ring a bell?
+>>
+>>
+>>
+>> On Mon, May 2, 2016 at 3:52 PM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>>
+>> No she just has one maxout at the moment. Is it worth sending anyway?
+>>
+>>
+>>
+>> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+>> *Sent:* Monday, May 02, 2016 6:50 PM
+>> *To:* Parrish, Daniel
+>> *Subject:* Re: Re:
+>>
+>>
+>>
+>> Perfect, thanks! She should qualify for a package, right?
+>>
+>>
+>>
+>> On Mon, May 2, 2016 at 3:49 PM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>>
+>> Yep he was on there. And I believe the maxout was from Catherine George =
+-
+>> kgeorgecain@me.com.
+>>
+>> Is it ok with you if I send the same blast email to her now?
+>>
+>>
+>>
+>>
+>>
+>> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+>> *Sent:* Monday, May 02, 2016 6:44 PM
+>> *To:* Parrish, Daniel
+>> *Subject:* Re:
+>>
+>>
+>>
+>> I've been emailing with him, no worries. But he raised that one off max
+>> check, I'll bet she would go. Only if we need people. He was on that lis=
+t
+>> you already emailed, right?
+>>
+>>
+>>
+>> On Mon, May 2, 2016 at 3:42 PM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>>
+>> I=E2=80=99ll talk to him tomorrow! And sorry for the delay on this =E2=
+=80=93 there was a
+>> San Francisco roundtable on 4/8.
+>>
+>>
+>>
+>> *From:* Zachary Allen [mailto:zallen@tipahconsulting.com]
+>> *Sent:* Monday, May 02, 2016 6:15 PM
+>> *To:* Parrish, Daniel; Rauscher, Rachel
+>> *Subject:*
+>>
+>>
+>>
+>> If you want someone who might go to the walk thru in Philly, you can try
+>> that random maxer that Martin Elling got us from McKinsey
+>>
+>>
+>>
+>> --
+>>
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>
+>>
+>>
+>>
+>>
+>> --
+>>
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>
+>>
+>>
+>>
+>>
+>> --
+>>
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>
+>>
+>>
+>>
+>>
+>> --
+>>
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>
+>
+>
+>
+> --
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>
+>
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--089e0122933c8dba8a0531e474af
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Great. Thanks!&nbsp;</div><div class=3D"gmail_extra"><br><di=
+v class=3D"gmail_quote">On Mon, May 2, 2016 at 4:33 PM, Parrish, Daniel <sp=
+an dir=3D"ltr">&lt;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">Pa=
+rrishD@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_quote" s=
+tyle=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div></div>
+<div>Yep, should all be fine. I just sent a reminder to Rachel to make sure=
+ it's taken care of (I've been trying to stay neutral on the the Tri-State =
+requests). And sounds good for Thursday! I think we're around 13 bodies, so=
+ we could use another.</div><div><div class=3D"h5">
+<div><br>
+On May 2, 2016, at 6:58 PM, Zachary Allen &lt;<a href=3D"mailto:zallen@tipa=
+hconsulting.com" target=3D"_blank">zallen@tipahconsulting.com</a>&gt; wrote=
+:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+<div dir=3D"ltr">No worries, totally get it. Small heart attack though. She=
+'s good, right?&nbsp;
+<div><br>
+</div>
+<div>If you need bodies, I bet she goes</div>
+</div>
+<div class=3D"gmail_extra"><br>
+<div class=3D"gmail_quote">On Mon, May 2, 2016 at 3:56 PM, Parrish, Daniel =
+<span dir=3D"ltr">
+&lt;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org<=
+/a>&gt;</span> wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Ohh right. Sorry I=E2=80=
+=99ve been staring at too many names today. I=E2=80=99ll send it right now!=
+<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blan=
+k">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 6:54 PM</span></p>
+<div>
+<div><br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: Re:<u></u><u></u></div>
+</div>
+<p></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">We promised her a package, Rachel cleared that. I th=
+ink we created one - like Walnut or something. Does this ring a bell?<u></u=
+><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, May 2, 2016 at 3:52 PM, Parrish, Daniel &lt;=
+<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&=
+gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">No she just has one maxou=
+t at the moment. Is it worth sending anyway?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blan=
+k">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 6:50 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: Re:</span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Perfect, thanks! She should qualify for a package, r=
+ight?<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, May 2, 2016 at 3:49 PM, Parrish, Daniel &lt;=
+<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&=
+gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Yep he was on there. And =
+I believe the maxout was from Catherine George -
+<a href=3D"mailto:kgeorgecain@me.com" target=3D"_blank">kgeorgecain@me.com<=
+/a>.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Is it ok with you if I se=
+nd the same blast email to her now?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blan=
+k">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 6:44 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re:</span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">I've been emailing with him, no worries. But he rais=
+ed that one off max check, I'll bet she would go. Only if we need people. H=
+e was on that list you already emailed, right?&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Mon, May 2, 2016 at 3:42 PM, Parrish, Daniel &lt;=
+<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&=
+gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">I=E2=80=99ll talk to him =
+tomorrow! And sorry for the delay on this =E2=80=93 there was a San Francis=
+co roundtable on 4/8.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Zachary =
+Allen [mailto:<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blan=
+k">zallen@tipahconsulting.com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 6:15 PM<br>
+<b>To:</b> Parrish, Daniel; Rauscher, Rachel<br>
+<b>Subject:</b> </span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">If you want someone who might go to the walk thru in=
+ Philly, you can try that random maxer that Martin Elling got us from McKin=
+sey<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" target=3D"_blank">(646) 470-8689</a> d=
+irect | <a href=3D"tel:%28973%29%20618-5903" target=3D"_blank">
+(973) 618-5903</a> fax&nbsp;| <a href=3D"mailto:ZAllen@TIPAHConsulting.com"=
+ target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" target=3D"_blank">(646) 470-8689</a> d=
+irect | <a href=3D"tel:%28973%29%20618-5903" target=3D"_blank">
+(973) 618-5903</a> fax&nbsp;| <a href=3D"mailto:ZAllen@TIPAHConsulting.com"=
+ target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" target=3D"_blank">(646) 470-8689</a> d=
+irect | <a href=3D"tel:%28973%29%20618-5903" target=3D"_blank">
+(973) 618-5903</a> fax&nbsp;| <a href=3D"mailto:ZAllen@TIPAHConsulting.com"=
+ target=3D"_blank">
+ZAllen@TIPAHConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct |
+<a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;19736185903" target=3D"_=
+blank">(973) 618-5903</a> fax&nbsp;|
+<a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">ZAllen@TIPA=
+HConsulting.com</a><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<br>
+<br clear=3D"all">
+<div><br>
+</div>
+-- <br>
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+<a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_=
+blank">(646) 470-8689</a> direct | <a href=3D"tel:%28973%29%20618-5903" val=
+ue=3D"&#43;19736185903" target=3D"_blank">(973) 618-5903</a> fax<span>&nbsp=
+;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">Z=
+Allen@TIPAHConsulting.com</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div></div></div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--089e0122933c8dba8a0531e474af--

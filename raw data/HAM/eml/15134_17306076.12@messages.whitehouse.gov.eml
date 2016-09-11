@@ -1,0 +1,930 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 18 May
+ 2016 18:11:45 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 18 May 2016
+ 18:11:38 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 922961823
+ for allenz@dnc.org; Wed, 18 May 2016 17:11:35 -0500
+X-Note-AR-ScanTimeLocal: 5/18/2016 5:10:37 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Virus-Scan: V-
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.44
+X-Note-Reverse-DNS: mail-wm0-f44.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-Note: Headers Injected
+Received: from mail-wm0-f44.google.com ([74.125.82.44] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139192191
+ for allenz@dnc.org; Wed, 18 May 2016 17:10:37 -0500
+Received: by mail-wm0-f44.google.com with SMTP id a17so99760254wme.0
+        for <allenz@dnc.org>; Wed, 18 May 2016 15:10:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=aqAGOwTZPLEnQxrNu1f98uZxWtUp9sXOgfWdOP8mGTI=;
+        b=UWY0OvHQzzWAmXuwH0J9/dXOEklWdCrEiNFruUjPBBYAAeMSmRWTKXTlMQ7qPBZu5F
+         AwcE7sQ/eNuI3wdH9I5Qhm06TkRR8cUr196eajMOkuy4jyeCPB01XoEB6cxQyWr5AhCA
+         zehrYB2tM8t32tIzvJIZ1Tcro+TgIL1vChI0dXEnUwETrAKKyLn1pHktsbq4Wrg8jaTV
+         kK/KhsR7GOQmVRC+Sf/29bNeRZ03o9VwVyaw43fLHfCieB/Y3ckf84vTls1EvC0TFBy1
+         rmQeoeVe4X+Rr2IvGAbQgnci92Hdxg9mYwe9xdzfulmfqJcYpMdyQZZT3PV/6txYlFYF
+         k+tA==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.57 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-Gm-Message-State: AOPr4FW+i/o1KZZCUKO0XqmfjXwwp9B59ZR9OJZodCnlFtrkkx7urGVrc/OO2HSZJ1jEOvnTlJBJtGOnl8DR5JccqZb5H3k=
+X-Received: by 10.194.89.33 with SMTP id bl1mr7979997wjb.43.1463609435783;
+        Wed, 18 May 2016 15:10:35 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp2850276wme;        Wed, 18 May
+ 2016 15:10:33 -0700 (PDT)
+X-Received: by 10.107.6.218 with SMTP id f87mr7120122ioi.75.1463609433883;
+        Wed, 18 May 2016 15:10:33 -0700 (PDT)
+Return-Path: <info99@service.govdelivery.com>
+Received: from mailer151057.service.govdelivery.com
+ (mailer151057.service.govdelivery.com. [209.134.151.57])        by
+ mx.google.com with ESMTP id t4si9486016igy.41.2016.05.18.15.10.31        for
+ <dncpress@gmail.com>;        Wed, 18 May 2016 15:10:33 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.57 as permitted sender) client-ip=209.134.151.57;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.151.57 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-VirtualServer: VSG003, mailer151057.service.govdelivery.com, 172.24.0.185
+X-VirtualServerGroup: VSG003
+X-MailingID: 17306076::20160518.59191941::1001::MDB-PRD-BUL-20160518.59191941::dncpress@gmail.com::12_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_DDF_B05B_5ADD5428.40EA04F8"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3KtPLyO1YKbkTQ2E6swjBNj2Wf56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: info99@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17306076.12@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK411IXJJVJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?President_Obama_Announces_More_Key_Administration_Posts?=
+Date: Wed, 18 May 2016 17:10:30 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_DDF_B05B_5ADD5428.40EA04F8
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+THE WHITE HOUSE
+
+Office of the Press Secretary
+
+FOR IMMEDIATE RELEASE
+
+May 18, 2016
+
+
+
+*President Obama Announces More Key Administration Posts*
+
+
+
+WASHINGTON, DC  Today, President Barack Obama announced his intent to nom=
+inate the following individuals to key Administration posts:
+
+
+
+ *Ysae M. Barnwell*  Member, National Council on the Arts=20
+
+
+  * *Daniel Becker * Member, Board of Directors of the State Justice Inst=
+itute=20
+  * *Rena Bitter* Ambassador to the Lao Peoples Democratic Republic, Depa=
+rtment of State
+  * *Anne S. Casper* Ambassador to the Republic of Burundi, Department of=
+ State
+  * *Sung Y. Kim* Ambassador to the Republic of the Philippines, Departme=
+nt of State&lrm;
+  * *Geoffrey R. Pyatt * Ambassador to Greece, Department of State
+  * *Douglas Silliman * Ambassador to the Republic of Iraq, Department of=
+ State
+  * *Marie L. Yovanovitch * Ambassador to Ukraine, Department of State
+
+**
+
+*President Obama* said, I am pleased to announce that these experienced a=
+nd committed individuals have decided to serve our country. I look forwar=
+d to working with them.
+
+
+
+*_President Obama announced his intent to nominate the following individu=
+als to key Administration posts:_*
+
+**
+
+*Dr. Ysae M. Barnwell, Nominee for Member, National Council on the Arts*
+
+Dr.* *Ysae Barnwell is President and Owner of Barnwells Notes Publishing,=
+ Inc., positions she has held since 1985. From 1979 to 2013, Dr. Barnwell=
+ was a vocalist and composer for the a cappella quintet, Sweet Honey in t=
+he Rock, and also composed music for dance, choral, film, and stage produ=
+ctions. Dr. Barnwell was a Project Director at Gallaudet University from =
+1988 to 1991 and worked at Childrens Hospital National Medical Center fro=
+m 1982 to 1985. Dr. Barnwell was also a Professor of Speech Pathology in =
+the College of Dentistry at Howard University from 1968 to 1980. Dr. Barn=
+well received a B.S. and an M.S.Ed. from SUNY Geneseo, an M.S.P.H. from H=
+oward University, and a Ph.D. from the University of Pittsburgh.
+
+**
+
+*Daniel Becker, Nominee for Member, Board of Directors of the State Justi=
+ce Institute*
+
+Daniel Becker has served on the Board of Directors of the State Justice I=
+nstitute since 2012. He is the State Court Administrator at the Administr=
+ative Office of the Courts for the State of Utah, a position he has held =
+since 1995. Prior to that, he served various positions with the North Car=
+olina Administrative Office of the Courts, including Deputy Director from=
+ 1993 to 1995, Court Services Administrator from 1986 to 1993, and Assist=
+ant to the Director from 1984 to 1986. Mr. Becker was Trial Court Adminis=
+trator for the Fourteenth Judicial District of North Carolina from 1981 t=
+o 1984. He was Assistant Director of Operations from 1980 to 1981 and a C=
+ourt Consultant from 1979 to 1977 for the Georgia Administrative Office o=
+f the Courts. Mr. Becker was recipient of the Warren E. Burger Award for =
+Excellence in Court Administration in 2006. He received a B.A. and an M.P=
+.A. from Florida Atlantic University.
+
+
+
+*Rena Bitter,* *Nominee for Ambassador to the Lao Peoples Democratic Repu=
+blic, Department of State*
+
+Rena Bitter, a career member of the Foreign Service, class of Minister-Co=
+unselor, is Consul General at the U.S. Consulate General in Ho Chi Minh C=
+ity, Vietnam, a position she has held since 2013. Previously, Ms. Bitter =
+served in the Department of States Operations Center as Director from 201=
+0 to 2012 and Deputy Director from 2009 to 2010. Ms. Bitter was Consular =
+Section Chief at the U.S. Embassy in Amman, Jordan from 2006 to 2009, and=
+ Chief of the Nonimmigrant Visa Unit in the Consular Section of the U.S. =
+Embassy in London, United Kingdom from 2003 to 2005. She was a Transatlan=
+tic Diplomatic Fellow in London from 2002 to 2003. Before that, Ms. Bitte=
+r served as a Special Assistant in the Office of the Secretary of State f=
+rom 2001 to 2002 and on the Departments Executive Secretariat Staff from =
+2000 to 2001. Since joining the Foreign Service in 1994, Ms. Bitter has a=
+lso served at posts in Colombia and Mexico. Ms. Bitter received a B.S. fr=
+om Northwestern University and a J.D. from Southern Methodist University =
+Dedman School of Law.=20
+
+
+
+*Anne S. Casper, Nominee for Ambassador to the Republic of Burundi, Depar=
+tment of State*
+
+Anne S. Casper, a career member of the Foreign Service, class of Minister=
+-Counselor, serves as Senior Advisor in the Center for Strategic Countert=
+errorism Communications at the Department of State, a position she has he=
+ld since 2015. Ms. Casper has served concurrently as Acting Director of P=
+artnerships for the Departments Global Engagement Center since April 2016=
+. Ms. Casper was Deputy Assistant Secretary in the Bureau of Public Affai=
+rs from 2014 to 2015, Principal Officer at the U.S. Consulate General in =
+Jeddah, Saudi Arabia from 2012 to 2014, and Deputy Chief of Mission at th=
+e U.S. Embassy in Kigali, Rwanda from 2009 to 2012. She was Public Affair=
+s Counselor at the U.S. Embassy in Bangkok, Thailand from 2006 to 2009 an=
+d served as Arabic Media Liaison Officer in the Bureau of Near Eastern Af=
+fairs from 2002 to 2004. From 2001 to 2002, Ms. Casper was the Counterter=
+rorism Policy Officer in the Office of the Coordinator for Counterterrori=
+sm. Since joining the Foreign Service in 1993, Ms. Casper has held positi=
+ons at posts in Albania, Jerusalem, and Syria. Ms. Casper received a B.A.=
+ from Tufts University, an M.A. from the Johns Hopkins University School =
+of Advanced International Studies, and an M.S. from the National War Coll=
+ege.=20
+
+
+
+*Sung Y. Kim,* *Nominee for Ambassador to the Republic of the Philippines=
+, Department of State*
+
+Sung Y. Kim, a career member of the Foreign Service, class of Minister-Co=
+unselor, is Special Representative for North Korea Policy and Deputy Assi=
+stant Secretary in the Bureau of East Asia and Pacific Affairs at the Dep=
+artment of State, positions he has held since 2014. Previously, he served=
+ as U.S. Ambassador to the Republic of Korea from 2011 to 2014, Special E=
+nvoy for the Six Party Talks with the rank of Ambassador from 2008 to 201=
+1, and Director of the Office of Korean Affairs in the Bureau of East Asi=
+a and Pacific Affairs from 2006 to 2008. Mr. Kim was Political-Military C=
+hief at the U.S. Embassy in Seoul, Korea from 2002 to 2006. Since joining=
+ the Foreign Service in 1988, Mr. Kim has also held positions at posts in=
+ Hong Kong, Japan, and Malaysia. Prior to joining the Foreign Service, Mr=
+. Kim was a Deputy District Attorney in the Los Angeles County District A=
+ttorneys Office. Mr. Kim received a B.A. from the University of Pennsylva=
+nia, a J.D. from Loyola Law School, and an LL.M. from the London School o=
+f Economics and Political Science.=20
+
+
+
+*Geoffrey R. Pyatt, Nominee for Ambassador to Greece, Department of State=
+*
+
+Geoffrey R. Pyatt, a career member of the Foreign Service, class of Minis=
+ter-Counselor, currently serves as U.S. Ambassador to Ukraine, a position=
+ he has held since 2013. Previously, Ambassador Pyatt was Principal Deput=
+y Assistant Secretary of State in the Bureau of South and Central Asian A=
+ffairs from 2010 to 2013. He was Deputy Chief of Mission at the U.S. Miss=
+ion to the International Organizations in Vienna, Austria from 2007 to 20=
+10. He also served at the U.S. Embassy in New Delhi, India as Deputy Chie=
+f of Mission from 2006 to 2007 and as Political Counselor from 2002 to 20=
+06. Ambassador Pyatt served as Economic Officer at the U.S. Consulate Gen=
+eral in Hong Kong from 1999 to 2002 and as Principal Officer at the U.S. =
+Consulate General in Lahore, Pakistan from 1997 to 1999. Since joining th=
+e Foreign Service in 1989, he has also served on the National Security Co=
+uncil staff and at posts in Honduras and India. Ambassador Pyatt received=
+ a B.A. from the University of California, Irvine and an M.A. from Yale U=
+niversity.=20
+
+
+
+*Douglas Silliman, Nominee for Ambassador to the Republic of Iraq, Depart=
+ment of State*
+
+Douglas Silliman, a career member of the Foreign Service, class of Minist=
+er-Counselor, currently serves as U.S. Ambassador to the State of Kuwait,=
+ a position he has held since 2014. Ambassador Silliman was a Senior Advi=
+sor in the Bureau of Near Eastern Affairs from 2013 to 2014 and Deputy Ch=
+ief of Mission at the U.S. Embassy in Baghdad, Iraq from 2012 to 2013. Fr=
+om 2011 to 2012, he was Minister-Counselor for Political Affairs in Baghd=
+ad. Before serving in Iraq, he was Deputy Chief of Mission in Ankara, Tur=
+key from 2008 to 2011. Ambassador Silliman was Director of the Office of =
+Southern European Affairs from 2005 to 2007 and Deputy Director from 2004=
+ to 2005. From 2000 to 2004, he was Political Counselor at the U.S. Embas=
+sy in Amman, Jordan. Since joining the Foreign Service in 1984, he has al=
+so served at posts in Haiti, Pakistan, and Tunisia. Ambassador Silliman r=
+eceived a B.A. from Baylor University and an M.A. from The George Washing=
+ton University.=20
+
+
+
+*Marie L. Yovanovitch, Nominee for Ambassador to Ukraine, Department of S=
+tate*
+
+Marie L. Yovanovitch, a career member of the Foreign Service, class of Mi=
+nister-Counselor, currently serves as Dean of the School of Language Stud=
+ies at the Department of States Foreign Service Institute, a position she=
+ has held since 2014. Ms. Yovanovitch was Deputy Commandant at the Eisenh=
+ower School at the National Defense University from 2013 to 2014. She ser=
+ved in the Department of States Bureau of European and Eurasian Affairs a=
+s Principal Deputy Assistant Secretary from 2012 to 2013 and as Deputy As=
+sistant Secretary from 2011 to 2012. Prior to that, she served as U.S. Am=
+bassador to Armenia from 2008 to 2011 and as U.S. Ambassador to Kyrgyzsta=
+n from 2005 to 2008. Ms. Yovanovitch was Senior Advisor and Executive Ass=
+istant in the Office of the Under Secretary for Political Affairs from 20=
+04 to 2005 and Deputy Chief of Mission at the U.S. Embassy in Kyiv, Ukrai=
+ne from 2001 to 2004. Since joining the Foreign Service in 1986, she has =
+also served at posts in Canada, Russia, Somalia, and the United Kingdom. =
+Ms. Yovanovitch received a B.A. from Princeton University and an M.S. fro=
+m the National War College.=20
+
+
+
+###
+
+
+=0A
+------=_NextPart_DDF_B05B_5ADD5428.40EA04F8
+Content-Type: text/html; charset="UTF-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><t=
+itle>    President Obama Announces More Key Administration Posts
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"htt=
+p://www.w3.org/TR/REC-html40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-priority:1;
+	mso-style-link:"No Spacing Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri",sans-serif;}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-priority:1;
+	mso-style-link:"No Spacing";
+	font-family:"Calibri",sans-serif;}
+p.paragraph, li.paragraph, div.paragraph
+	{mso-style-name:paragraph;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+span.EmailStyle25
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle26
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle27
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle29
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:625552227;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1350223254 67698689 67698691 67698693 67698689 67698=
+691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1164902434;
+	mso-list-template-ids:-1649657992;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:=EF=82=B7;
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span l=
+ang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,s=
+erif">THE WHITE HOUSE<o:p></o:p></span></p>
+<div style=3D"border:none;border-bottom:solid windowtext 1.0pt;padding:0in =
+0in 1.0pt 0in">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span l=
+ang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,s=
+erif">Office of the Press Secretary<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">FOR IMMEDIATE RELEASE<o:p></o:p></span>=
+</p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">May 18, 2016<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><strong=
+><span lang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua=
+&quot;,serif">President Obama Announces More Key Administration Posts</span=
+></strong><span lang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Boo=
+k Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">WASHINGTON, DC =E2=80=93 Today, Preside=
+nt Barack Obama announced his intent to nominate the following individuals =
+to key Administration posts:<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoListParagraph" style=3D"text-indent:-.25in;mso-list:l0 level=
+1 lfo2"><![if !supportLists]><span style=3D"font-size:12.0pt;font-family:Sy=
+mbol"><span style=3D"mso-list:Ignore">=C2=B7<span style=3D"font:7.0pt &quot=
+;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><b><span style=3D"font-size:12.0pt;font-fami=
+ly:&quot;Book Antiqua&quot;,serif">Ysa=C3=BFe M. Barnwell</span></b><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif"> =E2=
+=80=93 Member, National Council on the Arts
+<o:p></o:p></span></p>
+<ul style=3D"margin-top:0in" type=3D"disc">
+<li class=3D"MsoNormal" style=3D"mso-list:l0 level1 lfo2"><b><span style=3D=
+"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Daniel Becker
+</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&q=
+uot;,serif">=E2=80=93 Member, Board of Directors of the State Justice Insti=
+tute
+<o:p></o:p></span></li><li class=3D"MsoNormal" style=3D"mso-margin-top-alt:=
+auto;mso-margin-bottom-alt:auto;mso-list:l0 level1 lfo2">
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,ser=
+if">Rena Bitter&nbsp;</span></b><span style=3D"font-size:12.0pt;font-family=
+:&quot;Book Antiqua&quot;,serif">=E2=80=93 Ambassador to the Lao People=E2=
+=80=99s Democratic Republic, Department of State<o:p></o:p></span></li><li =
+class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:=
+auto;mso-list:l0 level1 lfo2">
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,ser=
+if">Anne S. Casper&nbsp;</span></b><span style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">=E2=80=93 Ambassador to the Republic of=
+ Burundi, Department of State<o:p></o:p></span></li><li class=3D"MsoNormal"=
+ style=3D"mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 le=
+vel1 lfo2">
+<b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,ser=
+if">Sung Y. Kim&nbsp;</span></b><span style=3D"font-size:12.0pt;font-family=
+:&quot;Book Antiqua&quot;,serif">=E2=80=93 Ambassador to the Republic of th=
+e Philippines, Department of State</span><span style=3D"font-size:12.0pt;fo=
+nt-family:&quot;Times New Roman&quot;,serif">=E2=80=8E</span><span style=3D=
+"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></=
+span></li><li class=3D"MsoNormal" style=3D"mso-list:l0 level1 lfo2"><b><spa=
+n style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Geo=
+ffrey R. Pyatt
+</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&q=
+uot;,serif">=E2=80=93 Ambassador to Greece, Department of State<o:p></o:p><=
+/span></li><li class=3D"MsoNormal" style=3D"mso-list:l0 level1 lfo2"><b><sp=
+an style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Do=
+uglas Silliman
+</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&q=
+uot;,serif">=E2=80=93 Ambassador to the Republic of Iraq, Department of Sta=
+te<o:p></o:p></span></li><li class=3D"MsoNormal" style=3D"mso-list:l0 level=
+1 lfo2"><b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&q=
+uot;,serif">Marie L. Yovanovitch
+</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&q=
+uot;,serif">=E2=80=93 Ambassador to Ukraine, Department of State<o:p></o:p>=
+</span></li></ul>
+<p class=3D"MsoNormal"><strong><span lang=3D"EN" style=3D"font-size:12.0pt;=
+font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span></strong><span lan=
+g=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,ser=
+if"><o:p></o:p></span></p>
+<p class=3D"MsoNormalCxSpMiddle" style=3D"margin-bottom:10.0pt;mso-add-spac=
+e:auto"><strong><span lang=3D"EN" style=3D"font-size:12.0pt;font-family:&qu=
+ot;Book Antiqua&quot;,serif">President Obama</span></strong><span lang=3D"E=
+N" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">
+ said, =E2=80=9CI am pleased to announce that these experienced and committ=
+ed individuals have decided to serve our country.&nbsp; I look forward to w=
+orking with them.=E2=80=9D<o:p></o:p></span></p>
+<p class=3D"MsoNormalCxSpMiddle" style=3D"margin-bottom:10.0pt;mso-add-spac=
+e:auto"><span lang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book =
+Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><strong><u><span lang=3D"EN" style=3D"font-size:12.0=
+pt;font-family:&quot;Book Antiqua&quot;,serif">President Obama announced hi=
+s intent to nominate the following individuals to key Administration posts:=
+</span></u></strong><span lang=3D"EN" style=3D"font-size:12.0pt;font-family=
+:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNoSpacing"><strong><span style=3D"font-size:10.0pt;font-fami=
+ly:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></span></strong></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Dr. Ysa=C3=BFe M. Barnwell, Nominee for Member, =
+National Council on the Arts</span></b><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif">Dr.<b>
+</b>Ysa=C3=BFe Barnwell is President and Owner of Barnwell=E2=80=99s Notes =
+Publishing, Inc., positions she has held since 1985.&nbsp; From 1979 to 201=
+3, Dr. Barnwell was a vocalist and composer for the a cappella quintet, Swe=
+et Honey in the Rock, and also composed music for
+ dance, choral, film, and stage productions.&nbsp; Dr. Barnwell was a Proje=
+ct Director at Gallaudet University from 1988 to 1991 and worked at Childre=
+n=E2=80=99s Hospital National Medical Center from 1982 to 1985.&nbsp; Dr. B=
+arnwell was also a Professor of Speech Pathology in
+ the College of Dentistry at Howard University from 1968 to 1980.&nbsp; Dr.=
+ Barnwell received a B.S. and an M.S.Ed. from SUNY Geneseo, an M.S.P.H. fro=
+m Howard University, and a Ph.D. from the University of Pittsburgh.<o:p></o=
+:p></span></p>
+<p class=3D"MsoNoSpacing"><strong><span lang=3D"EN" style=3D"font-size:10.0=
+pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></span></st=
+rong></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif;mso-fareast-language:ES-TRAD">Daniel Becker, Nomi=
+nee for Member, Board of Directors of the State Justice Institute</span></b=
+><span style=3D"mso-fareast-language:ES-TRAD"><o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Daniel Becker has served on the Board of Directo=
+rs of the State Justice Institute since 2012.&nbsp; He is the State Court A=
+dministrator at the Administrative Office of the Courts
+ for the State of Utah, a position he has held since 1995.&nbsp; Prior to t=
+hat, he served various positions with the North Carolina Administrative Off=
+ice of the Courts, including Deputy Director from 1993 to 1995, Court Servi=
+ces Administrator from 1986 to 1993,
+ and Assistant to the Director from 1984 to 1986.&nbsp; Mr. Becker was Tria=
+l Court Administrator for the Fourteenth Judicial District of North Carolin=
+a from 1981 to 1984.&nbsp; He was Assistant Director of Operations from 198=
+0 to 1981 and a Court Consultant from 1979
+ to 1977 for the Georgia Administrative Office of the Courts.&nbsp; Mr. Bec=
+ker was recipient of the Warren E. Burger Award for Excellence in Court Adm=
+inistration in 2006.&nbsp; He received a B.A. and an M.P.A. from Florida At=
+lantic University.<o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Rena Bitter,</span></b><span style=3D"font-size:=
+12.0pt;font-family:&quot;Book Antiqua&quot;,serif">
+<b>Nominee for Ambassador to the Lao People=E2=80=99s Democratic Republic, =
+Department of State<o:p></o:p></b></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif">Rena Bitter, a career member of the Foreign Service=
+, class of Minister-Counselor, is Consul General at the U.S. Consulate Gene=
+ral in Ho Chi Minh City, Vietnam, a position she
+ has held since 2013.&nbsp; Previously, Ms. Bitter served in the Department=
+ of State=E2=80=99s Operations Center as Director from 2010 to 2012 and Dep=
+uty Director from 2009 to 2010.&nbsp; Ms. Bitter was Consular Section Chief=
+ at the U.S. Embassy in Amman, Jordan from 2006 to
+ 2009, and Chief of the Nonimmigrant Visa Unit in the Consular Section of t=
+he U.S. Embassy in London, United Kingdom from 2003 to 2005.&nbsp; She was =
+a Transatlantic Diplomatic Fellow in London from 2002 to 2003.&nbsp; Before=
+ that, Ms. Bitter served as a Special Assistant
+ in the Office of the Secretary of State from 2001 to 2002 and on the Depar=
+tment=E2=80=99s Executive Secretariat Staff from 2000 to 2001.&nbsp; Since =
+joining the Foreign Service in 1994, Ms. Bitter has also served at posts in=
+ Colombia and Mexico.&nbsp; Ms. Bitter received a
+ B.S. from Northwestern University and a J.D. from Southern Methodist Unive=
+rsity Dedman School of Law.&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><b><span style=3D"=
+font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Anne S. Casper=
+, Nominee for Ambassador to the Republic of Burundi, Department of State&nb=
+sp;</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqu=
+a&quot;,serif">&nbsp;<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><span style=3D"fon=
+t-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Anne S. Casper, a=
+ career member of the Foreign Service, class of Minister-Counselor, serves =
+as Senior Advisor in the Center for Strategic Counterterrorism
+ Communications at the Department of State, a position she has held since 2=
+015.&nbsp; Ms. Casper has served concurrently as Acting Director of Partner=
+ships for the Department=E2=80=99s Global Engagement Center since April 201=
+6.&nbsp; Ms. Casper was Deputy Assistant Secretary
+ in the Bureau of Public Affairs from 2014 to 2015, Principal Officer at th=
+e U.S. Consulate General in Jeddah, Saudi Arabia from 2012 to 2014, and Dep=
+uty Chief of Mission at the U.S. Embassy in Kigali, Rwanda from 2009 to 201=
+2.&nbsp; She was Public Affairs Counselor
+ at the U.S. Embassy in Bangkok, Thailand from 2006 to 2009 and served as A=
+rabic Media Liaison Officer in the Bureau of Near Eastern Affairs from 2002=
+ to 2004.&nbsp; From 2001 to 2002, Ms. Casper was the Counterterrorism Poli=
+cy Officer in the Office of the Coordinator
+ for Counterterrorism.&nbsp; Since joining the Foreign Service in 1993, Ms.=
+ Casper has held positions at posts in Albania, Jerusalem, and Syria.&nbsp;=
+ Ms. Casper received a B.A. from Tufts University, an M.A. from the Johns H=
+opkins University School of Advanced International
+ Studies, and an M.S. from the National War College.&nbsp; <o:p></o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Sung Y. Kim,</span></b><span style=3D"font-size:=
+12.0pt;font-family:&quot;Book Antiqua&quot;,serif">
+<b>Nominee for Ambassador to the Republic of the Philippines, Department of=
+ State<o:p></o:p></b></span></p>
+<p class=3D"MsoNoSpacing"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Sung Y. Kim, a career member of the Foreign Serv=
+ice, class of Minister-Counselor, is Special Representative for North Korea=
+ Policy and Deputy Assistant Secretary in the
+ Bureau of East Asia and Pacific Affairs at the Department of State, positi=
+ons he has held since 2014.&nbsp; Previously, he served as U.S. Ambassador =
+to the Republic of Korea from 2011 to 2014, Special Envoy for the Six Party=
+ Talks with the rank of Ambassador from
+ 2008 to 2011, and Director of the Office of Korean Affairs in the Bureau o=
+f East Asia and Pacific Affairs from 2006 to 2008.&nbsp; Mr. Kim was Politi=
+cal-Military Chief at the U.S. Embassy in Seoul, Korea from 2002 to 2006.&n=
+bsp; Since joining the Foreign Service in
+ 1988, Mr. Kim has also held positions at posts in Hong Kong, Japan, and Ma=
+laysia.&nbsp; Prior to joining the Foreign Service, Mr. Kim was a Deputy Di=
+strict Attorney in the Los Angeles County District Attorney=E2=80=99s Offic=
+e.&nbsp; Mr. Kim received a B.A. from the University
+ of Pennsylvania, a J.D. from Loyola Law School, and an LL.M. from the Lond=
+on School of Economics and Political Science.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><b><span style=3D"=
+font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Geoffrey R. Py=
+att, Nominee for Ambassador to Greece, Department of State&nbsp;</span></b>=
+<span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif"=
+>&nbsp;</span><span style=3D"font-size:6.0pt;font-family:&quot;Book Antiqua=
+&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><span style=3D"fon=
+t-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Geoffrey R. Pyatt=
+, a career member of the Foreign Service, class of Minister-Counselor, curr=
+ently serves as U.S. Ambassador to Ukraine, a position
+ he has held since 2013.&nbsp; Previously, Ambassador Pyatt was Principal D=
+eputy Assistant Secretary of State in the Bureau of South and Central Asian=
+ Affairs from 2010 to 2013.&nbsp; He was Deputy Chief of Mission at the U.S=
+. Mission to the International Organizations
+ in Vienna, Austria from 2007 to 2010.&nbsp; He also served at the U.S. Emb=
+assy in New Delhi, India as Deputy Chief of Mission from 2006 to 2007 and a=
+s Political Counselor from 2002 to 2006.&nbsp; Ambassador Pyatt served as E=
+conomic Officer at the U.S. Consulate General
+ in Hong Kong from 1999 to 2002 and as Principal Officer at the U.S. Consul=
+ate General in Lahore, Pakistan from 1997 to 1999.&nbsp; Since joining the =
+Foreign Service in 1989, he has also served on the National Security Counci=
+l staff and at posts in Honduras and
+ India.&nbsp; Ambassador Pyatt received a B.A. from the University of Calif=
+ornia, Irvine and an M.A. from Yale University.&nbsp;
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><b><span style=3D"=
+font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Douglas Sillim=
+an, Nominee for Ambassador to the Republic of Iraq, Department of State&nbs=
+p;</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua=
+&quot;,serif">&nbsp;</span><span style=3D"font-size:6.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"vertical-align:baseline"><span style=3D"fon=
+t-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Douglas Silliman,=
+ a career member of the Foreign Service, class of Minister-Counselor, curre=
+ntly serves as U.S. Ambassador to the State of Kuwait,
+ a position he has held since 2014.&nbsp; Ambassador Silliman was a Senior =
+Advisor in the Bureau of Near Eastern Affairs from 2013 to 2014 and Deputy =
+Chief of Mission at the U.S. Embassy in Baghdad, Iraq from 2012 to 2013.&nb=
+sp; From 2011 to 2012, he was Minister-Counselor
+ for Political Affairs in Baghdad.&nbsp; Before serving in Iraq, he was Dep=
+uty Chief of Mission in Ankara, Turkey from 2008 to 2011.&nbsp; Ambassador =
+Silliman was Director of the Office of Southern European Affairs from 2005 =
+to 2007 and Deputy Director from 2004 to 2005.&nbsp;
+ From 2000 to 2004, he was Political Counselor at the U.S. Embassy in Amman=
+, Jordan.&nbsp; Since joining the Foreign Service in 1984, he has also serv=
+ed at posts in Haiti, Pakistan, and Tunisia.&nbsp; Ambassador Silliman rece=
+ived a B.A. from Baylor University and an
+ M.A. from The George Washington University.&nbsp; <o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"paragraph" style=3D"margin:0in;margin-bottom:.0001pt;vertical-a=
+lign:baseline">
+<span class=3D"normaltextrun"><b><span style=3D"font-family:&quot;Book Anti=
+qua&quot;,serif">Marie L. Yovanovitch, Nominee for Ambassador to Ukraine, D=
+epartment of State&nbsp;</span></b></span><span class=3D"eop"><span style=
+=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span></span><span s=
+tyle=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"paragraph" style=3D"margin:0in;margin-bottom:.0001pt;vertical-a=
+lign:baseline">
+<span class=3D"normaltextrun"><span style=3D"font-family:&quot;Book Antiqua=
+&quot;,serif">Marie L. Yovanovitch, a career member of the Foreign Service,=
+ class of Minister-Counselor, currently serves as Dean of the School of Lan=
+guage Studies at the Department of State=E2=80=99s Foreign
+ Service Institute, a position she has held since 2014.&nbsp; Ms. Yovanovit=
+ch was Deputy Commandant at the Eisenhower School at the National Defense U=
+niversity from 2013 to 2014.&nbsp; She served in the Department of State=E2=
+=80=99s Bureau of European and Eurasian Affairs as
+ Principal Deputy Assistant Secretary from 2012 to 2013 and as Deputy Assis=
+tant Secretary from 2011 to 2012.&nbsp; Prior to that, she served as U.S. A=
+mbassador to Armenia from 2008 to 2011 and as U.S. Ambassador to Kyrgyzstan=
+ from 2005 to 2008.&nbsp; Ms. Yovanovitch
+ was Senior Advisor and Executive Assistant in the Office of the Under Secr=
+etary for Political Affairs from 2004 to 2005 and Deputy Chief of Mission a=
+t the U.S. Embassy in Kyiv, Ukraine from 2001 to 2004.&nbsp; Since joining =
+the Foreign Service in 1986, she has
+ also served at posts in Canada, Russia, Somalia, and the United Kingdom.&n=
+bsp; Ms. Yovanovitch received a B.A. from Princeton University and an M.S. =
+from the National War College.&nbsp;
+</span></span><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o=
+:p></o:p></span></p>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span l=
+ang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,s=
+erif">###<o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><o:p>&nbsp;</o:p></p>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =C2=B7 1600 Pennsylvania Avenue, NW =
+=C2=B7 Washington DC 20500 =C2=B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_DDF_B05B_5ADD5428.40EA04F8--

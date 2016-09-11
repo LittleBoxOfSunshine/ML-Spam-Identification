@@ -1,0 +1,424 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 4 May
+ 2016 17:37:34 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 4 May 2016
+ 17:37:27 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 897105541
+ for MirandaL@dnc.org; Wed, 04 May 2016 16:37:35 -0500
+X-Note-AR-ScanTimeLocal: 5/4/2016 4:37:34 PM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.54 DOM:hattaway.com ADDR:igriacova@hattaway.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-170/SG:5 5/4/2016 4:36:53 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-27677-c
+X-Note-419: 31.2612 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/4/2016 4:37:34 PM
+X-Warn: WEBBUG
+X-Note: Spam Tests Failed: WEBBUG
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.54
+X-Note-Reverse-DNS: mail-wm0-f54.google.com
+X-Note-Return-Path: igriacova@hattaway.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G397 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f54.google.com ([74.125.82.54] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137102164
+ for MirandaL@dnc.org; Wed, 04 May 2016 16:37:33 -0500
+Received: by mail-wm0-f54.google.com with SMTP id e201so204853238wme.0
+        for <MirandaL@dnc.org>; Wed, 04 May 2016 14:37:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hattaway-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=SJE7/m4GblShVhLQlLXqyJ5tfWT6srPiSBzHvt8z2Kw=;
+        b=G5IlNRKgRcu4xGPh6M1/Zez/YR9uUuxLcssQLXpaYpC2sX53uOm9Vw00NF7TH5OOCW
+         gV6RyS/Ix4+Gn9HF3B7AN6TEQgH6s69A9zwhDBKDMKgsLB7BCGG8hknscr1MZP23P1O9
+         3l+ruoxiB81dWRbP46UzpklISZjVe7e3JsWxlyDVb5yHTVl9G/2wrQTLacEXa/QiLftX
+         xS3i13/NXoRwtelEkJEIs73FynYtwgGdyQfiNbGHcTi2vrOzcWG5usdt1dXVeceQY2HU
+         C2zAVvijvTJBOv1y2bzUhf18SlgrZvbbPkljgiW7W1kL4KVQQMNh0jENrb0tQzrfoaIr
+         bxoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=SJE7/m4GblShVhLQlLXqyJ5tfWT6srPiSBzHvt8z2Kw=;
+        b=D/zIwS5zUbhPALcOO4V7GnFlUiVfSBfOxB/UUfjKn8ES0sRxosMJFqoxkCDQEeTZ0l
+         sSergwKuiu6NTCUIIl4ryZdwyHbKHG4ZHV/6OSDzxNHRIQfBGhvki+EI4KBg4liAXK3/
+         HXeX9/HUX7zJqz+8XVc+0Ba3JAGbi7UDoUfCh9+MSKsI6OQtcfyeCh5/rmnsQXyhXMmW
+         hYx0p9Wkbmz7WXtktqAIreAdormbI3z405HFG08O0EZa6bHseoCAIdFw7HP7w/op/GSK
+         CnMNduoPwYkY/GJuoCWmyG87odXDP94tzICAiCD4n7MzvcYIKrGbiHmbLpKbvHJ3dT07
+         ZWiA==
+X-Gm-Message-State: AOPr4FXyN3EFcKK6r71M+LcEtPM6Thc2wYUpOH4sJ19QEq2E0Ny5G6jm8LKm+4qcjWuUK/9OmE86+x1Shsn29BN8
+X-Received: by 10.194.90.3 with SMTP id bs3mr10845171wjb.105.1462397850740;
+ Wed, 04 May 2016 14:37:30 -0700 (PDT)
+Received: by 10.28.158.207 with HTTP; Wed, 4 May 2016 14:37:30 -0700 (PDT)
+In-Reply-To: <CACdp=wwdQt3r+c4FQ6LRbrnJMHtjH+Oyq3a_kDT=SpWFHerz-Q@mail.gmail.com>
+References: <CACdp=wyydbg-MqPJtgOLnbdT-8NpSXLJ8nnpt17=wxSXpWoC-w@mail.gmail.com>
+	<CALn+u5VJ5iAm8BdUQUj2GohxKS1UgRNJBckiBdFuQNowASL-MA@mail.gmail.com>
+	<CACdp=wzh3xWJmWr_rwLu_kqePQBRmoe-kLJJHCqUKDsXB7Vxtg@mail.gmail.com>
+	<EB271B5B-97E0-444D-AA14-7E074AEE49AF@purplestrategies.com>
+	<CACdp=wwdQt3r+c4FQ6LRbrnJMHtjH+Oyq3a_kDT=SpWFHerz-Q@mail.gmail.com>
+Date: Wed, 4 May 2016 17:37:30 -0400
+Message-ID: <CACdp=wxE0JJkrU4bSZ+yJVBnDPyFCzyAPrCZ1uX7aye-rNtk5w@mail.gmail.com>
+Subject: Re: May Narrative Project Partners Meeting
+From: Ivana Griacova <igriacova@hattaway.com>
+To: "Margie Omero (Purple Strategies)" <Margie.Omero@purplestrategies.com>
+CC: Jamal Simmons <jsimmons@rabengroup.com>, Margaret Mark
+	<margaretmark@mmstrategicinsight.com>, Katherine Miller
+	<katherine.miller@gmail.com>, "Garcia, Walter" <GarciaW@dnc.org>, "Luis
+ Miranda" <MirandaL@dnc.org>, "Compton, Matt" <ComptonM@dnc.org>, "Erica
+ Goldman (Purple Strategies)" <erica.goldman@purplestrategies.com>, "Nisha
+ Jain (Purple Strategies)" <Nisha.Jain@purplestrategies.com>, Cornell Belcher
+	<cornell@brilliant-corners.com>, "BROWN, Dee" <dbrown@brilliant-corners.com>,
+	"WOODBURY, Terrance" <terrance@brilliant-corners.com>, "NUNEZ, Lucia"
+	<Lucia@brilliant-corners.com>, Laura Rodriguez <lrodriguez@rabengroup.com>,
+	Francella Chinchilla <fchinchilla@rabengroup.com>, Abigail Omojola
+	<aomojola@rabengroup.com>, Steve Pierce <spierce@hattaway.com>, "Eric
+ Zimmermann" <ezimmermann@hattaway.com>
+Content-Type: multipart/alternative; boundary="047d7bd9175a69ffd405320b081a"
+Return-Path: igriacova@hattaway.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--047d7bd9175a69ffd405320b081a
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hi all:
+
+I hope everyone is doing well.
+
+We wanted to provide a short update to the team on where we are in the
+project.
+
+We are currently fielding the external survey with voters, which you all
+have given input into. Fielding is going a bit slowly, and we want to make
+sure we have enough time to do a thorough analysis before we engage
+everyone. Therefore, we have decided to *POSTPONE next week's partner
+meeting *(yay, you have that time back from us!).
+
+I know how hard it is to schedule a 3-hour meeting with everyone without
+delaying the next research step, so we'd like to suggest the following:
+
+*I. 1-hour webinar/call to discuss the insights from the external survey
+the week of May 16th=E2=80=94more particularly on Thursday, 5/19, 1-2pm. **=
+Can all
+teams please let me know if this time works?* (Jamal, I know you are out
+that week, but hoping someone from your team can participate). During this
+call we'll gather your input into our next message development process.
+
+*II. 2-hour partner meeting to discuss the objectives, logistics, audiences
+and strategy for the next, and our last, survey which will be lead by
+Cornell's team, as well as the updated language we'll be testing. *We are
+discussing with Cornell's team on the appropriate timing for this meeting,
+but we are looking at the last week of May/first week of June. I'll follow
+up in a few days on scheduling this one.
+
+We look forward to hearing from everyone and please let me know if you have
+any other questions.
+
+Thank you!
+
+Ivana and the Hattaway team
+
+
+--
+
+Ivana Griacova
+Senior Operations Associate
+Hattaway Communications, Inc.
+202.266.3329
+www.hattaway.com <http://hattaway.com/>
+
+Helping visionary leaders & organizations achieve great things.
+
+On Thu, Apr 7, 2016 at 12:22 PM, Ivana Griacova <igriacova@hattaway.com>
+wrote:
+
+> Super! I'll send a calendar invite to block the time and will follow up
+> closer to the date with logistics.
+>
+> Ivana
+>
+>
+> --
+>
+> Ivana Griacova
+> Senior Operations Associate
+> Hattaway Communications, Inc.
+> 202.266.3329
+> www.hattaway.com <http://hattaway.com/>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+> On Thu, Apr 7, 2016 at 12:21 PM, Margie Omero (Purple Strategies) <
+> Margie.Omero@purplestrategies.com> wrote:
+>
+>> Yes I=E2=80=99m available. Thanks!
+>>
+>> On Apr 7, 2016, at 11:59 AM, Ivana Griacova <igriacova@hattaway.com>
+>> wrote:
+>>
+>> Thank you all=E2=80=94glad this is shaping up well.
+>>
+>> Margie, is your team available?
+>>
+>>
+>> --
+>>
+>> Ivana Griacova
+>> Senior Operations Associate
+>> Hattaway Communications, Inc.
+>> 202.266.3329
+>> www.hattaway.com <http://hattaway.com/>
+>>
+>> Helping visionary leaders & organizations achieve great things.
+>>
+>> On Wed, Apr 6, 2016 at 11:26 PM, Jamal Simmons <jsimmons@rabengroup.com>
+>> wrote:
+>>
+>>> Most of our team is unavailable but I can be there.
+>>>
+>>> Jamal
+>>>
+>>> On Wed, Apr 6, 2016 at 5:25 PM, Ivana Griacova <igriacova@hattaway.com>
+>>> wrote:
+>>>
+>>>> Dear all:
+>>>>
+>>>> I hope everyone is doing well and looking forward to the warmer
+>>>> weather.
+>>>>
+>>>> We are looking to schedule our next partners' meeting for the second
+>>>> week in May (after the Internal surveys and the Language & Image Surve=
+y).
+>>>>
+>>>> Unfortunately, Amy's schedule is fairly limited during that time. Can
+>>>> all teams please let me know whether you are available on *Thursday,
+>>>> May 12th, 9am-12pm?*
+>>>>
+>>>> Thank you!
+>>>>
+>>>> Ivana
+>>>>
+>>>>
+>>>> --
+>>>>
+>>>> Ivana Griacova
+>>>> Senior Operations Associate
+>>>> Hattaway Communications, Inc.
+>>>> 202.266.3329
+>>>> www.hattaway.com <http://hattaway.com/>
+>>>>
+>>>> Helping visionary leaders & organizations achieve great things.
+>>>>
+>>>
+>>>
+>>
+>>
+>
+
+--047d7bd9175a69ffd405320b081a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hi all:&nbsp;<div><br></div><div>I hope everyone is doing we=
+ll.&nbsp;</div><div><br></div><div>We wanted to provide a short update to t=
+he team on where we are in the project.&nbsp;</div><div><br></div><div>We a=
+re currently fielding the external survey with voters, which you all have g=
+iven input into. Fielding is going a bit slowly, and we want to make sure w=
+e have enough time to do a&nbsp;thorough analysis before we engage everyone=
+. Therefore, we have decided to <u style=3D"font-weight:bold">POSTPONE next=
+ week's partner meeting </u>(yay, you have that time back from us!).&nbsp;<=
+/div><div><br></div><div>I know how hard it is to schedule a 3-hour meeting=
+ with everyone without delaying the next research step, so we'd like to sug=
+gest the following:</div><div><br></div><div><b>I. 1-hour webinar/call to d=
+iscuss the insights from the external survey the week of May 16th=E2=80=94m=
+ore particularly on Thursday, 5/19, 1-2pm. </b><u>Can all teams please let =
+me know if this time works?</u> (Jamal, I know you are out that week, but h=
+oping someone from your team can participate). During this call we'll gathe=
+r your input into our next message development process.&nbsp;</div><div><br=
+></div><div><b>II. 2-hour partner meeting to discuss the objectives, logist=
+ics, audiences and strategy for the next, and our last, survey which will b=
+e lead by Cornell's team, as well as the updated language we'll be testing.=
+ </b>We are discussing with Cornell's team on the appropriate timing for th=
+is meeting, but we are looking at the last week of May/first week of June. =
+I'll follow up in a few days on scheduling this one.&nbsp;</div><div><br></=
+div><div>We look forward to hearing from everyone and please let me know if=
+ you have any other questions.&nbsp;</div><div><br></div><div>Thank you!</d=
+iv><div><br></div><div>Ivana and the Hattaway team</div><img src=3D"http://=
+t.sidekickopen51.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8gbVdV=
+5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D8f19619=
+a-8cb1-4e22-e6b7-4e809196e880" style=3D"display:none!important" height=3D"1=
+" width=3D"1"></div><div class=3D"gmail_extra"><br clear=3D"all"><div><div =
+class=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=
+=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:rgb(255,=
+255,255);word-wrap:break-word"><font color=3D"#000000"><br></font></div><di=
+v style=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:r=
+gb(255,255,255);word-wrap:break-word"><font color=3D"#000000">--</font></di=
+v><div style=3D"font-family:Helvetica;text-align:-webkit-auto;background-co=
+lor:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000"><br></fo=
+nt></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;backgr=
+ound-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">I=
+vana Griacova<br></font></div><div style=3D"font-family:Helvetica;backgroun=
+d-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">Seni=
+or Operations Associate<br></font></div><div style=3D"font-family:Helvetica=
+;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-=
+word"><font color=3D"#000000">Hattaway Communications, Inc.</font></div><di=
+v style=3D"font-family:Helvetica;text-align:-webkit-auto;background-color:r=
+gb(255,255,255);word-wrap:break-word"><font color=3D"#000000">202.266.3329<=
+/font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;bac=
+kground-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000=
+"><a href=3D"http://hattaway.com/" target=3D"_blank">www.hattaway.com</a><b=
+r></font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;=
+background-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000=
+000"><br></font></div><div style=3D"font-family:Helvetica;background-color:=
+rgb(255,255,255)"><div style=3D"text-align:-webkit-auto;word-wrap:break-wor=
+d"><font color=3D"#000000">Helping visionary leaders &amp; organizations ac=
+hieve great things.&nbsp;</font></div></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Thu, Apr 7, 2016 at 12:22 PM, Ivana Griac=
+ova <span dir=3D"ltr">&lt;<a href=3D"mailto:igriacova@hattaway.com" target=
+=3D"_blank">igriacova@hattaway.com</a>&gt;</span> wrote:<br><blockquote cla=
+ss=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;pa=
+dding-left:1ex"><div dir=3D"ltr">Super! I'll send a calendar invite to bloc=
+k the time and will follow up closer to the date with logistics.&nbsp;<div>=
+<br></div><div>Ivana</div><img src=3D"http://t.sidekickopen04.com/e1t/o/5/f=
+18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8gbVdV5-25vMthsW653gyM3LvrVvW163zLn1=
+k1H6H0?si=3D4990148964253696&amp;pi=3D6eb655ba-bd89-46da-a029-1ed06df8545d"=
+ style=3D"display:none!important" height=3D"1" width=3D"1"></div><div class=
+=3D"gmail_extra"><span class=3D""><br clear=3D"all"><div><div><div dir=3D"l=
+tr"><div><div dir=3D"ltr"><div style=3D"font-family:Helvetica;text-align:-w=
+ebkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><font co=
+lor=3D"#000000"><br></font></div><div style=3D"font-family:Helvetica;text-a=
+lign:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><=
+font color=3D"#000000">--</font></div><div style=3D"font-family:Helvetica;t=
+ext-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-wo=
+rd"><font color=3D"#000000"><br></font></div><div style=3D"font-family:Helv=
+etica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:b=
+reak-word"><font color=3D"#000000">Ivana Griacova<br></font></div><div styl=
+e=3D"font-family:Helvetica;background-color:rgb(255,255,255);word-wrap:brea=
+k-word"><font color=3D"#000000">Senior Operations Associate<br></font></div=
+><div style=3D"font-family:Helvetica;text-align:-webkit-auto;background-col=
+or:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">Hattaway =
+Communications, Inc.</font></div><div style=3D"font-family:Helvetica;text-a=
+lign:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><=
+font color=3D"#000000"><a href=3D"tel:202.266.3329" value=3D"&#43;120226633=
+29" target=3D"_blank">202.266.3329</a></font></div><div style=3D"font-famil=
+y:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-=
+wrap:break-word"><font color=3D"#000000"><a href=3D"http://hattaway.com/" t=
+arget=3D"_blank">www.hattaway.com</a><br></font></div><div style=3D"font-fa=
+mily:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);wo=
+rd-wrap:break-word"><font color=3D"#000000"><br></font></div><div style=3D"=
+font-family:Helvetica;background-color:rgb(255,255,255)"><div style=3D"text=
+-align:-webkit-auto;word-wrap:break-word"><font color=3D"#000000">Helping v=
+isionary leaders &amp; organizations achieve great things.&nbsp;</font></di=
+v></div></div></div></div></div></div>
+<br></span><div><div class=3D"h5"><div class=3D"gmail_quote">On Thu, Apr 7,=
+ 2016 at 12:21 PM, Margie Omero (Purple Strategies) <span dir=3D"ltr">&lt;<=
+a href=3D"mailto:Margie.Omero@purplestrategies.com" target=3D"_blank">Margi=
+e.Omero@purplestrategies.com</a>&gt;</span> wrote:<br><blockquote class=3D"=
+gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-=
+left:1ex"><div style=3D"word-wrap:break-word"><div>Yes I=E2=80=99m availabl=
+e. Thanks!&nbsp;</div><div><div><br><div><blockquote type=3D"cite"><div>On =
+Apr 7, 2016, at 11:59 AM, Ivana Griacova &lt;<a href=3D"mailto:igriacova@ha=
+ttaway.com" target=3D"_blank">igriacova@hattaway.com</a>&gt; wrote:</div><b=
+r><div><div dir=3D"ltr">Thank you all=E2=80=94glad this is shaping up well.=
+&nbsp;<div><br></div><div>Margie, is your team available?</div><img src=3D"=
+http://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4=
+f8gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D=
+91978868-d910-44d9-e1c2-187bae6c3972" style=3D"display:none!important" heig=
+ht=3D"1" width=3D"1"></div><div class=3D"gmail_extra"><br clear=3D"all"><di=
+v><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"font-family:Hel=
+vetica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:=
+break-word"><font><br></font></div><div style=3D"font-family:Helvetica;text=
+-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"=
+><font>--</font></div><div style=3D"font-family:Helvetica;text-align:-webki=
+t-auto;background-color:rgb(255,255,255);word-wrap:break-word"><font><br></=
+font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;back=
+ground-color:rgb(255,255,255);word-wrap:break-word"><font>Ivana Griacova<br=
+></font></div><div style=3D"font-family:Helvetica;background-color:rgb(255,=
+255,255);word-wrap:break-word"><font>Senior Operations Associate<br></font>=
+</div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;backgroun=
+d-color:rgb(255,255,255);word-wrap:break-word"><font>Hattaway Communication=
+s, Inc.</font></div><div style=3D"font-family:Helvetica;text-align:-webkit-=
+auto;background-color:rgb(255,255,255);word-wrap:break-word"><font><a href=
+=3D"tel:202.266.3329" value=3D"&#43;12022663329" target=3D"_blank">202.266.=
+3329</a></font></div><div style=3D"font-family:Helvetica;text-align:-webkit=
+-auto;background-color:rgb(255,255,255);word-wrap:break-word"><font><a href=
+=3D"http://hattaway.com/" target=3D"_blank">www.hattaway.com</a><br></font>=
+</div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;backgroun=
+d-color:rgb(255,255,255);word-wrap:break-word"><font><br></font></div><div =
+style=3D"font-family:Helvetica;background-color:rgb(255,255,255)"><div styl=
+e=3D"text-align:-webkit-auto;word-wrap:break-word"><font>Helping visionary =
+leaders &amp; organizations achieve great things.&nbsp;</font></div></div><=
+/div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Wed, Apr 6, 2016 at 11:26 PM, Jamal Simmo=
+ns <span dir=3D"ltr">&lt;<a href=3D"mailto:jsimmons@rabengroup.com" target=
+=3D"_blank">jsimmons@rabengroup.com</a>&gt;</span> wrote:<br><blockquote cl=
+ass=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;p=
+adding-left:1ex"><div dir=3D"ltr">Most of our team is unavailable but I can=
+ be there.&nbsp;<span><font color=3D"#888888"><div><br></div><div>Jamal</di=
+v></font></span></div><div class=3D"gmail_extra"><br><div class=3D"gmail_qu=
+ote"><span>On Wed, Apr 6, 2016 at 5:25 PM, Ivana Griacova <span dir=3D"ltr"=
+>&lt;<a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">igriacova@=
+hattaway.com</a>&gt;</span> wrote:<br></span><div><div><blockquote class=3D=
+"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding=
+-left:1ex"><div dir=3D"ltr">Dear all:<div><br></div><div>I hope everyone is=
+ doing well and looking forward to the warmer weather.&nbsp;</div><div><br>=
+</div><div>We are looking to schedule our next partners' meeting for the se=
+cond week in May (after the Internal surveys and the Language &amp; Image S=
+urvey).&nbsp;</div><div><br></div><div>Unfortunately, Amy's schedule is fai=
+rly limited during that time. Can all teams please let me know whether you =
+are available on <b>Thursday, May 12th, 9am-12pm?</b>&nbsp;</div><div><br><=
+/div><div>Thank you!</div><div><br></div><div>Ivana</div><div><br clear=3D"=
+all"><div><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div style=3D"font-fa=
+mily:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);wo=
+rd-wrap:break-word"><font><br></font></div><div style=3D"font-family:Helvet=
+ica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:bre=
+ak-word"><font>--</font></div><div style=3D"font-family:Helvetica;text-alig=
+n:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><fon=
+t><br></font></div><div style=3D"font-family:Helvetica;text-align:-webkit-a=
+uto;background-color:rgb(255,255,255);word-wrap:break-word"><font>Ivana Gri=
+acova<br></font></div><div style=3D"font-family:Helvetica;background-color:=
+rgb(255,255,255);word-wrap:break-word"><font>Senior Operations Associate<br=
+></font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;b=
+ackground-color:rgb(255,255,255);word-wrap:break-word"><font>Hattaway Commu=
+nications, Inc.</font></div><div style=3D"font-family:Helvetica;text-align:=
+-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><font>=
+<a href=3D"tel:202.266.3329" value=3D"&#43;12022663329" target=3D"_blank">2=
+02.266.3329</a></font></div><div style=3D"font-family:Helvetica;text-align:=
+-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><font>=
+<a href=3D"http://hattaway.com/" target=3D"_blank">www.hattaway.com</a><br>=
+</font></div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;ba=
+ckground-color:rgb(255,255,255);word-wrap:break-word"><font><br></font></di=
+v><div style=3D"font-family:Helvetica;background-color:rgb(255,255,255)"><d=
+iv style=3D"text-align:-webkit-auto;word-wrap:break-word"><font>Helping vis=
+ionary leaders &amp; organizations achieve great things.&nbsp;</font></div>=
+</div></div></div></div></div></div>
+</div><img src=3D"http://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n=
+0x6l2B9gXrN7sKj6v4f8gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D49901489=
+64253696&amp;pi=3D80fa2497-9aa4-4d75-94e8-c27368583d53" style=3D"display:no=
+ne!important" height=3D"1" width=3D"1"></div>
+</blockquote></div></div></div><br></div>
+</blockquote></div><br></div>
+</div></blockquote></div><br></div></div></div></blockquote></div><br></div=
+></div></div>
+</blockquote></div><br></div>
+
+--047d7bd9175a69ffd405320b081a--

@@ -1,0 +1,1215 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 6 May
+ 2016 14:13:08 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 6 May 2016
+ 14:13:07 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 901152622
+ for ParrishD@dnc.org; Fri, 06 May 2016 13:13:11 -0500
+X-Note-AR-ScanTimeLocal: 5/6/2016 1:13:07 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.213.172 DOM:gss-security.com ADDR:jsheehan@gss-security.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-350/SG:5 5/6/2016 1:12:46 PM
+X-GBUdb-Analysis: 0, 209.85.213.172, Ugly c=0.864221 p=-0.979029 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6307 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/6/2016 1:13:07 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->United States->
+X-Note-Sending-IP: 209.85.213.172
+X-Note-Reverse-DNS: mail-ig0-f172.google.com
+X-Note-Return-Path: jsheehan@gss-security.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.213.172] (HELO mail-ig0-f172.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140452646
+ for ParrishD@dnc.org; Fri, 06 May 2016 13:13:06 -0500
+Received: by mail-ig0-f172.google.com with SMTP id bi2so53206076igb.0
+        for <ParrishD@dnc.org>; Fri, 06 May 2016 11:13:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gss-security-com.20150623.gappssmtp.com; s=20150623;
+        h=from:mime-version:references:in-reply-to:date:message-id:subject:to;
+        bh=+Jo3QLDCtDW0SxOrAnPr3/DEmCK5Xd8VeEKlFgOqpnA=;
+        b=18BpsINza1e0MuXKmNxCP1u3tFKo5sdc6uZj+RwYfW2crO6ba54L7GnrNH90ulucW6
+         O9fMLaypqjog1PUdd+lilNJ/NmSYuIJ7H42MV55ansJxDqWx05h2y+OH/xv0F6xQ+r7r
+         1wRAW4dl327Sy+nxKhHuZQu9LvI5+gXwilOJ/1YD9tbaJSpR4sl/egPGL0IDi6RwdAHe
+         Fjqgq/zQl8cN2xCsDQcniwrKFsk0DttnHD281oNhGqD9yAN9PaEJeSHDOdkZB6h43rFK
+         WWdkjh64SjrLjy6NW0VP9kMGIFkJe493UlF8uTwPqGZ2N7BM/jBHjFl7jhoy5KmmTmLX
+         ap/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:from:mime-version:references:in-reply-to:date
+         :message-id:subject:to;
+        bh=+Jo3QLDCtDW0SxOrAnPr3/DEmCK5Xd8VeEKlFgOqpnA=;
+        b=RiNJOhmWvJ5G5VFOMz26a1ZpRLzeWV88Fo1QrT5qSnnHV6vl6NEsSwAHwcwSoSYZcL
+         vXN5hqL6EURrO3K0CKwG5Mop4kAemmfUZbfL7eAOPpGNL0jzAYkzcqK0fgSNiD5Vn36Z
+         zicNX2He+9GXZhK3O3GS1Allw14jPNrkqFesw2tk1wQkW3TZfMDmLEHpe6gT7oQYIRoz
+         J1aFabxOWDSDNjprQ8NyUHQHAyQdmldqyxZoJGCdiK76DWY99lE804+cU1ZeH9cM4Uh3
+         2ZwLq9LApdKprnkt8repBR9LLLBheCICQ7hUqaR+fsL6BayNvXAYdLxyPq0eQujiIAzf
+         Odsg==
+X-Gm-Message-State: AOPr4FVdhIU3Ork4glDREHSgzT7lpwXpF7TkwScsqx1N8bsiD7XASOAtwiHkUscRTyAgPgkoxchhih6DWHNe0Ujp
+X-Received: by 10.50.88.36 with SMTP id bd4mr11763435igb.23.1462558386653;
+ Fri, 06 May 2016 11:13:06 -0700 (PDT)
+From: John Sheehan <jsheehan@gss-security.com>
+References: <-5983659352006144616@unknownmsgid> <AB4F5314-3F67-4A69-AB7A-17449C57791C@dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994C1C9@dncdag1.dnc.org>
+ <3536283245359644979@unknownmsgid> <CAE3BeVmnezfmzVbkMgdxseHU81x4+bCHo-qwS2PUpTWC=W47VQ@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9955B68@dncdag1.dnc.org>
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9955B68@dncdag1.dnc.org>
+Date: Fri, 6 May 2016 14:13:06 -0400
+Message-ID: <-8128178152625513746@unknownmsgid>
+Subject: Re: Assistance
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="089e013cc03019e4a505323069d3"
+Return-Path: jsheehan@gss-security.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--089e013cc03019e4a505323069d3
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Thank you very much for your update.
+
+Do you need any additional information about the event itself that may
+help? (Kennedy Center Honors 2015 White House Reception) think the date was
+12/6/15
+
+*John Sheehan*   Vice President Of Operations, Executive Protection GSS
+Security Services, Inc.
+[image: photo]
+Phone: 212-764-5400
+Mobile: 646-206-5739
+Fax: 212-764-0213
+Email: jsheehan@gss-security.com
+Website: www.gss-security.com
+Address: 20 west 22nd Street Suite 514 New York, NY 10010
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subscribe to our News Letter <http://www.gss-security.com/about-gss/news>
+<http://twitter.com/gsssecurity>
+<https://www.facebook.com/pages/GSS-Security-Services-Inc/387789124651120>
+ Please consider the environment before printing this e-mail!
+IMPORTANT: The contents of this email and any attachments are confidential.
+They are intended for the named recipient(s) only. If you have received
+this email by mistake, please notify the sender immediately and do not
+disclose the contents to anyone or make copies thereof
+
+
+On May 6, 2016, at 1:55 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+Hi John,
+
+
+
+I wanted to give you an update =E2=80=93 they have not found it yet, but ar=
+e
+checking one more place. I should have a better answer on Monday.
+
+
+
+Thank you for your patience!
+
+
+
+Best,
+
+Dan
+
+
+
+*From:* Parrish, Daniel
+*Sent:* Tuesday, May 03, 2016 9:47 AM
+*To:* 'John Sheehan'
+*Subject:* RE: Assistance
+
+
+
+Hi John,
+
+
+
+My apologies for the delay. I actually followed up with the White House
+late last week and they are still looking for it. I will ping them again
+now =E2=80=93 thank you for your patience with this process! Hopefully I=E2=
+=80=99ll have an
+answer for you soon.
+
+
+
+Best,
+
+Dan
+
+
+
+*From:* John Sheehan [mailto:jsheehan@gss-security.com
+<jsheehan@gss-security.com>]
+*Sent:* Monday, May 02, 2016 9:34 PM
+*To:* Parrish, Daniel
+*Subject:* Re: Assistance
+
+
+
+Daniel
+
+
+
+Hope your doing well
+
+
+
+I was just circling back to see if you had any luck tracking down how I
+could purchase a photo I had taken with POTUS during visit to the WH for
+the Kennedy Honors Reception.
+
+
+
+Any information would be greatly appreciated.
+
+
+
+Regards
+
+
+<image002.jpg>
+
+*John Sheehan*
+Vice president of Operations at GSS Security Services, Inc.
+
+*A *20 West 22nd Street Suite 514 New York, NY 10010
+*P * 212-764-5400  <212-764-5400>*M * 646-206-5739  <646-206-5739>*F *
+212-764-0213
+<212-764-0213>*E * jsheehan@gss-security.com  <jsheehan@gss-security.com>
+*W * www.gss-security.com  <http://www.gss-security.com>
+
+*<image003.jpg>
+<https://www.facebook.com/GSS-Security-Services-Inc-387789124651120/><image=
+003.jpg>
+<https://twitter.com/gsssecurity>*
+
+<image002.jpg>Please consider the environment before printing this e-mail!
+
+IMPORTANT: The contents of this email and any attachments are confidential.
+They are intended for the named recipient(s) only. If you have received
+this email by mistake, please notify the sender immediately and do not
+disclose the contents to anyone or make copies thereof.
+
+
+
+On Wed, Apr 20, 2016 at 3:21 PM, John Sheehan <jsheehan@gss-security.com>
+wrote:
+
+Zach / Daniel
+
+
+
+Thank you very much for all your assistance
+
+
+
+Greatly appreciated
+
+
+
+Regards
+
+*John Sheehan*   Vice President Of Operations, Executive Protection GSS
+Security Services, Inc.
+
+<image002.jpg>
+
+Phone: 212-764-5400
+
+Mobile: 646-206-5739
+
+Fax: 212-764-0213
+
+Email: jsheehan@gss-security.com
+
+Website: www.gss-security.com
+
+Address: 20 west 22nd Street Suite 514 New York, NY 10010
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subscribe to our News Letter <http://www.gss-security.com/about-gss/news>
+
+<image002.jpg> <http://twitter.com/gsssecurity>
+
+<image002.jpg>
+<https://www.facebook.com/pages/GSS-Security-Services-Inc/387789124651120>
+
+<image002.jpg> Please consider the environment before printing this e-mail!
+
+IMPORTANT: The contents of this email and any attachments are confidential.
+They are intended for the named recipient(s) only. If you have received
+this email by mistake, please notify the sender immediately and do not
+disclose the contents to anyone or make copies thereof
+
+
+On Apr 20, 2016, at 3:18 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+Mr. Sheehan,
+
+
+
+I=E2=80=99d be happy to help you with this matter. I will talk to our conta=
+ct at
+the White House and see if we can track this down for you.
+
+Let me know if you need anything else!
+
+
+
+Best,
+
+Dan
+
+
+
+
+
+
+
+*From:* John Sheehan <jsheehan@gss-security.com>
+*Date:* April 20, 2016 at 3:00:07 PM EDT
+*To:* <AllenZ@dnc.org>
+*Subject:* *Assistance*
+
+Zach
+
+
+
+Hope your doing well. I was wondering if you would be able to assist me
+once again.
+
+
+
+I attended the Kennedy Center Honors reception in the White House at the
+end of the year with The Scorsese family and had the honor to meet the
+President and The First Lady for a photo op. I was wondering how I could
+obtain the link for that receiving line so I can purchase that photo of me
+with both of them.
+
+Hope this doesn't seem strange or out of line just a big fan and I'd like
+to get that photo if at all possible.
+
+
+
+Any and all assurance is greatly appreciated
+
+
+
+Be safe and God Bless
+
+*John Sheehan*   Vice President Of Operations, Executive Protection GSS
+Security Services, Inc.
+
+<~WRD000.jpg>
+
+Phone: 212-764-5400
+
+Mobile: 646-206-5739
+
+Fax: 212-764-0213
+
+Email: jsheehan@gss-security.com
+
+Website: www.gss-security.com
+
+Address: 20 west 22nd Street Suite 514 New York, NY 10010
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Subscribe to our News Letter <http://www.gss-security.com/about-gss/news>
+
+<~WRD000.jpg> <http://twitter.com/gsssecurity>
+
+<~WRD000.jpg>
+<https://www.facebook.com/pages/GSS-Security-Services-Inc/387789124651120>
+
+<~WRD000.jpg> Please consider the environment before printing this e-mail!
+
+IMPORTANT: The contents of this email and any attachments are confidential.
+They are intended for the named recipient(s) only. If you have received
+this email by mistake, please notify the sender immediately and do not
+disclose the contents to anyone or make copies thereof
+
+--089e013cc03019e4a505323069d3
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div>Thank you very much for your update.</div><div=
+ id=3D"AppleMailSignature"><br></div><div id=3D"AppleMailSignature">Do you =
+need any additional information about the event itself that may help? (Kenn=
+edy Center Honors 2015 White House Reception) think the date was 12/6/15<br=
+><br><blockquote type=3D"cite"><div dir=3D"ltr"><div dir=3D"ltr"><div style=
+=3D"width:300px!important"><div><div style=3D"max-width:470px"><div style=
+=3D"margin-bottom:5px;border-bottom-color:rgb(62,72,201);border-bottom-widt=
+h:1px;border-bottom-style:solid"><span style=3D"padding:0px 15px 0px 5px;bo=
+rder-bottom-color:rgb(62,72,201);border-bottom-width:3px;border-bottom-styl=
+e:solid;background-color:rgba(255,255,255,0)"><b>John Sheehan</b>&nbsp;&nbs=
+p;&nbsp;Vice President Of Operations, Executive Protection GSS Security Ser=
+vices, Inc.</span></div><div style=3D"height:189px!important"><table border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"height:315px!important;=
+width:470px!important"><tbody><tr valign=3D"top"><td><span style=3D"backgro=
+und-color:rgba(255,255,255,0)"><img alt=3D"photo" src=3D"https://s3.amazona=
+ws.com/corporate.wisestamp.com/AnJzuulRSUmajxmoNfZ8_GSSSecurityC79a-A04bT01=
+a-Z_mdm.png" style=3D"margin: 5px 5px 8px 0px; max-height: 40px;"></span></=
+td><td style=3D"padding-left:10px"><div><span style=3D"background-color:rgb=
+a(255,255,255,0)">Phone:&nbsp;<a href=3D"tel:212-764-5400">212-764-5400</a>=
+</span></div><div><span style=3D"background-color:rgba(255,255,255,0)">Mobi=
+le:&nbsp;<a href=3D"tel:646-206-5739">646-206-5739</a></span></div><div><sp=
+an style=3D"background-color:rgba(255,255,255,0)">Fax:&nbsp;<a href=3D"tel:=
+212-764-0213">212-764-0213</a></span></div><div><span style=3D"background-c=
+olor:rgba(255,255,255,0)">Email:&nbsp;<a href=3D"mailto:jsheehan@gss-securi=
+ty.com" target=3D"_blank">jsheehan@gss-security.com</a></span></div><div><s=
+pan style=3D"background-color:rgba(255,255,255,0)">Website:&nbsp;<a href=3D=
+"http://www.gss-security.com/" target=3D"_blank">www.gss-security.com</a></=
+span></div><div><span style=3D"background-color:rgba(255,255,255,0)">Addres=
+s: 20 west 22nd Street Suite 514 New York, NY 10010</span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div><div><span =
+style=3D"background-color:rgba(255,255,255,0)"><br></span></div></td></tr><=
+/tbody></table></div></div></div><div style=3D"margin-top:5px"><div src=3D"=
+https://s3.amazonaws.com/images.wisestamp.com/apps/newsletter/1.png"><br></=
+div><div src=3D"https://s3.amazonaws.com/images.wisestamp.com/apps/newslett=
+er/1.png"><br></div><div src=3D"https://s3.amazonaws.com/images.wisestamp.c=
+om/apps/newsletter/1.png"><font color=3D"#000000" style=3D"background-color=
+:rgba(255,255,255,0)"><a href=3D"http://www.gss-security.com/about-gss/news=
+" target=3D"_blank" style=3D"background-color:rgba(255,255,255,0)">Subscrib=
+e to our News Letter</a></font></div></div><div style=3D"margin-top:5px"><a=
+ href=3D"http://twitter.com/gsssecurity" target=3D"_blank" style=3D"backgro=
+und-color:rgba(255,255,255,0)"><font color=3D"#000000"><img src=3D"https://=
+s3.amazonaws.com/images.wisestamp.com/apps/Twitter_badge/follow_us-c.png" b=
+order=3D"0"></font></a></div><div style=3D"margin-top:5px"><a href=3D"https=
+://www.facebook.com/pages/GSS-Security-Services-Inc/387789124651120" target=
+=3D"_blank" style=3D"background-color:rgba(255,255,255,0)"><font color=3D"#=
+000000"><img src=3D"https://s3.amazonaws.com/images.wisestamp.com/apps/Face=
+book_badge/findus.png" border=3D"0"></font></a></div><div style=3D"margin-t=
+op:5px"><div><span style=3D"background-color:rgba(255,255,255,0)"><img src=
+=3D"https://s3.amazonaws.com/images.wisestamp.com/widgets/green_32.png">&nb=
+sp;Please consider the environment before printing this e-mail!</span></div=
+></div><div style=3D"margin-top:5px"><div style=3D"padding-top:0.5em;margin=
+-top:1em;border-top-color:gray;border-top-width:1px;border-top-style:solid"=
+><span style=3D"background-color:rgba(255,255,255,0)">IMPORTANT: The conten=
+ts of this email and any attachments are confidential. They are intended fo=
+r the named recipient(s) only. If you have received this email by mistake, =
+please notify the sender immediately and do not disclose the contents to an=
+yone or make copies thereof</span></div></div></div></div></div></blockquot=
+e></div><div><br>On May 6, 2016, at 1:55 PM, Parrish, Daniel &lt;<a href=3D=
+"mailto:ParrishD@dnc.org">ParrishD@dnc.org</a>&gt; wrote:<br><br></div><blo=
+ckquote type=3D"cite"><div>
+
+
+<meta name=3D"Generator" content=3D"Microsoft Word 14 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.EmailStyle17
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.EmailStyle18
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style>
+
+
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi John,</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">I wanted to give you an u=
+pdate =E2=80=93 they have not found it yet, but are checking one more place=
+. I should have a better answer on Monday.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thank you for your patien=
+ce!</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Parrish,=
+ Daniel
+<br>
+<b>Sent:</b> Tuesday, May 03, 2016 9:47 AM<br>
+<b>To:</b> 'John Sheehan'<br>
+<b>Subject:</b> RE: Assistance</span></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi John,</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">My apologies for the dela=
+y. I actually followed up with the White House late last week and they are =
+still looking for it. I will ping them again now =E2=80=93 thank
+ you for your patience with this process! Hopefully I=E2=80=99ll have an an=
+swer for you soon.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> John She=
+ehan [<a href=3D"mailto:jsheehan@gss-security.com">mailto:jsheehan@gss-secu=
+rity.com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 9:34 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: Assistance</span></p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<div>
+<p class=3D"MsoNormal">Daniel</p>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">Hope your doing well</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">I was just circling back to see if you had any luck =
+tracking down how I could purchase a photo I had taken with POTUS during vi=
+sit to the WH for the Kennedy Honors Reception.</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">Any information would be greatly appreciated.</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">Regards</p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+</p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 9.0pt 0in 0in">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal"><span style=3D"border:solid windowtext 1.0pt;padding=
+:0in">&lt;image002.jpg&gt;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"2" style=3D"width:1.5pt;background:#d4d4d4;padding:0in 0in 0in=
+ 0in"></td>
+<td valign=3D"top" style=3D"padding:0in 5.25pt 0in 9.0pt">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 1.5pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-family:&quot;Arial&quot;,&quo=
+t;sans-serif&quot;;color:blue">John Sheehan</span></b><span style=3D"font-s=
+ize:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#4e4b4=
+c"><br>
+Vice president of Operations at&nbsp;</span><span style=3D"font-size:8.5pt;=
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:blue">GSS Securi=
+ty Services, Inc.</span><span style=3D"font-size:8.5pt;font-family:&quot;Ar=
+ial&quot;,&quot;sans-serif&quot;;color:#4e4b4c">
+</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:4.5pt 0in 9.0pt 0in">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 1.5pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:8.5pt;font-family:&quot;=
+Arial&quot;,&quot;sans-serif&quot;;color:blue">A&nbsp;</span></b><span styl=
+e=3D"font-size:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;c=
+olor:#4e4b4c">20 West 22nd Street Suite 514 New York, NY 10010<br>
+</span><b><span style=3D"font-size:8.5pt;font-family:&quot;Arial&quot;,&quo=
+t;sans-serif&quot;;color:blue">P&nbsp;</span></b><span style=3D"font-size:8=
+.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#4e4b4c">
+<a href=3D"tel:212-764-5400" target=3D"_blank"><span style=3D"color:#4e4b4c=
+;text-decoration:none">212-764-5400&nbsp;
+</span></a></span><b><span style=3D"font-size:8.5pt;font-family:&quot;Arial=
+&quot;,&quot;sans-serif&quot;;color:blue">M&nbsp;</span></b><span style=3D"=
+font-size:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:=
+#4e4b4c">
+<a href=3D"tel:646-206-5739" target=3D"_blank"><span style=3D"color:#4e4b4c=
+;text-decoration:none">646-206-5739&nbsp;
+</span></a></span><b><span style=3D"font-size:8.5pt;font-family:&quot;Arial=
+&quot;,&quot;sans-serif&quot;;color:blue">F&nbsp;</span></b><span style=3D"=
+font-size:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:=
+#4e4b4c">
+<a href=3D"tel:212-764-0213" target=3D"_blank"><span style=3D"color:#4e4b4c=
+;text-decoration:none">212-764-0213&nbsp;
+</span></a></span><b><span style=3D"font-size:8.5pt;font-family:&quot;Arial=
+&quot;,&quot;sans-serif&quot;;color:blue">E&nbsp;</span></b><span style=3D"=
+font-size:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:=
+#4e4b4c">
+<a href=3D"mailto:jsheehan@gss-security.com" target=3D"_blank"><span style=
+=3D"color:#4e4b4c;text-decoration:none">jsheehan@gss-security.com&nbsp;
+</span></a></span><b><span style=3D"font-size:8.5pt;font-family:&quot;Arial=
+&quot;,&quot;sans-serif&quot;;color:blue">W&nbsp;</span></b><span style=3D"=
+font-size:8.5pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:=
+#4e4b4c">
+<a href=3D"http://www.gss-security.com" target=3D"_blank"><span style=3D"co=
+lor:#4e4b4c;text-decoration:none">www.gss-security.com&nbsp;
+</span></a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:0in 0in 0in 0in">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0in 0in 0in 1.5pt">
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:8.5pt;font-family:&quot;=
+Arial&quot;,&quot;sans-serif&quot;;color:#4e4b4c"><a href=3D"https://www.fa=
+cebook.com/GSS-Security-Services-Inc-387789124651120/" target=3D"_blank"><s=
+pan style=3D"border:solid windowtext 1.0pt;padding:0in;text-decoration:none=
+">&lt;image003.jpg&gt;</span></a><a href=3D"https://twitter.com/gsssecurity=
+" target=3D"_blank"><span style=3D"border:solid windowtext 1.0pt;padding:0i=
+n;text-decoration:none">&lt;image003.jpg&gt;</span></a></span></b></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:4.5pt 0in 0in 0in"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:green;border:solid windowtext 1=
+.0pt;padding:0in">&lt;image002.jpg&gt;</span><span style=3D"color:green">Pl=
+ease
+ consider the environment before printing this e-mail!</span></p>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div style=3D"border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in=
+ 0in;margin-top:12.0pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;color:gray">IMPORTAN=
+T: The contents of this email and any attachments are confidential. They ar=
+e intended for the named recipient(s) only. If you have received this email=
+ by mistake, please notify the sender
+ immediately and do not disclose the contents to anyone or make copies ther=
+eof.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<div>
+<p class=3D"MsoNormal">On Wed, Apr 20, 2016 at 3:21 PM, John Sheehan &lt;<a=
+ href=3D"mailto:jsheehan@gss-security.com" target=3D"_blank">jsheehan@gss-s=
+ecurity.com</a>&gt; wrote:</p>
+<div>
+<div>
+<p class=3D"MsoNormal">Zach / Daniel</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you very much for all your assistance&nbsp;</p=
+>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">Greatly appreciated&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Regards<br>
+<br>
+</p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div style=3D"border:none;border-bottom:solid #3e48c9 1.0pt;padding:0in 0in=
+ 0in 0in;margin-bottom:3.75pt">
+<p class=3D"MsoNormal"><b>John Sheehan</b>&nbsp;&nbsp;&nbsp;Vice President =
+Of Operations, Executive Protection GSS Security Services, Inc.</p>
+</div>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal"><span style=3D"border:solid windowtext 1.0pt;padding=
+:0in">&lt;image002.jpg&gt;</span></p>
+</td>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 7.5pt">
+<div>
+<p class=3D"MsoNormal">Phone:&nbsp;<a href=3D"tel:212-764-5400" target=3D"_=
+blank">212-764-5400</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Mobile:&nbsp;<a href=3D"tel:646-206-5739" target=3D"=
+_blank">646-206-5739</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Fax:&nbsp;<a href=3D"tel:212-764-0213" target=3D"_bl=
+ank">212-764-0213</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Email:&nbsp;<a href=3D"mailto:jsheehan@gss-security.=
+com" target=3D"_blank">jsheehan@gss-security.com</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Website:&nbsp;<a href=3D"http://www.gss-security.com=
+/" target=3D"_blank">www.gss-security.com</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Address: 20 west 22nd Street Suite 514 New York, NY =
+10010</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:black"><a href=3D"http://www.gs=
+s-security.com/about-gss/news" target=3D"_blank">Subscribe to our News Lett=
+er</a></span></p>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<p class=3D"MsoNormal"><a href=3D"http://twitter.com/gsssecurity" target=3D=
+"_blank"><span style=3D"color:black;border:solid windowtext 1.0pt;padding:0=
+in;text-decoration:none">&lt;image002.jpg&gt;</span></a></p>
+</div>
+<div style=3D"margin-top:3.75pt">
+<p class=3D"MsoNormal"><a href=3D"https://www.facebook.com/pages/GSS-Securi=
+ty-Services-Inc/387789124651120" target=3D"_blank"><span style=3D"color:bla=
+ck;border:solid windowtext 1.0pt;padding:0in;text-decoration:none">&lt;imag=
+e002.jpg&gt;</span></a></p>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"border:solid windowtext 1.0pt;padding=
+:0in">&lt;image002.jpg&gt;</span>&nbsp;Please consider the environment befo=
+re printing
+ this e-mail!</p>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div style=3D"border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in=
+ 0in;margin-top:12.0pt">
+<p class=3D"MsoNormal">IMPORTANT: The contents of this email and any attach=
+ments are confidential. They are intended for the named recipient(s) only. =
+If you have received this email by mistake, please notify the sender immedi=
+ately and do not disclose the contents
+ to anyone or make copies thereof</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 20, 2016, at 3:18 PM, Parrish, Daniel &lt;<a href=3D"mailto:ParrishD=
+@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&gt; wrote:</p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">Mr. Sheehan,</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">I=E2=80=99d be happy to help you with t=
+his matter. I will talk to our contact at the White House and see
+ if we can track this down for you.</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">Let me know if you need anything else!<=
+/span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">Best,</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">Dan</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&q=
+uot;sans-serif&quot;;color:#1f497d">&nbsp;</span></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b>From:</b> John She=
+ehan &lt;<a href=3D"mailto:jsheehan@gss-security.com" target=3D"_blank">jsh=
+eehan@gss-security.com</a>&gt;<br>
+<b>Date:</b> April 20, 2016 at 3:00:07 PM EDT<br>
+<b>To:</b> &lt;<a href=3D"mailto:AllenZ@dnc.org" target=3D"_blank">AllenZ@d=
+nc.org</a>&gt;<br>
+<b>Subject:</b> <b>Assistance</b></p>
+</div>
+</blockquote>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Zach</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Hope your doing well. I was wondering if you would be able to assi=
+st me once again.</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">I attended the Kennedy Center Honors reception in the White House =
+at the end of the year with The Scorsese family and had the honor to meet t=
+he President and The First Lady for
+ a photo op. I was wondering how I could obtain the link for that receiving=
+ line so I can purchase that photo of me with both of them.</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Hope this doesn't seem strange or out of line just a big fan and I=
+'d like to get that photo if at all possible.</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Any and all assurance is greatly appreciated&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Be safe and God Bless=
+</p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div style=3D"border:none;border-bottom:solid #3e48c9 1.0pt;padding:0in 0in=
+ 0in 0in;margin-bottom:3.75pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><b>John Sheehan</b>&nbsp;&nbsp;&nbsp;Vice President Of Operations,=
+ Executive Protection GSS Security Services, Inc.</p>
+</div>
+<div>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"border:solid windowtext 1.0pt;padding:0in">&lt;~WRD=
+000.jpg&gt;</span></p>
+</td>
+<td valign=3D"top" style=3D"padding:0in 0in 0in 7.5pt">
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Phone:&nbsp;<a href=3D"tel:212-764-5400" target=3D"_blank">212-764=
+-5400</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Mobile:&nbsp;<a href=3D"tel:646-206-5739" target=3D"_blank">646-20=
+6-5739</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Fax:&nbsp;<a href=3D"tel:212-764-0213" target=3D"_blank">212-764-0=
+213</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Email:&nbsp;<a href=3D"mailto:jsheehan@gss-security.com" target=3D=
+"_blank">jsheehan@gss-security.com</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Website:&nbsp;<a href=3D"http://www.gss-security.com/" target=3D"_=
+blank">www.gss-security.com</a></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">Address: 20 west 22nd Street Suite 514 New York, NY 10010</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">&nbsp;</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">&nbsp;</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"color:black"><a href=3D"http://www.gss-security.com=
+/about-gss/news" target=3D"_blank">Subscribe to our News Letter</a></span><=
+/p>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><a href=3D"http://twitter.com/gsssecurity" target=3D"_blank"><span=
+ style=3D"color:black;border:solid windowtext 1.0pt;padding:0in;text-decora=
+tion:none">&lt;~WRD000.jpg&gt;</span></a></p>
+</div>
+<div style=3D"margin-top:3.75pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><a href=3D"https://www.facebook.com/pages/GSS-Security-Services-In=
+c/387789124651120" target=3D"_blank"><span style=3D"color:black;border:soli=
+d windowtext 1.0pt;padding:0in;text-decoration:none">&lt;~WRD000.jpg&gt;</s=
+pan></a></p>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div>
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto"><span style=3D"border:solid windowtext 1.0pt;padding:0in">&lt;~WRD=
+000.jpg&gt;</span>&nbsp;Please consider the environment before printing thi=
+s e-mail!</p>
+</div>
+</div>
+<div style=3D"margin-top:3.75pt">
+<div style=3D"border:none;border-top:solid gray 1.0pt;padding:6.0pt 0in 0in=
+ 0in;margin-top:12.0pt">
+<p class=3D"MsoNormal" style=3D"mso-margin-top-alt:auto;mso-margin-bottom-a=
+lt:auto">IMPORTANT: The contents of this email and any attachments are conf=
+idential. They are intended for the named recipient(s) only. If you have re=
+ceived this email by mistake, please
+ notify the sender immediately and do not disclose the contents to anyone o=
+r make copies thereof</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+</div>
+</div>
+
+
+</div></blockquote></body></html>
+
+--089e013cc03019e4a505323069d3--

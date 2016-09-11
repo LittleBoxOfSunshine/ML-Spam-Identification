@@ -1,0 +1,835 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 13 May
+ 2016 17:52:15 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 13 May 2016
+ 17:52:10 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 914669520
+ for allenz@dnc.org; Fri, 13 May 2016 16:52:19 -0500
+X-Note-AR-ScanTimeLocal: 5/13/2016 4:52:19 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Virus-Scan: V-
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.48
+X-Note-Reverse-DNS: mail-wm0-f48.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-Note: Headers Injected
+Received: from mail-wm0-f48.google.com ([74.125.82.48] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138804184
+ for allenz@dnc.org; Fri, 13 May 2016 16:52:18 -0500
+Received: by mail-wm0-f48.google.com with SMTP id a17so49892068wme.0
+        for <allenz@dnc.org>; Fri, 13 May 2016 14:52:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=ABkAVHkf9IPFzCy65dwPlBVuMJdUBlJXhkrTbPNl38s=;
+        b=CgHejbbRr0GBxGBW1P8X99sR+SKwjGSUlFPQQD4jOXyQB2y4eWSMac9/tNRn2S9skM
+         cIKAf9D12kghtSvdPszN0rGDMNj6xBO7PmPNHw1AyRzWygT1XjB431OytXwa0Ds3mOOP
+         73G79qXn6zNAcqJuNHKx9X6e0j8kgXkoqukDfiBtXwoSaUQfONWCL/LIeIL2p90qKmMD
+         5YK2t+ru2Y/pjFf9zcG/WvZW01Ty44yA1GyLMd+V/o7H16xezph0i8EVhofx+0r/Eyui
+         HuigbWN8ggvdP0mEsFo8bp2T87WVJEE5SkRhA9XvloDgl3tt3tiONK8Fs6tohmHs9OrE
+         lZng==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.61 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-Gm-Message-State: AOPr4FWkQmx7GOSR6awG1BjgSNxCotiPFey6NGF6bYnC4mFfCG0EmtzX4XEwTTVe4Wa2MjUwmvIvMGDTTDeAqA4Ax3T0tf0=
+X-Received: by 10.194.216.33 with SMTP id on1mr17852925wjc.120.1463176331176;
+        Fri, 13 May 2016 14:52:11 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp427670wme;        Fri, 13 May
+ 2016 14:52:09 -0700 (PDT)
+X-Received: by 10.140.94.234 with SMTP id g97mr17768835qge.35.1463176329810;
+        Fri, 13 May 2016 14:52:09 -0700 (PDT)
+Return-Path: <info99@service.govdelivery.com>
+Received: from mailer158061.service.govdelivery.com
+ (mailer158061.service.govdelivery.com. [209.134.158.61])        by
+ mx.google.com with ESMTP id f64si13350303qkj.235.2016.05.13.14.52.09
+        for <dncpress@gmail.com>;        Fri, 13 May 2016 14:52:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.61 as permitted sender) client-ip=209.134.158.61;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of info99@service.govdelivery.com designates 209.134.158.61 as permitted sender) smtp.mailfrom=info99@service.govdelivery.com
+X-VirtualServer: VSG003, mailer158061.service.govdelivery.com, 172.24.0.61
+X-VirtualServerGroup: VSG003
+X-MailingID: 17304643::20160513.59023701::1001::MDB-PRD-BUL-20160513.59023701::dncpress@gmail.com::3512_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_F08_1C3F_0C4853E1.6BCBCA7F"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3Ktw/iW6PdRICs+mJcQk+G5R2f56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: info99@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17304643.3512@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK40H0PJJ9DZJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?WEEKEND_GUIDANCE_AND_PRESS_SCHEDULE_FOR_SAT?= =?US-ASCII?Q?URDAY,_MAY_14,_2016_AND_SUNDAY,_MAY_15,_2016?=
+Date: Fri, 13 May 2016 16:52:08 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_F08_1C3F_0C4853E1.6BCBCA7F
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+THE WHITE HOUSE
+
+Office of the Press Secretary
+
+FOR IMMEDIATE RELEASE
+
+May 13, 2016
+
+**
+
+*WEEKEND GUIDANCE AND PRESS SCHEDULE FOR*
+
+*SATURDAY, MAY 14, 2016 AND SUNDAY, MAY 15, 2016*
+
+**
+
+On Saturday, the President has no public events scheduled.
+
+
+
+On Sunday, the President will travel to Rutgers University's New Brunswic=
+k campus to address 2016 graduates at Rutgers Universitys 250th Anniversa=
+ry commencement ceremony. Rutgers University is one of the oldest univers=
+ities in the country with a long and distinguished history of advancing r=
+esearch and preparing students with the skills they need to succeed in th=
+e new economy. The Presidents remarks will be open to pre-credentialed me=
+dia.
+
+
+
+*_Saturdays In-Town Travel Pool_*
+
+Wires: AP, Reuters, Bloomberg
+Wire Photos: AP, Reuters, AFP
+
+TV Corr & Crew: ABC
+
+Print: Huffington Post=20
+
+Radio: NPR
+
+
+
+*_Sundays In-Town Travel Pool_*
+
+Wires: AP, Reuters, Bloomberg
+Wire Photos: AP, Reuters, AFP
+
+TV Corr & Crew: CBS
+
+Print: McClatchy
+
+Radio: SRN
+
+
+
+*_Sundays Out-of-Town Travel Pool_*
+
+Wires: AP, Reuters, Bloomberg
+
+Wire Photos: AP, Reuters, AFP
+
+TV Corr & Crew: CBS
+
+Print:Politico=20
+
+
+
+*_Saturday, May 14, 2016_*
+
+
+
+*_EDT_*
+
+
+
+*8:40AM In-Town Pool Call Time*
+
+
+
+*_Sunday, May 15, 2016_*
+
+
+
+*_EDT_*
+
+
+
+*9:30AM In-Town Pool Call Time*
+
+
+
+*10:15AM THE PRESIDENT departs the White House en route Joint Base Andrew=
+s*
+
+"South Lawn"
+
+"Open Press (Final Gather 9:55AM  North Doors of the Palm Room)"
+
+
+
+*10:30AM THE PRESIDENT departs Joint Base Andrews en route Newark, New Je=
+rsey *
+
+"Out-of-Town Travel Pool Coverage (Call Time 9:00AM  Virginia Gate, Joint=
+ Base Andrews)"
+
+
+
+*11:25AM THE PRESIDENT arrives Newark, New Jersey *
+
+"Newark International Airport "
+
+"Open to Pre-Credentialed Media"
+
+
+
+*12:50PM THE PRESIDENT delivers the Rutgers University commencement addre=
+ss *
+
+"High Point Solutions Stadium"", Piscataway Township, New Jersey "
+
+"Open to Pre-Credentialed Media"
+
+
+
+*2:40PM THE PRESIDENT departs Newark, New Jersey en route Washington, DC*=
+
+
+"Newark International Airport "
+
+"Open to Pre-Credentialed Media"
+
+
+
+*3:35PM THE PRESIDENT arrives Joint Base Andrews*
+
+"Out-of-Town Travel Pool Coverage"
+
+
+
+*3:50PM THE PRESIDENT arrives the White House*
+
+"South Lawn"
+
+"Open Press ""(Final Gather 3:30PM  North Doors of the Palm Room)"
+
+
+
+*_Schedule for the Week of May 16, 2016_*
+
+
+
+On Monday, the President will host a Medal of Valor ceremony at the White=
+ House. The Medal of Valor is awarded to public safety officers who have =
+exhibited exceptional courage, regardless of personal safety, in the atte=
+mpt to save or protect others from harm.
+
+
+
+On Tuesday, the President will attend meetings at the White House.
+
+
+
+On Wednesday, the President will participate in a DNC roundtable.
+
+
+
+On Thursday, the President will award National Medals of Science and Nati=
+onal Medals of Technology and Innovation to 17 scientists, engineers, mat=
+hematicians and innovators. The Medal of Science recognizes individuals w=
+ho have made outstanding contributions to science, engineering and mathem=
+atics. The National Medal of Technology and Innovation recognizes those w=
+ho have made lasting contributions to Americas competitiveness and qualit=
+y of life and helped strengthen the Nations technological workforce.
+
+
+
+On Friday, the President will attend meetings at the White House.
+
+
+
+On Saturday, the President will depart Washington, DC en route Hanoi, Vie=
+tnam. This trip will highlight the Presidents ongoing commitment to the U=
+.S. Rebalance to Asia and the Pacific, designed to increase U.S. diplomat=
+ic, economic, and security engagement with the countries and peoples of t=
+he region.
+
+
+
+###
+
+
+=0A
+------=_NextPart_F08_1C3F_0C4853E1.6BCBCA7F
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><title>    WEEKEND GUIDANCE AND PRESS SCHEDULE FOR SATURDAY, MAY 14, 201=
+6 AND SUNDAY, MAY 15, 2016
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"htt=
+p://www.w3.org/TR/REC-html40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri",sans-serif;}
+p.wordsection1, li.wordsection1, div.wordsection1
+	{mso-style-name:wordsection1;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.physicaladdress, li.physicaladdress, div.physicaladdress
+	{mso-style-name:physicaladdress;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.EmailStyle23
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle24
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle25
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle26
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle27
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle28
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle29
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle30
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle31
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle32
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle33
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle34
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle35
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">THE WHITE HOUSE<=
+o:p></o:p></span></p>
+<div style=3D"border:none;border-bottom:solid windowtext 1.0pt;padding:0in =
+0in 1.0pt 0in">
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Office of the Pr=
+ess Secretary<o:p></o:p></span></p>
+</div>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">FOR IMMEDIATE RELEASE<=
+o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">May 13, 2016<o:p></o:p=
+></span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span>=
+</b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p><=
+/span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">WEEKEND GUIDA=
+NCE AND PRESS SCHEDULE FOR</span></b><span style=3D"font-family:&quot;Book =
+Antiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">SATURDAY, MAY=
+ 14, 2016 AND SUNDAY, MAY 15, 2016</span></b><span style=3D"font-family:&qu=
+ot;Book Antiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span>=
+</b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p><=
+/span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Saturday, the Presi=
+dent has no public events scheduled.<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Sunday, the Preside=
+nt will travel to Rutgers University's New Brunswick campus to address 2016=
+ graduates at Rutgers University&#8217;s 250th Anniversary
+ commencement ceremony. Rutgers University is one of the oldest universitie=
+s in the country with a long and distinguished history of advancing researc=
+h and preparing students with the skills they need to succeed in the new ec=
+onomy.&nbsp; The President&#8217;s remarks
+ will be open to pre-credentialed media.<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Saturday&#8217;s=
+ In-Town Travel Pool</span></u></b><span style=3D"font-family:&quot;Book An=
+tiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Wires: AP, Reuters, Bl=
+oomberg<br>
+Wire Photos: AP, Reuters, AFP<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">TV Corr &amp; Crew: AB=
+C<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Print: Huffington Post
+<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Radio: NPR<o:p></o:p><=
+/span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;<o:p></o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Sunday&#8217;s I=
+n-Town Travel Pool</span></u></b><span style=3D"font-family:&quot;Book Anti=
+qua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Wires: AP, Reuters, Bl=
+oomberg<br>
+Wire Photos: AP, Reuters, AFP<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">TV Corr &amp; Crew: CB=
+S<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Print: McClatchy<o:p><=
+/o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Radio: SRN<o:p></o:p><=
+/span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Sunday&#8217;s O=
+ut-of-Town Travel Pool</span></u></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Wires: AP, Reuters, Bl=
+oomberg</span><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Wire Photos: AP, Reute=
+rs, AFP</span><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">TV Corr &amp; Crew: CB=
+S</span><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">Print:&nbsp;Politico
+</span><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Saturday, May 14=
+, 2016</span></u></b><span style=3D"font-family:&quot;Book Antiqua&quot;,se=
+rif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">EDT</span></u></=
+b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></s=
+pan></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">8:40AM&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In-Town Pool Call Time</span></b>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Sunday, May 15, =
+2016</span></u></b><span style=3D"font-family:&quot;Book Antiqua&quot;,seri=
+f"><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">EDT</span></u></=
+b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></s=
+pan></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><sp=
+an style=3D"font-family:&quot;Book Antiqua&quot;,serif">9:30AM&nbsp;&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In-Town Pool Call Time</span></b>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p></o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">10:15AM&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT departs the White House =
+en route Joint Base Andrews</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">S=
+outh Lawn</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">O=
+pen Press (Final Gather 9:55AM &#8211; North Doors of the Palm Room)</span>=
+</i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span><o:p></o:=
+p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">10:30AM&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT departs Joint Base Andre=
+ws en route Newark, New Jersey
+</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Out-of-Town T=
+ravel Pool Coverage (Call Time 9:00AM &#8211; Virginia Gate, Joint Base And=
+rews)</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">11:25AM&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT arrives Newark, New Jers=
+ey
+</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Newark Intern=
+ational Airport </span>
+</i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Open to Pre-C=
+redentialed Media</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">12:50PM&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT delivers the Rutgers Uni=
+versity commencement address
+</span></b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>=
+</o:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif;background:whi=
+te">High Point Solutions Stadium</span></i><i><span style=3D"font-family:&q=
+uot;Book Antiqua&quot;,serif">,
+<span style=3D"background:white">Piscataway Township</span>, New Jersey <o:=
+p></o:p></span></i></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Open to Pre-C=
+redentialed Media</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:.5in">
+<span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"=
+><o:p>&nbsp;</o:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">2:40PM&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT departs=
+ Newark, New Jersey en route Washington, DC</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Newark Intern=
+ational Airport </span>
+</i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Open to Pre-C=
+redentialed Media</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</span><span sty=
+le=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p></o=
+:p></span></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span style=3D"font-family:&quot;Book Antiqua&quot;,serif">3:35PM&nbsp;&=
+nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESIDENT arrives=
+ Joint Base Andrews</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">O=
+ut-of-Town Travel Pool Coverage</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">&nbsp;</sp=
+an><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-1.0i=
+n">
+<b><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">3=
+:50PM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; THE PRESI=
+DENT arrives the White House</span></b><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">S=
+outh Lawn</span></i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"mso-margin-top-alt:0in;margin-right:0in;=
+margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt">
+<i><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,serif">O=
+pen Press </span></i><i><span style=3D"font-family:&quot;Book Antiqua&quot;=
+,serif">(Final Gather 3:30PM &#8211; North Doors of the Palm Room)</span></=
+i><o:p></o:p></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<div id=3D"tagline">
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><b><u>=
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">Schedule for the=
+ Week of May 16, 2016</span></u></b><span style=3D"font-family:&quot;Book A=
+ntiqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Monday,
+<span style=3D"color:black">the President will host a Medal of Valor ceremo=
+ny at the White House. The Medal of Valor is awarded to public safety offic=
+ers who have exhibited exceptional courage, regardless of personal safety, =
+in the attempt to save or protect
+ others from harm.</span><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Tuesday, the Presid=
+ent will attend meetings at the White House.<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Wednesday,
+<span style=3D"color:black">the President will participate in a DNC roundta=
+ble.</span><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Thursday,
+<span style=3D"color:black">the President will award National Medals of Sci=
+ence and National Medals of Technology and Innovation to
+</span>17 <span style=3D"color:black">scientists, engineers, mathematicians=
+ and innovators.
+</span>The Medal of Science <span style=3D"color:black">recognizes individu=
+als who have made outstanding contributions to science, engineering and mat=
+hematics. The National Medal of Technology and Innovation recognizes those =
+who have made lasting contributions
+ to America&#8217;s competitiveness and quality of life and helped strength=
+en the Nation&#8217;s technological workforce.</span><o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Friday, the Preside=
+nt will attend meetings at the White House.<o:p></o:p></span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif">On Saturday, the Presi=
+dent will depart Washington, DC en route Hanoi, Vietnam.
+</span><span lang=3D"EN" style=3D"font-family:&quot;Book Antiqua&quot;,seri=
+f">This trip will highlight the President&#8217;s ongoing commitment to the=
+ U.S. Rebalance to Asia and the Pacific, designed to increase U.S. diplomat=
+ic, economic, and security engagement with the countries
+ and peoples of the region.</span><span style=3D"font-family:&quot;Book Ant=
+iqua&quot;,serif"><o:p></o:p></span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p=
+></span></p>
+<p class=3D"wordsection1" align=3D"center" style=3D"margin:0in;margin-botto=
+m:.0001pt;text-align:center">
+<span style=3D"font-family:&quot;Book Antiqua&quot;,serif">###<o:p></o:p></=
+span></p>
+<p class=3D"wordsection1" style=3D"margin:0in;margin-bottom:.0001pt"><span =
+style=3D"font-family:&quot;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></spa=
+n></p>
+</div>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_F08_1C3F_0C4853E1.6BCBCA7F--

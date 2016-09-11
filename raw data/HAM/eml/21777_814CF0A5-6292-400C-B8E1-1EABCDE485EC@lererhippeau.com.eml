@@ -1,0 +1,2442 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 19 May
+ 2016 09:42:05 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 19 May 2016
+ 09:42:01 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 923815255
+ for parrishd@dnc.org; Thu, 19 May 2016 08:42:13 -0500
+X-Note-AR-ScanTimeLocal: 5/19/2016 8:42:02 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.175 DOM:lererhippeau.com ADDR:klerer@lererhippeau.com
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-365/SG:5 5/19/2016 8:41:55 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 62.5023 ms. Fail:1 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:1-1324/SG:1 5/19/2016 8:42:00 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.175
+X-Note-Reverse-DNS: mail-io0-f175.google.com
+X-Note-Return-Path: klerer@lererhippeau.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f175.google.com ([209.85.223.175] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 139297889
+ for parrishd@dnc.org; Thu, 19 May 2016 08:42:02 -0500
+Received: by mail-io0-f175.google.com with SMTP id t40so14972738ioi.0
+        for <parrishd@dnc.org>; Thu, 19 May 2016 06:42:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=lererhippeau-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:subject:from:in-reply-to:date:cc
+         :content-transfer-encoding:message-id:references:to;
+        bh=oLLZulYfmOqoVCoIfE8f1V5nElZ3WF69DzdKCOK2fuo=;
+        b=uS8zT8a4qs2tikhHwajfX2x91Nyi6cP1rx/1x88REWJ8X0AKjrDfrM8q6n+RUT9zU2
+         CoWQBiPBpoX+IcwcZ3cMvSmuS7oGv8r+/U8lhNPRBarWySr/naFvNERaaknBIHAw6fom
+         w4tQqXjtsf0/6N3sl4StCFxgORXPePzqexj+z+pKtuqlS6db3mHSDhQEBNnecnhr+awc
+         0veuiSSPPScqJs9yB/2SpGm0dsSJxZsZp4RzRW5CTiipEYtuofuITMvnJ0Nkbu7OuqNL
+         RSe7PSo+aSOS1TES5e1rpH38QUBHjN7pS9qNKkirhn1TWrh15xA2YrcosHS+qWH8F7O2
+         1mrw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
+         :content-transfer-encoding:message-id:references:to;
+        bh=oLLZulYfmOqoVCoIfE8f1V5nElZ3WF69DzdKCOK2fuo=;
+        b=lGc3w7oLxK1p+VghGsVhHsrh0gF8cE850jvabsgj4jAJN/FPy9M131bmVllWL1VL/h
+         ELTk8Qi9BvEsHwc2Bc7PdEok2g2Bx/z1lfxcAo7X+sAs4KnTLgGuKxdLvcdzBTft5SKr
+         nX/btAUYPyMjnaXk6NX+NUUE41s952gU0wVvI+Ilpm2vHqSaNy8BY5QGrTsn1f7IJChp
+         7ulrtZu6XWHTweVqpmXkOU6sUSXoHMSEaSdU6YWZrbmk9G8LzFPpi5/3g7Izx1LUVu5t
+         FWgGd1LNEA6mHMLbQTbEGa8TTa2rnMl91gNPWDRk4nJ1+mpwL2GrhTFYQx8ZBZa2y146
+         AzMw==
+X-Gm-Message-State: AOPr4FVyJk10NsN7dEQuYx8IXwPxjTmmYhpo4aUyDlos+8hXX+QVZa/GmFlap9nQFLCY4qTi
+X-Received: by 10.107.155.1 with SMTP id d1mr11417420ioe.62.1463665322471;
+        Thu, 19 May 2016 06:42:02 -0700 (PDT)
+Return-Path: <klerer@lererhippeau.com>
+Received: from ?IPv6:2600:1017:b81d:878c:2597:13c9:a97:1e35?
+ ([2600:1017:b81d:878c:2597:13c9:a97:1e35])        by smtp.gmail.com with
+ ESMTPSA id 39sm4341137iod.8.2016.05.19.06.42.00        (version=TLSv1/SSLv3
+ cipher=OTHER);        Thu, 19 May 2016 06:42:01 -0700 (PDT)
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail-113C5BFB-3B5F-4AF2-BAA4-891CCD88E216"
+Subject: Re: Update on June 8th
+From: Kenneth Lerer <klerer@lererhippeau.com>
+X-Mailer: iPhone Mail (13E238)
+In-Reply-To: <CACG1p4rsJVZ-UrCfKhM9kKmK7avJBQbXkprYKw7NBj2eL4ZemQ@mail.gmail.com>
+Date: Thu, 19 May 2016 09:42:00 -0400
+CC: "Parrish, Daniel" <parrishd@dnc.org>, Lauren Baldino
+	<lauren@lererhippeau.com>
+Content-Transfer-Encoding: 7bit
+Message-ID: <814CF0A5-6292-400C-B8E1-1EABCDE485EC@lererhippeau.com>
+References: <CACG1p4rksLThogb3ikbH+7t90_2EqNsuM18NPGW53BE9BxC6RA@mail.gmail.com> <28B55226-7295-4C5B-822A-EE594B0AF404@lererhippeau.com> <CACG1p4rsJVZ-UrCfKhM9kKmK7avJBQbXkprYKw7NBj2eL4ZemQ@mail.gmail.com>
+To: Zachary Allen <zallen@tipahconsulting.com>
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--Apple-Mail-113C5BFB-3B5F-4AF2-BAA4-891CCD88E216
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+No need yet. Let's see where we are end of day. If we are a few short I can m=
+ake calls and you can get a few more=20
+
+> On May 19, 2016, at 9:20 AM, Zachary Allen <zallen@tipahconsulting.com> wr=
+ote:
+>=20
+> Got it - will wait to hear from you or Lauren and stop any RSVPs on our si=
+de, though I don't think there are many outstanding.=20
+>=20
+> We only have folks who have paid or who you have told us are coming. Would=
+ you like us to follow up and request contributions from the folks who you'v=
+e said are attending?=20
+>=20
+>> On Thu, May 19, 2016 at 8:40 AM, Kenneth Lerer <klerer@lererhippeau.com> w=
+rote:
+>> just looked at this list this am and its missing quite a few people who h=
+ave told me they are coming so maybe later today we can compare lists we may=
+ be at 60 already Im afraid.=20
+>>=20
+>> Ill have to review the mails later today. Also maybe Im wrong because I=E2=
+=80=99ve been too busy last few days=20
+>>=20
+>>=20
+>>> On May 18, 2016, at 3:59 PM, Zachary Allen <zallen@tipahconsulting.com> w=
+rote:
+>>>=20
+>>> Ken -=20
+>>>=20
+>>> Thanks so much for an incredibly solid start. Wanted to give you the lat=
+est.=20
+>>>=20
+>>> We had another couple sign up at the $33,400 per person, I updated your n=
+umbers to reflect our emails this morning, and now include a guest who is gi=
+ving significantly ($75,000) that we are counting towards this event (Eric S=
+choenberg).=20
+>>>=20
+>>> This puts us at 42 attendees, and $602,200 in commitments with $378,800 i=
+n hand and $233,400 outstanding left to collect.=20
+>>>=20
+>>> This is quite a start, so a huge, huge thank you. Looks like we're on tr=
+ack to hit our goal and sell this out in advance. Famous last words.
+>>>=20
+>>> I have an email into the WH re: timing and will revert as soon as I hear=
+.=20
+>>>=20
+>>> Best,
+>>> Zach
+>>>=20
+>>>=20
+>>>=20
+>>> EVENT TOTAL
+>>> $602,200
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> $233,400
+>>> $378,800
+>>> 42
+>>> FIRST
+>>> LAST
+>>> RAISER(S)
+>>> COMMIT
+>>> IN-HAND
+>>> ATTEND
+>>> Tiffany
+>>> Adams
+>>> Lerer/Sailer
+>>> =20
+>>> $10,000
+>>> 1
+>>> Jonathan
+>>> Bellack
+>>> DNC
+>>> =20
+>>> $33,400
+>>> 1
+>>> Matthew
+>>> Blank
+>>> Lerer/Sailer
+>>> =20
+>>> $20,000
+>>> 1
+>>> Susan
+>>> Blank
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> Jennifer
+>>> Bonnell
+>>> DNC
+>>> =20
+>>> $33,400
+>>> 1
+>>> David
+>>> Bryan
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> GUEST
+>>> Bryan
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> ?
+>>> Richard
+>>> Christiansen
+>>> DNC
+>>> =20
+>>> $20,000
+>>> 1
+>>> Tamar
+>>> Dor-Ner
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> Tina
+>>> Exhoras
+>>> Lerer/Sailer
+>>> $20,000
+>>> =20
+>>> 1
+>>> Rob
+>>> Fishman
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Mark
+>>> Gallogly
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Arthur
+>>> Krystal
+>>> DNC
+>>> =20
+>>> $10,000
+>>> 1
+>>> Benjamin
+>>> Lerer
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Emily
+>>> Lerer
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Isabel
+>>> Lerer
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Kenneth
+>>> Lerer
+>>> Lerer/Sailer
+>>> $33,400
+>>> HOST
+>>> 1
+>>> David
+>>> Levine
+>>> DNC
+>>> =20
+>>> $13,400
+>>> 1
+>>> Ruth
+>>> Levine
+>>> DNC
+>>> =20
+>>> $13,400
+>>> 1
+>>> Giulio
+>>> Martini
+>>> DNC
+>>> =20
+>>> $10,000
+>>> 1
+>>> Jody
+>>> Martini
+>>> DNC
+>>> =20
+>>> $10,000
+>>> 1
+>>> Penny
+>>> Mintz
+>>> DNC
+>>> =20
+>>> $10,000
+>>> 1
+>>> Jordan
+>>> Muraskin
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Carole
+>>> Robinson
+>>> Lerer/Sailer
+>>> $10,000
+>>> =20
+>>> 1
+>>> Katherine
+>>> Sailer
+>>> Lerer/Sailer
+>>>=20
+>>> HOST
+>>> 1
+>>> Alexandra
+>>> Schoenberg
+>>> DNC
+>>> =20
+>>> =20
+>>> 1
+>>> Eric
+>>> Schoenberg
+>>> DNC
+>>> =20
+>>> $75,000
+>>> 1
+>>> David
+>>> Singer
+>>> Lerer/Sailer
+>>> $20,000
+>>> =20
+>>> 1
+>>> GUEST
+>>> Singer
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> GUEST
+>>> Stampler
+>>> DNC
+>>> $10,000
+>>> =20
+>>> 1
+>>> Julie
+>>> Stampler
+>>> DNC
+>>> $10,000
+>>> =20
+>>> 1
+>>> Sophie
+>>> Stenbeck
+>>> Lerer/Sailer
+>>> =20
+>>> $10,000
+>>> 1
+>>> Lise
+>>> Strickler
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> ?
+>>> Jack
+>>> Taylor
+>>> Lerer/Sailer
+>>> =20
+>>> $10,000
+>>> 1
+>>> Franklin
+>>> Thomas
+>>> DNC
+>>> =20
+>>> =20
+>>> 1
+>>> Are
+>>> Traasdahl
+>>> Lerer/Sailer
+>>> =20
+>>> $20,000
+>>> 1
+>>> Siri Willoch
+>>> Traasdahl
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> Jeff
+>>> Weber
+>>> DNC
+>>> =20
+>>> $33,400
+>>> 1
+>>> Stacey
+>>> Weber
+>>> DNC
+>>> =20
+>>> $13,400
+>>> 1
+>>> Kate
+>>> Whitney
+>>> DNC
+>>> =20
+>>> $33,400
+>>> 1
+>>> Caroline
+>>> Zaleski
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> Kenny
+>>> Zaleski
+>>> Lerer/Sailer
+>>> =20
+>>> =20
+>>> 1
+>>> Michel
+>>> Zaleski
+>>> Lerer/Sailer
+>>> $30,000
+>>> =20
+>>> 1
+>>> Ed
+>>> Zimmerman
+>>> DNC
+>>> $10,000
+>>> =20
+>>> 1
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> =20
+>>> Jeff
+>>> Gural
+>>> =20
+>>> $10,000
+>>> =20
+>>> 0
+>>> =20
+>>>=20
+>>> --=20
+>>> Zachary Allen
+>>> TIPAH Consulting
+>>> 304 Park Avenue South, 8th Floor
+>>> New York, NY 10010
+>>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>=20
+>=20
+>=20
+>=20
+> --=20
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--Apple-Mail-113C5BFB-3B5F-4AF2-BAA4-891CCD88E216
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"></=
+head><body dir=3D"auto"><div></div><div>No need yet. Let's see where we are=
+ end of day. If we are a few short I can make calls and you can get a few m=
+ore&nbsp;</div><div><br>On May 19, 2016, at 9:20 AM, Zachary Allen &lt;<a h=
+ref=3D"mailto:zallen@tipahconsulting.com">zallen@tipahconsulting.com</a>&gt=
+; wrote:<br><br></div><blockquote type=3D"cite"><div><div dir=3D"ltr">Got i=
+t - will wait to hear from you or Lauren and stop any RSVPs on our side, th=
+ough I don't think there are many outstanding.&nbsp;<div><br></div><div>We =
+only have folks who have paid or who you have told us are coming. Would you=
+ like us to follow up and request contributions from the folks who you've s=
+aid are attending?&nbsp;</div></div><div class=3D"gmail_extra"><br><div cla=
+ss=3D"gmail_quote">On Thu, May 19, 2016 at 8:40 AM, Kenneth Lerer <span dir=
+=3D"ltr">&lt;<a href=3D"mailto:klerer@lererhippeau.com" target=3D"_blank">k=
+lerer@lererhippeau.com</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_=
+quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1=
+ex"><div style=3D"word-wrap:break-word">just looked at this list this am an=
+d its missing quite a few people who have told me they are coming so maybe =
+later today we can compare lists we may be at 60 already Im afraid.&nbsp;<d=
+iv><br></div><div>Ill have to review the mails later today. Also maybe Im w=
+rong because I=E2=80=99ve been too busy last few days&nbsp;</div><div><br><=
+/div><div><br><div><blockquote type=3D"cite"><div>On May 18, 2016, at 3:59 =
+PM, Zachary Allen &lt;<a href=3D"mailto:zallen@tipahconsulting.com" target=
+=3D"_blank">zallen@tipahconsulting.com</a>&gt; wrote:</div><br><div><div di=
+r=3D"ltr">Ken -&nbsp;<div><br></div><div>Thanks so much for an incredibly s=
+olid start. Wanted to give you the latest.&nbsp;</div><div><br></div><div>W=
+e had another couple sign up at the $33,400 per person, I updated your numb=
+ers to reflect our emails this morning, and now include a guest who is givi=
+ng significantly ($75,000) that we are counting towards this event (Eric&nb=
+sp;<span>Schoenberg)</span>.&nbsp;</div><div><br></div><div>This puts us at=
+ 42 attendees, and $602,200 in commitments with $378,800 in hand and $233,4=
+00 outstanding left to collect.&nbsp;</div><div><br></div><div>This is quit=
+e a start, so a huge, huge thank you. Looks like we're on track to hit our =
+goal and sell this out in advance. Famous last words.</div><div><br></div><=
+div>I have an email into the WH re: timing and will revert as soon as I hea=
+r.&nbsp;</div><div><br></div><div>Best,</div><div>Zach</div><div><br></div>=
+<div><br></div><div><br></div><div><table border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" style=3D"border-collapse:collapse">
+ <tbody><tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border:1pt solid w=
+indowtext;padding:0in 5.4pt;height:14.65pt;background:black"><p class=3D"Ms=
+oNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;text-align:center=
+"><b><span style=3D"color:white">EVENT TOTAL</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-top-width:=
+1pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid=
+ solid none;border-top-color:windowtext;border-right-color:windowtext;borde=
+r-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black=
+"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;t=
+ext-align:center"><b><span style=3D"color:white">$602,200</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-top-width:1pt=
+;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid so=
+lid none;border-top-color:windowtext;border-right-color:windowtext;border-b=
+ottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"><=
+p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;text=
+-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;te=
+xt-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;te=
+xt-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-top-width:1=
+pt;border-right-width:1pt;border-bottom-width:1pt;border-style:solid solid =
+solid none;border-top-color:windowtext;border-right-color:windowtext;border=
+-bottom-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"=
+><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;te=
+xt-align:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"><p =
+class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;text-a=
+lign:center"><b><span style=3D"color:white">&nbsp;</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D=
+"margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">&=
+nbsp;</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"ma=
+rgin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">&nbs=
+p;</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">$2=
+33,400</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">$3=
+78,800</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">42=
+</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt;background:black"><p =
+class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0001pt;text-a=
+lign:center"><b><span style=3D"color:white">FIRST</span></b></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D=
+"margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">L=
+AST</span></b></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"ma=
+rgin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">RAIS=
+ER(S)</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">CO=
+MMIT</span></b></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">IN=
+-HAND</span></b></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt;background:black"><p class=3D"MsoNormal" align=3D"center" style=3D"=
+margin-bottom:0.0001pt;text-align:center"><b><span style=3D"color:white">AT=
+TEND</span></b></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Tiffany</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ada=
+ms</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jonathan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bel=
+lack</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Matthew</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bla=
+nk</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Susan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bla=
+nk</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jennifer</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bon=
+nell</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bry=
+an</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Bry=
+an</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>?</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Richard</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Chr=
+istiansen</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Tamar</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Dor=
+-Ner</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Tina</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Exh=
+oras</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$20,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Rob</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Fis=
+hman</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Mark</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Gal=
+logly</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Arthur</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Kry=
+stal</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Benjamin</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ler=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Emily</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ler=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Isabel</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ler=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Kenneth</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ler=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$33,400</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>HOST</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Lev=
+ine</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Ruth</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Lev=
+ine</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Giulio</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Mar=
+tini</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jody</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Mar=
+tini</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Penny</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Min=
+tz</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>DNC</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jordan</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Mur=
+askin</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Carole</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Rob=
+inson</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Katherine</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sai=
+ler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><br></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>HOST</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Alexandra</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sch=
+oenberg</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Eric</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sch=
+oenberg</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$75,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>David</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sin=
+ger</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$20,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sin=
+ger</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>GUEST</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sta=
+mpler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Julie</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Sta=
+mpler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Sophie</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Ste=
+nbeck</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Lise</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Str=
+ickler</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>?</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jack</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Tay=
+lor</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Franklin</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Tho=
+mas</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Are</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Tra=
+asdahl</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$20,000</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Siri Willoch</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Tra=
+asdahl</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jeff</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Web=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Stacey</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Web=
+er</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$13,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Kate</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Whi=
+tney</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$33,400</span></p>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Caroline</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Zal=
+eski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Kenny</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Zal=
+eski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Michel</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Zal=
+eski</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.000=
+1pt;text-align:center"><span>Lerer/Sailer</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$30,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Ed</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Zim=
+merman</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>DNC</s=
+pan></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>1</span></p>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><div style=3D"margin=
+-bottom:0.0001pt;text-align:right"><span>&nbsp;</span><br></div>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbs=
+p;</span><br></div>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp;<=
+/span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><div style=3D"margin=
+-bottom:0.0001pt;text-align:right"><span>&nbsp;</span><br></div>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbs=
+p;</span><br></div>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp;<=
+/span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:center"><span>&nbs=
+p;</span><br></div>
+  </td>
+ </tr>
+ <tr style=3D"height:14.65pt">
+  <td width=3D"118" valign=3D"top" style=3D"width:88.3pt;border-right-width=
+:1pt;border-bottom-width:1pt;border-left-width:1pt;border-style:none solid =
+solid;border-right-color:windowtext;border-bottom-color:windowtext;border-l=
+eft-color:windowtext;padding:0in 5.4pt;height:14.65pt"><p class=3D"MsoNorma=
+l" style=3D"margin-bottom:0.0001pt"><span>Jeff</span></p>
+  </td>
+  <td width=3D"121" valign=3D"top" style=3D"width:90.75pt;border-style:none=
+ solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bo=
+rder-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height=
+:14.65pt"><p class=3D"MsoNormal" style=3D"margin-bottom:0.0001pt"><span>Gur=
+al</span></p>
+  </td>
+  <td width=3D"104" valign=3D"top" style=3D"width:78pt;border-style:none so=
+lid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;borde=
+r-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:14=
+.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp;<=
+/span><br></div>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"right" style=3D"margin-bottom:0.00=
+01pt;text-align:right"><span>$10,000</span></p>
+  </td>
+  <td width=3D"99" valign=3D"top" style=3D"width:74.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><div style=3D"margin-bottom:0.0001pt;text-align:right"><span>&nbsp=
+;</span><br></div>
+  </td>
+  <td width=3D"59" valign=3D"top" style=3D"width:44.15pt;border-style:none =
+solid solid none;border-bottom-width:1pt;border-bottom-color:windowtext;bor=
+der-right-width:1pt;border-right-color:windowtext;padding:0in 5.4pt;height:=
+14.65pt"><p class=3D"MsoNormal" align=3D"center" style=3D"margin-bottom:0.0=
+001pt;text-align:center"><span>0</span></p>
+  </td>
+ </tr>
+</tbody></table><div>&nbsp;<span class=3D"HOEnZb"><font color=3D"#888888"><=
+br></font></span></div><span class=3D"HOEnZb"><font color=3D"#888888"><div>=
+<br></div>-- <br><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br><span><span title=3D"Call with Google Voice"><=
+a href=3D"tel:%28646%29%20470-8689" value=3D"&#43;16464708689" target=3D"_b=
+lank">(646) 470-8689</a></span><span> direct | <span title=3D"Call with Goo=
+gle Voice"><a href=3D"tel:%28973%29%20618-5903" value=3D"&#43;19736185903" =
+target=3D"_blank">(973) 618-5903</a></span> fax</span></span><span>&nbsp;| =
+</span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_blank">ZAll=
+en@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</font></span></div></div>
+</div></blockquote></div><br></div></div></blockquote></div><br><br clear=
+=3D"all"><div><br></div>-- <br><div class=3D"gmail_signature"><div dir=3D"l=
+tr"><div><div dir=3D"ltr"><div><div dir=3D"ltr">Zachary Allen<br>TIPAH Cons=
+ulting<br>304 Park Avenue South, 8th Floor<br>New York, NY 10010<br>(646) 4=
+70-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a href=3D"mailto:Z=
+Allen@TIPAHConsulting.com" target=3D"_blank">ZAllen@TIPAHConsulting.com</a>=
+</div></div></div></div></div></div>
+</div>
+</div></blockquote></body></html>=
+
+--Apple-Mail-113C5BFB-3B5F-4AF2-BAA4-891CCD88E216--

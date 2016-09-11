@@ -1,0 +1,553 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 29 Apr
+ 2016 12:04:05 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 29 Apr 2016
+ 12:03:55 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 887757736
+ for mirandal@dnc.org; Fri, 29 Apr 2016 11:04:06 -0500
+X-Note-AR-ScanTimeLocal: 4/29/2016 11:04:05 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:198.21.6.101 DOM:maillist.prochoiceamerica.org ADDR:bounces2331581-bd27-mirandaldncorg@maillist.prochoiceamerica.org
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-315/SG:5 4/29/2016 11:03:10 AM
+X-GBUdb-Analysis: 0, 198.21.6.101, Ugly c=0.602477 p=-0.728324 Source Normal
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.6266 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 4/29/2016 11:03:50 AM
+X-Warn: BOUNCETRACKER Bounce User Tracking Found
+X-Warn: OPTOUT
+X-Note: Spam Tests Failed: BOUNCETRACKER, OPTOUT
+X-Country-Path: United States->->United States->
+X-Note-Sending-IP: 198.21.6.101
+X-Note-Reverse-DNS: o3.bn.sendgrid.net
+X-Note-Return-Path: bounces+2331581-bd27-mirandal=dnc.org@maillist.prochoiceamerica.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G339 G375 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from o3.bn.sendgrid.net ([198.21.6.101] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136154039
+ for mirandal@dnc.org; Fri, 29 Apr 2016 11:04:04 -0500
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=prochoiceamerica.org; 
+	h=mime-version:from:subject:content-type:list-id:list-unsubscribe:list-archive:list-post:list-help:list-subscribe:to; 
+	s=s1; bh=c5FrCAgwSl2PSYo7YjydX5JQuoQ=; b=q69+rBhIN9MU+JGwDF2LrmP
+	HXWKoH8dXFC81JSBcLO+ZYKEadzOzIRTCFjUXdLhTM18WoEoxXdlXHfFEu1dPW+m
+	E6fdnLA81jA+a413K9cyB1nJQ/gwqhdiJnzgO3Gjf/Y5nia+ktDOmMTmrcrCBC46
+	fZkS0bzoEUiOO0PoeMJM=
+Received: by filter0553p1mdw1.sendgrid.net with SMTP id
+ filter0553p1mdw1.10510.572385EF63        2016-04-29 16:03:59.559884762 +0000
+ UTC
+Received: from DCSVRMONITOR.naral.local (67.108.121.52.ptr.us.xo.net
+ [67.108.121.52])	by ismtpd0005p1iad1.sendgrid.net (SG) with ESMTP id
+ 0VXYnggZT3mw4z3tlcP2uA	for <mirandal@dnc.org>; Fri, 29 Apr 2016 16:03:59.600
+ +0000 (UTC)
+Return-Path: <jowens@prochoiceamerica.org>
+X-Original-To: friends@mailman.prochoiceamerica.org
+Delivered-To: friends@mailman.prochoiceamerica.org
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20130820;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=Bu1hJJSh69JuIBSrTDEVrUUk/ndr77GJ2SsQje5YApQ=;
+ b=aQQ6poLL2V5hZpZ+v45ZQSEDolUwwh8u8bFavoPiq4Z05iitkoz9ZJr1kIlHGQvJdS
+ jWJPsiteVb6BwhmbCGjgL71+v3cx0BA/EJJdyVtclO45sV+W3VwIuLoNdyIhY8rgDxH4
+ iyp9tz5lpH4+kHYrfLVXiELOCVWABCxeWL3xzad8s62b3UYNmU39QmySC4i+N2VLSl0V
+ cZbYKn6Dr7DyiJHqlajqUdoch+LPd8gYFmymwxp5yadHqPrDjXfEk25FEq4tjQXx7kNi
+ 7DeiSqz4G+2Fcti763DIA/y5MzAq8dtcJOknFpyV1le5KYSNLBeeUDJp5jHZkCVPlp0r
+ b+JQ==
+X-Gm-Message-State: AOPr4FW9F0U1xa7+tzMwCjinHYB71a/rvdUPKixPOTIhEbbJr9Ur8JCDTBLDCyH0o84wwa5MLWzN/BkdS5/de5+ioUI=
+X-Received: by 10.50.221.169 with SMTP id qf9mr5522277igc.13.1461945772154;
+ Fri, 29 Apr 2016 09:02:52 -0700 (PDT)
+From: James Owens <jowens@prochoiceamerica.org>
+Date: Fri, 29 Apr 2016 12:02:32 -0400
+Message-ID: <CAEGwAFVuXy9TOXYtsW6P5OvDwJM-YSPCXYejj3wMQXtZrrT6+g@mail.gmail.com>
+Subject: National Journal: NH is Ground Zero for Abortion-Rights Groups
+Content-Type: multipart/alternative; boundary="f46d042ac0206e72a10531a1c68c"
+X-BeenThere: friends@mailman.prochoiceamerica.org
+X-Mailman-Version: 2.1.16
+Precedence: list
+List-Id: <friends.mailman.prochoiceamerica.org>
+List-Unsubscribe: <http://links.prochoiceamerica.org/wf/unsubscribe?upn=xUQ3jCNra69WclajdKWNZXvi-2B5CvD0xij2hIwhOMJl6ahPcbwBxUZ9KUZtLo2lLdy860qSSzyvrXgadhURntRZBXSmLU4op6m0eVdoh6A-2FKVpvT6nDPQ9AbwhEaJWEDiBnewpCr7ASI2tf6x8e-2FPqyTyc9PWBz5V9TJLG0aYQfOgLgDAP-2FyfjRLhVUxAvDOgJsXF2CSZTW8rr7sD7n-2BehA-3D-3D>, <mailto:unsubscribe@maillist.prochoiceamerica.org?subject=http://links.prochoiceamerica.org/wf/unsubscribe*q*upn=xUQ3jCNra69WclajdKWNZXvi-2B5CvD0xij2hIwhOMJl6ahPcbwBxUZ9KUZtLo2lLdy860qSSzyvrXgadhURntRZBXSmLU4op6m0eVdoh6A-2FKVpvT6nDPQ9AbwhEaJWEDiBnewpCr7ASI2tf6x8e-2FPqyTyc9PWBz5V9TJLG0aYQfOgLgDAP-2FyfjRLhVUxAvDOgJsXF2CSZTW8rr7sD7n-2BehA-3D-3D>
+List-Archive: <http://mailman.prochoiceamerica.org/private/friends/>
+List-Post: <mailto:friends@mailman.prochoiceamerica.org>
+List-Help: <mailto:friends-request@mailman.prochoiceamerica.org?subject=help>
+List-Subscribe: <http://mailman.prochoiceamerica.org/listinfo/friends>,
+ <mailto:friends-request@mailman.prochoiceamerica.org?subject=subscribe>
+To: <mirandal@dnc.org>
+Errors-To: friends-bounces@mailman.prochoiceamerica.org
+X-SG-EID: /qskMPcwxb1VaCv1PswYfL3cIKK16+tE+dB/q/CjBM1w2nyHwEmRldJy8cgPkMZWZgJMhtTcNn/lX3
+ HRbOuaoPfkkpgsxJE9AV/TLTALRvMTVq46uYSEqNQ5XGcJFHkM89kt7D6rXw9ocbGS8+k1KwalBuWK
+ N0q/VjcJ6fq5vOqa9M8/QiszPvIgGHZhL1yyl0OrjjMFI1wKJKxyel1hTSV/bVC34NDLhKeWDXF99D
+ 0=
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--f46d042ac0206e72a10531a1c68c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+National Journal today is out with a story
+<http://www.prochoiceamerica.org/media/new-hampshire-is-ground-zero.html> on
+NARAL's new data-driven ad campaign against Sen. Ayotte (R-NH). The article
+highlights how NARAL has used new polling
+<http://www.prochoiceamerica.org/assets/download-files/new-hampshire-ad-cre=
+ative.pdf>
+to learn that Sen. Ayotte's opposition to reproductive freedom is a
+significant vulnerability and that it is particularly off-putting to
+independents and Republicans.
+
+Nationally, seven-in-ten Americans support legal access to abortion but
+NARAL's polling shows that number is even higher in NH, where it is
+supported by 78 percent of voters. NARAL's new ad campaign comes after a se=
+ries
+of ads
+<http://www.prochoiceamerica.org/media/press-releases/2015/watch-the-freedo=
+m-ads.html>
+the
+group ran in 2015 calling out Sens. Ayotte, Burr (R-NC), Johnson (R-WI),
+and Kirk (R-IL) for refusing to support a bill to help victims of human
+trafficking unless it denied those victim's access to abortion care. Polling
+<http://www.prochoiceamerica.org/assets/download-files/trafficking-polling-=
+memo.pdf>
+conducted
+by NARAL showed that a clear majority of voters (60-75%) were less likely
+to vote for their Senator for holding this extreme position.
+
+*Highlights:*
+
+
+*=E2=80=9CNow that we have the data to back it up, we=E2=80=99re be=C2=ADin=
+g able to tar=C2=ADget
+these mes=C2=ADsages to very spe=C2=ADcif=C2=ADic con=C2=ADstitu=C2=ADen=C2=
+=ADcies, and that can be the
+mar=C2=ADgin of vic=C2=ADtory,=E2=80=9D she said. =E2=80=9CNo one is sur=C2=
+=ADprised=E2=80=9D the mes=C2=ADsage
+ap=C2=ADpeals to the Demo=C2=ADcrat=C2=ADic base, she ad=C2=ADded, =E2=80=
+=9Cbut the fact that it=E2=80=99s so
+ef=C2=ADfect=C2=ADive with in=C2=ADde=C2=ADpend=C2=ADents and Re=C2=ADpub=
+=C2=ADlic=C2=ADans=E2=80=94that=E2=80=99s new.=E2=80=9D  *
+
+*As for NARAL=E2=80=99s next tar=C2=ADgets, Hogue said the group is re=C2=
+=ADsearch=C2=ADing
+mes=C2=ADsages for Sen=C2=ADate con=C2=ADtests in Wis=C2=ADcon=C2=ADsin, No=
+rth Car=C2=ADo=C2=ADlina, Ari=C2=ADzona,
+and Pennsylvania=E2=80=94races that all fea=C2=ADture in=C2=ADcum=C2=ADbent=
+ Re=C2=ADpub=C2=ADlic=C2=ADan men.*
+
+
+*National Journal
+<https://www.nationaljournal.com/s/623279?mref=3Dsearch-result>: NH is Grou=
+nd
+Zero for Abortion-Rights Groups*
+*With more focused messaging, NARAL Pro-Choice America is targeting
+Republican Sen. Kelly Ayotte*
+By Andrea Drusch
+
+Abor=C2=ADtion-rights act=C2=ADiv=C2=ADists have honed their mes=C2=ADsage =
+and are gear=C2=ADing up
+to el=C2=ADev=C2=ADate their is=C2=ADsues once again in the battle for the =
+Sen=C2=ADate, two
+years after Demo=C2=ADcrats were skewered for their fo=C2=ADcus on a =E2=80=
+=9Cwar on wo=C2=ADmen.=E2=80=9D
+
+NARAL Pro-Choice Amer=C2=ADica last week launched its first TV buy of 2016
+against Sen. Kelly Ayotte of New Hamp=C2=ADshire. The ad was mes=C2=ADsage-=
+tested
+among the state=E2=80=99s siz=C2=ADable in=C2=ADde=C2=ADpend=C2=ADent elect=
+=C2=ADor=C2=ADate, which will likely
+de=C2=ADterm=C2=ADine the first-term Re=C2=ADpub=C2=ADlic=C2=ADan=E2=80=99s=
+ reelec=C2=ADtion.
+
+NARAL plans to go in=C2=ADto a hand=C2=ADful of states in 2016, but lead=C2=
+=ADers said New
+Hamp=C2=ADshire will be the =E2=80=9Czenith=E2=80=9D of this cycle=E2=80=99=
+s wo=C2=ADmen=E2=80=99s-health battle and
+the test=C2=ADing ground for a re=C2=ADvamped mes=C2=ADsage from the one De=
+mo=C2=ADcrats
+stumbled over last cycle.
+
+=E2=80=9CWe=E2=80=99ve been de=C2=ADvel=C2=ADop=C2=ADing this mes=C2=ADsage=
+ over the course of the past three
+years, and it=E2=80=99s much sharp=C2=ADer than what we=E2=80=99ve done in =
+the past,=E2=80=9D NARAL
+Pres=C2=ADid=C2=ADent Ilyse Hogue said in an in=C2=ADter=C2=ADview Thursday=
+ with Na=C2=ADtion=C2=ADal
+Journ=C2=ADal.
+
+Point=C2=ADing to the script of the first ad, Hogue said NARAL=E2=80=99s po=
+lling
+in=C2=ADdic=C2=ADated that a ma=C2=ADjor=C2=ADity of voters across gender a=
+nd party lines
+sup=C2=ADport leg=C2=ADal ac=C2=ADcess to abor=C2=ADtion, but they are most=
+ moved on the is=C2=ADsue
+when they be=C2=ADlieve law=C2=ADmakers are pri=C2=ADor=C2=ADit=C2=ADiz=C2=
+=ADing re=C2=ADstrict=C2=ADing wo=C2=ADmen=E2=80=99s
+health over oth=C2=ADer is=C2=ADsues, such as jobs and the eco=C2=ADnomy.
+
+In the ad, a wo=C2=ADman speak=C2=ADing dir=C2=ADectly to the cam=C2=ADera =
+says that un=C2=ADlike
+Ayotte, she and her hus=C2=ADband =E2=80=9Cshow up and do the jobs=E2=80=9D=
+ for which they were
+hired. Ayotte, she con=C2=ADtin=C2=ADues, =E2=80=9Cseems to think that her =
+job is about
+re=C2=ADstrict=C2=ADing abor=C2=ADtion, lim=C2=ADit=C2=ADing ac=C2=ADcess t=
+o birth con=C2=ADtrol, and
+re=C2=ADfus=C2=ADing to even con=C2=ADsider the pres=C2=ADid=C2=ADent=E2=80=
+=99s nom=C2=ADin=C2=ADee to the Su=C2=ADpreme
+Court.=E2=80=9D
+
+Hogue said the tone marks a dis=C2=ADtinct shift from the at=C2=ADtack ads =
+former
+Sen. Mark Ud=C2=ADall of Col=C2=ADor=C2=ADado was cri=C2=ADti=C2=ADcized fo=
+r in his 2014 race
+against Re=C2=ADpub=C2=ADlic=C2=ADan Cory Gard=C2=ADner. While Demo=C2=ADcr=
+ats in=C2=ADsist their polling
+in that race showed Ud=C2=ADall would have done worse without the ads, his
+cam=C2=ADpaign was panned for over=C2=ADplay=C2=ADing the abor=C2=ADtion is=
+=C2=ADsue, earn=C2=ADing him
+the monik=C2=ADer =E2=80=9CMark Uter=C2=ADus.=E2=80=9D
+
+=E2=80=9CIt=E2=80=99s dif=C2=ADfer=C2=ADent than what we=E2=80=99ve done in=
+ past years,=E2=80=9D said Hogue, who
+stressed the group=E2=80=99s emphasis on block=C2=ADing ac=C2=ADcess to re=
+=C2=ADpro=C2=ADduct=C2=ADive
+health care =E2=80=9Cat the ex=C2=ADpense of oth=C2=ADer things that are cr=
+it=C2=ADic=C2=ADal
+pri=C2=ADor=C2=ADit=C2=ADies in their voters=E2=80=99 minds.
+
+=E2=80=9CWhere we are at the sweet spot is the com=C2=ADbin=C2=ADa=C2=ADtio=
+n of those two things,=E2=80=9D
+she said.
+
+To quanti=C2=ADfy the time spent on these is=C2=ADsues, NARAL poin=C2=ADted=
+ to 12
+dif=C2=ADfer=C2=ADent votes Ayotte took on abor=C2=ADtion, con=C2=ADtra=C2=
+=ADcep=C2=ADtion ac=C2=ADcess, and
+de=C2=ADfund=C2=ADing Planned Par=C2=ADent=C2=ADhood since she was elec=C2=
+=ADted in 2010.
+
+Armed with a re=C2=ADtooled mes=C2=ADsaging strategy, Hogue said New Hamp=
+=C2=ADshire, a
+state where even the ma=C2=ADjor=C2=ADity of Re=C2=ADpub=C2=ADlic=C2=ADan p=
+rimary voters sup=C2=ADport
+leg=C2=ADal abor=C2=ADtion, will be ground zero for the group=E2=80=99s new=
+ cam=C2=ADpaign.
+
+In polling con=C2=ADduc=C2=ADted by Civis Ana=C2=ADlyt=C2=ADics for NARAL a=
+nd provided to
+Na=C2=ADtion=C2=ADal Journ=C2=ADal, 78 per=C2=ADcent of likely voters in th=
+e Gran=C2=ADite State
+said they be=C2=ADlieved abor=C2=ADtion should be leg=C2=ADal, even if they=
+ per=C2=ADson=C2=ADally
+op=C2=ADposed the pro=C2=ADced=C2=ADure.
+
+=E2=80=9CThe tests in New Hamp=C2=ADshire were off the charts,=E2=80=9D Hog=
+ue said. =E2=80=9CAyotte is
+uniquely vul=C2=ADner=C2=ADable on this.=E2=80=9D
+
+When reached for com=C2=ADment, Ayotte=E2=80=99s cam=C2=ADpaign con=C2=ADte=
+n=C2=ADded that the
+sen=C2=ADat=C2=ADor has an ex=C2=ADcel=C2=ADlent re=C2=ADcord on wo=C2=ADme=
+n=E2=80=99s health, point=C2=ADing to her
+work on a bill to al=C2=ADlow over-the-counter birth-con=C2=ADtrol sales, a=
+s well as
+fund=C2=ADing breast-can=C2=ADcer screen=C2=ADing.
+
+Still, New Hamp=C2=ADshire Re=C2=ADpub=C2=ADlic=C2=ADans con=C2=ADcede that=
+ the state=E2=80=94known for its
+in=C2=ADde=C2=ADpend=C2=ADent streak=E2=80=94 presents a chal=C2=ADlenge wh=
+en it comes to abor=C2=ADtion
+polit=C2=ADics.
+
+=E2=80=9CI can=E2=80=99t think of a single ma=C2=ADjor can=C2=ADdid=C2=ADat=
+e get=C2=ADting elec=C2=ADted to a
+sig=C2=ADni=C2=ADfic=C2=ADant po=C2=ADs=C2=ADi=C2=ADtion whose ar=C2=ADgu=
+=C2=ADment for elec=C2=ADtion was =E2=80=98I am
+pro-life,=E2=80=99=E2=80=9D New Hamp=C2=ADshire-based Re=C2=ADpub=C2=ADlic=
+=C2=ADan strategist Tom Rath said.
+=E2=80=9CIt has been a hurdle that Re=C2=ADpub=C2=ADlic=C2=ADans have to cl=
+ear some way in their
+primary, but it has nev=C2=ADer been the hall=C2=ADmark of a gen=C2=ADer=C2=
+=ADal-elec=C2=ADtion
+cam=C2=ADpaign.=E2=80=9D
+
+But Ayotte, Rath said, has already been tested on this is=C2=ADsue in her 2=
+010
+Sen=C2=ADate race and has built trust with in=C2=ADde=C2=ADpend=C2=ADent vo=
+ters who helped make
+her the first Re=C2=ADpub=C2=ADlic=C2=ADan elec=C2=ADted statewide in New H=
+amp=C2=ADshire in a
+dec=C2=ADade.
+
+Rath ad=C2=ADded that while NARAL may be able to move in=C2=ADde=C2=ADpend=
+=C2=ADents away from
+Ayotte on this par=C2=ADtic=C2=ADu=C2=ADlar is=C2=ADsue, =E2=80=9Cthere=E2=
+=80=99s plenty of oth=C2=ADer is=C2=ADsues,
+like spend=C2=ADing, where she can pull them right back.=E2=80=9D
+
+Demo=C2=ADcrat=C2=ADic strategists work=C2=ADing on this race said voters a=
+re nat=C2=ADur=C2=ADally
+in=C2=ADclined to trust fe=C2=ADmale can=C2=ADdid=C2=ADates on is=C2=ADsues=
+ of wo=C2=ADmen=E2=80=99s health, but
+polling shows they move away when they=E2=80=99re read in=C2=ADform=C2=ADa=
+=C2=ADtion about votes
+to de=C2=ADfund Planned Par=C2=ADent=C2=ADhood or re=C2=ADstrict ac=C2=ADce=
+ss to abor=C2=ADtion and
+con=C2=ADtra=C2=ADcep=C2=ADtion.
+
+NARAL isn=E2=80=99t the only group bet=C2=ADting big on this is=C2=ADsue in=
+ Ayotte=E2=80=99s race.
+Last week, Planned Par=C2=ADent=C2=ADhood Ac=C2=ADtion Fund de=C2=ADclared =
+that New Hamp=C2=ADshire
+would be its biggest fo=C2=ADcus of the 2016 cycle, launch=C2=ADing a TV ad=
+ that
+fea=C2=ADtured a clip of Ayotte call=C2=ADing for the over=C2=ADturn=C2=ADi=
+ng of Roe v. Wade.
+
+On the Re=C2=ADpub=C2=ADlic=C2=ADan side, the GOP-aligned non=C2=ADprofit O=
+ne Na=C2=ADtion already
+lent Ayotte cov=C2=ADer on wo=C2=ADmen=E2=80=99s health, run=C2=ADning an a=
+d in Oc=C2=ADto=C2=ADber
+prais=C2=ADing her for work=C2=ADing across the aisle to fund breast-can=C2=
+=ADcer
+re=C2=ADsearch.
+
+Hogue said part of NARAL=E2=80=99s new cam=C2=ADpaign is aimed at set=C2=AD=
+ting the
+con=C2=ADver=C2=ADsa=C2=ADtion early, and find=C2=ADing the spe=C2=ADcif=C2=
+=ADic voters who are moved by
+this mes=C2=ADsage.
+
+=E2=80=9CNow that we have the data to back it up, we=E2=80=99re be=C2=ADing=
+ able to tar=C2=ADget
+these mes=C2=ADsages to very spe=C2=ADcif=C2=ADic con=C2=ADstitu=C2=ADen=C2=
+=ADcies, and that can be the
+mar=C2=ADgin of vic=C2=ADtory,=E2=80=9D she said. =E2=80=9CNo one is sur=C2=
+=ADprised=E2=80=9D the mes=C2=ADsage
+ap=C2=ADpeals to the Demo=C2=ADcrat=C2=ADic base, she ad=C2=ADded, =E2=80=
+=9Cbut the fact that it=E2=80=99s so
+ef=C2=ADfect=C2=ADive with in=C2=ADde=C2=ADpend=C2=ADents and Re=C2=ADpub=
+=C2=ADlic=C2=ADans=E2=80=94that=E2=80=99s new.=E2=80=9D
+
+As for NARAL=E2=80=99s next tar=C2=ADgets, Hogue said the group is re=C2=AD=
+search=C2=ADing
+mes=C2=ADsages for Sen=C2=ADate con=C2=ADtests in Wis=C2=ADcon=C2=ADsin, No=
+rth Car=C2=ADo=C2=ADlina, Ari=C2=ADzona,
+and Pennsylvania=E2=80=94races that all fea=C2=ADture in=C2=ADcum=C2=ADbent=
+ Re=C2=ADpub=C2=ADlic=C2=ADan men.
+
+To read the full article, click here
+<https://www.nationaljournal.com/s/623279>.
+
+
+--=20
+James Owens
+States Communications Director
+NARAL Pro-Choice America
+@JamesDakinOwens
+To no longer receive news updates click here: http://links.prochoiceamerica=
+.org/wf/unsubscribe?upn=3DxUQ3jCNra69WclajdKWNZXvi-2B5CvD0xij2hIwhOMJl6ahPc=
+bwBxUZ9KUZtLo2lLdNQkeZehz1xZKafbtuLSiuiA5mc9e-2FdC9Dzu1ANj1VYE-2F9WE3sIeOab=
+MKgm0MUJxGUeeyOhr6hmmPlLApcm37Q7QkcGkq9kgswSabgYZxPBOUCVzDyw91Zy2QGO5uNOyJM=
+v-2BUibTG7tpWGKiOks1zWA-3D-3D.
+
+--f46d042ac0206e72a10531a1c68c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div style=3D"font-size:12.8px"><span style=3D"font-size:12.=
+8px">National Journal today is out with a</span><span style=3D"font-size:12=
+.8px">&nbsp;</span><a href=3D"http://www.prochoiceamerica.org/media/new-ham=
+pshire-is-ground-zero.html" target=3D"_blank" style=3D"font-size:12.8px">st=
+ory</a><span style=3D"font-size:12.8px">&nbsp;</span><span style=3D"font-si=
+ze:12.8px">on NARAL's new data-driven ad campaign against Sen. Ayotte (R-NH=
+). The article highlights how NARAL has used <a href=3D"http://www.prochoic=
+eamerica.org/assets/download-files/new-hampshire-ad-creative.pdf">new polli=
+ng</a> to learn that Sen. Ayotte's opposition to reproductive freedom is a =
+significant vulnerability and that it is particularly off-putting to indepe=
+ndents and Republicans.</span><br></div><div style=3D"font-size:12.8px"><br=
+></div><div style=3D"font-size:12.8px">Nationally, seven-in-ten Americans s=
+upport legal access to abortion but NARAL's polling shows that number is ev=
+en higher in NH, where it is supported by 78 percent of voters. NARAL's new=
+ ad campaign comes after a&nbsp;<a href=3D"http://www.prochoiceamerica.org/=
+media/press-releases/2015/watch-the-freedom-ads.html" target=3D"_blank">ser=
+ies of ads</a>&nbsp;the group ran in 2015 calling out Sens. Ayotte, Burr (R=
+-NC), Johnson (R-WI), and Kirk (R-IL) for refusing to support a bill to hel=
+p victims of human trafficking unless it denied those victim's access to ab=
+ortion care.&nbsp;<a href=3D"http://www.prochoiceamerica.org/assets/downloa=
+d-files/trafficking-polling-memo.pdf" target=3D"_blank">Polling</a>&nbsp;co=
+nducted by NARAL showed that a clear majority of voters (60-75%) were less =
+likely to vote for their Senator for holding this extreme position.</div><d=
+iv style=3D"font-size:12.8px"><b><u><br></u></b></div><div style=3D"font-si=
+ze:12.8px"><b><u>Highlights:</u></b></div><div style=3D"font-size:12.8px"><=
+blockquote style=3D"margin:0px 0px 0px 40px;border:none;padding:0px"><div><=
+br></div><div><b>=E2=80=9CNow that we have the data to back it up, we=E2=80=
+=99re be=C2=ADing able to tar=C2=ADget these mes=C2=ADsages to very spe=C2=
+=ADcif=C2=ADic con=C2=ADstitu=C2=ADen=C2=ADcies, and that can be the mar=C2=
+=ADgin of vic=C2=ADtory,=E2=80=9D she said. =E2=80=9CNo one is sur=C2=ADpri=
+sed=E2=80=9D the mes=C2=ADsage ap=C2=ADpeals to the Demo=C2=ADcrat=C2=ADic =
+base, she ad=C2=ADded, =E2=80=9Cbut the fact that it=E2=80=99s so ef=C2=ADf=
+ect=C2=ADive with in=C2=ADde=C2=ADpend=C2=ADents and Re=C2=ADpub=C2=ADlic=
+=C2=ADans=E2=80=94that=E2=80=99s new.=E2=80=9D &nbsp;</b></div><div><b><br>=
+</b></div><div><b>As for NARAL=E2=80=99s next tar=C2=ADgets, Hogue said the=
+ group is re=C2=ADsearch=C2=ADing mes=C2=ADsages for Sen=C2=ADate con=C2=AD=
+tests in Wis=C2=ADcon=C2=ADsin, North Car=C2=ADo=C2=ADlina, Ari=C2=ADzona, =
+and Pennsylvania=E2=80=94races that all fea=C2=ADture in=C2=ADcum=C2=ADbent=
+ Re=C2=ADpub=C2=ADlic=C2=ADan men.</b></div></blockquote></div><div style=
+=3D"font-size:12.8px"><b><br></b></div><b style=3D"font-size:12.8px"><a hre=
+f=3D"https://www.nationaljournal.com/s/623279?mref=3Dsearch-result" target=
+=3D"_blank">National Journal</a>: NH is Ground Zero for Abortion-Rights Gro=
+ups</b><br style=3D"font-size:12.8px"><i style=3D"font-size:12.8px">With mo=
+re focused messaging, NARAL Pro-Choice America is targeting Republican Sen.=
+ Kelly Ayotte</i><div style=3D"font-size:12.8px">By Andrea Drusch<br><br>Ab=
+or=C2=ADtion-rights act=C2=ADiv=C2=ADists have honed their mes=C2=ADsage an=
+d are gear=C2=ADing up to el=C2=ADev=C2=ADate their is=C2=ADsues once again=
+ in the battle for the Sen=C2=ADate, two years after Demo=C2=ADcrats were s=
+kewered for their fo=C2=ADcus on a =E2=80=9Cwar on wo=C2=ADmen.=E2=80=9D<br=
+><br>NARAL Pro-Choice Amer=C2=ADica last week launched its first TV buy of =
+2016 against Sen. Kelly Ayotte of New Hamp=C2=ADshire. The ad was mes=C2=AD=
+sage-tested among the state=E2=80=99s siz=C2=ADable in=C2=ADde=C2=ADpend=C2=
+=ADent elect=C2=ADor=C2=ADate, which will likely de=C2=ADterm=C2=ADine the =
+first-term Re=C2=ADpub=C2=ADlic=C2=ADan=E2=80=99s reelec=C2=ADtion.<br><br>=
+NARAL plans to go in=C2=ADto a hand=C2=ADful of states in 2016, but lead=C2=
+=ADers said New Hamp=C2=ADshire will be the =E2=80=9Czenith=E2=80=9D of thi=
+s cycle=E2=80=99s wo=C2=ADmen=E2=80=99s-health battle and the test=C2=ADing=
+ ground for a re=C2=ADvamped mes=C2=ADsage from the one Demo=C2=ADcrats stu=
+mbled over last cycle.<br><br>=E2=80=9CWe=E2=80=99ve been de=C2=ADvel=C2=AD=
+op=C2=ADing this mes=C2=ADsage over the course of the past three years, and=
+ it=E2=80=99s much sharp=C2=ADer than what we=E2=80=99ve done in the past,=
+=E2=80=9D NARAL Pres=C2=ADid=C2=ADent Ilyse Hogue said in an in=C2=ADter=C2=
+=ADview Thursday with Na=C2=ADtion=C2=ADal Journ=C2=ADal.<br><br>Point=C2=
+=ADing to the script of the first ad, Hogue said NARAL=E2=80=99s polling in=
+=C2=ADdic=C2=ADated that a ma=C2=ADjor=C2=ADity of voters across gender and=
+ party lines sup=C2=ADport leg=C2=ADal ac=C2=ADcess to abor=C2=ADtion, but =
+they are most moved on the is=C2=ADsue when they be=C2=ADlieve law=C2=ADmak=
+ers are pri=C2=ADor=C2=ADit=C2=ADiz=C2=ADing re=C2=ADstrict=C2=ADing wo=C2=
+=ADmen=E2=80=99s health over oth=C2=ADer is=C2=ADsues, such as jobs and the=
+ eco=C2=ADnomy.<br><br>In the ad, a wo=C2=ADman speak=C2=ADing dir=C2=ADect=
+ly to the cam=C2=ADera says that un=C2=ADlike Ayotte, she and her hus=C2=AD=
+band =E2=80=9Cshow up and do the jobs=E2=80=9D for which they were hired. A=
+yotte, she con=C2=ADtin=C2=ADues, =E2=80=9Cseems to think that her job is a=
+bout re=C2=ADstrict=C2=ADing abor=C2=ADtion, lim=C2=ADit=C2=ADing ac=C2=ADc=
+ess to birth con=C2=ADtrol, and re=C2=ADfus=C2=ADing to even con=C2=ADsider=
+ the pres=C2=ADid=C2=ADent=E2=80=99s nom=C2=ADin=C2=ADee to the Su=C2=ADpre=
+me Court.=E2=80=9D<br><br>Hogue said the tone marks a dis=C2=ADtinct shift =
+from the at=C2=ADtack ads former Sen. Mark Ud=C2=ADall of Col=C2=ADor=C2=AD=
+ado was cri=C2=ADti=C2=ADcized for in his 2014 race against Re=C2=ADpub=C2=
+=ADlic=C2=ADan Cory Gard=C2=ADner. While Demo=C2=ADcrats in=C2=ADsist their=
+ polling in that race showed Ud=C2=ADall would have done worse without the =
+ads, his cam=C2=ADpaign was panned for over=C2=ADplay=C2=ADing the abor=C2=
+=ADtion is=C2=ADsue, earn=C2=ADing him the monik=C2=ADer =E2=80=9CMark Uter=
+=C2=ADus.=E2=80=9D<br><br>=E2=80=9CIt=E2=80=99s dif=C2=ADfer=C2=ADent than =
+what we=E2=80=99ve done in past years,=E2=80=9D said Hogue, who stressed th=
+e group=E2=80=99s emphasis on block=C2=ADing ac=C2=ADcess to re=C2=ADpro=C2=
+=ADduct=C2=ADive health care =E2=80=9Cat the ex=C2=ADpense of oth=C2=ADer t=
+hings that are crit=C2=ADic=C2=ADal pri=C2=ADor=C2=ADit=C2=ADies in their v=
+oters=E2=80=99 minds.<br><br>=E2=80=9CWhere we are at the sweet spot is the=
+ com=C2=ADbin=C2=ADa=C2=ADtion of those two things,=E2=80=9D she said.<br><=
+br>To quanti=C2=ADfy the time spent on these is=C2=ADsues, NARAL poin=C2=AD=
+ted to 12 dif=C2=ADfer=C2=ADent votes Ayotte took on abor=C2=ADtion, con=C2=
+=ADtra=C2=ADcep=C2=ADtion ac=C2=ADcess, and de=C2=ADfund=C2=ADing Planned P=
+ar=C2=ADent=C2=ADhood since she was elec=C2=ADted in 2010.<br><br>Armed wit=
+h a re=C2=ADtooled mes=C2=ADsaging strategy, Hogue said New Hamp=C2=ADshire=
+, a state where even the ma=C2=ADjor=C2=ADity of Re=C2=ADpub=C2=ADlic=C2=AD=
+an primary voters sup=C2=ADport leg=C2=ADal abor=C2=ADtion, will be ground =
+zero for the group=E2=80=99s new cam=C2=ADpaign. &nbsp;<br><br>In polling c=
+on=C2=ADduc=C2=ADted by Civis Ana=C2=ADlyt=C2=ADics for NARAL and provided =
+to Na=C2=ADtion=C2=ADal Journ=C2=ADal, 78 per=C2=ADcent of likely voters in=
+ the Gran=C2=ADite State said they be=C2=ADlieved abor=C2=ADtion should be =
+leg=C2=ADal, even if they per=C2=ADson=C2=ADally op=C2=ADposed the pro=C2=
+=ADced=C2=ADure.<br><br>=E2=80=9CThe tests in New Hamp=C2=ADshire were off =
+the charts,=E2=80=9D Hogue said. =E2=80=9CAyotte is uniquely vul=C2=ADner=
+=C2=ADable on this.=E2=80=9D<br><br>When reached for com=C2=ADment, Ayotte=
+=E2=80=99s cam=C2=ADpaign con=C2=ADten=C2=ADded that the sen=C2=ADat=C2=ADo=
+r has an ex=C2=ADcel=C2=ADlent re=C2=ADcord on wo=C2=ADmen=E2=80=99s health=
+, point=C2=ADing to her work on a bill to al=C2=ADlow over-the-counter birt=
+h-con=C2=ADtrol sales, as well as fund=C2=ADing breast-can=C2=ADcer screen=
+=C2=ADing.<br><br>Still, New Hamp=C2=ADshire Re=C2=ADpub=C2=ADlic=C2=ADans =
+con=C2=ADcede that the state=E2=80=94known for its in=C2=ADde=C2=ADpend=C2=
+=ADent streak=E2=80=94 presents a chal=C2=ADlenge when it comes to abor=C2=
+=ADtion polit=C2=ADics.<br><br>=E2=80=9CI can=E2=80=99t think of a single m=
+a=C2=ADjor can=C2=ADdid=C2=ADate get=C2=ADting elec=C2=ADted to a sig=C2=AD=
+ni=C2=ADfic=C2=ADant po=C2=ADs=C2=ADi=C2=ADtion whose ar=C2=ADgu=C2=ADment =
+for elec=C2=ADtion was =E2=80=98I am pro-life,=E2=80=99=E2=80=9D New Hamp=
+=C2=ADshire-based Re=C2=ADpub=C2=ADlic=C2=ADan strategist Tom Rath said. =
+=E2=80=9CIt has been a hurdle that Re=C2=ADpub=C2=ADlic=C2=ADans have to cl=
+ear some way in their primary, but it has nev=C2=ADer been the hall=C2=ADma=
+rk of a gen=C2=ADer=C2=ADal-elec=C2=ADtion cam=C2=ADpaign.=E2=80=9D<br><br>=
+But Ayotte, Rath said, has already been tested on this is=C2=ADsue in her 2=
+010 Sen=C2=ADate race and has built trust with in=C2=ADde=C2=ADpend=C2=ADen=
+t voters who helped make her the first Re=C2=ADpub=C2=ADlic=C2=ADan elec=C2=
+=ADted statewide in New Hamp=C2=ADshire in a dec=C2=ADade.<br><br>Rath ad=
+=C2=ADded that while NARAL may be able to move in=C2=ADde=C2=ADpend=C2=ADen=
+ts away from Ayotte on this par=C2=ADtic=C2=ADu=C2=ADlar is=C2=ADsue, =E2=
+=80=9Cthere=E2=80=99s plenty of oth=C2=ADer is=C2=ADsues, like spend=C2=ADi=
+ng, where she can pull them right back.=E2=80=9D<br><br>Demo=C2=ADcrat=C2=
+=ADic strategists work=C2=ADing on this race said voters are nat=C2=ADur=C2=
+=ADally in=C2=ADclined to trust fe=C2=ADmale can=C2=ADdid=C2=ADates on is=
+=C2=ADsues of wo=C2=ADmen=E2=80=99s health, but polling shows they move awa=
+y when they=E2=80=99re read in=C2=ADform=C2=ADa=C2=ADtion about votes to de=
+=C2=ADfund Planned Par=C2=ADent=C2=ADhood or re=C2=ADstrict ac=C2=ADcess to=
+ abor=C2=ADtion and con=C2=ADtra=C2=ADcep=C2=ADtion.<br><br>NARAL isn=E2=80=
+=99t the only group bet=C2=ADting big on this is=C2=ADsue in Ayotte=E2=80=
+=99s race. Last week, Planned Par=C2=ADent=C2=ADhood Ac=C2=ADtion Fund de=
+=C2=ADclared that New Hamp=C2=ADshire would be its biggest fo=C2=ADcus of t=
+he 2016 cycle, launch=C2=ADing a TV ad that fea=C2=ADtured a clip of Ayotte=
+ call=C2=ADing for the over=C2=ADturn=C2=ADing of Roe v. Wade.<br><br>On th=
+e Re=C2=ADpub=C2=ADlic=C2=ADan side, the GOP-aligned non=C2=ADprofit One Na=
+=C2=ADtion already lent Ayotte cov=C2=ADer on wo=C2=ADmen=E2=80=99s health,=
+ run=C2=ADning an ad in Oc=C2=ADto=C2=ADber prais=C2=ADing her for work=C2=
+=ADing across the aisle to fund breast-can=C2=ADcer re=C2=ADsearch.<br><br>=
+Hogue said part of NARAL=E2=80=99s new cam=C2=ADpaign is aimed at set=C2=AD=
+ting the con=C2=ADver=C2=ADsa=C2=ADtion early, and find=C2=ADing the spe=C2=
+=ADcif=C2=ADic voters who are moved by this mes=C2=ADsage.<br><br>=E2=80=9C=
+Now that we have the data to back it up, we=E2=80=99re be=C2=ADing able to =
+tar=C2=ADget these mes=C2=ADsages to very spe=C2=ADcif=C2=ADic con=C2=ADsti=
+tu=C2=ADen=C2=ADcies, and that can be the mar=C2=ADgin of vic=C2=ADtory,=E2=
+=80=9D she said. =E2=80=9CNo one is sur=C2=ADprised=E2=80=9D the mes=C2=ADs=
+age ap=C2=ADpeals to the Demo=C2=ADcrat=C2=ADic base, she ad=C2=ADded, =E2=
+=80=9Cbut the fact that it=E2=80=99s so ef=C2=ADfect=C2=ADive with in=C2=AD=
+de=C2=ADpend=C2=ADents and Re=C2=ADpub=C2=ADlic=C2=ADans=E2=80=94that=E2=80=
+=99s new.=E2=80=9D &nbsp;<br><br>As for NARAL=E2=80=99s next tar=C2=ADgets,=
+ Hogue said the group is re=C2=ADsearch=C2=ADing mes=C2=ADsages for Sen=C2=
+=ADate con=C2=ADtests in Wis=C2=ADcon=C2=ADsin, North Car=C2=ADo=C2=ADlina,=
+ Ari=C2=ADzona, and Pennsylvania=E2=80=94races that all fea=C2=ADture in=C2=
+=ADcum=C2=ADbent Re=C2=ADpub=C2=ADlic=C2=ADan men.</div><div style=3D"font-=
+size:12.8px"><br></div><div style=3D"font-size:12.8px">To read the full art=
+icle,&nbsp;<a href=3D"https://www.nationaljournal.com/s/623279" target=3D"_=
+blank">click here</a>.</div><div style=3D"font-size:12.8px;text-align:cente=
+r"><br></div><div><br></div>-- <br><div class=3D"gmail_signature"><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div>James Owens</div><div>=
+States Communications Director</div><div>NARAL Pro-Choice America</div><div=
+><span style=3D"font-size:12.8px">@JamesDakinOwens</span></div></div></div>=
+</div></div></div>
+</div>
+<p>To no longer receive news updates&nbsp;<a href=3D"http://links.prochoice=
+america.org/wf/unsubscribe?upn=3DxUQ3jCNra69WclajdKWNZXvi-2B5CvD0xij2hIwhOM=
+Jl6ahPcbwBxUZ9KUZtLo2lLd-2BmNfWilQYPi5XGZuLJqZciJxy7eQoeNXAAyFPKyloRIWkKhV-=
+2BFkFNSMdcqBGiIQWHJAifGzZc3q-2BkbeyUzptcvFgeByUgJcA0upqw8xOlUO2afPVjc4nOYBD=
+bw1MoDBmSn5UDv-2Fn7TUWlz6mgbwJ9g-3D-3D">click here</a>.</p>
+
+<img src=3D"http://links.prochoiceamerica.org/wf/open?upn=3DxUQ3jCNra69Wcla=
+jdKWNZXvi-2B5CvD0xij2hIwhOMJl6ahPcbwBxUZ9KUZtLo2lLdaNkfSkBGUFutyIFMpNJvc2fx=
+mgk27Pr8XeigM6s2xrJE0HlOWQFIcaxYcF-2FMciogMMZOKE6XohiBUDsKfdR56rYkA-2FZrsH8=
+7RBBXORp2beuZYOrPT54n258p3Hl3FJZxzL2sr5Twvi6KMnEKks-2FRpSNGiZJI6MbzJ1N-2F9N=
+Ifn4E-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1p=
+x !important;width:1px !important;border-width:0 !important;margin-top:0 !i=
+mportant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0=
+ !important;padding-top:0 !important;padding-bottom:0 !important;padding-ri=
+ght:0 !important;padding-left:0 !important;">
+
+--f46d042ac0206e72a10531a1c68c--

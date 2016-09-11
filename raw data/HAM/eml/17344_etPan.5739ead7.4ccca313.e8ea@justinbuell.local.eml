@@ -1,0 +1,520 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 16 May
+ 2016 11:44:28 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 16 May 2016
+ 11:44:27 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 917198619
+ for stowee@dnc.org; Mon, 16 May 2016 10:44:35 -0500
+X-Note-AR-ScanTimeLocal: 5/16/2016 10:44:26 AM
+X-Policy: dnc.org
+X-Primary: stowee@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.220.46 DOM:gmail.com ADDR:jbuell@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-420/SG:5 5/16/2016 10:43:51 AM
+X-GBUdb-Analysis: 1, 73.241.210.81, Ugly c=0 p=0 Source New
+X-Signature-Violations: 0-0-0-19708-c
+X-Note-419: 0 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/16/2016 10:44:12 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->United States->
+X-Note-Sending-IP: 209.85.220.46
+X-Note-Reverse-DNS: mail-pa0-f46.google.com
+X-Note-Return-Path: jbuell@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G675 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-pa0-f46.google.com ([209.85.220.46] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138793117
+ for stowee@dnc.org; Mon, 16 May 2016 10:44:26 -0500
+Received: by mail-pa0-f46.google.com with SMTP id gj5so8283615pac.2        for
+ <stowee@dnc.org>; Mon, 16 May 2016 08:44:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=date:from:to:message-id:in-reply-to:references:subject:mime-version;
+        bh=ylWkXl0xNtuTx5Qe7h0Dgt6Jl9yRfDDjtJCb78k3IMw=;
+        b=WwCr8u89Ae5j68HJ/RQ6JwEcVB7E+9/fVuT5ZVuIBfMNEDvw/GRMe4PgIjaHcwqlxg
+         vxPgTZpOvyDzr9WmGn8Yj+c4nTXdv6mfxfG/G5zdPKUtVl/vbB4lDCrPhhuXlZXcKHuS
+         M/OKy8TIB96O/Bu4gFsn5tTJPnaPfXyv73QdLppwKDTCykZZpPz199/Z082kDKP8bfRc
+         yFlxgc9oIiBSmh+iekN+SqvrJPMJP5QT7US2o3KSlxN6DDRG/8+aokW8rNlRyRATjjyg
+         JwbIE68y8sxRwfjooABIwsXga2ScvNd3k5xir6t8xRCWy7wDk4/BXvW6i8aPmuoV+YYM
+         cPLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:date:from:to:message-id:in-reply-to:references
+         :subject:mime-version;
+        bh=ylWkXl0xNtuTx5Qe7h0Dgt6Jl9yRfDDjtJCb78k3IMw=;
+        b=ZcH2yvFk73ab6KSkjshqwxvXVJipI8f1PquI7w2KKoRUZpjfxy8BtfN/AiPkLF4pHS
+         Lt80BtvHKydUkiRO5hdIzdclU9XMT191TH1IVru7cb5wdNSg8irkJKpB33zaXA3mlY/k
+         btFbRj3XWUpkUfsD4eT0MUfOvxo7QtAmDDeX0FJwa7euZEj3OlFJvsNEJhdAtZ2ARklG
+         HnQHRQg8IMbBLSSNj01wmCEJ13NT/YaThPrCCD9YAb/mQ0DoZ7yRCUn3mwqqm7DR4rwa
+         LXOZ3HCEkwTcuwSX9LFUzDvcrTDVZIuo+U6UAC0LnkTPBvgq8HTRFMsEkNLoBHe+8f+V
+         o4Ew==
+X-Gm-Message-State: AOPr4FUwURWcSuQ6T7xENix8qyNVA/UHR6+Q+g5Pi7CYvTNgMaOs4eSRtuRQM6KDcfsbwg==
+X-Received: by 10.66.177.75 with SMTP id co11mr46947658pac.85.1463413466524;
+        Mon, 16 May 2016 08:44:26 -0700 (PDT)
+Return-Path: <jbuell@gmail.com>
+Received: from justinbuell.local (c-73-241-210-81.hsd1.ca.comcast.net.
+ [73.241.210.81])        by smtp.gmail.com with ESMTPSA id
+ a64sm48320784pfa.6.2016.05.16.08.44.24        for <stowee@dnc.org>
+        (version=TLSv1/SSLv3 cipher=OTHER);        Mon, 16 May 2016 08:44:24
+ -0700 (PDT)
+Date: Mon, 16 May 2016 08:42:23 -0700
+From: Justin Buell <jbuell@gmail.com>
+To: =?utf-8?Q?Stowe=2C_Erik?= <stowee@dnc.org>
+Message-ID: <etPan.5739ead7.4ccca313.e8ea@justinbuell.local>
+In-Reply-To: <35345801-2123-48C2-B1B0-0FACBA40273E@dnc.org>
+References: <qJHzU000000000000000000000000000000000000000000000O74KFS002WtdX-H3RO6TDOJsFymQkA@sfdc.net>
+ <920C5BAE680D55478F814616740FE2CC01A4D990@smeopm01>
+ <5C041D9C6CCC7845AE90EEADDBDC8D016F045D3C@dncdag1.dnc.org>
+ <35345801-2123-48C2-B1B0-0FACBA40273E@dnc.org>
+Subject: Re: Fwd: White House Tour =?utf-8?Q?=E2=80=93_?=REQUEST
+ SUBMITTED
+X-Mailer: Airmail (351)
+Content-Type: multipart/alternative; boundary="5739ead7_65ade24b_e8ea"
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--5739ead7_65ade24b_e8ea
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Thank you=21=21
+
+Just did it.
+
+Really appreciate this.
+
+
+
+On May 16, 2016 at 8:28:26 AM, Stowe, Erik (stowee=40dnc.org) wrote:
+
+Will you fill out the RSVP link below for the WH tour=3F=C2=A0
+
+Erik Stowe
+
+Begin forwarded message:
+
+=46rom: =22Comer, Scott=22 <ComerS=40dnc.org>
+Date: May 13, 2016 at 10:57:15 AM PDT
+To: =22Stowe, Erik=22 <StoweE=40dnc.org>
+Subject: =46W: White House Tour =E2=80=93 REQUEST SUBMITTED
+
+Make sure they fill out the RSVP link soon, or it will expire after a cou=
+ple days.
+
+=C2=A0
+
+=46rom: Burton, Collin =5Bmailto:Collin=5FE=5FBurton=40who.eop.gov=5D
+Sent: =46riday, May 13, 2016 12:59 PM
+To: Comer, Scott
+Subject: =46W: White House Tour =E2=80=93 REQUEST SUBMITTED
+
+=C2=A0
+
+=C2=A0
+
+=C2=A0
+
+=C2=A0
+
+Collin Burton
+
+The White House
+
+Direct =7C (202) 456-1377
+
+=C2=A0
+
+=46rom: White House Tours - No Reply
+Sent: =46riday, May 13, 2016 12:57 PM
+To: Burton, Collin
+Subject: White House Tour =E2=80=93 REQUEST SUBMITTED
+
+=C2=A0
+
+
+
+
+
+=C2=A0
+
+=C2=A0
+
+Hello,
+
+A self-guided tour of the White House has been requested for the Landsnes=
+s group, (CS-176950), for 4 guests on 6/7/2016 at 09:30 AM.
+
+RSVP by 5/20/2016 12:57 PM - RSVP Link
+
+What's Next=3F
+
+ =20
+
+ =20
+
+ =20
+
+Invite Your Guests=21
+
+Track Responses
+
+Print Boarding Pass
+
+RSVP Link
+
+Guest List
+
+Boarding Pass
+
+=C2=A0
+
+Sincerely,
+
+White House Visitors Office
+
+
+
+
+=C2=A0
+
+ =20
+
+The White House =E2=80=A2 1600 Pennsylvania Avenue, N.W. =E2=80=A2 Washin=
+gton,=C2=A0D.C.=C2=A0=C2=A020500
+
+=C2=A0
+
+=C2=A0
+--5739ead7_65ade24b_e8ea
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><s=
+tyle>body{font-family:Helvetica,Arial;font-size:13px}</style></head><body s=
+tyle=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break=
+: after-white-space;"><div id=3D"bloop_customfont" style=3D"font-family:Hel=
+vetica,Arial;font-size:13px; color: rgba(0,0,0,1.0); margin: 0px; line-heig=
+ht: auto;">Thank you!!</div><div id=3D"bloop_customfont" style=3D"font-fami=
+ly:Helvetica,Arial;font-size:13px; color: rgba(0,0,0,1.0); margin: 0px; lin=
+e-height: auto;"><br></div><div id=3D"bloop_customfont" style=3D"font-famil=
+y:Helvetica,Arial;font-size:13px; color: rgba(0,0,0,1.0); margin: 0px; line=
+-height: auto;">Just did it.</div><div id=3D"bloop_customfont" style=3D"fon=
+t-family:Helvetica,Arial;font-size:13px; color: rgba(0,0,0,1.0); margin: 0p=
+x; line-height: auto;"><br></div><div id=3D"bloop_customfont" style=3D"font=
+-family:Helvetica,Arial;font-size:13px; color: rgba(0,0,0,1.0); margin: 0px=
+; line-height: auto;">Really appreciate this.</div> <br> <div id=3D"bloop_s=
+ign_1463413334259048960" class=3D"bloop_sign"><div style=3D"font-family:hel=
+vetica,arial;font-size:13px"><br></div></div> <br><p class=3D"airmail_on">O=
+n May 16, 2016 at 8:28:26 AM, Stowe, Erik (<a href=3D"mailto:stowee@dnc.org=
+">stowee@dnc.org</a>) wrote:</p> <blockquote type=3D"cite" class=3D"clean_b=
+q"><span><div dir=3D"auto"><div></div><div>
+
+
+
+
+
+<title></title>
+
+
+<div>Will you fill out the RSVP link below for the WH
+tour?&nbsp;<br>
+<br>
+Erik Stowe</div>
+<div><br>
+Begin forwarded message:<br>
+<br></div>
+<blockquote type=3D"cite">
+<div><b>From:</b> &quot;Comer, Scott&quot; &lt;<a href=3D"mailto:ComerS@dnc=
+.org">ComerS@dnc.org</a>&gt;<br>
+<b>Date:</b> May 13, 2016 at 10:57:15 AM PDT<br>
+<b>To:</b> &quot;Stowe, Erik&quot; &lt;<a href=3D"mailto:StoweE@dnc.org">St=
+oweE@dnc.org</a>&gt;<br>
+<b>Subject:</b> <b>FW: White House Tour =E2=80=93 REQUEST
+SUBMITTED</b><br>
+<br></div>
+</blockquote>
+<blockquote type=3D"cite">
+<div><!--[if !mso]><![endif]--><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">
+Make sure they fill out the RSVP link soon, or it will expire after
+a couple days.</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">
+&nbsp;</span></p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">
+From:</span></b> <span style=3D"font-size:10.0pt;font-family:&quot;Tahoma&q=
+uot;,&quot;sans-serif&quot;">
+Burton, Collin [<a href=3D"mailto:Collin_E_Burton@who.eop.gov">mailto:Colli=
+n_E_Burton@who.eop.gov</a>]<br>
+
+<b>Sent:</b> Friday, May 13, 2016 12:59 PM<br>
+<b>To:</b> Comer, Scott<br>
+<b>Subject:</b> FW: White House Tour =E2=80=93 REQUEST SUBMITTED</span></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">
+&nbsp;</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">
+&nbsp;</span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#7C7C7C">
+&nbsp;</span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#7C7C7C">
+Collin Burton</span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#7C7C7C">
+<a href=3D"http://www.whitehouse.gov/"><span style=3D"color:#0563C1">The Wh=
+ite House</span></a></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#7C7C7C">
+Direct | (202) 456-1377</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1F497D">
+&nbsp;</span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">
+From:</span></b> <span style=3D"font-size:11.0pt;font-family:&quot;Calibri&=
+quot;,&quot;sans-serif&quot;">
+White House Tours - No Reply<br>
+<b>Sent:</b> Friday, May 13, 2016 12:57 PM<br>
+<b>To:</b> Burton, Collin<br>
+<b>Subject:</b> White House Tour =E2=80=93 REQUEST SUBMITTED</span></p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"width:100.0%;background:whitesmoke">
+<tbody>
+<tr>
+<td style=3D"padding:22.5pt 22.5pt 22.5pt 22.5pt">
+<div align=3D"center">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"630" style=3D"width:472.5pt;background:white">
+<tbody>
+<tr style=3D"height:92.25pt">
+<td valign=3D"top" style=3D"padding:0in 0in 0in 0in;height:92.25pt">
+<div align=3D"center">
+<table class=3D"MsoNormalTable" border=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding:.75pt .75pt .75pt .75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"border:solid windowtext 1.0pt;padding:0in"><img border=3D"0"=
+ width=3D"100" height=3D"100" id=3D"_x0000_i1025" src=3D"cid:~WRD000.jpg" a=
+lt=3D"Image removed by sender. White House Logo"></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:.75pt .75pt .75pt .75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"border:solid windowtext 1.0pt;padding:0in"><img border=3D"0"=
+ width=3D"100" height=3D"100" id=3D"_x0000_i1026" src=3D"cid:~WRD000.jpg" a=
+lt=3D"Image removed by sender. The White House - Washington"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center;line-hei=
+ght:15.0pt"><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&q=
+uot;;color:#333333">
+&nbsp;</span></p>
+<div align=3D"center">
+<table class=3D"MsoNormalTable" border=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td width=3D"40" rowspan=3D"3" style=3D"width:30.0pt;padding:.75pt .75pt .7=
+5pt .75pt">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span></p>
+</td>
+<td width=3D"550" style=3D"width:412.5pt;padding:.75pt 30.0pt .75pt 30.0pt"=
+>
+<p><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Hel=
+lo,</span></p>
+<p><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">A
+self-guided tour of the White House has been requested for the
+<strong><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;=
+">Landsness</span></strong>
+group, (CS-176950), for <strong><span style=3D"font-family:&quot;Arial&quot=
+;,&quot;sans-serif&quot;">4</span></strong>
+guests on <strong><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-s=
+erif&quot;">6/7/2016</span></strong>
+at <strong><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&qu=
+ot;">09:30
+AM.</span></strong></span></p>
+<h3><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;col=
+or:red">RSVP
+by 5/20/2016 12:57 PM - <a href=3D"https://events.whitehouse.gov/form?rid=
+=3DP728X4WJJM">RSVP
+Link</a></span></h3>
+<h3><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Wh=
+at's
+Next?</span></h3>
+<table class=3D"MsoNormalTable" border=3D"0" cellpadding=3D"0" width=3D"100=
+%" style=3D"width:100.0%;border-spacing:0px">
+<tbody>
+<tr>
+<td style=3D"border:none;border-top:solid black 1.0pt;padding:3.75pt 3.75pt=
+ 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;border:=
+solid windowtext 1.0pt;padding:0in">
+<img border=3D"0" width=3D"100" height=3D"100" id=3D"_x0000_i1027" src=3D"c=
+id:~WRD000.jpg" alt=3D"Image removed by sender. Mail icon"></span></p>
+</td>
+<td style=3D"border-top:solid black 1.0pt;border-left:solid black 1.0pt;bor=
+der-bottom:none;border-right:none;padding:3.75pt 3.75pt 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;border:=
+solid windowtext 1.0pt;padding:0in">
+<img border=3D"0" width=3D"100" height=3D"100" id=3D"_x0000_i1028" src=3D"c=
+id:~WRD000.jpg" alt=3D"Image removed by sender. Checkmark icon"></span></p>
+</td>
+<td style=3D"border-top:solid black 1.0pt;border-left:solid black 1.0pt;bor=
+der-bottom:none;border-right:none;padding:3.75pt 3.75pt 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;border:=
+solid windowtext 1.0pt;padding:0in">
+<img border=3D"0" width=3D"100" height=3D"100" id=3D"_x0000_i1029" src=3D"c=
+id:~WRD000.jpg" alt=3D"Image removed by sender. Ticket icon"></span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:3.75pt 3.75pt 3.75pt 3.75pt">
+<h4 align=3D"center" style=3D"text-align:center"><span style=3D"font-family=
+:&quot;Arial&quot;,&quot;sans-serif&quot;">Invite Your
+Guests!</span></h4>
+</td>
+<td style=3D"border:none;border-left:solid black 1.0pt;padding:3.75pt 3.75p=
+t 3.75pt 3.75pt">
+<h4 align=3D"center" style=3D"text-align:center"><span style=3D"font-family=
+:&quot;Arial&quot;,&quot;sans-serif&quot;">Track
+Responses</span></h4>
+</td>
+<td style=3D"border:none;border-left:solid black 1.0pt;padding:3.75pt 3.75p=
+t 3.75pt 3.75pt">
+<h4 align=3D"center" style=3D"text-align:center"><span style=3D"font-family=
+:&quot;Arial&quot;,&quot;sans-serif&quot;">Print
+Boarding Pass</span></h4>
+</td>
+</tr>
+<tr>
+<td style=3D"border:none;border-bottom:solid black 1.0pt;padding:3.75pt 3.7=
+5pt 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><a hre=
+f=3D"https://events.whitehouse.gov/form?rid=3DP728X4WJJM">RSVP
+Link</a></span></p>
+</td>
+<td style=3D"border-top:none;border-left:solid black 1.0pt;border-bottom:so=
+lid black 1.0pt;border-right:none;padding:3.75pt 3.75pt 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><a hre=
+f=3D"https://events.whitehouse.gov/form/AppointmentGuestList?GuestListCode=
+=3DP728X4WJJM">
+Guest List</a></span></p>
+</td>
+<td style=3D"border-top:none;border-left:solid black 1.0pt;border-bottom:so=
+lid black 1.0pt;border-right:none;padding:3.75pt 3.75pt 3.75pt 3.75pt">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center">
+<span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;"><a hre=
+f=3D"http://whitehouse.force.com/eventrsvp/boardingPass?Id=3Da2et0000000Pxc=
+B">
+Boarding Pass</a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-f=
+amily:&quot;Arial&quot;,&quot;sans-serif&quot;">&nbsp;</span></p>
+<p><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Sin=
+cerely,</span></p>
+<p><span style=3D"font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">Whi=
+te House
+Visitors Office</span></p>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><span style=3D"font-f=
+amily:&quot;Arial&quot;,&quot;sans-serif&quot;"><br>
+<br></span></p>
+</td>
+<td width=3D"40" rowspan=3D"3" style=3D"width:30.0pt;padding:.75pt .75pt .7=
+5pt .75pt">
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Arial&quot;,&quot;s=
+ans-serif&quot;">&nbsp;</span></p>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:.75pt .75pt .75pt .75pt"></td>
+</tr>
+<tr>
+<td width=3D"550" style=3D"width:412.5pt;padding:.75pt 30.0pt .75pt 30.0pt"=
+>
+<p align=3D"center" style=3D"text-align:center"><span style=3D"font-family:=
+&quot;Arial&quot;,&quot;sans-serif&quot;;border:solid windowtext 1.0pt;padd=
+ing:0in">
+<img border=3D"0" width=3D"540" height=3D"15" id=3D"_x0000_i1030" src=3D"ci=
+d:image001.jpg@01D1AD1F.59609BB0" alt=3D"Image removed by sender."></span><=
+/p>
+<p align=3D"center" style=3D"text-align:center"><em><span style=3D"font-siz=
+e:8.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#999999"=
+>
+The White House =E2=80=A2 1600 Pennsylvania Avenue, N.W. =E2=80=A2
+Washington,&nbsp;D.C.&nbsp;&nbsp;20500</span></em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"padding:22.5pt 22.5pt 22.5pt 22.5pt">
+<p class=3D"MsoNormal">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal">&nbsp;</p>
+</div>
+</div>
+</blockquote>
+
+
+<hr></div></div></span></blockquote></body></html>=
+
+--5739ead7_65ade24b_e8ea--

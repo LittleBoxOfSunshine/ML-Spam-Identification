@@ -1,0 +1,599 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 9 May
+ 2016 14:47:33 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 9 May 2016
+ 14:47:31 -0400
+Received: from [10.87.0.113] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 904922458
+ for mirandal@dnc.org; Mon, 09 May 2016 13:47:36 -0500
+X-Note-AR-ScanTimeLocal: 5/9/2016 1:47:30 PM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.215.51 DOM:gmail.com ADDR:kramos1841@gmail.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-350/SG:5 5/9/2016 1:47:29 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.2529 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/9/2016 1:47:30 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.215.51
+X-Note-Reverse-DNS: mail-lf0-f51.google.com
+X-Note-Return-Path: kramos1841@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G675 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-lf0-f51.google.com ([209.85.215.51] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137573647
+ for mirandal@dnc.org; Mon, 09 May 2016 13:47:30 -0500
+Received: by mail-lf0-f51.google.com with SMTP id u64so211023099lff.3
+        for <mirandal@dnc.org>; Mon, 09 May 2016 11:47:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20120113;
+        h=mime-version:date:message-id:subject:from:to;
+        bh=aSOfdPwliV02l3Ws8XKnl4JOIyL/7PLh7VLDt9CO/Qw=;
+        b=eaxD5OGlyoc+RZC0NmcXTJr33WhzyVNH/zCgMO0AdjRJ6B6hQSm+gU8vJ6LhwgchWw
+         FarP4IvfYYmNC9rMaBkxOrtaW1rPbX2dipljol/az+JXz956h7PiOIcZz0F/cfJvqZOp
+         GmelzAS90jZhjsl69wdCRII5o8VQBcSCaUuvtolsOXNaeXGckMDn+3f1Ao3hKuRfoIYz
+         Ncoej6yHSagDJCuLBAVqMKhsKLGzezmkhPGBf+YzCA6IJfnNjc7911Jz2JJvvNQMSyJc
+         zwPahXXfUy26zf/pwAhUImWMUIFcKBXyhmjpD2hMzqSOB4kliUSqOHLmx54Ov7/1TnZG
+         4BBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+        bh=aSOfdPwliV02l3Ws8XKnl4JOIyL/7PLh7VLDt9CO/Qw=;
+        b=Ft8Oc+B5VmRnmsE2eY9gI1kt6v3TtNcr+n/Jz5gUcPP3eEkvV/mBBpQy59x+2iXOP0
+         CR8QEFcJ9vvT66d5DXSlxe6A49R0rQFikI1PUOMOti4iDK172DvzNgo4y08IkhWq+mWS
+         LoIS+3F3ml1FhysFRMMjAWYg3RAe+3oVZKAT9APIZWW9fdlDYcoTr0dw5hnJ8e3NM5cq
+         +eUCF1hvuoCPFQsP3dlIsupbSKM+dJwSeTLLJsdz8ZcrCv3YaPVD+XmiuQYwM323X0qv
+         UpdtWfT5mqrOoPD9CyZ5RitVRb3kuMpDtpmKEujbZB/LpTJMPwKp4OdywTv3OY6Q8HWk
+         cAlA==
+X-Gm-Message-State: AOPr4FVN+QNylz4oLVrynxjmd6dMKSBf5YkIhFNvd2A1M19MiHAcmeO3cYyAzpmJZlydMZnfkPWKLp/YoDM30g==
+X-Received: by 10.112.200.230 with SMTP id jv6mr15890131lbc.24.1462819648727;
+ Mon, 09 May 2016 11:47:28 -0700 (PDT)
+Received: by 10.25.19.211 with HTTP; Mon, 9 May 2016 11:47:28 -0700 (PDT)
+Date: Mon, 9 May 2016 14:47:28 -0400
+Message-ID: <CALwRN+dP0E2G7ESSqe2taDYUOAHLJoUKx7O=J5D_Wi407B6+jQ@mail.gmail.com>
+Subject: ICYMI - LATINO Magazine: Americas Economic Recovery Is Great Because
+ Of Latinos
+From: Kristian Ramos <kramos1841@gmail.com>
+To: Kristian Ramos <kramos1841@gmail.com>
+Content-Type: multipart/alternative; boundary="001a11c38750887adc05326d3d20"
+BCC: <mirandal@dnc.org>
+Return-Path: kramos1841@gmail.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11c38750887adc05326d3d20
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+*Friends, j**ust wanted to make sure you saw my latest in Latino Magazine
+on how Latinos have contributed so much to our economic recovery. While
+things arent perfect they are absolutely much better, Latinos have been a
+big part of this process. Feedback as always is welcome. - Kristian *
+
+
+*Americas Economic Recovery Is Great Because Of Latinos*
+
+
+
+My abuelos both came from Mexico to the United States because they believed
+that America was the greatest country in the world.  One abuelo was a
+mechanic, the other a construction worker, both among the hardest workers
+around.
+
+
+
+Growing up, my abuela told me that my grandfather would go to work tired,
+sick and hurt, simply because he had children to feed. Once, he worked in
+the snow with a broken leg carrying produce from the back of a truck into a
+warehouse.  The other worked in 110 degree weather shoveling asphalt to
+ensure that his family of five had food on the table.
+
+
+
+My abuelos work ethic inspired their children to become successful
+professionals including business owners, engineers and doctors.  They are
+now productive role models contributing to the greatness of our country.
+
+
+
+My grandparents story is a perfect example of the American dream and a
+direct refutation to Donald Trump=E2=80=99s noxious statements that Mexico =
+is
+sending rapists, murderers and criminals to the United States and not much
+else.
+
+
+
+The subtext of Trump=E2=80=99s noxious statements is that the more Latinos =
+and
+immigrants come to America the more it declines in greatness. Trump=E2=80=
+=99s
+argument is not just insulting rhetoric, but it is simply not based in
+fact.  A perusal of the roll of Latinos and immigrants on America's economy
+provides strong evidence of just how wrong Trump and other conservatives
+are about our contributions to America.
+
+
+
+Over the last ten years, Latino representation has increased in number and
+proportion in the United States.  During this time overall economic health
+has not declined but *improved*
+<http://money.cnn.com/2016/01/08/news/economy/us-economy-jobs-second-best-y=
+ear-since-1999/>.
+America=E2=80=99s economic standing is healthy and Latinos and immigrants a=
+re
+contributing.
+
+
+
+Scapegoating immigrants and Latinos is nothing new, it  is common during
+economic downturn.  The irony here is that while our economy is not
+perfect, we are actually in the middle of an economic upswing.
+
+
+
+In 2014, America had the best jobs *year*
+<http://money.cnn.com/2015/01/09/news/economy/december-jobs-report-unemploy=
+ment/>
+since the halcyon economic boom time of the late 1990=E2=80=99s. Furthermor=
+e, many
+do not realize in 2014, the unemployment rate dipped below 5%, nearing what
+most *economists*
+<http://www.wsj.com/articles/economists-see-u-s-on-cusp-of-full-employment-=
+wsj-survey-says-1444313041>
+consider "full employment."
+
+
+
+Currently, unemployment is down by half from its peak of 10% in 2009 and a
+majority of U.S. households enjoyed healthy income gains in 2013 and 2014.
+Overall *unemployment*
+<http://www.vox.com/2015/9/5/9262673/unemployment-rate-obama-reagan> is
+currently lower than at any point in the Ronald Reagan administration. In
+fact, Americans experienced *average*
+<http://www.fastcompany.com/3055151/the-future-of-work/employees-will-get-t=
+he-biggest-salary-increase-in-years-in-2016>
+wage increases of 2.5% and saw their paychecks go up too.
+
+
+
+Far from being the economic nuclear wasteland depicted by Trump and other
+conservatives, America's economy has improved greatly over the last eight
+years.  As for our community, far from hurting America's economic growth,
+Latinos and immigrants are helping to improve it.
+
+
+
+Hispanics are becoming more educated, with their college enrollment between
+the ages of 18 to 24 more than *tripling*
+<http://www.pewresearch.org/fact-tank/2014/04/24/more-hispanics-blacks-enro=
+lling-in-college-but-lag-in-bachelors-degrees/>
+from 1996 to 2012, according to Pew Hispanic Research.   As a result,
+Latinos=E2=80=99 share of new entrants into the civilian labor force reache=
+d 20
+percent in white and gray collar jobs.  Which is to say that far from being
+drains on the work force we are working.
+
+
+
+Latino *employment*
+<http://www.nytimes.com/2015/03/09/business/economy/job-growth-for-hispanic=
+s-is-outpacing-other-groups.html?_r=3D0>
+is increasing faster than all other groups, our strong work ethic and work
+contributions have helped drive the overall unemployment down. Hispanic
+households made *more*
+<http://www.ndn.org/blog/2016/04/whatever-some-candidates-tell-you-incomes-=
+most-americans-have-been-rising>
+income progress in 2013 and 2014 than any other group.
+
+
+
+Latinos are hard workers who contribute both spending power, labor output
+and business growth.  We contribute *$1.5 trillion*
+<http://www.retailleader.com/top-story-consumer_insights-hispanic_buying_po=
+wer_to_increase_50_percent_by_2015__nielsen-695.html>
+in buying power to the U.S. economy.  By 2019, Latinos will account for
+*10.6%*
+<http://www.nbcnews.com/news/latino/latinas-are-becoming-one-retail-industr=
+ys-most-powerful-consumers-n378086>
+of total U.S. buying power.  Latino workers will account for 40% of *employ=
+ment
+growth*
+<http://blogs.wsj.com/economics/2015/02/24/hispanics-could-account-for-40-o=
+f-u-s-job-growth-by-2020/>
+in
+next 5 years.  Most importantly, immigrants and Latinos *helped*
+<http://www.wsj.com/articles/immigrants-latinos-helped-drive-business-creat=
+ion-last-year-1432771383>
+drive an uptick in new business creation, according to a measure of 2014
+U.S. startup activity.
+
+
+
+It is not just Latinos who are making our economy stronger, undocumented
+immigrants *contribute* <http://www.itep.org/immigration/> significantly to
+state and local taxes, collectively paying an estimated $11.64 billion a
+year.  Contributions range from almost $2.2 million in Montana with an
+estimated undocumented population of 4,000 to more than $3.1 billion in
+California, home to more than 3 million undocumented immigrants.
+
+
+
+All of this data points to a simple irrefutable fact, Latinos and
+immigrants are contributing in very meaningful ways to America=E2=80=99s gr=
+eatness.
+
+
+
+My grandfathers were proud of what they accomplished in their lifetimes.
+They had limited English skills but made their dreams come true by helping
+their children get college educations.  They were simply immigrants, who
+came to this country because they wanted better lives for their children.
+Their lessons and legacy were to teach us the value of hard work, education
+and dignity. They are the embodiment of what makes America great.
+
+
+
+America=E2=80=99s melting pot has always created some level of anxiety and =
+nativism
+in the conservative movement. There is no excuse for fear mongering and
+scapegoating, especially since there is little evidence to substantiate the
+ideas that America is in decline, or that Latinos and immigrants are
+hurting our country.
+
+
+
+Regardless of Trump=E2=80=99s baseless comments about Latinos and immigrant=
+s, our
+economy is strong because of the contributions of the Latino community.
+Next time you hear Trump or anyone else denigrating Latinos and immigrants,
+you tell them we contribute mightily and  deserve respect.
+
+
+###
+
+--001a11c38750887adc05326d3d20
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p class=3D"MsoNormal"><font color=3D"#000000" face=3D"Times New Roman" siz=
+e=3D"4"><i>Friends, j</i></font><i style=3D"color:rgb(0,0,0);font-family:'T=
+imes New Roman';font-size:large">ust wanted to make sure you saw my latest =
+in Latino Magazine on how Latinos have contributed so much to our economic =
+recovery. While things arent perfect they are absolutely much better, Latin=
+os have been a big part of this process. Feedback as always is welcome. - K=
+ristian&nbsp;</i></p><p class=3D"MsoNormal"><b><span style=3D"font-family:'=
+Times New Roman';color:black"><br></span></b></p><p class=3D"MsoNormal"><fo=
+nt color=3D"#1155cc" face=3D"Times New Roman" size=3D"4"><b><u>Americas Eco=
+nomic Recovery Is Great Because Of Latinos</u></b></font><br></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman';color:b=
+lack"><font size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">My abuelos both came from Mexico to the United
+States because they believed that America was the greatest country in the
+world.&nbsp; One abuelo was a mechanic, the other a construction worker, bo=
+th among
+the hardest workers around. </span><span style=3D"font-family:'Times New Ro=
+man'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Growing up, my abuela told me that my
+grandfather would go to work tired, sick and hurt, simply because he had
+children to feed. Once, he worked in the snow with a broken leg carrying
+produce from the back of a truck into a warehouse.&nbsp; The other worked i=
+n
+110 degree weather shoveling asphalt to ensure that his family of five had =
+food
+on the table.</span><span style=3D"font-family:'Times New Roman'"></span></=
+font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">My abuelos work ethic inspired their children to
+become successful professionals including business owners, engineers and do=
+ctors.
+&nbsp;They are now productive role models contributing to the greatness of =
+our
+country. </span><span style=3D"font-family:'Times New Roman'"></span></font=
+></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">My grandparents story is a perfect example of
+the American dream and a direct refutation to Donald Trump=E2=80=99s noxiou=
+s statements
+that Mexico is sending rapists, murderers and criminals to the <span style=
+=3D"background-image:initial;background-repeat:initial">United States</span=
+> and not much else.</span><span style=3D"font-family:'Times New Roman'"></=
+span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">The subtext of Trump=E2=80=99s noxious statements is
+that the more Latinos and immigrants come to America the more it declines i=
+n
+greatness. Trump=E2=80=99s argument is not just insulting rhetoric, but it =
+is simply
+not based in fact.&nbsp; A perusal of the roll of Latinos and immigrants on
+America's economy provides strong evidence of just how wrong Trump and othe=
+r
+conservatives are about our contributions to America. </span><span style=3D=
+"font-family:'Times New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black;background-image:initial;background-repeat:initial">O=
+ver the last ten years, Latino
+representation has increased in number and proportion in the United States.
+&nbsp;During this time overall economic health has not declined but </span>=
+<a href=3D"http://money.cnn.com/2016/01/08/news/economy/us-economy-jobs-sec=
+ond-best-year-since-1999/"><b><span style=3D"font-family:'Times New Roman';=
+background-image:initial;background-repeat:initial">improved</span></b></a>=
+<span style=3D"font-family:'Times New Roman';color:black;background-image:i=
+nitial;background-repeat:initial">.&nbsp; America=E2=80=99s economic standi=
+ng is healthy and Latinos
+and immigrants are contributing. </span><span style=3D"font-family:'Times N=
+ew Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black;background-image:initial;background-repeat:initial">S=
+capegoating immigrants and
+Latinos is nothing new, it &nbsp;is common during economic downturn.&nbsp; =
+The
+irony here is that while </span><span style=3D"font-family:'Times New Roman=
+';color:black">our economy is not perfect,
+we are actually in the middle of an economic upswing. </span><span style=3D=
+"font-family:'Times New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">In 2014, America had the best jobs</span><a href=3D"=
+http://money.cnn.com/2015/01/09/news/economy/december-jobs-report-unemploym=
+ent/"><span style=3D"font-family:'Times New Roman';color:black;text-decorat=
+ion:none"> </span><b><span style=3D"font-family:'Times New Roman'">year</sp=
+an></b></a><span style=3D"font-family:'Times New Roman';color:black"> since=
+ the halcyon economic
+boom time of the late 1990=E2=80=99s. Furthermore, many do not realize in 2=
+014, the
+unemployment rate dipped below 5%, nearing what most</span><a href=3D"http:=
+//www.wsj.com/articles/economists-see-u-s-on-cusp-of-full-employment-wsj-su=
+rvey-says-1444313041"><span style=3D"font-family:'Times New Roman';color:bl=
+ack;text-decoration:none"> </span><b><span style=3D"font-family:'Times New =
+Roman'">economists</span></b></a><span style=3D"font-family:'Times New Roma=
+n';color:black"> consider &quot;full
+employment.&quot; &nbsp;&nbsp;</span><span style=3D"font-family:'Times New =
+Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Currently, unemployment is down by half from its
+peak of 10% in 2009 and a majority of U.S. households enjoyed healthy incom=
+e
+gains in 2013 and 2014.&nbsp; Overall</span><a href=3D"http://www.vox.com/2=
+015/9/5/9262673/unemployment-rate-obama-reagan"><span style=3D"font-family:=
+'Times New Roman';color:black;text-decoration:none"> </span><b><span style=
+=3D"font-family:'Times New Roman'">unemployment</span></b></a><span style=
+=3D"font-family:'Times New Roman';color:black"> is currently lower than at
+any point in the Ronald Reagan administration. In fact, Americans experienc=
+ed</span><a href=3D"http://www.fastcompany.com/3055151/the-future-of-work/e=
+mployees-will-get-the-biggest-salary-increase-in-years-in-2016"><span style=
+=3D"font-family:'Times New Roman';color:black;text-decoration:none"> </span=
+><b><span style=3D"font-family:'Times New Roman'">average</span></b></a><sp=
+an style=3D"font-family:'Times New Roman';color:black"> wage increases of 2=
+.5% and
+saw their paychecks go up too. </span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Far from being the economic nuclear wasteland
+depicted by Trump and other conservatives, America's economy has improved
+greatly over the last eight years.&nbsp; As for our community, far from hur=
+ting
+America's economic growth, Latinos and immigrants are helping to improve it=
+.</span><span style=3D"font-family:'Times New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Hispanics are becoming more educated, with their
+college enrollment between the ages of 18 to 24 more than<b> </b></span><a =
+href=3D"http://www.pewresearch.org/fact-tank/2014/04/24/more-hispanics-blac=
+ks-enrolling-in-college-but-lag-in-bachelors-degrees/"><b><span style=3D"fo=
+nt-family:'Times New Roman'">tripling</span></b></a><span style=3D"font-fam=
+ily:'Times New Roman';color:black"> from 1996 to 2012,
+according to Pew Hispanic Research. &nbsp;&nbsp;As a result, Latinos=E2=80=
+=99 share of
+new entrants into the civilian labor force reached 20 percent in white and =
+gray
+collar jobs.&nbsp; Which is to say that far from being drains on the work f=
+orce
+we are working.</span><span style=3D"font-family:'Times New Roman'"></span>=
+</font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Latino</span><a href=3D"http://www.nytimes.com/2015/=
+03/09/business/economy/job-growth-for-hispanics-is-outpacing-other-groups.h=
+tml?_r=3D0"><span style=3D"font-family:'Times New Roman';color:black;text-d=
+ecoration:none"> </span><b><span style=3D"font-family:'Times New Roman'">em=
+ployment</span></b></a><span style=3D"font-family:'Times New Roman';color:b=
+lack"> is increasing faster than
+all other groups, our strong work ethic and work contributions have helped
+drive the overall unemployment down. Hispanic households made</span><a href=
+=3D"http://www.ndn.org/blog/2016/04/whatever-some-candidates-tell-you-incom=
+es-most-americans-have-been-rising"><span style=3D"font-family:'Times New R=
+oman';color:black;text-decoration:none"> </span><b><span style=3D"font-fami=
+ly:'Times New Roman'">more</span></b></a><span style=3D"font-family:'Times =
+New Roman';color:black"> income progress in 2013
+and 2014 than any other group. &nbsp;</span><span style=3D"font-family:'Tim=
+es New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Latinos are hard workers who contribute both
+spending power, labor output and business growth.&nbsp; We contribute</span=
+><a href=3D"http://www.retailleader.com/top-story-consumer_insights-hispani=
+c_buying_power_to_increase_50_percent_by_2015__nielsen-695.html"><span styl=
+e=3D"font-family:'Times New Roman';color:black;text-decoration:none"> </spa=
+n><b><span style=3D"font-family:'Times New Roman'">$1.5 trillion</span></b>=
+</a><span style=3D"font-family:'Times New Roman';color:black"> in buying po=
+wer to the
+U.S. economy.&nbsp; By 2019, Latinos will account for</span><a href=3D"http=
+://www.nbcnews.com/news/latino/latinas-are-becoming-one-retail-industrys-mo=
+st-powerful-consumers-n378086"><span style=3D"font-family:'Times New Roman'=
+;color:black;text-decoration:none"> </span><b><span style=3D"font-family:'T=
+imes New Roman'">10.6%</span></b></a><span style=3D"font-family:'Times New =
+Roman';color:black"> of total U.S. buying
+power.&nbsp; Latino workers will account for 40% of</span><a href=3D"http:/=
+/blogs.wsj.com/economics/2015/02/24/hispanics-could-account-for-40-of-u-s-j=
+ob-growth-by-2020/"><span style=3D"font-family:'Times New Roman';color:blac=
+k;text-decoration:none"> </span><b><span style=3D"font-family:'Times New Ro=
+man'">employment growth</span></b></a><b><u><span style=3D"font-family:'Tim=
+es New Roman';color:rgb(17,85,204)"> </span></u></b><span style=3D"font-fam=
+ily:'Times New Roman';color:black">in next 5 years.&nbsp; Most importantly,=
+ immigrants and Latinos</span><a href=3D"http://www.wsj.com/articles/immigr=
+ants-latinos-helped-drive-business-creation-last-year-1432771383"><span sty=
+le=3D"font-family:'Times New Roman';color:black;text-decoration:none"> </sp=
+an><b><span style=3D"font-family:'Times New Roman'">helped</span></b></a><s=
+pan style=3D"font-family:'Times New Roman';color:black"> drive an uptick in=
+ new
+business creation, according to a measure of 2014 U.S. startup activity. &n=
+bsp;</span><span style=3D"font-family:'Times New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">It is not just Latinos who are making our
+economy stronger, undocumented immigrants</span><a href=3D"http://www.itep.=
+org/immigration/"><span style=3D"font-family:'Times New Roman';color:black;=
+text-decoration:none"> </span><b><span style=3D"font-family:'Times New Roma=
+n'">contribute</span></b></a><span style=3D"font-family:'Times New Roman';c=
+olor:black"> significantly to state and local taxes, collectively paying an
+estimated $11.64 billion a year.&nbsp; Contributions range from almost $2.2
+million in Montana with an estimated undocumented population of 4,000 to mo=
+re
+than $3.1 billion in California, home to more than 3 million undocumented
+immigrants. </span><span style=3D"font-family:'Times New Roman'"></span></f=
+ont></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">All of this data points to a simple irrefutable
+fact, Latinos and immigrants are contributing in very meaningful ways to
+America=E2=80=99s greatness.</span><span style=3D"font-family:'Times New Ro=
+man'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">My grandfathers were proud of what they
+accomplished in their lifetimes. They had limited English skills but made t=
+heir
+dreams come true by helping their children get college educations.&nbsp; Th=
+ey
+were simply immigrants, who came to this country because they wanted better
+lives for their children. Their lessons and legacy were to teach us the val=
+ue
+of hard work, education and dignity. They are the embodiment of what makes
+America great. </span><span style=3D"font-family:'Times New Roman'"></span>=
+</font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">America=E2=80=99s melting pot has always created som=
+e
+level of anxiety and nativism in the conservative movement. There is no exc=
+use
+for fear mongering and scapegoating, especially since there is little evide=
+nce
+to substantiate the ideas that America is in decline, or that Latinos and
+immigrants are hurting our country.</span><span style=3D"font-family:'Times=
+ New Roman'"></span></font></p>
+
+<p class=3D"MsoNormal"><span style=3D"font-family:'Times New Roman'"><font =
+size=3D"4">&nbsp;</font></span></p>
+
+<p class=3D"MsoNormal"><font size=3D"4"><span style=3D"font-family:'Times N=
+ew Roman';color:black">Regardless of Trump=E2=80=99s baseless comments abou=
+t
+Latinos and immigrants, our economy is strong because of the contributions =
+of
+the Latino community.&nbsp; Next time you hear Trump or anyone else denigra=
+ting
+Latinos and immigrants, you tell them we contribute mightily and &nbsp;dese=
+rve
+respect. &nbsp;</span><span style=3D"font-family:'Times New Roman'"></span>=
+</font></p>
+
+<p class=3D"MsoNormal"><br></p><p class=3D"MsoNormal" style=3D"text-align:c=
+enter"><font face=3D"Times New Roman" size=3D"4">###</font></p>
+
+</div>
+
+--001a11c38750887adc05326d3d20--

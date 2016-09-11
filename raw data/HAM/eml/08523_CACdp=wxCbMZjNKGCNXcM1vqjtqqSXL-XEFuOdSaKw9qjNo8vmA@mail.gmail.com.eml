@@ -1,0 +1,1238 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 5 May
+ 2016 10:16:03 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 5 May 2016
+ 10:15:54 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 898177871
+ for MirandaL@dnc.org; Thu, 05 May 2016 09:15:48 -0500
+X-Note-AR-ScanTimeLocal: 5/5/2016 9:15:47 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.50 DOM:hattaway.com ADDR:igriacova@hattaway.com
+X-Note: SPF: None
+X-Note: ICH-CT/SI:0-777/SG:1 5/5/2016 9:14:55 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-560/SG:8 5/5/2016 9:14:55 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.2507 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/5/2016 9:15:38 AM
+X-Warn: WEBBUG
+X-Note: Spam Tests Failed: WEBBUG
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.50
+X-Note-Reverse-DNS: mail-wm0-f50.google.com
+X-Note-Return-Path: igriacova@hattaway.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G397 G406 G418 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f50.google.com ([74.125.82.50] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138966129
+ for MirandaL@dnc.org; Thu, 05 May 2016 09:15:47 -0500
+Received: by mail-wm0-f50.google.com with SMTP id g17so3766566wme.0        for
+ <MirandaL@dnc.org>; Thu, 05 May 2016 07:15:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=hattaway-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=lvZQ8DKP5KUN8AziOyxQVYTnfQ68wS/5k7XD2j3Se94=;
+        b=JgGOytSyrWDJ8XSJJcKWQb8gUatTuGXXHnXuaM9g1hI69p+8G2gXkSRR7bkW4T+0O9
+         TljJSjo/g09FGOpWSJEQoBcEyBFJrv1QL6kfjFRN19CRw8KWxYmRL6AvLg249evTdN0G
+         rlGpMwsu2/wwS78NagBwv8FI41QYsaACQwlpgtiwcl7bMIhVMnhE7Ga8EjDkObeAXtfm
+         3toUEKqnnmHWznWr7PtMdGQm563yLgvMaQc7YqIR2UakpSjNjl38WxV7iaQVq5KxwPB6
+         a+1P6Wg/+kHVSI0seOiPYGNsHv8jFfpnj1mYN/Gc0zLvbTtqHCEpRit02t1gLmErLV1v
+         pOPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=lvZQ8DKP5KUN8AziOyxQVYTnfQ68wS/5k7XD2j3Se94=;
+        b=G3UCetJwE5qP7NUUMZdtO/ao54dzeBL4VId5sWk9YGN2THSyRnBQEqWdIEj6uSSPTC
+         S/BBwx4XNdEabLHYmEupNyfONb6l3ncGXXUlQsg1gLM95V4ML0khIC+CPOWwwcSVJXGm
+         HFUbO/jSlOBJfETX4VCPYZFo+RzzdVAD5rjzIWgKArrCmSx7p5fNY35yvXpwos2OY3Zd
+         EUcZip4H0l60TNyi9hckQHom+R61PteB6VznbozBxqK1NeJr5eDi3MGMT9pXAvbUQVNh
+         jAAk4ereWzNrAuuE6tVSNqmOoFCB2XWStfOgm5w+yUw3cXRpW2iSLg+lbc7buIfLpqBY
+         IbZA==
+X-Gm-Message-State: AOPr4FWAfR+dduLQre/1UGSSyoZvWdyBk5q2zsNZmfCMQCkhIzNRkoD/izoeCeINscqRyk32Yjrir695Z7qU5cBt
+X-Received: by 10.194.90.3 with SMTP id bs3mr14651932wjb.105.1462457743282;
+ Thu, 05 May 2016 07:15:43 -0700 (PDT)
+Received: by 10.28.158.207 with HTTP; Thu, 5 May 2016 07:15:42 -0700 (PDT)
+In-Reply-To: <6E20703C3B98FC4D97E277223738C7A74DAA831C@dncdag1.dnc.org>
+References: <CACdp=wyydbg-MqPJtgOLnbdT-8NpSXLJ8nnpt17=wxSXpWoC-w@mail.gmail.com>
+	<CALn+u5VJ5iAm8BdUQUj2GohxKS1UgRNJBckiBdFuQNowASL-MA@mail.gmail.com>
+	<CACdp=wzh3xWJmWr_rwLu_kqePQBRmoe-kLJJHCqUKDsXB7Vxtg@mail.gmail.com>
+	<EB271B5B-97E0-444D-AA14-7E074AEE49AF@purplestrategies.com>
+	<CACdp=wwdQt3r+c4FQ6LRbrnJMHtjH+Oyq3a_kDT=SpWFHerz-Q@mail.gmail.com>
+	<CACdp=wxE0JJkrU4bSZ+yJVBnDPyFCzyAPrCZ1uX7aye-rNtk5w@mail.gmail.com>
+	<001201d1a662$582f8490$088e8db0$@mmstrategicinsight.com>
+	<05E01258E71AC046852ED29DFCD139D54DF096F7@dncdag1.dnc.org>
+	<6E20703C3B98FC4D97E277223738C7A74DAA831C@dncdag1.dnc.org>
+Date: Thu, 5 May 2016 10:15:42 -0400
+Message-ID: <CACdp=wxCbMZjNKGCNXcM1vqjtqqSXL-XEFuOdSaKw9qjNo8vmA@mail.gmail.com>
+Subject: Re: May Narrative Project Partners Meeting
+From: Ivana Griacova <igriacova@hattaway.com>
+To: "Palermo, Rachel" <PalermoR@dnc.org>
+CC: "Miranda, Luis" <MirandaL@dnc.org>, "margaretmark@mmstrategicinsight.com"
+	<margaretmark@mmstrategicinsight.com>, Jamal Simmons
+	<jsimmons@rabengroup.com>, Katherine Miller <katherine.miller@gmail.com>,
+	"Compton, Matt" <ComptonM@dnc.org>, "Erica Goldman (Purple Strategies)"
+	<erica.goldman@purplestrategies.com>, "Nisha Jain (Purple Strategies)"
+	<Nisha.Jain@purplestrategies.com>, Cornell Belcher
+	<cornell@brilliant-corners.com>, "BROWN, Dee" <dbrown@brilliant-corners.com>,
+	"WOODBURY, Terrance" <terrance@brilliant-corners.com>, "NUNEZ, Lucia"
+	<Lucia@brilliant-corners.com>, Laura Rodriguez <lrodriguez@rabengroup.com>,
+	Francella Chinchilla <fchinchilla@rabengroup.com>, Abigail Omojola
+	<aomojola@rabengroup.com>, Steve Pierce <spierce@hattaway.com>, "Eric
+ Zimmermann" <ezimmermann@hattaway.com>, Margie Omero <margieomero@gmail.com>,
+	"Herries, Rebecca" <HerriesR@dnc.org>
+Content-Type: multipart/related; boundary="047d7bd9175a4a2457053218fade"
+Return-Path: igriacova@hattaway.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--047d7bd9175a4a2457053218fade
+Content-Type: multipart/alternative; boundary="047d7bd9175a4a2454053218fadd"
+
+--047d7bd9175a4a2454053218fadd
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hi all:
+
+The time on 5/19 won't work for Cornell's team, so we are looking for time
+on Monday, 5/23. I'll be back in touch with a few options. Thanks for being
+flexible.
+
+Ivana
+
+
+--
+
+Ivana Griacova
+Senior Operations Associate
+Hattaway Communications, Inc.
+202.266.3329
+www.hattaway.com <http://hattaway.com/>
+
+Helping visionary leaders & organizations achieve great things.
+
+On Thu, May 5, 2016 at 10:10 AM, Palermo, Rachel <PalermoR@dnc.org> wrote:
+
+> That time works for Luis. Thanks!
+>
+>
+>
+> --
+>
+> [image: DNC] <http://www.democrats.org/>
+>
+> *Rachel Palermo*
+>
+> Democratic National Committee
+>
+> PalermoR@dnc.org
+>
+> 202-863-8041
+>
+>
+>
+>
+>
+> *From:* Miranda, Luis
+> *Sent:* Thursday, May 05, 2016 9:58 AM
+> *To:* margaretmark@mmstrategicinsight.com; 'Ivana Griacova'; 'Margie
+> Omero (Purple Strategies)'
+> *Cc:* 'Jamal Simmons'; 'Katherine Miller'; Compton, Matt; 'Erica Goldman
+> (Purple Strategies)'; 'Nisha Jain (Purple Strategies)'; 'Cornell Belcher'=
+;
+> 'BROWN, Dee'; 'WOODBURY, Terrance'; 'NUNEZ, Lucia'; 'Laura Rodriguez';
+> 'Francella Chinchilla'; 'Abigail Omojola'; 'Steve Pierce'; 'Eric
+> Zimmermann'; Palermo, Rachel
+>
+> *Subject:* RE: May Narrative Project Partners Meeting
+>
+>
+>
+>
+>
+>
+>
+> *From:* margaretmark@mmstrategicinsight.com [
+> mailto:margaretmark@mmstrategicinsight.com
+> <margaretmark@mmstrategicinsight.com>]
+> *Sent:* Wednesday, May 04, 2016 8:09 PM
+> *To:* 'Ivana Griacova'; 'Margie Omero (Purple Strategies)'
+> *Cc:* 'Jamal Simmons'; 'Katherine Miller'; Garcia, Walter; Miranda, Luis;
+> Compton, Matt; 'Erica Goldman (Purple Strategies)'; 'Nisha Jain (Purple
+> Strategies)'; 'Cornell Belcher'; 'BROWN, Dee'; 'WOODBURY, Terrance';
+> 'NUNEZ, Lucia'; 'Laura Rodriguez'; 'Francella Chinchilla'; 'Abigail
+> Omojola'; 'Steve Pierce'; 'Eric Zimmermann'
+> *Subject:* RE: May Narrative Project Partners Meeting
+>
+>
+>
+> Works for me
+>
+>
+>
+> *From:* Ivana Griacova [mailto:igriacova@hattaway.com
+> <igriacova@hattaway.com>]
+> *Sent:* Wednesday, May 4, 2016 5:38 PM
+> *To:* Margie Omero (Purple Strategies) <Margie.Omero@purplestrategies.com=
+>
+> *Cc:* Jamal Simmons <jsimmons@rabengroup.com>; Margaret Mark <
+> margaretmark@mmstrategicinsight.com>; Katherine Miller <
+> katherine.miller@gmail.com>; Garcia, Walter <GarciaW@dnc.org>; Luis
+> Miranda <MirandaL@dnc.org>; Compton, Matt <ComptonM@dnc.org>; Erica
+> Goldman (Purple Strategies) <erica.goldman@purplestrategies.com>; Nisha
+> Jain (Purple Strategies) <Nisha.Jain@purplestrategies.com>; Cornell
+> Belcher <cornell@brilliant-corners.com>; BROWN, Dee <
+> dbrown@brilliant-corners.com>; WOODBURY, Terrance <
+> terrance@brilliant-corners.com>; NUNEZ, Lucia <Lucia@brilliant-corners.co=
+m>;
+> Laura Rodriguez <lrodriguez@rabengroup.com>; Francella Chinchilla <
+> fchinchilla@rabengroup.com>; Abigail Omojola <aomojola@rabengroup.com>;
+> Steve Pierce <spierce@hattaway.com>; Eric Zimmermann <
+> ezimmermann@hattaway.com>
+> *Subject:* Re: May Narrative Project Partners Meeting
+>
+>
+>
+> Hi all:
+>
+>
+>
+> I hope everyone is doing well.
+>
+>
+>
+> We wanted to provide a short update to the team on where we are in the
+> project.
+>
+>
+>
+> We are currently fielding the external survey with voters, which you all
+> have given input into. Fielding is going a bit slowly, and we want to mak=
+e
+> sure we have enough time to do a thorough analysis before we engage
+> everyone. Therefore, we have decided to *POSTPONE next week's partner
+> meeting *(yay, you have that time back from us!).
+>
+>
+>
+> I know how hard it is to schedule a 3-hour meeting with everyone without
+> delaying the next research step, so we'd like to suggest the following:
+>
+>
+>
+> *I. 1-hour webinar/call to discuss the insights from the external survey
+> the week of May 16th=E2=80=94more particularly on Thursday, 5/19, 1-2pm. =
+**Can
+> all teams please let me know if this time works?* (Jamal, I know you are
+> out that week, but hoping someone from your team can participate). During
+> this call we'll gather your input into our next message development
+> process.
+>
+>
+>
+> *II. 2-hour partner meeting to discuss the objectives, logistics,
+> audiences and strategy for the next, and our last, survey which will be
+> lead by Cornell's team, as well as the updated language we'll be testing.=
+ *We
+> are discussing with Cornell's team on the appropriate timing for this
+> meeting, but we are looking at the last week of May/first week of June.
+> I'll follow up in a few days on scheduling this one.
+>
+>
+>
+> We look forward to hearing from everyone and please let me know if you
+> have any other questions.
+>
+>
+>
+> Thank you!
+>
+>
+>
+> Ivana and the Hattaway team
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Thu, Apr 7, 2016 at 12:22 PM, Ivana Griacova <igriacova@hattaway.com>
+> wrote:
+>
+> Super! I'll send a calendar invite to block the time and will follow up
+> closer to the date with logistics.
+>
+>
+>
+> Ivana
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Thu, Apr 7, 2016 at 12:21 PM, Margie Omero (Purple Strategies) <
+> Margie.Omero@purplestrategies.com> wrote:
+>
+> Yes I=E2=80=99m available. Thanks!
+>
+>
+>
+> On Apr 7, 2016, at 11:59 AM, Ivana Griacova <igriacova@hattaway.com>
+> wrote:
+>
+>
+>
+> Thank you all=E2=80=94glad this is shaping up well.
+>
+>
+>
+> Margie, is your team available?
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+> On Wed, Apr 6, 2016 at 11:26 PM, Jamal Simmons <jsimmons@rabengroup.com>
+> wrote:
+>
+> Most of our team is unavailable but I can be there.
+>
+>
+>
+> Jamal
+>
+>
+>
+> On Wed, Apr 6, 2016 at 5:25 PM, Ivana Griacova <igriacova@hattaway.com>
+> wrote:
+>
+> Dear all:
+>
+>
+>
+> I hope everyone is doing well and looking forward to the warmer weather.
+>
+>
+>
+> We are looking to schedule our next partners' meeting for the second week
+> in May (after the Internal surveys and the Language & Image Survey).
+>
+>
+>
+> Unfortunately, Amy's schedule is fairly limited during that time. Can all
+> teams please let me know whether you are available on *Thursday, May
+> 12th, 9am-12pm?*
+>
+>
+>
+> Thank you!
+>
+>
+>
+> Ivana
+>
+>
+>
+>
+> --
+>
+>
+>
+> Ivana Griacova
+>
+> Senior Operations Associate
+>
+> Hattaway Communications, Inc.
+>
+> 202.266.3329
+>
+> www.hattaway.com <http://hattaway.com/>
+>
+>
+>
+> Helping visionary leaders & organizations achieve great things.
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+>
+
+--047d7bd9175a4a2454053218fadd
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hi all:&nbsp;<div><br></div><div>The time on 5/19 won't work=
+ for Cornell's team, so we are looking for time on Monday, 5/23. I'll be ba=
+ck in touch with a few options. Thanks for being flexible.&nbsp;</div><div>=
+<br></div><div>Ivana</div><img src=3D"http://t.sidekickopen51.com/e1t/o/5/f=
+18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8gbVdV5-25vMthsW653gyM3LvrVvW163zLn1=
+k1H6H0?si=3D4990148964253696&amp;pi=3Db70bd875-e310-4a65-83f0-81f73f52d2c7"=
+ style=3D"display:none!important" height=3D"1" width=3D"1"><div class=3D"gm=
+ail_extra"><br clear=3D"all"><div><div class=3D"gmail_signature"><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div style=3D"font-family:Helvetica;text-ali=
+gn:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-word"><fo=
+nt color=3D"#000000"><br></font></div><div style=3D"font-family:Helvetica;t=
+ext-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-wo=
+rd"><font color=3D"#000000">--</font></div><div style=3D"font-family:Helvet=
+ica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:bre=
+ak-word"><font color=3D"#000000"><br></font></div><div style=3D"font-family=
+:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);word-w=
+rap:break-word"><font color=3D"#000000">Ivana Griacova<br></font></div><div=
+ style=3D"font-family:Helvetica;background-color:rgb(255,255,255);word-wrap=
+:break-word"><font color=3D"#000000">Senior Operations Associate<br></font>=
+</div><div style=3D"font-family:Helvetica;text-align:-webkit-auto;backgroun=
+d-color:rgb(255,255,255);word-wrap:break-word"><font color=3D"#000000">Hatt=
+away Communications, Inc.</font></div><div style=3D"font-family:Helvetica;t=
+ext-align:-webkit-auto;background-color:rgb(255,255,255);word-wrap:break-wo=
+rd"><font color=3D"#000000">202.266.3329</font></div><div style=3D"font-fam=
+ily:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);wor=
+d-wrap:break-word"><font color=3D"#000000"><a href=3D"http://hattaway.com/"=
+ target=3D"_blank">www.hattaway.com</a><br></font></div><div style=3D"font-=
+family:Helvetica;text-align:-webkit-auto;background-color:rgb(255,255,255);=
+word-wrap:break-word"><font color=3D"#000000"><br></font></div><div style=
+=3D"font-family:Helvetica;background-color:rgb(255,255,255)"><div style=3D"=
+text-align:-webkit-auto;word-wrap:break-word"><font color=3D"#000000">Helpi=
+ng visionary leaders &amp; organizations achieve great things.&nbsp;</font>=
+</div></div></div></div></div></div></div>
+<br><div class=3D"gmail_quote">On Thu, May 5, 2016 at 10:10 AM, Palermo, Ra=
+chel <span dir=3D"ltr">&lt;<a href=3D"mailto:PalermoR@dnc.org" target=3D"_b=
+lank">PalermoR@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_=
+quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1=
+ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">That time works for Luis.=
+ Thanks!<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">--<u></u><u></u></span></=
+p>
+<p class=3D"MsoNormal"><a href=3D"http://www.democrats.org/" target=3D"_bla=
+nk"><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;s=
+ans-serif&quot;;text-decoration:none"><img border=3D"0" width=3D"77" height=
+=3D"71" src=3D"cid:image001.png@01D1A6B6.60FFCA90" alt=3D"DNC"></span></a><=
+b><span style=3D"font-size:13.0pt;font-family:&quot;Calibri&quot;,&quot;san=
+s-serif&quot;;color:#1f497d"><u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:13.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Rachel Palermo<u></u><=
+u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Commi=
+ttee<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#0070c0"><a href=3D"mailto:Palermo=
+R@dnc.org" target=3D"_blank"><span style=3D"color:#0070c0">PalermoR@dnc.org=
+</span></a></span><span style=3D"font-size:11.0pt;font-family:&quot;Calibri=
+&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><a href=3D"tel:202-863-80=
+41" value=3D"&#43;12028638041" target=3D"_blank">202-863-8041</a><u></u><u>=
+</u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Miranda,=
+ Luis
+<br>
+<b>Sent:</b> Thursday, May 05, 2016 9:58 AM<br>
+<b>To:</b> <a href=3D"mailto:margaretmark@mmstrategicinsight.com" target=3D=
+"_blank">margaretmark@mmstrategicinsight.com</a>; 'Ivana Griacova'; 'Margie=
+ Omero (Purple Strategies)'<br>
+<b>Cc:</b> 'Jamal Simmons'; 'Katherine Miller'; Compton, Matt; 'Erica Goldm=
+an (Purple Strategies)'; 'Nisha Jain (Purple Strategies)'; 'Cornell Belcher=
+'; 'BROWN, Dee'; 'WOODBURY, Terrance'; 'NUNEZ, Lucia'; 'Laura Rodriguez'; '=
+Francella Chinchilla'; 'Abigail
+ Omojola'; 'Steve Pierce'; 'Eric Zimmermann'; Palermo, Rachel</span></p><di=
+v><div class=3D"h5"><br>
+<b>Subject:</b> RE: May Narrative Project Partners Meeting<u></u><u></u></d=
+iv></div><p></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;">
+<a href=3D"mailto:margaretmark@mmstrategicinsight.com" target=3D"_blank">ma=
+rgaretmark@mmstrategicinsight.com</a> [<a href=3D"mailto:margaretmark@mmstr=
+ategicinsight.com" target=3D"_blank">mailto:margaretmark@mmstrategicinsight=
+.com</a>]
+<br>
+<b>Sent:</b> Wednesday, May 04, 2016 8:09 PM<br>
+<b>To:</b> 'Ivana Griacova'; 'Margie Omero (Purple Strategies)'<br>
+<b>Cc:</b> 'Jamal Simmons'; 'Katherine Miller'; Garcia, Walter; Miranda, Lu=
+is; Compton, Matt; 'Erica Goldman (Purple Strategies)'; 'Nisha Jain (Purple=
+ Strategies)'; 'Cornell Belcher'; 'BROWN, Dee'; 'WOODBURY, Terrance'; 'NUNE=
+Z, Lucia'; 'Laura Rodriguez'; 'Francella
+ Chinchilla'; 'Abigail Omojola'; 'Steve Pierce'; 'Eric Zimmermann'<br>
+<b>Subject:</b> RE: May Narrative Project Partners Meeting<u></u><u></u></s=
+pan></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Works for me<u></u><u></u=
+></span></p>
+<p class=3D"MsoNormal"><a name=3D"m_3391132023591524515__MailEndCompose"></=
+a><span style=3D"font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;san=
+s-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-=
+size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> Ivana =
+Griacova [<a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">mailt=
+o:igriacova@hattaway.com</a>]
+<br>
+<b>Sent:</b> Wednesday, May 4, 2016 5:38 PM<br>
+<b>To:</b> Margie Omero (Purple Strategies) &lt;<a href=3D"mailto:Margie.Om=
+ero@purplestrategies.com" target=3D"_blank">Margie.Omero@purplestrategies.c=
+om</a>&gt;<br>
+<b>Cc:</b> Jamal Simmons &lt;<a href=3D"mailto:jsimmons@rabengroup.com" tar=
+get=3D"_blank">jsimmons@rabengroup.com</a>&gt;; Margaret Mark &lt;<a href=
+=3D"mailto:margaretmark@mmstrategicinsight.com" target=3D"_blank">margaretm=
+ark@mmstrategicinsight.com</a>&gt;; Katherine Miller &lt;<a href=3D"mailto:=
+katherine.miller@gmail.com" target=3D"_blank">katherine.miller@gmail.com</a=
+>&gt;;
+ Garcia, Walter &lt;<a href=3D"mailto:GarciaW@dnc.org" target=3D"_blank">Ga=
+rciaW@dnc.org</a>&gt;; Luis Miranda &lt;<a href=3D"mailto:MirandaL@dnc.org"=
+ target=3D"_blank">MirandaL@dnc.org</a>&gt;; Compton, Matt &lt;<a href=3D"m=
+ailto:ComptonM@dnc.org" target=3D"_blank">ComptonM@dnc.org</a>&gt;; Erica G=
+oldman (Purple Strategies) &lt;<a href=3D"mailto:erica.goldman@purplestrate=
+gies.com" target=3D"_blank">erica.goldman@purplestrategies.com</a>&gt;;
+ Nisha Jain (Purple Strategies) &lt;<a href=3D"mailto:Nisha.Jain@purplestra=
+tegies.com" target=3D"_blank">Nisha.Jain@purplestrategies.com</a>&gt;; Corn=
+ell Belcher &lt;<a href=3D"mailto:cornell@brilliant-corners.com" target=3D"=
+_blank">cornell@brilliant-corners.com</a>&gt;; BROWN, Dee &lt;<a href=3D"ma=
+ilto:dbrown@brilliant-corners.com" target=3D"_blank">dbrown@brilliant-corne=
+rs.com</a>&gt;;
+ WOODBURY, Terrance &lt;<a href=3D"mailto:terrance@brilliant-corners.com" t=
+arget=3D"_blank">terrance@brilliant-corners.com</a>&gt;; NUNEZ, Lucia &lt;<=
+a href=3D"mailto:Lucia@brilliant-corners.com" target=3D"_blank">Lucia@brill=
+iant-corners.com</a>&gt;; Laura Rodriguez &lt;<a href=3D"mailto:lrodriguez@=
+rabengroup.com" target=3D"_blank">lrodriguez@rabengroup.com</a>&gt;;
+ Francella Chinchilla &lt;<a href=3D"mailto:fchinchilla@rabengroup.com" tar=
+get=3D"_blank">fchinchilla@rabengroup.com</a>&gt;; Abigail Omojola &lt;<a h=
+ref=3D"mailto:aomojola@rabengroup.com" target=3D"_blank">aomojola@rabengrou=
+p.com</a>&gt;; Steve Pierce &lt;<a href=3D"mailto:spierce@hattaway.com" tar=
+get=3D"_blank">spierce@hattaway.com</a>&gt;;
+ Eric Zimmermann &lt;<a href=3D"mailto:ezimmermann@hattaway.com" target=3D"=
+_blank">ezimmermann@hattaway.com</a>&gt;<br>
+<b>Subject:</b> Re: May Narrative Project Partners Meeting<u></u><u></u></s=
+pan></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi all:&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I hope everyone is doing well.&nbsp;<u></u><u></u></=
+p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We wanted to provide a short update to the team on w=
+here we are in the project.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We are currently fielding the external survey with v=
+oters, which you all have given input into. Fielding is going a bit slowly,=
+ and we want to make sure we have enough time to do a&nbsp;thorough analysi=
+s before we engage everyone. Therefore,
+ we have decided to <b><u>POSTPONE next week's partner meeting </u></b>(yay=
+, you have that time back from us!).&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I know how hard it is to schedule a 3-hour meeting w=
+ith everyone without delaying the next research step, so we'd like to sugge=
+st the following:<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b>I. 1-hour webinar/call to discuss the insights fr=
+om the external survey the week of May 16th=E2=80=94more particularly on Th=
+ursday, 5/19, 1-2pm.
+</b><u>Can all teams please let me know if this time works?</u> (Jamal, I k=
+now you are out that week, but hoping someone from your team can participat=
+e). During this call we'll gather your input into our next message developm=
+ent process.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b>II. 2-hour partner meeting to discuss the objecti=
+ves, logistics, audiences and strategy for the next, and our last, survey w=
+hich will be lead by Cornell's team, as well as the updated language we'll =
+be testing.
+</b>We are discussing with Cornell's team on the appropriate timing for thi=
+s meeting, but we are looking at the last week of May/first week of June. I=
+'ll follow up in a few days on scheduling this one.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We look forward to hearing from everyone and please =
+let me know if you have any other questions.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Ivana and the Hattaway team<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen51.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D8f=
+19619a-8cb1-4e22-e6b7-4e809196e880"><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">--</span><span =
+style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><=
+u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Ivana Griacova<=
+/span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Senior Operatio=
+ns Associate</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;s=
+ans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Hattaway Commun=
+ications, Inc.</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot=
+;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"tel:=
+202.266.3329" value=3D"&#43;12022663329" target=3D"_blank">202.266.3329</a>=
+</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&qu=
+ot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"http=
+://hattaway.com/" target=3D"_blank">www.hattaway.com</a></span><span style=
+=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Helping visiona=
+ry leaders &amp; organizations achieve great things.&nbsp;</span><span styl=
+e=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></=
+u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Thu, Apr 7, 2016 at 12:22 PM, Ivana Griacova &lt;=
+<a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">igriacova@hatta=
+way.com</a>&gt; wrote:<u></u><u></u></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">Super! I'll send a calendar invite to block the time=
+ and will follow up closer to the date with logistics.&nbsp;<u></u><u></u><=
+/p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Ivana<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D6e=
+b655ba-bd89-46da-a029-1ed06df8545d"><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">--</span><span =
+style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><=
+u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Ivana Griacova<=
+/span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Senior Operatio=
+ns Associate</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot;s=
+ans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Hattaway Commun=
+ications, Inc.</span><span style=3D"font-family:&quot;Helvetica&quot;,&quot=
+;sans-serif&quot;"><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"tel:=
+202.266.3329" target=3D"_blank">202.266.3329</a></span><span style=3D"font-=
+family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></u></span><=
+/p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"http=
+://hattaway.com/" target=3D"_blank">www.hattaway.com</a></span><span style=
+=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:black">Helping visiona=
+ry leaders &amp; organizations achieve great things.&nbsp;</span><span styl=
+e=3D"font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u><u></=
+u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">On Thu, Apr 7, 2016 at 12:21 PM, Margie Omero (Purpl=
+e Strategies) &lt;<a href=3D"mailto:Margie.Omero@purplestrategies.com" targ=
+et=3D"_blank">Margie.Omero@purplestrategies.com</a>&gt; wrote:<u></u><u></u=
+></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Yes I=E2=80=99m available. Thanks!&nbsp;<u></u><u></=
+u></p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">On Apr 7, 2016, at 11:59 AM, Ivana Griacova &lt;<a h=
+ref=3D"mailto:igriacova@hattaway.com" target=3D"_blank">igriacova@hattaway.=
+com</a>&gt; wrote:<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Thank you all=E2=80=94glad this is shaping up well.&=
+nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Margie, is your team available?<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D91=
+978868-d910-44d9-e1c2-187bae6c3972"><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">--<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Ivana Griacova<u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Senior Operations Associate=
+<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Hattaway Communications, In=
+c.<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.266.3329=
+" target=3D"_blank">202.266.3329</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><a href=3D"http://hattaway.=
+com/" target=3D"_blank">www.hattaway.com</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Helping visionary leaders &=
+amp; organizations achieve great things.&nbsp;<u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Wed, Apr 6, 2016 at 11:26 PM, Jamal Simmons &lt;<=
+a href=3D"mailto:jsimmons@rabengroup.com" target=3D"_blank">jsimmons@rabeng=
+roup.com</a>&gt; wrote:<u></u><u></u></p>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">Most of our team is unavailable but I can be there.&=
+nbsp;<span style=3D"color:#888888"><u></u><u></u></span></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#888888"><u></u>&nbsp;<u></u></=
+span></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#888888">Jamal<u></u><u></u></s=
+pan></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Wed, Apr 6, 2016 at 5:25 PM, Ivana Griacova &lt;<=
+a href=3D"mailto:igriacova@hattaway.com" target=3D"_blank">igriacova@hattaw=
+ay.com</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<blockquote style=3D"border:none;border-left:solid #cccccc 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-top:5.0pt;margin-right:0in;margin-=
+bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">Dear all:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I hope everyone is doing well and looking forward to=
+ the warmer weather.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">We are looking to schedule our next partners' meetin=
+g for the second week in May (after the Internal surveys and the Language &=
+amp; Image Survey).&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Unfortunately, Amy's schedule is fairly limited duri=
+ng that time. Can all teams please let me know whether you are available on
+<b>Thursday, May 12th, 9am-12pm?</b>&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Ivana<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">--<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Ivana Griacova<u></u><u></u=
+></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Senior Operations Associate=
+<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Hattaway Communications, In=
+c.<u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><a href=3D"tel:202.266.3329=
+" target=3D"_blank">202.266.3329</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><a href=3D"http://hattaway.=
+com/" target=3D"_blank">www.hattaway.com</a><u></u><u></u></span></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;"><u></u>&nbsp;<u></u></span>=
+</p>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-famil=
+y:&quot;Helvetica&quot;,&quot;sans-serif&quot;">Helping visionary leaders &=
+amp; organizations achieve great things.&nbsp;<u></u><u></u></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><img border=3D"0" width=3D"1" height=3D"1" src=3D"ht=
+tp://t.sidekickopen04.com/e1t/o/5/f18dQhb0S7ks8dDMPbW2n0x6l2B9gXrN7sKj6v4f8=
+gbVdV5-25vMthsW653gyM3LvrVvW163zLn1k1H6H0?si=3D4990148964253696&amp;pi=3D80=
+fa2497-9aa4-4d75-94e8-c27368583d53"><u></u><u></u></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</blockquote>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br></div></div>
+
+--047d7bd9175a4a2454053218fadd--
+
+--047d7bd9175a4a2457053218fade
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1A6B6.60FFCA90>
+X-Attachment-Id: f280f1b82103625c_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--047d7bd9175a4a2457053218fade--

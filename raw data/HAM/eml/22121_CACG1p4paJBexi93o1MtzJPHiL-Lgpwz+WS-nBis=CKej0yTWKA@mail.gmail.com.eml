@@ -1,0 +1,493 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Tue, 17 May
+ 2016 21:23:25 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Tue, 17 May 2016
+ 21:23:22 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 920831292
+ for ParrishD@dnc.org; Tue, 17 May 2016 20:23:32 -0500
+X-Note-AR-ScanTimeLocal: 5/17/2016 8:23:23 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.52 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-165/SG:5 5/17/2016 8:23:18 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-23279-c
+X-Note-419: 15.6269 ms. Fail:1 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:1-1324/SG:1 5/17/2016 8:23:04 PM
+X-Warn: WEBBUG
+X-Note: Spam Tests Failed: WEBBUG
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.52
+X-Note-Reverse-DNS: mail-oi0-f52.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G398 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-oi0-f52.google.com ([209.85.218.52] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138967353
+ for ParrishD@dnc.org; Tue, 17 May 2016 20:23:23 -0500
+Received: by mail-oi0-f52.google.com with SMTP id k142so53922767oib.1
+        for <ParrishD@dnc.org>; Tue, 17 May 2016 18:23:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=a2R6Ooptf3ONNwBRJKJDgqP/uu4tRBl+4f1wOwkaSHk=;
+        b=QDnWU2njyyilnvjko5N5piulhtdsiOdHShgIjrYKAYTQSbG8iyU3vocXf84m3DNNF2
+         6tVyI6DvBW/u2Ybk87JO0Ef6VjpiZDN4V+8s6oOaQaFluLVUhd9bbNBCc0PtS2ubKkcD
+         m37KSm7AKx6bsqIVQWd4SyC6T/ebqf0v1+lbNMIksI56t/k6l720scfNkV2B5rVn3Yf3
+         b0zkgW4S8nX/8PJiIbT0yC1DN3qbUtvu40qk3cYqQOtwWuQRh16iHn/ehFU6mfBCmrJD
+         q5EAIIRaDxhSeSsBeQK938QRXAjGc2Y3q8shn/a9BV0SzAG56rXNZsR4EoNeWB2BqPaN
+         gJfQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=a2R6Ooptf3ONNwBRJKJDgqP/uu4tRBl+4f1wOwkaSHk=;
+        b=e47GW87LrpMzOxDsnUXmX6Di/JLz9VRXWxyLGcJmhQ2Qnn828Hz100DaYHVAW2611Z
+         4CGxQGX9OT7JGbffLMWbbHKlMkOxnf4NiAay2+B++qkvuzGqKWaUDgJgzqQsb5IfDg17
+         yYmTBOF1I/sQ33HVfyhfYCN6zI/L3gu6u7mEClONVjItRjnQUFdT7otbN4b6AUMiIBf5
+         T+SU39eKPcrCHPHtrB7aQ+lFxI+6Xs2O4cxt0UGxSXWXbWLTK2T0bENJ9Xl/JXXFQjAb
+         Othqf4xAWkVFCWVC66N/LYq1Z+KVvTTChlWME8KRS6YE0kgsSYrGO1G3Q3Blm6S/uIyA
+         fioQ==
+X-Gm-Message-State: AOPr4FWH3KQKPpZIQj4a60P8jf2K5WuK4htpYVF7mXOWq23ivHJ1e6BPbERWqvdD9fwfW/ZGdNn4G+++fgksKTix
+X-Received: by 10.157.8.137 with SMTP id 9mr2538768otf.109.1463534602952; Tue,
+ 17 May 2016 18:23:22 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Tue, 17 May 2016 18:23:22 -0700 (PDT)
+In-Reply-To: <F542A23E-492B-4C41-B9C4-D78148CE3C8E@dnc.org>
+References: <001a11c16a58cad33705330f96df@google.com>
+	<57BF90C9-7B95-4174-B614-47AF3AC1A45D@gmail.com>
+	<CACG1p4pG7TtMUkvqU6G1zyy0tTxPYYCF_J4_uvWu4qHUxyMzaw@mail.gmail.com>
+	<2E34BB40-073F-4EB6-933F-0C35FD05A1EE@gmail.com>
+	<CACG1p4pPhnsfzuomz8N6zf0-Cwmxm0Xm1x_UwuJxPA1sJc1z9A@mail.gmail.com>
+	<E9A8CD7B-A50A-4C5C-9653-49861E85D84E@dnc.org>
+	<CACG1p4r0oT2RYi2uUEL6b_kT+hDKg-o3a+RWYo0QWoNiha5eOg@mail.gmail.com>
+	<8F49D3D0-90C9-497B-95F4-419B5DAD2B41@dnc.org>
+	<CACG1p4r6O=7vr3_x=0SXL=_ZUcCHn5a-A3qBUTSeXZciQpT1Tw@mail.gmail.com>
+	<F542A23E-492B-4C41-B9C4-D78148CE3C8E@dnc.org>
+Date: Tue, 17 May 2016 21:23:22 -0400
+Message-ID: <CACG1p4paJBexi93o1MtzJPHiL-Lgpwz+WS-nBis=CKej0yTWKA@mail.gmail.com>
+Subject: Re: Join us for an evening with President Obama at our home
+From: Zachary Allen <zallen@tipahconsulting.com>
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11373008203fed053313b4e2"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11373008203fed053313b4e2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+I'm hesitant to say yes because I want him to work the phone. Lets talk
+tomorrow. Jordan cannot get wind that we're holding people back, that much
+I do know.
+
+On Tuesday, May 17, 2016, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Sounds good. Is it ok for other regions to send out tomorrow?
+>
+> On May 17, 2016, at 9:17 PM, Zachary Allen <zallen@tipahconsulting.com
+> <javascript:_e(%7B%7D,'cvml','zallen@tipahconsulting.com');>> wrote:
+>
+> I just learned as well.  I'm think I just got us 2 more at 33.4k - will
+> let you know tomorrow.
+>
+> On Tuesday, May 17, 2016, Parrish, Daniel <ParrishD@dnc.org
+> <javascript:_e(%7B%7D,'cvml','ParrishD@dnc.org');>> wrote:
+>
+>> Oh I didn't realize that. Yeah she's in our 30- I'll make her a ?
+>> tomorrow.
+>>
+>> On May 17, 2016, at 8:53 PM, Zachary Allen <zallen@tipahconsulting.com>
+>> wrote:
+>>
+>> Is Lise Strickler one of our 30 or whatever? That's Galloglys wife. She'=
+s
+>> just a TBD
+>>
+>> On Tuesday, May 17, 2016, Parrish, Daniel <ParrishD@dnc.org> wrote:
+>>
+>>> Got it, I'll make sure I spell it right.
+>>>
+>>> On May 17, 2016, at 6:42 PM, Zachary Allen <zallen@tipahconsulting.com>
+>>> wrote:
+>>>
+>>> for your follow up FYI
+>>>
+>>> ---------- Forwarded message ----------
+>>> From: *Michelzaleski* <michelzaleski@gmail.com>
+>>> Date: Tuesday, May 17, 2016
+>>> Subject: Re: Join us for an evening with President Obama at our home
+>>> To: Zachary Allen <zallen@tipahconsulting.com>
+>>>
+>>>
+>>> Hi, first name is Michel. A common mistake, no worries.
+>>>
+>>> Sent from my iPhone with inevitable typos
+>>>
+>>> On May 17, 2016, at 6:19 PM, Zachary Allen <zallen@tipahconsulting.com>
+>>> wrote:
+>>>
+>>> Michael -
+>>>
+>>> We're thrilled you'll be joining us. I've copied Dan Parrish on my team
+>>> who can help collect the security information we'll need. We look forwa=
+rd
+>>> to seeing you June 8th!
+>>>
+>>> Best,
+>>> Zach
+>>>
+>>> On Tuesday, May 17, 2016, Michelzaleski <michelzaleski@gmail.com> wrote=
+:
+>>>
+>>>> Hi Kenny, Caroline and I would be delighted to come. I've ccd Zallen
+>>>>
+>>>> Sent from my iPhone with inevitable typos
+>>>>
+>>>> On May 17, 2016, at 4:28 PM, Kenneth Lerer & Katherine Sailer <
+>>>> lauren@lererhippeau.com> wrote:
+>>>>
+>>>> Michel & Caroline,
+>>>>
+>>>>
+>>>> Katherine and I would like to invite you to a dinner reception at our
+>>>> home for 50 friends on June 8th with President Obama. We are excited t=
+o
+>>>> hear from The President about the upcoming election and other critical=
+ly
+>>>> important topics. The dinner is in support of The DNC and we are askin=
+g for
+>>>> a $10,000 contribution per person.
+>>>>
+>>>>
+>>>> Our family hosted President Obama at one of his first fundraisers in
+>>>> New York City in 2007 and we couldn=E2=80=99t be more pleased to be ho=
+sts again. I
+>>>> am sure the President will return to NYC on behalf of the party's nomi=
+nee
+>>>> in the Fall, but I am told this will most probably be his last small N=
+YC
+>>>> dinner as President on behalf of himself. I really hope you can be wit=
+h us.
+>>>>
+>>>>
+>>>> Please RSVP online at
+>>>> https://finance.democrats.org/page/contribute/June8Evening
+>>>> <http://lererhippeau.yamm-track.appspot.com/Redirect?ukey=3D1nigwVEImO=
+FcAQQX_U0S5pnHNGTIVXuWRcR4eqMNsbPc-0&key=3DYAMMID-16930856&link=3Dhttps%3A%=
+2F%2Ffinance.democrats.org%2Fpage%2Fcontribute%2FJune8Evening>
+>>>> or to Zach Allen at 646-470-8689
+>>>> <http://lererhippeau.yamm-track.appspot.com/Redirect?ukey=3D1nigwVEImO=
+FcAQQX_U0S5pnHNGTIVXuWRcR4eqMNsbPc-0&key=3DYAMMID-16930856&link=3Dtel%3A646=
+-470-8689>
+>>>> or Zallen@TIPAHConsulting.com.
+>>>> [image: beacon]
+>>>>
+>>>> <Obama invite.pdf>
+>>>>
+>>>>
+>>>
+>>> --
+>>> Zachary Allen
+>>> TIPAH Consulting
+>>> 304 Park Avenue South, 8th Floor
+>>> New York, NY 10010
+>>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>>
+>>>
+>>>
+>>>
+>>> --
+>>> Zachary Allen
+>>> TIPAH Consulting
+>>> 304 Park Avenue South, 8th Floor
+>>> New York, NY 10010
+>>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>>
+>>>
+>>
+>> --
+>> Zachary Allen
+>> TIPAH Consulting
+>> 304 Park Avenue South, 8th Floor
+>> New York, NY 10010
+>> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+>>
+>>
+>
+> --
+> Zachary Allen
+> TIPAH Consulting
+> 304 Park Avenue South, 8th Floor
+> New York, NY 10010
+> (646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+> <javascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');>
+>
+>
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11373008203fed053313b4e2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">I'=
+m hesitant to say yes because I want him to work the phone. Lets talk tomor=
+row. Jordan cannot get wind that we're holding people back, that much I do =
+know.&nbsp;<span></span><br><br>On Tuesday, May 17, 2016, Parrish, Daniel &=
+lt;<a href=3D"mailto:ParrishD@dnc.org">ParrishD@dnc.org</a>&gt; wrote:<br><=
+blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px=
+ #ccc solid;padding-left:1ex">
+
+
+
+<div dir=3D"auto">
+<div></div>
+<div>Sounds good. Is it ok for other regions to send out tomorrow?</div>
+<div><br>
+On May 17, 2016, at 9:17 PM, Zachary Allen &lt;<a href=3D"javascript:_e(%7B=
+%7D,'cvml','zallen@tipahconsulting.com');" target=3D"_blank">zallen@tipahco=
+nsulting.com</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>I just learned as well.&nbsp; I'm think I just got us 2 more at 33.4k =
+- will let you know tomorrow.&nbsp;<span></span><br>
+<br>
+On Tuesday, May 17, 2016, Parrish, Daniel &lt;<a href=3D"javascript:_e(%7B%=
+7D,'cvml','ParrishD@dnc.org');" target=3D"_blank">ParrishD@dnc.org</a>&gt; =
+wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+<div dir=3D"auto">
+<div></div>
+<div>Oh I didn't realize that. Yeah she's in our 30- I'll make her a ? tomo=
+rrow.</div>
+<div><br>
+On May 17, 2016, at 8:53 PM, Zachary Allen &lt;<a>zallen@tipahconsulting.co=
+m</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>Is Lise Strickler one of our 30 or whatever? That's Galloglys wife. Sh=
+e's just a TBD<span></span><br>
+<br>
+On Tuesday, May 17, 2016, Parrish, Daniel &lt;<a>ParrishD@dnc.org</a>&gt; w=
+rote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+<div dir=3D"auto">
+<div></div>
+<div>Got it, I'll make sure I spell it right.</div>
+<div><br>
+On May 17, 2016, at 6:42 PM, Zachary Allen &lt;<a>zallen@tipahconsulting.co=
+m</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>for your follow up FYI&nbsp;<span></span><br>
+<br>
+---------- Forwarded message ----------<br>
+From: <b>Michelzaleski</b> &lt;<a>michelzaleski@gmail.com</a>&gt;<br>
+Date: Tuesday, May 17, 2016<br>
+Subject: Re: Join us for an evening with President Obama at our home<br>
+To: Zachary Allen &lt;<a>zallen@tipahconsulting.com</a>&gt;<br>
+<br>
+<br>
+<div dir=3D"auto">
+<div>Hi, first name is Michel. A common mistake, no worries.&nbsp;<br>
+<br>
+Sent from my iPhone with inevitable typos</div>
+<div><br>
+On May 17, 2016, at 6:19 PM, Zachary Allen &lt;<a>zallen@tipahconsulting.co=
+m</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>Michael -&nbsp;
+<div><br>
+</div>
+<div>We're thrilled you'll be joining us. I've copied Dan Parrish on my tea=
+m who can help collect the security information we'll need. We look forward=
+ to seeing you June 8th!</div>
+<div><br>
+</div>
+<div>Best,&nbsp;</div>
+<div>Zach<span></span><br>
+<br>
+On Tuesday, May 17, 2016, Michelzaleski &lt;<a>michelzaleski@gmail.com</a>&=
+gt; wrote:<br>
+<blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1p=
+x #ccc solid;padding-left:1ex">
+<div dir=3D"auto">
+<div><span></span></div>
+<div>
+<div>Hi Kenny, Caroline and I would be delighted to come. I've ccd Zallen&n=
+bsp;<br>
+<br>
+Sent from my iPhone with inevitable typos</div>
+<div><br>
+On May 17, 2016, at 4:28 PM, Kenneth Lerer &amp; Katherine Sailer &lt;<a>la=
+uren@lererhippeau.com</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+<div dir=3D"ltr">
+<p class=3D"MsoNormal">Michel &amp; Caroline,</p>
+<p class=3D"MsoNormal"><br>
+</p>
+<p class=3D"MsoNormal">Katherine and I would like to invite you to a dinner=
+ reception at our home for 50 friends on June 8th with President Obama. We =
+are excited to hear from The President about the upcoming election and othe=
+r critically important topics. The
+ dinner is in support of The DNC and we are asking for a $10,000 contributi=
+on per person.</p>
+<p class=3D"MsoNormal"><br>
+</p>
+<p class=3D"MsoNormal">Our family hosted President Obama at one of his firs=
+t fundraisers in New York City in 2007 and we couldn=E2=80=99t be more plea=
+sed to be hosts again. I am sure the President will return to NYC on behalf=
+ of the party's nominee in the Fall, but I
+ am told this will most probably be his last small NYC dinner as President =
+on behalf of himself. I really hope you can be with us.</p>
+<p class=3D"MsoNormal"><br>
+</p>
+<p class=3D"MsoNormal">Please RSVP online at <a href=3D"http://lererhippeau=
+.yamm-track.appspot.com/Redirect?ukey=3D1nigwVEImOFcAQQX_U0S5pnHNGTIVXuWRcR=
+4eqMNsbPc-0&amp;key=3DYAMMID-16930856&amp;link=3Dhttps%3A%2F%2Ffinance.demo=
+crats.org%2Fpage%2Fcontribute%2FJune8Evening" target=3D"_blank">
+https://finance.democrats.org/page/contribute/June8Evening</a> or to Zach A=
+llen at
+<a href=3D"http://lererhippeau.yamm-track.appspot.com/Redirect?ukey=3D1nigw=
+VEImOFcAQQX_U0S5pnHNGTIVXuWRcR4eqMNsbPc-0&amp;key=3DYAMMID-16930856&amp;lin=
+k=3Dtel%3A646-470-8689" value=3D"&#43;16464708689" target=3D"_blank">
+646-470-8689</a> or <a>Zallen@TIPAHConsulting.com</a>.</p>
+</div>
+<img src=3D"http://lererhippeau.yamm-track.appspot.com/FireBase?ukey=3D1nig=
+wVEImOFcAQQX_U0S5pnHNGTIVXuWRcR4eqMNsbPc-0&amp;key=3DYAMMID-16930856" width=
+=3D"1" height=3D"1" alt=3D"beacon" style=3D"display:none!important"></div>
+</blockquote>
+<blockquote type=3D"cite">
+<div>&lt;Obama invite.pdf&gt;</div>
+</blockquote>
+</div>
+</div>
+</blockquote>
+</div>
+<br>
+<br>
+-- <br>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+(646) 470-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a>ZAllen@TI=
+PAHConsulting.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+</blockquote>
+</div>
+<br>
+<br>
+<br>
+-- <br>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+(646) 470-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a>ZAllen@TI=
+PAHConsulting.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+</blockquote>
+</div>
+</blockquote>
+<br>
+<br>
+-- <br>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+(646) 470-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a>ZAllen@TI=
+PAHConsulting.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+</blockquote>
+</div>
+</blockquote>
+<br>
+<br>
+-- <br>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">
+<div>
+<div dir=3D"ltr">Zachary Allen<br>
+TIPAH Consulting<br>
+304 Park Avenue South, 8th Floor<br>
+New York, NY 10010<br>
+(646) 470-8689 direct | (973) 618-5903 fax<span>&nbsp;| </span><a href=3D"j=
+avascript:_e(%7B%7D,'cvml','ZAllen@TIPAHConsulting.com');" target=3D"_blank=
+">ZAllen@TIPAHConsulting.com</a></div>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+</blockquote>
+</div>
+
+</blockquote><br><br>-- <br><div dir=3D"ltr"><div><div dir=3D"ltr"><div><di=
+v dir=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8=
+th Floor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fa=
+x<span>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=
+=3D"_blank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div><br=
+>
+
+--001a11373008203fed053313b4e2--

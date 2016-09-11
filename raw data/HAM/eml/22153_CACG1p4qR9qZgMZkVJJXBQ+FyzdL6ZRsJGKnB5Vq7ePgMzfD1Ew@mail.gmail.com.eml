@@ -1,0 +1,1421 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 20 May
+ 2016 12:06:16 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 20 May 2016
+ 12:06:10 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 926515183
+ for ParrishD@dnc.org; Fri, 20 May 2016 11:06:22 -0500
+X-Note-AR-ScanTimeLocal: 5/20/2016 11:06:12 AM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.218.51 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-190/SG:5 5/20/2016 11:05:16 AM
+X-GBUdb-Analysis: 0, 209.85.218.51, Ugly c=0.84507 p=-0.991216 Source White
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.626 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/20/2016 11:05:56 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.218.51
+X-Note-Reverse-DNS: mail-oi0-f51.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [209.85.218.51] (HELO mail-oi0-f51.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 143077127
+ for ParrishD@dnc.org; Fri, 20 May 2016 11:06:12 -0500
+Received: by mail-oi0-f51.google.com with SMTP id b65so41846570oia.1
+        for <ParrishD@dnc.org>; Fri, 20 May 2016 09:06:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=FDZOhTMhychuKEasFIRz/fxh4vYSN6XIdcOikEd//fw=;
+        b=RAkFtIeeN6oS4pWl0rWEk4btYpjWDHwIihIrOitxaTnJRDvo7p9tP7TCuN2pKzUjuB
+         dmkJh6udWELUtPrcPVdAqAYR+r68XrKpxNNrHlRqguWucCJZUjRXv8caLAoRFPHG/sKM
+         21x6NIb4YtIq6bpRO6LFN/86ejRbW+51m5XZOQQMzrI4HovIr+H3IyN7yyLXcNgWMovb
+         FlKD2BV673+Y7POuHtahwvAWSQjK5/6LHGhGu5EWPsJVdT+IwqHAIjZUUreyaBaIGFdG
+         M/GpSr9vwsFyMKH+hTRxvB+5ylcyZY+H0Djw8b8Lyf3JQI7TjUUH0aDcpQciZgdWOwwF
+         0Pzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=FDZOhTMhychuKEasFIRz/fxh4vYSN6XIdcOikEd//fw=;
+        b=cXH3Im7MXGpuBfO/bSms/YrBLGFbp4ktbeBXc3U132XyjXd9PQFOivC0JgcogFmmNU
+         ewEvRllkhztOMbfPf+hiIuErAr5kQku0MGqRbhD1Q+u3TmrhNjDwhDOl6PGJitYPdNMg
+         8EoS7SXiwBUkLHAko70z6hgZjx0cYK5iUP9EMRlpxjLCTsVERrfrM+LOAEKVS7C4/If9
+         N7a3cFqH7Krrz4tdiqSwD3UnuxTqqNZR98EA9AyAdpX0vw3SJERN7i7/81slU0Nm07bx
+         CEGDwgsIXyVjnbY8f/CFdhOMuYcmfj1GRquEWpfdnoAciWcxOi9mgA1EBBGdzMeRR4eP
+         HHLA==
+X-Gm-Message-State: AOPr4FV7+W/uYMTgj7Qe082DYRkcho2phKdcAEsHGvK/YF/M3cGyS3sYRnN0PvgZpDcR3wuX+V8PWT4ZTqQH2vrP
+X-Received: by 10.157.56.123 with SMTP id r56mr2322266otd.140.1463760372460;
+ Fri, 20 May 2016 09:06:12 -0700 (PDT)
+Received: by 10.157.40.47 with HTTP; Fri, 20 May 2016 09:05:32 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A996016E@dncdag1.dnc.org>
+References: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995DA34@dncdag1.dnc.org>
+ <CADSKLcqoWoMM9_j8VbescO9uRz_b4MxVbpPtpkRQdH+cEj1ZBA@mail.gmail.com>
+ <CAEdWZsA9e6bQvjRKAZyTQGD660OMTn0uLbJyBUv-vOON_sSJ7g@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995F920@dncdag1.dnc.org>
+ <CAEdWZsCtAZ26Ho-udXD7XYicBN-7yN08yoV27-o68mUxT+CDhQ@mail.gmail.com>
+ <3921C70B-22C2-4D2A-B90F-F275DCBD5461@dnc.org> <CAEdWZsCz7io5PgQMLMsqtc7T8fZLRr-JmqgvZDHk_T=XPJnuJw@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995FF88@dncdag1.dnc.org>
+ <CAEdWZsDhrU0GPFqE8+=wsiR5vZav9VBFm5WDjw6-VbL2+17sUw@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995FFC1@dncdag1.dnc.org>
+ <CAEdWZsBO-pq273n17EjcN2qVDfV1a3GAnxYUCrZ5oapnicb70Q@mail.gmail.com>
+ <CAEdWZsBM65iz=Nn2eiZULrQOEwCK8Cy7g9Ec=9mj5t_m+QHGww@mail.gmail.com>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A996009E@dncdag1.dnc.org>
+ <3FE7D968862A5C49876133C6FF5ECA8FB24B0F7D@dncdag1.dnc.org> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A996016E@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Fri, 20 May 2016 12:05:32 -0400
+Message-ID: <CACG1p4qR9qZgMZkVJJXBQ+FyzdL6ZRsJGKnB5Vq7ePgMzfD1Ew@mail.gmail.com>
+Subject: Re: FW: June 8th with President Obama - Information Needed
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a11417888098be105334845f8"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a11417888098be105334845f8
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+I'll email him and copy you.
+
+On Fri, May 20, 2016 at 12:04 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> Do we need to talk to Ken before we tell them they can=E2=80=99t come?
+>
+>
+>
+> *From:* Alan Reed
+> *Sent:* Friday, May 20, 2016 11:45 AM
+> *To:* Parrish, Daniel
+> *Cc:* Zachary Allen
+> *Subject:* RE: June 8th with President Obama - Information Needed
+>
+>
+>
+> Sorry, has to be a greencard or nothing.
+>
+>
+>
+> *From:* Parrish, Daniel
+> *Sent:* Friday, May 20, 2016 11:38 AM
+> *To:* Alan Reed
+> *Cc:* Zachary Allen
+> *Subject:* FW: June 8th with President Obama - Information Needed
+>
+>
+>
+> Hi Alan,
+>
+>
+>
+> We can=E2=80=99t accept contributions from O-1 visas, right? Can they att=
+end a
+> POTUS event without giving? Or nothing at all?
+>
+>
+>
+> Thanks!
+>
+> Dan
+>
+>
+>
+> *From:* Rebekah Madebach [mailto:rebekah.madebach@tapad.com
+> <rebekah.madebach@tapad.com>]
+> *Sent:* Friday, May 20, 2016 11:33 AM
+> *To:* Parrish, Daniel
+> *Subject:* Re: June 8th with President Obama - Information Needed
+>
+>
+>
+> Hi Daniel,
+>
+>
+>
+> They both have O-1 Visas. Will this be OK? I'm looking through my files
+> to find scanned copies of them.
+>
+>
+>
+> Thank you!
+>
+>
+>
+> All my best,
+>
+> Rebekah
+>
+>
+>
+> On Fri, May 20, 2016 at 11:03 AM, Rebekah Madebach <
+> rebekah.madebach@tapad.com> wrote:
+>
+> Noted - I'll reach out and get this from them!
+>
+>
+>
+> Thanks Daniel. I'm also going to call you now
+>
+>
+>
+> On Fri, May 20, 2016 at 11:02 AM, Parrish, Daniel <ParrishD@dnc.org>
+> wrote:
+>
+> Thanks! Unfortunately we do need a US passport or green card.
+>
+>
+>
+> Thank you for your help with this!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Rebekah Madebach [mailto:rebekah.madebach@tapad.com]
+> *Sent:* Friday, May 20, 2016 11:00 AM
+>
+>
+> *To:* Parrish, Daniel
+> *Subject:* Re: June 8th with President Obama - Information Needed
+>
+>
+>
+> Thank you, Daniel! It's OK - I should have understood.
+>
+>
+>
+> Does Are's attached license work?
+>
+>
+>
+> I'm reaching out to both of them to request a US passport or green card..=
+.
+>
+>
+>
+> All my best,
+>
+> Rebekah
+>
+>
+>
+> On Fri, May 20, 2016 at 10:57 AM, Parrish, Daniel <ParrishD@dnc.org>
+> wrote:
+>
+> Hi Rebekah,
+>
+>
+>
+> Unfortunately, we need either a US passport or green card for our
+> compliance department. My apologies, I should have been clearer! Do you
+> mind sending those over when you have a chance?
+>
+>
+>
+> Thanks!
+>
+> Dan
+>
+>
+>
+>
+>
+> *From:* Rebekah Madebach [mailto:rebekah.madebach@tapad.com]
+> *Sent:* Friday, May 20, 2016 9:05 AM
+>
+>
+> *To:* Parrish, Daniel
+> *Subject:* Re: June 8th with President Obama - Information Needed
+>
+>
+>
+> Perfect. I'll call you after that!
+>
+>
+>
+> Here are their passports.
+>
+>
+>
+> On Fri, May 20, 2016 at 8:35 AM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>
+> Perfect, thanks! I'm going to be in meetings until 10:30, but I'll be
+> available anytime after that for their social security numbers.
+>
+>
+> On May 20, 2016, at 7:51 AM, Rebekah Madebach <rebekah.madebach@tapad.com=
+>
+> wrote:
+>
+> Happy to! Ill be in the office within the hour. I'll send them as soon as
+> I arrive.
+>
+> On Thursday, May 19, 2016, Parrish, Daniel <ParrishD@dnc.org> wrote:
+>
+> Rebekah,
+>
+>
+>
+> Thank you for the information! Unfortunately the passports did not come
+> through on my end. Do you mind sending them again when you have a chance?
+>
+>
+>
+> Looking forward to talking tomorrow!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Rebekah Madebach [mailto:rebekah.madebach@tapad.com
+> <rebekah.madebach@tapad.com>]
+> *Sent:* Thursday, May 19, 2016 6:43 PM
+> *To:* Parrish, Daniel
+> *Subject:* Re: June 8th with President Obama - Information Needed
+>
+>
+>
+> Hi Daniel,
+>
+>
+>
+> Thank you for speaking with me this morning. Please find attached Are &
+> his wife Siri's passport. I will call you tomorrow with their SSN.
+>
+>
+>
+> Here is all the other information you need as well. Please don't hesitate
+> to let me know if you need anything further.
+>
+>
+>
+> Are Helge Traasdahl
+>
+> Address: 25 Rivo Alto Drive, Miami, FL 33139
+>
+> Occupation & Employer: Founder & CEO of Tapad, Inc
+>
+> DOB: 31 January 1973
+>
+>
+>
+> Siri Margrethe Scheele Willoch
+>
+> Address: 25 Rivo Alto Drive, Miami, FL 33139
+>
+> Occupation & Employer: Designer, Self Employed
+>
+> DOB: 17 July 1972
+>
+>
+>
+> Best,
+>
+> Rebekah
+>
+>
+>
+> On Wed, May 18, 2016 at 9:11 PM, Are Traasdahl <are@springcapital.com>
+> wrote:
+>
+> Thanks Daniel. Look forward to this. My assistant Rebekah will provide th=
+e
+> below information for me and my wife tomorrow morning. Are
+>
+>
+>
+>
+>
+> On Wed, May 18, 2016 at 10:02 AM, Parrish, Daniel <ParrishD@dnc.org>
+> wrote:
+>
+> Mr. Traasdahl,
+>
+>
+>
+> Thank you for your contribution! We are looking forward to seeing you in
+> June.
+>
+>
+>
+> Due to the nature of this event, we require security information from all
+> guests for Secret Service. This includes: full name, date of birth, socia=
+l
+> security number, home address, employer, and occupation. We also need a
+> copy of your passport or green card for compliance purposes.
+>
+>
+>
+> You are welcome to reply directly to me, or if you do not feel comfortabl=
+e
+> putting all of this information in an email, my number is (202) 479-5141.
+>
+>
+>
+> Let me know if you have any questions and thank you again for your suppor=
+t!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+>
+>
+> =E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=
+=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93
+>
+> *Daniel Parrish*
+>
+> *Democratic National Committee*
+>
+> Finance | Director of Data & Strategic Initiatives
+>
+> Phone: (202) 479-5141 | Mobile: (717) 283-7521
+>
+> 430 South Capitol Street, SE | Washington, DC 20003
+>
+>
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+>
+>
+>
+>
+> --
+>
+> --
+>
+> *Rebekah Madebach*, *Office & Facilities Manager *
+> *TAPAD* <http://www.tapad.com/>  60 Madison Avenue, New York, NY 10010,
+> 3rd Floor
+> Office: 347-817-4465 <3478174465> | rebekah.madebach@tapad.com
+> *Tapad Achieves 91.2% Cross-Device Accuracy, According to Nielsen*
+>
+
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a11417888098be105334845f8
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">I'll email him and copy you.&nbsp;</div><div class=3D"gmail_=
+extra"><br><div class=3D"gmail_quote">On Fri, May 20, 2016 at 12:04 PM, Par=
+rish, Daniel <span dir=3D"ltr">&lt;<a href=3D"mailto:ParrishD@dnc.org" targ=
+et=3D"_blank">ParrishD@dnc.org</a>&gt;</span> wrote:<br><blockquote class=
+=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padd=
+ing-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Do we need to talk to Ken=
+ before we tell them they can=E2=80=99t come?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Alan Ree=
+d
+<br><span class=3D"">
+<b>Sent:</b> Friday, May 20, 2016 11:45 AM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Zachary Allen<br>
+</span><b>Subject:</b> RE: June 8th with President Obama - Information Need=
+ed<u></u><u></u></span></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Sorry, has to be a greenc=
+ard or nothing.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Parrish,=
+ Daniel
+<br>
+<b>Sent:</b> Friday, May 20, 2016 11:38 AM<br>
+<b>To:</b> Alan Reed<br>
+<b>Cc:</b> Zachary Allen<br>
+<b>Subject:</b> FW: June 8th with President Obama - Information Needed<u></=
+u><u></u></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi Alan,<u></u><u></u></s=
+pan></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">We can=E2=80=99t accept c=
+ontributions from O-1 visas, right? Can they attend a POTUS event without g=
+iving? Or nothing at all?<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks!<u></u><u></u></sp=
+an></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan<u></u><u></u></span><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rebekah =
+Madebach [<a href=3D"mailto:rebekah.madebach@tapad.com" target=3D"_blank">m=
+ailto:rebekah.madebach@tapad.com</a>]
+<br>
+<b>Sent:</b> Friday, May 20, 2016 11:33 AM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: June 8th with President Obama - Information Needed<u></=
+u><u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Daniel,&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">They both have&nbsp;<span style=3D"font-size:10.0pt"=
+>O-1 Visas. Will this be OK? I'm looking through my files to find scanned c=
+opies of them.&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt">Thank you!</span><u=
+></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt">All my best,</span>=
+<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt">Rebekah&nbsp;</span=
+><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 11:03 AM, Rebekah Madebach &=
+lt;<a href=3D"mailto:rebekah.madebach@tapad.com" target=3D"_blank">rebekah.=
+madebach@tapad.com</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Noted - I'll reach out and get this from them!<u></u=
+><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks Daniel. I'm also going to call you now&nbsp;<=
+u></u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 11:02 AM, Parrish, Daniel &l=
+t;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks! Unfortunately we =
+do need a US passport or green card.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thank you for your help w=
+ith this!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rebekah =
+Madebach [mailto:<a href=3D"mailto:rebekah.madebach@tapad.com" target=3D"_b=
+lank">rebekah.madebach@tapad.com</a>]
+<br>
+<b>Sent:</b> Friday, May 20, 2016 11:00 AM</span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: June 8th with President Obama - Information Needed<u></=
+u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Thank you, Daniel! It's OK - I should have understoo=
+d.&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Does Are's attached license work? &nbsp;<u></u><u></=
+u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm reaching out to both of them to request a US pas=
+sport or green card...<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">All my best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Rebekah&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 10:57 AM, Parrish, Daniel &l=
+t;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Hi Rebekah,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Unfortunately, we need ei=
+ther a US passport or green card for our compliance department. My apologie=
+s,
+ I should have been clearer! Do you mind sending those over when you have a=
+ chance?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thanks!</span><u></u><u><=
+/u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rebekah =
+Madebach [mailto:<a href=3D"mailto:rebekah.madebach@tapad.com" target=3D"_b=
+lank">rebekah.madebach@tapad.com</a>]
+<br>
+<b>Sent:</b> Friday, May 20, 2016 9:05 AM</span><u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: June 8th with President Obama - Information Needed<u></=
+u><u></u></p>
+</div>
+</div>
+<div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Perfect. I'll call you after that!<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Here are their passports.&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 20, 2016 at 8:35 AM, Parrish, Daniel &lt=
+;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>=
+&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Perfect, thanks! I'm going to be in meetings until 1=
+0:30, but I'll be available anytime after that for their social security nu=
+mbers.<u></u><u></u></p>
+</div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On May 20, 2016, at 7:51 AM, Rebekah Madebach &lt;<a href=3D"mailto:rebekah=
+.madebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a>&gt; w=
+rote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">Happy to! Ill be in the office within the hour. I'll=
+ send them as soon as I arrive.&nbsp;<br>
+<br>
+On Thursday, May 19, 2016, Parrish, Daniel &lt;<a href=3D"mailto:ParrishD@d=
+nc.org" target=3D"_blank">ParrishD@dnc.org</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Rebekah,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Thank you for the informa=
+tion! Unfortunately the passports did not come through on my end. Do you
+ mind sending them again when you have a chance?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Looking forward to talkin=
+g tomorrow!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Best,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Dan</span><u></u><u></u><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">&nbsp;</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rebekah =
+Madebach [<a href=3D"mailto:rebekah.madebach@tapad.com" target=3D"_blank">m=
+ailto:rebekah.madebach@tapad.com</a>]
+<br>
+<b>Sent:</b> Thursday, May 19, 2016 6:43 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Subject:</b> Re: June 8th with President Obama - Information Needed</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Daniel,&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you&nbsp;for speaking with me this morning.&nb=
+sp;Please find attached Are &amp; his wife Siri's passport. I will call you=
+ tomorrow with their SSN.&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Here is all the other information you need as well. =
+Please don't hesitate to let me know if you need anything further.&nbsp;<u>=
+</u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Are Helge Traasdahl&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Address:&nbsp;25 Rivo Alto Drive, Miami, FL 33139&nb=
+sp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Occupation &amp; Employer:&nbsp;Founder &amp; CEO of=
+ Tapad, Inc&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">DOB: 31 January 1973&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Siri Margrethe Scheele Willoch<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Address: 25 Rivo Alto Drive, Miami, FL 33139&nbsp;<u=
+></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Occupation &amp; Employer: Designer, Self Employed&n=
+bsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">DOB: 17 July 1972&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Rebekah&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Wed, May 18, 2016 at 9:11 PM, Are Traasdahl &lt;<=
+a href=3D"mailto:are@springcapital.com" target=3D"_blank">are@springcapital=
+.com</a>&gt; wrote:<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Thanks Daniel. Look forward to this. My assistant Re=
+bekah will provide the below information for me and my wife tomorrow mornin=
+g. Are<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">On Wed, May 18, 2016 at 10:02 AM, Parrish, Daniel &l=
+t;<a href=3D"mailto:ParrishD@dnc.org" target=3D"_blank">ParrishD@dnc.org</a=
+>&gt; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p class=3D"MsoNormal">Mr. Traasdahl,<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Thank you for your contribution! We are looking forw=
+ard to seeing you in June.
+<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Due to the nature of this event, we require security=
+ information from all guests for Secret Service. This includes: full name, =
+date of birth, social security number, home address,
+ employer, and occupation. We also need a copy of your passport or green ca=
+rd for compliance purposes.<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">You are welcome to reply directly to me, or if you d=
+o not feel comfortable putting all of this information in an email, my numb=
+er is
+<a href=3D"tel:%28202%29%20479-5141" target=3D"_blank">(202) 479-5141</a>.<=
+u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Let me know if you have any questions and thank you =
+again for your support!<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-se=
+rif&quot;;color:#1f497d">=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=
+=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93=E2=80=93</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans=
+-serif&quot;;color:#1f497d">Daniel Parrish</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<b><span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans=
+-serif&quot;;color:#1f497d">Democratic National Committee</span></b><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-se=
+rif&quot;;color:#1f497d">Finance | Director of Data &amp; Strategic Initiat=
+ives</span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-se=
+rif&quot;;color:#1f497d">Phone:
+<a href=3D"tel:%28202%29%20479-5141" target=3D"_blank">(202) 479-5141</a> |=
+ Mobile: <a href=3D"tel:%28717%29%20283-7521" target=3D"_blank">
+(717) 283-7521</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<span style=3D"font-size:10.0pt;font-family:&quot;Arial&quot;,&quot;sans-se=
+rif&quot;;color:#1f497d">430 South Capitol Street, SE | Washington, DC 2000=
+3</span><u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">--
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br>
+-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">--
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">--
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><br>
+<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.5pt;font-family:&quot;He=
+lvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">--</span><span style=3D=
+"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;=
+color:#333333">&nbsp;</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;font-family:&quot=
+;Helvetica&quot;,&quot;sans-serif&quot;;color:#043240">Rebekah Madebach</sp=
+an></b><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#333333">,&nbsp;</span><i><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a=
+6a69c">Office
+ &amp; Facilities Manager&nbsp;</span></i><span style=3D"font-size:10.5pt;f=
+ont-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#333333"><br>
+</span><a href=3D"http://www.tapad.com/" target=3D"_blank"><b><span style=
+=3D"font-size:10.5pt;font-family:&quot;Arial Black&quot;,&quot;sans-serif&q=
+uot;;color:#b9b841;letter-spacing:-1.5pt">TAPAD</span></b></a><span style=
+=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quo=
+t;;color:#333333">&nbsp;&nbsp;</span><span style=3D"font-size:10.5pt;font-f=
+amily:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#a6a69c">60
+ Madison Avenue, New York, NY 10010, 3rd Floor</span><span style=3D"font-si=
+ze:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans-serif&quot;;color:#3=
+33333"><br>
+</span><span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&q=
+uot;sans-serif&quot;;color:#a6a69c">Office:&nbsp;<a href=3D"tel:3478174465"=
+ target=3D"_blank">347-817-4465</a>&nbsp;|&nbsp;<a href=3D"mailto:rebekah.m=
+adebach@tapad.com" target=3D"_blank">rebekah.madebach@tapad.com</a></span><=
+span style=3D"font-size:10.5pt;font-family:&quot;Helvetica&quot;,&quot;sans=
+-serif&quot;;color:#333333"><br>
+</span><i><span style=3D"font-size:10.0pt;font-family:&quot;Helvetica&quot;=
+,&quot;sans-serif&quot;;color:#a6a69c">Tapad Achieves 91.2% Cross-Device Ac=
+curacy, According to Nielsen</span></i><u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a11417888098be105334845f8--

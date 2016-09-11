@@ -1,0 +1,408 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 12 May
+ 2016 12:53:33 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 12 May 2016
+ 12:53:29 -0400
+Received: from [10.87.0.114] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 911738981
+ for MirandaL@dnc.org; Thu, 12 May 2016 11:53:36 -0500
+X-Note-AR-ScanTimeLocal: 5/12/2016 11:53:36 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:209.85.223.181 DOM:cwa-union.org ADDR:cramos@cwa-union.org
+X-Note: SPF: PermError
+X-Note: ICH-CT/SI:0-779/SG:1 5/12/2016 11:52:39 AM
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-512/SG:8 5/12/2016 11:52:39 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-18426-c
+X-Note-419: 15.626 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/12/2016 11:53:24 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.223.181
+X-Note-Reverse-DNS: mail-io0-f181.google.com
+X-Note-Return-Path: cramos@cwa-union.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 G419 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-io0-f181.google.com ([209.85.223.181] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 140283458
+ for MirandaL@dnc.org; Thu, 12 May 2016 11:53:36 -0500
+Received: by mail-io0-f181.google.com with SMTP id d62so102597398iof.2
+        for <MirandaL@dnc.org>; Thu, 12 May 2016 09:53:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=cwa-union-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :cc;
+        bh=C1vpDnG32+o8M05/Bk+8rF6DGpgheeLEf7pZJQbwo1E=;
+        b=aBP7V/VMYeZInBAPuiPwxt7CwL9jH7nm05RnTrO9KRZV+UlXvgTZH4NJQHtoacGZLZ
+         vOLUphDYv9LhcH6CCmJoA8lUBjeVmuQK0SnOx6ErKCD2XcMyP+jSvUmAsu3Aem+1rAI1
+         EG+jOtDRLENpxUQ3xQMw6vbKlsZlpUUIWPgxRgMJib2eZSmOak2b8SOWppy37uHR63g8
+         9QlKEM5at5opdVNga9hRan0sRWXZrLD4gfwCkejvw3Jpcv9LJil1ZF1/Q/KnoKP55RUo
+         xCpD6G9LpEtKT8VG9AZzTLn813CSsOdVVVaUdwCzKAunQLfidPkXD1ayaseyKqwySPRy
+         O7WQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to:cc;
+        bh=C1vpDnG32+o8M05/Bk+8rF6DGpgheeLEf7pZJQbwo1E=;
+        b=JOSuMzr/veL3f+IX6gcGuL4aGj/tBtVXFONesWwTFSOJY6oKzXhtnt5MSTInFrwcdi
+         96OH84ALCGtxBNVo4meRE32wRJywN/HnH/7FhNi6MWhcSmnqRMkTzhQh4RMVu6PNn6pl
+         9e4O4dyrqOImpHO3I3f/nqESfFiK4kyI3II01e6RZhz2HVnvJFyuH6V8MqBPyVkQHydf
+         2d7bPwSmBOXUnGi91sz+N/zCNZqXs5j/U6Tidztx8QYKH28yCzl64U1s+EPc8GJPIWxa
+         O20U5JbetdebJ22TaVU1ri7sqiq0+EHtRkFJyq+uZISY/b8FmWKFG4Fsr4mn1fv9msFE
+         Y0+g==
+X-Gm-Message-State: AOPr4FUEclntdPlLxq1AKhdgjBSbwnIPDEFpGZP65QoB7FuJBKtrAohlqDB9fmuVSWx+ezdrdG8DHjyfhVAz+Zh0
+X-Received: by 10.36.68.82 with SMTP id o79mr9931983ita.75.1463072010386; Thu,
+ 12 May 2016 09:53:30 -0700 (PDT)
+Received: by 10.36.236.2 with HTTP; Thu, 12 May 2016 09:53:30 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF1B32C@dncdag1.dnc.org>
+References: <CAPGiL=b8H738a5dqGzq+bGR9q4A729NFEYZDy3KCDtMr2xRiOg@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF1B32C@dncdag1.dnc.org>
+Date: Thu, 12 May 2016 12:53:30 -0400
+Message-ID: <CAPGiL=aaU1LWU+6KC75Lt0_cNRRbNqm3UkV=nnFxqgk8H__aWQ@mail.gmail.com>
+Subject: Re: What up
+From: Charlie Ramos <cramos@cwa-union.org>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+CC: "Palermo, Rachel" <PalermoR@dnc.org>
+Content-Type: multipart/related; boundary="001a1143ea2e766dc30532a7ff71"
+Return-Path: cramos@cwa-union.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1143ea2e766dc30532a7ff71
+Content-Type: multipart/alternative; boundary="001a1143ea2e766dba0532a7ff70"
+
+--001a1143ea2e766dba0532a7ff70
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Hey Luis - the pleasure is mutual and sounds good about late next week.
+
+Rachel - I'm pretty flexible Wednesday thru Friday.
+
+And keep giving it to those R's out there #downwithdrumpf
+
+Talk soon --
+Charlie
+
+On Thu, May 12, 2016 at 12:49 PM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> Charlie, great to hear from you. I=E2=80=99m copying Rachel to make sure =
+we
+> schedule this. I=E2=80=99m traveling tomorrow through Monday, so would ha=
+ve to be
+> late next week. She=E2=80=99ll help us nail it down.
+>
+>
+>
+>
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+> *From:* Charlie Ramos [mailto:cramos@cwa-union.org]
+> *Sent:* Thursday, May 12, 2016 12:42 PM
+> *To:* Miranda, Luis
+> *Subject:* RE: What up
+>
+>
+>
+> Hey Luis -
+>
+>
+>
+> Below is my contact information.  Let me know when you want to meet for
+> coffee or lunch.  I know you are busy so I can meet you at the DNC.
+>
+>
+>
+> Talk soon --
+>
+>
+>
+> --
+>
+> Carlos "Charlie" Ramos, Jr.
+>
+> Senior Campaign Lead
+>
+> Communications Workers of America
+>
+> 501 3rd Street NW
+>
+> Washington, DC 20001
+>
+> Phone: 202-434-1235
+>
+> Email: cramos@cwa-union.org
+>
+>
+>
+>
+>
+
+
+
+--=20
+Carlos "Charlie" Ramos, Jr.
+Senior Campaign Lead
+Communications Workers of America
+501 3rd Street NW
+Washington, DC 20001
+Phone: 202-434-1235
+Email: cramos@cwa-union.org
+
+--001a1143ea2e766dba0532a7ff70
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">Hey Luis - the pleasure is mutual and sounds good about late=
+ next week. &nbsp;<div><br></div><div>Rachel - I'm pretty flexible Wednesda=
+y thru Friday.</div><div><br></div><div>And keep giving it to those R's out=
+ there #downwithdrumpf</div><div><br></div><div>Talk soon --</div><div>Char=
+lie</div></div><div class=3D"gmail_extra"><br><div class=3D"gmail_quote">On=
+ Thu, May 12, 2016 at 12:49 PM, Miranda, Luis <span dir=3D"ltr">&lt;<a href=
+=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a>&gt;</sp=
+an> wrote:<br><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;=
+border-left:1px #ccc solid;padding-left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">Charlie, great to hear fr=
+om you. I=E2=80=99m copying Rachel to make sure we schedule this. I=E2=80=
+=99m traveling tomorrow through Monday, so would have to be late next week.
+ She=E2=80=99ll help us nail it down. <u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img border=3D"0" width=3D"77" height=3D"71" src=3D"cid:image00=
+1.png@01D1AC4C.A75088E0" align=3D"left" hspace=3D"12" alt=3D"SigDems" title=
+=3D""></a><u></u><b><span style=3D"font-family:&quot;Calibri&quot;,&quot;sa=
+ns-serif&quot;;color:#1f497d">Luis
+ Miranda, </span></b><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,&quot;sans-serif&quot;;color:#1f497d">Communications Director<u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Co=
+mmittee<u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><a href=3D"tel:202-863-81=
+48" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a> =E2=80=93
+<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a> =
+- <a href=3D"https://www.twitter.com/MiraLuisDC" target=3D"_blank">
+@MiraLuisDC</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Charlie =
+Ramos [mailto:<a href=3D"mailto:cramos@cwa-union.org" target=3D"_blank">cra=
+mos@cwa-union.org</a>]
+<br>
+<b>Sent:</b> Thursday, May 12, 2016 12:42 PM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> RE: What up<u></u><u></u></span></p><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">Hey Luis -<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Below is my contact information.&nbsp; Let me know w=
+hen you want to meet for coffee or lunch.&nbsp; I know you are busy so I ca=
+n meet you at the DNC. &nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Talk soon --&nbsp;<br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<p class=3D"MsoNormal">-- <u></u><u></u></p>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt">Carlos &quot;Charli=
+e&quot; Ramos, Jr.</span><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Senior Campaign Lead<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Communications Workers of America<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">501 3rd Street NW<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Washington, DC 20001<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Phone: <a href=3D"tel:202-434-1235" value=3D"&#43;12=
+024341235" target=3D"_blank">202-434-1235</a><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Email: <a href=3D"mailto:cramos@cwa-union.org" targe=
+t=3D"_blank">
+cramos@cwa-union.org</a><u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div><font size=3D"2">Carlos &quot;Charlie&q=
+uot; Ramos, Jr.</font></div><div>Senior Campaign Lead</div><div>Communicati=
+ons Workers of America</div><div>501 3rd Street NW</div><div>Washington, DC=
+ 20001</div><div>Phone: 202-434-1235</div><div>Email: <a href=3D"mailto:cra=
+mos@cwa-union.org" target=3D"_blank">cramos@cwa-union.org</a></div><div><br=
+></div><div><br></div></div></div></div></div></div></div></div></div>
+</div>
+
+--001a1143ea2e766dba0532a7ff70--
+
+--001a1143ea2e766dc30532a7ff71
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1AC4C.A75088E0>
+X-Attachment-Id: c97907c9cea810c_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--001a1143ea2e766dc30532a7ff71--

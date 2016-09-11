@@ -1,0 +1,976 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Sat, 7 May
+ 2016 12:37:59 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Sat, 7 May 2016
+ 12:37:58 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 902324456
+ for Comm_d@dnc.org; Sat, 07 May 2016 11:38:02 -0500
+X-Note-AR-ScanTimeLocal: 5/7/2016 11:38:01 AM
+X-Policy: dnc.org
+X-Primary: comm_d@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.52 DOM:nhdp.org ADDR:tnuccio@nhdp.org
+X-Note: SPF: None
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-110/SG:5 5/7/2016 11:37:45 AM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 15.624 ms. Fail:1 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:1-1324/SG:1 5/7/2016 11:37:51 AM
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.52
+X-Note-Reverse-DNS: mail-wm0-f52.google.com
+X-Note-Return-Path: tnuccio@nhdp.org
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f52.google.com ([74.125.82.52] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137615894
+ for Comm_d@dnc.org; Sat, 07 May 2016 11:38:00 -0500
+Received: by mail-wm0-f52.google.com with SMTP id g17so121596363wme.1
+        for <Comm_d@dnc.org>; Sat, 07 May 2016 09:37:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nhdp-org.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:date:message-id:subject:from:to;
+        bh=71AjgeUE43CQ1irjniNtnnUmfz7Z5gtGB1p0ZDd779w=;
+        b=cw50GRJRxhZpM3xITs7NkFjp6Oua878ABSfqyJBmxhNuSjMAAuIBVJTuurjl2pUWVO
+         0f5pu0uC0qT4A+BUwRIMop24fuD2AtTdN6QHC4Bcqysf9XhAKvW4BQ6yr3nBX3iefw8U
+         uB6L9/NNpR/8bM7CW4nAPX46GWyEY4ya+oDFtZnoOy4fWsl8/4WlR9curcEAzDdMdOz1
+         kz3cpBNggFh1N9/vJt9ZXBTjlZvXZuT6XnyNbLTaHBunAohXgnT2pvXVQGX53BiiXwYf
+         UWzhtwdlO1hQ/D+CYfWvAnJiLzTG9Dx04w+frE5qBNuvPDKuyDG2rabqxEKrhZC26knP
+         FekA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:date:message-id:subject:from:to;
+        bh=71AjgeUE43CQ1irjniNtnnUmfz7Z5gtGB1p0ZDd779w=;
+        b=PxD77DnLlH9NclfqtEbH3yrPsGdNFovZc82rZEGEX20Yjh5Upsu0x/jpn3nFVBTnfT
+         sgEUJIn1T9u/mXrsN5tBdLHgo4eEd2GX5VMbPoj9ainv4SCUdEbTLSxPzVwDaJUTFKBt
+         ajauZmveKVoSmnDoqm9keFY5o2UpwArtFvV99fLrRFKwaCz3OgHEZV+g4F+MybL4SecN
+         KwoPbbXreWdugoAlIqDEegXCQ0zJFYKjp4gDaX8HjIn5pfB+jFWrrJ7RheiW8CeAzhXg
+         65APRmmUqAIlcMRZVWTWR+prWQTkAPmvINIXO9InM77OK2ri3OHPvVanUfWXtTzgQfX1
+         pgUw==
+X-Gm-Message-State: AOPr4FX0PGTiY9mR6YF9EP0oAGOwRHICG94ak2mkMqfNDHMOKEcmrJDprJSSso0LkMapWsI3WJclSbr76r3ZvQ==
+X-Received: by 10.194.11.36 with SMTP id n4mr27197676wjb.10.1462639076140;
+ Sat, 07 May 2016 09:37:56 -0700 (PDT)
+Received: by 10.194.240.193 with HTTP; Sat, 7 May 2016 09:37:56 -0700 (PDT)
+Date: Sat, 7 May 2016 12:37:56 -0400
+Message-ID: <CAC83D+gnzmkPdYU=72r0mnCY5-3BcSmz71CUAWF4+Qp46kN9OQ@mail.gmail.com>
+Subject: Tracking: McCain, Ernst, Sullivan, Gardner in Phoenix, AZ on 5/6
+From: Thomas Nuccio <tnuccio@nhdp.org>
+To: <Comm_d@dnc.org>
+Content-Type: multipart/alternative; boundary="047d7b5d640691869f05324332dc"
+Return-Path: tnuccio@nhdp.org
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+MIME-Version: 1.0
+
+--047d7b5d640691869f05324332dc
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Highlights are in bold
+
+
+*John McCain comments: *
+
+- McCain talks about Hispanic Americans being a very active group.
+
+- McCain's are immersing with Bangladesh population in Phoenix
+
+- Comments about how he was honored to work with Senator Cotton though he
+did not come to the event.
+
+- Talks about how he has gained Vietnamese support in the community.
+
+
+*Joni Ernst:*
+
+(Ernst laughs and thanks McCain. Ernst takes a swipe at the liberal war on
+women. She lauds McCain=E2=80=99s experience.)
+
+
+
+*Dan Sullivan:*
+
+Sullivan goes on introduces himself and the freshman class in Senate, talks
+about how McCain is a mentor, shout out to McCain interns, McCain is SASC
+chairman and is awesome.)
+
+
+
+*Cory Gardner: *
+
+Gardner jokes about water and baseball. We are going to keep the majority
+in the Senate. McCain stands up for people who are struggling.
+
+
+
+
+
+[00:33:26]
+
+By the way there is a couple of these gentleman who I have gotten to know
+the years who have spent years in reeducation camps and were =E2=80=93 How =
+many
+years?
+
+
+
+VIETNAMESE-AMERICAN: Five-and-a-half years.
+
+
+
+MCCAIN: Five-and-a-half years in a reeducation camp. I=E2=80=99m very happy=
+ that you
+are here with us in the United States. The Vietnamese community has
+contributed an enormous amount.
+
+
+
+[00:33:48]
+
+*There=E2=80=99s so many other groups: our Hispanic Americans, all =E2=80=
+=93 but also there
+is a special group also that have been very active and that=E2=80=99s our I=
+ranian
+community.*
+
+
+
+[Applause]
+
+
+
+[00:34:08]
+
+They care deeply about their country. They care a great deal about what has
+happened o Iran. They feel that they need a President and a Congress that
+will stand up Iranian aggression. I thank the Iranian-American group for
+all they have done for me.
+
+
+
+*[00:34:28]*
+
+*We are assembling a coalition of different ethnic groups. We=E2=80=99ve go=
+t a
+special, very special group =E2=80=93 you know our daughter Bridget was bor=
+n in
+Bangladesh so weare motivating the Bangladesh community. There it is right
+there. If we get that vote out it could tip the scales.*
+
+
+
+[Laughter]
+
+
+
+[00:34:52]
+
+I just want to thank all of you again for this expression of support
+and I* just
+want to repeat what has been said =E2=80=93 maybe not totally accurately bu=
+t fairly
+accurately =E2=80=93 that I was quoted as saying that this could be the tou=
+ghest
+race of my political career.* Anybody who sees the turbulence in the
+political environment today could not conclude anything else. I am
+confident of victory. But *I believe that we have to ask people to work for
+us harder than perhaps they have before.*
+
+
+
+[00:35:28]
+
+I=E2=80=99m very grateful at this turn out. I=E2=80=99m grateful =E2=80=93 =
+*as usual this is going
+to come down to what usually determines elections and that=E2=80=99s voter =
+turn
+out. That=E2=80=99s general speaking the way elections are decided =E2=80=
+=93 obviously in
+Democracies =E2=80=93 and will this Fall. As you know we have a late primar=
+y at the
+end of August and we=E2=80=99ve got to get through that: and of course the =
+general
+election.*
+
+
+________________________________________________________________
+
+
+McCain, Rally with Senators Ernst, Gardner, Sullivan, Perdue =E2=80=93 Tran=
+script,
+6 May 2016
+
+
+
+[McCain, Rally with Senators Ernst, Gardner, Sullivan, Perdue, 5/6/16
+<https://toolbox.dnc.org/?tool_name=3Dvantage%20uploader&path=3Dvantageuplo=
+ader.dnc.org/videos/shared_show?jwt=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.=
+eyJpYXQiOjE0NjI1NjkwNjksImVtYWlsIjoic2FtdWVsbGVlZmFsY29uZXJAZ21haWwuY29tIiw=
+iaWQiOjMxNjI5OSwiZG93bmxvYWRhYmxlIjp0cnVlfQ.iyuxLeXBFYeiaLBDq-37Ow2QzcmhvaU=
+O55q2ID6xssk>]
+(AUDIO)
+
+
+
+[00:02:00]
+
+(Chatter from McCain staffers)
+
+
+
+[00:02:14]
+
+(McCain staff greets the volunteer tracker and enters the room)
+
+
+
+[00:11:09]
+
+(Announcer welcomes the Senators and McCain to applause. Chatter as McCain
+and others make their way to the stage and greet people.)
+
+
+
+[00:12:06]
+
+MCCAIN: Well thanks to all of you coming this morning, thanks for this
+great turn out. I=E2=80=99m very honored to have so many of our supporters,=
+ some
+old geezers - like my friend here -that have been with us for many years.
+But also I=E2=80=99m very pleased to see our young interns who have done su=
+ch a
+magnificent job.
+
+
+
+[Applause]
+
+
+
+[00:12:30]
+
+MCCAIN: Somewhere in that group of young interns is a future Congressman, a
+future Senator - I=E2=80=99m sorry to say I=E2=80=99m not so sure about Pre=
+sident because
+we in Arizona have very poor record. Barry Goldwater from Arizona ran for
+president of the United States. Morris Udall from Arizona ran for president
+of the United States. Bruce Babbitt from Arizona ran for President of the
+United States. I from Arizona ran for President of the United States.  You
+know Arizona may be the only state in American where mothers don=E2=80=99t =
+tell
+their children that some day they can grow up and be President of the
+United States.
+
+
+
+[00:13:11]
+
+I=E2=80=99m very honored to have 4 of my colleagues =E2=80=93 we had a 5th =
+one Tom Cotton,
+Senator from Arkansas who was with us yesterday and didn=E2=80=99t come bac=
+k =E2=80=93 but
+I=E2=80=99m very honored. I know that many of you know that the election of
+2014 brought
+in a new generation of leadership into the United States Senate.  In fact
+12, practically a quarter of the number of Republicans Senators were
+elected in 2014.
+
+
+
+[00:13:41]
+
+They represent a new generation of leadership, they represent the kind of
+work and dedication to the people they represent: and a diverse but very
+important fashion. I have spent a lot of time with these new members of the
+United States Senate: I refuse to call them freshman and I have spent time
+with them and I am heartened and encouraged by what they have brought to
+their respective states and what they have brought to the nation and to the
+Republican Party.
+
+
+
+[00:14:17]
+
+So I am very honored that they would take the time from their busy
+schedules to come to Arizona and be here on behalf, on probably as I said
+before perhaps one of the toughest campaign of my political career. So with
+that I would like to mention about each one of them and then ask them to
+say a few words, although they have been in the Senate now long enough to
+be incapable of a few words.
+
+
+
+[00:14:45]
+
+So could I introduce first of all Joni Ernst? Joni Ernst if from the great
+state of Iowa. [Applause] Every four years the Senator from Iowa becomes
+the most popular person in Senate. It doesn=E2=80=99t last long. When the p=
+rimary
+is over they forget about that Senator. But before the Iowa caucuses that
+Senator from Iowa is really one of the most important.
+
+
+
+[00:15:21]
+
+Joni brings unique qualifications to the United States Senate, she grew up
+on a farm, I=E2=80=99m sure that most of you know that the most famous comm=
+ercial
+of the 2014 campaign was showing Joni Ernst with some pigs around her
+family farm, she talked about what she was going to squeeze when she came
+to Washington. So far we are okay but =E2=80=93 [laughter]
+
+
+
+[00:15:48]
+
+But she also served with distinction in the US Army Reserve and the Iowa
+Guard and actually was in Iraq during that period of time: unique
+qualifications and we are very proud to have her with us.
+
+
+
+[00:16:03]
+
+Second I=E2=80=99d like to mention Senator Dan Sullivan of Alaska. [Applaus=
+e] He
+has a great deal of military experience he has been a leader in the United
+States Senate on the Asia-Pacific Armed services committee on Asia-Pacific
+issues: all of that. He=E2=80=99s really a great guy but unfortunately he w=
+as in
+the Marine Corps so...
+
+
+
+[00:16:35]
+
+Dan Sullivan understands the needs of our men and women in the military
+having served, in face still serving on active duty, and we are very proud
+of the great work he has done as a member of the Senate Armed Services
+Committee. Corey Gardner: I want everybody to be so nice to him okay.
+You=E2=80=99ve got to be nice to him because that is where our water comes =
+from.
+
+
+
+[Applause]
+
+
+
+[00:17:07]
+
+I always do go over and kiss his ring every time. Please the water coming
+down the Colorado. Cory Gardner was in the legislature. He is now one of
+the most valued members of the Foreign Relations Committee. Recently, and
+remember he was in his first term; he was responsible for a significant
+piece of legislation concerning this test of intercontinental ballistic
+missiles by the Iranians. He has emerged as that leadership. Everybody
+thank him for the water.
+
+
+
+[Applause]
+
+
+
+[00:17:48]
+
+Senator David Perdue is from Georgia, he has an incredible =E2=80=93 there =
+she is.
+He was the CEO of Reebok and Dollar General; he has the most extensive
+experience. Any of you that didn=E2=80=99t like your Reebok: he=E2=80=99d b=
+e glad to talk
+to you about that.
+
+
+
+[00:18:12]
+
+He is the foremost advocate for restraint on our out of control spending.
+He is the foremost advocate to bring our spending under control. These
+young people that are here our interns, I=E2=80=99m sure that they would be=
+ the
+first to tell you, we are laying a burden of debt on them that is
+unconscionable. He is foremost expert =E2=80=93 spokesperson on getting our=
+ fiscal
+house in order.
+
+
+
+[00:18:44]
+
+I=E2=80=99m proud of my work on behalf of national defense. We are proud of=
+ the
+hard work that we do to train and equip the men and women who are serving.
+Unless we get this debt under control all that work will be for
+nothing.  Let=E2=80=99s thank David Perdue of Georgia one of the great lead=
+ers of
+the United States Senate.
+
+
+
+[00:19:11]
+
+So with that I would like to hand it over to Joni Ernst who will tell you
+that one of the great events in the world is the Iowa State Fair: where if
+you are really smart you can get a deep fried Twinkie.
+
+
+
+[00:19:27]
+
+(Ernst laughs and thanks McCain. Ernst takes a swipe at the liberal war on
+women. She lauds McCain=E2=80=99s experience.)
+
+
+
+[00:23:03]
+
+(Sullivan goes on introduces himself and the freshman class in Senate,
+talks about how McCain is a mentor, shout out to McCain interns, McCain is
+SASC chairman and is awesome.)
+
+
+
+[00:26:43]
+
+(Gardner jokes about water and baseball. We are going to keep the majority
+in the Senate. McCain stands up for people who are struggling. )
+
+
+
+[00:29:09]
+
+(Perdue talks about how young peoples energy inspires him and McCain, this
+race is about our country. We need McCain to help lead America again. This
+campaign will turn campaign back to America=E2=80=99s founding principles. =
+He=E2=80=99s an
+American hero, let=E2=80=99s get him reelected.)
+
+
+
+[00:32:20]
+
+CROWD: John! John! John! John! ....
+
+
+
+[00:32:30]
+
+MCCAIN: Thank you. Thank you. I=E2=80=99m very humbled and flattered and I =
+can=E2=80=99t
+tell you how grateful I am to see this kind of support and eloquence. Don=
+=E2=80=99t
+you think that this is a wonderful group of Senators to help America?
+
+
+
+[Applause]
+
+
+
+[00:32:51]
+
+MCCAIN: I=E2=80=99m proud and humbled to be in their company. I want to tha=
+nk our
+interns again but I=E2=80=99d also like to say that there=E2=80=99s a group=
+ of other
+Americans that I have been very pleased to have their support and really
+deep involvement: and that=E2=80=99s the Vietnamese community here in Arizo=
+na. They
+are so active. Would are Vietnamese friends raise their hands for us?
+
+
+
+[Applause]
+
+
+
+[00:33:26]
+
+By the way there is a couple of these gentleman who I have gotten to know
+the years who have spent years in reeducation camps and were =E2=80=93 How =
+many
+years?
+
+
+
+VIETNAMESE-AMERICAN: Five-and-a-half years.
+
+
+
+MCCAIN: Five-and-a-half years in a reeducation camp. I=E2=80=99m very happy=
+ that
+you are here with us in the United States. The Vietnamese community has
+contributed an enormous amount.
+
+
+
+[00:33:48]
+
+There=E2=80=99s so many other groups: our Hispanic Americans, all =E2=80=93=
+ but also there
+is a special group also that have been very active and that=E2=80=99s our I=
+ranian
+community.
+
+
+
+[Applause]
+
+
+
+[00:34:08]
+
+They care deeply about their country. They care a great deal about what has
+happened o Iran. They feel that they need a President and a Congress that
+will stand up Iranian aggression. I thank the Iranian-American group for
+all they have done for me.
+
+
+
+[00:34:28]
+
+We are assembling a coalition of different ethnic groups. We=E2=80=99ve got=
+ a
+special, very special group =E2=80=93 you know our daughter Bridget was bor=
+n in
+Bangladesh so we are motivating the Bangladesh community. There it is right
+there. If we get that vote out it could tip the scales.
+
+
+
+[Laughter]
+
+
+
+[00:34:52]
+
+I just want to thank all of you again for this expression of support and I
+just want to repeat what has been said =E2=80=93 maybe not totally accurate=
+ly but
+fairly accurately =E2=80=93 that I was quoted as saying that this could be =
+the
+toughest race of my political career. Anybody who sees the turbulence in
+the political environment today could not conclude anything else. I am
+confident of victory. But I believe that ask people to work for us harder
+than perhaps they have before.
+
+
+
+[00:35:28]
+
+I=E2=80=99m very grateful at this tern out. I=E2=80=99m grateful =E2=80=93 =
+as usual this is going
+to come down to what usually determines elections and that=E2=80=99s voter =
+turn
+out. That=E2=80=99s general speaking the way elections are decided =E2=80=
+=93 obviously in
+Democracies =E2=80=93 and will this Fall. As you know we have a late primar=
+y at the
+end of August and we=E2=80=99ve got to get through that: and of course the =
+general
+election.
+
+
+
+[00:35:55]
+
+So your participation today means a lot to me. My colleagues=E2=80=99 mean =
+a lot to
+me. We can=E2=80=99t slack off; we=E2=80=99re going to have to work very, v=
+ery hard. And I
+know that I can succeed and I know that I can have the great honor of
+continuing to serve the people of Arizona in the United States Senate with
+your help and support. Thank you and God Bless.
+
+
+
+[00:36:20]
+
+CROWD: John! John! John! John!...
+
+
+
+[Chatter and music]
+
+
+
+[Volunteer tracker chats with a woman who used to work for the McCain
+campaign but now does energy consulting]
+
+
+
+END
+
+
+
+--=20
+Best,
+Thomas Nuccio
+203-501-0838
+
+--047d7b5d640691869f05324332dc
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><p class=3D"MsoNormal" style=3D"font-size:12.8px">Highlights=
+ are in bold</p><p class=3D"MsoNormal" style=3D"font-size:12.8px"><br></p><=
+p class=3D"MsoNormal" style=3D"font-size:12.8px"><b>J<span style=3D"font-si=
+ze:12.8px">ohn McCain comments:&nbsp;</span></b></p><p class=3D"MsoNormal" =
+style=3D"font-size:12.8px">- McCain talks about Hispanic Americans being a =
+very active group.</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">- M=
+cCain's are immersing with Bangladesh population in Phoenix&nbsp;</p><p cla=
+ss=3D"MsoNormal" style=3D"font-size:12.8px">- Comments about how he was hon=
+ored to work with Senator Cotton though he did not come to the event.&nbsp;=
+</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">- Talks about how he =
+has gained Vietnamese support in the community. &nbsp;</p><p class=3D"MsoNo=
+rmal" style=3D"font-size:12.8px"><br></p><p class=3D"MsoNormal" style=3D"fo=
+nt-size:12.8px"><b>Joni Ernst:</b></p><p class=3D"MsoNormal" style=3D"font-=
+size:12.8px">(Ernst laughs and thanks McCain. Ernst takes a swipe at the li=
+beral war on women. She lauds McCain=E2=80=99s experience.)</p><p class=3D"=
+MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" styl=
+e=3D"font-size:12.8px"><b>Dan Sullivan:</b></p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">Sullivan goes on introduces himself and the freshman =
+class in Senate, talks about how McCain is a mentor, shout ou<span class=3D=
+"" tabindex=3D"0">t to McC</span>ain interns, McCain is SASC chairman and i=
+s awesome.)</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p>=
+<p class=3D"MsoNormal" style=3D"font-size:12.8px"><b>Cory Gardner:&nbsp;</b=
+></p><p class=3D"MsoNormal" style=3D"font-size:12.8px">Gardner jokes about =
+water and baseball. We are going to keep the majority in the Senate. McCain=
+ stands up for people who are struggling.&nbsp;</p><p class=3D"MsoNormal" s=
+tyle=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-si=
+ze:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px"><spa=
+n style=3D"font-size:12.8px">[00:33:26]</span><br></p><p class=3D"MsoNormal=
+" style=3D"font-size:12.8px">By the way there is a couple of these gentlema=
+n who I have gotten to know the years who have spent years in reeducation c=
+amps and were =E2=80=93 How many years?</p><p class=3D"MsoNormal" style=3D"=
+font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">VIETNAMESE-AMERICAN: Five-and-a-half years.</p><p class=3D"MsoNormal" st=
+yle=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-siz=
+e:12.8px">MCCAIN: Five-and-a-half years in a reeducation camp. I=E2=80=99m =
+very happy that<span class=3D"" tabindex=3D"0"><span class=3D"">&nbsp;you a=
+re</span></span>&nbsp;here with us in the United States. The Vietnamese com=
+munity has contributed an enormous amount.</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:1=
+2.8px">[00:33:48]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px"><b>T=
+here=E2=80=99s so many other groups: our Hispanic Americans, all =E2=80=93 =
+but also there is a special group also that have been very active and that=
+=E2=80=99s our Iranian community.</b></p><p class=3D"MsoNormal" style=3D"fo=
+nt-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px"=
+>[Applause]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p>=
+<p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:34:08]</p><p class=3D=
+"MsoNormal" style=3D"font-size:12.8px">They care deeply about their country=
+. They care a great deal about what has happened o Iran. They feel that the=
+y need a President and a Congress that will stand up Iranian aggression. I =
+thank the Iranian-American group for all they have done for me.</p><p class=
+=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" =
+style=3D"font-size:12.8px"><b>[00:34:28]</b></p><p class=3D"MsoNormal" styl=
+e=3D"font-size:12.8px"><b>We are assembling a coalition of different ethnic=
+ groups. We=E2=80=99ve got a special, very special group =E2=80=93 you know=
+ our daughter Bridget was born in Bangladesh so we<span class=3D"" tabindex=
+=3D"0"><span class=3D"">are moti</span></span>vating the Bangladesh communi=
+ty. There it is right there. If we get that vote out it could tip the scale=
+s.</b></p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p cl=
+ass=3D"MsoNormal" style=3D"font-size:12.8px">[Laughter]</p><p class=3D"MsoN=
+ormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D=
+"font-size:12.8px">[00:34:52]</p><p class=3D"MsoNormal" style=3D"font-size:=
+12.8px">I just want to thank all of you again for this expression of suppor=
+t and I<b>&nbsp;just want to repeat what has been said =E2=80=93 maybe not =
+totally accurately but fairly accurately =E2=80=93 that I was quoted as say=
+ing that this could be the toughest race of my political career.</b>&nbsp;A=
+nybody who sees the turbulence in the political environment today could not=
+ conclude anything else. I am confident of victory. But&nbsp;<b>I believe t=
+hat we have to ask people to work for us harder than perhaps they have befo=
+re.</b></p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p c=
+lass=3D"MsoNormal" style=3D"font-size:12.8px">[00:35:28]</p><p class=3D"Mso=
+Normal" style=3D"font-size:12.8px"></p><p class=3D"MsoNormal" style=3D"font=
+-size:12.8px">I=E2=80=99m very grateful at this turn out. I=E2=80=99m grate=
+ful =E2=80=93&nbsp;<b>as usual this is going to come down to what usually d=
+etermines elections and that=E2=80=99s voter turn out. That=E2=80=99s gener=
+al speaking the way elections are decided =E2=80=93 obviously in Democracie=
+s =E2=80=93 and will this Fall. As you know we have a late primary at the e=
+nd of August and we=E2=80=99ve got to get through that: and of course the g=
+eneral election.</b></p><p class=3D"MsoNormal" align=3D"center" style=3D"fo=
+nt-size:12.8px;text-align:center"><br></p><p class=3D"MsoNormal" align=3D"c=
+enter" style=3D"font-size:12.8px;text-align:center">_______________________=
+_________________________________________</p><p class=3D"MsoNormal" align=
+=3D"center" style=3D"font-size:12.8px;text-align:center"><br></p><p class=
+=3D"MsoNormal" align=3D"center" style=3D"font-size:12.8px;text-align:center=
+">McCain, Rally with Senators Ernst, Gardner, Sullivan, Perdue =E2=80=93 Tr=
+anscript, 6 May 2016</p><p class=3D"MsoNormal" align=3D"center" style=3D"fo=
+nt-size:12.8px;text-align:center">&nbsp;</p><p class=3D"MsoNormal" align=3D=
+"center" style=3D"font-size:12.8px;text-align:center">[McCain, Rally with S=
+enators Ernst, Gardner, Sullivan, Perdue,&nbsp;<a href=3D"https://toolbox.d=
+nc.org/?tool_name=3Dvantage%20uploader&amp;path=3Dvantageuploader.dnc.org/v=
+ideos/shared_show?jwt=3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE0Nj=
+I1NjkwNjksImVtYWlsIjoic2FtdWVsbGVlZmFsY29uZXJAZ21haWwuY29tIiwiaWQiOjMxNjI5O=
+SwiZG93bmxvYWRhYmxlIjp0cnVlfQ.iyuxLeXBFYeiaLBDq-37Ow2QzcmhvaUO55q2ID6xssk" =
+target=3D"_blank">5/6/16</a>] (AUDIO)</p><p class=3D"MsoNormal" align=3D"ce=
+nter" style=3D"font-size:12.8px;text-align:center">&nbsp;</p><p class=3D"Ms=
+oNormal" style=3D"font-size:12.8px">[00:02:00]</p><p class=3D"MsoNormal" st=
+yle=3D"font-size:12.8px">(Chatter from McCain staffers)&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class=3D"M=
+soNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">[00:02:14]</p><p class=3D"MsoNormal" style=3D"font-si=
+ze:12.8px">(McCain staff greets the volunteer tracker and enters the room)<=
+/p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"=
+MsoNormal" style=3D"font-size:12.8px">[00:11:09]</p><p class=3D"MsoNormal" =
+style=3D"font-size:12.8px">(Announcer welcomes the Senators and McCain to a=
+pplause. Chatter as McCain and others make their way to the stage and greet=
+ people.)</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p=
+ class=3D"MsoNormal" style=3D"font-size:12.8px">[00:12:06]</p><p class=3D"M=
+soNormal" style=3D"font-size:12.8px">MCCAIN: Well thanks to all of you comi=
+ng this morning, thanks for this great turn out. I=E2=80=99m very honored t=
+o have so many of our supporters, some old geezers - like my friend here -t=
+hat have been with us for many years. But also I=E2=80=99m very pleased to =
+see our young interns who have done such a magnificent job.</p><p class=3D"=
+MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" styl=
+e=3D"font-size:12.8px">[Applause]</p><p class=3D"MsoNormal" style=3D"font-s=
+ize:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00=
+:12:30]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">MCCAIN: Somewh=
+ere in that group of young interns is a future Congressman, a future Senato=
+r - I=E2=80=99m sorry to say I=E2=80=99m not so sure about President becaus=
+e we in Arizona have very poor record. Barry Goldwater from Arizona ran for=
+ president of the United States. Morris Udall from Arizona ran for presiden=
+t of the United States. Bruce Babbitt from Arizona ran for President of the=
+ United States. I from Arizona ran for Presiden<span class=3D"" tabindex=3D=
+"0"><span class=3D"">t of the</span></span>&nbsp;United States.&nbsp;&nbsp;=
+You know Arizona may be the only state in American where mothers don=E2=80=
+=99t tell their children that some day they can grow up and be President of=
+ the United States.</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&n=
+bsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:13:11]</p><p =
+class=3D"MsoNormal" style=3D"font-size:12.8px">I=E2=80=99m very honored to =
+have 4 of my colleagues =E2=80=93 we had a 5<sup>th</sup>&nbsp;one Tom Cott=
+on, Senator from Arkansas who was with us yesterday and didn=E2=80=99t come=
+ back =E2=80=93 but I=E2=80=99m very honored. I know that many of you know =
+that the election of<span class=3D"" tabindex=3D"0"><span class=3D"">&nbsp;=
+2014 br</span></span>ought in a new generation of leadership into the Unite=
+d States Senate.&nbsp;&nbsp;In fact 12, practically a quarter of the number=
+ of Republicans Senators were elected in 2014.</p><p class=3D"MsoNormal" st=
+yle=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-siz=
+e:12.8px">[00:13:41]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">T=
+hey represent a new generation of leadership, they represent the kind of wo=
+rk and dedication to the people they represent: and a diverse but very impo=
+rtant fashion. I have spent a lot of time with these new members of the Uni=
+ted States Senate: I refuse to call them freshman and I have spent time wit=
+h them and I am heartened and encouraged by what they have brought to their=
+ respective states and what they have brought to the nation and to the Repu=
+blican Party.</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</=
+p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:14:17]</p><p class=
+=3D"MsoNormal" style=3D"font-size:12.8px">So I am very honored that they wo=
+uld take the time from their busy schedules to come to Arizona and be here&=
+nbsp;<span class=3D"" tabindex=3D"0"><span class=3D"">on behal</span></span=
+>f, on probably as I said before perhaps one of the toughest campaign of my=
+ political career. So with that I would like to mention about each one of t=
+hem and then ask them to say a few words, although they have been in the Se=
+nate now long enough to be incapable of a few words.&nbsp;</p><p class=3D"M=
+soNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">[00:14:45]</p><p class=3D"MsoNormal" style=3D"font-si=
+ze:12.8px">So could I introduce fi<span class=3D"" tabindex=3D"0"><span cla=
+ss=3D"">rst of a</span></span>ll Joni Ernst? Joni Ernst if from the great s=
+tate of Iowa. [Applause] Every four years the Senator from Iowa becomes the=
+ most popular person in Senate. It doesn=E2=80=99t last long. When the prim=
+ary is over they forget about that Senator. But before the Iowa caucuses th=
+at Senator<span class=3D"" tabindex=3D"0"><span class=3D"">&nbsp;from Io</s=
+pan></span>wa is really one of the most important.</p><p class=3D"MsoNormal=
+" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font=
+-size:12.8px">[00:15:21]</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">Joni brings unique qualifications to the United States Senate, she grew =
+up on a farm, I=E2=80=99m sure that most of you know that the most famous c=
+ommercial of the 2014 campaign was showing Joni Ernst with some pigs around=
+ her family farm, she talked about what she was going to squ<span class=3D"=
+" tabindex=3D"0"><span class=3D"">eeze whe</span></span>n she came to Washi=
+ngton. So far we are okay but =E2=80=93 [laughter]</p><p class=3D"MsoNormal=
+" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font=
+-size:12.8px">[00:15:48]</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">But she also served with distinction in the US Army Reserve and the Iowa=
+ Guard and actually was in Iraq during that period of time: unique qualific=
+ations and we are very proud to have her with us.</p><p class=3D"MsoNormal"=
+ style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-=
+size:12.8px">[00:16:03]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px=
+">Second I=E2=80=99d like to mention Senator Dan Sullivan of Alaska. [Appla=
+use] He has a great deal of military experience he has been a leader in the=
+ United States Senate on the Asia-Pacific Armed services committee on Asia-=
+Pacific issues: all of that. He=E2=80=99s really a great guy but unfortunat=
+ely he was in the Marine Corps so...</p><p class=3D"MsoNormal" style=3D"fon=
+t-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">=
+[00:16:35]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">Dan Sulliva=
+n understands the needs of our men and women in the military having served,=
+ in face still serving on active duty, and we are very proud of the great w=
+ork he has done as a member of the Senate Armed Services Committee. Corey G=
+ardner: I want everybody to be so<span class=3D"" tabindex=3D"0"><span clas=
+s=3D"">&nbsp;nice to</span></span>&nbsp;him okay. You=E2=80=99ve got to be =
+nice to him because that is where our water comes from.</p><p class=3D"MsoN=
+ormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D=
+"font-size:12.8px">[Applause]</p><p class=3D"MsoNormal" style=3D"font-size:=
+12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:17:=
+07]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">I always do go ove=
+r and kiss his ring every time. Please the water coming down the Colorad<sp=
+an class=3D"" tabindex=3D"0"><span class=3D"">o. Cory&nbsp;</span></span>Ga=
+rdner was in the legislature. He is now one of the most valued members of t=
+he Foreign Relations Committee. Recently, and remember he was in his first =
+term; he was responsible for a significant piece of legislation concerning =
+this test of intercontinental ballistic missiles by the Iranians. He has em=
+erged as that leadership. Everybody thank him for the water.</p><p class=3D=
+"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" sty=
+le=3D"font-size:12.8px">[Applause]</p><p class=3D"MsoNormal" style=3D"font-=
+size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[0=
+0:17:48]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">Senator David=
+ Perdue is from Georgia, he has an incredible =E2=80=93 there she is. He wa=
+s the CEO of Reebok and Dollar General; he has the most extensive experienc=
+e. Any of you that didn=E2=80=99t like your Reebok: he=E2=80=99d be glad to=
+ talk to you about that.</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:18:12]</=
+p><p class=3D"MsoNormal" style=3D"font-size:12.8px">He is the foremost advo=
+cate for restraint on our out of control spending. He is the foremost advoc=
+ate to bring our spending under control. These young people that are here o=
+ur interns, I=E2=80=99m sure that they would be the first to tell you, we a=
+re laying a burden of debt on them that is unconscionable. He is foremost e=
+xpert =E2=80=93 spokesperson on g<span class=3D"" tabindex=3D"0"><span clas=
+s=3D"">etting o</span></span>ur fiscal house in order.</p><p class=3D"MsoNo=
+rmal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"=
+font-size:12.8px">[00:18:44]</p><p class=3D"MsoNormal" style=3D"font-size:1=
+2.8px">I=E2=80=99m proud of my work on behalf of national defense. We are p=
+roud of the hard w<span class=3D"" tabindex=3D"0"><span class=3D"">ork that=
+</span></span>&nbsp;we do to train and equip the men and women who are serv=
+ing. Unless we get this debt under control all that work will be for nothin=
+g.&nbsp;&nbsp;Let=E2=80=99s thank David Perdue of Georgia one of the great =
+leaders of the United Sta<span class=3D"" tabindex=3D"0"><span class=3D"">t=
+es Sena</span></span>te.</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:19:11]</=
+p><p class=3D"MsoNormal" style=3D"font-size:12.8px">So with that I would li=
+ke to hand it over to Joni Ernst who will tell you that one of the great ev=
+ents in the world is the Iowa&nbsp;<span class=3D"" tabindex=3D"0"><span cl=
+ass=3D"">State Fa</span></span>ir: where if you are really smart you can ge=
+t a deep fried Twinkie.</p><p class=3D"MsoNormal" style=3D"font-size:12.8px=
+">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:19:27]</p=
+><p class=3D"MsoNormal" style=3D"font-size:12.8px">(Ernst laughs and thanks=
+ McCain. Ernst takes a swipe at the liberal war on women. She lauds McCain=
+=E2=80=99s experience.)</p><p class=3D"MsoNormal" style=3D"font-size:12.8px=
+">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:23:03]</p=
+><p class=3D"MsoNormal" style=3D"font-size:12.8px">(Sullivan goes on introd=
+uces himself and the freshman class in Senate, talks about how McCain is a =
+mentor, shout ou<span class=3D"" tabindex=3D"0"><span class=3D"">t to McC</=
+span></span>ain interns, McCain is SASC chairman and is awesome.)</p><p cla=
+ss=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal=
+" style=3D"font-size:12.8px">[00:26:43]</p><p class=3D"MsoNormal" style=3D"=
+font-size:12.8px">(Gardner jokes about water and baseball. We are going to =
+keep the majority in the Senate. McCain stands up for people who are strugg=
+ling. )</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p c=
+lass=3D"MsoNormal" style=3D"font-size:12.8px">[00:29:09]</p><p class=3D"Mso=
+Normal" style=3D"font-size:12.8px"><span class=3D"" tabindex=3D"0"><span cl=
+ass=3D"">(Perdue&nbsp;</span></span>talks about how young peoples energy in=
+spires him and McCain, this race is about our country. We need McCain to he=
+lp lead America again. This campaign will turn campaign back to America=E2=
+=80=99s founding principles. He=E2=80=99s an American hero, let=E2=80=99s g=
+et him reelected.)</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nb=
+sp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:32:20]</p><p c=
+lass=3D"MsoNormal" style=3D"font-size:12.8px">CROWD: John! John! John! John=
+! ....</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p cl=
+ass=3D"MsoNormal" style=3D"font-size:12.8px">[00:32:30]</p><p class=3D"MsoN=
+ormal" style=3D"font-size:12.8px">MCCAIN: Thank you. Thank you. I=E2=80=99m=
+ ver<span class=3D"" tabindex=3D"0"><span class=3D"">y humble</span></span>=
+d and flattered and I can=E2=80=99t tell you how grateful I am to see this =
+kind of support and eloquence. Don=E2=80=99t you think that this is a wonde=
+rful group of Senators to help America?</p><p class=3D"MsoNormal" style=3D"=
+font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8p=
+x">[Applause]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</=
+p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:32:51]</p><p class=
+=3D"MsoNormal" style=3D"font-size:12.8px">MCCAIN: I=E2=80=99m proud and hum=
+bled to be in their company. I want to thank our interns again but I=E2=80=
+=99d also like to say that there=E2=80=99s a group of other Americans that =
+I have been very pleased to have their support and really deep invo<span cl=
+ass=3D"" tabindex=3D"0"><span class=3D"">lvement:</span></span>&nbsp;and th=
+at=E2=80=99s the Vietnamese community here in Arizona. They are so active. =
+Would are Vietnamese friends raise their hands for us?</p><p class=3D"MsoNo=
+rmal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"=
+font-size:12.8px">[Applause]</p><p class=3D"MsoNormal" style=3D"font-size:1=
+2.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:33:2=
+6]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">By the way there is=
+ a couple&nbsp;<span class=3D"" tabindex=3D"0"><span class=3D"">of these</s=
+pan></span>&nbsp;gentleman who I have gotten to know the years who have spe=
+nt years in reeducation camps and were =E2=80=93 How many years?</p><p clas=
+s=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal"=
+ style=3D"font-size:12.8px">VIETNAMESE-AMERICAN: Five-and-a-half years.</p>=
+<p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"Mso=
+Normal" style=3D"font-size:12.8px">MCCAIN: Five-and-a-half years in a reedu=
+cation camp. I=E2=80=99m very&nbsp;<span class=3D"" tabindex=3D"0"><span cl=
+ass=3D"">happy th</span></span>at you are here with us in the United States=
+. The Vietnamese community has contributed an enormous amount.</p><p class=
+=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" =
+style=3D"font-size:12.8px">[00:33:48]</p><p class=3D"MsoNormal" style=3D"fo=
+nt-size:12.8px">There=E2=80=99s so many other groups: our Hispanic American=
+s, all =E2=80=93 but also there is a special group also that have been very=
+ active and that=E2=80=99s our Iranian community.</p><p class=3D"MsoNormal"=
+ style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-=
+size:12.8px">[Applause]</p><p class=3D"MsoNormal" style=3D"font-size:12.8px=
+">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[00:34:08]</p=
+><p class=3D"MsoNormal" style=3D"font-size:12.8px">They care deeply about t=
+heir country. They care a great deal about what has happened o Iran. They f=
+eel that they need a President and a Congress that will stand up Iranian ag=
+gression. I thank the Iranian-American group for all they have done for me.=
+</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D=
+"MsoNormal" style=3D"font-size:12.8px">[00:34:28]</p><p class=3D"MsoNormal"=
+ style=3D"font-size:12.8px">We are assembling a coalition of different ethn=
+ic groups. We=E2=80=99ve got a special, very special group =E2=80=93 you kn=
+ow our daughter Bridget was born in Bangladesh so we are motivating the Ban=
+gladesh community. There it is right there. If we get that vote out it coul=
+d tip the scales.</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbs=
+p;</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">[Laughter]</p><p cl=
+ass=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNorma=
+l" style=3D"font-size:12.8px">[00:34:52]</p><p class=3D"MsoNormal" style=3D=
+"font-size:12.8px">I just want to thank all of you again for this expressio=
+n of support and I just want to repeat what has been said =E2=80=93 maybe n=
+ot totally accurately but fairly accurately =E2=80=93 that I was quoted as<=
+span class=3D"" tabindex=3D"0"><span class=3D"">&nbsp;saying&nbsp;</span></=
+span>that this could be the toughest race of my political career. Anybody w=
+ho sees the turbulence in the political environment today could not conclud=
+e anything else. I am confident of victory. But I believe that ask people t=
+o work for us harder than perhaps they have before.</p><p class=3D"MsoNorma=
+l" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"fon=
+t-size:12.8px">[00:35:28]</p><p class=3D"MsoNormal" style=3D"font-size:12.8=
+px">I=E2=80=99m very grateful at this tern out. I=E2=80=99m grateful =E2=80=
+=93 as usual th<span class=3D"" tabindex=3D"0"><span class=3D"">is is go</s=
+pan></span>ing to come down to what usually determines elections and that=
+=E2=80=99s voter turn out. That=E2=80=99s general speaking the way election=
+s are decided =E2=80=93 obviously in Democracies =E2=80=93 and will this Fa=
+ll. As you know we have a late primary at the end of August and we=E2=80=99=
+ve got to get through that: and of course the general election.</p><p class=
+=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" =
+style=3D"font-size:12.8px">[00:35:55]</p><p class=3D"MsoNormal" style=3D"fo=
+nt-size:12.8px">So your participation today means a lot to me. My colleague=
+s=E2=80=99 mean a lot to me. We can=E2=80=99t slack off; we=E2=80=99re goin=
+g to have to work very, very hard. And I know that I can succeed and I know=
+ that I can have the great honor of continuing to serve the people of Arizo=
+na in t<span class=3D"" tabindex=3D"0"><span class=3D"">he Unite</span></sp=
+an>d States Senate with your help and support. Thank you and God Bless.</p>=
+<p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"Mso=
+Normal" style=3D"font-size:12.8px">[00:36:20]</p><p class=3D"MsoNormal" sty=
+le=3D"font-size:12.8px">CROWD: John! John! John! John!...</p><p class=3D"Ms=
+oNormal" style=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">[Chatter and music]</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:1=
+2.8px">[Volunteer tracker chats with a woman who used to work for the McCai=
+n campaign but now does energy consulting]</p><p class=3D"MsoNormal" style=
+=3D"font-size:12.8px">&nbsp;</p><p class=3D"MsoNormal" style=3D"font-size:1=
+2.8px">END</p><p class=3D"MsoNormal" style=3D"font-size:12.8px">&nbsp;</p><=
+div><br></div>-- <br><div class=3D"gmail_signature"><div dir=3D"ltr"><div>B=
+est,</div>Thomas Nuccio<br>203-501-0838</div></div>
+</div>
+
+--047d7b5d640691869f05324332dc--

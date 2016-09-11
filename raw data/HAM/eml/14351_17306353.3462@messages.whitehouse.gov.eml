@@ -1,0 +1,476 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 19 May
+ 2016 15:16:46 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 19 May 2016
+ 15:16:42 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 924860205
+ for allenz@dnc.org; Thu, 19 May 2016 14:16:54 -0500
+X-Note-AR-ScanTimeLocal: 5/19/2016 2:16:45 PM
+X-Policy: dnc.org
+X-Note-AR-Scan: None - PIPE
+Received: by inbound.appriver.com (CommuniGate Pro PIPE 6.1.7)  with PIPE id
+ 142862247; Thu, 19 May 2016 14:16:44 -0500
+Received: from [74.125.82.47] (HELO mail-wm0-f47.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 142862184
+ for allenz@dnc.org; Thu, 19 May 2016 14:16:39 -0500
+Received: by mail-wm0-f47.google.com with SMTP id v200so942783wmv.1        for
+ <allenz@dnc.org>; Thu, 19 May 2016 12:16:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=pmFLGI7+1sSERQZor/jzujtngG4ZvzAzzlfEfHueNoE=;
+        b=k5IvzOOLdjiTXKVFryaoosvbux3SCMfTieXM0Q7+br59bAdy+Vitsp6UKB1NcImQgY
+         +OoQFHhANpF6A8r7trI3Aj6/Xa6/bMN0cs/4i6Il9VVXGNB7/qJQm7MY23IqvYow+6dp
+         zldJGpt6KuLv+R3/+AEa09iB16he3a7IOjbao5oMls/mC/Te7kKqv34HDGnb4aB35Y/2
+         Uo81VYjlFAzA2vCqUofAB+nWPayp4uQdcPtldEytxQKKAL8gZ9lcCTan76NHn+dOXLMO
+         ++i4yDawfzY1LWJh3d6ORXRuMb4K7QFJMWlik2jXCLR4wN1oYaPI90DGDnt88GMimxXl
+         +KBA==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of messages@public.govdelivery.com designates 209.134.151.57 as permitted sender) smtp.mailfrom=messages@public.govdelivery.com
+X-Gm-Message-State: AOPr4FU5HYIPqUmuu6UuxS5lKyzxML0+rvFA31F+UCPxLNIvpXDaIKgyiq2i7cM+/Mqz9/MQ3paPHnpJeiA5MDTuFml/ZsI=
+X-Received: by 10.28.234.130 with SMTP id g2mr16282431wmi.42.1463685398379;
+        Thu, 19 May 2016 12:16:38 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp3343748wme;        Thu, 19 May
+ 2016 12:16:37 -0700 (PDT)
+X-Received: by 10.36.110.205 with SMTP id w196mr4643538itc.47.1463685397093;
+        Thu, 19 May 2016 12:16:37 -0700 (PDT)
+Return-Path: <messages@public.govdelivery.com>
+Received: from mailer151057.service.govdelivery.com
+ (mailer151057.service.govdelivery.com. [209.134.151.57])        by
+ mx.google.com with ESMTP id m129si775872itb.104.2016.05.19.12.16.35
+        for <dncpress@gmail.com>;        Thu, 19 May 2016 12:16:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of messages@public.govdelivery.com designates 209.134.151.57 as permitted sender) client-ip=209.134.151.57;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of messages@public.govdelivery.com designates 209.134.151.57 as permitted sender) smtp.mailfrom=messages@public.govdelivery.com
+X-VirtualServer: VSG003, mailer151057.service.govdelivery.com, 172.24.0.185
+X-VirtualServerGroup: VSG003
+X-MailingID: 17306353::20160519.59235781::1001::MDB-PRD-BUL-20160519.59235781::dncpress@gmail.com::3462_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_D33_C2BE_4203B1D3.263BBA79"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3Kt7/8R88S6HQuPCEol8sm+AGf56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: messages@public.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17306353.3462@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK412EPJJ9BNJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?Presidential_Determination_--_Pur?= =?US-ASCII?Q?suant_to_Section_1245(d)(4)(B)_and?= =?US-ASCII?Q?_(C)_of_the_National_Defense_Auth?= =?US-ASCII?Q?orization_Act_for_Fiscal_Year_2012?=
+Date: Thu, 19 May 2016 14:16:34 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-Note-AR-ScanTimeLocal: 5/19/2016 2:16:40 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Note: VCH-CT/SI:0-3931/SG:1 5/19/2016 2:16:06 PM
+X-Virus-Scan: V-X0H0M0
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.47
+X-Note-Reverse-DNS: mail-wm0-f47.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_D33_C2BE_4203B1D3.263BBA79
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_D34_9213_1453614A.3B59B354"
+Content-Transfer-Encoding: 7bit
+
+------=_NextPart_D34_9213_1453614A.3B59B354
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+THE WHITE HOUSE
+
+Office of the Press Secretary
+
+FOR IMMEDIATE RELEASE
+
+May 19, 2016
+
+
+
+Attached and signed today is a Presidential Determination Pursuant to Sec=
+tion 1245(d)(4)(B) and (C) of the National Defense Authorization Act for =
+Fiscal Year 2012.
+
+
+
+###
+=0A
+------=_NextPart_D34_9213_1453614A.3B59B354
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><title>    Presidential Determination -- Pursuant to Section 1245(d)(4)(=
+B) and (C) of the National Defense Authorization Act for Fiscal Year 2012
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"htt=
+p://www.w3.org/TR/REC-html40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.physicaladdress, li.physicaladdress, div.physicaladdress
+	{mso-style-name:physicaladdress;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.EmailStyle19
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+span.EmailStyle20
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle21
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle22
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+span.EmailStyle23
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle24
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle25
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle26
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle27
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle28
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle29
+	{mso-style-type:personal;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+span.EmailStyle30
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span l=
+ang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,s=
+erif">THE WHITE HOUSE<o:p></o:p></span></p>
+<div style=3D"border:none;border-bottom:solid windowtext 1.0pt;padding:0in =
+0in 1.0pt 0in">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span l=
+ang=3D"EN" style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,s=
+erif">Office of the Press Secretary<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span lang=3D"EN" style=3D"font-size:12.0pt;font-fam=
+ily:&quot;Book Antiqua&quot;,serif">FOR IMMEDIATE RELEASE<o:p></o:p></span>=
+</p>
+<p class=3D"MsoNormal" style=3D"text-autospace:none"><span lang=3D"EN" styl=
+e=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">May 19, 2=
+016<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif">Attached and signed today is a Presidential Determi=
+nation Pursuant to Section 1245(d)(4)(B) and (C) of the National Defense Au=
+thorization Act for Fiscal Year 2012.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">###<o:=
+p></o:p></span></p>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_D34_9213_1453614A.3B59B354--
+
+------=_NextPart_D33_C2BE_4203B1D3.263BBA79
+Content-Type: application/octet-stream; name="2016ndaa.pd.rel.pdf"
+Content-Disposition: attachment; filename="2016ndaa.pd.rel.pdf"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned '2016ndaa.pd.rel.pdf'. clean action=allow
+Content-Description: 2016ndaa.pd.rel.pdf
+
+JVBERi0xLjUNJeLjz9MNCjQ4IDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDg4MzIvTyA1MC9FIDM3
+NjkvTiAxL1QgODUyNy9IIFsgNDU1IDE0Nl0+Pg1lbmRvYmoNICAgICAgICAgICAgICAgICAgICAg
+DQo1NCAwIG9iag08PC9EZWNvZGVQYXJtczw8L0NvbHVtbnMgNC9QcmVkaWN0b3IgMTI+Pi9GaWx0
+ZXIvRmxhdGVEZWNvZGUvSURbPDdDN0Y2NzM3RDBDNjM1NDc5OTIwOTU3N0RFNDIzQTdDPjxBODgw
+NUJEMkExMzIwNDRFQjI2NEI3MDc0NzE3OTZDQj5dL0luZGV4WzQ4IDE1XS9JbmZvIDQ3IDAgUi9M
+ZW5ndGggNTMvUHJldiA4NTI4L1Jvb3QgNDkgMCBSL1NpemUgNjMvVHlwZS9YUmVmL1dbMSAyIDFd
+Pj5zdHJlYW0NCmjeYmJkEGBgYmDyBBIMU4AE4xsgwcwFJNi3AInPdxmYGBn2g2QZGHET/xmn/AII
+MAAKfQfoDQplbmRzdHJlYW0NZW5kb2JqDXN0YXJ0eHJlZg0KMA0KJSVFT0YNCiAgICAgICAgDQo2
+MiAwIG9iag08PC9DIDY5L0ZpbHRlci9GbGF0ZURlY29kZS9JIDkxL0xlbmd0aCA2Mi9TIDM4Pj5z
+dHJlYW0NCmjeYmBgYGFgYIpmAALuMwyogJEBJMvRgCzGAsUMDG8YuBk4qp4wJ0CV8u2E0EwXkBUr
+hEIN+g0QYABIFAeeDQplbmRzdHJlYW0NZW5kb2JqDTQ5IDAgb2JqDTw8L0xhbmco/v8ARQBOAC0A
+VQBTKS9NYXJrSW5mbzw8L01hcmtlZCB0cnVlPj4vTWV0YWRhdGEgMiAwIFIvUGFnZUxheW91dC9P
+bmVDb2x1bW4vUGFnZXMgNDYgMCBSL1N0cnVjdFRyZWVSb290IDYgMCBSL1R5cGUvQ2F0YWxvZz4+
+DWVuZG9iag01MCAwIG9iag08PC9Db250ZW50cyA1MiAwIFIvQ3JvcEJveFswLjAgMC4wIDYxMi4w
+IDEwMDguMF0vTWVkaWFCb3hbMC4wIDAuMCA2MTIuMCAxMDA4LjBdL1BhcmVudCA0NiAwIFIvUmVz
+b3VyY2VzPDwvQ29sb3JTcGFjZTw8L0NTMCA1NSAwIFI+Pi9Gb250PDwvVFQwIDU3IDAgUi9UVDEg
+NTkgMCBSL1RUMiA2MSAwIFI+Pj4+L1JvdGF0ZSAwL1N0cnVjdFBhcmVudHMgMC9UYWJzL1MvVHlw
+ZS9QYWdlPj4NZW5kb2JqDTUxIDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCA1MC9M
+ZW5ndGggNjgzL04gNy9UeXBlL09ialN0bT4+c3RyZWFtDQpo3uxWS2vbQBD+K3NsD2Ef2l2tIAQS
+t6aBNpTYJIWQg+oIW2BLQVJo8+87M1rJsmsTkhZ6qA4fHs1rZ2bX3661IME6UB5sDDpyYD2oKLFg
+E1BOK3ASdOwdOAWRVBruxOVkcpHW2QPYCIOv709PxXm9yIoGlNRKTNLHT1m+XDWYUYkPWWs6cV6K
+6Tpd1hAZMS2L5uKi/Hl3orRmGzgdcfw9G6fpJl8/v5uUT1WeVXCV/XjP+qt0k4mgReXX2Zc562dN
+lTWLlbgqq026ZtVtW4SRUlw26TpfnBfLdQZSzJpsc4N6MX9+zNiViqzyx6asxLdQu9HR2Rl2Rp2S
+y/6iH4tF+ZAXS3GbF+dFnfff07yqm8kqrXCl3dw0Z5yX+JwGB22tmD19b6iMefWUcT19UZj5oVnV
+d07icEaMGPE/4p5pqCdYGQ8I1jm9JdgITQcI1jrPNtASE1KCHYad55usJn6F63KTFgOWZQsaWP8H
+ROtfIFrjd4n293XfxLX+LVwbxx7+JbSVEEURzhLvY9wugsdvsinf2ghsc6b3p1+8pfuYl0C+7I85
+OhhjIMELP8Yb2bmYwbJSYPHqIpnANfikt/kgEzo/iiWZ7J0twfydTHquG2vgfl3CdbGMfiQPf/ue
+h7UHOT7Qd1fjcCZcX5App8F5apLx1xqsx4bYMNPOT8m9xK0Cu6MP6p4iuCO7je464epDZg4kQ0Jb
+SYG0tTRS2y5Fsh4sv7NlgwpifpS5/hh0Oi6ZdAZzk2/wt+hrbNQXxnoVxmK3MIMt2gc1yscCGx2i
+zxlwLJ7H747np4H2W3MAtPYhfXcchsfiKEzy0l9jn27lsfesjk2g28QP6BarJBOyXrvfr3zOnrQM
++mqyxXf0X3jXbld/C+XiARyftyNGjHjV8/aXAAMAmKCh/A0KZW5kc3RyZWFtDWVuZG9iag01MiAw
+IG9iag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDE2NDU+PnN0cmVhbQ0KSImkV1tv6kYQ
+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
+aW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5z
+Ong9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjQtYzAwNSA3OC4x
+NDczMjYsIDIwMTIvMDgvMjMtMTM6MDM6MDMgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJk
+Zj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxy
+ZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDov
+L25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9u
+cy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVy
+bC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6cGRmPSJodHRwOi8vbnMu
+YWRvYmUuY29tL3BkZi8xLjMvIgogICAgICAgICAgICB4bWxuczpwZGZ4PSJodHRwOi8vbnMuYWRv
+YmUuY29tL3BkZngvMS4zLyI+CiAgICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE2LTA1LTE5VDEx
+OjM5OjIzLTA0OjAwPC94bXA6TW9kaWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIw
+MTYtMDUtMTlUMTE6Mzk6MjAtMDQ6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1l
+dGFkYXRhRGF0ZT4yMDE2LTA1LTE5VDExOjM5OjIzLTA0OjAwPC94bXA6TWV0YWRhdGFEYXRlPgog
+ICAgICAgICA8eG1wOkNyZWF0b3JUb29sPkFjcm9iYXQgUERGTWFrZXIgMTEgZm9yIFdvcmQ8L3ht
+cDpDcmVhdG9yVG9vbD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+dXVpZDo5OTY4OTVjZS02
+MmIwLTQ1M2EtYmUyZi05NWZiY2MwNjY4YWQ8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4
+bXBNTTpJbnN0YW5jZUlEPnV1aWQ6OGIyZTk2Y2QtMjhjZC00MDYzLTlkYTAtNjU3OGViNzAwM2Ri
+PC94bXBNTTpJbnN0YW5jZUlEPgogICAgICAgICA8eG1wTU06c3ViamVjdD4KICAgICAgICAgICAg
+PHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGk+MTwvcmRmOmxpPgogICAgICAgICAgICA8
+L3JkZjpTZXE+CiAgICAgICAgIDwveG1wTU06c3ViamVjdD4KICAgICAgICAgPGRjOmZvcm1hdD5h
+cHBsaWNhdGlvbi9wZGY8L2RjOmZvcm1hdD4KICAgICAgICAgPGRjOmNyZWF0b3I+CiAgICAgICAg
+ICAgIDxyZGY6U2VxPgogICAgICAgICAgICAgICA8cmRmOmxpLz4KICAgICAgICAgICAgPC9yZGY6
+U2VxPgogICAgICAgICA8L2RjOmNyZWF0b3I+CiAgICAgICAgIDxwZGY6UHJvZHVjZXI+QWRvYmUg
+UERGIExpYnJhcnkgMTEuMDwvcGRmOlByb2R1Y2VyPgogICAgICAgICA8cGRmeDpTb3VyY2VNb2Rp
+ZmllZD5EOjIwMTYwNTE5MTUzOTEzPC9wZGZ4OlNvdXJjZU1vZGlmaWVkPgogICAgICAgICA8cGRm
+eDpDb21wYW55Lz4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94Onht
+cG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAog
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+ICAKPD94cGFja2V0IGVuZD0idyI/Pg0KZW5kc3RyZWFtDWVuZG9iag0zIDAgb2JqDTw8L0ZpbHRl
+ci9GbGF0ZURlY29kZS9GaXJzdCA1L0xlbmd0aCA1MC9OIDEvVHlwZS9PYmpTdG0+PnN0cmVhbQ0K
+aN4yMVMwULCx0XfOL80rUTDU985MKY42NQAKBsXqh1QWpOoHJKanFtvZAQQYAOgpC+ENCmVuZHN0
+cmVhbQ1lbmRvYmoNNCAwIG9iag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvRmlyc3QgNS9MZW5ndGgg
+MTU4L04gMS9UeXBlL09ialN0bT4+c3RyZWFtDQpo3mzMsQrCMBSF4Ve5W5tBc9O0SqUUisXJguDg
+nDYpBrFXLunQtzcFEQe3M/zny/eAUFWymcOdOBXySM+XmZZ1sTPB09Sa4NL2kKHaYaFKpXSZ4Qbz
+BDH5VPHZDEy9CXBpT515OAalYCSGG7EVsiP7j9Ff5sJk58FFx1LvVgXOvmfDS4S2KOSVZh5cdPzo
+nf2FCl0qLer6LcAASz453w0KZW5kc3RyZWFtDWVuZG9iag01IDAgb2JqDTw8L0RlY29kZVBhcm1z
+PDwvQ29sdW1ucyA0L1ByZWRpY3RvciAxMj4+L0ZpbHRlci9GbGF0ZURlY29kZS9JRFs8N0M3RjY3
+MzdEMEM2MzU0Nzk5MjA5NTc3REU0MjNBN0M+PEE4ODA1QkQyQTEzMjA0NEVCMjY0QjcwNzQ3MTc5
+NkNCPl0vSW5mbyA0NyAwIFIvTGVuZ3RoIDUwL1Jvb3QgNDkgMCBSL1NpemUgNDgvVHlwZS9YUmVm
+L1dbMSAyIDFdPj5zdHJlYW0NCmjeYmIAAiZGvp0MTAzMF4AEnx2QYOwDEb+BEvc3AlkMDIxDnmC6
+CSQYGQACDACF0wZnDQplbmRzdHJlYW0NZW5kb2JqDXN0YXJ0eHJlZg0KMTE2DQolJUVPRg0K
+
+------=_NextPart_D33_C2BE_4203B1D3.263BBA79--

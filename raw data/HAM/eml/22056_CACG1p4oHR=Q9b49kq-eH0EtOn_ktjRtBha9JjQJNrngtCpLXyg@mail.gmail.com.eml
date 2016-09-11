@@ -1,0 +1,3088 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Thu, 12 May
+ 2016 17:09:59 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Thu, 12 May 2016
+ 17:09:55 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 912523318
+ for ParrishD@dnc.org; Thu, 12 May 2016 16:10:01 -0500
+X-Note-AR-ScanTimeLocal: 5/12/2016 4:09:54 PM
+X-Policy: dnc.org
+X-Primary: parrishd@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:74.125.82.51 DOM:tipahconsulting.com ADDR:zallen@tipahconsulting.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-480/SG:5 5/12/2016 4:09:35 PM
+X-GBUdb-Analysis: Unknown
+X-Signature-Violations: 0-0-0-32767-c
+X-Note-419: 31.2495 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/12/2016 4:09:36 PM
+X-Warn: SPANISH-CHR
+X-Note: Spam Tests Failed: SPANISH-CHR
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 74.125.82.51
+X-Note-Reverse-DNS: mail-wm0-f51.google.com
+X-Note-Return-Path: zallen@tipahconsulting.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G350 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from mail-wm0-f51.google.com ([74.125.82.51] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 138144615
+ for ParrishD@dnc.org; Thu, 12 May 2016 16:09:53 -0500
+Received: by mail-wm0-f51.google.com with SMTP id n129so274862778wmn.1
+        for <ParrishD@dnc.org>; Thu, 12 May 2016 14:09:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=tipahconsulting-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=Wg01uJL32KIuJmxYrrwVkzFQSt2hBSp+aHktyThau84=;
+        b=NwCbm5xUk4rdBHoJZwFu5AJwhxVmyHxPqTaIw8kOldOKjYZ1lOj9C8Dlii0tqOHrSr
+         DHoyJ7gJ2xPZ6mAaTedXkD+dI3xoCeMOgQxIzM6jzQyjBpx/BdF3MCT8mRMMl9Vdg6hE
+         qgzqFSHA8YsU1YX+nQ6VNqqPKnnGUTU++CCY0PeQDMPmoA+uGOFkEZXUAv4VZHw1VZoa
+         3Jh2Fi6FwUXx/bcNpdq9X2o9ffFtJ8kxZNTjYVLxjLhIxpiWVYZMsQ0JQRehQ6BgCU1D
+         zzIB9QobvU0D5bop2ODql37BqJFWD4V0UJbzuGkJUW/T2JnIxvceDYsnkVi2cPspO6A7
+         2KQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=Wg01uJL32KIuJmxYrrwVkzFQSt2hBSp+aHktyThau84=;
+        b=iCVX3xxr9brjjqyI9P3ILLvNTqb3ObQ4YNK0shcM6/ZjQsvphtSkUZwMzF2JPqJwFM
+         IjXsGrbJUKXtStM/khu6HWSCNLEu2/10N0IVFj2wpXhfeNKQ9WAw1YDo87ftSlm4SnkO
+         h7W5uPExoE2jIjiKlNsEQ7BuR1lcho7dAW17QD+8yIRY2slZpG9SjdCtnLV0X6AZEevs
+         UYiZxPO7CTkQwxUj/DTTxJe9FLclqz6e+sBXax8WyuWbEQRAJsHSjsQcaM7jmg9Cwdqq
+         Rq+O59hakGRXmxmA9RhK++BXRLirxRjpfkyIWYbvas/+6SIcmZ9Xad8rwCGpAItJPQIt
+         OH5A==
+X-Gm-Message-State: AOPr4FVc1xRw4R/Jfj9jHZI8daJbWFd2Io64DP8H+zoCiltjVGJxseokvQhqtvZy/3VlR7cJTMweTAohnz73jx5v
+X-Received: by 10.28.113.67 with SMTP id m64mr8862022wmc.58.1463087392777;
+ Thu, 12 May 2016 14:09:52 -0700 (PDT)
+Received: by 10.28.128.132 with HTTP; Thu, 12 May 2016 14:09:12 -0700 (PDT)
+In-Reply-To: <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995A036@dncdag1.dnc.org>
+References: <409A5288-0161-4DEB-A803-5B6BB59482A7@dnc.org> <F4FBB800-EFF2-4F0B-B3D8-CAB0D3EE4E7B@dnc.org>
+ <33d188262eee426d9af95bfcdea5738d@libra.com> <56DA010B-C79E-422C-82EC-2A3856923A9D@dnc.org>
+ <8A3BA5C3DED8F34DBD96D72CD1C4AA38A993B205@dncdag1.dnc.org>
+ <cd83330319a44d1da3dcebcfebacb4bd@libra.com> <4DEF6180-2658-4FEC-A6BF-0488972C1C7B@dnc.org>
+ <ce673ea15d1643be9b0e8f71f22084c2@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994ACD5@dncdag1.dnc.org>
+ <d2a6539b015b40c1b1611497d6f9e0fc@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994AFEF@dncdag1.dnc.org>
+ <23edb02227864ada9f9da9cd40152036@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994C325@dncdag1.dnc.org>
+ <082a3c5db18c4ed184df114e71c47eb4@libra.com> <9F8E2782-09E7-45C0-978C-686221DAF9A7@dnc.org>
+ <2A510E4B-03D7-4068-880E-6845059A59E2@libra.com> <E6B68030-D829-419E-AE40-6B69F0E63040@dnc.org>
+ <c6d8e71e4cfd44c6aaab4cb12202a2c2@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994DB9B@dncdag1.dnc.org>
+ <7be851377ca949eda159372b66dacc65@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A994EF40@dncdag1.dnc.org>
+ <95648ca3baf54daaa3b9f71810ca9396@libra.com> <0D020F01-DB83-495C-AA47-058DB855C453@dnc.org>
+ <c9744ba454874a6fbd00c76811603603@libra.com> <37EBB265-C04B-4341-81EE-76C236E51D41@dnc.org>
+ <3d150a70ef43468b9248d1c71f32f154@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9950BB7@dncdag1.dnc.org>
+ <b95dce0ec6024fe5b3fdab79c5d98bff@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9950C67@dncdag1.dnc.org>
+ <9731e94e0a7445cc8b2adb1396b3f7aa@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9951A2B@dncdag1.dnc.org>
+ <5ea33bd144fd4ca391e390ba36138b98@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9951AFD@dncdag1.dnc.org>
+ <4777d03375c14c54829d37d17d9a0031@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995927E@dncdag1.dnc.org>
+ <49e370050e0a48fd8bd657f3b9899213@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A9959BE5@dncdag1.dnc.org>
+ <06f1aad0f2f04d83a2c02eeff9cef019@libra.com> <8A3BA5C3DED8F34DBD96D72CD1C4AA38A995A036@dncdag1.dnc.org>
+From: Zachary Allen <zallen@tipahconsulting.com>
+Date: Thu, 12 May 2016 17:09:12 -0400
+Message-ID: <CACG1p4oHR=Q9b49kq-eH0EtOn_ktjRtBha9JjQJNrngtCpLXyg@mail.gmail.com>
+Subject: Re: FW: Meeting with the Chair
+To: "Parrish, Daniel" <ParrishD@dnc.org>
+Content-Type: multipart/alternative; boundary="001a1147dab052b9dd0532ab9444"
+Return-Path: zallen@tipahconsulting.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1147dab052b9dd0532ab9444
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+10-4, thanks for handling.
+
+On Thu, May 12, 2016 at 5:08 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+
+> She=E2=80=99s very particular about who has access to the card, and I sou=
+nds like
+> it=E2=80=99s in New York. She wasn=E2=80=99t expecting to be on the road =
+this week, so she
+> will do it on Monday once she=E2=80=99s back. She also said they are happ=
+y to host
+> a roundtable again if we need them (though no pressure). And he can=E2=80=
+=99t
+> attend on May 18th.
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com]
+> *Sent:* Thursday, May 12, 2016 9:38 AM
+>
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan,
+>
+>
+>
+> No worries! I=E2=80=99ll be waiting for your call today as of 5pm.
+>
+>
+>
+> Thanks and speak soon,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Thursday, May 12, 2016 9:31 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+>
+>
+> I think I may have misread this last night =E2=80=93 my apologies if I wa=
+s
+> supposed to call then! I=E2=80=99ll plan to call your cell after 5:00 tod=
+ay and
+> I=E2=80=99ll be free all evening if later is better.
+>
+>
+>
+> Thank you and looking forward to talking!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Wednesday, May 11, 2016 6:47 PM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan,
+>
+>
+>
+> I=E2=80=99m on the road this week again, do you have time for a quick cal=
+l today?
+> I=E2=80=99ll be in a conference all day tomorrow but free to speak after =
+5pm, you
+> can call my cell +1 917 675 0151.
+>
+>
+>
+> Thanks and speak soon!
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, May 11, 2016 2:24 PM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+>
+>
+> I hope your time away was good! I wanted to follow up on our conversation
+> to see if everything is still set for this week. When should we look out
+> for the contributions from Mr. Logothetis and his brother? I=E2=80=99ve i=
+ncluded
+> the link here in case you need it: https://my.democrats.org/tristate2016
+>
+>
+>
+> Thank you again for coordinating this and please let me know if you have
+> any questions or concerns!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Friday, April 29, 2016 2:29 PM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Thanks, Dan. Pls bear with me until my return, today is absolutely insane
+> for me being my last day before I go away next week. I=E2=80=99ll get on =
+to this as
+> soon as I return.
+>
+> Thanks and have a good weekend everyone,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Friday, April 29, 2016 11:21 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Of course! They can each contribute through the link below. I will provid=
+e
+> confirmation as soon as we receive them. Should we look out for them toda=
+y
+> or once you return?
+>
+>
+>
+> https://my.democrats.org/tristate2016
+>
+>
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Friday, April 29, 2016 11:11 AM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan,
+>
+>
+>
+> Thanks for your confirmation. Could you let me know how to make the
+> payment and the max per person etc when you have a moment?
+>
+>
+>
+> Thanks,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Friday, April 29, 2016 11:09 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+>
+>
+> It was great speaking with you this morning! I talked to Zach and that
+> arrangement works perfectly for us. Thank you so much for your help with
+> this and for all of the support you=E2=80=99ve given us. Please let us kn=
+ow if you
+> have any additional questions. We look forward to seeing Mr. Logothetis o=
+n
+> Tuesday and I hope you have a good week!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Wednesday, April 27, 2016 5:33 PM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Great thanks! Looking forward to it.
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, April 27, 2016 5:34 PM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Arguiro,
+>
+> 10:30 works for me =E2=80=93 I=E2=80=99ll call you then.
+>
+> Thanks again!
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Wednesday, April 27, 2016 5:16 PM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan, no worries at all, hope it=E2=80=99s nothing too serious!
+>
+>
+>
+> What about Friday at 10.30am or 11.30am? Otherwise let me know and we wil=
+l
+> make it work. I=E2=80=99ll be away next week and off email, so I would li=
+ke to
+> speak before I leave so that it doesn=E2=80=99t have to wait until my ret=
+urn.
+>
+>
+>
+> Thanks and good luck tomorrow,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, April 27, 2016 4:57 PM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Arguiro,
+>
+> I=E2=80=99m so sorry for rescheduling once again, but would it possible t=
+o talk on
+> Friday? Unfortunately I=E2=80=99m going to have to be out tomorrow for he=
+alth
+> reasons.
+>
+> My sincere apologies for the inconvenience! I hope we can find a time tha=
+t
+> works soon.
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Tuesday, April 26, 2016 12:38 PM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> 2.30pm on Thursday works. You can reach me at my cell +1 917 675 0151 as
+> I might not be in the office.
+>
+> Thanks,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Tuesday, April 26, 2016 11:54 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* Re: Meeting with the Chair
+>
+>
+>
+> Arguiro,
+>
+> I'm free on Thursday as well. Does 2:30 work for you? Thank you for being
+> flexible!
+>
+> Best,
+>
+> Dan
+>
+>
+> On Apr 26, 2016, at 11:49 AM, Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com> wrote:
+>
+> Hi Dan,
+>
+>
+>
+> No worries, it happens. Unfortunately I=E2=80=99m in meetings all afterno=
+on today
+> and tomorrow, but flexible on Thursday after 2pm. Would that work for you=
+?
+>
+>
+>
+> Thanks,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Tuesday, April 26, 2016 11:33 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* Re: Meeting with the Chair
+>
+>
+>
+> Arguiro,
+>
+> Would it be possible to talk at 3:30 or 4:00 instead? I'm so sorry for th=
+e
+> late notice; I had some last minute travel changes today.
+>
+> Thanks,
+>
+> Dan
+>
+>
+> On Apr 25, 2016, at 12:24 PM, Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com> wrote:
+>
+> Thanks, Dan. Tomorrow at 2pm works for me. You can reach me at my direct
+> line below.
+>
+> Thanks and speak then!
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Monday, April 25, 2016 12:14 PM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>; Rosanna Mortoglou =
+<
+> Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+>
+>
+> I=E2=80=99d be happy to talk! Unfortunately, this afternoon is a little t=
+ricky.
+> Would tomorrow at 2:00 work for you? I should be available for the majori=
+ty
+> of the afternoon tomorrow if another time works better.
+>
+>
+>
+> Thanks!
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Monday, April 25, 2016 12:06 PM
+> *To:* Parrish, Daniel; Rosanna Mortoglou
+> *Cc:* zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan,
+>
+>
+>
+> Hope you had a good weekend. Would you be free at some point today for
+> quick call? I have a couple of questions regarding the material you sent.
+> I=E2=80=99m free between 2pm and 3pm or after 4.30pm, otherwise we can sp=
+eak
+> tomorrow if you prefer.
+>
+>
+>
+> Thanks,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Friday, April 22, 2016 4:46 PM
+> *To:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com>
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Rosanna,
+>
+>
+>
+> My sincere apologies for the delayed call =E2=80=93 we just spoke with th=
+e Chair=E2=80=99s
+> staff to find out what happened. I hope Mr. Logothetis=E2=80=99 schedule =
+was not
+> adversely affected and that the conversation went well. I=E2=80=99ve cc=
+=E2=80=99ed the
+> convention packages as requested; please let me know if he has any
+> questions. I will also check with the Chair=E2=80=99s staff on her availa=
+bility in
+> New York for the meeting they discussed and send you some possibilities f=
+or
+> the month ahead.
+>
+>
+>
+> Thank you again for your patience with this and please let me know if you
+> have any questions.
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Rosanna Mortoglou [mailto:Rosanna.Mortoglou@libra.com
+> <Rosanna.Mortoglou@libra.com>]
+> *Sent:* Friday, April 22, 2016 3:56 PM
+> *To:* Parrish, Daniel
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hello Dan,
+>
+>
+>
+> George tried calling the Chair=E2=80=99s cellphone for their 3.45pm call,=
+ but
+> there was no response. We hope all is fine.
+>
+> Can you please advise when it would be a good time to reschedule?
+>
+>
+>
+> Kind Regards,
+>
+>
+>
+> Rosanna Mortoglou
+>
+> Senior Assistant, Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9322
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, April 20, 2016 8:18 PM
+> *To:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com>
+> *Subject:* Re: Meeting with the Chair
+>
+>
+>
+> Hi Rosanna,
+>
+>
+>
+> 3:45 will be fine. Thank you for being so flexible on this!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+> On Apr 20, 2016, at 8:15 PM, Rosanna Mortoglou <
+> Rosanna.Mortoglou@libra.com> wrote:
+>
+> Hello Dan,
+>
+>
+>
+> No problem, we fully understand. Unfortunately George has another call at
+> 3.30pm. Would 3.15pm or 3.45pm be viable alternatives?
+>
+>
+>
+> Kind Regards,
+>
+> Rosanna Mortoglou
+>
+> Senior Assistant, Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9333 <+1%20212%20401%209333>
+>
+> Fax: +1 212 401 9334 <+1%20212%20401%209334>
+>
+> www.libra.com
+>
+>
+> On Apr 20, 2016, at 8:06 PM, Parrish, Daniel <ParrishD@dnc.org> wrote:
+>
+> Rosanna,
+>
+>
+>
+> I'm so sorry, but it looks like tomorrow's schedule just changed. Is it
+> possible to reschedule for 3:30 on Friday? That time should be much less
+> likely to change.
+>
+>
+>
+> My apologies again for the late change!
+>
+> Dan
+>
+>
+> On Apr 20, 2016, at 5:16 PM, Rosanna Mortoglou <
+> Rosanna.Mortoglou@libra.com> wrote:
+>
+> Hello Dan,
+>
+>
+>
+> Thank you very much for the update. We=E2=80=99ll stay tuned for any chan=
+ges.
+>
+>
+>
+> Kind Regards,
+>
+>
+>
+> Rosanna Mortoglou
+>
+> Senior Assistant, Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9322
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, April 20, 2016 5:07 PM
+> *To:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com>
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Rosanna,
+>
+>
+>
+> As of now, we are still set for 10:30 tomorrow. I will be sure to let you
+> know if anything changes. Thank you for your patience with this process!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Rosanna Mortoglou [mailto:Rosanna.Mortoglou@libra.com
+> <Rosanna.Mortoglou@libra.com>]
+> *Sent:* Monday, April 18, 2016 1:47 PM
+> *To:* Parrish, Daniel
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Dan,
+>
+>
+>
+> Completely understandable regarding the Chair=E2=80=99s schedule. Feel fr=
+ee to
+> reach out if anything comes up.
+>
+>
+>
+> The best number to reach George on Thursday, at 10.30am will be: +1 646
+> 289 2143.
+>
+>
+>
+>
+>
+> Kind Regards,
+>
+>
+>
+> Rosanna Mortoglou
+>
+> Senior Assistant, Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9322
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Monday, April 18, 2016 1:47 PM
+> *To:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com>
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Rosanna,
+>
+>
+>
+> Thank you! It=E2=80=99s generally easiest for the Chair to call. What wou=
+ld be the
+> best number? There=E2=80=99s also a chance the Chair=E2=80=99s schedule m=
+ay change this
+> week depending on votes. I=E2=80=99m hopeful it will stay the same, and I=
+ will be
+> able to provide a final confirmation of timing on Wednesday, but we may
+> have to coordinate if the timing shifts. Let me know if you have any
+> questions!
+>
+>
+>
+> Best,
+>
+> Dan
+>
+>
+>
+> *From:* Rosanna Mortoglou [mailto:Rosanna.Mortoglou@libra.com
+> <Rosanna.Mortoglou@libra.com>]
+> *Sent:* Monday, April 18, 2016 11:56 AM
+> *To:* Parrish, Daniel
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hello Dan,
+>
+>
+>
+> I=E2=80=99m jumping in as Arguiro is in meetings all day today. George wo=
+uld be
+> happy to speak with the Chair on Thursday, at 10.30am. What would be the
+> best way to coordinate this call? Would the Chair like to call George
+> directly or the other way around?
+>
+>
+>
+> Kind Regards,
+>
+>
+>
+> Rosanna Mortoglou
+>
+> Senior Assistant, Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9322
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Monday, April 18, 2016 9:45 AM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+>
+>
+> The Chair is not going to be travelling back to New York as early as we
+> had hoped, but she wants to talk with Mr. Logothetis again soon. Is he
+> available for a call this Thursday at 10:30? She would love to continue
+> their last conversation and is very interested to hear about his time in
+> Cuba. Let me know if that is a possibility.
+>
+>
+>
+> Thanks!
+>
+> Dan
+>
+>
+>
+> *From:* Arguiro Elefteriu [mailto:Arguiro.Elefteriu@libra.com
+> <Arguiro.Elefteriu@libra.com>]
+> *Sent:* Thursday, March 24, 2016 11:58 AM
+> *To:* Parrish, Daniel
+> *Cc:* Rosanna Mortoglou; zallen@tipahconsulting.com
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Great thanks Dan!
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, March 23, 2016 4:14 PM
+> *To:* Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>
+> *Cc:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>;
+> zallen@tipahconsulting.com
+> *Subject:* Re: Meeting with the Chair
+>
+>
+>
+> Hi Arguiro,
+>
+> I'm so glad the trip went well! I'm sure it must have been fascinating.
+>
+> I'm sorry he won't be able to meet with her, but we will absolutely keep
+> you updated on future trips as they come up.
+>
+> Thank you again for your help with this and welcome back!
+>
+> Dan
+>
+>
+> On Mar 23, 2016, at 4:11 PM, Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com> wrote:
+>
+> Hi Daniel,
+>
+>
+>
+> Just landed in Miami from Cuba, such an interesting trip to say the least=
+!
+> Unfortunately George is heading to Europe this week and won=E2=80=99t be =
+back in
+> New York until April 6th, so he regrets that he will not be able to meet
+> with the Chair on April 4th. Maybe we can arrange a meeting next time she
+> is in New York?
+>
+>
+>
+> Thanks a lot,
+>
+>
+>
+> Arguir=C3=B3 Elefteriu
+>
+> Head of Office of the Chairman & CEO
+>
+>
+>
+> *Libra Capital US, Inc.*
+>
+> Tel:  +1 212 401 9321
+>
+> Fax: +1 212 401 9334
+>
+> www.libra.com
+>
+>
+>
+> *From:* Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+> *Sent:* Wednesday, March 23, 2016 4:08 PM
+> *To:* Rosanna Mortoglou <Rosanna.Mortoglou@libra.com>
+> *Cc:* zallen@tipahconsulting.com; Arguiro Elefteriu <
+> Arguiro.Elefteriu@libra.com>
+> *Subject:* RE: Meeting with the Chair
+>
+>
+>
+> Hi Rosanna,
+>
+> Any word on this? We want to make sure we have the time locked in for
+> George before the Chair's schedule starts filling up.
+>
+> Thank you for your help!
+>
+> Best,
+>
+> Dan
+>
+>
+>
+>
+>
+> -----Original Message-----
+> From: Parrish, Daniel
+> Sent: Tuesday, March 22, 2016 1:13 PM
+> To: Rosanna Mortoglou
+> Cc: zallen@tipahconsulting.com; Arguiro Elefteriu
+> Subject: Re: Meeting with the Chair
+>
+>
+>
+> Of course! Let's talk tomorrow.
+>
+>
+>
+> > On Mar 22, 2016, at 1:06 PM, Rosanna Mortoglou <
+> Rosanna.Mortoglou@libra.com> wrote:
+>
+> >
+>
+> > Hello Dan,
+>
+> >
+>
+> > Arguiro is with George in Cuba and communications are very complicated.
+> May we please revert tomorrow once they get access to internet again?
+>
+> >
+>
+> > Thank you for your understanding,
+>
+> > Kind Regards,
+>
+> >
+>
+> > Rosanna Mortoglou
+>
+> > Senior Assistant, Office of the Chairman & CEO
+>
+> >
+>
+> > Libra Capital US, Inc.
+>
+> > Tel:  +1 212 401 9322
+>
+> > Fax: +1 212 401 9334
+>
+> > www.libra.com
+>
+> >
+>
+> >
+>
+> > -----Original Message-----
+>
+> > From: Parrish, Daniel [mailto:ParrishD@dnc.org <ParrishD@dnc.org>]
+>
+> > Sent: Tuesday, March 22, 2016 12:11 PM
+>
+> > To: Arguiro Elefteriu <Arguiro.Elefteriu@libra.com>; Rosanna Mortoglou =
+<
+> Rosanna.Mortoglou@libra.com>
+>
+> > Cc: zallen@tipahconsulting.com
+>
+> > Subject: Re: Meeting with the Chair
+>
+> >
+>
+> > Hi Rosanna,
+>
+> > Does this time seem possible?
+>
+> > Best,
+>
+> > Dan
+>
+> >
+>
+> >> On Mar 22, 2016, at 12:04 PM, Parrish, Daniel <ParrishD@dnc.org> wrote=
+:
+>
+> >>
+>
+> >> Hi Arguiro,
+>
+> >> The Chair was very happy speaking with George on Thursday, and would
+> love to meet with him next time she's in town. Is he available for a
+> meeting on Monday, April 4th at 2:30?
+>
+> >> Thank you for your help!
+>
+> >> Dan
+>
+> >
+>
+> > ______________________________________________________________________
+>
+> > This email has been scanned by the Symantec Email Security.cloud servic=
+e.
+>
+> >
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+>
+> ______________________________________________________________________
+> This email has been scanned by the Symantec Email Security.cloud service.
+>
+
+
+
+--=20
+Zachary Allen
+TIPAH Consulting
+304 Park Avenue South, 8th Floor
+New York, NY 10010
+(646) 470-8689 direct | (973) 618-5903 fax | ZAllen@TIPAHConsulting.com
+
+--001a1147dab052b9dd0532ab9444
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">10-4, thanks for handling.&nbsp;</div><div class=3D"gmail_ex=
+tra"><br><div class=3D"gmail_quote">On Thu, May 12, 2016 at 5:08 PM, Parris=
+h, Daniel <span dir=3D"ltr">&lt;<a href=3D"mailto:ParrishD@dnc.org" target=
+=3D"_blank">ParrishD@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"=
+gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-=
+left:1ex">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">She=E2=80=99s very par=
+ticular about who has access to the card, and I sounds like it=E2=80=99s in=
+ New York. She wasn=E2=80=99t expecting to be on the road this week, so she=
+ will do it on Monday once she=E2=80=99s back. She also said they are
+ happy to host a roundtable again if we need them (though no pressure). And=
+ he can=E2=80=99t attend on May 18<sup>th</sup>.<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d"><u></u>&nbsp;<u></u></=
+span></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [mailto:<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"=
+_blank">Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Thursday, May 12, 2016 9:38 AM</span></p><div><div class=3D"h5=
+"><br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></div></div><p></p>
+</div>
+</div><div><div class=3D"h5">
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<p class=3D"MsoNormal"><a name=3D"m_-7966419052771710273__MailEndCompose"><=
+span style=3D"font-size:10.0pt;font-family:&quot;Verdana&quot;,&quot;sans-s=
+erif&quot;;color:black">Hi Dan,</span></a><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">No worries! I=E2=80=99ll be=
+ waiting for your call today as of 5pm.
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks and speak soon,</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Thursday, May 12, 2016 9:31 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Arguiro,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">I think I may have mis=
+read this last night =E2=80=93 my apologies if I was supposed to call then!=
+ I=E2=80=99ll plan to call your cell after 5:00 today and I=E2=80=99ll be f=
+ree all evening if later is better.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thank you and looking =
+forward to talking!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Wednesday, May 11, 2016 6:47 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Dan,
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">I=E2=80=99m on the road thi=
+s week again, do you have time for a quick call today? I=E2=80=99ll be in a=
+ conference all day tomorrow but free to speak after 5pm, you can call my
+ cell <a href=3D"tel:%2B1%20917%20675%200151" value=3D"&#43;19176750151" ta=
+rget=3D"_blank">&#43;1 917 675 0151</a>. </span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks and speak soon!
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, May 11, 2016 2:24 PM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Arguiro,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">I hope your time away =
+was good! I wanted to follow up on our conversation to see if everything is=
+ still set for this week. When should we look out for the contributions fro=
+m Mr. Logothetis and his brother? I=E2=80=99ve
+ included the link here in case you need it: <a href=3D"https://my.democrat=
+s.org/tristate2016" target=3D"_blank">
+https://my.democrats.org/tristate2016</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thank you again for co=
+ordinating this and please let me know if you have any questions or concern=
+s!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Friday, April 29, 2016 2:29 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks, Dan. Pls bear with =
+me until my return, today is absolutely insane for me being my last day bef=
+ore I go away next week. I=E2=80=99ll get on to this as soon as
+ I return.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks and have a good week=
+end everyone,</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Friday, April 29, 2016 11:21 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Of course! They can ea=
+ch contribute through the link below. I will provide confirmation as soon a=
+s we receive them. Should we look out for them today or once you return?</s=
+pan><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d"><a href=3D"https://my.=
+democrats.org/tristate2016" target=3D"_blank">https://my.democrats.org/tris=
+tate2016</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Friday, April 29, 2016 11:11 AM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Dan,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks for your confirmatio=
+n. Could you let me know how to make the payment and the max per person etc=
+ when you have a moment?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Friday, April 29, 2016 11:09 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Arguiro,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">It was great speaking =
+with you this morning! I talked to Zach and that arrangement works perfectl=
+y for us. Thank you so much for your help with this and for all of the supp=
+ort you=E2=80=99ve given us. Please let us know
+ if you have any additional questions. We look forward to seeing Mr. Logoth=
+etis on Tuesday and I hope you have a good week!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Wednesday, April 27, 2016 5:33 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Great thanks! Looking forwa=
+rd to it.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, April 27, 2016 5:34 PM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Arguiro,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">10:30 works for me =E2=
+=80=93 I=E2=80=99ll call you then.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thanks again!</span><u=
+></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Wednesday, April 27, 2016 5:16 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Dan, no worries at all, =
+hope it=E2=80=99s nothing too serious!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">What about Friday at 10.30a=
+m or 11.30am? Otherwise let me know and we will make it work. I=E2=80=99ll =
+be away next week and off email, so I would like to speak before
+ I leave so that it doesn=E2=80=99t have to wait until my return.</span><u>=
+</u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks and good luck tomorr=
+ow,</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, April 27, 2016 4:57 PM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Arguiro,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">I=E2=80=99m so sorry f=
+or rescheduling once again, but would it possible to talk on Friday? Unfort=
+unately I=E2=80=99m going to have to be out tomorrow for health reasons.</s=
+pan><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">My sincere apologies f=
+or the inconvenience! I hope we can find a time that works soon.</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Tuesday, April 26, 2016 12:38 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">2.30pm on Thursday works. Y=
+ou can reach me at my cell <a href=3D"tel:%2B1%20917%20675%200151" value=3D=
+"&#43;19176750151" target=3D"_blank">&#43;1 917 675 0151</a> as I might not=
+ be in the office.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Tuesday, April 26, 2016 11:54 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> Re: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Arguiro,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm free on Thursday as well. Does 2:30 work for you=
+? Thank you for being flexible!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 26, 2016, at 11:49 AM, Arguiro Elefteriu &lt;<a href=3D"mailto:Argui=
+ro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&g=
+t; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Dan,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">No worries, it happens. Unf=
+ortunately I=E2=80=99m in meetings all afternoon today and tomorrow, but fl=
+exible on Thursday after 2pm. Would that work for you?</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Tuesday, April 26, 2016 11:33 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> Re: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Arguiro,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Would it be possible to talk at 3:30 or 4:00 instead=
+? I'm so sorry for the late notice; I had some last minute travel changes t=
+oday.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thanks,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 25, 2016, at 12:24 PM, Arguiro Elefteriu &lt;<a href=3D"mailto:Argui=
+ro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&g=
+t; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks, Dan. Tomorrow at 2p=
+m works for me. You can reach me at my direct line below.</span><u></u><u><=
+/u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks and speak then!</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Monday, April 25, 2016 12:14 PM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;; Rosanna Mortogl=
+ou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.com" target=3D"_blank">Ros=
+anna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Arguiro,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">I=E2=80=99d be happy t=
+o talk! Unfortunately, this afternoon is a little tricky. Would tomorrow at=
+ 2:00 work for you? I should be available for the majority of the afternoon=
+ tomorrow if another time works better.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thanks!</span><u></u><=
+u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Monday, April 25, 2016 12:06 PM<br>
+<b>To:</b> Parrish, Daniel; Rosanna Mortoglou<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Dan,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hope you had a good weekend=
+. Would you be free at some point today for&nbsp; quick call? I have a coup=
+le of questions regarding the material you sent. I=E2=80=99m free between
+ 2pm and 3pm or after 4.30pm, otherwise we can speak tomorrow if you prefer=
+.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks,</span><u></u><u></u=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Friday, April 22, 2016 4:46 PM<br>
+<b>To:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu &lt;<a href=3D"mailto:Arg=
+uiro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>=
+&gt;<br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Rosanna,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">My sincere apologies f=
+or the delayed call =E2=80=93 we just spoke with the Chair=E2=80=99s staff =
+to find out what happened. I hope Mr. Logothetis=E2=80=99 schedule was not =
+adversely affected and that the conversation went well. I=E2=80=99ve
+ cc=E2=80=99ed the convention packages as requested; please let me know if =
+he has any questions. I will also check with the Chair=E2=80=99s staff on h=
+er availability in New York for the meeting they discussed and send you som=
+e possibilities for the month ahead.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thank you again for yo=
+ur patience with this and please let me know if you have any questions.</sp=
+an><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rosanna =
+Mortoglou [<a href=3D"mailto:Rosanna.Mortoglou@libra.com" target=3D"_blank"=
+>mailto:Rosanna.Mortoglou@libra.com</a>]
+<br>
+<b>Sent:</b> Friday, April 22, 2016 3:56 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu<br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Hello Dan,<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">George tried calling the Chair=E2=80=99s cellphone f=
+or their 3.45pm call, but there was no response. We hope all is fine.
+<u></u><u></u></p>
+<p class=3D"MsoNormal">Can you please advise when it would be a good time t=
+o reschedule?<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Kind Regards,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Rosanna Mortoglou
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Senior Assistant, Office of=
+ the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Capital US, Inc.</=
+span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp; <=
+a href=3D"tel:%2B1%20212%20401%209322" value=3D"&#43;12124019322" target=3D=
+"_blank">&#43;1 212 401 9322</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"h=
+ttp://www.libra.com/" target=3D"_blank"><span style=3D"color:#0563c1">www.l=
+ibra.com</span></a></span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, April 20, 2016 8:18 PM<br>
+<b>To:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu &lt;<a href=3D"mailto:Arg=
+uiro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>=
+&gt;<br>
+<b>Subject:</b> Re: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Rosanna,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">3:45 will be fine. Thank you for being so flexible o=
+n this!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Best,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 20, 2016, at 8:15 PM, Rosanna Mortoglou &lt;<a href=3D"mailto:Rosann=
+a.Mortoglou@libra.com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt=
+; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Hello Dan,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">No problem, we fully understand. Unfortunately Georg=
+e has another call at 3.30pm. Would 3.15pm or 3.45pm be viable alternatives=
+?<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt">Kind Regards,<u></u><=
+u></u></p>
+<div>
+<p class=3D"MsoNormal">Rosanna Mortoglou<u></u><u></u></p>
+<p class=3D"MsoNormal">Senior Assistant, Office of the Chairman &amp; CEO<u=
+></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB">&nbsp;</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b>Libra Capital US, Inc.</b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB">Tel:&nbsp;&nbsp;<a href=3D"tel:=
+&#43;1%20212%20401%209333" target=3D"_blank">&#43;1 212 401 9333</a></span>=
+<u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB">Fax:&nbsp;<a href=3D"tel:&#43;1=
+%20212%20401%209334" target=3D"_blank">&#43;1 212 401 9334</a></span><u></u=
+><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB"><a href=3D"http://www.libra.com=
+/" target=3D"_blank">www.libra.com</a></span><u></u><u></u></p>
+</div>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 20, 2016, at 8:06 PM, Parrish, Daniel &lt;<a href=3D"mailto:ParrishD=
+@dnc.org" target=3D"_blank">ParrishD@dnc.org</a>&gt; wrote:<u></u><u></u></=
+p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<div>
+<p class=3D"MsoNormal">Rosanna,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm so sorry, but it looks like tomorrow's schedule =
+just changed. Is it possible to reschedule for 3:30 on Friday? That time sh=
+ould be much less likely to change.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">My apologies again for the late change!<u></u><u></u=
+></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Apr 20, 2016, at 5:16 PM, Rosanna Mortoglou &lt;<a href=3D"mailto:Rosann=
+a.Mortoglou@libra.com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt=
+; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal">Hello Dan,<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Thank you very much for the update. We=E2=80=99ll st=
+ay tuned for any changes.<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Kind Regards,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Rosanna Mortoglou
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Senior Assistant, Office of=
+ the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Capital US, Inc.</=
+span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp; <=
+a href=3D"tel:%2B1%20212%20401%209322" value=3D"&#43;12124019322" target=3D=
+"_blank">&#43;1 212 401 9322</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"h=
+ttp://www.libra.com/" target=3D"_blank"><span style=3D"color:#0563c1">www.l=
+ibra.com</span></a></span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, April 20, 2016 5:07 PM<br>
+<b>To:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu &lt;<a href=3D"mailto:Arg=
+uiro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>=
+&gt;<br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Rosanna,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">As of now, we are stil=
+l set for 10:30 tomorrow. I will be sure to let you know if anything change=
+s. Thank you for your patience with this process!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rosanna =
+Mortoglou [<a href=3D"mailto:Rosanna.Mortoglou@libra.com" target=3D"_blank"=
+>mailto:Rosanna.Mortoglou@libra.com</a>]
+<br>
+<b>Sent:</b> Monday, April 18, 2016 1:47 PM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu<br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Hi Dan,<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Completely understandable regarding the Chair=E2=80=
+=99s schedule. Feel free to reach out if anything comes up.<u></u><u></u></=
+p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">The best number to reach George on Thursday, at 10.3=
+0am will be: <a href=3D"tel:%2B1%20646%20289%202143" value=3D"&#43;16462892=
+143" target=3D"_blank">&#43;1 646 289 2143</a>.<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Kind Regards,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Rosanna Mortoglou
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Senior Assistant, Office of=
+ the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Capital US, Inc.</=
+span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp; <=
+a href=3D"tel:%2B1%20212%20401%209322" value=3D"&#43;12124019322" target=3D=
+"_blank">&#43;1 212 401 9322</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"h=
+ttp://www.libra.com/" target=3D"_blank"><span style=3D"color:#0563c1">www.l=
+ibra.com</span></a></span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Monday, April 18, 2016 1:47 PM<br>
+<b>To:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu &lt;<a href=3D"mailto:Arg=
+uiro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>=
+&gt;<br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Rosanna,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thank you! It=E2=80=99=
+s generally easiest for the Chair to call. What would be the best number? T=
+here=E2=80=99s also a chance the Chair=E2=80=99s schedule may change this w=
+eek depending on votes. I=E2=80=99m hopeful it will stay the same, and
+ I will be able to provide a final confirmation of timing on Wednesday, but=
+ we may have to coordinate if the timing shifts. Let me know if you have an=
+y questions!</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Best,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Rosanna =
+Mortoglou [<a href=3D"mailto:Rosanna.Mortoglou@libra.com" target=3D"_blank"=
+>mailto:Rosanna.Mortoglou@libra.com</a>]
+<br>
+<b>Sent:</b> Monday, April 18, 2016 11:56 AM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu<br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Hello Dan,<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">I=E2=80=99m jumping in as Arguiro is in meetings all=
+ day today. George would be happy to speak with the Chair on Thursday, at 1=
+0.30am. What would be the best way to coordinate this call? Would the Chair=
+ like to call George directly or the other
+ way around?<u></u><u></u></p>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal">Kind Regards,<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Rosanna Mortoglou
+</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Senior Assistant, Office of=
+ the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span=
+><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Capital US, Inc.</=
+span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp; <=
+a href=3D"tel:%2B1%20212%20401%209322" value=3D"&#43;12124019322" target=3D=
+"_blank">&#43;1 212 401 9322</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black"><a href=3D"h=
+ttp://www.libra.com/" target=3D"_blank"><span style=3D"color:#0563c1">www.l=
+ibra.com</span></a></span><u></u><u></u></p>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Monday, April 18, 2016 9:45 AM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Hi Arguiro,</span><u><=
+/u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">The Chair is not going=
+ to be travelling back to New York as early as we had hoped, but she wants =
+to talk with Mr. Logothetis again soon. Is he available for a call this Thu=
+rsday at 10:30? She would love to continue
+ their last conversation and is very interested to hear about his time in C=
+uba. Let me know if that is a possibility.</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Thanks!</span><u></u><=
+u></u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">Dan</span><u></u><u></=
+u></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1f497d">&nbsp;</span><u></u><u=
+></u></p>
+<div>
+<div style=3D"border:none;border-top:solid #b5c4df 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Arguiro =
+Elefteriu [<a href=3D"mailto:Arguiro.Elefteriu@libra.com" target=3D"_blank"=
+>mailto:Arguiro.Elefteriu@libra.com</a>]
+<br>
+<b>Sent:</b> Thursday, March 24, 2016 11:58 AM<br>
+<b>To:</b> Parrish, Daniel<br>
+<b>Cc:</b> Rosanna Mortoglou; <a href=3D"mailto:zallen@tipahconsulting.com"=
+ target=3D"_blank">zallen@tipahconsulting.com</a><br>
+<b>Subject:</b> RE: Meeting with the Chair</span><u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Great thanks Dan!</span><u>=
+</u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, March 23, 2016 4:14 PM<br>
+<b>To:</b> Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra.=
+com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt;<br>
+<b>Cc:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;;
+<a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@tipa=
+hconsulting.com</a><br>
+<b>Subject:</b> Re: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">Hi Arguiro,<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm so glad the trip went well! I'm sure it must hav=
+e been fascinating.<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">I'm sorry he won't be able to meet with her, but we =
+will absolutely keep you updated on future trips as they come up.<u></u><u>=
+</u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Thank you again for your help with this and welcome =
+back!<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">Dan<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><br>
+On Mar 23, 2016, at 4:11 PM, Arguiro Elefteriu &lt;<a href=3D"mailto:Arguir=
+o.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>&gt=
+; wrote:<u></u><u></u></p>
+</div>
+<blockquote style=3D"margin-top:5.0pt;margin-bottom:5.0pt">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Hi Daniel,</span><u></u><u>=
+</u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Just landed in Miami from C=
+uba, such an interesting trip to say the least! Unfortunately George is hea=
+ding to Europe this week and won=E2=80=99t be back in New York until
+ April 6<sup>th</sup>, so he regrets that he will not be able to meet with =
+the Chair on April 4th. Maybe we can arrange a meeting next time she is in =
+New York?</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Thanks a lot,</span><u></u>=
+<u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">Arguir=C3=B3 Elefteriu</spa=
+n><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Head of Offi=
+ce of the Chairman &amp; CEO</span><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:navy">&nbsp;</sp=
+an></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><b><span lang=3D"EN-GB" style=3D"font-size:10.0pt;fo=
+nt-family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Libra Cap=
+ital US, Inc.</span></b><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Tel:&nbsp;&n=
+bsp;<a href=3D"tel:%2B1%20212%20401%209321" value=3D"&#43;12124019321" targ=
+et=3D"_blank">&#43;1 212 401 9321</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-=
+family:&quot;Verdana&quot;,&quot;sans-serif&quot;;color:black">Fax: <a href=
+=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019334" target=3D"_blan=
+k">&#43;1 212 401 9334</a></span><u></u><u></u></p>
+<p class=3D"MsoNormal"><a href=3D"http://www.libra.com/" target=3D"_blank">=
+<span lang=3D"EN-GB" style=3D"font-size:10.0pt;font-family:&quot;Verdana&qu=
+ot;,&quot;sans-serif&quot;;color:#0563c1">www.libra.com</span></a><u></u><u=
+></u></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:10.0pt;font-family:&quot;Ve=
+rdana&quot;,&quot;sans-serif&quot;;color:black">&nbsp;</span><u></u><u></u>=
+</p>
+<div>
+<div style=3D"border:none;border-top:solid #e1e1e1 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b>From:</b> Parrish, Daniel [<a href=3D"mailto:Parr=
+ishD@dnc.org" target=3D"_blank">mailto:ParrishD@dnc.org</a>]
+<br>
+<b>Sent:</b> Wednesday, March 23, 2016 4:08 PM<br>
+<b>To:</b> Rosanna Mortoglou &lt;<a href=3D"mailto:Rosanna.Mortoglou@libra.=
+com" target=3D"_blank">Rosanna.Mortoglou@libra.com</a>&gt;<br>
+<b>Cc:</b> <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">=
+zallen@tipahconsulting.com</a>; Arguiro Elefteriu &lt;<a href=3D"mailto:Arg=
+uiro.Elefteriu@libra.com" target=3D"_blank">Arguiro.Elefteriu@libra.com</a>=
+&gt;<br>
+<b>Subject:</b> RE: Meeting with the Chair<u></u><u></u></p>
+</div>
+</div>
+<p class=3D"MsoNormal">&nbsp;<u></u><u></u></p>
+<p>Hi Rosanna,<u></u><u></u></p>
+<p>Any word on this? We want to make sure we have the time locked in for Ge=
+orge before the Chair's schedule starts filling up.<u></u><u></u></p>
+<p>Thank you for your help!<u></u><u></u></p>
+<p>Best,<u></u><u></u></p>
+<p>Dan<u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p>-----Original Message-----<br>
+From: Parrish, Daniel <br>
+Sent: Tuesday, March 22, 2016 1:13 PM<br>
+To: Rosanna Mortoglou<br>
+Cc: <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank">zallen@=
+tipahconsulting.com</a>; Arguiro Elefteriu<br>
+Subject: Re: Meeting with the Chair<u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p>Of course! Let's talk tomorrow.<u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p>&gt; On Mar 22, 2016, at 1:06 PM, Rosanna Mortoglou &lt;<a href=3D"mailt=
+o:Rosanna.Mortoglou@libra.com" target=3D"_blank"><span style=3D"color:windo=
+wtext;text-decoration:none">Rosanna.Mortoglou@libra.com</span></a>&gt; wrot=
+e:<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; Hello Dan,<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; Arguiro is with George in Cuba and communications are very complica=
+ted. May we please revert tomorrow once they get access to internet again?<=
+u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; Thank you for your understanding,<u></u><u></u></p>
+<p>&gt; Kind Regards,<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; Rosanna Mortoglou <u></u><u></u></p>
+<p>&gt; Senior Assistant, Office of the Chairman &amp; CEO<u></u><u></u></p=
+>
+<p>&gt;&nbsp; <u></u><u></u></p>
+<p>&gt; Libra Capital US, Inc.<u></u><u></u></p>
+<p>&gt; Tel:&nbsp; <a href=3D"tel:%2B1%20212%20401%209322" value=3D"&#43;12=
+124019322" target=3D"_blank">&#43;1 212 401 9322</a><u></u><u></u></p>
+<p>&gt; Fax: <a href=3D"tel:%2B1%20212%20401%209334" value=3D"&#43;12124019=
+334" target=3D"_blank">&#43;1 212 401 9334</a><u></u><u></u></p>
+<p>&gt; <a href=3D"http://www.libra.com" target=3D"_blank"><span style=3D"c=
+olor:windowtext;text-decoration:none">www.libra.com</span></a><u></u><u></u=
+></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; -----Original Message-----<u></u><u></u></p>
+<p>&gt; From: Parrish, Daniel [<a href=3D"mailto:ParrishD@dnc.org" target=
+=3D"_blank"><span style=3D"color:windowtext;text-decoration:none">mailto:Pa=
+rrishD@dnc.org</span></a>]
+<u></u><u></u></p>
+<p>&gt; Sent: Tuesday, March 22, 2016 12:11 PM<u></u><u></u></p>
+<p>&gt; To: Arguiro Elefteriu &lt;<a href=3D"mailto:Arguiro.Elefteriu@libra=
+.com" target=3D"_blank"><span style=3D"color:windowtext;text-decoration:non=
+e">Arguiro.Elefteriu@libra.com</span></a>&gt;; Rosanna Mortoglou &lt;<a hre=
+f=3D"mailto:Rosanna.Mortoglou@libra.com" target=3D"_blank"><span style=3D"c=
+olor:windowtext;text-decoration:none">Rosanna.Mortoglou@libra.com</span></a=
+>&gt;<u></u><u></u></p>
+<p>&gt; Cc: <a href=3D"mailto:zallen@tipahconsulting.com" target=3D"_blank"=
+><span style=3D"color:windowtext;text-decoration:none">zallen@tipahconsulti=
+ng.com</span></a><u></u><u></u></p>
+<p>&gt; Subject: Re: Meeting with the Chair<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; Hi Rosanna,<u></u><u></u></p>
+<p>&gt; Does this time seem possible?<u></u><u></u></p>
+<p>&gt; Best,<u></u><u></u></p>
+<p>&gt; Dan<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt;&gt; On Mar 22, 2016, at 12:04 PM, Parrish, Daniel &lt;<a href=3D"ma=
+ilto:ParrishD@dnc.org" target=3D"_blank"><span style=3D"color:windowtext;te=
+xt-decoration:none">ParrishD@dnc.org</span></a>&gt; wrote:<u></u><u></u></p=
+>
+<p>&gt;&gt; <u></u><u></u></p>
+<p>&gt;&gt; Hi Arguiro,<u></u><u></u></p>
+<p>&gt;&gt; The Chair was very happy speaking with George on Thursday, and =
+would love to meet with him next time she's in town. Is he available for a =
+meeting on Monday, April 4th at 2:30?<u></u><u></u></p>
+<p>&gt;&gt; Thank you for your help!<u></u><u></u></p>
+<p>&gt;&gt; Dan<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p>&gt; ___________________________________________________________________=
+___<u></u><u></u></p>
+<p>&gt; This email has been scanned by the Symantec Email Security.cloud se=
+rvice.<u></u><u></u></p>
+<p>&gt; <u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+</div>
+</blockquote>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+</div>
+</blockquote>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.</=
+span><u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ti=
+mes New Roman&quot;,&quot;serif&quot;"><br>
+______________________________________________________________________<br>
+This email has been scanned by the Symantec Email Security.cloud service.<u=
+></u><u></u></span></p>
+</div></div></div>
+</div>
+
+</blockquote></div><br><br clear=3D"all"><div><br></div>-- <br><div class=
+=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr">Zachary Allen<br>TIPAH Consulting<br>304 Park Avenue South, 8th Fl=
+oor<br>New York, NY 10010<br>(646) 470-8689 direct | (973) 618-5903 fax<spa=
+n>&nbsp;| </span><a href=3D"mailto:ZAllen@TIPAHConsulting.com" target=3D"_b=
+lank">ZAllen@TIPAHConsulting.com</a></div></div></div></div></div></div>
+</div>
+
+--001a1147dab052b9dd0532ab9444--

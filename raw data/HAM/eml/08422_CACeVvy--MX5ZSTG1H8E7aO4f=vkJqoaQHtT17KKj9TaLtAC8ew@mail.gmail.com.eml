@@ -1,0 +1,594 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by dnchubcas2.dnc.org
+ (192.168.185.16) with Microsoft SMTP Server (TLS) id 14.3.224.2; Fri, 6 May
+ 2016 11:37:25 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Fri, 6 May 2016
+ 11:37:24 -0400
+Received: from [10.87.0.112] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 900745415
+ for MirandaL@dnc.org; Fri, 06 May 2016 10:37:27 -0500
+X-Note-AR-ScanTimeLocal: 5/6/2016 10:37:24 AM
+X-Policy: dnc.org
+X-Primary: mirandal@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: @wsj.com ALLOWED
+X-Virus-Scan: V-
+X-Note: Spam Tests Failed: 
+X-Country-Path: ->->United States->
+X-Note-Sending-IP: 209.85.213.181
+X-Note-Reverse-DNS: mail-ig0-f181.google.com
+X-Note-Return-Path: laura.meckler@wsj.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-Note: Headers Injected
+Received: from mail-ig0-f181.google.com ([209.85.213.181] verified)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 137024976
+ for MirandaL@dnc.org; Fri, 06 May 2016 10:37:24 -0500
+Received: by mail-ig0-f181.google.com with SMTP id u5so7311161igk.1        for
+ <MirandaL@dnc.org>; Fri, 06 May 2016 08:37:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=wsj-com.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to;
+        bh=DTRk7ZjSakeAWRU27SdSALXvmDeeQgweMw2fBQdU6NY=;
+        b=aCihk/wMy/jXIoXfk8kt+wJLENADqaoikx4083TgICeUVD/2yrNWl6zxf/VXRuaa25
+         FkqvVVVUB1wOFx/VIL8RYhekdPHJOe6+1+CvGLDEd5tOjy+CS7aiwKWWPaZhbaypZvsM
+         fC13altSJS/kHO8PxFA3e6bq0r6pTEQzKWG3NfKDjxkrvuN0FolAfzSogMQ1rpIpu420
+         puXor7HrGBSCz7GaeVSKahEHzdMLNe4iSni4saITK7nQKtwBBEo4E6IIZL/KvzWEgfTY
+         X2LSO4y7HiRAAlekMUghWBWvBJ/jd9/yxFxFEJAQ//1ZCU7IsX1lsFb/ZH0wlCCoS2rH
+         E9Sg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-gm-message-state:mime-version:in-reply-to:references:date
+         :message-id:subject:from:to;
+        bh=DTRk7ZjSakeAWRU27SdSALXvmDeeQgweMw2fBQdU6NY=;
+        b=g493ZiMsH2gMygEiL06+9YXddTSvGfFHXm1fd0bMOvBamYrg93GtuQO/qeOIp3AecG
+         4MavKd6PnevPeVadqAGMZ/9baahD2Wlwr/tzb/Rx0F7OC/h1HjexDYQIuVyKfQ+zG/zO
+         +E8Tq9tZtjj+6qLShMFa0ug6KDor40S/z20a4xTXWXcG1mWjYPgLqRyrikqxUBJqw9CF
+         IcF4lpemeof6mjrU1cIwDjvVBVIOZsYzS5DkSy31fNtPqmcPix2h/wguP0twGvrla8ZS
+         X3enLeHE4KQDtvNdTRzxiZWz3BpczGaqnRRL36GB3K1ZYhQGU0hfSq3JWL5tkTfrT5L+
+         yePw==
+X-Gm-Message-State: AOPr4FXq/rvcE5FacigojpAkTVZfGcreN1y3MTxQ/nE6+lyacEOguqPYJ+iHTEgasEATkWYduc1jY9SJhwUOIEZl
+X-Received: by 10.50.142.97 with SMTP id rv1mr11102348igb.74.1462549044226;
+ Fri, 06 May 2016 08:37:24 -0700 (PDT)
+Received: by 10.50.23.74 with HTTP; Fri, 6 May 2016 08:37:24 -0700 (PDT)
+In-Reply-To: <05E01258E71AC046852ED29DFCD139D54DF0CAD9@dncdag1.dnc.org>
+References: <05E01258E71AC046852ED29DFCD139D54DF0CA86@dncdag1.dnc.org>
+	<CACeVvy-czf7F_VEcGoejrTh6j9i8T8G6MxrcFn_VbvCh8BbsHQ@mail.gmail.com>
+	<05E01258E71AC046852ED29DFCD139D54DF0CAD9@dncdag1.dnc.org>
+Date: Fri, 6 May 2016 11:37:24 -0400
+Message-ID: <CACeVvy--MX5ZSTG1H8E7aO4f=vkJqoaQHtT17KKj9TaLtAC8ew@mail.gmail.com>
+Subject: Re: FOR DEEP BACKGROUND
+From: "Meckler, Laura" <laura.meckler@wsj.com>
+To: "Miranda, Luis" <MirandaL@dnc.org>
+Content-Type: multipart/related; boundary="001a1130c4443fe1cc05322e3c60"
+Return-Path: laura.meckler@wsj.com
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--001a1130c4443fe1cc05322e3c60
+Content-Type: multipart/alternative; boundary="001a1130c4443fe1c905322e3c5f"
+
+--001a1130c4443fe1c905322e3c5f
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+these are some huge committees
+so just otr, the sanders camp is talkigna bout the chair's appointments
+only? but there are a ton of other people who will be chosen by the
+delegates in the states, right? what am i missing?
+
+Laura Meckler
+The Wall Street Journal
+202-862-9212 (desk)
+202-446-4530 (cell)
+@laurameckler
+
+On Fri, May 6, 2016 at 11:33 AM, Miranda, Luis <MirandaL@dnc.org> wrote:
+
+> According to the bullet on the 3 standing committees --- each committee,
+> including Rules =E2=80=93 has 25 members appointed by the Chair, and 162 =
+elected
+> through the delegate selection process:
+>
+>
+>
+> =C2=B7         Below you=E2=80=99ll see our release on the Chair=E2=80=99=
+s appointments to the
+> Platform committee  (and other committees). In addition to the Chair=E2=
+=80=99s
+> appointments (25 for each committee for a total of 75 plus the leadership=
+)
+> there are 162 members of each committee who are elected in every state an=
+d
+> territory according to the results of the primaries and caucuses. Those
+> elections are ongoing and must conclude by June 25th.
+>
+>
+>
+>
+>
+> [image: SigDems] <http://www.democrats.org/>*Luis Miranda, *Communication=
+s
+> Director
+>
+> *Democratic National Committee*
+>
+> 202-863-8148 =E2=80=93 MirandaL@dnc.org - @MiraLuisDC
+> <https://www.twitter.com/MiraLuisDC>
+>
+>
+>
+>
+>
+> *From:* Meckler, Laura [mailto:laura.meckler@wsj.com]
+> *Sent:* Friday, May 06, 2016 11:30 AM
+> *To:* Miranda, Luis
+> *Subject:* Re: FOR DEEP BACKGROUND
+>
+>
+>
+> helpful. how are the rules committee members picked?
+>
+>
+> Laura Meckler
+>
+> The Wall Street Journal
+>
+> 202-862-9212 (desk)
+>
+> 202-446-4530 (cell)
+>
+> @laurameckler
+>
+>
+>
+> On Fri, May 6, 2016 at 11:28 AM, Miranda, Luis <MirandaL@dnc.org> wrote:
+>
+> Hi Laura, here you go.
+>
+>
+>
+> How does the Democratic party platform writing process work? When do the
+> drafting committees start getting appointed and meeting?
+>
+> =C2=B7         The Platform Drafting Committee is a subcommittee of the
+> Convention=E2=80=99s Platform committee. It is made up of 15 people, appo=
+inted by
+> the DNC Chair in consultation with the Co-Chairs of the Platform Committe=
+e.
+> We don=E2=80=99t have any announcement to make on timing as of yet, howev=
+er,
+> they=E2=80=99ll be appointed sometime in the coming weeks.
+>
+> =C2=B7         Because the Party=E2=80=99s platform is a statement of our=
+ values, the
+> DNC is committed to an open, inclusive and representative process. Both o=
+f
+> our campaigns will be represented on the Drafting Committee, and just as =
+we
+> did in 2008 and 2012, the public will have opportunities to participate.
+>
+>
+>
+> Also, can you send me a list of who is on the party platform committee?
+>
+> =C2=B7         Below you=E2=80=99ll see our release on the Chair=E2=80=99=
+s appointments to the
+> Platform committee  (and other committees). In addition to the Chair=E2=
+=80=99s
+> appointments (25 for each committee for a total of 75 plus the leadership=
+)
+> there are 162 members of each committee who are elected in every state an=
+d
+> territory according to the results of the primaries and caucuses. Those
+> elections are ongoing and must conclude by June 25th.
+>
+>
+>
+> *For Immediate Release*
+>
+> January 22, 2016
+>
+> *Contact: DNC Press =E2=80=93 *202-863-8148
+>
+> *DNC Holds Executive Committee Conference Call *
+>
+> *WASHINGTON* =E2=80=93 Due to today=E2=80=99s inclement weather throughou=
+t the country,
+> the Democratic National Committee=E2=80=99s (DNC) Executive Committee hel=
+d their
+> Executive Committee meeting via conference call today, hearing from speci=
+al
+> guests such as Pennsylvania Senator Bob Casey, Pennsylvania Democratic
+> Party Chair Marcel Groen, and Democratic National Convention Committee CE=
+O
+> Leah Daughtry on preparations for the Democratic Convention to be held in
+> the City of Brotherly and Sisterly Love in July. The previously-scheduled
+> in-person meeting in Philadelphia, including a tour of the convention
+> sites, was cancelled due to expected inclement weather.
+>
+> Democratic National Committee Chair Rep. Debbie Wasserman Schultz also
+> delivered remarks during today=E2=80=99s call. In addition, the DNC Execu=
+tive
+> Committee voted to ratify the Chair=E2=80=99s 2016 Party Leader and Elect=
+ed
+> Official Member appointments to the Convention Standing Committees:
+> Credentials, Platform, and Rules. The slate of the Chair=E2=80=99s appoin=
+tments is
+> attached in PDF format.
+>
+> DNC rules provide for the Chair to appoint 75 Party Leader and Elected
+> Official Members to the three Convention Standing Committees.  These Part=
+y
+> Leader Members serve in addition to and together with the over 160 member=
+s
+> that are elected in each and every state to those same committees.
+>
+> =E2=80=9CI am extremely proud of the experienced group of individuals who=
+ are
+> ready and dedicated to serving our Party on the Convention Committees,=E2=
+=80=9D
+> said DNC Chair Rep. Debbie Wasserman Schultz. =E2=80=9CThis slate represe=
+nts the
+> great variety of perspectives, backgrounds, and experiences that make up
+> our Party. We wanted to make sure that the diversity of our party was
+> reflected to the highest levels in terms of race, gender, age, and geogra=
+phy
+> and feel confident that these individuals will do a tremendous job in thi=
+s
+> capacity.=E2=80=9D
+>
+> The bulk of the Standing Committee members will be elected from the state=
+s
+> and territories during the delegate selection process.
+>
+> The Chair also appointed Committee Co-Chairs as follows:
+>
+> =C2=B7         Credentials Committee: Lorraine Miller and Jim Roosevelt
+>
+> =C2=B7         Rules Committee: Former State Senator Leticia Van de Putte=
+ and
+> former U.S. Congressman Barney Frank
+>
+> =C2=B7         Platform Committee: Governor Dan Malloy and former Atlanta
+> Mayor Shirley Franklin
+>
+> ###
+>
+>
+>
+
+--001a1130c4443fe1c905322e3c5f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr">these are some huge committees<div>so just otr, the sanders =
+camp is talkigna bout the chair's appointments only? but there are a ton of=
+ other people who will be chosen by the delegates in the states, right? wha=
+t am i missing?</div></div><div class=3D"gmail_extra"><br clear=3D"all"><di=
+v><div class=3D"gmail_signature"><div dir=3D"ltr">Laura Meckler<div>The Wal=
+l Street Journal</div><div>202-862-9212 (desk)</div><div>202-446-4530 (cell=
+)</div><div>@laurameckler</div></div></div></div>
+<br><div class=3D"gmail_quote">On Fri, May 6, 2016 at 11:33 AM, Miranda, Lu=
+is <span dir=3D"ltr">&lt;<a href=3D"mailto:MirandaL@dnc.org" target=3D"_bla=
+nk">MirandaL@dnc.org</a>&gt;</span> wrote:<br><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex=
+">
+
+
+
+
+
+<div lang=3D"EN-US" link=3D"blue" vlink=3D"purple">
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d">According to the bullet o=
+n the 3 standing committees --- each committee, including Rules =E2=80=93 h=
+as 25 members appointed by the Chair, and 162 elected through the
+ delegate selection process:<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p style=3D"margin-left:.5in"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Below you=E2=80=99ll see our release on the Chair=E2=80=99s appointm=
+ents to the Platform committee&nbsp; (and other committees). In addition to=
+ the Chair=E2=80=99s appointments (25 for each committee for a total of 75 =
+plus the leadership) there are 162 members of each committee
+ who are elected in every state and territory according to the results of t=
+he primaries and caucuses. Those elections are ongoing and must conclude by=
+ June 25<sup>th</sup>.
+<u></u><u></u></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><u></u><a href=3D"http://www.democrats.org/" target=
+=3D"_blank"><img border=3D"0" width=3D"77" height=3D"71" src=3D"cid:image00=
+1.png@01D1A78B.26694160" align=3D"left" hspace=3D"12" alt=3D"SigDems" title=
+=3D""></a><u></u><b><span style=3D"font-family:&quot;Calibri&quot;,&quot;sa=
+ns-serif&quot;;color:#1f497d">Luis
+ Miranda, </span></b><span style=3D"font-size:11.0pt;font-family:&quot;Cali=
+bri&quot;,&quot;sans-serif&quot;;color:#1f497d">Communications Director<u><=
+/u><u></u></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Calibri&quot;,&quot;sans-serif&quot;;color:#1f497d">Democratic National Co=
+mmittee<u></u><u></u></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><a href=3D"tel:202-863-81=
+48" value=3D"&#43;12028638148" target=3D"_blank">202-863-8148</a> =E2=80=93
+<a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a> =
+- <a href=3D"https://www.twitter.com/MiraLuisDC" target=3D"_blank">
+@MiraLuisDC</a><u></u><u></u></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;font-family:&quot;Ca=
+libri&quot;,&quot;sans-serif&quot;;color:#1f497d"><u></u>&nbsp;<u></u></spa=
+n></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Meckler,=
+ Laura [mailto:<a href=3D"mailto:laura.meckler@wsj.com" target=3D"_blank">l=
+aura.meckler@wsj.com</a>]
+<br>
+<b>Sent:</b> Friday, May 06, 2016 11:30 AM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> Re: FOR DEEP BACKGROUND<u></u><u></u></span></p>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">helpful. how are the rules committee members picked?=
+<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><br clear=3D"all">
+<u></u><u></u></p>
+<div>
+<div>
+<div>
+<p class=3D"MsoNormal">Laura Meckler<u></u><u></u></p>
+<div>
+<p class=3D"MsoNormal">The Wall Street Journal<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"tel:202-862-9212" value=3D"&#43;120286292=
+12" target=3D"_blank">202-862-9212</a> (desk)<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal"><a href=3D"tel:202-446-4530" value=3D"&#43;120244645=
+30" target=3D"_blank">202-446-4530</a> (cell)<u></u><u></u></p>
+</div>
+<div>
+<p class=3D"MsoNormal">@laurameckler<u></u><u></u></p>
+</div>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+<div>
+<p class=3D"MsoNormal">On Fri, May 6, 2016 at 11:28 AM, Miranda, Luis &lt;<=
+a href=3D"mailto:MirandaL@dnc.org" target=3D"_blank">MirandaL@dnc.org</a>&g=
+t; wrote:<u></u><u></u></p>
+<div>
+<div>
+<p><span style=3D"color:black">Hi Laura, here you go.</span><u></u><u></u><=
+/p>
+<p>&nbsp;<u></u><u></u></p>
+<p>How does the Democratic party platform writing process work? When do the=
+ drafting committees start getting appointed and meeting?
+<u></u><u></u></p>
+<p style=3D"margin-left:.5in"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>The Platform Drafting Committee is a subcommittee of the Convention=
+=E2=80=99s Platform committee. It is made up of 15 people, appointed by the=
+ DNC Chair in consultation with the Co-Chairs of the Platform Committee. We=
+ don=E2=80=99t have any announcement to make on timing
+ as of yet, however, they=E2=80=99ll be appointed sometime in the coming we=
+eks.<u></u><u></u></p>
+<p style=3D"margin-left:.5in"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Because the Party=E2=80=99s platform is a statement of our values, t=
+he DNC is committed to an open, inclusive and representative process. Both =
+of our campaigns will be represented on the Drafting Committee, and just as=
+ we did in 2008 and 2012, the public will
+ have opportunities to participate. <u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p>Also, can you send me a list of who is on the party platform committee?<=
+u></u><u></u></p>
+<p style=3D"margin-left:.5in"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Below you=E2=80=99ll see our release on the Chair=E2=80=99s appointm=
+ents to the Platform committee&nbsp; (and other committees). In addition to=
+ the Chair=E2=80=99s appointments (25 for each committee for a total of 75 =
+plus the leadership) there are 162 members of each committee
+ who are elected in every state and territory according to the results of t=
+he primaries and caucuses. Those elections are ongoing and must conclude by=
+ June 25<sup>th</sup>.
+<u></u><u></u></p>
+<p>&nbsp;<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<b>For Immediate Release</b><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white;text-align:start;word-spac=
+ing:0px">
+January 22, 2016<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<b><span style=3D"color:#222222">Contact: DNC Press =E2=80=93&nbsp;</span><=
+/b><span style=3D"color:#222222"><a href=3D"tel:202-863-8148" target=3D"_bl=
+ank"><span style=3D"color:#1155cc">202-863-8148</span></a><b>&nbsp;</b></sp=
+an><u></u><u></u></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center;backgrou=
+nd:white">
+<b><span style=3D"color:black">DNC&nbsp;Holds Executive Committee Conferenc=
+e Call </span>
+</b><u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+<b><span style=3D"color:black">WASHINGTON</span></b><span style=3D"color:bl=
+ack"> =E2=80=93 </span>
+Due to today=E2=80=99s inclement weather throughout the country, the Democr=
+atic National&nbsp;Committee=E2=80=99s (DNC)&nbsp;Executive&nbsp;Committee&=
+nbsp;held their Executive Committee meeting via conference call today, hear=
+ing from special guests such as Pennsylvania Senator Bob Casey, Pennsylvani=
+a
+ Democratic Party Chair Marcel Groen, and Democratic National Convention Co=
+mmittee CEO Leah Daughtry on preparations for the Democratic Convention to =
+be held in the City of Brotherly and Sisterly Love in July. The previously-=
+scheduled in-person meeting in Philadelphia,
+ including a tour of the convention sites, was cancelled due to expected in=
+clement weather.
+<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+Democratic National&nbsp;Committee Chair Rep. Debbie Wasserman Schultz also=
+ delivered remarks during today=E2=80=99s call. In addition, the DNC Execut=
+ive Committee voted to ratify the Chair=E2=80=99s 2016 Party Leader and Ele=
+cted Official Member appointments to the Convention Standing
+ Committees: Credentials, Platform, and Rules. The slate of the Chair=E2=80=
+=99s appointments is attached in PDF format.
+<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+DNC rules provide for the Chair to appoint 75 Party Leader and Elected Offi=
+cial Members to the three Convention Standing Committees.&nbsp; These Party=
+ Leader Members serve in addition to and together with the over 160 members=
+ that are elected in each and every state
+ to those same committees.&nbsp;&nbsp;&nbsp; <u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+=E2=80=9CI am extremely proud of the experienced group of individuals who a=
+re ready and dedicated to serving our Party on the Convention Committees,=
+=E2=80=9D said DNC Chair Rep. Debbie Wasserman Schultz. =E2=80=9CThis<b>
+</b>slate represents the great variety of perspectives, backgrounds, and ex=
+periences that make up our Party. We wanted to make sure that the diversity=
+ of our party was reflected to the highest levels in terms of race, gender,=
+ age, and<b>
+</b>geography and&nbsp;feel confident that these individuals will do a trem=
+endous job in this capacity.=E2=80=9D&nbsp;
+<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+The bulk of the Standing Committee members will be elected from the states =
+and territories during the delegate selection process.
+<u></u><u></u></p>
+<p class=3D"MsoNormal" style=3D"background:white">
+The Chair also appointed Committee Co-Chairs as follows:<u></u><u></u></p>
+<p style=3D"background:white"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Credentials Committee: Lorraine Miller and Jim Roosevelt <u></u><u><=
+/u></p>
+<p style=3D"background:white"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Rules Committee: Former State Senator Leticia Van de Putte and forme=
+r U.S. Congressman Barney Frank
+<u></u><u></u></p>
+<p style=3D"background:white"><span style=3D"font-family:Symbol">=C2=B7</sp=
+an><span style=3D"font-size:7.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;
+</span>Platform Committee: Governor Dan Malloy and former Atlanta Mayor Shi=
+rley Franklin
+<u></u><u></u></p>
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center;backgrou=
+nd:white">
+###<u></u><u></u></p>
+</div>
+</div>
+</div>
+<p class=3D"MsoNormal"><u></u>&nbsp;<u></u></p>
+</div>
+</div>
+</div>
+
+</blockquote></div><br></div>
+
+--001a1130c4443fe1c905322e3c5f--
+
+--001a1130c4443fe1cc05322e3c60
+Content-Type: image/png; name="image001.png"
+Content-Disposition: inline; filename="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01D1A78B.26694160>
+X-Attachment-Id: 62ba9eb36c8751d9_0.1
+X-WatchGuard-AntiVirus: scanned 'image001.png'. clean action=allow
+Content-Description: image001.png
+
+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
+P0XY1e5PcHqOAAAAAElFTkSuQmCC
+
+--001a1130c4443fe1cc05322e3c60--

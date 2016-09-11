@@ -1,0 +1,562 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Wed, 18 May
+ 2016 15:23:29 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Wed, 18 May 2016
+ 15:23:24 -0400
+Received: from [10.87.0.110] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 922571360
+ for allenz@dnc.org; Wed, 18 May 2016 14:23:34 -0500
+X-Note-AR-ScanTimeLocal: 5/18/2016 2:23:25 PM
+X-Policy: dnc.org
+X-Note-AR-Scan: None - PIPE
+Received: by inbound.appriver.com (CommuniGate Pro PIPE 6.1.7)  with PIPE id
+ 142591588; Wed, 18 May 2016 14:23:25 -0500
+Received: from [74.125.82.43] (HELO mail-wm0-f43.google.com)  by
+ inbound.appriver.com (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 142591556
+ for allenz@dnc.org; Wed, 18 May 2016 14:23:22 -0500
+Received: by mail-wm0-f43.google.com with SMTP id n129so199687133wmn.1
+        for <allenz@dnc.org>; Wed, 18 May 2016 12:23:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20130820;
+        h=x-original-authentication-results:x-gm-message-state:delivered-to
+         :content-transfer-encoding:errors-to:reply-to:mime-version
+         :message-id:subject:date:to:from;
+        bh=bhrraGeCW+KvIWmIkJzT0mGWxxlP8zjp0xI0LneZ6eI=;
+        b=az3ZpPGkScxTZKGEuoU++CkFmUxUxRdnYyGjoAL9eT+tPaIauMmKIMbvibV4hb6qx9
+         1YxnZ7094DEvy0pQRX7fp345R6iDkJlXcawWHUIgQ3Ht3Q9VpJbQV7XQuTDW2BVRjzRH
+         S2AxMWRvwJVcStPIIvzE4AMWoXK+X5o/VDicfd+hJ77LagrB6PrRWHxOcAo4y2jvvrpb
+         giR2Kk9JTWrPlG8BPV9vCD9zwF0HhtUKuMOJUH5Wsspz/koelSfHc3PGWkfc9t/uILSn
+         u3ns0kvskdzAygltrAoeIy3sfPxYFC/7roaanxO58m+qDi97RgOPZPCnLLGrjZodO1DN
+         OpqQ==
+X-Original-Authentication-Results: mx.google.com;       spf=pass (google.com: domain of messages@service.govdelivery.com designates 209.134.151.59 as permitted sender) smtp.mailfrom=messages@service.govdelivery.com
+X-Gm-Message-State: AOPr4FXbBOUKDRN6/T8qP5l+SLRG49V4HRkSWdmDjm39lpodE8yyVC1ObARaiVKAI0XPEz75mTEG4O1k7PtHGybJiqNRUs4=
+X-Received: by 10.194.23.33 with SMTP id j1mr9936334wjf.160.1463599400621;
+        Wed, 18 May 2016 12:23:20 -0700 (PDT)
+X-Forwarded-To: taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+X-Forwarded-For: dncpress@gmail.com taylorp@dnc.org, helmstettert@dnc.org, garciaw@dnc.org, pricej@dnc.org, woodhouse@americansunitedforchange.org, brinsterj@dnc.org, rauscherr@dnc.org, khana@dnc.org, lindsay@skyadvisorygroup.com, palermor@dnc.org, burkem@dnc.org, trierweilers@dnc.org, comptonm@dnc.org, dominoc@dnc.org, dietera@dnc.org, houghtonk@dnc.org, allenz@dnc.org, coxc@dnc.org
+Delivered-To: dncpress@gmail.com
+Received: by 10.28.170.19 with SMTP id t19csp2787319wme;        Wed, 18 May
+ 2016 12:23:19 -0700 (PDT)
+X-Received: by 10.107.191.7 with SMTP id p7mr7616100iof.115.1463599399291;
+        Wed, 18 May 2016 12:23:19 -0700 (PDT)
+Return-Path: <messages@service.govdelivery.com>
+Received: from mailer151059.service.govdelivery.com
+ (mailer151059.service.govdelivery.com. [209.134.151.59])        by
+ mx.google.com with ESMTP id oo10si20856317igb.47.2016.05.18.12.23.18
+        for <dncpress@gmail.com>;        Wed, 18 May 2016 12:23:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of messages@service.govdelivery.com designates 209.134.151.59 as permitted sender) client-ip=209.134.151.59;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of messages@service.govdelivery.com designates 209.134.151.59 as permitted sender) smtp.mailfrom=messages@service.govdelivery.com
+X-VirtualServer: VSG003, mailer151059.service.govdelivery.com, 172.24.0.187
+X-VirtualServerGroup: VSG003
+X-MailingID: 17305979::20160518.59183191::1001::MDB-PRD-BUL-20160518.59183191::dncpress@gmail.com::3517_0
+X-SMHeaderMap: mid="X-MailingID"
+X-Destination-ID: dncpress@gmail.com
+X-SMFBL: ZG5jcHJlc3NAZ21haWwuY29t
+Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_AB2_C158_3CC20901.20BC5497"
+x-subscriber: 3.Lsxlet/sqzYgrc9bZ6w2AYKfrBIZIKzAAzfqC6/aNtmqxXMGfL8ginFtQJfXg3Ktb5yFaXrzC/57Sax/joB1N2f56EvFchIeMPY74AoOc0s4VqYwRbWcVqteH665FOPRcfIzUmV8VAtXVoQuK92Csw==
+X-Accountcode: USEOPWHPO
+Errors-To: messages@service.govdelivery.com
+Reply-To: <noreply@messages.whitehouse.gov>
+Message-ID: <17305979.3517@messages.whitehouse.gov>
+X-ReportingKey: LJJJ2EWJK411DVJJ9ELJJ::dncpress@gmail.com::dncpress@gmail.com
+Subject: =?US-ASCII?Q?Notice_and_Message_--_Continuation_of_the_National_?= =?US-ASCII?Q?Emergency_With_Respect_to_the_Stabilization_of_Iraq?=
+Date: Wed, 18 May 2016 14:23:18 -0500
+To: <dncpress@gmail.com>
+From: =?US-ASCII?Q?White_House_Press_Office?=
+	<noreply@messages.whitehouse.gov>
+X-Note-AR-ScanTimeLocal: 5/18/2016 2:23:22 PM
+X-Policy: dnc.org
+X-Primary: allenz@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-ALLOW: ALLOWED SENDER FOUND
+X-ALLOW: ADMIN: noreply@messages.whitehouse.gov ALLOWED
+X-Note: VCH-CT/SI:0-7850/SG:2 5/18/2016 2:22:33 PM
+X-Virus-Scan: V-X0H0M0
+X-Note: Spam Tests Failed: 
+X-Country-Path: United States->->->United States->
+X-Note-Sending-IP: 74.125.82.43
+X-Note-Reverse-DNS: mail-wm0-f43.google.com
+X-Note-Return-Path: dncpress+caf_=allenz=dnc.org@gmail.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G276 G277 G278 G279 G283 G284 G295 G407 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: ALLOWEDSENDER
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+------=_NextPart_AB2_C158_3CC20901.20BC5497
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_AB3_A224_6AE0038E.69584DAC"
+Content-Transfer-Encoding: 7bit
+
+------=_NextPart_AB3_A224_6AE0038E.69584DAC
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+THE WHITE HOUSE
+
+Office of the Press Secretary
+
+FOR IMMEDIATE RELEASE
+
+May 18, 2016
+
+
+
+Attached for release and signed by the President today is the text of a m=
+essage to the Congress and the text of a notice on the Continuation of th=
+e National Emergency with Respect to the Stabilization of Iraq.
+
+
+
+###
+=0A
+------=_NextPart_AB3_A224_6AE0038E.69584DAC
+Content-Type: text/html; charset="ISO-8859-1"
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"=
+http://www.w3.org/1999/xhtml" xml:lang=3D"en" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1"><title>    Notice and Message -- Continuation of the National Emergency =
+With Respect to the Stabilization of Iraq
+</title>
+   =20
+
+</head>
+<body>
+
+
+
+ =20
+
+
+
+ =20
+  <html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-mi=
+crosoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word=
+" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"htt=
+p://www.w3.org/TR/REC-html40">
+<head>
+
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Book Antiqua";
+	panose-1:2 4 6 2 5 3 5 3 3 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-priority:99;
+	mso-style-link:"Plain Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-priority:99;
+	mso-style-link:"Plain Text";
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle19
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"EN-US" link=3D"#0563C1" vlink=3D"#954F72">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">THE WH=
+ITE HOUSE<o:p></o:p></span></p>
+<div style=3D"border:none;border-bottom:solid windowtext 1.0pt;padding:0in =
+0in 1.0pt 0in">
+<p class=3D"MsoNormal" align=3D"center" style=3D"text-align:center"><span s=
+tyle=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif">Office=
+ of the Press Secretary<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif">FOR IMMEDIATE RELEASE<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Bo=
+ok Antiqua&quot;,serif">May 18, 2016<o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif">Attached for release and signed by the President=
+ today is the text of a message to the Congress and the text of a notice on=
+ the Continuation of the National Emergency with
+ Respect to the Stabilization of Iraq.<o:p></o:p></span></p>
+<p class=3D"MsoPlainText"><span style=3D"font-size:12.0pt;font-family:&quot=
+;Book Antiqua&quot;,serif;color:black"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoPlainText" align=3D"center" style=3D"text-align:center"><spa=
+n style=3D"font-size:12.0pt;font-family:&quot;Book Antiqua&quot;,serif;colo=
+r:black">###<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+ =20
+
+
+<div id=3D"mail_footer">
+    <p>-----</p>
+<p style=3D"text-align: left;"><a href=3D"http://messages.whitehouse.gov/ac=
+counts/USEOPWHPO/subscriber/new?preferences=3Dtrue">Unsubscribe</a></p>
+
+</div>
+<div id=3D"tagline">
+    <p class=3D"physicaladdress" style=3D"color: #757575; font-size: 10px; =
+font-family: Arial;">The White House =B7 1600 Pennsylvania Avenue, NW =B7 W=
+ashington DC 20500 =B7 202-456-1111</p>
+
+</div>
+
+</body>
+</html>
+=0A=
+
+------=_NextPart_AB3_A224_6AE0038E.69584DAC--
+
+------=_NextPart_AB2_C158_3CC20901.20BC5497
+Content-Type: application/octet-stream; name="2016iraq.not.rel.pdf"
+Content-Disposition: attachment; filename="2016iraq.not.rel.pdf"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned '2016iraq.not.rel.pdf'. clean action=allow
+Content-Description: 2016iraq.not.rel.pdf
+
+JVBERi0xLjUNJeLjz9MNCjQ2IDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDgxODYvTyA0OC9FIDMx
+NDQvTiAxL1QgNzg4MS9IIFsgNDU0IDE0Nl0+Pg1lbmRvYmoNICAgICAgICAgICAgICAgICAgICAg
+DQo1MiAwIG9iag08PC9EZWNvZGVQYXJtczw8L0NvbHVtbnMgNC9QcmVkaWN0b3IgMTI+Pi9GaWx0
+ZXIvRmxhdGVEZWNvZGUvSURbPDI1ODY4RDVCRDg3QzM2NDhBRURFMThDRkM0MUYyQUY4PjxBOERF
+NzM5RUU2RTE2RTQ0QkFGNEU4MEVEOTQ2MzA1Rj5dL0luZGV4WzQ2IDEzXS9JbmZvIDQ1IDAgUi9M
+ZW5ndGggNTIvUHJldiA3ODgyL1Jvb3QgNDcgMCBSL1NpemUgNTkvVHlwZS9YUmVmL1dbMSAyIDFd
+Pj5zdHJlYW0NCmjeYmJkEGBgYmDyABIMU4AE40MQdy+QYJsDJL76MTAxMoC4DAyM6MR/xql/AAIM
+ANp+B+MNCmVuZHN0cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQowDQolJUVPRg0KICAgICAgICANCjU4
+IDAgb2JqDTw8L0MgNjkvRmlsdGVyL0ZsYXRlRGVjb2RlL0kgOTEvTGVuZ3RoIDYyL1MgMzg+PnN0
+cmVhbQ0KaN5iYGBgYWBgimIAAs4YBlTAyACS5WhAFmOBYgaGhwzcDMxFsS0CUKU8HhCaaR+yYtlL
+UIN+AAQYAABIBq8NCmVuZHN0cmVhbQ1lbmRvYmoNNDcgMCBvYmoNPDwvTGFuZyj+/wBFAE4ALQBV
+AFMpL01hcmtJbmZvPDwvTWFya2VkIHRydWU+Pi9NZXRhZGF0YSAyIDAgUi9QYWdlTGF5b3V0L09u
+ZUNvbHVtbi9QYWdlcyA0NCAwIFIvU3RydWN0VHJlZVJvb3QgNiAwIFIvVHlwZS9DYXRhbG9nPj4N
+ZW5kb2JqDTQ4IDAgb2JqDTw8L0NvbnRlbnRzIDUwIDAgUi9Dcm9wQm94WzAuMCAwLjAgNjEyLjAg
+MTAwOC4wXS9NZWRpYUJveFswLjAgMC4wIDYxMi4wIDEwMDguMF0vUGFyZW50IDQ0IDAgUi9SZXNv
+dXJjZXM8PC9Db2xvclNwYWNlPDwvQ1MwIDUzIDAgUj4+L0ZvbnQ8PC9UVDAgNTUgMCBSL1RUMSA1
+NyAwIFI+Pj4+L1JvdGF0ZSAwL1N0cnVjdFBhcmVudHMgMC9UYWJzL1MvVHlwZS9QYWdlPj4NZW5k
+b2JqDTQ5IDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCAzNC9MZW5ndGggMzUwL04g
+NS9UeXBlL09ialN0bT4+c3RyZWFtDQpo3uyUTUvDMBjHv8pz1MN4mrTJOhiDrVoc6BA7nDB2iF1o
+A30ZaYbu25tmZVPBw8SbPfwPeV7/eQ4/5oMHLAASAmNAfQ6MA/FHDNgQCKcE1jiPoplo5BYYscVP
+m/EYp00qKwPEowQjsbuTKsuNbSF4I4+pAQ89jAuRNeAHGNeVmc3q9/WAUOpywKnv+jcuGYtSFYer
+qN5rJTUs5Nu1iy9EKbGL2uBj8rB08cRoadIcF7UuReFCq6OJwPNwbkSh0mmVFRI8TIwsn20cl4ed
+dKWtSa12ptb40nkPqD+Z2J+1P21Lvi+9rdJ6q6oMV6qaVo06vWOlGxPlQttNX2e3d7X3wnvRFVDG
+MNm/mtbGUu+l83MyZSdvTd6suWeP06tXr/+ojcPQCbCWZj8Alg6DDrCj8BNg+dClILTj2vYL+To4
+svNizFqw/wFoz9t/xVve87ZXr16X8fZDgAEALV1ozQ0KZW5kc3RyZWFtDWVuZG9iag01MCAwIG9i
+ag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDEzNjU+PnN0cmVhbQ0KSImsV9tu4zYQffdX
+DNCXpHBkXXwFFgvYjtKo3dhprGDRbvpAS7TDVhJdisrG/foOKUuW5EsStMmDTWs4lzNnDsWJ3+qM
+hWQrEkj49KkzlpIEzzSEb50Jl5LH8EdnMuGv8G1gg2MZ5hAGI8M2TQt6ltEd2RYaLLKl3G4odG44
+l1RAx9ere7JmCZGMJ/D58+R6Cq3OdGFCkIIJkAZJq+P7Jljgr1qWDVcm/oyfKg5G6IIfty7g0v+z
+5d6prfcqvbupd41mO3fWyOjBwDGGA/DDE8ZWYWzClWVYDvjXJyztwvJK+1XW3b1fq4dx1cq/deHr
+ree7cDt/XLjq2XF/zt4ferN17NKbaQx3/uarFQso8BXIZwr3gqYpLGggqCRi2/Du+tUA3SLAxG8A
+OOwODDsH8D/+7RPYpeG3tH/HGPWh29dlGN2hBYK2VnmSk1qSvbJZ9Qxty+jnPb7hArw4piEjksID
+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
+B/5kX7qntsvrx4ZdOqi/76YyJmWwc+2v3O+mQ7q7f9mM7XBMhzz+PXDDt+Csfy3Vm9vuIY9H0mLx
+vxg+vxdrvjbd9sPF8tPt+iNfgcP72YJPh8uwkmfAD0arRLWS1EqvVga1MqqVlVqZ1Mpa3/l3mKR3
+yeltcnqfnN4op3fK6a1yeq+c3iyndwv1buE73pTeLdS7hXq3UO8W6t1CvVuodwv1bpHeLdK7RSq3
+fgswAJNqUTUNCmVuZHN0cmVhbQ1lbmRvYmoNMiAwIG9iag08PC9MZW5ndGggMzU2OS9TdWJ0eXBl
+L1hNTC9UeXBlL01ldGFkYXRhPj5zdHJlYW0NCjw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVN
+ME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0
+YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNC1jMDA1IDc4LjE0NzMyNiwgMjAxMi8wOC8y
+My0xMzowMzowMyAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3Lncz
+Lm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiBy
+ZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hh
+cC8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAv
+MS4wL21tLyIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50
+cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwZGY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEu
+My8iCiAgICAgICAgICAgIHhtbG5zOnBkZng9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmeC8xLjMv
+Ij4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTYtMDUtMTdUMTU6NDQ6NDQtMDQ6MDA8L3ht
+cDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wOkNyZWF0ZURhdGU+MjAxNi0wNS0xN1QxNTo0NDo0
+NC0wNDowMDwveG1wOkNyZWF0ZURhdGU+CiAgICAgICAgIDx4bXA6TWV0YWRhdGFEYXRlPjIwMTYt
+MDUtMTdUMTU6NDQ6NDQtMDQ6MDA8L3htcDpNZXRhZGF0YURhdGU+CiAgICAgICAgIDx4bXA6Q3Jl
+YXRvclRvb2w+QWNyb2JhdCBQREZNYWtlciAxMSBmb3IgV29yZDwveG1wOkNyZWF0b3JUb29sPgog
+ICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD51dWlkOjlkODJjZmUwLTc1NzgtNDVjYS1hY2FjLTVj
+M2E5OTY1ODg4ODwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkluc3RhbmNlSUQ+
+dXVpZDplYTAxOGFjMi01MTdmLTRkMjMtYTI5Ni1kMjExNGZjMTkwMGY8L3htcE1NOkluc3RhbmNl
+SUQ+CiAgICAgICAgIDx4bXBNTTpzdWJqZWN0PgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAg
+ICAgICAgICAgPHJkZjpsaT4xPC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAg
+ICAgPC94bXBNTTpzdWJqZWN0PgogICAgICAgICA8ZGM6Zm9ybWF0PmFwcGxpY2F0aW9uL3BkZjwv
+ZGM6Zm9ybWF0PgogICAgICAgICA8ZGM6Y3JlYXRvcj4KICAgICAgICAgICAgPHJkZjpTZXE+CiAg
+ICAgICAgICAgICAgIDxyZGY6bGkvPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwv
+ZGM6Y3JlYXRvcj4KICAgICAgICAgPHBkZjpQcm9kdWNlcj5BZG9iZSBQREYgTGlicmFyeSAxMS4w
+PC9wZGY6UHJvZHVjZXI+CiAgICAgICAgIDxwZGZ4OlNvdXJjZU1vZGlmaWVkPkQ6MjAxNjA1MTcx
+OTQ0Mzc8L3BkZng6U291cmNlTW9kaWZpZWQ+CiAgICAgICAgIDxwZGZ4OkNvbXBhbnkvPgogICAg
+ICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5k
+PSJ3Ij8+DQplbmRzdHJlYW0NZW5kb2JqDTMgMCBvYmoNPDwvRmlsdGVyL0ZsYXRlRGVjb2RlL0Zp
+cnN0IDUvTGVuZ3RoIDUwL04gMS9UeXBlL09ialN0bT4+c3RyZWFtDQpo3jIxUTBQsLHRd84vzStR
+MNT3zkwpjjaxAAoGxeqHVBak6gckpqcW29kBBBgA6F0L5g0KZW5kc3RyZWFtDWVuZG9iag00IDAg
+b2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCA1L0xlbmd0aCAxNTUvTiAxL1R5cGUvT2Jq
+U3RtPj5zdHJlYW0NCmjefMwxC8IwEAXgv5KtzaC5aGpRSqFYnCwUHJzT5opB7MmRDP33puDg5Jve
+8N5nCgGiqlQTw4M4l+pMr7edl7Ux2uBpbm3AvD3tQB+g0KUuTMoGTAaQfVfp2YxMgw2iby+dfSIL
+rcVELO7ETqqO3H+mZ3JxxOQ4GnBVxNUPbHlJ0BakulHkEZPjJ4/uFzoasy9lXX8EGABMVDnmDQpl
+bmRzdHJlYW0NZW5kb2JqDTUgMCBvYmoNPDwvRGVjb2RlUGFybXM8PC9Db2x1bW5zIDQvUHJlZGlj
+dG9yIDEyPj4vRmlsdGVyL0ZsYXRlRGVjb2RlL0lEWzwyNTg2OEQ1QkQ4N0MzNjQ4QUVERTE4Q0ZD
+NDFGMkFGOD48QThERTczOUVFNkUxNkU0NEJBRjRFODBFRDk0NjMwNUY+XS9JbmZvIDQ1IDAgUi9M
+ZW5ndGggNTAvUm9vdCA0NyAwIFIvU2l6ZSA0Ni9UeXBlL1hSZWYvV1sxIDIgMV0+PnN0cmVhbQ0K
+aN5iYgACJkYeDwYmBuZ9QILPDkgw9AEJxh9AiUfmIC4D4xAlmG4DCUYGgAADAHypBWMNCmVuZHN0
+cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQoxMTYNCiUlRU9GDQo=
+
+------=_NextPart_AB2_C158_3CC20901.20BC5497
+Content-Type: application/octet-stream; name="2016iraq.msg.rel.pdf"
+Content-Disposition: attachment; filename="2016iraq.msg.rel.pdf"
+Content-Transfer-Encoding: base64
+X-WatchGuard-AntiVirus: scanned '2016iraq.msg.rel.pdf'. clean action=allow
+Content-Description: 2016iraq.msg.rel.pdf
+
+JVBERi0xLjUNJeLjz9MNCjQwIDAgb2JqDTw8L0xpbmVhcml6ZWQgMS9MIDc5MDEvTyA0Mi9FIDI5
+MTYvTiAxL1QgNzU5Ni9IIFsgNDU0IDE0NV0+Pg1lbmRvYmoNICAgICAgICAgICAgICAgICAgICAg
+DQo0NiAwIG9iag08PC9EZWNvZGVQYXJtczw8L0NvbHVtbnMgNC9QcmVkaWN0b3IgMTI+Pi9GaWx0
+ZXIvRmxhdGVEZWNvZGUvSURbPDEwMEE3RDdBRUNERUI1NDJBQ0VEMTNBODIwNjRBMEQxPjwxRjlF
+NzQyMTA4RjdDRjRFOEQ0M0JENTU0ODk1RDcxQz5dL0luZGV4WzQwIDEzXS9JbmZvIDM5IDAgUi9M
+ZW5ndGggNTIvUHJldiA3NTk3L1Jvb3QgNDEgMCBSL1NpemUgNTMvVHlwZS9YUmVmL1dbMSAyIDFd
+Pj5zdHJlYW0NCmjeYmJkEGBgYmByBxIMU4AE430Q9yCQYN0OJL4ZMTAxMoBYDAyM6MR/xtl/AAIM
+ANpbB+MNCmVuZHN0cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQowDQolJUVPRg0KICAgICAgICANCjUy
+IDAgb2JqDTw8L0MgNjgvRmlsdGVyL0ZsYXRlRGVjb2RlL0kgOTAvTGVuZ3RoIDYxL1MgMzg+PnN0
+cmVhbQ0KaN5iYGBgYWBgimIAAo5KBlTAyACS5WhAFmOBYgaG+wxcDHz6Cc5QldwpEJqpAVmtzAao
+OX8BAgwA7WUGAQ0KZW5kc3RyZWFtDWVuZG9iag00MSAwIG9iag08PC9MYW5nKP7/AEUATgAtAFUA
+UykvTWFya0luZm88PC9NYXJrZWQgdHJ1ZT4+L01ldGFkYXRhIDIgMCBSL1BhZ2VMYXlvdXQvT25l
+Q29sdW1uL1BhZ2VzIDM4IDAgUi9TdHJ1Y3RUcmVlUm9vdCA2IDAgUi9UeXBlL0NhdGFsb2c+Pg1l
+bmRvYmoNNDIgMCBvYmoNPDwvQ29udGVudHMgNDQgMCBSL0Nyb3BCb3hbMC4wIDAuMCA2MTIuMCA3
+OTIuMF0vTWVkaWFCb3hbMC4wIDAuMCA2MTIuMCA3OTIuMF0vUGFyZW50IDM4IDAgUi9SZXNvdXJj
+ZXM8PC9Db2xvclNwYWNlPDwvQ1MwIDQ3IDAgUj4+L0ZvbnQ8PC9UVDAgNDkgMCBSL1RUMSA1MSAw
+IFI+Pj4+L1JvdGF0ZSAwL1N0cnVjdFBhcmVudHMgMC9UYWJzL1MvVHlwZS9QYWdlPj4NZW5kb2Jq
+DTQzIDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCAzNC9MZW5ndGggMzU0L04gNS9U
+eXBlL09ialN0bT4+c3RyZWFtDQpo3uyVy2rDMBBFf2WW7SKMJMuPQAgkbk0DbSh1aAohC9URtsCP
+ICu0/fvKikkf0EVKd/XiLnxnpLmaxTEPgQCPgEbAx8C8AHwC1Bv74FOgAaOwwUUcz0Urd8B92/yw
+nUxw1mayNkAJoxiL/Y1UeWHADyleyWNpFEQEk1LkLXgck6Y283nzuhlRxlwNAua581tXTESlyreL
+uDloJTUs5cul85eikti71rxP71bOT42WJitw2ehKlM5aH0NwQnBhRKmyWZ2XEgimRlaP1sfV2166
+1i6kVnvTaHzqs3PmTaf2Zd1Lu5bvQ6/rrNmpOse1qmd1q07fidKtiQuh7aSvd3d7tfvCW9E3MN/H
+9PBsuhgrfZAuzymUvXlninYTELucQYMG/UdtHYZOgLU0+wGwLOQ9YMfRJ8AGoStBZK/rjp/J19GR
+nWdj1oL9D0D7Mf03vLW/roG3gwYNOou37wIMADFUaMoNCmVuZHN0cmVhbQ1lbmRvYmoNNDQgMCBv
+YmoNPDwvRmlsdGVyL0ZsYXRlRGVjb2RlL0xlbmd0aCAxMTM2Pj5zdHJlYW0NCkiJpFZNb+M2EL37
+VwzQS7ZwZIn+TLFYwHacrlEkDmIFPWx6YCjaZiGTrkhlo/76DqlPO7aToMkhUDTz5s3jmxEnYasz
+ToxYUWbg69fO2BjKNjyCH52JMkZt4a/OZKJe4ceQQDfw/BEMrzzi+wH0A693RfD9Mn022Y5D50Yp
+wxPohO7pnq6FpEYoCd++Ta6n0OpMlz4wDT6AZrLVCUMfAghXrYDApY//xr+2DBboQbhtXcCX8O/W
+7Nam3lt2t9P5NYYVcJjS73ujIYRRERr08a19Cr/P4M/v83AG3xePy5l9dxwsqMAw95J4Qa+B5nuj
+Am+xWgnGQa3AbDjcJ1xrWHKWcEOT7AB9FjYLkLLAJDxoc9Afeb2iz//5UzMoeIQtV6DvEegNXBte
+bwQJb61yjpM9jt2S4wHBLvGGA0fwRiUw3255JKjh8MBjTjWv61W6u6fuJx8aPdzSDIJRG4gfDE4f
+Wq86NDKEy8ALujXqYWy/jPXLyOsTkYP9yJ6LDBdgvTRd3P3+MFsuYXFjnxt6P96hy65hGY7D2fK3
+05yHH+YxKiPDX09EXB1jWouIxnRTR3zydBE9fSlte+eGkcYw2/JkzSUTXMMY5/7pou/Do7f0pp5D
+aFIMBiRHQZxdol5EhEkrtINFpCluCERlgHO/Lacdy1GQZTELaDvhRdEMUhnj/LThpzAbIeHKh4hm
+GtGFhVU5spTihScax6tCiNB7DeWxjDAaIs5imrhq7Wo6kaU0sEufY6E3SBjL4Ks6GVdPkK+epoQ3
+POIJjRs1HvhaaOytyCnWVfGSyghMQqXeWh4F8amSa7ceUAJl7NLQBsnJ9RtlzYYal1IrIxwMUxIT
+Um5Z89UKTxOeeaZsNYwu1WgqZJXxAOYSKGMqiajEulZezBA6PzftBJrDhr7UINrKVDDf16UUA85K
+YI3gVGb50bt2JIuVxk9I3n+tZlPqUhSzyaXMlahMU0viukBBd1aGBtOmkgj2LGLxb2W/eUL/Aafv
+T1o6BAmhnrNXzlKDwsEiwf4g6Hb9biUHptoNRIjdQH63/e6B1NHBwDvzlfGPT+yZjODovqhmfPHs
+/mDnDIepFEbZnuIM9ULK2iQpayrS3vMPampUPjdgnbylQhoHyqXzD2btOGXcvdUoWyJMVkxShcJU
+Kk2StV2QfRHxFx6r3dYayyKoWKALaIwREW4ItJKt+cLzjENbWN5qi/tEIH1hUsvOTa870eocsN0d
+WgwhcJmkOkXH7KPlcvFXLIaa4GLCITGbhNPKQ5XVqs4sAvqZi7V0tFnW9IXNeZTCoI2W6F2ucd7G
+btiEE02u46war4jn+5BHuQuFsU46bFZyhovCUWt47JNzcMI+5Jh9js7JOdt236Cc+swGvXe/WkH/
+6BAcDR2c/Fp+9nJx8mEyfhhP/4DFZHw7PiPBsL4gjt4VYfTxDq8+fB8gflPag5tt+zR1EuwdybEr
+1pmzJ+TDvZC3NjkZ+r5NSGWTQvD8Rv4L4O8ZuoP3zgnvxP8JMACcXWRMDQplbmRzdHJlYW0NZW5k
+b2JqDTQ1IDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9MZW5ndGggMjE2L04gMT4+c3RyZWFt
+DQpIiWJgYJzh6OLkyiTAwJCbV1LkHuQYGREZpcB+noGNgZkBDBKTiwscAwJ8QOy8/LxUBgzw7RoD
+I4i+rAsyC1MeL2BNLigqAdIHgNgoJbU4GUh/AeLM8pICoDhjApAtkpQNZoPUiWSHBDkD2R1ANl9J
+agVIjME5v6CyKDM9o0TB0NLSUsExJT8pVSG4srgkNbdYwTMvOb+oIL8osSQ1BagWagcI8LsXJVYq
+uCfm5iYqGOkZkehyIgAoLCGszyHgMGIUO48QQ4Dk0qIyKJORyZiBASDAAEnGOC8NCmVuZHN0cmVh
+bQ1lbmRvYmoNMSAwIG9iag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvRmlyc3QgMjM3L0xlbmd0aCA1
+NDQvTiAzMi9UeXBlL09ialN0bT4+c3RyZWFtDQpo3tSTQW/bMAyF/wqP22GQRdqWDRQB2i4Fhm5Z
+UKenYgc31RJjqW2oMtD8+1Fmmm039rhLHkg/faL0lBIycFARVIB1DjWQJbAZFDmCteCIBcG5HLhf
+2RJsDlVRgS2gzjLgRp2cDuqKLdzPkD01a8lENliGoWUtEDAx6wKQt0Di77wEKwtYMJ2LtJRKB+h4
+m7SOeXlBPBlrXQIxr6A0I2uFkIYreTExr+T9iHmOpybmuSIHYp6rHRDzqjyDiwtzy6fN4M6s2+D7
+uAne88n/baz8a7z1R7Dmbjj4b+3It5Icm+PoTRPDtJ1td8MQF4uEfOAt2ZAuahYSyUUKkVLEiVQi
+Mzhd0yxCQaGgUFAoKBQUCgoFhYJCIaGQUEgoJBQSCgmFhEIz5YdZw1ybxjR+K0daTc8vD1l6B8kx
+ty77foht7IbeNGPbm8sQu5/tNpq1ueoeD92wC+24P6Zi2cdwNNf7NkRz0+2m4M3nruXvz+cyDON1
+O76Vy/6J4d6s0s8N3+uf6kt/6Hrf7Fu++5P7+xRTT8bgPLpffpjiqZweX7ahG8/l6MPfjQ1nezW8
+punNff/kw5m0WPzfMc5vOzNf2373Ybn6dN985GBPb30HOZ4iXsuT5cetdaLaSWpnrnYWamepdjq1
+s1I7a/3NvyMkfUpWH5PV52T1QVl9UlYfldVnZfVhWX1aqE8L3/Gf0qeF+rRQnxbq00JVWr8FGABM
+M/raDQplbmRzdHJlYW0NZW5kb2JqDTIgMCBvYmoNPDwvTGVuZ3RoIDM1NjkvU3VidHlwZS9YTUwv
+VHlwZS9NZXRhZGF0YT4+c3RyZWFtDQo8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENl
+aGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4
+OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjQtYzAwNSA3OC4xNDczMjYsIDIwMTIvMDgvMjMtMTM6
+MDM6MDMgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcv
+MTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFi
+b3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4w
+LyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9t
+bS8iCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4x
+LyIKICAgICAgICAgICAgeG1sbnM6cGRmPSJodHRwOi8vbnMuYWRvYmUuY29tL3BkZi8xLjMvIgog
+ICAgICAgICAgICB4bWxuczpwZGZ4PSJodHRwOi8vbnMuYWRvYmUuY29tL3BkZngvMS4zLyI+CiAg
+ICAgICAgIDx4bXA6TW9kaWZ5RGF0ZT4yMDE2LTA1LTE3VDE1OjM5OjUyLTA0OjAwPC94bXA6TW9k
+aWZ5RGF0ZT4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMTYtMDUtMTdUMTU6Mzk6NDktMDQ6
+MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1ldGFkYXRhRGF0ZT4yMDE2LTA1LTE3
+VDE1OjM5OjUyLTA0OjAwPC94bXA6TWV0YWRhdGFEYXRlPgogICAgICAgICA8eG1wOkNyZWF0b3JU
+b29sPkFjcm9iYXQgUERGTWFrZXIgMTEgZm9yIFdvcmQ8L3htcDpDcmVhdG9yVG9vbD4KICAgICAg
+ICAgPHhtcE1NOkRvY3VtZW50SUQ+dXVpZDo2ZDFlMWFlYS05MjRiLTQ4YTItOGY5Zi1hMDVlZDY5
+OTY5MmE8L3htcE1NOkRvY3VtZW50SUQ+CiAgICAgICAgIDx4bXBNTTpJbnN0YW5jZUlEPnV1aWQ6
+YzA2ZDFmYmMtZWQ4OS00OWQ1LTgxMTQtMWM2OWVmYjhlMmFhPC94bXBNTTpJbnN0YW5jZUlEPgog
+ICAgICAgICA8eG1wTU06c3ViamVjdD4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAg
+ICAgIDxyZGY6bGk+MTwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwv
+eG1wTU06c3ViamVjdD4KICAgICAgICAgPGRjOmZvcm1hdD5hcHBsaWNhdGlvbi9wZGY8L2RjOmZv
+cm1hdD4KICAgICAgICAgPGRjOmNyZWF0b3I+CiAgICAgICAgICAgIDxyZGY6U2VxPgogICAgICAg
+ICAgICAgICA8cmRmOmxpLz4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L2RjOmNy
+ZWF0b3I+CiAgICAgICAgIDxwZGY6UHJvZHVjZXI+QWRvYmUgUERGIExpYnJhcnkgMTEuMDwvcGRm
+OlByb2R1Y2VyPgogICAgICAgICA8cGRmeDpTb3VyY2VNb2RpZmllZD5EOjIwMTYwNTE3MTkzOTIy
+PC9wZGZ4OlNvdXJjZU1vZGlmaWVkPgogICAgICAgICA8cGRmeDpDb21wYW55Lz4KICAgICAgPC9y
+ZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/
+Pg0KZW5kc3RyZWFtDWVuZG9iag0zIDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCA1
+L0xlbmd0aCA1MC9OIDEvVHlwZS9PYmpTdG0+PnN0cmVhbQ0KaN4ytlAwULCx0XfOL80rUTDU985M
+KY42MQIKBsXqh1QWpOoHJKanFtvZAQQYAOhiC+MNCmVuZHN0cmVhbQ1lbmRvYmoNNCAwIG9iag08
+PC9GaWx0ZXIvRmxhdGVEZWNvZGUvRmlyc3QgNS9MZW5ndGggMTYwL04gMS9UeXBlL09ialN0bT4+
+c3RyZWFtDQpo3mzMPQuDMBSF4b+STTO0+VBbUkSQSqcKQofO0VwxlHrLJQ7++0YopUO3M7znyQyT
+rCxFvYQJKeXijM+XnddtEdjgcW5sgLQ5aakOslBHVWQmNzuZJ1Imnyo+64Gwt4F1zaW1DyCmFBuR
+2B3JcdGi+8MU+st0hG4ZIDoOe9gUdvU9WVojtJdc3HChAaLjRw/uFzKZ0ZpX1VuAAQBU2TnzDQpl
+bmRzdHJlYW0NZW5kb2JqDTUgMCBvYmoNPDwvRGVjb2RlUGFybXM8PC9Db2x1bW5zIDQvUHJlZGlj
+dG9yIDEyPj4vRmlsdGVyL0ZsYXRlRGVjb2RlL0lEWzwxMDBBN0Q3QUVDREVCNTQyQUNFRDEzQTgy
+MDY0QTBEMT48MUY5RTc0MjEwOEY3Q0Y0RThENDNCRDU1NDg5NUQ3MUM+XS9JbmZvIDM5IDAgUi9M
+ZW5ndGggNTAvUm9vdCA0MSAwIFIvU2l6ZSA0MC9UeXBlL1hSZWYvV1sxIDIgMV0+PnN0cmVhbQ0K
+aN5iYgACJkbuFAYmBqYGIMFvByQY+oAE41+gxOMQEJeBcdASTA+BBCMDQIABAPPEBVcNCmVuZHN0
+cmVhbQ1lbmRvYmoNc3RhcnR4cmVmDQoxMTYNCiUlRU9GDQo=
+
+------=_NextPart_AB2_C158_3CC20901.20BC5497--

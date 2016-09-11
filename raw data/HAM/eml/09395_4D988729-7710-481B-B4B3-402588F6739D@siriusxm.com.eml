@@ -1,0 +1,466 @@
+Received: from dncedge1.dnc.org (192.168.185.10) by DNCHUBCAS1.dnc.org
+ (192.168.185.12) with Microsoft SMTP Server (TLS) id 14.3.224.2; Mon, 2 May
+ 2016 20:44:14 -0400
+Received: from server555.appriver.com (8.19.118.102) by dncwebmail.dnc.org
+ (192.168.10.221) with Microsoft SMTP Server id 14.3.224.2; Mon, 2 May 2016
+ 20:44:10 -0400
+Received: from [10.87.0.111] (HELO inbound.appriver.com)  by
+ server555.appriver.com (CommuniGate Pro SMTP 6.0.4)  with ESMTP id 892478884;
+ Mon, 02 May 2016 19:44:15 -0500
+X-Note-AR-ScanTimeLocal: 5/2/2016 7:44:14 PM
+X-Policy: dnc.org
+X-Policy: dnc.org
+X-Primary: manriquezp@dnc.org
+X-Note: This Email was scanned by AppRiver SecureTide
+X-Note: SecureTide Build: 4/25/2016 6:59:12 PM UTC
+X-Virus-Scan: V-
+X-Note: SPF: IP:207.46.100.93 DOM:siriusxm.com ADDR:davegorab@siriusxm.com
+X-Note: SPF: Pass
+X-Note-SnifferID: 0
+X-Note: TCH-CT/SI:0-230/SG:5 5/2/2016 7:43:29 PM
+X-GBUdb-Analysis: 0, 207.46.100.93, Ugly c=0.695823 p=-0.96729 Source White
+X-Signature-Violations: 0-0-0-26376-c
+X-Note-419: 31.2492 ms. Fail:0 Chk:1324 of 1324 total
+X-Note: SCH-CT/SI:0-1324/SG:1 5/2/2016 7:44:12 PM
+X-Note: Spam Tests Failed: 
+X-Country-Path: UNKNOWN->PRIVATE->->PRIVATE->->->->United States->
+X-Note-Sending-IP: 207.46.100.93
+X-Note-Reverse-DNS: mail-by2on0093.outbound.protection.outlook.com
+X-Note-Return-Path: Dave.Gorab@siriusxm.com
+X-Note: User Rule Hits: 
+X-Note: Global Rule Hits: G275 G276 G277 G278 G282 G283 G406 
+X-Note: Encrypt Rule Hits: 
+X-Note: Mail Class: VALID
+X-Note: Headers Injected
+Received: from [207.46.100.93] (HELO
+ na01-by2-obe.outbound.protection.outlook.com)  by inbound.appriver.com
+ (CommuniGate Pro SMTP 6.1.7)  with ESMTPS id 136624087; Mon, 02 May 2016
+ 19:44:14 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=siriusradio.onmicrosoft.com; s=selector1-siriusxm-com;
+ h=From:To:Date:Subject:Message-ID:Content-Type:MIME-Version;
+ bh=XAEbUSWN0IgdMPsWZ9bY5dpfbT/VVmCsiZWdtm5mHDA=;
+ b=W/tSkRqoomKXIl6xS+pQChvU/oxlHWpqdIMHtTlRtjna/2roWQ7wcwFsiUTxp0sYoxEIRFHUfAWxSw3R6NXXp/6SLN0AKQUFs4LcHHfZzOFvp5pMHkl0DNUUgX6vqhfVS0pRdg5lwGgVAgT/MclyOa6U5NsHlwZBNaLPLz1Bdic=
+Received: from BY2PR02CA0097.namprd02.prod.outlook.com (10.163.44.151) by
+ BY2PR02MB2006.namprd02.prod.outlook.com (10.166.109.156) with Microsoft SMTP
+ Server (TLS) id 15.1.485.9; Tue, 3 May 2016 00:44:11 +0000
+Received: from BY2FFO11FD007.protection.gbl (2a01:111:f400:7c0c::108) by
+ BY2PR02CA0097.outlook.office365.com (2a01:111:e400:5261::23) with Microsoft
+ SMTP Server (TLS) id 15.1.485.9 via Frontend Transport; Tue, 3 May 2016
+ 00:44:11 +0000
+Authentication-Results: spf=pass (sender IP is 209.196.217.31)
+ smtp.mailfrom=siriusxm.com; dnc.org; dkim=none (message not signed)
+ header.d=none;dnc.org; dmarc=bestguesspass action=none
+ header.from=siriusxm.com;
+Received-SPF: Pass (protection.outlook.com: domain of siriusxm.com designates
+ 209.196.217.31 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.196.217.31; helo=pdgllpwssmtp01.siriusxm.com;
+Received: from pdgllpwssmtp01.siriusxm.com (209.196.217.31) by
+ BY2FFO11FD007.mail.protection.outlook.com (10.1.14.128) with Microsoft SMTP
+ Server (TLS) id 15.1.477.4 via Frontend Transport; Tue, 3 May 2016 00:44:10
+ +0000
+Received: from pdglapsonra01.corp.siriusxm.com (unknown [10.98.3.250])	by
+ Websense Email Security Gateway with ESMTP id 716D52854985;	Mon,  2 May 2016
+ 20:44:04 -0400 (EDT)
+Received: from pdglapsonra01.corp.siriusxm.com (127.0.0.1) id h4vq5i0171ss;
+ Mon, 2 May 2016 20:44:09 -0400 (envelope-from <Dave.Gorab@siriusxm.com>)
+Received: from pdhsmpexchub02.corp.siriusxm.com ([10.5.194.14])	by
+ pdglapsonra01.corp.siriusxm.com (SonicWALL 8.2.2.5535)	with ESMTP id
+ 201605030044080147436; Mon, 02 May 2016 20:44:08 -0400
+Received: from PDHSMPEXCMBX03.corp.siriusxm.com ([169.254.6.227]) by
+ pdhsmpexchub02.corp.siriusxm.com ([10.5.194.14]) with mapi id 14.03.0279.002;
+ Mon, 2 May 2016 20:44:08 -0400
+From: "Gorab, Dave" <Dave.Gorab@siriusxm.com>
+To: "Manriquez, Pablo" <ManriquezP@dnc.org>
+CC: "Miranda, Luis" <MirandaL@dnc.org>, "Aiello, Liz"
+	<Liz.Aiello@siriusxm.com>, "Raphael, Frank" <Frank.Raphael@siriusxm.com>,
+	"Colbert, Christopher" <Christopher.Colbert@siriusxm.com>
+Subject: Re: Following Up
+Thread-Topic: Following Up
+Thread-Index: AdGklIijR8L6exbNQXa/prTHtrb8TgAOGvUQAAAbw00AAeDEuA==
+Date: Tue, 3 May 2016 00:44:07 +0000
+Message-ID: <4D988729-7710-481B-B4B3-402588F6739D@siriusxm.com>
+References: <2FBF00521039854AAA9A96F5CA3C7C47239B691D@pdhsmpexcmbx03.corp.siriusxm.com>,<05E01258E71AC046852ED29DFCD139D54DF0110A@dncdag1.dnc.org>,<46688966-18BD-463E-BCEC-A5E4E0FBF8EF@dnc.org>
+In-Reply-To: <46688966-18BD-463E-BCEC-A5E4E0FBF8EF@dnc.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+Content-Type: multipart/alternative;
+	boundary="_000_4D9887297710481BB4B3402588F6739Dsiriusxmcom_"
+X-Mlf-Version: 8.2.2.5535
+X-Mlf-UniqueId: o201605030044080147436
+Return-Path: Dave.Gorab@siriusxm.com
+X-EOPAttributedMessage: 0
+X-Forefront-Antispam-Report: CIP:209.196.217.31;IPV:NLI;CTRY:US;EFV:NLI;SFV:NSPM;SFS:(10009020)(2980300002)(438002)(377454003)(199003)(24454002)(189002)(1220700001)(77096005)(15187005004)(50986999)(586003)(87936001)(19580395003)(2906002)(5003630100001)(92566002)(102836003)(76176999)(4546004)(83716003)(82746002)(16236675004)(221733001)(19580405001)(15975445007)(5003600100002)(86362001)(36756003)(84326002)(4326007)(54356999)(19625215002)(2900100001)(3480700004)(11100500001)(33656002)(5008740100001)(189998001)(6806005)(4001430100002)(512944002)(106466001)(19617315012)(110136002)(81166005)(30436002)(107886002)(450100001)(2950100001)(104396002);DIR:OUT;SFP:1101;SCL:1;SRVR:BY2PR02MB2006;H:pdgllpwssmtp01.siriusxm.com;FPR:;SPF:Pass;MLV:sfv;A:1;MX:1;LANG:en;
+X-Microsoft-Exchange-Diagnostics: 1;BY2FFO11FD007;1:XAaGo5hngZEaa2xua1C5LU98M3uXr3UY4Wm1HTS3eo8jnaL6L4PnJG+5Uc1Ias3JWLyXmY3zQbP9i9rjb8I01ALc7CWgMqTFV423C2JXHgbJhBlb428TxhxNf/dTSBNQsAZMWat3zyaXHyQ/9GaHqomwM0u+8QK0KyXuj+EmPUlRKJIgmoyHamD2sk8H4nU/Wsd38f39xwtuR+2bR3s6CHzR3cucT6JbzEpWTIT9MP7ksfRDh60zwIHtPkbBGpnwVR85GyJ14rvjYh7tL6y8+uEAb6rrrc3x3/tE3LcMmFcyw0gASh/hybweaUUJ/n/Nsx8bZCXD3OpNe/8UpJqzTiGgqwYxgkh+n0knoWznW7BCXF6d5lxrStzvRapXH/vfM9w215uGYrPvg2z+68drE2JV22zh4qnp+GhtLKFxomWEyUSd/PvoSBNSxYhoYbR809RJfwzGhBShh/IS7Zh5v7fMwd1MJI9CrZcCdKuHVEeK0EO2dSenrIcjYYWReBgD
+X-MS-Office365-Filtering-Correlation-Id: 1af8a85b-f20d-4c33-735d-08d372ec0a91
+X-Microsoft-Exchange-Diagnostics: 1;BY2PR02MB2006;2:G5yf/3FJnCui3oh9+ckWOfbq11Zsw6P6vRRZbzv57f6jd3nuGFNIJjGkZM1t28Zo8gtu6EfddXWLfRLHb7Akvz1x9PUT9iafbwnM8CGgmHbmgQUOaEUSADUl4pHtCKUpFbt5oTX284gpaAodDblJ5VHOc2SDFmqmX9x3CtZhjvP4A6L44ygtv6smfps60/an;3:WXqHVVZCdWKG10R5qkeW3dD5KokizOvW/dxuXCcOteWczUpNP02Anx+2Dvv7a+sPnx22OsgS+zfeBu3YKlNMKB6YqM3ZIQfZf3VxOmKzfcyUk4XyvNoafNcElCdjI78HCc7EgYOuGsHQ3TfP1Ii7rUGA7v3z4zeSQqF9JK2eP+W0zto5l7YB5Rz3FbpiQHSBauquIfxOy9+eOhjGDsbE0wfeF0JSr/i2D99ELPIyfVgvZEeXFsDjRAihzs5eQzEW5PhJxnuocpu2VM1gsFfnXw==
+X-Microsoft-Antispam: UriScan:;BCL:0;PCL:0;RULEID:(8251501002);SRVR:BY2PR02MB2006;
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1;BY2PR02MB2006;25:Et9ru3AO4juWVehGyCQf17QOp5Bu4jjUir+9aaOz1?=
+ =?us-ascii?Q?eb6oNYdkGR1U+FBa96opDhPGkt1BD3pT/+2tWlN7bWTyjV9ae0qIYs/w85K/?=
+ =?us-ascii?Q?XxKDlz0xHE5rtK40cee0B9C8Yz42QhF2krLjEbBbyOUKmBipmBLTYgDl42Wk?=
+ =?us-ascii?Q?/7w3Ucxyrwik4uBe7AR9UWVOseSQEn8Vi8fzMLaMcZsQHMFtOBBQDgA1Iw7W?=
+ =?us-ascii?Q?kNyyPXTgrEHEaYBibQGgnol3Wdx3El15CYykL1WaN0mUnVEUO/rJqca6jGIu?=
+ =?us-ascii?Q?FK16DbtraX4pz57vi9n4yXq86iDkzVfCTxN38M3PFzOU9V3HXRQnqwlsMX7W?=
+ =?us-ascii?Q?/7rBPhdkddwFndeteU6TcLo5UNEKUAy8a1T7N17YP32wviSapYfHIn8JmNEP?=
+ =?us-ascii?Q?rTnAucHbxfKpixS1rRUNPnU9pgvzXcUNM6Am18XuDyFJn9g2O8/iYYiuWa1B?=
+ =?us-ascii?Q?EgLLijFVxG9HYxkbGPl++58csaaLveknresVvI4tKnSUk0v7QzvH88mVAdvq?=
+ =?us-ascii?Q?6Bs3VTK6WDj4qbzkRjeESDkffb4P7q6Tm5anwlFmNg1ZSL+Y5WasvA8Ra/hg?=
+ =?us-ascii?Q?2AGaeQSFH0tRpHs32UbXK11ADR5JS88dZ49xHxR7uusoTNYyi91sD1hOpxD3?=
+ =?us-ascii?Q?+MsN+EtnolNsA7M/47Eoq6MzgMRQpGF5X+xkK1/qjI6oOfVERNICJ0tTKScy?=
+ =?us-ascii?Q?iRPRRPAj5dDM2RWzCirW1WA4HpdTosf8b7Lif9hgTR/b6EHlCu5YJHQu5BLN?=
+ =?us-ascii?Q?AWYgsKtNP1jjuByXDCP8KgKrjwWaSmZYhPl3w72GLRpiqG+jFJxBUs04oshj?=
+ =?us-ascii?Q?cFwWWhpejjPDvFBM6onWdL5LSKk/UI7X45HkzV1DboVcho/HBP19aei9uDQY?=
+ =?us-ascii?Q?s1bYXLtWVZVYa9kUskHoxtTUOcdG5nd2yaKzXTq0/cMh85v3V1x8RBygInOo?=
+ =?us-ascii?Q?/UNEHohO7nbnTauJaaDlOntMOiKYSNrj2tbHDfc6eQ8ADVVo+2OimBt0k48r?=
+ =?us-ascii?Q?2f4cYMyup5VjH1rQIjiTelpma/tBM4jbUOFF6Nexdx9DxzimlSoljjb8GGmD?=
+ =?us-ascii?Q?jDCiu2eQ1HcGeZ9U/JmFymfSPRsPWxyItgYd7tGfiJm6bRGZNbLmEk6Vb6pZ?=
+ =?us-ascii?Q?WwnWlotQX1gjJYDpLs8B5184ngCP2UA?=
+X-Microsoft-Exchange-Diagnostics: 1;BY2PR02MB2006;20:e1fuwXQN+YC10Mh3rjz6kMnKo9tglrZAESOT1Wmdg5BvkNv0AMfsQdlID70nHvda0EuCMbgU9nj3HnArhkbBrZHd8DlRde0YQorrxzjKgIwmG9aLQqmnqFMLYIptWSuClKzxYW7NezdiidSxXhmeLPvyfwE3WdxMk4aOihYuYVxAYsftAAMuYppvhVB/rQr0CJlKh/uI5YV+aNfMBox7JvDoaJ9zRthSz/a7CSGMQtvE80Wzu7CgVOvScslLE10m;4:Tg+L1p3V60KcIOfnmk66qE9Mvk9Fpmeye5CbOVPLq5r9VnV47q2qj2qO/7vYE0Bzc8PWP18sqo34yNtCtvI776zUVUh9/lNyZLcIP01IV/+TvIyQNk1GFF4ujZ1+Fbai+WNHLSnepRkSHQU7Mx9sJ12U5j+Bo0ytykl//oJFtSVjDDeVhSlga6vvC4oWJNBq2B6yBxmjYfKVWjaXkdcKM7sA3leilLcWibfZDWBZf5SoaE0GI8k47bCRkfqLQjnffoj4OW5IC3EIeFUe9uzdvdaM9RTz9Dj/Z92xld1yxPh3VDS1DN1a7QZRylP4r5SfYlx/4dGsUQovo1uOjmyV/5Hsqn45JC9gJySIdh6rlFX4ihtFWO8LYGcIGBjIbqnV4E0KAQZbxRacI8ZdQeRxy0ptzXX9RXfcfV8jnbVoCekjqw4O4EJoGXjhPiOHLc3krYu+CR9H1OdqeGUO2G7DSGXvRzR+8kIxh8o5/d2Xhu8tu9lQgO2Lt+q7MkrDdYfS
+X-Microsoft-Antispam-PRVS: <BY2PR02MB2006817DAA00F9F17F1AAD94E67A0@BY2PR02MB2006.namprd02.prod.outlook.com>
+X-Exchange-Antispam-Report-Test: UriScan:;
+X-Exchange-Antispam-Report-CFA-Test: BCL:0;PCL:0;RULEID:(9101521096)(601004)(2401047)(5005006)(13017025)(8121501046)(13018025)(13024025)(13023025)(13015025)(10201501046)(3002001)(6055026);SRVR:BY2PR02MB2006;BCL:0;PCL:0;RULEID:;SRVR:BY2PR02MB2006;
+X-Forefront-PRVS: 0931CB1479
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1;BY2PR02MB2006;23:p8Ly1xej4NxAqtd6DV3ckQuYyy3faYba33+gt3vZC?=
+ =?us-ascii?Q?D/UfklVCs7PZamUObSbIpmPb8ge0TFtsoLS39xiXvpC9Gmf/sxvaWfLXhDAd?=
+ =?us-ascii?Q?K8/iDFNa1f7qBj1YTnjG4xFilfamNqJR+aZ07VhH6UXc8A5tk79A/0IO503l?=
+ =?us-ascii?Q?li5+9IJpozAefxvOE4rYNqpuUWO/4Xpc/AbCx5xFw7IWeEPfOKy0jlhDbCl2?=
+ =?us-ascii?Q?CzYf3pNS6YSNweXwVGqFiY1jgXlXM+M/TMHLgMvru4xkzGxZ4XxbHh3ewtZ0?=
+ =?us-ascii?Q?knKHA4btF6JX/u3v/VSQYgP3od7hym71ifilwaaAQTD8HMO1vG7GUum9mMyI?=
+ =?us-ascii?Q?i5+XLh6Pf8mcF9JeDMIF33qqEpR7x8rTCrQi0iFzq/HqyejHFF3fnV+/qa+s?=
+ =?us-ascii?Q?DDO8UgI4SaG0PvmeLzFBIL+8HlYNtjjMk1bCPfykuUpkRuxA50+/SqhUHX2H?=
+ =?us-ascii?Q?NfvtZl/C60hZEQeVIe/SRplwp8vKXSoHOhDK0ytnhQysK13FeYGF1grI+SnS?=
+ =?us-ascii?Q?6VlnwFyjFr6fRmV1DbjDEk0E6LFBPeYqO1SkhwqiWmf0BQpWyKp6WbrBaBZT?=
+ =?us-ascii?Q?VFBpFpXz9p9ONgRf3sAwNZ1FhNCyDHL9Vwa9KyGJgzSlRoThD6HhxePPC2HM?=
+ =?us-ascii?Q?prBeLjIQ9DwfauLjkjArNoa9iaHDFgvcAF/IzI1WyXR+0GaEXGOiPQkDgqCh?=
+ =?us-ascii?Q?0/2sIJuYm4qrGTyHmA111asDHJbDL+VDsgRe/LsQZN/3UQG/3ndp/87w4lfW?=
+ =?us-ascii?Q?Hk545lhEShdZ9pkz82WD6uMHilOE1c7lvGvsthiulr89mmuEFyy0rU1lwGFm?=
+ =?us-ascii?Q?r8/CVznm80A384WsHxtH6gPZWyQf9j7JDIq/omC8GfJM/CfMPcIEiN0vawfl?=
+ =?us-ascii?Q?N2LxcaJ6ZyRC9PnVSGXwBoN5LgFEfmeQyodB+NVj4PMVpyyLR6COFZ91bgTk?=
+ =?us-ascii?Q?mjYsARM+o2qEr8QKkdYeSoDxch2faUMe7OAD0tcxFHuHBc/vpofz1YrRTfO5?=
+ =?us-ascii?Q?310RJlZ7XWAxlSzYK4UxEpDEjYUA8ZLBKtuFEH2+ZgBSz9MVAv9tFu26nYY+?=
+ =?us-ascii?Q?dQBLBPsVQClmEPpZtrIJIfg96bBhaSL3DK8hJ/2tvZ2mxgUm2LJP9pkqMci8?=
+ =?us-ascii?Q?f0u3+vvNY24Lw63nFQf4z1IQILB/Mk/UhXDWnwhIOabexvUzQhnVKHhOUZmT?=
+ =?us-ascii?Q?v4enC9HH1qehFxToOmnwjw1bmnyRwAQiVb19kBTYtE0uvPSIl4bNugWs6wY8?=
+ =?us-ascii?Q?seiGosMMQ418Bzy+wp61BNLwoFXkQxO6a99sH/0nA3r78mBUGwq87CSRPfg1?=
+ =?us-ascii?Q?AoKNXzk3FKKOC1k41DJhiqXgYBoLIb8Xc8QhS2g3Zm3?=
+X-Microsoft-Exchange-Diagnostics: 1;BY2PR02MB2006;5:VdOC994ro7t0GUEvN3TqZ72e+3uknsznbMwe5QhOrmLqJPznk8QumE5weNiBOYdz1QNhSrgrRurBkjPpJ6Bus9jR/XDkqi8dzPS2C6kBZwXVWwAmndosDs8nXOguJ/vSWsxtS7RFW2CzUq/JVtadYQ==;24:QLeUSUVodnhA6iqJ3NvoqmyUn/bLbGteEllKhtnK4vvROK51Avb2h8VpqjdNRhSxE1Hy5eNSxG2bEc3Xl1Vny60cTa5wMW1JjfYK3YTCgVs=;7:gkGmyZprReuKU+CEy814erBmkeagSUIhYx5aWn9zkP+EYLSM5HQLkBq6xeVtLMa0dKg81aT3tia72gSZ0T4+2TYmNp/ATsumSGPTMYA352Aq+lNqU6NDxkd8aNHykCN5eB43g3oT2e5UfLQnlzWiR7G1/0R6w6L2JcYEMDmF5PDTTkZQxjf88oC5itMOcs7x
+SpamDiagnosticOutput: 1:23
+SpamDiagnosticMetadata: NSPM
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 May 2016 00:44:10.2028
+ (UTC)
+X-MS-Exchange-CrossTenant-Id: c69f0fed-51c5-4fed-be55-ba0d512d25ab
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=c69f0fed-51c5-4fed-be55-ba0d512d25ab;Ip=[209.196.217.31];Helo=[pdgllpwssmtp01.siriusxm.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY2PR02MB2006
+X-MS-Exchange-Organization-AVStamp-Mailbox: MSFTFF;1;0;0 0 0
+X-MS-Exchange-Organization-AuthSource: dncedge1.dnc.org
+X-MS-Exchange-Organization-AuthAs: Anonymous
+MIME-Version: 1.0
+
+--_000_4D9887297710481BB4B3402588F6739Dsiriusxmcom_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+Fantastic and very nice to meet you, Pablo. Since we have such a broad arra=
+y of offerings at Sirius XM, I'd like to introduce you to the programmers i=
+n charge of a few pertinent channels. They, in turn, can introduce you to t=
+he booking contacts for our various programs.
+
+Liz Aiello - in charge of POTUS, our non-partisan politics channel
+
+Chris Colbert - in charge of Urban View, our channel covering politics and =
+issues affecting the African American community.
+
+Frank Raphael - in charge of Progress, our channel for progressive politics
+
+Liz, Chris, and Frank will all reach out tomorrow. We look forward to worki=
+ng more closely with you in the months ahead!
+
+Thanks,
+Dave
+
+On May 2, 2016, at 7:50 PM, Manriquez, Pablo <ManriquezP@dnc.org<mailto:Man=
+riquezP@dnc.org>> wrote:
+
+Hi Dave,
+This sounds great. We have a deep pool of talented voices who I think could=
+ be very helpful here. Here to help!
+Pablo
+
+Sent from my iPhone
+
+On May 2, 2016, at 7:48 PM, Miranda, Luis <MirandaL@dnc.org<mailto:MirandaL=
+@dnc.org>> wrote:
+
+Thanks Dave. Good to see you too. I=92m copying Pablo Manriquez who leads o=
+ur booking team in case I hadn=92t before. It would be great to get him con=
+nected to the producers for the shows.
+
+Hope you=92re well rested after the hectic weekend! =96 Luis.
+
+
+
+<image002.png><http://www.democrats.org/>Luis Miranda, Communications Direc=
+tor
+Democratic National Committee
+202-863-8148 =96 MirandaL@dnc.org<mailto:MirandaL@dnc.org> - @MiraLuisDC<ht=
+tps://www.twitter.com/MiraLuisDC>
+
+
+From: Gorab, Dave [mailto:Dave.Gorab@siriusxm.com]
+Sent: Monday, May 02, 2016 1:06 PM
+To: Miranda, Luis
+Subject: Following Up
+
+Luis:
+
+Nice to see you this weekend.   Just letting you know I=92ve reached back o=
+ut to April and Kyle and we have a meeting planned for Wednesday morning.  =
+I=92d like to particularly focus on ideas for a voter registration campaign=
+ and ways Sirius XM can reach our audience on channels including, but not l=
+imited to, Progress, Urban View, and POTUS.  Please let me know if you have=
+ any further thoughts on this and/or other ideas you=92d like added to our =
+agenda.  We certainly want to continue our booking efforts across the platf=
+orm, as well.
+
+Best regards,
+Dave
+
+
+Dave Gorab
+Vice President & General Manager
+Talk Programming
+212-584-5235
+<image003.png>
+
+
+--_000_4D9887297710481BB4B3402588F6739Dsiriusxmcom_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+X-WatchGuard-AntiVirus: part scanned. clean action=allow
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+</head>
+<body dir=3D"auto">
+<div><span></span></div>
+<div>
+<div><span></span></div>
+<div>
+<div></div>
+<div>Fantastic and very nice to meet you, Pablo. Since we have such a broad=
+ array of offerings at Sirius XM, I'd like to introduce you to the programm=
+ers in charge of a few pertinent channels. They, in turn, can introduce you=
+ to the booking contacts for our
+ various programs.&nbsp;</div>
+<div><br>
+</div>
+<div>Liz Aiello - in charge of POTUS, our non-partisan politics channel</di=
+v>
+<div><br>
+</div>
+<div>Chris Colbert - in charge of Urban View, our channel covering politics=
+ and issues affecting the African American community.</div>
+<div><br>
+</div>
+<div>Frank Raphael - in charge of Progress, our channel for progressive pol=
+itics</div>
+<div><br>
+</div>
+<div>Liz, Chris, and Frank will all reach out tomorrow. We look forward to =
+working more closely with you in the months ahead!</div>
+<div><br>
+</div>
+<div>Thanks,</div>
+<div>Dave</div>
+<div><br>
+On May 2, 2016, at 7:50 PM, Manriquez, Pablo &lt;<a href=3D"mailto:Manrique=
+zP@dnc.org">ManriquezP@dnc.org</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+<div>Hi Dave,&nbsp;</div>
+<div id=3D"AppleMailSignature">This sounds great. We have a deep pool of ta=
+lented voices who I think could be very helpful here. Here to help!</div>
+<div id=3D"AppleMailSignature">Pablo<br>
+<br>
+Sent from my iPhone</div>
+<div><br>
+On May 2, 2016, at 7:48 PM, Miranda, Luis &lt;<a href=3D"mailto:MirandaL@dn=
+c.org">MirandaL@dnc.org</a>&gt; wrote:<br>
+<br>
+</div>
+<blockquote type=3D"cite">
+<div>
+<meta name=3D"Generator" content=3D"Microsoft Word 14 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#954F72;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal;
+	font-family:"Calibri","sans-serif";
+	color:windowtext;}
+span.EmailStyle18
+	{mso-style-type:personal-reply;
+	font-family:"Calibri","sans-serif";
+	color:#1F497D;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1027" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">Thanks Dave. Good to s=
+ee you too. I=92m copying Pablo Manriquez who leads our booking team in cas=
+e I hadn=92t before. It would be great to get him connected to the producer=
+s for the shows.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">Hope you=92re well res=
+ted after the hectic weekend! =96 Luis.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<div>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<p class=3D"MsoNormal"><!--[if gte vml 1]><v:shapetype id=3D"_x0000_t75" co=
+ordsize=3D"21600,21600" o:spt=3D"75" o:preferrelative=3D"t" path=3D"m@4@5l@=
+4@11@9@11@9@5xe" filled=3D"f" stroked=3D"f">
+<v:stroke joinstyle=3D"miter" />
+<v:formulas>
+<v:f eqn=3D"if lineDrawn pixelLineWidth 0" />
+<v:f eqn=3D"sum @0 1 0" />
+<v:f eqn=3D"sum 0 0 @1" />
+<v:f eqn=3D"prod @2 1 2" />
+<v:f eqn=3D"prod @3 21600 pixelWidth" />
+<v:f eqn=3D"prod @3 21600 pixelHeight" />
+<v:f eqn=3D"sum @0 0 1" />
+<v:f eqn=3D"prod @6 1 2" />
+<v:f eqn=3D"prod @7 21600 pixelWidth" />
+<v:f eqn=3D"sum @8 21600 0" />
+<v:f eqn=3D"prod @7 21600 pixelHeight" />
+<v:f eqn=3D"sum @10 21600 0" />
+</v:formulas>
+<v:path o:extrusionok=3D"f" gradientshapeok=3D"t" o:connecttype=3D"rect" />
+<o:lock v:ext=3D"edit" aspectratio=3D"t" />
+</v:shapetype><v:shape id=3D"Picture_x0020_1" o:spid=3D"_x0000_s1026" type=
+=3D"#_x0000_t75" alt=3D"SigDems" href=3D"http://www.democrats.org/" style=
+=3D'position:absolute;margin-left:0;margin-top:0;width:57.75pt;height:53.25=
+pt;z-index:251659264;visibility:visible;mso-wrap-style:square;mso-width-per=
+cent:0;mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-to=
+p:0;mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;mso-position-hor=
+izontal:absolute;mso-position-horizontal-relative:text;mso-position-vertica=
+l:absolute;mso-position-vertical-relative:text;mso-width-percent:0;mso-heig=
+ht-percent:0;mso-width-relative:page;mso-height-relative:page' o:button=3D"=
+t">
+<v:imagedata src=3D"cid:image002.png@01D1A4AB.A1A80100" o:title=3D"SigDems"=
+ />
+<w:wrap type=3D"square"/>
+</v:shape><![endif]--><!--[if !vml]--><a href=3D"http://www.democrats.org/"=
+>&lt;image002.png&gt;</a><!--[endif]--><b><span style=3D"font-size:12.0pt;c=
+olor:#1F497D">Luis
+ Miranda, </span></b><span style=3D"color:#1F497D">Communications Director<=
+o:p></o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"color:#1F497D">Democratic National=
+ Committee<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D">202-863-8148 =96 <a hr=
+ef=3D"mailto:MirandaL@dnc.org">
+<span style=3D"color:blue">MirandaL@dnc.org</span></a> - <a href=3D"https:/=
+/www.twitter.com/MiraLuisDC">
+<span style=3D"color:blue">@MiraLuisDC</span></a><o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"color:#1F497D"><o:p>&nbsp;</o:p></spa=
+n></p>
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0in =
+0in 0in">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.0pt;font-family:&quot=
+;Tahoma&quot;,&quot;sans-serif&quot;">From:</span></b><span style=3D"font-s=
+ize:10.0pt;font-family:&quot;Tahoma&quot;,&quot;sans-serif&quot;"> Gorab, D=
+ave [<a href=3D"mailto:Dave.Gorab@siriusxm.com">mailto:Dave.Gorab@siriusxm.=
+com</a>]
+<br>
+<b>Sent:</b> Monday, May 02, 2016 1:06 PM<br>
+<b>To:</b> Miranda, Luis<br>
+<b>Subject:</b> Following Up<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Luis:<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Nice to see you this weekend.&nbsp;&nbsp; Just letti=
+ng you know I=92ve reached back out to April and Kyle and we have a meeting=
+ planned for Wednesday morning.&nbsp; I=92d like to particularly focus on i=
+deas for a voter registration campaign and ways Sirius
+ XM can reach our audience on channels including, but not limited to, Progr=
+ess, Urban View, and POTUS.&nbsp; Please let me know if you have any furthe=
+r thoughts on this and/or other ideas you=92d like added to our agenda.&nbs=
+p; We certainly want to continue our booking
+ efforts across the platform, as well.&nbsp; <o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Best regards,<o:p></o:p></p>
+<p class=3D"MsoNormal">Dave<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class=3D"MsoNormal">Dave Gorab<o:p></o:p></p>
+<p class=3D"MsoNormal">Vice President &amp; General Manager<o:p></o:p></p>
+<p class=3D"MsoNormal">Talk Programming<o:p></o:p></p>
+<p class=3D"MsoNormal">212-584-5235<o:p></o:p></p>
+<p class=3D"MsoNormal">&lt;image003.png&gt;<o:p></o:p></p>
+<p class=3D"MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+</blockquote>
+</div>
+</blockquote>
+</div>
+</div>
+</body>
+</html>
+
+--_000_4D9887297710481BB4B3402588F6739Dsiriusxmcom_--
