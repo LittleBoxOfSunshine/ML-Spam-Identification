@@ -7,7 +7,4 @@ rm parsed\ data/*                   # Remove any existing files
 
 python3 convert_to_email_dict.py    # Parse raw emails into email object, dump binary to disk
 python3 build_table.py              # Filters out unneeded headers, convert to table (also dumps header frequencies)
-                                    # Calculate Feature 1
-                                    # Calculate Feature 2
-                                    # Calculate Feature 3
-                                    # Calculate Feature etc
+python3 compute_stats.py            # Calculate Statistics and Boolean/Categorical formatting

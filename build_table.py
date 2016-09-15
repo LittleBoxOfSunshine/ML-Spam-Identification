@@ -67,10 +67,6 @@ def get_max_depth(payload, depth=0):
 
     return max_depth
 
-
-def filter_headers(data):
-    print()
-
 cout('Loading pickle file')
 
 with open('parsed data/emails.pkl', 'rb') as f:
@@ -95,24 +91,30 @@ header_frequency_analysis(emails, 'pre_filter_headers', headers)
 
 # Contains header-regex key-value pairs that will be kept after filtering
 keep_headers = {
-    'to': re.compile('^((?!reply).)*to.*$'),  # anything with to and not reply (to avoid [in] reply to)
-    'from': re.compile('from|.*sender'),
-    'date': re.compile('.*date.*'),
-    'subject': re.compile('.*subject.*'),
-    'reply_to': re.compile('^(?!in).*reply.*to.*$|returnpath'),
-    'user_agent': re.compile('.*useragent.*'),
-    'importance': re.compile('.*priority.*|.*importance.*|.*precedence.*'),
-    'keywords': re.compile('.*comment.*|.*keyword.*'),
-    'cc': re.compile('cc'),
-    'organization': re.compile('.*organization.*')
+    # 'to': re.compile('^((?!reply).)*to.*$'),
+    'from': re.compile('from|.*sender'),                                     # Categorical (match, no-match, n/a)
+    # 'date': re.compile('.*date.*'),
+    'subject': re.compile('subject'),
+    'reply_to': re.compile('^(?!in).*reply.*to.*$|returnpath'),              # Categorical (match, no-match, n/a)
+    # 'user_agent': re.compile('.*useragent.*'),
+    'importance': re.compile('.*priority.*|.*importance.*|.*precedence.*'),  # Categorical
+    # 'keywords': re.compile('.*comment.*|.*keyword.*'),
+    'cc': re.compile('cc'),                                                  # Bool for has header
+    'organization': re.compile('.*organization.*')                           # Bool for has header
 }
 
 cout('Building table template (layout)')
 
 # Initialize template with all None values
-row_template = {'is_spam': None}
-for col in keep_headers:
-    row_template[col] = None
+row_template = {
+    'is_spam': None,
+    'from': set(),
+    'subject': None,
+    'reply_to': set(),
+    'importance': set(),
+    'cc': False,
+    'organization': False
+}
 
 # Allocate table of templates
 table = (len(emails['spam']) + len(emails['ham'])) * [None]
@@ -135,12 +137,16 @@ for email in emails['ham']:
             if keep_headers[key].search(tmp):
                 if table[idx][key] is None:
                     table[idx][key] = email[header]
-                else:
-                    table[idx][key] += '|' + email[header]
+                elif table[idx][key] is False:
+                    table[idx][key] = True
+                elif table[idx][key] is True:
+                    pass
+                elif isinstance(table[idx][key], set):
+                    table[idx][key].add(email[header])
 
     table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload)
+    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload_raw'] = email.get_payload()
 
     idx += 1
@@ -159,12 +165,16 @@ for email in emails['spam']:
             if keep_headers[key].search(tmp):
                 if table[idx][key] is None:
                     table[idx][key] = email[header]
-                else:
-                    table[idx][key] += '|' + email[header]
+                elif table[idx][key] is False:
+                    table[idx][key] = True
+                elif table[idx][key] is True:
+                    pass
+                elif isinstance(table[idx][key], set):
+                    table[idx][key].add(email[header])
 
     table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload)
+    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload'] = email.get_payload()
 
     idx += 1
@@ -177,3 +187,4 @@ with open('parsed data/table.pkl', 'wb') as f:
 
 cout('Starting post-filter header frequency analysis')
 post_filter_header_frequency_analysis(table, 'post_filter_headers', keep_headers.keys())
+
