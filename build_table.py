@@ -29,6 +29,7 @@ def post_filter_header_frequency_analysis(data, file_name, keys):
         dict_writer.writeheader()
         dict_writer.writerows(header_counts.values())
 
+
 def header_frequency_analysis(data, file_name, keys):
     header_counts = {}
     for h in keys:
@@ -147,7 +148,7 @@ for email in emails['ham']:
     table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
     table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
-    table[idx]['payload_raw'] = email.get_payload()
+    table[idx]['payload'] = email.get_payload()
 
     idx += 1
 
