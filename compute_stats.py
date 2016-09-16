@@ -52,26 +52,24 @@ for row in table:
     elif any('junk' in x for x in importance):
         importance = {'low'}
     elif len(importance) == 0 or importance == {''}:
-        importance = None
+        importance = {'none'}
     elif all('$' in x or 'user' in x or 'auto' in x for x in importance):
         importance = {'invalid'}
     else:
         importance = {importance.pop().lower()}
 
-    row['importance'] = importance
+    row['importance'] = ', '.join(importance)
 
     # Analyze subject
     subject = row.pop('subject', None)
 
     # Analyze payload(s)
-    payload = row.pop('payload ', None)
+    payload = row.pop('payload', None)
 
 cout('Saving table to disk as CSV')
 
 # Save to disk as CSV
 with open('parsed data/table.csv', 'w') as output_file:
-    tmp = table[0].keys()
-    print(tmp)
     dict_writer = csv.DictWriter(output_file, table[0].keys())
     dict_writer.writeheader()
 

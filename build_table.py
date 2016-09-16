@@ -145,7 +145,6 @@ for email in emails['ham']:
                 elif isinstance(table[idx][key], set):
                     table[idx][key].add(email[header])
 
-    table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
     table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload'] = email.get_payload()
@@ -173,7 +172,6 @@ for email in emails['spam']:
                 elif isinstance(table[idx][key], set):
                     table[idx][key].add(email[header])
 
-    table[idx]['multipart_payload'] = email.is_multipart()
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
     table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload'] = email.get_payload()
