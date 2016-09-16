@@ -4,7 +4,7 @@ import datetime
 import csv
 import re
 import copy
-
+from fuzzywuzzy import fuzz
 
 def cout(text):
     print('[{:%Y-%m-%d %H:%M:%S}] %s'.format(datetime.datetime.now()) % text)
@@ -22,6 +22,26 @@ for row in table:
     # Analyze from and reply_to data
     frm = row.pop('from', None)
     reply_to = row.pop('reply_to', None)
+
+    frm_l = list(frm)
+
+    if row['is_spam']:
+        pass
+
+    frm_fuzz = 0
+    n = 0
+
+    for i in range(len(frm_l)):
+        for j in range(i+1, len(frm_l)):
+            frm_fuzz += fuzz.partial_ratio(frm_l[i], frm_l[j])
+            n += 1
+
+    if n != 0:
+        frm_fuzz /= n
+
+    if row['is_spam']:
+        print(frm_fuzz)
+        pass
 
     # Analyze importance data
     importance = row.pop('importance', None)
