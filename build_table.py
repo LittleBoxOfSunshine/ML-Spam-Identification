@@ -54,20 +54,6 @@ def header_frequency_analysis(data, file_name, keys):
         dict_writer.writeheader()
         dict_writer.writerows(header_counts.values())
 
-
-def get_max_depth(payload, depth=0):
-    max_depth = depth
-
-    if not isinstance(payload, list):
-        return max_depth
-
-    for p in payload:
-        tmp = get_max_depth(p, depth+1)
-        if tmp > max_depth:
-            max_depth = tmp
-
-    return max_depth
-
 cout('Loading pickle file')
 
 with open('parsed data/emails.pkl', 'rb') as f:
@@ -146,7 +132,6 @@ for email in emails['ham']:
                     table[idx][key].add(email[header])
 
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload'] = email.get_payload()
 
     idx += 1
@@ -173,7 +158,6 @@ for email in emails['spam']:
                     table[idx][key].add(email[header])
 
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['multipart_depth'] = 0 if not email.is_multipart() else get_max_depth(email.get_payload())
     table[idx]['payload'] = email.get_payload()
 
     idx += 1
