@@ -90,7 +90,6 @@ cout('Building table template (layout)')
 row_template = {
     'is_spam': None,
     'from': set(),
-    'subject': None,
     'reply_to': set(),
     'cc': False,
     'organization': False
