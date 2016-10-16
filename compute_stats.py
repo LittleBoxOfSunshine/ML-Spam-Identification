@@ -40,10 +40,10 @@ def calc_stat(row):
     # Analyze payload(s)
     payload = row.pop('payload', None)
 
-    def set_none():
-        row['payload_smog_index'] = None
-        row['payload_coleman_liau_index'] = None
-        row['payload_dale_chall_readability_score'] = None
+    def set_neg1():
+        row['payload_smog_index'] = -1
+        row['payload_coleman_liau_index'] = -1
+        row['payload_dale_chall_readability_score'] = -1
 
     if payload is not None and payload != '':
         try:
@@ -53,9 +53,9 @@ def calc_stat(row):
         except:
             #print('ERROR:')
             #print('|' + subject + '|')
-            set_none()
+            set_neg1()
     else:
-        set_none()
+        set_neg1()
 
     return row
 
