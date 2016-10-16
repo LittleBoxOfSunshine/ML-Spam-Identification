@@ -20,10 +20,6 @@ numeric = re.compile('.*[0-9].*')
 
 unique = set()
 
-# char_filter = re.compile('[^a-z]')
-# subject = char_filter.sub('', subject.lower())
-
-
 def calc_stat(row):
     # Analyze from and reply_to data
     send_reply_data = list(row.pop('from', {}) | row.pop('reply_to', {}))
@@ -41,97 +37,25 @@ def calc_stat(row):
 
     row['frm_fuzz_set_ratio'] = frm_fuzz_set / n if n != 0 else 100
 
-    # Analyze importance data
-    importance = row.pop('importance', None)
-
-    # Filter round
-    importance = set(filter(lambda x: not numeric.match(x), importance))
-
-    # Conversion round
-    if any(('list' in x or 'ulk' in x) for x in importance):
-        importance = {'list'}
-    elif any(('ormal' in x or 'non-urgent' in x) for x in importance):
-        importance = {'medium'}
-    elif any(('igh' in x or 'rgent' in x) for x in importance):
-        importance = {'high'}
-    elif any('junk' in x for x in importance):
-        importance = {'low'}
-    elif len(importance) == 0 or importance == {''}:
-        importance = {'none'}
-    elif all('$' in x or 'user' in x or 'auto' in x for x in importance):
-        importance = {'invalid'}
-    else:
-        importance = {importance.pop().lower()}
-
-    row['importance'] = ', '.join(importance)
-
-    # Analyze subject
-    subject = row.pop('subject', None)
-
-    def set_neg_1():
-        row['subject_flesch_reading_ease'] = -1
-        row['subject_smog_index'] = -1
-        row['subject_flesch_kincaid_grade'] = -1
-        row['subject_coleman_liau_index'] = -1
-        row['subject_automated_readability_index'] = -1
-        row['subject_dale_chall_readability_score'] = -1
-        row['subject_difficult_words'] = -1
-        row['subject_linsear_write_formula'] = -1
-        row['subject_gunning_fog'] = -1
-        #row['subject_text_standard'] = -1
-
-    if subject is not None and subject != '':
-        try:
-            row['subject_flesch_reading_ease'] = textstat.flesch_reading_ease(subject)
-            row['subject_smog_index'] = textstat.smog_index(subject)
-            row['subject_flesch_kincaid_grade'] = textstat.flesch_kincaid_grade(subject)
-            row['subject_coleman_liau_index'] = textstat.coleman_liau_index(subject)
-            row['subject_automated_readability_index'] = textstat.automated_readability_index(subject)
-            row['subject_dale_chall_readability_score'] = textstat.dale_chall_readability_score(subject)
-            row['subject_difficult_words'] = textstat.difficult_words(subject)
-            row['subject_linsear_write_formula'] = textstat.linsear_write_formula(subject)
-            row['subject_gunning_fog'] = textstat.gunning_fog(subject)
-            #row['subject_text_standard'] = textstat.text_standard(subject)
-        except:
-            print('ERROR:')
-            print('|' + subject + '|')
-            set_neg_1()
-    else:
-        set_neg_1()
-
     # Analyze payload(s)
     payload = row.pop('payload', None)
 
-    def set_neg_1p():
-        row['payload_flesch_reading_ease'] = -1
-        row['payload_smog_index'] = -1
-        row['payload_flesch_kincaid_grade'] = -1
-        row['payload_coleman_liau_index'] = -1
-        row['payload_automated_readability_index'] = -1
-        row['payload_dale_chall_readability_score'] = -1
-        row['payload_difficult_words'] = -1
-        row['payload_linsear_write_formula'] = -1
-        row['payload_gunning_fog'] = -1
-        #row['payload_text_standard'] = -1
+    def set_none():
+        row['payload_smog_index'] = None
+        row['payload_coleman_liau_index'] = None
+        row['payload_dale_chall_readability_score'] = None
 
     if payload is not None and payload != '':
         try:
-            row['payload_flesch_reading_ease'] = textstat.flesch_reading_ease(payload)
             row['payload_smog_index'] = textstat.smog_index(payload)
-            row['payload_flesch_kincaid_grade'] = textstat.flesch_kincaid_grade(payload)
             row['payload_coleman_liau_index'] = textstat.coleman_liau_index(payload)
-            row['payload_automated_readability_index'] = textstat.automated_readability_index(payload)
             row['payload_dale_chall_readability_score'] = textstat.dale_chall_readability_score(payload)
-            row['payload_difficult_words'] = textstat.difficult_words(payload)
-            row['payload_linsear_write_formula'] = textstat.linsear_write_formula(payload)
-            row['payload_gunning_fog'] = textstat.gunning_fog(payload)
-            #row['payload_text_standard'] = textstat.text_standard(payloa
         except:
             #print('ERROR:')
             #print('|' + subject + '|')
-            set_neg_1p()
+            set_none()
     else:
-        set_neg_1p()
+        set_none()
 
     return row
 

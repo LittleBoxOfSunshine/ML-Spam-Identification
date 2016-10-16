@@ -78,14 +78,9 @@ header_frequency_analysis(emails, 'pre_filter_headers', headers)
 
 # Contains header-regex key-value pairs that will be kept after filtering
 keep_headers = {
-    # 'to': re.compile('^((?!reply).)*to.*$'),
     'from': re.compile('from|.*sender'),                                     # Categorical (match, no-match, n/a)
-    # 'date': re.compile('.*date.*'),
     'subject': re.compile('subject'),
     'reply_to': re.compile('^(?!in).*reply.*to.*$|returnpath'),              # Categorical (match, no-match, n/a)
-    # 'user_agent': re.compile('.*useragent.*'),
-    'importance': re.compile('.*priority.*|.*importance.*|.*precedence.*'),  # Categorical
-    # 'keywords': re.compile('.*comment.*|.*keyword.*'),
     'cc': re.compile('cc'),                                                  # Bool for has header
     'organization': re.compile('.*organization.*')                           # Bool for has header
 }
@@ -98,7 +93,6 @@ row_template = {
     'from': set(),
     'subject': None,
     'reply_to': set(),
-    'importance': set(),
     'cc': False,
     'organization': False
 }

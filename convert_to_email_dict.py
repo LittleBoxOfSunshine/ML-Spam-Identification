@@ -4,6 +4,7 @@ import glob
 import os
 import pickle
 import datetime
+import numpy as np
 
 
 def cout(text):
@@ -14,6 +15,30 @@ cout('Getting file paths')
 # Get file names
 ham_paths = [x for x in glob.iglob('raw data/HAM/**', recursive=True) if os.path.isfile(x)]
 spam_paths = [x for x in glob.iglob('raw data/SPAM/**', recursive=True) if os.path.isfile(x)]
+
+cout('Calculate file sizes')
+
+file_sizes = (len(ham_paths)+len(spam_paths))*[None]
+idx = 0
+for path in ham_paths:
+    file_sizes[idx] = os.path.getsize(path) / 1024
+    idx += 1
+for path in spam_paths:
+    file_sizes[idx] = os.path.getsize(path) / 1024
+    idx += 1
+
+cout('Find file size mean and standard deviation')
+
+SD_MULTIPLIER = 2.5
+file_size_mean = np.mean(file_sizes)
+file_size_sd = np.std(file_sizes)
+file_size_max = file_size_mean + SD_MULTIPLIER * file_size_sd
+tmp = np.max(file_sizes)
+
+cout('Excluding paths whose file size is > %d SD (> %s KB)' % (SD_MULTIPLIER, file_size_max))
+
+ham_paths = [path for path in ham_paths if os.path.getsize(path) > file_size_max]
+spam_paths = [path for path in spam_paths if os.path.getsize(path) > file_size_max]
 
 cout('Allocating Memory')
 
@@ -44,22 +69,3 @@ with open('parsed data/emails.pkl', 'wb') as f:
     pickle.dump(emails, f, pickle.HIGHEST_PROTOCOL)
 
 cout('Process Completed')
-
-# def save_obj(obj, name ):
-#     with open('obj/'+ name + '.pkl', 'wb') as f:
-#         pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
-#
-# def load_obj(name ):
-#     with open('obj/' + name + '.pkl', 'rb') as f:
-#         return pickle.load(f)
-
-#  Now the header items can be accessed as a dictionary:
-# print('To: %s' % headers['to'])
-# print('From: %s' % headers['from'])
-# print('Subject: %s' % headers['subject'])
-
-# if headers.is_multipart():
-#     for payload in headers.get_payload():
-#         print(payload.get_payload())
-# else:
-#     print(headers.get_payload())
