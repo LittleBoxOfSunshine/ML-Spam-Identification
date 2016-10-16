@@ -79,7 +79,6 @@ header_frequency_analysis(emails, 'pre_filter_headers', headers)
 # Contains header-regex key-value pairs that will be kept after filtering
 keep_headers = {
     'from': re.compile('from|.*sender'),                                     # Categorical (match, no-match, n/a)
-    'subject': re.compile('subject'),
     'reply_to': re.compile('^(?!in).*reply.*to.*$|returnpath'),              # Categorical (match, no-match, n/a)
     'cc': re.compile('cc'),                                                  # Bool for has header
     'organization': re.compile('.*organization.*')                           # Bool for has header
