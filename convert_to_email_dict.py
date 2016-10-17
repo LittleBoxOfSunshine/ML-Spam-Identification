@@ -37,8 +37,8 @@ tmp = np.max(file_sizes)
 
 cout('Excluding paths whose file size is > %d SD (> %s KB)' % (SD_MULTIPLIER, file_size_max))
 
-ham_paths = [path for path in ham_paths if os.path.getsize(path) > file_size_max]
-spam_paths = [path for path in spam_paths if os.path.getsize(path) > file_size_max]
+ham_paths = [path for path in ham_paths if os.path.getsize(path) < file_size_max]
+spam_paths = [path for path in spam_paths if os.path.getsize(path) < file_size_max]
 
 cout('Allocating Memory')
 
