@@ -35,7 +35,7 @@ file_size_sd = np.std(file_sizes)
 file_size_max = file_size_mean + SD_MULTIPLIER * file_size_sd
 tmp = np.max(file_sizes)
 
-cout('Excluding paths whose file size is < %d SD (< %s Bytes)' % (SD_MULTIPLIER, file_size_max))
+cout('Excluding paths whose file size is < %f SD (< %s Bytes)' % (SD_MULTIPLIER, file_size_max))
 
 ham_paths = [path for path in ham_paths if os.path.getsize(path) < file_size_max]
 spam_paths = [path for path in spam_paths if os.path.getsize(path) < file_size_max]

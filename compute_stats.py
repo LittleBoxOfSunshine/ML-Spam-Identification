@@ -51,8 +51,6 @@ def calc_stat(row):
             row['payload_coleman_liau_index'] = textstat.coleman_liau_index(payload)
             row['payload_dale_chall_readability_score'] = textstat.dale_chall_readability_score(payload)
         except:
-            #print('ERROR:')
-            #print('|' + subject + '|')
             set_neg1()
     else:
         set_neg1()
@@ -62,12 +60,7 @@ def calc_stat(row):
 cout('Computing %d row statistics using %d processes' % (len(table), 4))
 
 pool = Pool(processes=4)
-tmp = table[:2000]
-for row in table[24000:26000]:
-    tmp.append(row)
-for row in table[66000:]:
-    tmp.append(row)
-table = pool.map(calc_stat, tmp)
+table = pool.map(calc_stat, table)
 
 cout('Saving table to disk as CSV')
 
