@@ -3,9 +3,14 @@ import pickle
 import datetime
 import csv
 import re
+import copy
+import collections
+from functools import reduce
 from textstat.textstat import textstat
 from fuzzywuzzy import fuzz
+from scipy.stats import entropy
 from multiprocessing import Pool
+import numpy as np
 
 
 def cout(text):
@@ -19,6 +24,29 @@ with open('parsed data/table.pkl', 'rb') as f:
 numeric = re.compile('.*[0-9].*')
 
 unique = set()
+
+cout('Loading english word frequency table')
+
+sym_re = re.compile(r'[^a-zA-z]')
+
+freq_table = {}
+word_count = 0
+total_occurrences = 0
+with open('lib data/count_1w.txt') as freq:
+    for line in freq:
+        name, count = line.partition('\t')[::2]
+        count = float(count[:-1])
+        freq_table[name.strip()] = count
+        word_count += 1
+        total_occurrences += count
+
+eng_prob_dist = {}
+for key in freq_table:
+    eng_prob_dist[key] = freq_table[key] / total_occurrences
+eng_prob_dist_list = list(eng_prob_dist.values())
+blank_prob_dist = {}
+for key in freq_table:
+    blank_prob_dist[key] = 0
 
 def calc_stat(row):
     # Analyze from and reply_to data
@@ -44,12 +72,23 @@ def calc_stat(row):
         row['payload_smog_index'] = -1
         row['payload_coleman_liau_index'] = -1
         row['payload_dale_chall_readability_score'] = -1
+        row['kl_divergence_eng_lang'] = -1
+        row['kl_divergence_eng_lang_e'] = -1
 
     if payload is not None and payload != '':
         try:
             row['payload_smog_index'] = textstat.smog_index(payload)
             row['payload_coleman_liau_index'] = textstat.coleman_liau_index(payload)
             row['payload_dale_chall_readability_score'] = textstat.dale_chall_readability_score(payload)
+            payload_word_dist = copy.deepcopy(blank_prob_dist)
+            word_freq = collections.Counter(sym_re.sub(' ', payload).lower().split())
+            total = reduce(lambda x, y: x + y, [word_freq[w] for w in word_freq if w in eng_prob_dist])
+            for word in word_freq:
+                if word in eng_prob_dist:
+                    payload_word_dist[word] = word_freq[word] / total
+
+            row['kl_divergence_eng_lang'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list, base=2)
+            row['kl_divergence_eng_lang_e'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list)
         except:
             set_neg1()
     else:
