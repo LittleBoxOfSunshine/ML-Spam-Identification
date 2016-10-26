@@ -44,11 +44,13 @@ eng_prob_dist = {}
 for key in freq_table:
     eng_prob_dist[key] = freq_table[key] / total_occurrences
 eng_prob_dist_list = list(eng_prob_dist.values())
+eng_prob_dist_keys = set(eng_prob_dist.keys())
 blank_prob_dist = {}
 for key in freq_table:
     blank_prob_dist[key] = 0
 
-def calc_stat(row):
+
+def calc_stat(row, payload_word_dist):
     # Analyze from and reply_to data
     send_reply_data = list(row.pop('from', {}) | row.pop('reply_to', {}))
 
@@ -75,21 +77,31 @@ def calc_stat(row):
         row['kl_divergence_eng_lang'] = -1
         row['kl_divergence_eng_lang_e'] = -1
 
+    # NOTE: THIS NEEDS TO BE RECURSIVE TO FULLY WORK
+    while isinstance(payload, list):
+        temp = ''
+        try:
+            for message in payload:
+                temp += message.get_payload()
+            payload = temp
+        except:
+            print('Depth > 2')
+            payload = payload[0].get_payload()
+
     if payload is not None and payload != '':
         try:
             row['payload_smog_index'] = textstat.smog_index(payload)
             row['payload_coleman_liau_index'] = textstat.coleman_liau_index(payload)
             row['payload_dale_chall_readability_score'] = textstat.dale_chall_readability_score(payload)
-            payload_word_dist = copy.deepcopy(blank_prob_dist)
             word_freq = collections.Counter(sym_re.sub(' ', payload).lower().split())
-            total = reduce(lambda x, y: x + y, [word_freq[w] for w in word_freq if w in eng_prob_dist])
-            for word in word_freq:
-                if word in eng_prob_dist:
-                    payload_word_dist[word] = word_freq[word] / total
-
+            word_freq_keys = [val for val in word_freq if val in eng_prob_dist_keys]
+            total = reduce(lambda x, y: x + y, word_freq.values())
+            for word in word_freq_keys:
+                payload_word_dist[word] = word_freq[word] / total
             row['kl_divergence_eng_lang'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list, base=2)
             row['kl_divergence_eng_lang_e'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list)
-        except:
+        except Exception as e:
+            print(e)
             set_neg1()
     else:
         set_neg1()
@@ -98,8 +110,14 @@ def calc_stat(row):
 
 cout('Computing %d row statistics using %d processes' % (len(table), 4))
 
-pool = Pool(processes=4)
-table = pool.map(calc_stat, table)
+#pool = Pool(processes=4)
+#table = pool.map(calc_stat, table)
+ctr = 0
+cp = copy.deepcopy(blank_prob_dist)
+for row in table:
+    calc_stat(row, payload_word_dist=cp)
+    ctr += 1
+    print(ctr)
 
 cout('Saving table to disk as CSV')
 
