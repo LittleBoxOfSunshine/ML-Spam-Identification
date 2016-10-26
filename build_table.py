@@ -4,6 +4,7 @@ import datetime
 import csv
 import re
 import copy
+from bs4 import BeautifulSoup
 
 
 def cout(text):
@@ -100,6 +101,62 @@ table = (len(emails['spam']) + len(emails['ham'])) * [None]
 
 cout('Filtering & combining headers / importing HAM into table')
 
+
+def html2txt(html):
+    text = ''
+
+    try:
+        soup = BeautifulSoup(html, "lxml")
+
+        # kill all script and style elements
+        for script in soup(["script", "style"]):
+            script.extract()  # rip it out
+
+        # get text
+        text = soup.get_text()
+
+        # break into lines and remove leading and trailing space on each
+        lines = (line.strip() for line in text.splitlines())
+        # break multi-headlines into a line each
+        chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+        # drop blank lines
+        text = '\n'.join(chunk for chunk in chunks if chunk)
+    except:
+        print('ERROR: Failed to parse as HTML => %s' % html)
+
+    return text
+
+import base64
+
+
+def flatten(msg):
+    if isinstance(msg, str):
+        return msg
+
+    ret = ''
+
+    try:
+        for m in msg:
+            payload = m.get_payload()
+            if isinstance(payload, list):
+                #ret += flatten(payload)
+                continue
+
+            tmp = m.get('Content-Type')
+
+            if tmp is None or 'text' in tmp:
+                if m.get('Content-Transfer-Encoding') == 'base64':
+                    html = base64.b64decode(payload)
+                ret += str(payload)
+            elif 'text/html' in tmp:
+                if m.get('Content-Transfer-Encoding') == 'base64':
+                    payload = base64.b64decode(payload)
+                ret += html2txt(payload)
+    except:
+        print('ERROR: Failed to parse => %s' % msg)
+
+    return ret
+
 char_filter = re.compile('[^a-z]')
 
 idx = 0
@@ -124,7 +181,7 @@ for email in emails['ham']:
                     table[idx][key].add(email[header])
 
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['payload'] = email.get_payload()
+    table[idx]['payload'] = flatten(email.get_payload())
 
     idx += 1
 
@@ -150,7 +207,7 @@ for email in emails['spam']:
                     table[idx][key].add(email[header])
 
     table[idx]['multipart_count'] = 0 if not email.is_multipart() else len(email.get_payload())
-    table[idx]['payload'] = email.get_payload()
+    table[idx]['payload'] = flatten(email.get_payload())
 
     idx += 1
 
