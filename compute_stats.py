@@ -130,7 +130,7 @@ cout('%d emails completed' % len(table))
 cout('Saving table to disk as CSV')
 
 # Save to disk as CSV
-with open('parsed data/table2.csv', 'w') as output_file:
+with open('parsed data/table.csv', 'w') as output_file:
     dict_writer = csv.DictWriter(output_file, results[0][0].keys())
     dict_writer.writeheader()
 
