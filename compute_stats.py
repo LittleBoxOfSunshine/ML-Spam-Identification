@@ -82,6 +82,7 @@ def calc_stat(row):
                 payload_word_dist[word] = word_freq[word] / total
             row['kl_divergence_eng_lang'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list, base=2)
             row['kl_divergence_eng_lang_e'] = entropy(pk=list(payload_word_dist.values()), qk=eng_prob_dist_list)
+
         except Exception as e:
             # print(e)
             return None
@@ -97,20 +98,40 @@ payload_word_dist = copy.deepcopy(blank_prob_dist)
 
 pool = mp.Pool(processes=mp.cpu_count())
 
-itr_count = int(len(table)/1000)
+# TEMP
+# asdf = 0
+# for i in range(len(table)):
+#     if table[i]['is_spam']:
+#         asdf = i
+#         break
+#
+# t1 = table[:4000]
+# t2 = table[asdf:asdf + 4000]
+# t3 = table[60000:64000]
+# table = []
+# for t in t1:
+#     table.append(t)
+# for t in t2:
+#     table.append(t)
+# for t in t3:
+#    table.append(t)
+# END TEMP
+
+ITR_SIZE = 1000
+itr_count = int(len(table)/ITR_SIZE)
 results = [None]*itr_count
 
 for i in range(itr_count):
-    results[i] = pool.map(calc_stat, table[i * 1000:i * 1000 + 999])
-    cout('%d emails completed' % ((i+1) * 1000))
-results[itr_count-1] = pool.map(calc_stat, table[itr_count*1000:])
+    results[i] = pool.map(calc_stat, table[i * ITR_SIZE:i * ITR_SIZE + ITR_SIZE - 1])
+    cout('%d emails completed' % ((i+1) * ITR_SIZE))
+results[itr_count-1] = pool.map(calc_stat, table[itr_count*ITR_SIZE:])
 cout('%d emails completed' % len(table))
 
 cout('Saving table to disk as CSV')
 
 # Save to disk as CSV
 with open('parsed data/table2.csv', 'w') as output_file:
-    dict_writer = csv.DictWriter(output_file, table[0].keys())
+    dict_writer = csv.DictWriter(output_file, results[0][0].keys())
     dict_writer.writeheader()
 
     for t in results:
